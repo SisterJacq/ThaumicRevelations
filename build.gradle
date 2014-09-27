@@ -1,0 +1,240 @@
+/*
+ * Mortvana's Master build file
+ * Based TConstruct's master build file by Sunstrike and ProgWML6, with help from AbrarSyed
+ */
+// This sets us up for building a forge project - you need all of these
+buildscript {
+    repositories {
+        mavenCentral()
+		mavenLocal()
+        maven {
+            name = 'ForgeFS'
+            url = 'http://files.minecraftforge.net/maven'
+        }
+		maven {
+            name = "sonatype"
+            url = "https://oss.sonatype.org/content/repositories/snapshots/"
+        }
+
+	}
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
+    }
+}
+
+
+repositories {
+    maven {
+        name 'CB Maven FS'
+        url "http://chickenbones.net/maven/"
+    }
+	maven {
+         name "ProfMobius Maven FS"
+         url "http://mobiusstrip.eu/maven"
+     }
+    maven {
+        name 'DVS1 Maven FS'
+        url 'http://dvs1.progwml6.com/files/maven'
+    }
+    maven {
+        name 'ForgeFS'
+        url 'http://files.minecraftforge.net/maven'
+     }
+    maven {
+        name "IC2"
+        url "http://maven.ic2.player.to/"
+    }
+}
+
+// Load ForgeGradle
+// Apply the forge plugin - this adds all the magic for automatically obfuscating, deobfuscating, etc.
+apply plugin: 'forge'
+
+// This is our group.
+group = 'mortvana.thaumicrevelations'
+
+// This is our actual project within the group.
+archivesBaseName = "ProjectFuxGear"
+
+// Define the .properties file
+ext.configFile = file "build.properties"
+
+configFile.withReader {
+    // Load and read config. 
+	// It shall from now on be referenced as simply config or project.config
+    def prop = new Properties()
+    prop.load(it)
+    project.ext.config = new ConfigSlurper().parse prop
+}
+/*configurations {
+    deployerJars
+}*/
+
+dependencies {
+    compile "mantle:Mantle:${config.minecraft_version}-${config.mantle_version}:deobf"
+	compile "tconstruct:TConstruct:${config.minecraft_version}-${config.tconstruct_version}:deobf"
+	compile "codechicken:CodeChickenLib:${config.minecraft_version}-${config.CCLIB_version}:dev"
+	compile "codechicken:CodeChickenCore:${config.minecraft_version}-${config.ccc_version}:dev"
+    compile "codechicken:NotEnoughItems:${config.minecraft_version}-${config.NEI_version}:dev"
+	compile "codechicken:ForgeMultipart:${config.minecraft_version}-${config.FMP_version}:dev"
+	compile "mcp.mobius.waila:Waila:${config.waila_version}:dev"
+    //compile "net.industrial-craft:industrialcraft-2:${config.ic2_version}:dev"
+    compile fileTree(dir: 'lib', include: '*.jar')
+	//deployerJars 'org.apache.maven.wagon:wagon-ssh:2.2'
+}
+
+// Finds and sets version data
+/*task buildInfo {
+    def cmd = "git rev-parse --short HEAD"
+    def proc = cmd.execute()
+    proc.waitFor()
+    if (proc.exitValue() == 0) {
+        ext.revision = proc.text.trim()
+    } else {
+        ext.revision = "GITBORK"
+    }
+
+    if (System.getenv().BUILD_NUMBER != null) {
+        ext.buildNum = "jenkins${System.getenv().BUILD_NUMBER}"
+    } else {
+        ext.buildNum = "DEV.${project.buildInfo.revision}"
+    }
+}
+
+// Some SlimeKnights code I don't use or understand
+ext.artifact_version = 'NFG'
+if (System.getenv().ARTIFACT_VERSION == null) {
+    artifact_version = "${config.mod_version}.${project.buildInfo.buildNum}"
+}
+if (System.getenv().ARTIFACT_VERSION != null) {
+    artifact_version = "${system.getenv().ARTIFACT_VERSION}"
+}*/
+
+//version = "/*${config.minecraft_version}*/1.7.10-10.13.0.1188/*${artifact_version}*/"
+
+// Setup the forge minecraft plugin data.
+minecraft {
+    version = config.minecraft_version + "-" + config.forge_version
+    /*if  (file('../run').exists) {
+		runDir = '../run/assests'
+	} else {*/
+	runDir = 'run/assets'
+	//}
+    replace '${version}', project.version
+}
+
+sourceSets {
+    main {
+        resources {
+            srcDir 'resources'
+        }
+    }
+}
+
+processResources
+{
+    // this will ensure that this task is redone when the versions change.
+    inputs.property "version", project.version
+    inputs.property "mcversion", project.minecraft.version
+
+    // we're omitting the .xcf files - they're development only
+    exclude '**/*.xcf'
+
+    // replace stuff in mcmod.info, nothing else
+    from(sourceSets.main.resources.srcDirs) {
+        include 'mcmod.info'
+                
+        // replace version and mcversion
+        expand 'version':project.version, 'mcversion':project.minecraft.version
+    }
+        
+    // copy everything else, thats not the mcmod.info
+    from(sourceSets.main.resources.srcDirs) {
+        exclude 'mcmod.info'
+    }
+
+    
+	// Replace stuff in text files, not binaries.
+    //from(sourceSets.main.resources.srcDirs) {
+        //include '**/*.info'
+        // Replace version and MCversion
+        /*expand 'version':artifact_version,'MCversion':config.minecraft_version
+    }
+        
+    // Copy everything else that's not text
+    from(sourceSets.main.resources.srcDirs) {*/
+        //exclude '**/*.info'
+    //}
+}
+
+// No CoreMod for you!
+// Add Coremod Manifest
+/*jar {
+    manifest {
+        attributes 'FMLCorePlugin': 'tconstruct.preloader.TConstructLoaderContainer'
+        attributes 'FMLCorePluginContainsFMLMod': 'true'
+    }
+}*/
+
+// Add in a source jar for people, should they desire to download such a thing
+task sourceJar(type: Jar) {
+    from sourceSets.main.allSource
+    classifier = 'src'
+    version = "${project.minecraft.version}-${project.version}"
+}
+
+// Create de-obfuscated development jars, because the normal output has been made to be obfuscated
+task deobfJar(type: Jar) {
+    from sourceSets.main.output
+    classifier = 'deobf'
+	// Ye olde SlimeKnight code
+	//manifest {
+        //attributes 'FMLCorePlugin': 'tconstruct.preloader.TConstructLoaderContainer'
+        //attributes 'FMLCorePluginContainsFMLMod': 'true'
+    //}
+}
+
+// No APIs... Yet...
+// Create API library jar
+/*task libJar(type: Jar) {
+    from(sourceSets.main.java) {
+        include "tconstruct/library/*"
+    }
+    classifier = 'lib'
+}*/
+
+artifacts {
+    archives deobfJar
+    archives sourceJar
+    //archives libJar
+}
+
+// I don't always upload, but when I Dos Equis...
+/*task("uploadJars", dependsOn:"reobf""signJar") {
+    
+    description = "uploads JARs"
+
+    if (project.hasProperty("local_maven") || project.hasProperty("sftp_maven")) {
+	    apply plugin: 'maven'
+        uploadArchives {
+            repositories {
+		    	if(project.hasProperty("local_maven"))
+			    {
+                    mavenDeployer {
+                        repository(url: "file://${local_maven}")
+				    }
+                }
+				if(project.hasProperty("sftp_maven")) {
+                    repositories.mavenDeployer {
+					    configuration = configurations.deployerJars
+                        repository(url: "sftp://${sftp_maven}"){
+						authentication(userName: "${sftp_username}",privateKey: "${sftp_key}")}
+				    }
+                }
+            }
+        }    
+    }
+}*/
+
+
+

@@ -1,0 +1,16 @@
+[
+{
+  "modid": "thaumicrevalations",
+  "name": "Thaumic Revalations",
+  "description": "",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authors": ["Mortvana"],
+  "credits": "Azanor, MasterAbdoTGM50",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": ["Thaumcraft"]
+}
+]

@@ -16,6 +16,7 @@ Thumbs.db
 /build/
 #/run/
 #IDEA files from Gradle
+out/
 .idea/
 /*.iml
 /*.ipr
@@ -26,3 +27,5 @@ Thumbs.db
 /.classpath
 /.project
 /.settings/
+
+run/

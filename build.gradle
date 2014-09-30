@@ -51,7 +51,7 @@ repositories {
 apply plugin: 'forge'
 
 // This is our group.
-group = 'mortvana.thaumicrevelations'
+group = 'mortvana.trevelations'
 
 // This is our actual project within the group.
 archivesBaseName = "ProjectFuxGear"

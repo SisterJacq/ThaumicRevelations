@@ -4,8 +4,7 @@ import thaumcraft.api.aspects.Aspect;
 
 public class WardenicUpgradeDestruction extends WardenicUpgrade {
 
-    public WardenicUpgradeDestruction(Aspect aspect) {super(aspect);}
-
+	public WardenicUpgradeDestruction(Aspect aspect) {super(aspect);}
 
 
 }

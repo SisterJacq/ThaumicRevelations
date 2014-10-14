@@ -1,22 +1,23 @@
 package mortvana.trevelations.util;
 
-import mortvana.trevelations.common.ModContent;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
+import mortvana.trevelations.common.ModContent;
+
 public class TabTRevelations extends CreativeTabs {
 
-    public TabTRevelations(String label) {
+	public TabTRevelations(String label) {
 
-        super(label);
+		super(label);
 
-    }
+	}
 
-    @Override
-    public Item getTabIconItem() {
+	@Override
+	public Item getTabIconItem() {
 
-        return ModContent.itemWardenAmulet;
+		return ModContent.itemWardenAmulet;
 
-    }
+	}
 
 }

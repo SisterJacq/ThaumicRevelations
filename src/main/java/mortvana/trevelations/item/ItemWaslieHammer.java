@@ -1,56 +1,57 @@
 package mortvana.trevelations.item;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-import mortvana.trevelations.common.TRevelations;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+
+import mortvana.trevelations.common.TRevelations;
 
 public class ItemWaslieHammer extends Item {
 
-    public ItemWaslieHammer() {
+	public ItemWaslieHammer() {
 
-        super();
-        setUnlocalizedName("itemWaslieHammer");
-        setCreativeTab(TRevelations.tabTRevelations);
-        setMaxStackSize(1);
-        canRepair = false;
+		super();
+		setUnlocalizedName("itemWaslieHammer");
+		setCreativeTab(TRevelations.tabTRevelations);
+		setMaxStackSize(1);
+		canRepair = false;
 
-    }
+	}
 
-    @Override
-    public EnumRarity getRarity(ItemStack stack) {
+	@Override
+	public EnumRarity getRarity(ItemStack stack) {
 
-        return EnumRarity.rare;
+		return EnumRarity.rare;
 
-    }
+	}
 
-    @Override
-    public boolean isItemTool(ItemStack stack) {
+	@Override
+	public boolean isItemTool(ItemStack stack) {
 
-        return true;
+		return true;
 
-    }
+	}
 
-    @Override
-    public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer) {
+	@Override
+	public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer) {
 
-        par3EntityPlayer.openGui(TRevelations.instance, 0, par2World, 0, 0, 0);
+		par3EntityPlayer.openGui(TRevelations.instance, 0, par2World, 0, 0, 0);
 
-        return par1ItemStack;
+		return par1ItemStack;
 
-    }
+	}
 
-    @Override
-    @SideOnly(Side.CLIENT)
-    public void registerIcons(IIconRegister register) {
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void registerIcons(IIconRegister register) {
 
-        itemIcon = register.registerIcon("trevelations:wasliehammer");
+		itemIcon = register.registerIcon("trevelations:wasliehammer");
 
-    }
+	}
 
 }

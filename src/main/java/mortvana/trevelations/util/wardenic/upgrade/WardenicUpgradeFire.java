@@ -5,44 +5,45 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
+
 import thaumcraft.api.aspects.Aspect;
 
 public class WardenicUpgradeFire extends WardenicUpgrade {
 
-    public WardenicUpgradeFire(Aspect aspect) {super(aspect);}
+	public WardenicUpgradeFire(Aspect aspect) {super(aspect);}
 
-    @Override
-    public void onAttack(ItemStack stack, EntityPlayer player, Entity entity) {
+	@Override
+	public void onAttack(ItemStack stack, EntityPlayer player, Entity entity) {
 
-        super.onAttack(stack, player, entity);
+		super.onAttack(stack, player, entity);
 
-        entity.setFire(5);
+		entity.setFire(5);
 
-    }
+	}
 
-    @Override
-    public void onTick(World world, EntityPlayer player, ItemStack stack) {
+	@Override
+	public void onTick(World world, EntityPlayer player, ItemStack stack) {
 
-        super.onTick(world, player, stack);
+		super.onTick(world, player, stack);
 
-        if(player.isBurning()) {
+		if (player.isBurning()) {
 
-            player.extinguish();
+			player.extinguish();
 
-        }
+		}
 
-    }
+	}
 
-    @Override
-    public void onAttacked(LivingHurtEvent event) {
+	@Override
+	public void onAttacked(LivingHurtEvent event) {
 
-        super.onAttacked(event);
+		super.onAttacked(event);
 
-        if(event.source.getEntity() != null) {
+		if (event.source.getEntity() != null) {
 
-            event.source.getEntity().setFire(2);
+			event.source.getEntity().setFire(2);
 
-        }
+		}
 
-    }
+	}
 }

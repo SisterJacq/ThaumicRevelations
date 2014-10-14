@@ -6,119 +6,120 @@ import net.minecraft.entity.monster.EntitySpider;
 import net.minecraft.entity.passive.*;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
+
 import thaumcraft.api.entities.ITaintedMob;
 import thaumcraft.common.entities.monster.*;
 
 public class PurityHelper {
 
-    public static boolean isTainted(Entity entity) {
+	public static boolean isTainted(Entity entity) {
 
-        if(entity instanceof ITaintedMob) {
+		if (entity instanceof ITaintedMob) {
 
-            return true;
+			return true;
 
-        }
+		}
 
-        return false;
+		return false;
 
-    }
+	}
 
-    public static boolean isTainted(MovingObjectPosition mop) {
+	public static boolean isTainted(MovingObjectPosition mop) {
 
-        if(mop.typeOfHit == MovingObjectPosition.MovingObjectType.ENTITY) {
+		if (mop.typeOfHit == MovingObjectPosition.MovingObjectType.ENTITY) {
 
-            if (mop.entityHit != null) {
+			if (mop.entityHit != null) {
 
-                return isTainted(mop.entityHit);
+				return isTainted(mop.entityHit);
 
-            }
+			}
 
-        }
+		}
 
-        return false;
+		return false;
 
-    }
+	}
 
-    public static void purifyEntity(Entity toPurify) {
+	public static void purifyEntity(Entity toPurify) {
 
-        if (toPurify != null) {
+		if (toPurify != null) {
 
-            World world = toPurify.worldObj;
+			World world = toPurify.worldObj;
 
-            if(isTainted(toPurify)) {
+			if (isTainted(toPurify)) {
 
-                if(!world.isRemote) {
+				if (!world.isRemote) {
 
-                    Entity purified = getPureState(toPurify);
-                    purified.setPositionAndRotation(toPurify.posX, toPurify.posY, toPurify.posZ, toPurify.rotationYaw, toPurify.rotationPitch);
+					Entity purified = getPureState(toPurify);
+					purified.setPositionAndRotation(toPurify.posX, toPurify.posY, toPurify.posZ, toPurify.rotationYaw, toPurify.rotationPitch);
 
-                    toPurify.setDead();
-                    world.spawnEntityInWorld(purified);
+					toPurify.setDead();
+					world.spawnEntityInWorld(purified);
 
-                }
+				}
 
-            }
+			}
 
-        }
+		}
 
-    }
+	}
 
-    public static void checkAndPurify(MovingObjectPosition mop) {
+	public static void checkAndPurify(MovingObjectPosition mop) {
 
-        if(mop.typeOfHit == MovingObjectPosition.MovingObjectType.ENTITY) {
+		if (mop.typeOfHit == MovingObjectPosition.MovingObjectType.ENTITY) {
 
-            purifyEntity(mop.entityHit);
+			purifyEntity(mop.entityHit);
 
-        }
+		}
 
-    }
+	}
 
-    public static Entity getPureState(Entity entity){
+	public static Entity getPureState(Entity entity) {
 
-        if(entity instanceof EntityTaintChicken) {
+		if (entity instanceof EntityTaintChicken) {
 
-            return new EntityChicken(entity.worldObj);
+			return new EntityChicken(entity.worldObj);
 
-        }
+		}
 
-        if(entity instanceof EntityTaintCow) {
+		if (entity instanceof EntityTaintCow) {
 
-            return new EntityCow(entity.worldObj);
+			return new EntityCow(entity.worldObj);
 
-        }
+		}
 
-        if(entity instanceof EntityTaintCreeper) {
+		if (entity instanceof EntityTaintCreeper) {
 
-            return new EntityCreeper(entity.worldObj);
+			return new EntityCreeper(entity.worldObj);
 
-        }
+		}
 
-        if(entity instanceof EntityTaintPig) {
+		if (entity instanceof EntityTaintPig) {
 
-            return new EntityPig(entity.worldObj);
+			return new EntityPig(entity.worldObj);
 
-        }
+		}
 
-        if(entity instanceof EntityTaintSheep) {
+		if (entity instanceof EntityTaintSheep) {
 
-            return new EntitySheep(entity.worldObj);
+			return new EntitySheep(entity.worldObj);
 
-        }
+		}
 
-        if(entity instanceof EntityTaintSpider) {
+		if (entity instanceof EntityTaintSpider) {
 
-            return new EntitySpider(entity.worldObj);
+			return new EntitySpider(entity.worldObj);
 
-        }
+		}
 
-        if(entity instanceof EntityTaintVillager) {
+		if (entity instanceof EntityTaintVillager) {
 
-            return new EntityVillager(entity.worldObj);
+			return new EntityVillager(entity.worldObj);
 
-        }
+		}
 
-        return entity;
+		return entity;
 
-    }
+	}
 
 }

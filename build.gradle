@@ -54,7 +54,7 @@ apply plugin: 'forge'
 group = 'mortvana.trevelations'
 
 // This is our actual project within the group.
-archivesBaseName = "ProjectFuxGear"
+archivesBaseName = "ThaumicRevelations"
 
 // Define the .properties file
 ext.configFile = file "build.properties"
@@ -72,12 +72,12 @@ configFile.withReader {
 
 dependencies {
     compile "mantle:Mantle:${config.minecraft_version}-${config.mantle_version}:deobf"
-	compile "tconstruct:TConstruct:${config.minecraft_version}-${config.tconstruct_version}:deobf"
+	//compile "tconstruct:TConstruct:${config.minecraft_version}-${config.tconstruct_version}:deobf"
 	compile "codechicken:CodeChickenLib:${config.minecraft_version}-${config.CCLIB_version}:dev"
 	compile "codechicken:CodeChickenCore:${config.minecraft_version}-${config.ccc_version}:dev"
     compile "codechicken:NotEnoughItems:${config.minecraft_version}-${config.NEI_version}:dev"
 	compile "codechicken:ForgeMultipart:${config.minecraft_version}-${config.FMP_version}:dev"
-	compile "mcp.mobius.waila:Waila:${config.waila_version}:dev"
+	//compile "mcp.mobius.waila:Waila:${config.waila_version}:dev"
     //compile "net.industrial-craft:industrialcraft-2:${config.ic2_version}:dev"
     compile fileTree(dir: 'lib', include: '*.jar')
 	//deployerJars 'org.apache.maven.wagon:wagon-ssh:2.2'

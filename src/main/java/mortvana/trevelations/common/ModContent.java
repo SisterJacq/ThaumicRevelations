@@ -9,9 +9,9 @@ import net.minecraftforge.common.util.EnumHelper;
 
 import mortvana.trevelations.block.*;
 import mortvana.trevelations.block.tile.TileWitor;
-import mortvana.trevelations.entity.EntityFleshProjectile;
+//import mortvana.trevelations.entity.EntityFleshProjectile;
 import mortvana.trevelations.entity.EntityPurity;
-import mortvana.trevelations.entity.FleshGolem;
+//import mortvana.trevelations.entity.FleshGolem;
 import mortvana.trevelations.item.*;
 
 public class ModContent {
@@ -71,8 +71,8 @@ public class ModContent {
 	public static void entityInit() {
 
 		EntityRegistry.registerModEntity(EntityPurity.class, "PurityOrb", 0, TRevelations.instance, 64, 10, true);
-		EntityRegistry.registerModEntity(EntityFleshProjectile.class, "ThrownFlesh", 1, TRevelations.instance, 64, 3, true);
-		EntityRegistry.registerGlobalEntityID(FleshGolem.class, "FleshGolem", EntityRegistry.findGlobalUniqueEntityId(), 0xE4A2A9, 0x96452E);
+		//EntityRegistry.registerModEntity(EntityFleshProjectile.class, "ThrownFlesh", 1, TRevelations.instance, 64, 3, true);
+		//EntityRegistry.registerGlobalEntityID(FleshGolem.class, "FleshGolem", EntityRegistry.findGlobalUniqueEntityId(), 0xE4A2A9, 0x96452E);
 
 	}
 }

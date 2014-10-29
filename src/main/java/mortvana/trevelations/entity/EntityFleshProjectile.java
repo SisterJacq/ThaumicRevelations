@@ -1,6 +1,6 @@
 package mortvana.trevelations.entity;
 
-import cpw.mods.fml.relauncher.Side;
+/*import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Items;
@@ -38,4 +38,4 @@ public class EntityFleshProjectile extends EntityThrowableProjectile {
 	public int getParticleID() {
 		return ClientProxy.PARTICLE_HANDLER.THROWN_FLESH_ID;
 	}
-}
+}*/

@@ -1,6 +1,6 @@
 package mortvana.trevelations.client;
 
-import net.minecraft.client.particle.EntityBreakingFX;
+/*import net.minecraft.client.particle.EntityBreakingFX;
 import net.minecraft.client.particle.EntityFX;
 import net.minecraft.init.Items;
 import net.minecraft.world.World;
@@ -25,4 +25,4 @@ public class TRParticle implements IParticleHandler {
 	public int getMaxParticleSetting(int id) {
 		return 3;
 	}
-}
+}*/

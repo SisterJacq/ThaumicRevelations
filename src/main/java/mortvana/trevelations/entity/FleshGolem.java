@@ -1,6 +1,6 @@
 package mortvana.trevelations.entity;
 
-import net.minecraft.entity.EntityLiving;
+/*import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IRangedAttackMob;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -25,12 +25,12 @@ public class FleshGolem extends EntityGolem implements IRangedAttackMob {
 		tasks.addTask(3, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
 		tasks.addTask(4, new EntityAILookIdle(this));
 		targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityLiving.class, 0, true, false, IMob.mobSelector));
-	}
+	}*/
 
 	/**
 	 * Attack the specified entity using a ranged attack.
 	 */
-	@Override
+	/*@Override
 	public void attackEntityWithRangedAttack(EntityLivingBase targetentity, float par2) {
 		final EntityFleshProjectile entitythrownflesh = new EntityFleshProjectile(worldObj, this);
 		final double d0 = targetentity.posX - posX;
@@ -40,30 +40,30 @@ public class FleshGolem extends EntityGolem implements IRangedAttackMob {
 		entitythrownflesh.setThrowableHeading(d0, d1 + f1, d2, 1.6F, 12.0F);
 		playSound("random.bow", 1.0F, 1.0F / ((getRNG().nextFloat() * 0.4F) + 0.8F));
 		worldObj.spawnEntityInWorld(entitythrownflesh);
-	}
+	}*/
 
 	/**
 	 * Returns true if the newer Entity AI code should be run
 	 */
-	@Override
+	/*@Override
 	public boolean isAIEnabled() {
 		return true;
-	}
+	}*/
 
 	/**
 	 * Called when the mob's health reaches 0.
 	 */
-	@Override
+	/*@Override
 	public void onDeath(DamageSource par1DamageSource) {
 		super.onDeath(par1DamageSource);
 		doBreakParticleFX();
-	}
+	}*/
 
 	/**
 	 * Called frequently so the entity can update its state every tick as required. For example, zombies and skeletons
 	 * use this to react to sunlight and start to burn.
 	 */
-	@Override
+	/*@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
 	}
@@ -78,19 +78,19 @@ public class FleshGolem extends EntityGolem implements IRangedAttackMob {
 			final float zPos = MathHelper.cos(f) * i * 0.4F * offset;
 			worldObj.spawnParticle("flesh", posX + xPos, boundingBox.minY + 2, posZ + zPos, 0.0D, 0.0D, 0.0D);
 		}
-	}
+	}*/
 
 	/**
 	 * Returns the sound this mob makes when it is hurt.
 	 */
-	protected String getHurtSound() {
+	/*protected String getHurtSound() {
 		return "mob.slime.hit";
-	}
+	}*/
 
 	/**
 	 * Returns the sound this mob makes on death.
 	 */
-	protected String getDeathSound() {
+	/*protected String getDeathSound() {
 		return "mob.slime.death";
 	}
 
@@ -99,7 +99,7 @@ public class FleshGolem extends EntityGolem implements IRangedAttackMob {
 		super.applyEntityAttributes();
 		getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(37.0D);
 		getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.20000000298023224D / 2);
-	}
+	}*/
 
 	/**
 	 * Drop 0-2 items of this living's type. @param par1 - Whether this entity has recently been hit by a player.
@@ -107,14 +107,14 @@ public class FleshGolem extends EntityGolem implements IRangedAttackMob {
 	 * par2 - Level of Looting used to kill this mob.
 	 */
 
-	@Override
+	/*@Override
 	protected void dropFewItems(boolean par1, int par2) {
 		dropItem(Items.rotten_flesh, 18);
-	}
+	}*/
 	/**
 	 * Returns the item ID for the item the mob drops on death.
 	 */
 
-	@Override
+	/*@Override
 	protected Item getDropItem() { return Items.rotten_flesh; }
-}
+}*/

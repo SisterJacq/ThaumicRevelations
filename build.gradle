@@ -72,7 +72,7 @@ configFile.withReader {
 
 dependencies {
     compile "mantle:Mantle:${config.minecraft_version}-${config.mantle_version}:deobf"
-	//compile "tconstruct:TConstruct:${config.minecraft_version}-${config.tconstruct_version}:deobf"
+	compile "tconstruct:TConstruct:${config.minecraft_version}-${config.tconstruct_version}:deobf"
 	compile "codechicken:CodeChickenLib:${config.minecraft_version}-${config.CCLIB_version}:dev"
 	compile "codechicken:CodeChickenCore:${config.minecraft_version}-${config.ccc_version}:dev"
     compile "codechicken:NotEnoughItems:${config.minecraft_version}-${config.NEI_version}:dev"

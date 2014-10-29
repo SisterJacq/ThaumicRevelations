@@ -1,6 +1,6 @@
 package mortvana.trevelations.client.render;
 
-import cpw.mods.fml.relauncher.Side;
+/*import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.entity.Entity;
@@ -23,4 +23,4 @@ public class RenderFleshGolem extends RenderLiving {
 	protected ResourceLocation getEntityTexture(Entity entity) {
 		return textures;
 	}
-}
+}*/

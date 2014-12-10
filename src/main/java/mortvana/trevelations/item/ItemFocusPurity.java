@@ -11,6 +11,7 @@ import mortvana.trevelations.common.TRevelations;
 import mortvana.trevelations.entity.EntityPurity;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
+import thaumcraft.api.wands.FocusUpgradeType;
 import thaumcraft.api.wands.ItemFocusBasic;
 import thaumcraft.common.items.wands.ItemWandCasting;
 
@@ -36,45 +37,39 @@ public class ItemFocusPurity extends ItemFocusBasic {
 	}
 
 	@Override
-	public IIcon getFocusDepthLayerIcon() {return depth;}
+	public IIcon getFocusDepthLayerIcon(ItemStack itemstack) {return depth;}
 
 	@Override
-	public IIcon getOrnament() {return orn;}
+	public IIcon getOrnament(ItemStack itemstack) {return orn;}
 
 	@Override
-	public int getFocusColor() {return 0x6698FF;}
+	public int getFocusColor(ItemStack itemstack) {return 0x6698FF;}
 
-	public ItemStack onFocusRightClick(ItemStack itemStack, World world, EntityPlayer player, MovingObjectPosition mop) {
+	public ItemStack onFocusRightClick(ItemStack itemstack, World world, EntityPlayer player, MovingObjectPosition mop) {
 
-		ItemWandCasting wand = (ItemWandCasting) itemStack.getItem();
+		ItemWandCasting wand = (ItemWandCasting) itemstack.getItem();
 		EntityPurity purityOrb = new EntityPurity(world, player);
-
 		if (!world.isRemote) {
-
-			if (wand.consumeAllVis(itemStack, player, getVisCost(), true, false)) {
-
+			if (wand.consumeAllVis(itemstack, player, getVisCost(itemstack), true, false)) {
 				world.spawnEntityInWorld(purityOrb);
 				world.playSoundAtEntity(purityOrb, "thaumcraft:ice", 0.3F, 0.8F + world.rand.nextFloat() * 0.1F);
-
 			}
-
 		}
-
 		player.swingItem();
-
-		return itemStack;
-
+		return itemstack;
 	}
 
 	@Override
-	public String getSortingHelper(ItemStack itemStack) {return "PURITY";}
+	public String getSortingHelper(ItemStack itemStack) { return "PURITY"; }
 
 	@Override
-	public AspectList getVisCost() {
+	public AspectList getVisCost(ItemStack itemstack) {
+		return new AspectList().add(Aspect.AIR, 500).add(Aspect.EARTH, 500).add(Aspect.FIRE, 500).add(Aspect.WATER, 500).add(Aspect.ORDER, 500).add(Aspect.ENTROPY, 500);
+	}
 
-		return new AspectList().add(Aspect.AIR, 500).add(Aspect.EARTH, 500).add(Aspect.FIRE, 500)
-				.add(Aspect.WATER, 500).add(Aspect.ORDER, 500).add(Aspect.ENTROPY, 500);
-
+	@Override
+	public FocusUpgradeType[] getPossibleUpgradesByRank(ItemStack itemstack, int i) {
+		return new FocusUpgradeType[0];
 	}
 
 }

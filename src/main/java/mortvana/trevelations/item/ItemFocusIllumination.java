@@ -11,6 +11,7 @@ import mortvana.trevelations.common.ModContent;
 import mortvana.trevelations.common.TRevelations;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
+import thaumcraft.api.wands.FocusUpgradeType;
 import thaumcraft.api.wands.ItemFocusBasic;
 import thaumcraft.common.items.wands.ItemWandCasting;
 
@@ -36,26 +37,21 @@ public class ItemFocusIllumination extends ItemFocusBasic {
 	}
 
 	@Override
-	public IIcon getFocusDepthLayerIcon() {return depth;}
+	public IIcon getFocusDepthLayerIcon(ItemStack itemstack) {return depth;}
 
 	@Override
-	public IIcon getOrnament() {return orn;}
+	public IIcon getOrnament(ItemStack itemstack) {return orn;}
 
 	@Override
-	public int getFocusColor() {return 0x6698FF;}
+	public int getFocusColor(ItemStack itemstack) {return 0x6698FF;}
 
 
-	public ItemStack onFocusRightClick(ItemStack itemStack, World world, EntityPlayer player, MovingObjectPosition mop) {
-
-		ItemWandCasting wand = (ItemWandCasting) itemStack.getItem();
-
+	public ItemStack onFocusRightClick(ItemStack itemstack, World world, EntityPlayer player, MovingObjectPosition mop) {
+		ItemWandCasting wand = (ItemWandCasting) itemstack.getItem();
 		if (mop != null) {
-
 			if (mop.typeOfHit == MovingObjectPosition.MovingObjectType.BLOCK) {
-
 				if (!world.isRemote) {
-
-					if (wand.consumeAllVis(itemStack, player, getVisCost(), true, false)) {
+					if (wand.consumeAllVis(itemstack, player, getVisCost(itemstack), true, false)) {
 
 						int x = mop.blockX;
 						int y = mop.blockY;
@@ -79,31 +75,29 @@ public class ItemFocusIllumination extends ItemFocusBasic {
 						if (mop.sideHit == 5) {
 							x++;
 						}
-
 						world.setBlock(x, y, z, ModContent.blockWitor, 0, 2);
-
 					}
-
 				}
-
 			}
-
 		}
-
 		player.swingItem();
-
-		return itemStack;
-
+		return itemstack;
 	}
 
 	@Override
 	public String getSortingHelper(ItemStack itemStack) {return "ILLUMINATION";}
 
 	@Override
-	public AspectList getVisCost() {
+	public AspectList getVisCost(ItemStack itemstack) {
 
 		return new AspectList().add(Aspect.AIR, 50).add(Aspect.FIRE, 50);
 
 	}
+
+	@Override
+	public FocusUpgradeType[] getPossibleUpgradesByRank(ItemStack itemStack, int i) {
+		return new FocusUpgradeType[0];
+	}
+
 
 }

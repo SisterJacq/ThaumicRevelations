@@ -16,7 +16,7 @@ Please include the following:
 
 * Minecraft version
 * Forge version/build
-* Magnequasar Core Version
+* Flux Gear Core Version
 * Thaumic Revelations version
 * Versions of any mods potentially related to the issue 
 * Any relevant screenshots are greatly appreciated.

@@ -15,10 +15,10 @@ import thaumcraft.api.research.ResearchPage;
 public class ModResearch {
 
 	public static final Aspect EXUBITOR = new Aspect("exubitor", 0x3CD4FC, new Aspect[] {Aspect.ELDRITCH, Aspect.DEATH}, new ResourceLocation("trevelations", "textures/aspects/exubitor.png"), 771);
-	public static final Aspect CITRUS = new Aspect("citrus", 0xFF6E00, new Aspect[] {Aspect.PLANT, Aspect.SENSES}, new ResourceLocation("trevelations", "textures/aspects/exubitor.png"), 771);
-	public static final Aspect MAGNET = new Aspect("magnes", 0x515970, new Aspect[] {Aspect.METAL, Aspect.ENERGY}, new ResourceLocation("trevelations", "textures/aspects/exubitor.png"), 771);
-	public static final Aspect FLUX = new Aspect("fluctuatio", 0xAD0200, new Aspect[] {MAGNET, Aspect.MECHANISM}, new ResourceLocation("trevelations", "textures/aspects/exubitor.png"), 771);
-	public static final Aspect REVELATIONS = new Aspect("revelatio", 0x3971AD, new Aspect[] {Aspect.ELDRITCH, Aspect.MIND}, new ResourceLocation("trevelations", "textures/aspects/exubitor.png"), 771);
+	public static final Aspect CITRUS = new Aspect("citrus", 0xFF6E00, new Aspect[] {Aspect.PLANT, Aspect.SENSES}, new ResourceLocation("trevelations", "textures/aspects/citrus.png"), 771);
+	public static final Aspect MAGNET = new Aspect("magnes", 0x515970, new Aspect[] {Aspect.METAL, Aspect.ENERGY}, new ResourceLocation("trevelations", "textures/aspects/magnes.png"), 771);
+	public static final Aspect FLUX = new Aspect("fluctuatio", 0xAD0200, new Aspect[] {MAGNET, Aspect.MECHANISM}, new ResourceLocation("trevelations", "textures/aspects/fluctuatio.png"), 771);
+	public static final Aspect REVELATIONS = new Aspect("revelatio", 0x3971AD, new Aspect[] {Aspect.ELDRITCH, Aspect.MIND}, new ResourceLocation("trevelations", "textures/aspects/revelatiofez.png"), 771);
 
 	public static ResearchItem researchTWarden;
 	public static ResearchItem researchExubitura;

@@ -47,14 +47,8 @@ repositories {
 }
 
 // Load ForgeGradle
-// Apply the forge plugin - this adds all the magic for automatically obfuscating, deobfuscating, etc.
+// Apply the forge plugin - this adds all the magic for automagically obfuscating, deobfuscating, etc.
 apply plugin: 'forge'
-
-// This is our group.
-group = 'mortvana.trevelations'
-
-// This is our actual project within the group.
-archivesBaseName = "ThaumicRevelations"
 
 // Define the .properties file
 ext.configFile = file "build.properties"
@@ -66,61 +60,45 @@ configFile.withReader {
     prop.load(it)
     project.ext.config = new ConfigSlurper().parse prop
 }
+
+// This is our group.
+group = config.group
+
+// This is our actual project within the group.
+archivesBaseName = config.archiveBaseName
+
 /*configurations {
     deployerJars
 }*/
 
 dependencies {
     compile "mantle:Mantle:${config.minecraft_version}-${config.mantle_version}:deobf"
-	compile "tconstruct:TConstruct:${config.minecraft_version}-${config.tconstruct_version}:deobf"
-	compile "codechicken:CodeChickenLib:${config.minecraft_version}-${config.CCLIB_version}:dev"
-	compile "codechicken:CodeChickenCore:${config.minecraft_version}-${config.ccc_version}:dev"
-    compile "codechicken:NotEnoughItems:${config.minecraft_version}-${config.NEI_version}:dev"
-	compile "codechicken:ForgeMultipart:${config.minecraft_version}-${config.FMP_version}:dev"
+	//compile "tconstruct:TConstruct:${config.minecraft_version}-${config.tconstruct_version}:deobf"
+	//compile "codechicken:CodeChickenLib:${config.minecraft_version}-${config.CCLIB_version}:dev"
+	//compile "codechicken:CodeChickenCore:${config.minecraft_version}-${config.ccc_version}:dev"
+    //compile "codechicken:NotEnoughItems:${config.minecraft_version}-${config.NEI_version}:dev"
+	//compile "codechicken:ForgeMultipart:${config.minecraft_version}-${config.FMP_version}:dev"
 	//compile "mcp.mobius.waila:Waila:${config.waila_version}:dev"
     //compile "net.industrial-craft:industrialcraft-2:${config.ic2_version}:dev"
     compile fileTree(dir: 'lib', include: '*.jar')
 	//deployerJars 'org.apache.maven.wagon:wagon-ssh:2.2'
 }
 
-// Finds and sets version data
-/*task buildInfo {
-    def cmd = "git rev-parse --short HEAD"
-    def proc = cmd.execute()
-    proc.waitFor()
-    if (proc.exitValue() == 0) {
-        ext.revision = proc.text.trim()
-    } else {
-        ext.revision = "GITBORK"
-    }
-
-    if (System.getenv().BUILD_NUMBER != null) {
-        ext.buildNum = "jenkins${System.getenv().BUILD_NUMBER}"
-    } else {
-        ext.buildNum = "DEV.${project.buildInfo.revision}"
-    }
-}
-
-// Some SlimeKnights code I don't use or understand
-ext.artifact_version = 'NFG'
-if (System.getenv().ARTIFACT_VERSION == null) {
-    artifact_version = "${config.mod_version}.${project.buildInfo.buildNum}"
-}
-if (System.getenv().ARTIFACT_VERSION != null) {
-    artifact_version = "${system.getenv().ARTIFACT_VERSION}"
-}*/
-
-//version = "/*${config.minecraft_version}*/1.7.10-10.13.0.1188/*${artifact_version}*/"
-
 // Setup the forge minecraft plugin data.
 minecraft {
     version = config.minecraft_version + "-" + config.forge_version
     /*if  (file('../run').exists) {
-		runDir = '../run/assests'
+		runDir = "../run/assests"
 	} else {*/
-	runDir = 'run/assets'
+        runDir = "run/assets"
 	//}
-    replace '${version}', project.version
+    // Replace stuff
+	replace '${version}', project.version
+    replace "@VERSION@", /*"${*/project.version//}.${project.build}"
+    //replace "@MC_VERSION@", project.minecraft_version
+    /*if (project.hasProperty("Mod_signature")) {
+        replace "@FINGERPRINT@", project.Mod_signature
+    }*/
 }
 
 sourceSets {
@@ -131,8 +109,33 @@ sourceSets {
     }
 }
 
-processResources
-{
+/*task buildInfo() {
+    def cmd = "git rev-parse --short HEAD"
+    def proc = cmd.execute()
+    proc.waitFor()
+    if (proc.exitValue() == 0) {
+        ext.revision = "DEV." + proc.text.trim()
+    } else {
+        ext.revision = "GITBORK"
+    }
+    if (System.getenv().BUILD_NUMBER != null) {
+        ext.buildNum = "${System.getenv().BUILD_NUMBER}"
+    } else {
+        ext.buildNum = "${project.buildInfo.revision}"
+    }
+}
+
+ext.artifact_version = 'NFG'
+if (System.getenv().ARTIFACT_VERSION == null) {
+    artifact_version = "${config.mod_version}-${project.buildInfo.buildNum}"
+}
+if(System.getenv().ARTIFACT_VERSION != null) {
+    artifact_version = "${system.getenv().ARTIFACT_VERSION}"
+}*/
+
+version = "${config.minecraft_version}-${config.artifact_version}"
+
+processResources {
     // this will ensure that this task is redone when the versions change.
     inputs.property "version", project.version
     inputs.property "mcversion", project.minecraft.version
@@ -140,41 +143,32 @@ processResources
     // we're omitting the .xcf files - they're development only
     exclude '**/*.xcf'
 
-    // replace stuff in mcmod.info, nothing else
+    // replace stuff in files
     from(sourceSets.main.resources.srcDirs) {
-        include 'mcmod.info'
+        include '**/*.lang'
+        include '**/*.info'
+        include '**/*.properties'
                 
         // replace version and mcversion
         expand 'version':project.version, 'mcversion':project.minecraft.version
     }
         
-    // copy everything else, thats not the mcmod.info
+    // copy everything else, thats not the files above
     from(sourceSets.main.resources.srcDirs) {
-        exclude 'mcmod.info'
+        exclude '**/*.lang'
+        exclude '**/*.info'
+        exclude '**/*.properties'
     }
-
-    
-	// Replace stuff in text files, not binaries.
-    //from(sourceSets.main.resources.srcDirs) {
-        //include '**/*.info'
-        // Replace version and MCversion
-        /*expand 'version':artifact_version,'MCversion':config.minecraft_version
-    }
-        
-    // Copy everything else that's not text
-    from(sourceSets.main.resources.srcDirs) {*/
-        //exclude '**/*.info'
-    //}
 }
 
-// No CoreMod for you!
-// Add Coremod Manifest
-/*jar {
-    manifest {
-        attributes 'FMLCorePlugin': 'tconstruct.preloader.TConstructLoaderContainer'
+// Add Coremod Manifest and Classifier (if I wanted one)
+jar {
+    /*manifest {
+        attributes 'FMLCorePlugin': 'mortvana.trevelations.preloader.CoreModClass'
         attributes 'FMLCorePluginContainsFMLMod': 'true'
-    }
-}*/
+    }*/
+    //classifier = 'universal'
+}
 
 // Add in a source jar for people, should they desire to download such a thing
 task sourceJar(type: Jar) {
@@ -187,18 +181,23 @@ task sourceJar(type: Jar) {
 task deobfJar(type: Jar) {
     from sourceSets.main.output
     classifier = 'deobf'
-	// Ye olde SlimeKnight code
-	//manifest {
-        //attributes 'FMLCorePlugin': 'tconstruct.preloader.TConstructLoaderContainer'
-        //attributes 'FMLCorePluginContainsFMLMod': 'true'
-    //}
+	/*manifest {
+        attributes 'FMLCorePlugin': 'mortvana.trevelations.preloader.CoreModClass'
+        attributes 'FMLCorePluginContainsFMLMod': 'true'
+    }*/
 }
+
+// Add a javadoc jar
+/*task javadocJar(type: Jar, dependsOn: javadoc) {
+    from 'build/docs/javadoc'
+    classifier = 'javadoc'
+}*/
 
 // No APIs... Yet...
 // Create API library jar
 /*task libJar(type: Jar) {
     from(sourceSets.main.java) {
-        include "tconstruct/library/*"
+        include "mortvana/trevelations/library/*"
     }
     classifier = 'lib'
 }*/
@@ -206,6 +205,8 @@ task deobfJar(type: Jar) {
 artifacts {
     archives deobfJar
     archives sourceJar
+    //archives javadocJar
+    //archives apiJar
     //archives libJar
 }
 
@@ -235,6 +236,3 @@ artifacts {
         }    
     }
 }*/
-
-
-

@@ -1,4 +1,4 @@
-#ant stuff
+#Ant Stuff
 build.xml
 /bin/
 /download/
@@ -11,10 +11,10 @@ build.xml
 Icon?
 ehthumbs.db
 Thumbs.db
-#gradle stuff
+#Gradle Stuff
 /.gradle
 /build/
-#/run/
+/run/
 #IDEA files from Gradle
 out/
 .idea/
@@ -27,6 +27,19 @@ out/
 /.classpath
 /.project
 /.settings/
+#Possibly Redundant Stuff
+\run
+\.gradle
+\.idea
+\build
+\lib
+*.iml
+*.ipr
+*.iws
+\out
+\bin
+.classpath
+.project
+.settings/
 
-run/
 lib/Thaumcraft-deobf-1.7.10-4.2.2.B2

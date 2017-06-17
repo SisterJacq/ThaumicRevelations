@@ -1,15 +1,26 @@
 /*
  * Mortvana's Master build file
- * Based TConstruct's master build file by Sunstrike and ProgWML6, with help from AbrarSyed
+ * Based on Tinker's Construct's and Applied Energergistics' build files
  */
+
+// Load ForgeGradle
+// Apply the forge plugin - this adds all the magic for automatically obfuscating, deobfuscating, etc.
+apply plugin: 'forge'
+// Apply the CurseForge plugin - this automatically uploads to betas to CurseForge (Not yet used)
+//apply plugin: 'curseforge'
+
+apply from: 'gradle/scripts/dependencies.gradle'
+apply from: 'gradle/scripts/artifacts.gradle'
+apply from: 'gradle/scripts/miscellaneous.gradle'
+
 // This sets us up for building a forge project - you need all of these
 buildscript {
     repositories {
         mavenCentral()
 		mavenLocal()
         maven {
-            name = 'ForgeFS'
-            url = 'http://files.minecraftforge.net/maven'
+            name = "ForgeFS"
+            url = "http://files.minecraftforge.net/maven"
         }
 		maven {
             name = "sonatype"
@@ -22,92 +33,141 @@ buildscript {
     }
 }
 
-
-repositories {
-    maven {
-        name 'CB Maven FS'
-        url "http://chickenbones.net/maven/"
-    }
-	maven {
-         name "ProfMobius Maven FS"
-         url "http://mobiusstrip.eu/maven"
-     }
-    maven {
-        name 'DVS1 Maven FS'
-        url 'http://dvs1.progwml6.com/files/maven'
-    }
-    maven {
-        name 'ForgeFS'
-        url 'http://files.minecraftforge.net/maven'
-     }
-    maven {
-        name "IC2"
-        url "http://maven.ic2.player.to/"
-    }
+configurations.all {
+    resolutionStrategy.cacheDynamicVersionsFor 7200, 'hours'
 }
 
-// Load ForgeGradle
-// Apply the forge plugin - this adds all the magic for automagically obfuscating, deobfuscating, etc.
-apply plugin: 'forge'
+sourceCompatibility = JavaVersion.VERSION_1_6
+targetCompatibility = JavaVersion.VERSION_1_6
 
 // Define the .properties file
-ext.configFile = file "build.properties"
-
-configFile.withReader {
-    // Load and read config. 
-	// It shall from now on be referenced as simply config or project.config
+//ext.configFile = file "gradle.properties"
+/*configFile.withReader {
+    // Load and read the config.
+    // It shall from now on be referenced as simply config or project.config
     def prop = new Properties()
     prop.load(it)
     project.ext.config = new ConfigSlurper().parse prop
+}*/
+
+// Determines the version from the many variables, uses a convoluted method, because I can't strings in Gradle...
+if (use_MC_version) {
+	if (use_appendix) {
+		version = "${minecraft_version}-v${mod_version_version}.${mod_version_major}.${mod_version_minor}.${mod_version_revision}${mod_version_patch}-${mod_version_appendix} ${mod_version_build}-${mod_internal_build}"
+	} else {
+		version = "${minecraft_version}-v${mod_version_version}.${mod_version_major}.${mod_version_minor}.${mod_version_revision}${mod_version_patch}-${mod_internal_build}"
+	}
+} else {
+	if (use_appendix) {
+		version = "v${mod_version_version}.${mod_version_major}.${mod_version_minor}.${mod_version_revision}${mod_version_patch}-${mod_version_appendix} ${mod_version_build}-${mod_internal_build}"
+	} else {
+		version = "v${mod_version_version}.${mod_version_major}.${mod_version_minor}.${mod_version_revision}${mod_version_patch}-${mod_internal_build}"
+	}
 }
 
 // This is our group.
-group = config.group
+group = mod_group
 
 // This is our actual project within the group.
-archivesBaseName = config.archiveBaseName
+archivesBaseName = mod_archiveBaseName
 
-/*configurations {
-    deployerJars
+// If TeamCity is running this build, let's see the version info.
+/*if (hasProperty("teamcity")) {
+    version = teamcity["build.number"]
+
+    // Fix for main branch being built.
+    version = version.replaceAll("/", "-")
 }*/
 
-dependencies {
-    compile "mantle:Mantle:${config.minecraft_version}-${config.mantle_version}:deobf"
-	//compile "tconstruct:TConstruct:${config.minecraft_version}-${config.tconstruct_version}:deobf"
-	//compile "codechicken:CodeChickenLib:${config.minecraft_version}-${config.CCLIB_version}:dev"
-	//compile "codechicken:CodeChickenCore:${config.minecraft_version}-${config.ccc_version}:dev"
-    //compile "codechicken:NotEnoughItems:${config.minecraft_version}-${config.NEI_version}:dev"
-	//compile "codechicken:ForgeMultipart:${config.minecraft_version}-${config.FMP_version}:dev"
-	//compile "mcp.mobius.waila:Waila:${config.waila_version}:dev"
-    //compile "net.industrial-craft:industrialcraft-2:${config.ic2_version}:dev"
-    compile fileTree(dir: 'lib', include: '*.jar')
-	//deployerJars 'org.apache.maven.wagon:wagon-ssh:2.2'
+// Add Coremod Manifest and Classifier (if I wanted one)
+jar {
+    /*manifest {
+        attributes 'FMLCorePlugin': 'tconstruct.preloader.TConstructLoaderContainer'
+        attributes 'FMLCorePluginContainsFMLMod': 'true'
+    }*/
+    //classifier = 'universal'
+
+    // Specify which files are really included, can control which APIs should be included.
+    /*include "fluxgear/**"
+    include "assets/**"
+    include "mcmod.info"
+    include "pack.mcmeta"*/
 }
 
 // Setup the forge minecraft plugin data.
 minecraft {
-    version = config.minecraft_version + "-" + config.forge_version
-    /*if  (file('../run').exists) {
-		runDir = "../run/assests"
-	} else {*/
-        runDir = "run/assets"
-	//}
+    version = minecraft_version + "-" + forge_version
+    mappings = 'stable_12'
+    //if  (file('../run').exists) { runDir = "../run/" } else {
+    runDir = "run"
+    //}
     // Replace stuff
-	replace '${version}', project.version
-    replace "@VERSION@", /*"${*/project.version//}.${project.build}"
-    //replace "@MC_VERSION@", project.minecraft_version
-    /*if (project.hasProperty("Mod_signature")) {
-        replace "@FINGERPRINT@", project.Mod_signature
-    }*/
+    //replace '${version}', mod_version
+    replace "@VERSION@", "v${mod_version_version}.${mod_version_major}.${mod_version_minor}.${mod_version_revision}${mod_version_patch}-${mod_internal_build}"
+    replace "@MC_VERSION@", project.minecraft_version
+    replaceIn mod_mainClass
+    //if (project.hasProperty("Mod_signature")) { replace "@FINGERPRINT@", project.Mod_signature }
 }
 
 sourceSets {
     main {
-        resources {
-            srcDir 'resources'
+        java {
+            srcDirs += "src/api/main"
+            srcDirs += "src/main/java"
         }
+
+        resources {
+            //srcDir 'resources'
+            srcDir "src/main/resources"
+            //TODO
+            /* include "assets/appliedenergistics2/recipes/*.recipe",
+            "assets/appliedenergistics2/recipes/README.html",
+            "assets/appliedenergistics2/lang/*.lang",
+            "assets/appliedenergistics2/textures/blocks/*",
+            "assets/appliedenergistics2/textures/guis/*",
+            "assets/appliedenergistics2/textures/models/*",
+            "assets/appliedenergistics2/textures/items/*",
+            "assets/appliedenergistics2/meta/*",
+            "mcmod.info",
+            "pack.mcmeta"*/
+            //include "assets/fluxgear/lang/*.lang"
+        }
+        //IntelliJ 14 be derping...
+        //output.resourcesDir = output.classesDir
     }
 }
+
+processResources {
+    // this will ensure that this task is redone when the versions change.
+    inputs.property "version", project.version
+    inputs.property "mcversion", project.minecraft.version
+
+    // we're omitting the .xcf files - they're development only
+    exclude '**/*.xcf'
+
+    // replace stuff in files
+    from(sourceSets.main.resources.srcDirs) {
+        include '**/*.lang'
+        include '**/*.info'
+        include '**/*.properties'
+
+        // replace version and mcversion
+        expand 'version':project.version, 'mcversion':project.minecraft.version
+    }
+
+    // copy everything else, thats not the files above
+    from(sourceSets.main.resources.srcDirs) {
+        exclude '**/*.lang'
+        exclude '**/*.info'
+        exclude '**/*.properties'
+    }
+}
+
+/* *=-=-=-=* Deprecated Schtuff *=-=-=-=* */
+
+/*configurations {
+    deployerJars
+}*/
 
 /*task buildInfo() {
     def cmd = "git rev-parse --short HEAD"
@@ -131,83 +191,6 @@ if (System.getenv().ARTIFACT_VERSION == null) {
 }
 if(System.getenv().ARTIFACT_VERSION != null) {
     artifact_version = "${system.getenv().ARTIFACT_VERSION}"
-}*/
-
-version = "${config.minecraft_version}-${config.artifact_version}"
-
-processResources {
-    // this will ensure that this task is redone when the versions change.
-    inputs.property "version", project.version
-    inputs.property "mcversion", project.minecraft.version
-
-    // we're omitting the .xcf files - they're development only
-    exclude '**/*.xcf'
-
-    // replace stuff in files
-    from(sourceSets.main.resources.srcDirs) {
-        include '**/*.lang'
-        include '**/*.info'
-        include '**/*.properties'
-                
-        // replace version and mcversion
-        expand 'version':project.version, 'mcversion':project.minecraft.version
-    }
-        
-    // copy everything else, thats not the files above
-    from(sourceSets.main.resources.srcDirs) {
-        exclude '**/*.lang'
-        exclude '**/*.info'
-        exclude '**/*.properties'
-    }
-}
-
-// Add Coremod Manifest and Classifier (if I wanted one)
-jar {
-    /*manifest {
-        attributes 'FMLCorePlugin': 'mortvana.trevelations.preloader.CoreModClass'
-        attributes 'FMLCorePluginContainsFMLMod': 'true'
-    }*/
-    //classifier = 'universal'
-}
-
-// Add in a source jar for people, should they desire to download such a thing
-task sourceJar(type: Jar) {
-    from sourceSets.main.allSource
-    classifier = 'src'
-    version = "${project.minecraft.version}-${project.version}"
-}
-
-// Create de-obfuscated development jars, because the normal output has been made to be obfuscated
-task deobfJar(type: Jar) {
-    from sourceSets.main.output
-    classifier = 'deobf'
-	/*manifest {
-        attributes 'FMLCorePlugin': 'mortvana.trevelations.preloader.CoreModClass'
-        attributes 'FMLCorePluginContainsFMLMod': 'true'
-    }*/
-}
-
-// Add a javadoc jar
-/*task javadocJar(type: Jar, dependsOn: javadoc) {
-    from 'build/docs/javadoc'
-    classifier = 'javadoc'
-}*/
-
-// No APIs... Yet...
-// Create API library jar
-/*task libJar(type: Jar) {
-    from(sourceSets.main.java) {
-        include "mortvana/trevelations/library/*"
-    }
-    classifier = 'lib'
-}*/
-
-artifacts {
-    archives deobfJar
-    archives sourceJar
-    //archives javadocJar
-    //archives apiJar
-    //archives libJar
 }
 
 // I don't always upload, but when I Dos Equis...

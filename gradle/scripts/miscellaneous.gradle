@@ -1,0 +1,148 @@
+task wrapper(type: Wrapper) {
+    gradleVersion = "2.4"
+}
+
+/* *=-=-=-=* Install/Uninstall Mods *=-=-=-=* */
+
+// WAILA
+task installWAILA(type: Copy, dependsOn: "uninstallWAILA") {
+    from configurations.mods
+    include "**/*Waila*dev.jar"
+    into file(minecraft.runDir + "/mods")
+}
+
+task uninstallWAILA(type: Delete) {
+    delete fileTree(dir: minecraft.runDir + "/mods", include: "*Waila*.jar")
+}
+
+// JABBA
+task installJABBA(type: Copy, dependsOn: "uninstallJABBA") {
+    from configurations.mods
+    include "**/*Jabba*dev.jar"
+    into file(minecraft.runDir + "/mods")
+}
+
+task uninstallJABBA(type: Delete) {
+    delete fileTree(dir: minecraft.runDir + "/mods", include: "*Jabba*.jar")
+}
+
+// Ender Storage
+task installEnderStorage(type: Copy, dependsOn: "uninstallEnderStorage") {
+    from configurations.mods
+    include "**/*EnderStorage*dev.jar"
+    into file(minecraft.runDir + "/mods")
+}
+
+task uninstallEnderStorage(type: Delete) {
+    delete fileTree(dir: minecraft.runDir + "/mods", include: "*EnderStorage*.jar")
+}
+
+// Translocator
+task installTranslocator(type: Copy, dependsOn: "uninstallTranslocator") {
+    from configurations.mods
+    include "**/*Translocator*dev.jar"
+    into file(minecraft.runDir + "/mods")
+}
+
+task uninstallTranslocator(type: Delete) {
+    delete fileTree(dir: minecraft.runDir + "/mods", include: "*Translocator*.jar")
+}
+
+// Industrial Craft 2
+task installIC2(type: Copy, dependsOn: "uninstallIC2") {
+    from configurations.mods
+    include "**/*industrialcraft2*dev.jar"
+    into file(minecraft.runDir + "/mods")
+}
+
+task uninstallIC2(type: Delete) {
+    delete fileTree(dir: minecraft.runDir + "/mods", include: "*industrialcraft2*.jar")
+}
+
+// Ender IO
+task installEnderIO(type: Copy, dependsOn: "uninstallEnderIO") {
+    from configurations.mods
+    include "**/*EnderIO*dev.jar"
+    into file(minecraft.runDir + "/mods")
+}
+
+task uninstallEnderIO(type: Delete) {
+    delete fileTree(dir: minecraft.runDir + "/mods", include: "*EnderIO*.jar")
+}
+
+// Thermal Suite
+//task installCoFH(type: Copy, dependsOn: "uninstallCoFH") {
+//    from configurations.mods
+//    include "**/*CoFHLib*dev.jar"
+//    include "**/*CoFHCore*dev.jar"
+//    include "**/*ThermalFoundation*dev.jar"
+//    include "**/*ThermalExpansion*dev.jar"
+
+/*    into file(minecraft.runDir + "/mods")
+}
+
+task uninstallCoFH(type: Delete) {
+    delete fileTree(dir: minecraft.runDir + "/mods", includes: ["*CoFHLib*.jar", "*CoFHCore*.jar", "*ThermalFoundation*.jar", "*ThermalExpansion*.jar"])
+}*/
+
+// Inventory Tweaks
+task installInvTweaks(type: Copy, dependsOn: "uninstallInvTweaks") {
+    from configurations.mods
+    include "**/*InventoryTweaks*deobf.jar"
+    into file(minecraft.runDir + "/mods")
+}
+
+task uninstallInvTweaks(type: Delete) {
+    delete fileTree(dir: minecraft.runDir + "/mods", include: "*InventoryTweaks*.jar")
+}
+
+// Better Storage
+task installBetterStorage(type: Copy, dependsOn: "uninstallBetterStorage") {
+    from configurations.mods
+    include "**/*BetterStorage*deobf.jar"
+    into file(minecraft.runDir + "/mods")
+}
+
+task uninstallBetterStorage(type: Delete) {
+    delete fileTree(dir: minecraft.runDir + "/mods", include: "*BetterStorage*.jar")
+}
+
+// OpenComputers
+task installOpenComputers(type: Copy, dependsOn: "uninstallOpenComputers") {
+    from configurations.mods
+    include "**/*OpenComputers*dev.jar"
+    into file(minecraft.runDir + "/mods")
+}
+
+task uninstallOpenComputers(type: Delete) {
+    delete fileTree(dir: minecraft.runDir + "/mods", include: "*OpenComputers*.jar")
+}
+
+/* *=-=-=-=* CodeChickenCopy *=-=-=-=* */
+
+// Searches for NEI and CodeChicken stuff from our compile set and adds them
+// to the mods folder in our run directory.
+task copyChicken(type: Copy, dependsOn: "extractUserDev") {
+    from configurations.compile
+    include "**/*CodeChicken*.jar", "**/*NotEnoughItems*.jar"
+    // Because CodeChickenCore downloads it automatically anyways...
+    //exclude "**/*CodeChickenLib*.jar"
+    into file(minecraft.runDir + "/mods")
+    mustRunAfter "deobfBinJar"
+    mustRunAfter "repackMinecraft"
+}
+
+tasks.setupDevWorkspace.dependsOn copyChicken
+tasks.setupDecompWorkspace.dependsOn copyChicken
+
+/* *=-=-=-=* IntelliJ IDEA *=-=-=-=* */
+
+apply plugin: 'idea'
+
+idea {
+    module {
+        inheritOutputDirs = true
+		sourceDirs += file('dummy')
+        sourceDirs += file('api')
+    }
+}

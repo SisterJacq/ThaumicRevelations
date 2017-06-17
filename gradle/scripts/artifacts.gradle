@@ -1,0 +1,61 @@
+// Create de-obfuscated development jars, because the normal output has been made to be obfuscated
+task deobfJar(type: Jar) {
+    from sourceSets.main.output
+    /*from(sourceSets.main.output) {
+        include "mortvana/projectfluxgear/**"
+        include "assets/**"
+        include "mcmod.info"
+    }*/
+    classifier = 'deobf'
+	//version = "${project.minecraft.version}-${project.version}"
+	// Ye olde SlimeKnight code
+	/*manifest {
+        attributes 'FMLCorePlugin': 'tconstruct.preloader.TConstructLoaderContainer'
+        attributes 'FMLCorePluginContainsFMLMod': 'true'
+    }*/
+}
+
+// Add in a source jar for people, should they desire to download such a thing
+task sourceJar(type: Jar, dependsOn:classes) {
+    from sourceSets.main.allSource
+    classifier = 'src'
+	//version = "${project.minecraft.version}-${project.version}"
+}
+
+// No APIs... Yet...
+// Create API library jar
+task apiJar(type: Jar) {
+    from(sourceSets.api.java) {
+        include "mortvana/projectfluxgear/api/*"
+    }
+    from(sourceSets.main.java) {
+        include "mortvana/projectfluxgear/api/*"
+    }
+
+    classifier = 'api'
+	//version = "${project.minecraft.version}-${project.version}"
+}
+
+// Add a javadoc jar
+task javadocs(type: Javadoc) {
+    source = sourceSets.main.java
+    include "mortvana/projectfluxgear/api**"
+
+    classpath = configurations.compile
+}
+
+task javadocJar(type: Jar, dependsOn: javadocs) {
+    from 'build/docs/javadoc'
+    classifier = 'javadoc'
+	//version = "${project.minecraft.version}-${project.version}"
+}
+
+artifacts {
+    //if(project.fullBuild) {
+    archives deobfJar
+    archives sourceJar
+    archives javadocJar
+    archives apiJar
+    //archives libJar
+    //}
+}

@@ -7,6 +7,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.Enchantment;
+import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import thaumcraft.api.aspects.Aspect;
@@ -16,6 +17,10 @@ import static thaumcraft.api.aspects.Aspect.*;
 public class ThaumicLibrary {
 
     /** MOD CONSTANTS **/
+    public static final String MOD_ID = "ThaumicRevelations";
+	public static final String MOD_NAME = "Thaumic Revelations";
+	public static final String MOD_VERSION = "vPO.TA.TO.RANDOM-DEV";
+	public static final String MOD_DEPENDENCIES = "required-after:Thaumcraft; after:MagicBees[2.3.0)";
     public static final String RESOURCE_PREFIX = "thaumrev";
     public static final String TEX_LOC_DEFAULT = "thaumrev:";
 
@@ -31,8 +36,15 @@ public class ThaumicLibrary {
     public static final Aspect FLUX = new Aspect("fluxus", 0xAD0200, new Aspect[] { MAGNET, MECHANISM }, new ResourceLocation(RESOURCE_PREFIX, "textures/aspects/fluxus.png"), 771);
     public static final Aspect REVELATIONS = new Aspect("patefactio", 0x3971AD, new Aspect[] { TRAVEL, MIND }, new ResourceLocation(RESOURCE_PREFIX, "textures/aspects/revelatiofez.png"), 771);
 
+	/** ARMOR MATERIALS **/
+	public static ArmorMaterial wardencloth;
 
-    /** ENCHANTMENTS **/
+
+	/** ARMOR ARRAYS **/
+	public int[] discountWardencloth = new int[] {5, 2, 2, 1};
+
+
+	/** ENCHANTMENTS **/
     public static Enchantment enchantStabilizing;
 
     /** CREATIVE TABS **/
@@ -61,6 +73,9 @@ public class ThaumicLibrary {
     public static ItemStack wardenAmulet;                   //00000
     public static ItemStack loveRing;                       //00001
 
-    /* RENDER IDs */
+    /** RENDER IDs **/
     public static int wardedChestRenderID = -1;
+
+	/** NBT KEYS **/
+	public static final String  DURABILITY = "DURABILITY";
 }

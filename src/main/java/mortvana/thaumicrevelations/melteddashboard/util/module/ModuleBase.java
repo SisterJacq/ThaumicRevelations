@@ -22,17 +22,18 @@ public class ModuleBase implements IEventInitialized {
 
 	@Override
 	public void preInit(FMLPreInitializationEvent event) {
-		content.preInit(config);
+		content.setConfig(config);
+		content.preInit();
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
-		content.init(config);
+		content.init();
 	}
 
 	@Override
 	public void postInit(FMLPostInitializationEvent event) {
-		content.postInit(config);
+		content.postInit();
 	}
 
 	public boolean isEnabled() {

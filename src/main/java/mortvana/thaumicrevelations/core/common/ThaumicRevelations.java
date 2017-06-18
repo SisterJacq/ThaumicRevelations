@@ -6,28 +6,27 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.*;
 import mortvana.thaumicrevelations.core.common.config.*;
 import mortvana.thaumicrevelations.eldritch.common.EldritchContent;
+import mortvana.thaumicrevelations.library.ThaumicLibrary;
 import mortvana.thaumicrevelations.melteddashboard.util.module.ModuleLoader;
 import mortvana.thaumicrevelations.core.network.CommonProxy;
 import mortvana.thaumicrevelations.warden.common.WardenContent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-@Mod(modid = ThaumicRevelations.MOD_ID, name = ThaumicRevelations.MOD_NAME, version = ThaumicRevelations.MOD_VERSION, dependencies = ThaumicRevelations.MOD_DEPENDENCIES)
+@Mod(modid = ThaumicLibrary.MOD_ID, name = ThaumicLibrary.MOD_NAME, version = ThaumicLibrary.MOD_VERSION, dependencies = ThaumicLibrary.MOD_DEPENDENCIES)
 public class ThaumicRevelations {
-
-    public static final String MOD_ID = "ThaumicRevelations";
-    public static final String MOD_NAME = "Thaumic Revelations";
-    public static final String MOD_VERSION = "vPO.TA.TO.RANDOM-DEV";
 
     @Instance
     public static ThaumicRevelations instance;
 
-    @SidedProxy(clientSide = "mortvana.thaumicrevelations.core.network.ClientProxy", serverSide = "mortvana.thaumicrevelations.core.network.CommonProxy", modId = MOD_ID)
+    @SidedProxy(clientSide = "mortvana.thaumicrevelations.core.network.ClientProxy", serverSide = "mortvana.thaumicrevelations.core.network.CommonProxy", modId = ThaumicLibrary.MOD_ID)
     public static CommonProxy proxy;
 
+	// Move to Melted Dashboard Core once I have enough stuff to warrant creating it as a separate library.
+	// So basically during after getting out of alpha and into beta, so v0.1.0.0.
     public static final Logger logger = LogManager.getLogger("Flux Gear");
 
-    public ModuleLoader moduleLoader = new ModuleLoader(MOD_ID);
+    public ModuleLoader moduleLoader = new ModuleLoader(ThaumicLibrary.MOD_ID, logger);
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
@@ -47,7 +46,4 @@ public class ThaumicRevelations {
     public void postInit(FMLPostInitializationEvent event) {
         moduleLoader.postInit(event);
     }
-
-    public static final String MOD_DEPENDENCIES = "required-after:Thaumcraft; after:MagicBees[2.3.0)";
-
 }

@@ -6,6 +6,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import mortvana.thaumicrevelations.melteddashboard.util.ConfigBase;
 import mortvana.thaumicrevelations.melteddashboard.util.IConfigInitialized;
 import mortvana.thaumicrevelations.melteddashboard.util.IEventInitialized;
+import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,9 +16,11 @@ public class ModuleLoader implements IEventInitialized {
 	public List<ModuleBase> modules = new ArrayList<ModuleBase>();
 
     protected String name;
+	protected Logger logger;
 
-    public ModuleLoader(String name) {
+    public ModuleLoader(String name, Logger logger) {
         this.name = name;
+	    this.logger = logger;
     }
 
 	@Override
@@ -48,7 +51,20 @@ public class ModuleLoader implements IEventInitialized {
 	}
 
 	public void addModule(String name, boolean enabled, IConfigInitialized content, ConfigBase config) {
-		modules.add(new ModuleBase(name, enabled, content, config));
+		if (getModuleFromName(name) == null) {
+			modules.add(new ModuleBase(name, enabled, content, config));
+		} else {
+			logger.error("Someone tried to register a module with " + this.name + " with the name " + name + ". A module with this name already exists, so it has been skipped!");
+		}
+	}
+
+	public ModuleBase getModuleFromName(String name) {
+		for (ModuleBase module : modules) {
+			if (module.name.equals(name)) {
+				return module;
+			}
+		}
+		return null;
 	}
 
     public String getName() {

@@ -26,15 +26,15 @@ public abstract class ItemArmorFluxGear extends ItemArmor {
 	public boolean showInCreative = true;
 	public Multimap<String, AttributeModifier> properties = HashMultimap.create();
 
-	public ItemArmorFluxGear(ArmorMaterial material, int par2, int type, String name, String sheet, String icon) {
-		super(material, par2, type);
+	public ItemArmorFluxGear(ArmorMaterial material, int index, int type, String name, String sheet, String icon) {
+		super(material, index, type);
 		setUnlocalizedName(name);
 		sheetName = sheet;
 		this.icon = icon;
 	}
 
 	public ItemArmorFluxGear(ArmorMaterial material, int type, String name, String sheet, String icon) {
-		super(material, 0, type);
+		super(material, 2, type);
 		setUnlocalizedName(name);
 		sheetName = sheet;
 		this.icon = icon;

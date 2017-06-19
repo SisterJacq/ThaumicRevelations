@@ -5,18 +5,23 @@ import mortvana.thaumicrevelations.melteddashboard.util.IConfigInitialized;
 
 public class EldritchContent implements IConfigInitialized {
 
-    @Override
-    public void preInit(ConfigBase config) {
+	@Override
+	public void setConfig(ConfigBase config) {
+		//TODO
+	}
+
+	@Override
+    public void preInit() {
 
     }
 
     @Override
-    public void init(ConfigBase config) {
+    public void init() {
 
     }
 
     @Override
-    public void postInit(ConfigBase config) {
+    public void postInit() {
 
     }
 }

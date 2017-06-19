@@ -2,7 +2,13 @@ package mortvana.thaumicrevelations.api.item.infusion;
 
 import net.minecraft.item.ItemStack;
 
+import cpw.mods.fml.common.Optional;
+
+import cofh.api.energy.IEnergyContainerItem;
+import cofh.api.item.IInventoryContainerItem;
+
 import mortvana.thaumicrevelations.api.util.enums.EnumEquipmentType;
+import mortvana.thaumicrevelations.api.util.slot.SlotInfusion;
 import thaumcraft.api.aspects.Aspect;
 
 /**
@@ -10,8 +16,10 @@ import thaumcraft.api.aspects.Aspect;
  *  Aspect Infusion Orbs (and other IInfusionItems) to augment them.
  *
  *  @author Mortvana
- * */
-public interface IInfusableItem {
+ */
+
+@Optional.Interface(modid = "CoFHAPI|energy", iface = "cofh.api.energy.IEnergyContainerItem")
+public interface IInfusableItem extends IInventoryContainerItem, IEnergyContainerItem {
 
 	/**
 	 *  Returns the total number of slots for infusions on an item. This means both innate equipment infusions, and
@@ -19,14 +27,14 @@ public interface IInfusableItem {
 	 *
 	 *  @return - Total number of slots
 	 */
-	int getNumberSlotsTotal();
+	int getNumberSlotsTotal(ItemStack stack);
 
 	/**
 	 *  Returns the number of locked slots on an item. Locked slots come with pre-assigned aspect infusions.
 	 *
 	 *  @return - Number of locked slots
 	 */
-	int getNumberSlotsUnlocked();
+	int getNumberSlotsUnlocked(ItemStack stack);
 
 	/**
 	 *  Returns the number of unlocked slots on an item. Unlocked slots are the standard slots which are taken up by
@@ -34,7 +42,7 @@ public interface IInfusableItem {
 	 *
 	 *  @return - Number of unlocked slots
 	 */
-	int getNumberSlotsLocked();
+	int getNumberSlotsLocked(ItemStack stack);
 
 	/**
 	 *  Sets both the number of locked slots and unlocked slots on a given item. May overwrite any already entered data.
@@ -46,31 +54,14 @@ public interface IInfusableItem {
 	IInfusableItem setNumberSlots(int unlocked, int locked);
 
 	/**
-	 *  Returns the Item implementing IInfusionItem in a given slot, such as Thaumic Revelations' Aspect Orbs.
-	 *
-	 *  @param slot - The numeric ID of the slot being queried
-	 *  @return - The Item implementing IInfusionItem in the queried slot
-	 * */
-	IInfusionItem getSlotItem(int slot);
-
-	/**
 	 *  Returns the ItemStack of an Item implementing IInfusionItem in a given slot.
 	 *
 	 *  @param slot - The numeric ID of the slot being queried
 	 *  @return - The ItemStackof an Item implementing IInfusionItem in the queried slot
 	 */
-	ItemStack getSlotContent(int slot);
+	ItemStack getSlotContents(int slot);
 
-	/**
-	 *  Returns the Aspect contained within the IInfusionItem in a given slot. If the slot is empty or the IInfusionItem
-	 *  is disabled, returns null.
-	 *
-	 *  @param slot - The numeric ID of the slot being queried
-	 *  @return - The Aspect contained within the queried slot
-	 */
-	Aspect getSlotAspect(int slot);
-
-	//Aspect getSlotPotency(int slot);
+	SlotInfusion[] getSlots();
 
 	/**
 	 *  Returns whether or not a slot is locked. Returns true if it is unlocked, and false if it is locked.
@@ -90,5 +81,7 @@ public interface IInfusableItem {
 	IInfusableItem setType(EnumEquipmentType type);
 
 	IInfusableItem setSlotContents(ItemStack contents, int slot);
+
+	IInfusableItem updateData();
 
 }

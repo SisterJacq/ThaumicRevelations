@@ -279,8 +279,8 @@ public class FluxGearItem extends Item {
                 //TODO: String separation
                 list.add(tooltipMap.get(meta));
             }
-        } else {
+        } /*else {
             list.add(ThaumicLibrary.NULL_TOOLTIP);
-        }
+        }*/
     }
 }

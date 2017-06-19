@@ -297,9 +297,10 @@ public class StringHelper {
         return count;
     }
 
-    public static String[] breakString(String string) {
+	/* public static String[] breakString(String string) {
         String[] strings;
-    }
+
+    }*/
 
 	/** Tooltips **/
 

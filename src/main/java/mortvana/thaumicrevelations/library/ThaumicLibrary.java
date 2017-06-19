@@ -21,6 +21,7 @@ public class ThaumicLibrary {
 	public static final String MOD_NAME = "Thaumic Revelations";
 	public static final String MOD_VERSION = "vPO.TA.TO.RANDOM-DEV";
 	public static final String MOD_DEPENDENCIES = "required-after:Thaumcraft; after:MagicBees[2.3.0)";
+	public static final String API_NAME = "thaumicrevelationsapi";
     public static final String RESOURCE_PREFIX = "thaumrev";
     public static final String TEX_LOC_DEFAULT = "thaumrev:";
 
@@ -37,7 +38,7 @@ public class ThaumicLibrary {
     public static final Aspect REVELATIONS = new Aspect("patefactio", 0x3971AD, new Aspect[] { TRAVEL, MIND }, new ResourceLocation(RESOURCE_PREFIX, "textures/aspects/revelatiofez.png"), 771);
 
 	/** ARMOR MATERIALS **/
-	public static ArmorMaterial wardencloth;
+	public static ArmorMaterial materialWardencloth;
 
 
 	/** ARMOR ARRAYS **/
@@ -66,9 +67,20 @@ public class ThaumicLibrary {
     /** ITEMSTACKS **/
     public static ItemStack dummyGeneral;                   //00000
 
-    public static ItemStack exubituraPetal;                 //01000
-    public static ItemStack wardenicCrystal;                //01001
-    public static ItemStack wardenicQuartz;                 //01002
+    public static ItemStack excubituraPetal;                //01100
+	public static ItemStack excubituraPaste;                //01101
+	public static ItemStack excubituraOil;                  //01102
+	public static ItemStack excubituraOilPure;              //01103
+	public static ItemStack excubituraCrystal;              //01104
+	public static ItemStack excubituraCrystalAwakened;      //01105
+
+	public static ItemStack excubituraCloth;
+
+    public static ItemStack wardenicQuartz;                 //01114
+
+	public static ItemStack wardencloth;                    //01121
+
+
 
     public static ItemStack wardenAmulet;                   //00000
     public static ItemStack loveRing;                       //00001
@@ -77,5 +89,7 @@ public class ThaumicLibrary {
     public static int wardedChestRenderID = -1;
 
 	/** NBT KEYS **/
-	public static final String  DURABILITY = "DURABILITY";
+	public static final String DURABILITY = "DURABILITY";
+	public static final String REVEALING = "REVEALING";
+	public static final String BROKEN = "BROKEN";
 }

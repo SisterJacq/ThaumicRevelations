@@ -23,28 +23,35 @@ public class WardenContent implements IConfigInitialized {
 	}
 
     @Override
-    public void preInit() {
-		loadMaterials();
-	    loadArmor();
-    }
+    public void preInit() {}
 
     @Override
     public void init() {
-
+	    loadMaterials();
+	    loadBlocks();
+	    loadItems();
+	    loadArmor();
+	    loadTools();
+	    loadBaubles();
     }
 
     @Override
-    public void postInit() {
-
-    }
+    public void postInit() {}
 
 	public void loadMaterials() {
-		wardencloth = EnumHelper.addArmorMaterial("WARDENCLOTH", 30, new int[]{1, 3, 2, 1}, 20);
+		materialWardencloth = EnumHelper.addArmorMaterial("WARDENCLOTH", 30, new int[]{1, 3, 2, 1}, 20);
 	}
 
-	public void loadArmor() {
+	public void loadBlocks() {}
 
+	public void loadItems() {
+		excubituraPetal = generalItem.addItem(1101, "excubituraPetal");
 	}
 
+	public void loadArmor() {}
+
+	public void loadTools() {}
+
+	public void loadBaubles() {}
 
 }

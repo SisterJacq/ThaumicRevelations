@@ -10,5 +10,5 @@ public enum EnumEquipmentType {
 	AXE,
 	SHOVEL,
 	HOE,
-	BOW,
+	BOW
 }

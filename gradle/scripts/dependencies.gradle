@@ -89,10 +89,10 @@ configurations {
 dependencies {
     compile "mantle:Mantle:${minecraft_version}-${mantle_version}:deobf"
     compile "tconstruct:TConstruct:${minecraft_version}-${tconstruct_version}:deobf"
-    compile "codechicken:CodeChickenLib:${minecraft_version}-${CCLib_version}:dev"
-    compile "codechicken:CodeChickenCore:${minecraft_version}-${CCC_version}:dev"
-    compile "codechicken:NotEnoughItems:${minecraft_version}-${NEI_version}:dev"
-    compile "codechicken:ForgeMultipart:${minecraft_version}-${FMP_version}:dev"
+    //compile "codechicken:CodeChickenLib:${minecraft_version}-${CCLib_version}:dev"
+    //compile "codechicken:CodeChickenCore:${minecraft_version}-${CCC_version}:dev"
+    //compile "codechicken:NotEnoughItems:${minecraft_version}-${NEI_version}:dev"
+    //compile "codechicken:ForgeMultipart:${minecraft_version}-${FMP_version}:dev"
     compile "mcp.mobius.waila:Waila:${WAILA_version}_${minecraft_version}:dev" //exclude group: 'mcp.mobius.waila'
     compile "mcp.mobius.jabba:Jabba:${JABBA_version}_${minecraft_version}:dev"
     compile "net.industrial-craft:industrialcraft-2:${ic2_version}-experimental:dev"

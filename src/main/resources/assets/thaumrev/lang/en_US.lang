@@ -1,10 +1,10 @@
 #Misc
-itemGroup.trevelations=Thaumic Revelations
+itemGroup.thaumicRevelations=Thaumic Revelations
 tooltip.wardenic.charge=Charge
 tooltip.wardenic.upgrade=Upgrade
 
 #Items
-item.itemResource.0.name=Exubitura Petal
+item.thaumrev.material.excubituraPetal.name=Excubitura Petal
 item.itemResource.1.name=Wardenic Crystal
 item.itemResource.2.name=Wardenic Quartz
 item.itemWardenAmulet.name=Warden's Amulet

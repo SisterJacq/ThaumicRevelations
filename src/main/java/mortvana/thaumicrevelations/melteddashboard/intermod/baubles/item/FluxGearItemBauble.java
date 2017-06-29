@@ -29,42 +29,42 @@ public class FluxGearItemBauble extends FluxGearItem implements IBauble {
 
 	@Override
 	public BaubleType getBaubleType(ItemStack itemstack) {
-		return metaBaubleExists(itemstack) ? baubleData.get(itemstack.getMetadata()).getType() : null;
+		return metaBaubleExists(itemstack) ? baubleData.get(itemstack.getItemDamage()).getType() : null;
 	}
 
 	@Override
 	public void onWornTick(ItemStack itemstack, EntityLivingBase player) {
 		if (metaBaubleExists(itemstack)){
-			baubleData.get(itemstack.getMetadata()).onWornTick(itemstack, player);
+				baubleData.get(itemstack.getItemDamage()).onWornTick(itemstack, player);
 		}
 	}
 
 	@Override
 	public void onEquipped(ItemStack itemstack, EntityLivingBase player) {
 		if (metaBaubleExists(itemstack)){
-			baubleData.get(itemstack.getMetadata()).onEquipped(itemstack, player);
+			baubleData.get(itemstack.getItemDamage()).onEquipped(itemstack, player);
 		}
 	}
 
 	@Override
 	public void onUnequipped(ItemStack itemstack, EntityLivingBase player) {
 		if (metaBaubleExists(itemstack)){
-			baubleData.get(itemstack.getMetadata()).onUnequipped(itemstack, player);
+			baubleData.get(itemstack.getItemDamage()).onUnequipped(itemstack, player);
 		}
 	}
 
 	@Override
 	public boolean canEquip(ItemStack itemstack, EntityLivingBase player) {
-		return !metaBaubleExists(itemstack) || baubleData.get(itemstack.getMetadata()).canEquip();
+		return !metaBaubleExists(itemstack) || baubleData.get(itemstack.getItemDamage()).canEquip();
 	}
 
 	@Override
 	public boolean canUnequip(ItemStack itemstack, EntityLivingBase player) {
-		return !metaBaubleExists(itemstack) || baubleData.get(itemstack.getMetadata()).canUnequip();
+		return !metaBaubleExists(itemstack) || baubleData.get(itemstack.getItemDamage()).canUnequip();
 	}
 
 	public boolean metaBaubleExists(ItemStack bauble) {
-		return metaBaubleExists(bauble.getMetadata());
+		return metaBaubleExists(bauble.getItemDamage());
 	}
 
 	public boolean metaBaubleExists(int metadata) {

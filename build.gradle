@@ -6,6 +6,7 @@
 // Load ForgeGradle
 // Apply the forge plugin - this adds all the magic for automatically obfuscating, deobfuscating, etc.
 apply plugin: 'forge'
+
 // Apply the CurseForge plugin - this automatically uploads to betas to CurseForge (Not yet used)
 //apply plugin: 'curseforge'
 
@@ -16,10 +17,11 @@ apply from: 'gradle/scripts/miscellaneous.gradle'
 // This sets us up for building a forge project - you need all of these
 buildscript {
     repositories {
+        mavenLocal()
         mavenCentral()
-		mavenLocal()
+
         maven {
-            name = "ForgeFS"
+            name = "forge"
             url = "http://files.minecraftforge.net/maven"
         }
 		maven {
@@ -80,24 +82,24 @@ archivesBaseName = mod_archiveBaseName
 }*/
 
 // Add Coremod Manifest and Classifier (if I wanted one)
-jar {
-    /*manifest {
+/*jar {
+    manifest {
         attributes 'FMLCorePlugin': 'tconstruct.preloader.TConstructLoaderContainer'
         attributes 'FMLCorePluginContainsFMLMod': 'true'
-    }*/
+    }
     //classifier = 'universal'
 
     // Specify which files are really included, can control which APIs should be included.
-    /*include "fluxgear/**"
+    include "fluxgear/**"
     include "assets/**"
     include "mcmod.info"
-    include "pack.mcmeta"*/
-}
+    include "pack.mcmeta"
+}*/
 
 // Setup the forge minecraft plugin data.
 minecraft {
     version = minecraft_version + "-" + forge_version
-    mappings = 'stable_12'
+    //mappings = 'stable_12' //This seems to break stuff
     //if  (file('../run').exists) { runDir = "../run/" } else {
     runDir = "run"
     //}
@@ -105,6 +107,7 @@ minecraft {
     //replace '${version}', mod_version
     replace "@VERSION@", "v${mod_version_version}.${mod_version_major}.${mod_version_minor}.${mod_version_revision}${mod_version_patch}-${mod_internal_build}"
     replace "@MC_VERSION@", project.minecraft_version
+    //replace "@BUILD@", ${mod_version_build}
     replaceIn mod_mainClass
     //if (project.hasProperty("Mod_signature")) { replace "@FINGERPRINT@", project.Mod_signature }
 }
@@ -117,7 +120,6 @@ sourceSets {
         }
 
         resources {
-            //srcDir 'resources'
             srcDir "src/main/resources"
             //TODO
             /* include "assets/appliedenergistics2/recipes/*.recipe",
@@ -132,8 +134,6 @@ sourceSets {
             "pack.mcmeta"*/
             //include "assets/fluxgear/lang/*.lang"
         }
-        //IntelliJ 14 be derping...
-        //output.resourcesDir = output.classesDir
     }
 }
 

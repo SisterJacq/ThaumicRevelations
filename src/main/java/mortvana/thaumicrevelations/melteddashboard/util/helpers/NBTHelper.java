@@ -10,12 +10,24 @@ import mortvana.thaumicrevelations.library.ThaumicLibrary;
 
 public class NBTHelper {
 
+	public static boolean hasKey(ItemStack stack, String key) {
+		return stack.hasTagCompound() && stack.getTagCompound().hasKey(key);
+	}
+
+	public static boolean stackHasBooleanKey(ItemStack stack, String key) {
+		return hasKey(stack, key) && stack.getTagCompound().getBoolean(key);
+	}
+
+	public static int getModifierInt(ItemStack stack, String key) {
+		return hasKey(stack, key) ? stack.getTagCompound().getInteger(key) : 0;
+	}
+
 	public static boolean isRevealingGoggles(ItemStack stack, EntityLivingBase entity) {
-		return (entity instanceof EntityPlayer && stack.getItem() instanceof ItemArmor && ((ItemArmor) stack.getItem()).armorType == 0 && stack.hasTagCompound() && stack.getTagCompound().hasKey(ThaumicLibrary.REVEALING) && stack.getTagCompound().getBoolean(ThaumicLibrary.REVEALING));
+		return (entity instanceof EntityPlayer && stack.getItem() instanceof ItemArmor && ((ItemArmor) stack.getItem()).armorType == 0 && stackHasBooleanKey(stack, ThaumicLibrary.REVEALING));
 	}
 
 	public static boolean isBroken(ItemStack stack) {
-		return (stack.getTagCompound().hasKey(ThaumicLibrary.BROKEN) && stack.getTagCompound().getBoolean(ThaumicLibrary.BROKEN));
+		return stackHasBooleanKey(stack, ThaumicLibrary.BROKEN);
 	}
 
 	public static ItemStack setBroken(ItemStack stack, boolean bool) {

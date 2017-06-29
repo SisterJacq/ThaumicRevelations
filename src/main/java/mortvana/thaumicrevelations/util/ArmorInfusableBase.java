@@ -1,4 +1,4 @@
-package mortvana.thaumicrevelations.core.item;
+package mortvana.thaumicrevelations.util;
 
 import java.util.List;
 
@@ -59,8 +59,8 @@ public /*abstract*/ class ArmorInfusableBase extends ItemArmorFluxGear implement
 
 	@Override
 	public void setDamage(ItemStack stack, int damage) {
-		if (damage > getMaxDurability()) {
-			stack.setMetadata(getMaxDurability());
+		if (damage > getMaxDamage()) {
+			stack.setItemDamage(getMaxDamage());
 			NBTHelper.setBroken(stack, true);
 		}
 	}

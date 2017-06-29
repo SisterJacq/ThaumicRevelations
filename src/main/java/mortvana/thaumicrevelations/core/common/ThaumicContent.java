@@ -1,5 +1,7 @@
 package mortvana.thaumicrevelations.core.common;
 
+import cpw.mods.fml.common.registry.GameRegistry;
+
 import magicbees.api.MagicBeesAPI;
 import mortvana.thaumicrevelations.melteddashboard.inventory.FluxGearCreativeTab;
 import mortvana.thaumicrevelations.melteddashboard.item.FluxGearItem;
@@ -11,8 +13,6 @@ import static mortvana.thaumicrevelations.library.ThaumicLibrary.*;
 
 public class ThaumicContent implements IConfigInitialized {
 
-
-
 	@Override
 	public void setConfig(ConfigBase config) {
 
@@ -20,14 +20,14 @@ public class ThaumicContent implements IConfigInitialized {
 
     @Override
     public void preInit() {
-        thaumicRevelationsTab = new FluxGearCreativeTab("Thaumic Revelations", "thaumic", wardenAmulet);
-		generalItem = new FluxGearItem(MOD_ID, thaumicRevelationsTab);
+        thaumicRevelationsTab = new FluxGearCreativeTab("Thaumic Revelations", "thaumicRevelations", wardenAmulet);
+
+	    generalItem = (FluxGearItem) new FluxGearItem(RESOURCE_PREFIX, thaumicRevelationsTab).setFolder("material").setUnlocalizedName("material");
     }
 
     @Override
     public void init() {
         dummyGeneral = generalItem.addItem(0, "dummy");
-
     }
 
     @Override
@@ -46,5 +46,4 @@ public class ThaumicContent implements IConfigInitialized {
     }
 
     public static Aspect tempus;
-
 }

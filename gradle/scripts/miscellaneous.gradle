@@ -122,18 +122,18 @@ task uninstallOpenComputers(type: Delete) {
 
 // Searches for NEI and CodeChicken stuff from our compile set and adds them
 // to the mods folder in our run directory.
-//task copyChicken(type: Copy, dependsOn: "extractUserDev") {
-//    from configurations.compile
-//    include "**/*CodeChicken*.jar", "**/*NotEnoughItems*.jar"
-//    // Because CodeChickenCore downloads it automatically anyways...
-//    //exclude "**/*CodeChickenLib*.jar"
-//    into file(minecraft.runDir + "/mods")
-//    mustRunAfter "deobfBinJar"
-//    mustRunAfter "repackMinecraft"
-//}
+task copyChicken(type: Copy, dependsOn: "extractUserDev") {
+    from configurations.compile
+    include "**/*CodeChicken*.jar", "**/*NotEnoughItems*.jar"
+    // Because CodeChickenCore downloads it automatically anyways...
+    exclude "**/*CodeChickenLib*.jar"
+    into file(minecraft.runDir + "/mods")
+    mustRunAfter "deobfBinJar"
+    mustRunAfter "repackMinecraft"
+}
 
-//tasks.setupDevWorkspace.dependsOn copyChicken
-//tasks.setupDecompWorkspace.dependsOn copyChicken
+tasks.setupDevWorkspace.dependsOn copyChicken
+tasks.setupDecompWorkspace.dependsOn copyChicken
 
 /* *=-=-=-=* IntelliJ IDEA *=-=-=-=* */
 
@@ -142,7 +142,7 @@ apply plugin: 'idea'
 idea {
     module {
         inheritOutputDirs = true
-		sourceDirs += file('dummy')
-        sourceDirs += file('api')
+		//sourceDirs += file('dummy')
+        //sourceDirs += file('api')
     }
 }

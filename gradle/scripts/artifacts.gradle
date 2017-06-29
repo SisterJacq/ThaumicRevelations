@@ -1,14 +1,13 @@
 // Create de-obfuscated development jars, because the normal output has been made to be obfuscated
 task deobfJar(type: Jar) {
-    from sourceSets.main.output
-    /*from(sourceSets.main.output) {
-        include "mortvana/projectfluxgear/**"
+    from(sourceSets.main.output) {
+        include "mortvana/**"
         include "assets/**"
         include "mcmod.info"
-    }*/
+    }
     classifier = 'deobf'
-	//version = "${project.minecraft.version}-${project.version}"
-	// Ye olde SlimeKnight code
+
+	// Coremod Stuff
 	/*manifest {
         attributes 'FMLCorePlugin': 'tconstruct.preloader.TConstructLoaderContainer'
         attributes 'FMLCorePluginContainsFMLMod': 'true'
@@ -19,27 +18,25 @@ task deobfJar(type: Jar) {
 task sourceJar(type: Jar, dependsOn:classes) {
     from sourceSets.main.allSource
     classifier = 'src'
-	//version = "${project.minecraft.version}-${project.version}"
 }
 
 // No APIs... Yet...
 // Create API library jar
 task apiJar(type: Jar) {
     from(sourceSets.api.java) {
-        include "mortvana/projectfluxgear/api/*"
+        include "mortvana/thaumrev/api/*"
     }
-    from(sourceSets.main.java) {
-        include "mortvana/projectfluxgear/api/*"
+    from(sourceSets.main.output) {
+        include "mortvana/thaumrev/api/*"
     }
 
     classifier = 'api'
-	//version = "${project.minecraft.version}-${project.version}"
 }
 
 // Add a javadoc jar
 task javadocs(type: Javadoc) {
     source = sourceSets.main.java
-    include "mortvana/projectfluxgear/api**"
+    include "mortvana/thaumrev/api**"
 
     classpath = configurations.compile
 }
@@ -47,15 +44,11 @@ task javadocs(type: Javadoc) {
 task javadocJar(type: Jar, dependsOn: javadocs) {
     from 'build/docs/javadoc'
     classifier = 'javadoc'
-	//version = "${project.minecraft.version}-${project.version}"
 }
 
 artifacts {
-    //if(project.fullBuild) {
     archives deobfJar
     archives sourceJar
     archives javadocJar
     archives apiJar
-    //archives libJar
-    //}
 }

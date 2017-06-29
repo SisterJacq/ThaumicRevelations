@@ -74,8 +74,6 @@ public class ThaumicLibrary {
 	public static ItemStack excubituraCrystal;              //01104
 	public static ItemStack excubituraCrystalAwakened;      //01105
 
-	public static ItemStack excubituraCloth;
-
     public static ItemStack wardenicQuartz;                 //01114
 
 	public static ItemStack wardencloth;                    //01121
@@ -92,4 +90,5 @@ public class ThaumicLibrary {
 	public static final String DURABILITY = "DURABILITY";
 	public static final String REVEALING = "REVEALING";
 	public static final String BROKEN = "BROKEN";
+	public static final String VISMODIFIER = "VISDISCOUNT";
 }

@@ -45,7 +45,9 @@ public class WardenContent implements IConfigInitialized {
 	public void loadBlocks() {}
 
 	public void loadItems() {
-		excubituraPetal = generalItem.addItem(1101, "excubituraPetal");
+		excubituraPetal = generalItem.addOreDictItem(1100, "excubituraPetal", "itemExcubituraPetal");
+		excubituraPaste = generalItem.addOreDictItem(1101, "excubituraPaste", "itemExcubituraPaste");
+		wardencloth = generalItem.addOreDictItem(1121, "wardencloth", "itemWardencloth");
 	}
 
 	public void loadArmor() {}

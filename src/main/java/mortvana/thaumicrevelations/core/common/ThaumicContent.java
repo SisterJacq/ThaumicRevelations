@@ -3,6 +3,8 @@ package mortvana.thaumicrevelations.core.common;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 import magicbees.api.MagicBeesAPI;
+import mortvana.thaumicrevelations.core.block.BlockThaumicPlant;
+import mortvana.thaumicrevelations.core.block.ItemBlockThaumicPlant;
 import mortvana.thaumicrevelations.melteddashboard.inventory.FluxGearCreativeTab;
 import mortvana.thaumicrevelations.melteddashboard.item.FluxGearItem;
 import mortvana.thaumicrevelations.melteddashboard.util.ConfigBase;
@@ -22,7 +24,8 @@ public class ThaumicContent implements IConfigInitialized {
     public void preInit() {
         thaumicRevelationsTab = new FluxGearCreativeTab("Thaumic Revelations", "thaumicRevelations", wardenAmulet);
 
-	    generalItem = (FluxGearItem) new FluxGearItem(RESOURCE_PREFIX, thaumicRevelationsTab).setFolder("material").setUnlocalizedName("material");
+	    createBlocks();
+	    createItems();
     }
 
     @Override
@@ -34,6 +37,16 @@ public class ThaumicContent implements IConfigInitialized {
     public void postInit() {
         determineTempus();
     }
+
+	public void createBlocks() {
+		blockThaumicPlant = new BlockThaumicPlant();
+
+		GameRegistry.registerBlock(blockThaumicPlant, ItemBlockThaumicPlant.class,  "blockThaumicPlant");
+	}
+
+	public void createItems() {
+		generalItem = (FluxGearItem) new FluxGearItem(RESOURCE_PREFIX, thaumicRevelationsTab).setFolder("material").setUnlocalizedName("material");
+	}
 
     public void determineTempus() {
         // Thanks for the API hook, Myst!

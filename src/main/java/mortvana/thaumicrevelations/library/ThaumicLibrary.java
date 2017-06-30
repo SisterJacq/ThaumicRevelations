@@ -58,7 +58,6 @@ public class ThaumicLibrary {
     public static Block blockThaumicPlant;
     public static Block blockFakeAir;
 
-
     /** ITEMS **/
     public static FluxGearItem generalItem;
     public static FluxGearItemBauble thaumicBauble;
@@ -67,24 +66,45 @@ public class ThaumicLibrary {
     /** ITEMSTACKS **/
     public static ItemStack dummyGeneral;                   //00000
 
+	public static ItemStack ingotCopper;                    //01000
+	public static ItemStack ingotZinc;                      //01001
+	public static ItemStack ingotTin;                       //01002
+
+	public static ItemStack ingotBrass;                     //01030
+	public static ItemStack ingotBronze;                    //01031
+
+	public static ItemStack rawThaumicBronze;               //01060
+
+	public static ItemStack ingotThaumicBronze;             //01070
+
     public static ItemStack excubituraPetal;                //01100
-	public static ItemStack excubituraPaste;                //01101
-	public static ItemStack excubituraOil;                  //01102
-	public static ItemStack excubituraOilPure;              //01103
-	public static ItemStack excubituraCrystal;              //01104
-	public static ItemStack excubituraCrystalAwakened;      //01105
 
-    public static ItemStack wardenicQuartz;                 //01114
+	public static ItemStack excubituraPaste;                //01110
+	public static ItemStack excubituraFabric;               //01111
+	public static ItemStack wardencloth;                    //01112
 
-	public static ItemStack wardencloth;                    //01121
+	public static ItemStack excubituraOil;                  //01120
+	public static ItemStack thaumicBronzeChain;             //01123
+	public static ItemStack wardenBronzeChain;              //01124
 
+	public static ItemStack excubituraOilPure;              //01130
 
+	public static ItemStack wardenicQuartz;                 //01140
+	public static ItemStack excubituraCrystal;              //01141
+
+	public static ItemStack excubituraCrystalAwakened;      //01150
 
     public static ItemStack wardenAmulet;                   //00000
     public static ItemStack loveRing;                       //00001
 
     /** RENDER IDs **/
     public static int wardedChestRenderID = -1;
+
+	/** BLOCK NAMES **/
+	public static final String[] PLANT_NAMES = new String[] {
+			"excubitura"
+	};
+
 
 	/** NBT KEYS **/
 	public static final String DURABILITY = "DURABILITY";

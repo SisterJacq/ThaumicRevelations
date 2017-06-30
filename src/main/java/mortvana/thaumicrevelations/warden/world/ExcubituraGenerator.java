@@ -12,7 +12,7 @@ import net.minecraftforge.common.BiomeDictionary.Type;
 
 import static mortvana.thaumicrevelations.library.ThaumicLibrary.*;
 
-public class ExubituraGenerator implements IWorldGenerator {
+public class ExcubituraGenerator implements IWorldGenerator {
 
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {

@@ -5,8 +5,18 @@ tooltip.wardenic.upgrade=Upgrade
 
 #Items
 item.thaumrev.material.excubituraPetal.name=Excubitura Petal
-item.itemResource.1.name=Wardenic Crystal
+item.thaumrev.material.excubituraPaste.name=Excubitura Paste
+item.thaumrev.material.excubituraFabric.name=Excubitura Infused Cloth
+item.thaumrev.material.wardencloth.name=Wardencloth
+item.thaumrev.material.excubituraOil.name=Excubitura Petal Oil
+
+
 item.itemResource.2.name=Wardenic Quartz
+item.itemResource.1.name=Wardenic Crystal
+
+
+
+
 item.itemWardenAmulet.name=Warden's Amulet
 item.itemWardenWeapon.name=Warden's Sword
 item.itemWardenHelm.name=Warden's Helmet
@@ -29,7 +39,7 @@ upgrade.Aer.quote=Free like wind
 upgrade.Terra.quote=Strong like rock
 
 #Blocks
-tile.blockExubitura.name=Exubitura Rose
+tile.thaumrev.plant.excubitura.name=Excubitura Rose
 tile.blockInfusedQuartzNormal.name=Infused Quartz Block
 tile.blockInfusedQuartzSlab.name=Infused Quartz Slab
 tile.blockInfusedQuartzStair.name=Infused Quartz Stair

@@ -22,7 +22,7 @@ public class ExcubituraGenerator implements IWorldGenerator {
 		int y = world.getHeightValue(x, z);
 
 		if (world.isAirBlock(x, y, z) && blockThaumicPlant.canBlockStay(world, x, y, z) && random.nextInt(1000) <= Math.ceil(getModifier(world, x, y, z))) {
-			world.setBlock(x, y, z, blockThaumicPlant, 8, 2);
+			world.setBlock(x, y, z, blockThaumicPlant, 0, 2);
 		}
 	}
 
@@ -36,7 +36,7 @@ public class ExcubituraGenerator implements IWorldGenerator {
 	 *  @return
 	 */
 	public double getModifier(World world, int x, int y, int z) {
-		double modifier = 5F;
+		double modifier = 500F;
 		BiomeGenBase biome = world.getBiomeGenForCoords(x, z);
 		// First off, these guys don't grow in the End, Nether, or Mushroom Biomes. They also won't grow in dead places and wastelands.
 		if (BiomeDictionary.isBiomeOfType(biome, Type.END) || BiomeDictionary.isBiomeOfType(biome, Type.NETHER) || BiomeDictionary.isBiomeOfType(biome, Type.MUSHROOM) ||

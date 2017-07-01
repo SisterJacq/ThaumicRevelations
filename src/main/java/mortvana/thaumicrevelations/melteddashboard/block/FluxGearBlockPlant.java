@@ -1,17 +1,33 @@
 package mortvana.thaumicrevelations.melteddashboard.block;
 
+import java.util.List;
 import java.util.Random;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockBush;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.AxisAlignedBB;
+import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraftforge.common.EnumPlantType;
 import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.common.util.ForgeDirection;
 
-public class FluxGearBlockPlant extends FluxGearBlockBase implements IPlantable {
+import mortvana.thaumicrevelations.melteddashboard.util.helpers.StringHelper;
+
+public class FluxGearBlockPlant extends BlockBush {
+
+	public String[] names;
+	public String[] textures;
+	public IIcon[] icons;
+	public String directory;
 
 	public FluxGearBlockPlant(Material material) {
 		super(material);
@@ -23,65 +39,47 @@ public class FluxGearBlockPlant extends FluxGearBlockBase implements IPlantable 
 		this(Material.plants);
 	}
 
-	/* Overrides */
-	@Override
-	public boolean canPlaceBlockAt(World world, int x, int y, int z) {
-		return super.canPlaceBlockAt(world, x, y, z) && canBlockStay(world, x, y, z);
+	public FluxGearBlockPlant setNames(String... names) {
+		this.names = names;
+		return this;
 	}
 
-	@Override
-	public void onNeighborBlockChange(World world, int x, int y, int z, Block neighborino) {
-		super.onNeighborBlockChange(world, x, y, z, neighborino);
-		checkBlock(world, x, y, z);
+	public FluxGearBlockPlant setTextures(String... textures) {
+		this.textures = textures;
+		return this;
 	}
 
-	@Override
-	public void updateTick(World world, int x, int y, int z, Random random) {
-		checkBlock(world, x, y, z);
+	public FluxGearBlockPlant setDirectory(String directory) {
+		this.directory = directory;
+		return this;
 	}
 
-	@Override
-	public boolean canBlockStay(World world, int x, int y, int z) {
-		return world.getBlock(x, y, z).canSustainPlant(world, x, y, z, ForgeDirection.UP, this);
-	}
-
-	@Override
-	public AxisAlignedBB getCollisionBoundingBoxFromPool(World world, int x, int y, int z) {
-		return null;
-	}
-
-	@Override
-	public boolean isOpaqueCube() {
-		return false;
-	}
-
-	@Override
-	public boolean renderAsNormalBlock() {
-		return false;
-	}
-
-	/* IPlantable */
-	@Override
-	public EnumPlantType getPlantType(IBlockAccess world, int x, int y, int z) {
-		return EnumPlantType.Plains;
-	}
-
-	@Override
-	public Block getPlant(IBlockAccess world, int x, int y, int z) {
+	public FluxGearBlockPlant setData(String directory, String... names) {
+		this.directory = directory;
+		this.names = names;
+		textures = names;
 		return this;
 	}
 
 	@Override
-	public int getPlantMetadata(IBlockAccess world, int x, int y, int z) {
-		return world.getBlockMetadata(x, y, z);
+	@SideOnly(Side.CLIENT)
+	public IIcon getIcon(int side, int metadata) {
+		return icons[metadata];
 	}
 
-	/* Internal Functions */
-	public void checkBlock(World world, int x, int y, int z) {
-		if (!canBlockStay(world, x, y, z)) {
-			dropBlockAsItem(world, x, y, z, world.getBlockMetadata(x, y, z), 0);
-			world.setBlockToAir(x, y, z);
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void registerBlockIcons(IIconRegister register) {
+		icons = new IIcon[textures.length];
+		for (int i = 0; i < textures.length; i++) {
+			icons[i] = register.registerIcon(directory + StringHelper.camelCase(names[i]));
 		}
 	}
 
+	@Override
+	public void getSubBlocks(Item item, CreativeTabs tab, List list) {
+		for (int i = 0; i < names.length; i++) {
+			list.add(new ItemStack(item, 1, i));
+		}
+	}
 }

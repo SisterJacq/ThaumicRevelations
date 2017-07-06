@@ -36,7 +36,7 @@ public class ExcubituraGenerator implements IWorldGenerator {
 	 *  @return
 	 */
 	public double getModifier(World world, int x, int y, int z) {
-		double modifier = 500F;
+		double modifier = 5F;
 		BiomeGenBase biome = world.getBiomeGenForCoords(x, z);
 		// First off, these guys don't grow in the End, Nether, or Mushroom Biomes. They also won't grow in dead places and wastelands.
 		if (BiomeDictionary.isBiomeOfType(biome, Type.END) || BiomeDictionary.isBiomeOfType(biome, Type.NETHER) || BiomeDictionary.isBiomeOfType(biome, Type.MUSHROOM) ||

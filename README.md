@@ -1,22 +1,21 @@
 Thaumic Revelations
 ========
 
-##Compiling from Source
+## Compiling from Source
 Note: Git MUST be installed and in the system path to use our scripts.
 * Setup: Run [gradle]in the repository root: `gradlew[.bat] [setupDevWorkspace|setupDecompWorkspace] [eclipse|idea]`
 * Build: Run [gradle]in the repository root: `gradlew[.bat] build`
 * If obscure Gradle issues are found try running `gradlew clean` and `gradlew cleanCache`
 
-##Plans
+## Plans
 
 I'm working on cleaning them up, along with the code. They will be done soon... (tm)... Valve Time...
 
-##Issue reporting
+## Issue reporting
 Please include the following:
 
 * Minecraft version
 * Forge version/build
-* Flux Gear Core Version
 * Thaumic Revelations version
 * Versions of any mods potentially related to the issue 
 * Any relevant screenshots are greatly appreciated.
@@ -24,9 +23,9 @@ Please include the following:
 	* Steps to reproduce
 	* ForgeModLoader-client-0.log (the FML log) from the root folder of the client
 
-##Licensing
+## Licensing
 
-####Thaumic Revelations is copyfree under the What is Mortvana Even Saying License:
+#### Thaumic Revelations is copyfree under the What is Mortvana Even Saying License:
 
 The code of Thaumic Revelations in source and/or binary is the intellectual property of The Flux Tinkers (Mortvana, MasterAbdoTGM50, and Drullkus (Glassmaker, Gyro, TheMike, Blorph, MysteriousAges, and Tiktalik get a mention too, as they are honorary members)). The end user (From here on know as "You") may not reproduce or modify Thaumic Revelations for public distribution without prior permission. You can however redistribute official Thaumic Revelations compiled binaries in modpacks with adequate permissions for other mods to be included. Any modpack using Thaumic Revelations takes **full** responsibility for user support queries, and the **MODPACK TEAM** should report bugs to us (if you can properly report a bug, go ahead :P). For anyone else, we only support official builds from the main CI servers, or from CurseForge, not custom built jars. We also do not take bug reports for outdated versions of Minecraft, but since we're going to be in 1.7.10 forever, that's not really an issue, now is it. You are allowed to fork and modify Thaumic Revelations, and submit Pull Requests, and even port it if the whole team happens to spontaneously implode and/or drop the project without notice. You can copy portions of code for use in other projects, or even use our (The Flux Tinkers') code as a dependency for other mods. Any contributions to this repository are automatically licensed under this license, as to circumvent beaurocratic bullshit, so if you don't agree with it, you probably shouldn't contribute. Any code copied from, derived from, or building on our code must be publicly visible; You keep rights to your OWN code, but you still must make your source visible (Honestly, you should do that either way :P). You are forbidden from claiming any code, which you did not write as your own. If you copy a large portion of the code, you must at least state that you learned from and used our code, in your repository's README.md. Also, just use common sense and follow Wheaton's Law
 
@@ -49,6 +48,6 @@ The code of Thaumic Revelations in source and/or binary is the intellectual prop
 
 If you have queries about any license or the above support restrictions, drop by our IRC channel, #PorjectFluxGear on irc.esper.net. Alternatively you can hop on our Discord at https://discord.gg/5gkrYhg
 
-##Legal Bullshit
+## Legal Bullshit
 
 - So no-one gets their kilt stuck in a jet engine about any license change or whatever, all code submitted is automagically licensed under my random licensing stuff, which shall always follow Wheaton's Law :P

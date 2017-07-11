@@ -7,9 +7,12 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.Enchantment;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+
+import mortvana.thaumicrevelations.warden.item.ItemArmorWardencloth;
 import thaumcraft.api.aspects.Aspect;
 
 import static thaumcraft.api.aspects.Aspect.*;
@@ -64,38 +67,57 @@ public class ThaumicLibrary {
 
 
     /** ITEMSTACKS **/
-    public static ItemStack dummyGeneral;                   //00000
+	public static ItemStack ingotCopper;                    //00000
+	public static ItemStack ingotZinc;                      //00001
+	public static ItemStack ingotTin;                       //00002
 
-	public static ItemStack ingotCopper;                    //01000
-	public static ItemStack ingotZinc;                      //01001
-	public static ItemStack ingotTin;                       //01002
+	public static ItemStack nuggetCopper;                   //00010
+	public static ItemStack nuggetZinc;                     //00011
+	public static ItemStack nuggetTin;                      //00012
 
-	public static ItemStack ingotBrass;                     //01030
-	public static ItemStack ingotBronze;                    //01031
+	public static ItemStack dustCopper;                     //00020
+	public static ItemStack dustZinc;                       //00021
+	public static ItemStack dustTin;                        //00022
 
-	public static ItemStack rawThaumicBronze;               //01060
+	public static ItemStack ingotBrass;                     //00030
+	public static ItemStack ingotBronze;                    //00031
+	public static ItemStack ingotThaumicBronze;             //00032
 
-	public static ItemStack ingotThaumicBronze;             //01070
+	public static ItemStack nuggetBrass;                    //00040
+	public static ItemStack nuggetBronze;                   //00041
+	public static ItemStack nuggetThaumicBronze;            //00042
 
-    public static ItemStack excubituraPetal;                //01100
+	public static ItemStack dustBrass;                      //00050
+	public static ItemStack dustBronze;                     //00051
+	public static ItemStack dustThaumicBronze;              //00052
 
-	public static ItemStack excubituraPaste;                //01110
-	public static ItemStack excubituraFabric;               //01111
-	public static ItemStack wardencloth;                    //01112
+	public static ItemStack rawThaumicBronze;               //00062
 
-	public static ItemStack excubituraOil;                  //01120
-	public static ItemStack thaumicBronzeChain;             //01123
-	public static ItemStack wardenBronzeChain;              //01124
+    public static ItemStack excubituraPetal;                //00100
 
-	public static ItemStack excubituraOilPure;              //01130
+	public static ItemStack excubituraPaste;                //00110
+	public static ItemStack excubituraFabric;               //00111
+	public static ItemStack wardencloth;                    //00112
 
-	public static ItemStack wardenicQuartz;                 //01140
-	public static ItemStack excubituraCrystal;              //01141
+	public static ItemStack excubituraOil;                  //00120
+	public static ItemStack thaumicBronzeChain;             //00123
+	public static ItemStack wardenBronzeChain;              //00124
 
-	public static ItemStack excubituraCrystalAwakened;      //01150
+	public static ItemStack excubituraOilPure;              //00130
+
+	public static ItemStack wardenicQuartz;                 //00140
+	public static ItemStack excubituraCrystal;              //00141
+
+	public static ItemStack excubituraCrystalAwakened;      //00150
 
     public static ItemStack wardenAmulet;                   //00000
     public static ItemStack loveRing;                       //00001
+
+	/** ARMORS **/
+	public static Item wardenclothSkullcap;
+	public static Item wardenclothTunic;
+	public static Item wardenclothPants;
+	public static Item wardenclothBoots;
 
     /** RENDER IDs **/
     public static int wardedChestRenderID = -1;

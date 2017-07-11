@@ -24,17 +24,14 @@ import thaumcraft.api.IVisDiscountGear;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.nodes.IRevealer;
 
-public /*abstract*/ class ArmorInfusableBase extends ItemArmorFluxGear implements ISpecialArmor, IInfusableItem, IVisDiscountGear, IRevealer, IGoggles {
+public abstract class ItemArmorInfusableBase extends ItemArmorFluxGear implements ISpecialArmor, IInfusableItem, IVisDiscountGear, IRevealer, IGoggles {
 
-	protected int unlocked;
-	protected int locked;
-	//protected SlotInfusion[] slots;
 	protected int[] discounts = new int[4];
 	protected EnumEquipmentType type;
 
 	protected int maxEnergy;
 
-	public ArmorInfusableBase(ArmorMaterial material, int index, int type, String name, String sheet, String icon) {
+	public ItemArmorInfusableBase(ArmorMaterial material, int index, int type, String name, String sheet, String icon) {
 		super(material, index, type, name, sheet, icon);
 		this.type = EnumEquipmentType.values()[type];
 		setCreativeTab(ThaumicLibrary.thaumicRevelationsTab);
@@ -47,7 +44,7 @@ public /*abstract*/ class ArmorInfusableBase extends ItemArmorFluxGear implement
 
 	@Override
 	public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean par4) {
-		//TODO
+		AspectInfusionHelper.addInformation(stack, player, list, par4);
 		super.addInformation(stack, player, list, par4);
 	}
 
@@ -80,52 +77,21 @@ public /*abstract*/ class ArmorInfusableBase extends ItemArmorFluxGear implement
 		if (!NBTHelper.isBroken(stack)) {
 			if (source != DamageSource.fall) {
 				stack.damageItem(damage, entity);
+				AspectInfusionHelper.damageArmor(entity, stack, source, damage, slot);
 			}
 		}
 	}
 
 	@Override
 	public int getSizeInventory(ItemStack container) {
-		return getNumberSlotsTotal(container);
+		return AspectInfusionHelper.getSlotsTotal(container);
 	}
 
-	@Override
-	public int getNumberSlotsTotal(ItemStack stack) {
-		return unlocked + locked;
-	}
-
-	@Override
-	public int getNumberSlotsUnlocked(ItemStack stack) {
-		return unlocked;
-	}
-
-	@Override
-	public int getNumberSlotsLocked(ItemStack stack) {
-		return locked;
-	}
-
-	@Override
+	/*@Override
 	public IInfusableItem setNumberSlots(int unlocked, int locked) {
-		this.unlocked = unlocked;
-		this.locked = locked;
-		//TODO slots = new SlotInfusion[unlocked + locked];
+		AspectInfusionHelper.setNumberSlots(unlocked, locked);
 		return this;
-	}
-
-	@Override
-	public ItemStack getSlotContents(int slot) {
-		return null; //TODO slots[slot].getContents();
-	}
-
-	@Override
-	public SlotInfusion[] getSlots() {
-		return null; //TODO slots;
-	}
-
-	@Override
-	public boolean isSlotUnlocked(int slot) {
-		return slot > locked;
-	}
+	}*/
 
 	@Override
 	public EnumEquipmentType getType() {
@@ -135,19 +101,6 @@ public /*abstract*/ class ArmorInfusableBase extends ItemArmorFluxGear implement
 	@Override
 	public IInfusableItem setType(EnumEquipmentType type) {
 		this.type = type;
-		return this;
-	}
-
-	@Override
-	public IInfusableItem setSlotContents(ItemStack contents, int slot) {
-		//TODO slots[slot].setContents(contents);
-		updateData();
-		return this;
-	}
-
-	@Override
-	public IInfusableItem updateData() {
-		maxEnergy = AspectInfusionHelper.getEnergyCapacity(getSlots());
 		return this;
 	}
 

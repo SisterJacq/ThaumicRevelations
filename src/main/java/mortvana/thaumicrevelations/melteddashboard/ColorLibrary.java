@@ -106,7 +106,7 @@ public final class ColorLibrary {
 	public static final int COLOR_MATERIAL_DRULLOY = 0xC7743F;
 	public static final int COLOR_MATERIAL_TESSERACTIUM = 0x097261;
 
-
+	public static final int COLOR_TEAL_MAGNEQUAZAR = 0x005942;
 
 
 

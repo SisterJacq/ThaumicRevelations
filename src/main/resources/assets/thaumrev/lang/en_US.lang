@@ -16,6 +16,11 @@ item.thaumrev.material.wardenicQuartz.name=Wardenic Quartz
 item.thaumrev.material.wardenicCrystal.name=Wardenic Crystal
 item.thaumrev.material.wardenicCrystalAwakened.name=Awakened Wardenic Crystal
 
+#Armor
+item.thaumrev.wardencloth.skullcap.name=Wardencloth Skullcap
+item.thaumrev.wardencloth.tunic.name=Wardencloth Tunic
+item.thaumrev.wardencloth.pants.name=Wardencloth Pants
+item.thaumrev.wardencloth.boots.name=Wardencloth Boots
 
 item.itemWardenAmulet.name=Warden's Amulet
 item.itemWardenWeapon.name=Warden's Sword
@@ -37,6 +42,7 @@ upgrade.Tutamen.quote=Why are you hurting yourself?
 upgrade.Aqua.quote=Smells fishy
 upgrade.Aer.quote=Free like wind
 upgrade.Terra.quote=Strong like rock
+upgrade.tempus.quote=Gonna See you in the Dirty Future
 
 #Blocks
 tile.thaumrev.plant.excubitura.name=Excubitura Rose
@@ -50,11 +56,11 @@ tile.blockInfusedQuartzPillar.name=Infused Quartz Pillar Block
 tile.blockWitor.name=Wardenic Light
 
 #Aspects
-tc.aspect.exubitor=Warden, Vigilance, Victory, Sacrifice
+tc.aspect.excubitor=Warden, Vigilance, Victory, Sacrifice
 tc.aspect.citrus=Citrus, Orange, Lemon
 tc.aspect.magnes=Magnet, Magnetism
-tc.aspect.fluctuatio=Flux, Fluctuation, Energy
-tc.aspect.revelatio=Revelations, Uncovering, Epiphany
+tc.aspect.fluxus=Flux, Fluctuation, Energy
+tc.aspect.patefactio=Revelations, Uncovering, Epiphany
 
 #Research
 tc.research_category.trevelations=Thaumic Revelations
@@ -63,7 +69,7 @@ trresearch.name.TREVELATIONS=Thaumic Wardens
 trresearch.text.TREVELATIONS=Long forgotten to our ears
 trresearch.page.TREVELATIONS.0=You have read of an ancient order of former thaumaturge who dedicated themselves to fighting the Eldritch and protecting the land.<BR>They were once a branch of the Abysswalkers who became divided after the siege on their headquarters Fort Rose.<BR>Thanks to Master Lizbeth some of the remnants are now what we call the Thaumic Wardens.
 
-trresearch.name.EXUBITURA=Exubitura
+trresearch.name.EXUBITURA=Excubitura
 trresearch.text.EXUBITURA=A rose by any other name...
 trresearch.page.EXUBITURA.0=Mutated by Thaumic energies, this odd little rose has formed a beautiful crystal where its stigma should be.<BR>Despite it's small size, the petals are vibrant and have an unusual energy about them.
 

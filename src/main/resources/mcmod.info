@@ -1,0 +1,20 @@
+[
+	{
+		"modid": "trevalations",
+		"name": "Thaumic Revalations",
+		"description": "",
+		"version": "v0.1.0.0",
+		"mcversion": "1.7.10",
+		"url": "",
+		"updateUrl": "",
+		"authors": [
+			"Mortvana",
+			"Drullkus",
+			"MasterAbdoTGM50"
+		],
+		"credits": "Azanor",
+		"logoFile": "",
+		"screenshots": [],
+		"dependencies": ["Thaumcraft"]
+	}
+]

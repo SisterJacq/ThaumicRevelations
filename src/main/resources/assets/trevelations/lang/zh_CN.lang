@@ -1,0 +1,113 @@
+#Misc
+itemGroup.TWarden=神秘启示录
+tooltip.wardenic.charge=充能
+tooltip.wardenic.upgrade=升级
+
+#Items
+item.itemResource.0.name=Exubitura花瓣
+item.itemResource.1.name=守护水晶
+item.itemResource.2.name=守护石英
+item.itemWardenAmulet.name=守卫项链
+item.itemWardenSword.name=守护之剑
+item.itemWardenHelm.name=守卫头盔
+item.itemWardenChest.name=守卫胸甲
+item.itemWardenLegs.name=守卫护腿
+item.itemWardenBoots.name=守卫靴子
+item.itemFocusPurity.name=法杖核心:净化
+item.itemLoveRing.name=爱之指环
+item.itemLizHammer.name=莉兹白之锤
+item.itemFocusIllumination.name=法杖核心:照明
+
+#Quotes
+upgrade.Exubitor.quote=永恒之守望者
+upgrade..quote=我将活下去
+upgrade.Entropy.quote=以吾之力赐汝毁灭
+upgrade.Ignis.quote=在闇焰中烧成焦炭吧
+upgrade.Tutamen.quote=为何要自我伤害?
+upgrade.Aqua.quote=一股鱼腥味儿
+upgrade.Aer.quote=风一般自由
+upgrade.Terra.quote=岩石一般坚硬
+
+#Blocks
+tile.blockExubitura.name=Exubitura玫瑰
+tile.blockInfusedQuartzNormal.name=蕴魔石英块
+tile.blockInfusedQuartzSlab.name=蕴魔石英半砖
+tile.blockInfusedQuartzStair.name=蕴魔石英楼梯
+tile.blockInfusedQuartzChiseled.name=鉴制蕴魔石英块
+tile.blockInfusedQuartzPillar.name=蕴魔石英柱
+tile.blockWitor.name=守护之光
+
+#Aspects
+tc.aspect.exubitor=守护,警戒,胜利,牺牲
+tc.aspect.citrus=柑橘,橙子,柠檬
+tc.aspect.magnes=磁体,磁性
+tc.aspect.fluctuatio=通量,波动,能量
+tc.aspect.revelatio=启示,揭露,显现
+
+#Research
+tc.research_category.trevelations=神秘启示录
+
+trresearch.name.TREVELATIONS=神秘守卫者
+trresearch.text.TREVELATIONS=被我们遗忘已久..
+trresearch.page.TREVELATIONS.0=你在书中读到了这么一群人,他们曾是古老的前魔法师,长久以来与邪灵做斗争守护着这片土地.<BR>他们曾是深渊行者的支部,因玫瑰堡的总部遭到围攻而分开.<BR>感谢莉兹白大师所记,而那些人中所留下来的就是我们现在所称的神秘守卫者.
+
+trresearch.name.EXUBITURA=Exubitura
+trresearch.text.EXUBITURA=即使不叫玫瑰...
+trresearch.page.EXUBITURA.0=因神秘能量而突变的奇怪玫瑰,在柱头上长出了一种美丽的水晶.<BR>尽管它很小,但它的花瓣却很有活力,有一种不寻常的能量暗含其中.
+
+trresearch.name.QUARTZ=守护石英
+trresearch.text.QUARTZ=石英般的命运
+trresearch.page.QUARTZ.0=你发现了一份古老的手稿,描述了神秘守望者们所使用的奇怪石英.上面还说这用于他们所有其它的装备.<BR>由于它晶体内所含的高度密集的能量,用这种材料制成的武器似乎优于大多数金属和普通形式的保护.
+
+trresearch.name.CRYSTAL=守护水晶
+trresearch.text.CRYSTAL=第一步...
+trresearch.page.CRYSTAL.0=你知道这些花瓣某种程度上来说是不寻常的.通过将将它们结晶化就能做出守护水晶.<BR>这个独一无二的水晶似乎对源质和要素有着奇怪的反应.
+
+trresearch.name.WARDENARMOR=护甲
+trresearch.text.WARDENARMOR=感觉我什么都没穿!
+trresearch.page.WARDENARMOR.0=在书中你不止一次的发现有提及传奇般品质的守望者护甲,它们有着吸收大量攻击和保持极佳透气性的能力.<LINE>经过艰苦的研究你终于知道了如何用守护水晶制作这些部件.<BR>水晶似乎给石英赋予了能从附近水晶吸收能量的奇特力量.
+
+trresearch.name.WARDENSWORD=剑
+trresearch.text.WARDENSWORD=遗留的残骸
+trresearch.page.WARDENSWORD.0=当那位无名者帮助莉兹白找到神秘守望者后,他将轻剑的残骸托付给了她.<BR>她修好了剑并使它能使用要素的力量,根据注入要素的不同而产生不同的效果.
+
+trresearch.name.LOVERING=爱之指环
+trresearch.text.LOVERING=I <3 U
+trresearch.page.LOVERING.0=与莉兹白告别前,无名者给了她这个指环.<BR>"在你感觉迷失的时候再使用"<BR>关于它没有更多所知的了.只有它那不可思议的力量....
+
+trresearch.name.WASLIEHAMMER=卫斯理之锤
+trresearch.text.WASLIEHAMMER=OP as flux
+trresearch.page.WASLIEHAMMER.0=这把锤子由守护大师卫斯理所做,为了帮助莉兹白以及神秘守望者们<LINE>使用起来很简单因为不需要工具箱.<BR>它能也被注入各种要素当做守护武器使用.
+
+trresearch.name.ILLUMINATION=法杖核心:照明
+trresearch.text.ILLUMINATION=他们知道...
+trresearch.page.ILLUMINATION.0=我们都知道你的计划.<BR>你很清楚自己应该加入我们.<BR>这个右击就能制造光明的神秘核心将会为你照亮正确的道路.
+
+trresearch.name.LORE1=序幕之章
+trresearch.text.LORE1=一切都得有个开始
+trresearch.page.LORE1.0=在莉兹白还年轻的时候,总会有一个老者造访她家.他名叫卫斯理,在当时是守卫者们秩序的领导人.<BR>年轻的莉兹白长到16岁时,她对秘术表现出了极大的兴趣,迫切地想要学习它们.<BR>"卫斯理,你能把我带去神秘学会让我学习秘术么?" 莉兹白问道<BR>"你在说什么傻话呢,莉兹?" 卫斯理回答
+trresearch.page.LORE1.1="这些上古的秘术可是十分强力的,你恐怕难以驾驭" 他补充道."我觉得决定权在我,你认为呢?" 莉兹白说."好吧好吧,别生气."他说道<BR>"你问过你的父母了么,莉兹?" 卫斯理问<BR>"喔,他们已经同意我来向你学习了." 莉兹白说<BR>"所以说你已经做好了准备了,嗯?" "做好准备.我们明早就出发." 他说.<BR>莉兹白很高兴能听到这些消息但她觉得卫斯理并没有同意,因为当她再次问起时卫斯理说还有其他事情要办.翌日早晨,卫斯理接到了莉兹白并开始谈话.<BR>
+trresearch.page.LORE1.2="回顾你这一路的成长然后踏上旅途." 他说 "在我们到达学会之前先拿着这个,当你觉得迷失的时候再打开它."<BR>"我该期待着你在这盒子里装了什么强力的咒文么?" 莉兹白挖苦道.<BR>"不,但是它会在片刻的绝望之中给你指明方向" 他说着.<BR>之后他们就到达了学会,莉兹白离梦想成真仅有一步之遥了.<BR>
+
+trresearch.name.LORE2=摸索门道
+trresearch.text.LORE2=就是这样开始的
+trresearch.page.LORE2.0=在学会门口有另一位老者正在等候着.他就是Azanor大师,秘术的幕后之人.<BR>"真是时光飞逝,故人依旧啊,我的老朋友." 卫斯理对Azanor说道.<BR>"自从他过世之后我就不能坐视不管了." Azanor回答.<BR>"等,等一下你怎么谁都认识!!!" 莉兹白大惊 "莉兹,你难道没听过那个传言么,老者识人广." 卫斯理说道.<BR>
+trresearch.page.LORE2.1="哦还是谈谈你们的事情吧,况且我还没老呢." Azanor回道 "这就是你和我提起的那个小女孩?" "好吧,小莉兹,既然你是这个老家伙的女儿,我就指定你为特遣神秘使." Azanor说<BR>"我不是他的女儿." "她不是我女儿." 莉兹白和卫斯理同时说出口.<BR>"很明显不是." 恼人的Azanor笑道.<BR>之后卫斯理就离开了,Azanor带着她去见她的老师,老实说这个老师和她想象中的有些不同.<BR>"莉兹白来见见你的老师瓦纳和他的猫...瓦纳" Azanor说道<BR>
+trresearch.page.LORE2.2="你一定就是莉兹白了,我听说了很多有关你的事情但ya" 瓦纳用他那俗气的海盗口音说着<BR>"你一定在逗我.. 这居然就是我的老师.他连好好说话都做不到" 莉兹白说<BR>"喔喔喔你生气了么,我觉得我们一定能好好相处的" 瓦纳说<BR>莉兹白真的是块当神秘使的料子.就好像她天生就具有才能,她和瓦纳越来越像,但和你所想的暮色情人的那种不一样.
+trresearch.page.LORE2.3=瓦纳很疯狂也很怪异,但他不像其他老师那样严格并且给了莉兹白充分的自由去练习秘术.<BR>几周之后莉兹白成为了一名完全成熟的神秘使,过几天说不定就能当老师了.<BR>瓦纳被要求翌日早晨去见Azanor.<BR>
+
+trresearch.name.LORE3=毫无意义
+trresearch.text.LORE3=真的没有意义
+trresearch.page.LORE3.0=Azanor与瓦纳的会谈气氛不太轻松.他们知道有什么要来了,但到底是什么?<BR>"大师,我已经按照你和卫斯理大师的要求教授她了,但我们的时间越来越紧迫了.我们必须告诉她知道真相.不然就迟了" 瓦纳用害怕的语气说着<BR>"是这样的,但恐怕现在已经太迟了" Azanor答道,之后学会外传来了巨大的崩裂之声.<BR>
+trresearch.page.LORE3.1=同时,学徒们遭受着不明生物的攻击.他们的攻击难以奏效,莉兹白于是吸引了怪物们的注意力以便让其他学徒们逃跑.<BR>然而莉兹白在主过道跑到了死路上.为什么"主"过道上有条死路?谁知道?只有死去的建筑师知道.<BR>当莉兹白被包围之时她想起了卫斯理给她的盒子.她打开盒子但只找到了一个戒指.她试着戴上它,但就在她戴起戒指的那一刻,一道刺眼的光环闪现而出,烧尽了四周的一切生物....
+trresearch.page.LORE3.2=之后,一个身着白装的男子的灵魂出现在她之前..<BR>"你是谁?你从何处而来?" 莉兹白问<BR>"我是谁并不重要.重要的是我接下来要说的." 灵魂说道<BR>"我们都被诡异的怪物包围了,你居然还有空说闲话!!!" 莉兹白说<BR>"你不必担心,那个戒指代表了我很小的一部分力量,但即便那样也足够将它们逼入绝境了.现在听我说" 灵魂答道<BR>
+trresearch.page.LORE3.3="你也注意到了这些生物试着杀死你们所有人尤其是你.它们被叫做邪灵,是从数世纪以前封印的虚空之中所生."<BR>"每一年封印的力量都在变弱.当它离崩坏不久时也就将是这些邪灵溢出之时,因此我们在42年前不得不将其再次封印"<BR>"你的使命远比你所想的还要巨大.你要成为它们的消灭者.我和我们同伴们并不是这个故事中的英雄,我们也不会成为英雄.每位大师都认清了这个现实,就像我会将它讲述给下一位大师一样."
+trresearch.page.LORE3.4="我们这些流浪之人不打算成为英雄,但我们将会在时机到来之时指引他们.我知道说这些可能没有什么意义但,莉兹白你得相信我." 灵魂说道<BR>瓦纳走了进来,并没有因为看见一个奇怪的灵魂和他的学生在讲话而吃惊. "能见到您真是我的荣幸"<BR>"喔,我很高兴看见你活得好好的,年轻人." 灵魂说道<BR>"我的力量越来越弱了,我必须保留一部分来维持戒指的作用" "找到卫斯理,他会给你指出正确的道路的" 灵魂说道<BR>之后他四散而去,留下了充满疑惑的莉兹白<BR>
+trresearch.page.LORE3.5="我被袭击时你在哪里" 莉兹白对瓦纳说<BR>"喔,我当时在和我们的客人喝茶,讨论战争的故事... 你 觉 得 我 作 为 神 秘 使 在 做 什 么 呢?" 瓦纳答道<BR>"说不定你是在抚摸着你的猫" 莉兹白说<BR>"她怎么会知道的?" 瓦纳小声地自言自语<BR>
+
+trresearch.name.LORE4=旅途的开始
+trresearch.text.LORE4=失忆了?
+trresearch.page.LORE4.0=几天之后莉兹白和瓦纳到达了玫瑰堡,在那里寻求卫斯理的协助.<BR>"瓦纳和你一起来了..... 这可不太好" 卫斯理说 "他虽然有点疯但还是很好的" 莉兹白讽刺道<BR>"我打开了你给我的那个盒子,那个灵魂告诉了我关于邪灵的事,说我必须找到你才能阻止它们" 莉兹白说<BR>"那就简单了!!! 你不必再追问细节了" 瓦纳从中打断<BR>
+trresearch.page.LORE4.1="它们要杀死我和我的朋友们,那可不是我能轻易接受的事" 莉兹白说<BR>"卫斯理你能不能做出些什么来击败它们的?我和它们战斗时甚至不能穿透它们的符文" 莉兹白说<BR>"是的,和它们战斗的确很棘手.我需要你的帮助.做出那种魔法金属,然后到圣物室内来见我" 卫斯理说道<BR>
+trresearch.page.LORE4.2=*这边的文字变为了奇怪的符文,好像你不该知道他们所说的话*
+trresearch.page.LORE4.3="现在我们准备好了.做好准备,我们黎明就出发" 卫斯理说<BR>第二天早晨,瓦纳和卫斯理出发前去查看莉兹白.他们没有找到她.她在所有人醒来之前就已经离开了.她是怎样骗过守卫的?或许是用了隐形的法杖核心或是其他的什么.<BR>"我们得在她贸然行事之前找到她" 瓦纳说<BR>"我只希望我们能赶得上" 卫斯理达到

@@ -14,6 +14,9 @@ import net.minecraft.util.ResourceLocation;
 
 import mortvana.thaumicrevelations.warden.item.ItemArmorWardencloth;
 import thaumcraft.api.aspects.Aspect;
+import thaumcraft.api.crafting.ShapedArcaneRecipe;
+import thaumcraft.api.crafting.ShapelessArcaneRecipe;
+import thaumcraft.api.research.ResearchItem;
 
 import static thaumcraft.api.aspects.Aspect.*;
 
@@ -28,10 +31,12 @@ public class ThaumicLibrary {
     public static final String RESOURCE_PREFIX = "thaumrev";
     public static final String TEX_LOC_DEFAULT = "thaumrev:";
 
+
     /** RESEARCH CATEGORIES **/
-    public static final String CATERGORY_WARDEN = "WARDEN";
-    public static final String CATERGORY_MAGNEOTURGY = "MAGNEOTURGY";
-    public static final String CATEGORY_REVELATIONS = "REVELATIONS";
+    public static final String RESEARCH_KEY = "THAUMREV";
+	public static final String RESEARCH_WARDEN = RESEARCH_KEY;//"WARDEN";
+	public static final String RESEARCH_MAGNEOTURGY = RESEARCH_KEY;//"MAGNEOTURGY";
+    public static final String RESEARCH_REVELATIONS = RESEARCH_KEY;//"REVELATIONS";
 
     /** ASPECTS **/
     public static final Aspect WARDEN = new Aspect("excubitor", 0x3CD4FC, new Aspect[] { ELDRITCH, DEATH }, new ResourceLocation(RESOURCE_PREFIX, "textures/aspects/exubitor.png"), 771);
@@ -46,7 +51,6 @@ public class ThaumicLibrary {
 
 	/** ARMOR ARRAYS **/
 	public int[] discountWardencloth = new int[] {5, 2, 2, 1};
-
 
 	/** ENCHANTMENTS **/
     public static Enchantment enchantStabilizing;
@@ -118,6 +122,16 @@ public class ThaumicLibrary {
 	public static Item wardenclothTunic;
 	public static Item wardenclothPants;
 	public static Item wardenclothBoots;
+
+	/** RESEARCH **/
+	public static ResearchItem researchThaumRev;
+	public static String keyThaumRev = "THAUMIC_REVELATIONS";
+
+	public static ResearchItem researchThaumicBronze;
+	public static String keyThaumicBronze = "THAUMIC_BRONZE";
+
+	/** RECIPES **/
+	public static ShapelessArcaneRecipe recipeThaumicBronzeRaw;
 
     /** RENDER IDs **/
     public static int wardedChestRenderID = -1;

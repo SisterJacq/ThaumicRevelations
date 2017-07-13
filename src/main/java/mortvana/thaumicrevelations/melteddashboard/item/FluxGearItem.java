@@ -40,8 +40,6 @@ public class FluxGearItem extends Item {
     public String folder = "";
     public boolean registryItem = false;
 
-	public IIcon temp;
-
     public FluxGearItem() {
         setHasSubtypes(true);
         setMaxDamage(0);
@@ -64,7 +62,7 @@ public class FluxGearItem extends Item {
 	        ThaumicRevelations.logger.warn("Someone registered a meta-item in an item from " + modName + ", with a metadata of " + metadata + ", called " + name + "! Don't do this! Skipping Entry!");
             return null;
         } else {
-            itemMap.put(metadata, new ItemEntry(name, rarity));
+            itemMap.put(metadata, new ItemEntry(name, rarity).setTexture(name));
             itemList.add(metadata);
 
             ItemStack stack = new ItemStack(this, 1, metadata);
@@ -103,7 +101,7 @@ public class FluxGearItem extends Item {
     // addOreDictItem(...) {}
     public ItemStack addOreDictItem(int metadata, String name, int rarity, boolean register, String... oreDict) {
         ItemStack stack = addItem(metadata, name, rarity, register);
-        RegistrationWrapper.registerOreDict(stack, oreDict);
+        RegistrationWrapper.registerOreDict(stack, (oreDict.length == 0 ? new String[] { name } : oreDict));
         return stack;
     }
 
@@ -236,9 +234,9 @@ public class FluxGearItem extends Item {
                 if (itemMap.containsKey(i)) {
                     if (/*!MeltedDashboardConfig.minimalRegistry && */hasTexture(i)) {
                         entry.icon = iconRegister.registerIcon(getIconFromMeta(i));
-                    } else {
-                        entry.icon = iconRegister.registerIcon(modName + ":grayscale/" + itemMap.get(i).template);
-                    }
+                    } //else {
+                        //entry.icon = iconRegister.registerIcon(modName + ":grayscale/" + itemMap.get(i).template);
+                    //}
                 } else {
                     entry.icon = iconRegister.registerIcon(modName + ":" + getUnlocalizedName().replace("item." + modName + ".", "") + "/" + StringHelper.camelCase(entry.name));
                 }

@@ -33,8 +33,9 @@ public class ItemEntry {
 	    setTexture(name);
     }
 
-    public void setIcon(IIcon icon) {
+    public ItemEntry setIcon(IIcon icon) {
         this.icon = icon;
+	    return this;
     }
 
 	/**
@@ -42,14 +43,16 @@ public class ItemEntry {
 	 * @param texture - Colorized version of the texture, which is used if found, for items with custom sprites.
 	 * @param color - Hexadecimal RGB color to colorize the template with.
 	 */
-	public void setColorData(String template, String texture, int color) {
+	public ItemEntry setColorData(String template, String texture, int color) {
 		this.template = template;
 		this.texture = texture;
 		this.color = color;
+		return this;
 	}
 
-	public void setTexture(String texture) {
+	public ItemEntry setTexture(String texture) {
 		this.texture = texture;
+		return this;
 	}
 
 }

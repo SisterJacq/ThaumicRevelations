@@ -13,8 +13,7 @@ import net.minecraftforge.common.ISpecialArmor;
 
 import mortvana.thaumicrevelations.api.item.infusion.*;
 import mortvana.thaumicrevelations.api.util.enums.EnumEquipmentType;
-import mortvana.thaumicrevelations.api.util.slot.SlotInfusion;
-import mortvana.thaumicrevelations.library.ThaumicLibrary;
+import mortvana.thaumicrevelations.library.ThaumRevLibrary;
 import mortvana.thaumicrevelations.melteddashboard.item.ItemArmorFluxGear;
 import mortvana.thaumicrevelations.melteddashboard.util.helpers.AspectInfusionHelper;
 import mortvana.thaumicrevelations.melteddashboard.util.helpers.NBTHelper;
@@ -34,7 +33,7 @@ public abstract class ItemArmorInfusableBase extends ItemArmorFluxGear implement
 	public ItemArmorInfusableBase(ArmorMaterial material, int index, int type, String name, String sheet, String icon) {
 		super(material, index, type, name, sheet, icon);
 		this.type = EnumEquipmentType.values()[type];
-		setCreativeTab(ThaumicLibrary.thaumicRevelationsTab);
+		setCreativeTab(ThaumRevLibrary.thaumicRevelationsTab);
 	}
 
 	@Override

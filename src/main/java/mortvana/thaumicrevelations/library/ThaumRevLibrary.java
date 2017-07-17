@@ -12,15 +12,16 @@ import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
+import mortvana.thaumicrevelations.melteddashboard.item.ItemArmorFluxGear;
+import mortvana.thaumicrevelations.util.ItemArmorInfusableBase;
 import mortvana.thaumicrevelations.warden.item.ItemArmorWardencloth;
 import thaumcraft.api.aspects.Aspect;
-import thaumcraft.api.crafting.ShapedArcaneRecipe;
-import thaumcraft.api.crafting.ShapelessArcaneRecipe;
+import thaumcraft.api.crafting.*;
 import thaumcraft.api.research.ResearchItem;
 
 import static thaumcraft.api.aspects.Aspect.*;
 
-public class ThaumicLibrary {
+public class ThaumRevLibrary {
 
     /** MOD CONSTANTS **/
     public static final String MOD_ID = "ThaumicRevelations";
@@ -34,9 +35,6 @@ public class ThaumicLibrary {
 
     /** RESEARCH CATEGORIES **/
     public static final String RESEARCH_KEY = "THAUMREV";
-	public static final String RESEARCH_WARDEN = RESEARCH_KEY;//"WARDEN";
-	public static final String RESEARCH_MAGNEOTURGY = RESEARCH_KEY;//"MAGNEOTURGY";
-    public static final String RESEARCH_REVELATIONS = RESEARCH_KEY;//"REVELATIONS";
 
     /** ASPECTS **/
     public static final Aspect WARDEN = new Aspect("excubitor", 0x3CD4FC, new Aspect[] { ELDRITCH, DEATH }, new ResourceLocation(RESOURCE_PREFIX, "textures/aspects/exubitor.png"), 771);
@@ -86,18 +84,28 @@ public class ThaumicLibrary {
 	public static ItemStack ingotBrass;                     //00030
 	public static ItemStack ingotBronze;                    //00031
 	public static ItemStack ingotThaumicBronze;             //00032
+	public static ItemStack ingotSteel;                     //00033
+	public static ItemStack ingotVoidbrass;                 //00034
+	public static ItemStack ingotVoidsteel;                 //00035
 
 	public static ItemStack nuggetBrass;                    //00040
 	public static ItemStack nuggetBronze;                   //00041
 	public static ItemStack nuggetThaumicBronze;            //00042
+	public static ItemStack nuggetSteel;                    //00043
+	public static ItemStack nuggetVoidbrass;                //00044
+	public static ItemStack nuggetVoidsteel;                //00045
 
 	public static ItemStack dustBrass;                      //00050
 	public static ItemStack dustBronze;                     //00051
 	public static ItemStack dustThaumicBronze;              //00052
+	public static ItemStack dustSteel;                      //00053
+	public static ItemStack dustVoidbrass;                  //00054
+	public static ItemStack dustVoidsteel;                  //00055
+
 
 	public static ItemStack rawThaumicBronze;               //00062
 
-    public static ItemStack excubituraPetal;                //00100
+	public static ItemStack excubituraPetal;                //00100
 
 	public static ItemStack excubituraPaste;                //00110
 	public static ItemStack excubituraFabric;               //00111
@@ -114,24 +122,54 @@ public class ThaumicLibrary {
 
 	public static ItemStack excubituraCrystalAwakened;      //00150
 
+	public static ItemStack wardenJournal1;                 //01001
+
     public static ItemStack wardenAmulet;                   //00000
     public static ItemStack loveRing;                       //00001
 
 	/** ARMORS **/
-	public static Item wardenclothSkullcap;
-	public static Item wardenclothTunic;
-	public static Item wardenclothPants;
-	public static Item wardenclothBoots;
+	public static ItemArmorInfusableBase wardenclothSkullcap;
+	public static ItemArmorInfusableBase wardenclothTunic;
+	public static ItemArmorInfusableBase wardenclothPants;
+	public static ItemArmorInfusableBase wardenclothBoots;
 
 	/** RESEARCH **/
 	public static ResearchItem researchThaumRev;
 	public static String keyThaumRev = "THAUMIC_REVELATIONS";
 
+	public static ResearchItem researchWardenry;
+	public static String keyWardenry = "THAUMIC_WARDEN";
+
+	public static ResearchItem researchEldritch;
+	public static String keyEldritch = "ELDRITCH_WORKINGS";
+
+	public static ResearchItem researchMagneoturgy;
+	public static String keyMagneoturgy = "MAGNEOTURGY";
+
 	public static ResearchItem researchThaumicBronze;
 	public static String keyThaumicBronze = "THAUMIC_BRONZE";
 
+	public static ResearchItem researchExcubituraPaste;
+	public static String keyExcubituraPaste = "EXCUBITURA_PASTE";
+
+	public static ResearchItem researchWardencloth;
+	public static String keyWardencloth = "WARDENCLOTH";
+
+	public static ResearchItem researchArmorWardencloth;
+	public static String keyArmorWardencloth = "ARMOR_WARDENCLOTH";
+
 	/** RECIPES **/
 	public static ShapelessArcaneRecipe recipeThaumicBronzeRaw;
+
+	public static ShapelessArcaneRecipe recipeExcubituraPaste;
+
+	public static ShapedArcaneRecipe recipeExcubituraFabric;
+	public static CrucibleRecipe recipeWardencloth;
+
+	public static ShapedArcaneRecipe recipeWardenclothSkullcap;
+	public static ShapedArcaneRecipe recipeWardenclothTunic;
+	public static ShapedArcaneRecipe recipeWardenclothPants;
+	public static ShapedArcaneRecipe recipeWardenclothBoots;
 
     /** RENDER IDs **/
     public static int wardedChestRenderID = -1;

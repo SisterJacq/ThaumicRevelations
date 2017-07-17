@@ -9,20 +9,20 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-import mortvana.thaumicrevelations.library.ThaumicLibrary;
+import mortvana.thaumicrevelations.library.ThaumRevLibrary;
 import mortvana.thaumicrevelations.melteddashboard.ColorLibrary;
 import mortvana.thaumicrevelations.util.ItemArmorInfusableBase;
 
 public class ItemArmorWardencloth extends ItemArmorInfusableBase {
 
 	public ItemArmorWardencloth(int type, String name, String icon) {
-		super(ThaumicLibrary.materialWardencloth, 0, type, name, "wardencloth", icon);
+		super(ThaumRevLibrary.materialWardencloth, 0, type, name, "wardencloth", icon);
 		//AspectInfusionHelper.setLockedSlotContents();
 	}
 
 	public Item register(String armorName, String registrationName) {
 		GameRegistry.registerItem(this, registrationName);
-		return super.setUnlocalizedName(ThaumicLibrary.RESOURCE_PREFIX + ".wardencloth." + armorName);
+		return super.setUnlocalizedName(ThaumRevLibrary.RESOURCE_PREFIX + ".wardencloth." + armorName);
 	}
 
 	@Override
@@ -83,8 +83,8 @@ public class ItemArmorWardencloth extends ItemArmorInfusableBase {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IIconRegister register) {
-		itemIcon = register.registerIcon(ThaumicLibrary.RESOURCE_PREFIX + ":armor/" + icon + "Color");
-		overlayIcon = register.registerIcon(ThaumicLibrary.RESOURCE_PREFIX + ":armor/" + icon + "Overlay");
+		itemIcon = register.registerIcon(ThaumRevLibrary.RESOURCE_PREFIX + ":armor/" + icon + "Color");
+		overlayIcon = register.registerIcon(ThaumRevLibrary.RESOURCE_PREFIX + ":armor/" + icon + "Overlay");
 	}
 
 	@Override

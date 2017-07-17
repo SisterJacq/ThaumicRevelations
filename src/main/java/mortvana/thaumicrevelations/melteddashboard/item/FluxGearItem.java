@@ -4,20 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 import mortvana.thaumicrevelations.core.common.ThaumicRevelations;
-import mortvana.thaumicrevelations.library.ThaumicLibrary;
 import mortvana.thaumicrevelations.melteddashboard.util.helpers.StringHelper;
 import mortvana.thaumicrevelations.melteddashboard.util.helpers.TextureHelper;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.StatCollector;
-import net.minecraft.world.World;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
@@ -281,7 +277,7 @@ public class FluxGearItem extends Item {
                 list.add(tooltipMap.get(meta));
             }
         } /*else {
-            list.add(ThaumicLibrary.NULL_TOOLTIP);
+            list.add(ThaumRevLibrary.NULL_TOOLTIP);
         }*/
     }
 }

@@ -7,7 +7,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-import mortvana.thaumicrevelations.library.ThaumicLibrary;
+import mortvana.thaumicrevelations.library.ThaumRevLibrary;
 import mortvana.thaumicrevelations.melteddashboard.block.FluxGearBlockPlant;
 
 public class BlockThaumicPlant extends FluxGearBlockPlant {
@@ -15,9 +15,9 @@ public class BlockThaumicPlant extends FluxGearBlockPlant {
 	public BlockThaumicPlant() {
 		super(Material.plants);
 		setBlockName("blockThaumicPlant");
-		setCreativeTab(ThaumicLibrary.thaumicRevelationsTab);
+		setCreativeTab(ThaumRevLibrary.thaumicRevelationsTab);
 		setStepSound(Block.soundTypeGrass);
-		setData(ThaumicLibrary.TEX_LOC_DEFAULT + "plant/", ThaumicLibrary.PLANT_NAMES);
+		setData(ThaumRevLibrary.TEX_LOC_DEFAULT + "plant/", ThaumRevLibrary.PLANT_NAMES);
 	}
 
 	@Override
@@ -26,7 +26,7 @@ public class BlockThaumicPlant extends FluxGearBlockPlant {
 
 		/*switch (meta) {
 			case 0:*/
-				list.add(ThaumicLibrary.excubituraPetal);
+				list.add(ThaumRevLibrary.excubituraPetal);
 		//}
 
 		return list;

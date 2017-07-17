@@ -18,6 +18,7 @@ import mortvana.thaumicrevelations.melteddashboard.util.helpers.OreDictHelper;
 import mortvana.thaumicrevelations.melteddashboard.util.helpers.StringHelper;
 
 public abstract class ItemArmorFluxGear extends ItemArmor {
+
 	public String sheetName;
 	public String icon;
 	public String repairMaterial = "";
@@ -25,12 +26,14 @@ public abstract class ItemArmorFluxGear extends ItemArmor {
 	public String[] textures = new String[2];
 	public boolean showInCreative = true;
 	public Multimap<String, AttributeModifier> properties = HashMultimap.create();
+	public ItemStack stack;
 
 	public ItemArmorFluxGear(ArmorMaterial material, int index, int type, String name, String sheet, String icon) {
 		super(material, index, type);
 		setUnlocalizedName(name);
 		sheetName = sheet;
 		this.icon = icon;
+		setItemStack();
 	}
 
 	public ItemArmorFluxGear(ArmorMaterial material, int type, String name, String sheet, String icon) {
@@ -67,6 +70,11 @@ public abstract class ItemArmorFluxGear extends ItemArmor {
 
 	public ItemArmorFluxGear setItemIcon(String icon) {
 		this.icon = icon;
+		return this;
+	}
+
+	public ItemArmorFluxGear setItemStack() {
+		stack = new ItemStack(this);
 		return this;
 	}
 

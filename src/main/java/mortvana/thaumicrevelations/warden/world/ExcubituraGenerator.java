@@ -10,7 +10,7 @@ import cpw.mods.fml.common.IWorldGenerator;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeDictionary.Type;
 
-import static mortvana.thaumicrevelations.library.ThaumicLibrary.*;
+import static mortvana.thaumicrevelations.library.ThaumRevLibrary.*;
 
 public class ExcubituraGenerator implements IWorldGenerator {
 

@@ -6,7 +6,7 @@ import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 
-import mortvana.thaumicrevelations.library.ThaumicLibrary;
+import mortvana.thaumicrevelations.library.ThaumRevLibrary;
 
 public class NBTHelper {
 
@@ -23,18 +23,18 @@ public class NBTHelper {
 	}
 
 	public static boolean isRevealingGoggles(ItemStack stack, EntityLivingBase entity) {
-		return (entity instanceof EntityPlayer && stack.getItem() instanceof ItemArmor && ((ItemArmor) stack.getItem()).armorType == 0 && stackHasBooleanKey(stack, ThaumicLibrary.REVEALING));
+		return (entity instanceof EntityPlayer && stack.getItem() instanceof ItemArmor && ((ItemArmor) stack.getItem()).armorType == 0 && stackHasBooleanKey(stack, ThaumRevLibrary.REVEALING));
 	}
 
 	public static boolean isBroken(ItemStack stack) {
-		return stackHasBooleanKey(stack, ThaumicLibrary.BROKEN);
+		return stackHasBooleanKey(stack, ThaumRevLibrary.BROKEN);
 	}
 
 	public static ItemStack setBroken(ItemStack stack, boolean bool) {
 		if (!stack.hasTagCompound()) {
 			stack.setTagCompound(new NBTTagCompound());
 		}
-		stack.getTagCompound().setBoolean(ThaumicLibrary.BROKEN, bool);
+		stack.getTagCompound().setBoolean(ThaumRevLibrary.BROKEN, bool);
 		return stack;
 	}
 

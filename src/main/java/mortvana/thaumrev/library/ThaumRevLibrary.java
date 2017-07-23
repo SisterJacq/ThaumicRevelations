@@ -30,6 +30,7 @@ public class ThaumRevLibrary {
     public static final String RESOURCE_PREFIX = "thaumrev";
     public static final String TEX_LOC_DEFAULT = "thaumrev:";
 
+	public static byte researchLevel;
 
     /** RESEARCH CATEGORIES **/
     public static final String RESEARCH_KEY = "THAUMREV";
@@ -109,9 +110,12 @@ public class ThaumRevLibrary {
 	public static ItemStack excubituraFabric;               //00111
 	public static ItemStack wardencloth;                    //00112
 
-	public static ItemStack excubituraOil;                  //00120
-	public static ItemStack thaumicBronzeChain;             //00123
-	public static ItemStack wardenBronzeChain;              //00124
+	public static ItemStack excubituraOilUnproc;            //00120
+	public static ItemStack excubituraOil;                  //00121
+	public static ItemStack thaumicBronzeChain;             //00122
+	public static ItemStack wardenBronzeChain;              //00123
+	public static ItemStack primalBronzeChain;              //00124
+	public static ItemStack wardenBronzePlate;              //00125
 
 	public static ItemStack excubituraOilPure;              //00130
 
@@ -126,6 +130,11 @@ public class ThaumRevLibrary {
     public static ItemStack loveRing;                       //00001
 
 	/** ARMORS **/
+	public static ItemArmorFluxGear bronzeChainHelmet;
+	public static ItemArmorFluxGear bronzeMail;
+	public static ItemArmorFluxGear bronzeChainGreaves;
+	public static ItemArmorFluxGear bronzeChainBoots;
+
 	public static ItemArmorFluxGear primalGoggles;
 	public static ItemArmorFluxGear primalRobes;
 	public static ItemArmorFluxGear primalPants;
@@ -136,7 +145,50 @@ public class ThaumRevLibrary {
 	public static ItemArmorInfusableBase wardenclothPants;
 	public static ItemArmorInfusableBase wardenclothBoots;
 
-	/** RESEARCH **/
+	public static ItemArmorInfusableBase wardenicChainHelmet;
+	public static ItemArmorInfusableBase wardenicMail;
+	public static ItemArmorInfusableBase wardenicChainGreaves;
+	public static ItemArmorInfusableBase wardenicChainBoots;
+
+	/** RECIPES **/
+	public static ShapelessArcaneRecipe recipeThaumicBronzeRaw;
+
+	public static ShapedArcaneRecipe recipeThaumicBronzeChain;
+
+	public static ShapedArcaneRecipe recipeBronzeChainHelmet;
+	public static ShapedArcaneRecipe recipeBronzeMail;
+	public static ShapedArcaneRecipe recipeBronzeChainGreaves;
+	public static ShapedArcaneRecipe recipeBronzeChainBoots;
+
+	public static InfusionRecipe recipePrimalGoggles;
+	public static InfusionRecipe recipePrimalRobes;
+	public static InfusionRecipe recipePrimalPants;
+	public static InfusionRecipe recipePrimalBoots;
+
+	public static ShapelessArcaneRecipe recipeExcubituraPaste;
+
+	public static ShapedArcaneRecipe recipeExcubituraFabric;
+	public static CrucibleRecipe recipeWardencloth;
+
+	public static ShapedArcaneRecipe recipeWardenclothSkullcap;
+	public static ShapedArcaneRecipe recipeWardenclothTunic;
+	public static ShapedArcaneRecipe recipeWardenclothPants;
+	public static ShapedArcaneRecipe recipeWardenclothBoots;
+
+	public static ShapelessArcaneRecipe recipeExcubituraOilUnproc;
+	public static ShapelessArcaneRecipe recipeExcubituraOil;
+
+	public static ShapedArcaneRecipe recipeWardenBronzeChain;
+	public static ShapedArcaneRecipe recipePrimalBronzeChain;
+	public static ShapedArcaneRecipe recipeWardenBronzePlate;
+
+	public static ShapedArcaneRecipe recipeWardenicChainHelmet;
+	public static ShapedArcaneRecipe recipeWardenicMail;
+	public static ShapedArcaneRecipe recipeWardenicChainGreaves;
+	public static ShapedArcaneRecipe recipeWardenicChainBoots;
+
+
+	// /** RESEARCH **/
 	public static ResearchItem researchThaumRev;
 	public static String keyThaumRev = "THAUMIC_REVELATIONS";
 
@@ -153,6 +205,12 @@ public class ThaumRevLibrary {
 	public static ResearchItem researchThaumicBronze;
 	public static String keyThaumicBronze = "THAUMIC_BRONZE";
 
+	public static ResearchItem researchBronzeChain;
+	public static String keyBronzeChain = "TBRONZE_CHAIN";
+
+	public static ResearchItem researchArmorBronzeChain;
+	public static String keyArmorBronzeChain = "ARMOR_TBRONZE";
+
 	public static ResearchItem researchPrimalRobes;
 	public static String keyRobesPrimal = "ROBES_PRIMAL";
 
@@ -166,23 +224,14 @@ public class ThaumRevLibrary {
 	public static ResearchItem researchArmorWardencloth;
 	public static String keyArmorWardencloth = "ARMOR_WARDENCLOTH";
 
-	/** RECIPES **/
-	public static ShapelessArcaneRecipe recipeThaumicBronzeRaw;
+	public static ResearchItem researchExcubituraOil;
+	public static String keyExcubituraOil = "EXCUBITURA_OIL";
 
-	public static ShapelessArcaneRecipe recipeExcubituraPaste;
+	public static ResearchItem researchWardenBronze;
+	public static String keyWardenBronze = "WARDENBRONZE";
 
-	public static ShapedArcaneRecipe recipeExcubituraFabric;
-	public static CrucibleRecipe recipeWardencloth;
-
-	public static ShapedArcaneRecipe recipeWardenclothSkullcap;
-	public static ShapedArcaneRecipe recipeWardenclothTunic;
-	public static ShapedArcaneRecipe recipeWardenclothPants;
-	public static ShapedArcaneRecipe recipeWardenclothBoots;
-
-	public static InfusionRecipe recipePrimalGoggles;
-	public static InfusionRecipe recipePrimalRobes;
-	public static InfusionRecipe recipePrimalPants;
-	public static InfusionRecipe recipePrimalBoots;
+	public static ResearchItem researchArmorWardenBronze;
+	public static String keyArmorWardenBronze = "ARMOR_WARDENBRONZE";
 
     /** RENDER IDs **/
     public static int wardedChestRenderID = -1;

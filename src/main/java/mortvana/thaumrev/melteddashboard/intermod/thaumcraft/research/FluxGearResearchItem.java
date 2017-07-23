@@ -14,6 +14,7 @@ import thaumcraft.api.research.ResearchPage;
 public class FluxGearResearchItem extends ResearchItem {
 
 	public String textPrefix;
+	private static final String KEY = "THAUMREV";
 
 	public FluxGearResearchItem(String key, String category, AspectList tags, int col, int row, int complex, ResourceLocation icon) {
 		super(key, category, tags, col, row, complex, icon);
@@ -26,6 +27,14 @@ public class FluxGearResearchItem extends ResearchItem {
 
 	public FluxGearResearchItem(String key, String category, AspectList tags, int col, int row, int complex, ItemStack icon) {
 		super(key, category, tags, col, row, complex, icon);
+	}
+
+	public FluxGearResearchItem(String key, AspectList tags, int col, int row, int complex, ItemStack icon) {
+		super(key, KEY, tags, col, row, complex, icon);
+	}
+
+	public FluxGearResearchItem(String key, AspectList tags, int col, int row, int complex, ResourceLocation icon) {
+		super(key, KEY, tags, col, row, complex, icon);
 	}
 
 	public FluxGearResearchItem(String key, String category) {

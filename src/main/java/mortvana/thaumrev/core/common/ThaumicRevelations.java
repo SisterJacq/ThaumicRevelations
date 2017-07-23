@@ -30,9 +30,9 @@ public class ThaumicRevelations {
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        moduleLoader.addModule("Core", true, new ThaumRevContent(), new ThaumicRevelationsCoreConfig(event, "Mortvana/ThaumicRevelations-Core.cfg"));
-        moduleLoader.addModule("ThaumicWarden", ThaumicRevelationsCoreConfig.enableWarden, new WardenContent(), new ThaumicWardenConfig(event, "Mortvana/ThaumicRevelations-ThaumicWarden.cfg"));
-        moduleLoader.addModule("Eldritch Workings", ThaumicRevelationsCoreConfig.enableEldritch, new EldritchContent(), new EldritchWorkingsConfig(event, "Mortvana/ThaumicRevelations-EldritchWorkings.cfg"));
+        moduleLoader.addModule("Core", true, new ThaumRevContent(), new ThaumRevCoreConfig(event, "Mortvana/ThaumicRevelations-Core.cfg"));
+        moduleLoader.addModule("ThaumicWarden", ThaumRevCoreConfig.enableWarden, new WardenContent(), new ThaumicWardenConfig(event, "Mortvana/ThaumicRevelations-ThaumicWarden.cfg"));
+        moduleLoader.addModule("Eldritch Workings", ThaumRevCoreConfig.enableEldritch, new EldritchContent(), new EldritchWorkingsConfig(event, "Mortvana/ThaumicRevelations-EldritchWorkings.cfg"));
 
         moduleLoader.preInit(event);
     }

@@ -27,6 +27,7 @@ public class ItemArmorPrimal extends ItemArmorFluxGear implements IRepairable, I
 
 	public ItemArmorPrimal(int type, String name, String icon) {
 		super(ThaumcraftApi.armorMatSpecial, getIndexForType(type), type, name, "primal", icon);
+		setCreativeTab(ThaumRevLibrary.thaumicRevelationsTab);
 		setRepairMaterials();
 	}
 

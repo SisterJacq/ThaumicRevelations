@@ -29,6 +29,7 @@ public class ThaumcraftLibrary {
 		itemThaumometer = getItem("itemThaumometer");
 
 		itemResource = getItem("itemResource");
+		itemShard = getItem("itemShard");
 		itemNugget = getItem("itemNugget");
 
 		planksGreatwood = new ItemStack(blockWoodenDevice, 1, 6);
@@ -48,6 +49,8 @@ public class ThaumcraftLibrary {
 		itemEnchantedFabric = new ItemStack(itemResource, 1, 7);
 		dustSalisMundus = new ItemStack(itemResource, 1, 14);
 		itemPrimalCharm = new ItemStack(itemResource, 1, 15);
+
+		shardBalanced = new ItemStack(itemShard, 1, 6);
 
 		itemQuicksilverDrop = new ItemStack(itemNugget, 1, 5);
 	}
@@ -155,6 +158,8 @@ public class ThaumcraftLibrary {
 	public static ItemStack itemEnchantedFabric;
 	public static ItemStack dustSalisMundus;
 	public static ItemStack itemPrimalCharm;
+
+	public static ItemStack shardBalanced;
 
 	public static ItemStack itemQuicksilverDrop;
 

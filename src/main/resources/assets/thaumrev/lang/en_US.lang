@@ -7,33 +7,41 @@ tooltip.wardenic.upgrade=Upgrade
 item.thaumrev.material.ingotCopper.name=Copper Ingot
 item.thaumrev.material.ingotZinc.name=Zinc Ingot
 item.thaumrev.material.ingotTin.name=Tin Ingot
+
 item.thaumrev.material.nuggetCopper.name=Copper Nugget
 item.thaumrev.material.nuggetZinc.name=Zinc Nugget
 item.thaumrev.material.nuggetTin.name=Tin Nugget
+
 item.thaumrev.material.dustCopper.name=Copper Dust
 item.thaumrev.material.dustZinc.name=Zinc Dust
 item.thaumrev.material.dustTin.name=Tin Dust
+
 item.thaumrev.material.ingotBrass.name=Brass Ingot
 item.thaumrev.material.ingotBronze.name=Bronze Ingot
 item.thaumrev.material.ingotThaumicBronze.name=Thaumic Bronze Ingot
 item.thaumrev.material.ingotVoidbrass.name=Voidbrass Ingot
 item.thaumrev.material.ingotSteel.name=Steel Ingot
 item.thaumrev.material.ingotVoidsteel.name=Voidsteel Ingot
+
 item.thaumrev.material.nuggetBrass.name=Brass Nugget
 item.thaumrev.material.nuggetBronze.name=Bronze Nugget
 item.thaumrev.material.nuggetThaumicBronze.name=Thaumic Bronze Nugget
 item.thaumrev.material.nuggetVoidbrass.name=Voidbrass Nugget
 item.thaumrev.material.nuggetSteel.name=Steel Nugget
 item.thaumrev.material.nuggetVoidsteel.name=Voidsteel Nugget
+
 item.thaumrev.material.dustBrass.name=Brass Dust
 item.thaumrev.material.dustBronze.name=Bronze Dust
 item.thaumrev.material.dustThaumicBronze.name=Thaumic Bronze Dust
 item.thaumrev.material.dustVoidbrass.name=Voidbrass Dust
 item.thaumrev.material.dustSteel.name=Steel Dust
 item.thaumrev.material.dustVoidsteel.name=Voidsteel Dust
+
 item.thaumrev.material.ingotBrass.name=Raw Brass Ingot
 item.thaumrev.material.ingotBronze.name=Raw Bronze Ingot
 item.thaumrev.material.ingotThaumicBronzeRaw.name=Raw Thaumic Bronze Ingot
+
+
 item.thaumrev.material.excubituraPetal.name=Excubitura Petal
 item.thaumrev.material.excubituraPaste.name=Excubitura Paste
 item.thaumrev.material.excubituraFabric.name=Excubitura Infused Cloth
@@ -51,6 +59,7 @@ item.thaumrev.primal.goggles.name=Primal Goggles
 item.thaumrev.primal.robes.name=Primal Robes
 item.thaumrev.primal.pants.name=Primal Pants
 item.thaumrev.primal.boots.name=Primal Boots
+
 item.thaumrev.wardencloth.skullcap.name=Wardencloth Skullcap
 item.thaumrev.wardencloth.tunic.name=Wardencloth Tunic
 item.thaumrev.wardencloth.pants.name=Wardencloth Pants

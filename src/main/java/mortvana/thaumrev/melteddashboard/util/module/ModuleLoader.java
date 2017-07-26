@@ -3,9 +3,8 @@ package mortvana.thaumrev.melteddashboard.util.module;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import mortvana.thaumrev.melteddashboard.util.ConfigBase;
-import mortvana.thaumrev.melteddashboard.util.IConfigInitialized;
-import mortvana.thaumrev.melteddashboard.util.IEventInitialized;
+
+import mortvana.thaumrev.melteddashboard.util.*;
 import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
@@ -50,7 +49,7 @@ public class ModuleLoader implements IEventInitialized {
 		}
 	}
 
-	public void addModule(String name, boolean enabled, IConfigInitialized content, ConfigBase config) {
+	public void addModule(String name, boolean enabled, IInitialized content, ConfigBase config) {
 		if (getModuleFromName(name) == null) {
 			modules.add(new ModuleBase(name, enabled, content, config));
 		} else {

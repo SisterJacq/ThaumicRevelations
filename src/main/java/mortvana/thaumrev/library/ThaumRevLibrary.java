@@ -1,8 +1,9 @@
 package mortvana.thaumrev.library;
 
+import mortvana.thaumrev.melteddashboard.item.FluxGearItemInteractive;
 import mortvana.thaumrev.melteddashboard.MaterialHardAir;
 import mortvana.thaumrev.melteddashboard.intermod.baubles.item.FluxGearItemBauble;
-import mortvana.thaumrev.melteddashboard.item.FluxGearItem;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -30,7 +31,7 @@ public class ThaumRevLibrary {
     public static final String RESOURCE_PREFIX = "thaumrev";
     public static final String TEX_LOC_DEFAULT = "thaumrev:";
 
-	public static byte researchLevel;
+	public static int researchLevel;
 
     /** RESEARCH CATEGORIES **/
     public static final String RESEARCH_KEY = "THAUMREV";
@@ -41,10 +42,6 @@ public class ThaumRevLibrary {
     public static final Aspect MAGNET = new Aspect("magnes", 0x515970, new Aspect[] { METAL, ENERGY }, new ResourceLocation(RESOURCE_PREFIX, "textures/aspects/magnes.png"), 771);
     public static final Aspect FLUX = new Aspect("fluxus", 0xAD0200, new Aspect[] { MAGNET, MECHANISM }, new ResourceLocation(RESOURCE_PREFIX, "textures/aspects/fluxus.png"), 771);
     public static final Aspect REVELATIONS = new Aspect("patefactio", 0x3971AD, new Aspect[] { TRAVEL, MIND }, new ResourceLocation(RESOURCE_PREFIX, "textures/aspects/revelatiofez.png"), 771);
-
-	/** ARMOR MATERIALS **/
-	public static ArmorMaterial materialWardencloth;
-
 
 	/** ARMOR ARRAYS **/
 	public int[] discountWardencloth = new int[] {5, 2, 2, 1};
@@ -63,7 +60,7 @@ public class ThaumRevLibrary {
     public static Block blockFakeAir;
 
     /** ITEMS **/
-    public static FluxGearItem generalItem;
+    public static FluxGearItemInteractive generalItem;
     public static FluxGearItemBauble thaumicBauble;
 
 
@@ -101,8 +98,14 @@ public class ThaumRevLibrary {
 	public static ItemStack dustVoidbrass;                  //00054
 	public static ItemStack dustVoidsteel;                  //00055
 
-
 	public static ItemStack rawThaumicBronze;               //00062
+
+	public static ItemStack coatedThaumicBronze;            //00072
+
+	public static ItemStack ceramicSlag;                    //00080
+	public static ItemStack thaumicSlag;                    //00081
+
+	public static ItemStack thaumicBronzeChain;             //0090
 
 	public static ItemStack excubituraPetal;                //00100
 
@@ -112,10 +115,9 @@ public class ThaumRevLibrary {
 
 	public static ItemStack excubituraOilUnproc;            //00120
 	public static ItemStack excubituraOil;                  //00121
-	public static ItemStack thaumicBronzeChain;             //00122
-	public static ItemStack wardenBronzeChain;              //00123
-	public static ItemStack primalBronzeChain;              //00124
-	public static ItemStack wardenBronzePlate;              //00125
+	public static ItemStack wardenBronzeChain;              //00122
+	public static ItemStack primalBronzeChain;              //00123
+	public static ItemStack wardenBronzePlate;              //00124
 
 	public static ItemStack excubituraOilPure;              //00130
 
@@ -125,6 +127,8 @@ public class ThaumRevLibrary {
 	public static ItemStack excubituraCrystalAwakened;      //00150
 
 	public static ItemStack wardenJournal1;                 //01001
+
+	public static ItemStack firedThaumicBronze;             //01102
 
     public static ItemStack wardenAmulet;                   //00000
     public static ItemStack loveRing;                       //00001
@@ -152,6 +156,7 @@ public class ThaumRevLibrary {
 
 	/** RECIPES **/
 	public static ShapelessArcaneRecipe recipeThaumicBronzeRaw;
+	public static ShapelessArcaneRecipe recipeThaumicBronzeCoated;
 
 	public static ShapedArcaneRecipe recipeThaumicBronzeChain;
 

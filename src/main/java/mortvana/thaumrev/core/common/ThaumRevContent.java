@@ -3,6 +3,7 @@ package mortvana.thaumrev.core.common;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 import magicbees.api.MagicBeesAPI;
@@ -10,13 +11,12 @@ import mortvana.thaumrev.core.block.BlockThaumicPlant;
 import mortvana.thaumrev.core.block.ItemBlockThaumicPlant;
 import mortvana.thaumrev.core.common.config.ThaumRevCoreConfig;
 import mortvana.thaumrev.core.item.ItemArmorPrimal;
-import mortvana.thaumrev.library.ThaumRevLibrary;
+import mortvana.thaumrev.core.item.ItemThaumRev;
+import mortvana.thaumrev.melteddashboard.item.FluxGearItemInteractive;
 import mortvana.thaumrev.melteddashboard.intermod.thaumcraft.research.FluxGearResearchItem;
 import mortvana.thaumrev.melteddashboard.inventory.FluxGearCreativeTab;
-import mortvana.thaumrev.melteddashboard.item.FluxGearItem;
 import mortvana.thaumrev.melteddashboard.registry.RegistrationWrapper;
-import mortvana.thaumrev.melteddashboard.util.ConfigBase;
-import mortvana.thaumrev.melteddashboard.util.IConfigInitialized;
+import mortvana.thaumrev.melteddashboard.util.IInitialized;
 import mortvana.thaumrev.melteddashboard.util.helpers.ItemHelper;
 import mortvana.thaumrev.melteddashboard.util.helpers.mod.ThaumcraftHelper;
 import thaumcraft.api.ThaumcraftApi;
@@ -29,18 +29,7 @@ import static thaumcraft.api.aspects.Aspect.*;
 import static mortvana.thaumrev.library.ThaumRevLibrary.*;
 import static mortvana.thaumrev.melteddashboard.lib.ThaumcraftLibrary.*;
 
-public class ThaumRevContent implements IConfigInitialized {
-
-	public ThaumRevCoreConfig config;
-
-	@Override
-	public void setConfig(ConfigBase config) {
-		if (config instanceof ThaumRevCoreConfig) {
-			this.config = (ThaumRevCoreConfig) config;
-		} else {
-			ThaumicRevelations.logger.error("Wrong Config file passed. Reverting to defaults!");
-		}
-	}
+public class ThaumRevContent implements IInitialized {
 
     @Override
     public void preInit() {
@@ -60,10 +49,13 @@ public class ThaumRevContent implements IConfigInitialized {
     public void postInit() {
 	    ResearchCategories.registerCategory(RESEARCH_KEY, new ResourceLocation(RESOURCE_PREFIX, "textures/items/baubles/amuletWarden.png"), new ResourceLocation("thaumcraft", "textures/gui/gui_researchback.png"));
 	    aluminiumArc();
+	    addLoot();
+	    determineTempus();
 	    loadRecipes();
 	    loadThaumicRecipes();
 	    loadResearch();
-	    determineTempus();
+	    initResearch();
+	    setPages();
     }
 
 	public void createBlocks() {
@@ -73,7 +65,7 @@ public class ThaumRevContent implements IConfigInitialized {
 	}
 
 	public void createItems() {
-		generalItem = (FluxGearItem) new FluxGearItem(RESOURCE_PREFIX, thaumicRevelationsTab).setFolder("material").setUnlocalizedName("material");
+		generalItem = new ItemThaumRev();
 
 		primalGoggles = new ItemArmorPrimal(0, "primal.goggles", "primalGoggles").register("goggles", "PrimalGoggles");
 		primalRobes = new ItemArmorPrimal(1, "primal.robes", "primalRobes").register("robes", "PrimalRobes");
@@ -82,11 +74,11 @@ public class ThaumRevContent implements IConfigInitialized {
 	}
 
 	public void setResearchLevel() {
-		int lvl = ThaumRevCoreConfig.researchLevel;
+		/*int lvl = ThaumRevCoreConfig.researchLevel;
 		if (lvl < -1) {
 			ThaumicRevelations.logger.error("Someone manually set our difficulty to " + lvl + "! Value should be between -1 and 2, inclusive. SETTING IT TO -1 FOR THIS LAUNCH!");
 			lvl = -1;
-		} else if (lvl < 2) {
+		} else if (lvl > 2) {
 			ThaumicRevelations.logger.error("Someone manually set our difficulty to " + lvl + "! I know challenges are fun, but the value should be between -1 and 2, inclusive. SETTING IT TO 2 FOR THIS LAUNCH!");
 			lvl = 2;
 		}
@@ -109,14 +101,14 @@ public class ThaumRevContent implements IConfigInitialized {
 				ThaumicRevelations.logger.error("Thaumic Revelations couldn't find Thaumcraft's config to set our research information through hacky reflection! RESORTING TO DEFAULT OF 1!");
 				lvl = 1;
 			}
-		}
-		researchLevel = (byte) lvl;
+		}*/
+		researchLevel = 2;//lvl;
 	}
 
 	public void loadItems() {
-		ingotCopper = generalItem.addOreDictItem(0, "ingotCopper"); //FIX
-		ingotZinc = generalItem.addOreDictItem(1, "ingotZinc"); //FIX
-		ingotTin = generalItem.addOreDictItem(2, "ingotTin"); //FIX
+		ingotCopper = generalItem.addOreDictItem(0, "ingotCopper");
+		ingotZinc = generalItem.addOreDictItem(1, "ingotZinc");
+		ingotTin = generalItem.addOreDictItem(2, "ingotTin");
 
 		nuggetCopper = generalItem.addOreDictItem(10, "nuggetCopper");
 		nuggetZinc = generalItem.addOreDictItem(11, "nuggetZinc");
@@ -127,8 +119,8 @@ public class ThaumRevContent implements IConfigInitialized {
 		dustTin = generalItem.addOreDictItem(22, "dustTin");
 
 		ingotBrass = generalItem.addOreDictItem(30, "ingotBrass");
-		ingotBronze = generalItem.addOreDictItem(31, "ingotBronze"); //FIX
-		ingotThaumicBronze = generalItem.addOreDictItem(32, "ingotThaumicBronze"); //FIX
+		ingotBronze = generalItem.addOreDictItem(31, "ingotBronze");
+		ingotThaumicBronze = generalItem.addOreDictItem(32, "ingotThaumicBronze");
 		ingotSteel = generalItem.addOreDictItem(33, "ingotSteel");
 		ingotVoidbrass = generalItem.addOreDictItem(34, "ingotVoidbrass");
 		ingotVoidsteel = generalItem.addOreDictItem(35, "ingotVoidsteel");
@@ -140,19 +132,27 @@ public class ThaumRevContent implements IConfigInitialized {
 		nuggetVoidbrass = generalItem.addOreDictItem(44, "nuggetVoidbrass");
 		nuggetVoidsteel = generalItem.addOreDictItem(45, "nuggetVoidsteel");
 
-		dustBrass = generalItem.addOreDictItem(50, "dustBrass"); //FIX
-		dustBronze = generalItem.addOreDictItem(51, "dustBronze"); //FIX
+		dustBrass = generalItem.addOreDictItem(50, "dustBrass");
+		dustBronze = generalItem.addOreDictItem(51, "dustBronze");
 		dustThaumicBronze = generalItem.addOreDictItem(52, "dustThaumicBronze");
 		dustSteel = generalItem.addOreDictItem(53, "dustSteel");
 		dustVoidbrass = generalItem.addOreDictItem(54, "dustVoidbrass");
 		dustVoidsteel = generalItem.addOreDictItem(55, "dustVoidsteel");
 
-		rawThaumicBronze = generalItem.addOreDictItem(60, "ingotThaumicBronzeRaw");
+		rawThaumicBronze = generalItem.addOreDictItem(62, "ingotThaumicBronzeRaw");
 
-		thaumicBronzeChain = generalItem.addOreDictItem(70, "thaumicBronzeChain", "itemChainThaumicBronze");
+		coatedThaumicBronze = generalItem.addOreDictItem(72, "ingotThaumicBronzeCoated");
+
+		ceramicSlag = generalItem.addOreDictItem(80, "itemSlagCeramic");
+		thaumicSlag = generalItem.addOreDictItem(81, "itemSlagThaumic");
+
+		thaumicBronzeChain = generalItem.addOreDictItem(90, "thaumicBronzeChain", "itemChainThaumicBronze");
+
+		firedThaumicBronze = generalItem.addOreDictItem(1102, "ingotThaumicBronzeFired");
 	}
 
 	public void aluminiumArc() {
+		RegistrationWrapper.registerOreDict(new ItemStack(Items.clay_ball), "itemClay");
 		RegistrationWrapper.registerOreDict(new ItemStack(Items.glass_bottle), "itemBottle");
 		RegistrationWrapper.registerOreDict(dustSalisMundus, "dustSalisMundus");
 		RegistrationWrapper.registerOreDict(itemEnchantedFabric, "itemEnchantedFabric");
@@ -160,12 +160,17 @@ public class ThaumRevContent implements IConfigInitialized {
 		RegistrationWrapper.registerOreDict(shardBalanced, "shardBalanced");
 	}
 
+	public void addLoot() {
+		generalItem.addLoot(1102, ingotThaumicBronze, thaumicSlag);
+	}
+
 	public void loadRecipes() {
-		RegistrationWrapper.addSmelting(rawThaumicBronze, ingotThaumicBronze, 2.0F);
+		RegistrationWrapper.addSmelting(coatedThaumicBronze, firedThaumicBronze, 2.0F);
 	}
 
 	public void loadThaumicRecipes() {
-		recipeThaumicBronzeRaw = ThaumcraftApi.addShapelessArcaneCraftingRecipe(keyThaumicBronze, rawThaumicBronze, new AspectList().add(ORDER, 5).add(EARTH, 5).add(FIRE, 5), "nuggetBronze", "nuggetBronze", "nuggetBronze", "nuggetBronze", "nuggetThaumium", "nuggetThaumium", "nuggetBrass", "itemQuicksilverDrop", "dustSalisMundus");
+		recipeThaumicBronzeRaw = ThaumcraftApi.addShapelessArcaneCraftingRecipe(keyThaumicBronze, rawThaumicBronze, new AspectList().add(ORDER, 5).add(EARTH, 5).add(FIRE, 5), "nuggetBronze", "nuggetBronze", "nuggetBronze", "nuggetBronze", "nuggetBronze", "nuggetBronze", "nuggetThaumium", "nuggetThaumium", "nuggetBrass");
+		recipeThaumicBronzeCoated = ThaumcraftApi.addShapelessArcaneCraftingRecipe(keyThaumicBronze, coatedThaumicBronze, new AspectList().add(EARTH, 5).add(WATER, 5), "ingotThaumicBronzeRaw", "itemQuicksilverDrop", "dustSalisMundus", "itemClay");
 
 		recipeThaumicBronzeChain = ThaumcraftApi.addArcaneCraftingRecipe(keyBronzeChain, ItemHelper.cloneStack(thaumicBronzeChain, 12), new AspectList().add(ORDER, 10).add(FIRE, 5), " X ", "X X", 'X', "ingotThaumicBronze");
 
@@ -181,16 +186,33 @@ public class ThaumRevContent implements IConfigInitialized {
 	}
 
 	public void loadResearch() {
-		researchThaumRev = new FluxGearResearchItem(keyThaumRev, RESEARCH_KEY, new AspectList(), 0, 0, 0, new ItemStack(Items.potato)).setRound().setSpecial().setAutoUnlock().registerResearchItem();
+		researchThaumRev = new FluxGearResearchItem(keyThaumRev, RESEARCH_KEY, new AspectList(), 0, 0, 0, new ItemStack(Items.potato));
+		researchThaumicBronze = new FluxGearResearchItem(keyThaumicBronze, RESEARCH_KEY, new AspectList().add(METAL, 4).add(MAGIC, 3).add(ORDER, 1), 0, 3, 1, ingotThaumicBronze);
+		researchBronzeChain = new FluxGearResearchItem(keyBronzeChain, RESEARCH_KEY, new AspectList().add(METAL, 4).add(MAGIC, 2).add(CRAFT, 3), -2, 4, 1, thaumicBronzeChain);
+		researchPrimalRobes = new FluxGearResearchItem(keyRobesPrimal, RESEARCH_KEY, new AspectList().add(MAGIC, 4).add(CLOTH, 4).add(ARMOR, 3).add(ENERGY, 2).add(SENSES, 2).add(ThaumcraftHelper.newPrimalAspectList(1)), 1, 5, 3, new ItemStack(Items.potato)/*primalRobes.stack*/);
+	}
+
+	public void initResearch() {
+		researchThaumRev.setRound().setSpecial().setAutoUnlock().registerResearchItem();
+		researchPrimalRobes.setParents(keyThaumRev, "THAUMIUM", "ENCHFABRIC", "GOGGLES", "NITOR", "INFUSION", "INFUSIONENCHANTMENT").registerResearchItem();
+
+
+		if (researchLevel == 0) { //EASY-MODE
+			researchThaumicBronze.setParents(keyThaumRev, "THAUMIUM").setSiblings(keyBronzeChain).registerResearchItem();
+			researchBronzeChain.setParents(keyThaumicBronze).setSecondary().registerResearchItem();
+		} else if (researchLevel == 2) { //HARD-MODE
+			researchThaumicBronze.setParents(keyThaumRev, "THAUMIUM").registerResearchItem();
+			researchBronzeChain.setParents(keyThaumicBronze).setSecondary().registerResearchItem();
+		} else { //NORMAL-MODE
+			researchThaumicBronze.setParents(keyThaumRev, "THAUMIUM").registerResearchItem();
+			researchBronzeChain.setParents(keyThaumicBronze).setSecondary().registerResearchItem();
+		}
+	}
+
+	public void setPages() {
 		researchThaumRev.setPages(new ResearchPage("0"));
-
-		researchThaumicBronze = new FluxGearResearchItem(keyThaumicBronze, RESEARCH_KEY, new AspectList().add(METAL, 4).add(MAGIC, 3).add(ORDER, 1), 0, 3, 1, ingotThaumicBronze).setParents(keyThaumRev, "THAUMIUM").registerResearchItem();
-		researchThaumicBronze.setPages(new ResearchPage("0"), new ResearchPage(recipeThaumicBronzeRaw), new ResearchPage(rawThaumicBronze));
-
-		researchBronzeChain = new FluxGearResearchItem(keyBronzeChain, RESEARCH_KEY, new AspectList().add(METAL, 4).add(MAGIC, 2).add(CRAFT, 3), -2, 4, 1, thaumicBronzeChain).setParents(keyThaumicBronze).setSecondary().registerResearchItem();
+		researchThaumicBronze.setPages(new ResearchPage("0"), new ResearchPage(recipeThaumicBronzeRaw), new ResearchPage(recipeThaumicBronzeCoated), new ResearchPage(coatedThaumicBronze), new ResearchPage("1"));
 		researchBronzeChain.setPages(new ResearchPage("0"), new ResearchPage(recipeThaumicBronzeChain));
-
-		researchPrimalRobes = new FluxGearResearchItem(keyRobesPrimal, RESEARCH_KEY, new AspectList().add(MAGIC, 4).add(CLOTH, 4).add(ARMOR, 3).add(ENERGY, 2).add(SENSES, 2).add(ThaumcraftHelper.newPrimalAspectList(1)), 1, 5, 3, new ItemStack(Items.potato)/*primalRobes.stack*/).setParents(keyThaumRev, "THAUMIUM", "ENCHFABRIC", "GOGGLES", "NITOR", "INFUSION", "INFUSIONENCHANTMENT").registerResearchItem();
 		researchPrimalRobes.setPages(new ResearchPage("0")/*, new ResearchPage(recipePrimalGoggles), new ResearchPage(recipePrimalRobes), new ResearchPage(recipePrimalPants), new ResearchPage(recipePrimalBoots)*/);
 	}
 
@@ -200,11 +222,19 @@ public class ThaumRevContent implements IConfigInitialized {
         if (protoTempus != null && protoTempus instanceof Aspect) {
             tempus = (Aspect) protoTempus;
         } else {
-            tempus = Aspect.VOID;
+            tempus = new Aspect("tempus", 0xB68CFF, new Aspect[] { Aspect.VOID, Aspect.ORDER }, new ResourceLocation(RESOURCE_PREFIX, "textures/aspects/tempus.png"), 1);
+	        if (Loader.isModLoaded("Forestry")) {
+		        ThaumicRevelations.logger.info("What's the matter? What's with the lack of Magic Bees? You not like bees? DO YOU NOT LIKE THE BEES!?!? HUH!?!? YOU SOME APIPHOBIC LOSER!?!?");
+	        }
+	        timeyWimey();
         }
     }
 
+	public void timeyWimey() {
+		//FRESH COPY-PASTA FROM MAGIC BEES FOR THOSE CRAZY PEOPLE WHO DON'T USE MAGIC BEES!!!!
+		ThaumcraftApi.registerObjectTag(new ItemStack(Items.clock), new AspectList(new ItemStack(Items.clock)).add(tempus, 4));
+		ThaumcraftApi.registerObjectTag(new ItemStack(Items.repeater), new AspectList(new ItemStack(Items.repeater)).add(tempus, 2));
+	}
+
     public static Aspect tempus;
-
-
 }

@@ -30,8 +30,14 @@ public abstract class ItemArmorInfusableBase extends ItemArmorFluxGear implement
 
 	protected int maxEnergy;
 
-	public ItemArmorInfusableBase(ArmorMaterial material, int index, int type, String name, String sheet, String icon) {
+	public ItemArmorInfusableBase(String material, int index, int type, String name, String sheet, String icon) {
 		super(material, index, type, name, sheet, icon);
+		this.type = EnumEquipmentType.values()[type];
+		setCreativeTab(ThaumRevLibrary.thaumicRevelationsTab);
+	}
+
+	public ItemArmorInfusableBase(String material, int type) {
+		super(material, type);
 		this.type = EnumEquipmentType.values()[type];
 		setCreativeTab(ThaumRevLibrary.thaumicRevelationsTab);
 	}

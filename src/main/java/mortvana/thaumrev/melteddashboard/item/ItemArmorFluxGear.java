@@ -80,11 +80,15 @@ public abstract class ItemArmorFluxGear extends ItemArmor {
 		setUnlocalizedName(name);
 		sheetName = sheet;
 		this.icon = icon;
+		damageReduceAmount = getReduction(type);
+		setMaxDamage(getDurability(type));
 	}
 
 	public ItemArmorFluxGear(String material, int type) {
-		super(MATERIAL, 0, type);
+		super(MATERIAL, 2, type);
 		setMaterial(material);
+		damageReduceAmount = getReduction(type);
+		setMaxDamage(getDurability(type));
 	}
 
 	/** SETTERS **/

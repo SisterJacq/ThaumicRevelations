@@ -302,6 +302,21 @@ public class StringHelper {
 
     }*/
 
+	public static String getArmorForInt(int type) {
+		switch (type) {
+			case 0:
+				return "helmet";
+			case 1:
+				return "chestpiece";
+			case 2:
+				return "leggings";
+			case 3:
+				return "boots";
+			default:
+				return "*INVALID INTEGER PASSED*";
+		}
+	}
+
 	/** Tooltips **/
 
 	public static String getActivationText(String string) {

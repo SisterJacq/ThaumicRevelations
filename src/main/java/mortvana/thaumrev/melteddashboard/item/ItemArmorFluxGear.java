@@ -74,7 +74,7 @@ public abstract class ItemArmorFluxGear extends ItemArmor {
 		setMaxDamage(getDurability(type));
 	}
 
-	public ItemArmorFluxGear(String  material, int type, String name, String sheet, String icon) {
+	public ItemArmorFluxGear(String material, int type, String name, String sheet, String icon) {
 		super(MATERIAL, 2, type);
 		setMaterial(material);
 		setUnlocalizedName(name);

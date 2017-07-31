@@ -36,8 +36,8 @@ public abstract class ItemArmorInfusableBase extends ItemArmorFluxGear implement
 		setCreativeTab(ThaumRevLibrary.thaumicRevelationsTab);
 	}
 
-	public ItemArmorInfusableBase(String material, int type) {
-		super(material, type);
+	public ItemArmorInfusableBase(String material, int index, int type) {
+		super(material, index, type);
 		this.type = EnumEquipmentType.values()[type];
 		setCreativeTab(ThaumRevLibrary.thaumicRevelationsTab);
 	}
@@ -79,17 +79,18 @@ public abstract class ItemArmorInfusableBase extends ItemArmorFluxGear implement
 
 	@Override
 	public void damageArmor(EntityLivingBase entity, ItemStack stack, DamageSource source, int damage, int slot) {
-		if (!NBTHelper.isBroken(stack)) {
+		/*if (!NBTHelper.isBroken(stack)) {
 			if (source != DamageSource.fall) {
 				stack.damageItem(damage, entity);
 				AspectInfusionHelper.damageArmor(entity, stack, source, damage, slot);
 			}
-		}
+		}*/
 	}
 
 	@Override
 	public int getSizeInventory(ItemStack container) {
-		return AspectInfusionHelper.getSlotsTotal(container);
+		return 0;
+		//return AspectInfusionHelper.getSlotsTotal(container);
 	}
 
 	/*@Override

@@ -4,20 +4,25 @@ import net.minecraft.item.EnumRarity;
 
 public class ThaumRevMaterialData {
 
-	protected int index;
-	protected String name;
-	protected String sheet;
 	protected String icon;
 	protected String repair;
 	protected String texture;
 	protected EnumRarity rarity;
 	protected String unlocName;
 	protected String regName;
+	protected int color = 0xFFFFFF;
 
-	public ThaumRevMaterialData(int index, String name, String sheet, String icon, String repair, String texture, EnumRarity rarity, String unlocName, String regName) {
-		this.index = index;
-		this.name = name;
-		this.sheet = sheet;
+	public ThaumRevMaterialData(String icon, String repair, String texture, EnumRarity rarity, String unlocName, String regName, int color) {
+		this.icon = icon;
+		this.repair = repair;
+		this.texture = texture;
+		this.rarity = rarity;
+		this.unlocName = unlocName;
+		this.regName = regName;
+		this.color = color;
+	}
+
+	public ThaumRevMaterialData(String icon, String repair, String texture, EnumRarity rarity, String unlocName, String regName) {
 		this.icon = icon;
 		this.repair = repair;
 		this.texture = texture;
@@ -26,16 +31,8 @@ public class ThaumRevMaterialData {
 		this.regName = regName;
 	}
 
-	public void setIndex(int index) {
-		this.index = index;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public void setSheet(String sheet) {
-		this.sheet = sheet;
+	public ThaumRevMaterialData() {
+		//For automatic use only!
 	}
 
 	public void setIcon(String icon) {
@@ -62,16 +59,8 @@ public class ThaumRevMaterialData {
 		this.regName = regName;
 	}
 
-	public int getIndex() {
-		return index;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public String getSheet() {
-		return sheet;
+	public void setColor(int color) {
+		this.color = color;
 	}
 
 	public String getIcon() {
@@ -86,7 +75,7 @@ public class ThaumRevMaterialData {
 		return texture;
 	}
 
-	public EnumRarity rarity() {
+	public EnumRarity getRarity() {
 		return rarity;
 	}
 
@@ -98,4 +87,11 @@ public class ThaumRevMaterialData {
 		return regName;
 	}
 
+	public int getColor() {
+		return color;
+	}
+
+	public boolean getColorized() {
+		return color != 0xFFFFFF;
+	}
 }

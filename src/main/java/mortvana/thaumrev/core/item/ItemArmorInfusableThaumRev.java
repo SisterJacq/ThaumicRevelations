@@ -1,5 +1,7 @@
 package mortvana.thaumrev.core.item;
 
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.registry.GameRegistry;
 import gnu.trove.map.TMap;
 import gnu.trove.map.hash.THashMap;
@@ -13,8 +15,8 @@ public class ItemArmorInfusableThaumRev extends ItemArmorInfusableBase {
 
 	public static TMap<String, ThaumRevMaterialDataSet> materialData = new THashMap<String, ThaumRevMaterialDataSet>(32);
 
-	public ItemArmorInfusableThaumRev(String material, int type) {
-		super(material, type);
+	public ItemArmorInfusableThaumRev(String material, int index, int type) {
+		super(material, index, type);
 		register(material, type);
 	}
 
@@ -34,14 +36,12 @@ public class ItemArmorInfusableThaumRev extends ItemArmorInfusableBase {
 			ThaumicRevelations.logger.error("Someone either forgot to register their material data, or used the wrong string for it! Not registering this item!");
 			return;
 		}
-        setIndex(data.getIndex());
-        setUnlocalizedName(data.getUnlocName());
-        sheetName = data.getSheet();
-        icon = data.getIcon();
+        setUnlocalizedName(ThaumRevLibrary.RESOURCE_PREFIX + data.getUnlocName());
+        setItemIcon(data.getIcon());
         setRepairMaterial(data.getRepair());
         setTextures(data.getTexture());
         setRarity(data.getRarity());
-        if(data.getColorized) {
+        if(data.getColorized()) {
             setDefaultColor(data.getColor());
         }
         GameRegistry.registerItem(this, data.getRegName());
@@ -49,6 +49,16 @@ public class ItemArmorInfusableThaumRev extends ItemArmorInfusableBase {
 
 	public static void setDefaultInfusions(String material, int type) {
 		//AspectInfusionHelper.setLockedSlotContents();
+	}
+
+	@Override
+	public boolean showNodes(ItemStack stack, EntityLivingBase entity) {
+		return armorType == 0;
+	}
+
+	@Override
+	public boolean showIngamePopups(ItemStack stack, EntityLivingBase entity) {
+		return armorType == 0;
 	}
 
 }

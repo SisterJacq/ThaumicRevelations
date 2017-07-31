@@ -61,7 +61,7 @@ public abstract class ItemArmorFluxGear extends ItemArmor {
 	}
 
 	public ItemArmorFluxGear(ArmorMaterial material, int type) {
-		super(material, 0, type);
+		super(material, 2, type);
 	}
 
 	public ItemArmorFluxGear(String material, int index, int type, String name, String sheet, String icon) {
@@ -84,8 +84,8 @@ public abstract class ItemArmorFluxGear extends ItemArmor {
 		setMaxDamage(getDurability(type));
 	}
 
-	public ItemArmorFluxGear(String material, int type) {
-		super(MATERIAL, 2, type);
+	public ItemArmorFluxGear(String material, int index, int type) {
+		super(MATERIAL, index, type);
 		setMaterial(material);
 		damageReduceAmount = getReduction(type);
 		setMaxDamage(getDurability(type));

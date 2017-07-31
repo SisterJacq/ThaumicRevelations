@@ -150,7 +150,7 @@ public class ThaumRevLibrary {
 	public static ItemArmorInfusableBase wardenclothBoots;
 
 	public static ItemArmorInfusableBase wardenicChainHelmet;
-	public static ItemArmorInfusableBase wardenicMail;
+	public static ItemArmorInfusableBase wardenicChainmail;
 	public static ItemArmorInfusableBase wardenicChainGreaves;
 	public static ItemArmorInfusableBase wardenicChainBoots;
 
@@ -246,6 +246,8 @@ public class ThaumRevLibrary {
 			"excubitura"
 	};
 
+	public static final String matWardencloth = "WARDENCLOTH";
+	public static final String matWardenicChain = "WARDENIC_CHAIN";
 
 	/** NBT KEYS **/
 	public static final String DURABILITY = "DURABILITY";

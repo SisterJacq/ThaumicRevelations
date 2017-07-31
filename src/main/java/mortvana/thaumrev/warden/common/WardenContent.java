@@ -1,21 +1,22 @@
 package mortvana.thaumrev.warden.common;
 
 import net.minecraft.init.Items;
+import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.registry.GameRegistry;
-import net.minecraftforge.common.util.EnumHelper;
 
+import mortvana.thaumrev.core.item.ItemArmorInfusableThaumRev;
+import mortvana.thaumrev.core.item.ThaumRevMaterialDataSet;
+import mortvana.thaumrev.melteddashboard.ColorLibrary;
 import mortvana.thaumrev.melteddashboard.intermod.thaumcraft.research.FluxGearResearchItem;
 import mortvana.thaumrev.melteddashboard.item.ItemArmorFluxGear;
 import mortvana.thaumrev.melteddashboard.lib.ThaumcraftLibrary;
 import mortvana.thaumrev.melteddashboard.util.IInitialized;
 import mortvana.thaumrev.melteddashboard.util.helpers.ItemHelper;
 import mortvana.thaumrev.melteddashboard.util.helpers.mod.ThaumcraftHelper;
-import mortvana.thaumrev.warden.item.ItemArmorWardenicChain;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.AspectList;
 
-import mortvana.thaumrev.warden.item.ItemArmorWardencloth;
 import mortvana.thaumrev.warden.world.ExcubituraGenerator;
 import thaumcraft.api.research.ResearchPage;
 
@@ -48,8 +49,11 @@ public class WardenContent implements IInitialized {
     }
 
 	public void loadMaterials() {
-		ItemArmorFluxGear.addArmorMaterial("WARDENCLOTH", 30, new int[] {1, 3, 2, 1}, 20);
-		ItemArmorFluxGear.addArmorMaterial("WARDENIC_CHAIN", 15, new int[]{2, 5, 4, 1}, 20);
+		ItemArmorFluxGear.addArmorMaterial(matWardencloth, 30, new int[] {1, 3, 2, 1}, 20);
+		ItemArmorFluxGear.addArmorMaterial(matWardenicChain, 15, new int[]{2, 5, 4, 1}, 20);
+
+		ItemArmorInfusableThaumRev.materialData.put(matWardencloth, new ThaumRevMaterialDataSet().setUnlocName(".wardencloth.", new String[] {"skullcap", "tunic", "pants", "boots"}).setIcon("wardencloth", new String[] {"Skullcap", "Tunic", "Pants", "Boots"}).setRepair("itemWardencloth").setColor(ColorLibrary.COLOR_TEAL_MAGNEQUAZAR).setTexture("wardencloth").setRarity(EnumRarity.uncommon).setRegName("Wardencloth", new String[] {"Skullcap", "Tunic", "Pants", "Boots"}));
+		ItemArmorInfusableThaumRev.materialData.put(matWardenicChain, new ThaumRevMaterialDataSet().setUnlocName(".wardenicChain", new String[] {"helmet", "mail", "greaves", "boots"}).setIcon("wardenicChain", new String[] {"Helmet", "mail", "Greaves", "Boots"}).setRepair("itemChainWardenBronze").setTexture("wardenicChain").setRarity(EnumRarity.uncommon).setRegName("WardenicChain", new String[] {"Helmet", "mail", "Greaves", "Boots"}));
 	}
 
 	public void loadBlocks() {}
@@ -76,15 +80,15 @@ public class WardenContent implements IInitialized {
 	}
 
 	public void loadArmor() {
-		wardenclothSkullcap = new ItemArmorWardencloth(0, "wardencloth.skullcap", "wardenclothSkullcap").register("skullcap", "WardenclothSkullcap");
-		wardenclothTunic = new ItemArmorWardencloth(1, "wardencloth.tunic", "wardenclothTunic").register("tunic", "WardenclothTunic");
-		wardenclothPants = new ItemArmorWardencloth(2, "wardencloth.pants", "wardenclothPants").register("pants", "WardenclothPants");
-		wardenclothBoots = new ItemArmorWardencloth(3, "wardencloth.boots", "wardenclothBoots").register("boots", "WardenclothBoots");
+		wardenclothSkullcap = new ItemArmorInfusableThaumRev(matWardencloth, 0, 0);
+		wardenclothTunic = new ItemArmorInfusableThaumRev(matWardencloth, 0, 1);
+		wardenclothPants = new ItemArmorInfusableThaumRev(matWardencloth, 0, 2);
+		wardenclothBoots = new ItemArmorInfusableThaumRev(matWardencloth, 0, 3);
 
-		wardenicChainHelmet = new ItemArmorWardenicChain(0, "wardenicChain.helmet", "wardenicChainHelmet").register("helmet", "WardenicChainHelmet");
-		wardenicMail = new ItemArmorWardenicChain(1, "wardenicChain.mail", "wardenicMail").register("mail", "WardenicMail");
-		wardenicChainGreaves = new ItemArmorWardenicChain(2, "wardenicChain.greaves", "wardenicChainGreaves").register("greaves", "WardenicChainGreaves");
-		wardenicChainGreaves = new ItemArmorWardenicChain(3, "wardenicChain.boots", "wardenicChainBoots").register("boots", "WardenicChainBoots");
+		wardenicChainHelmet = new ItemArmorInfusableThaumRev(matWardenicChain, 1, 0);
+		wardenicChainmail = new ItemArmorInfusableThaumRev(matWardenicChain, 1, 1);
+		wardenicChainGreaves = new ItemArmorInfusableThaumRev(matWardenicChain, 1, 2);
+		wardenicChainBoots = new ItemArmorInfusableThaumRev(matWardenicChain, 1, 3);
 	}
 
 	public void loadTools() {}
@@ -113,7 +117,8 @@ public class WardenContent implements IInitialized {
 
 		recipeWardenBronzeChain = ThaumcraftApi.addArcaneCraftingRecipe(keyWardenBronze, ItemHelper.cloneStack(wardenBronzeChain, 6), new AspectList().add(EARTH, 5).add(AIR, 5).add(FIRE, 5).add(ORDER, 10), "CCC", "SOS", "CCC", 'C', "itemChainThaumicBronze", 'S', "dustSalisMundus", 'O', "itemExcubituraOil");
 		recipePrimalBronzeChain = ThaumcraftApi.addArcaneCraftingRecipe(keyWardenBronze, ItemHelper.cloneStack(primalBronzeChain, 2), ThaumcraftHelper.newPrimalAspectList(10).add(ORDER, 10), "BCD", "PSP", "DCB", 'B', "nuggetBrass", 'C', "itemChainWardenBronze", 'D', "dustSalisMundus", 'P', ThaumcraftLibrary.itemPrimalCharm, 'S', "shardBalanced");
-		recipeWardenBronzePlate = ThaumcraftApi.addArcaneCraftingRecipe(keyWardenBronze, ItemHelper.cloneStack(wardenBronzePlate, 2), new AspectList().add(EARTH, 5).add(AIR, 5).add(FIRE, 5).add(ORDER, 10), "BQC", "DOD", "CTB", 'B', "ingotThaumicBronze", 'C', "itemChainThaumicBronze", 'D', "dustSalisMundus", 'Q', "itemQuicksilverDrop", 'O', "itemExcubituraOil", 'T', "nuggetThaumium");
+		recipeWardenBronzePlate = ThaumcraftApi.addArcaneCraftingRecipe(keyWardenBronze, ItemHelper.cloneStack(wardenBronzePlate, 2), new AspectList().add(EARTH, 5).add(AIR, 5).add(FIRE, 5).add(ORDER, 10), "BQC", "DOD", "CTB", 'B', "ingotThaumicBronze", 'C', "itemChainWardenBronze", 'D', "dustSalisMundus", 'Q', "itemQuicksilverDrop", 'O', "itemExcubituraOil", 'T', "nuggetThaumium");
+
 
 	}
 
@@ -124,7 +129,7 @@ public class WardenContent implements IInitialized {
 		researchArmorWardencloth = new FluxGearResearchItem(keyArmorWardencloth, new AspectList().add(MAGIC, 4).add(CLOTH, 4).add(ARMOR, 4).add(WARDEN, 4), -8, -4, 1, wardenclothTunic.getItemStack());
 		researchExcubituraOil = new FluxGearResearchItem(keyExcubituraOil, new AspectList().add(MAGIC, 4).add(PLANT, 3).add(WARDEN, 2).add(WATER, 3), -5, 0, 1, excubituraOil);
 		researchWardenBronze = new FluxGearResearchItem(keyWardenBronze, new AspectList().add(METAL, 4).add(MAGIC, 4).add(ARMOR, 3).add(WARDEN, 2), -7, -1, 1, wardenBronzeChain);
-		//researchArmorWardenBronze = new FluxGearResearchItem(keyArmorWardenBronze, new AspectList().add(METAL, 4).add(MAGIC, 4).add(ARMOR, 4).add(WARDEN, 4), -9, -2, 1, wardenicMail);
+		//researchArmorWardenBronze = new FluxGearResearchItem(keyArmorWardenBronze, new AspectList().add(METAL, 4).add(MAGIC, 4).add(ARMOR, 4).add(WARDEN, 4), -9, -2, 1, wardenicChainmail);
 	}
 
 	public void initResearch() {

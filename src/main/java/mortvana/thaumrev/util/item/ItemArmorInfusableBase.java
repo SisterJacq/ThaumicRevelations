@@ -18,6 +18,7 @@ import mortvana.thaumrev.melteddashboard.item.ItemArmorFluxGear;
 import mortvana.thaumrev.melteddashboard.util.helpers.AspectInfusionHelper;
 import mortvana.thaumrev.melteddashboard.util.helpers.NBTHelper;
 import mortvana.thaumrev.melteddashboard.util.helpers.mod.ThaumcraftHelper;
+import mortvana.thaumrev.util.enums.EnumPrimalAspect;
 import thaumcraft.api.IGoggles;
 import thaumcraft.api.IVisDiscountGear;
 import thaumcraft.api.aspects.Aspect;
@@ -25,9 +26,9 @@ import thaumcraft.api.nodes.IRevealer;
 
 public abstract class ItemArmorInfusableBase extends ItemArmorFluxGear implements ISpecialArmor, IInfusableItem, IVisDiscountGear, IRevealer, IGoggles {
 
-	protected int[] discounts = new int[4];
 	protected EnumEquipmentType type;
 
+	protected int visDiscount[] = {0, 0, 0, 0, 0, 0};
 	protected int maxEnergy;
 
 	public ItemArmorInfusableBase(String material, int index, int type, String name, String sheet, String icon) {
@@ -112,7 +113,7 @@ public abstract class ItemArmorInfusableBase extends ItemArmorFluxGear implement
 
 	@Override
 	public int getVisDiscount(ItemStack stack, EntityPlayer player, Aspect aspect) {
-		return ThaumcraftHelper.getDiscountForAspect(stack, player, aspect, discounts[armorType]);
+		return ThaumcraftHelper.getDiscountForAspect(stack, player, aspect, visDiscount[EnumPrimalAspect.getPrimal(aspect).ordinal()]);
 	}
 
 	@Override

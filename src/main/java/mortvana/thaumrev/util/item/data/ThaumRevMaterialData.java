@@ -1,4 +1,4 @@
-package mortvana.thaumrev.core.item;
+package mortvana.thaumrev.util.item.data;
 
 import net.minecraft.item.EnumRarity;
 
@@ -11,6 +11,7 @@ public class ThaumRevMaterialData {
 	protected String unlocName;
 	protected String regName;
 	protected int color = 0xFFFFFF;
+	protected int discount = 0;
 
 	public ThaumRevMaterialData(String icon, String repair, String texture, EnumRarity rarity, String unlocName, String regName, int color) {
 		this.icon = icon;
@@ -63,6 +64,10 @@ public class ThaumRevMaterialData {
 		this.color = color;
 	}
 
+	public void setDiscount(int discount) {
+		this.discount = discount;
+	}
+
 	public String getIcon() {
 		return icon;
 	}
@@ -93,5 +98,9 @@ public class ThaumRevMaterialData {
 
 	public boolean getColorized() {
 		return color != 0xFFFFFF;
+	}
+
+	public int getDiscount() {
+		return discount;
 	}
 }

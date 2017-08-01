@@ -4,13 +4,10 @@ import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.*;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.*;
-import mortvana.thaumrev.core.common.config.*;
-import mortvana.thaumrev.eldritch.common.EldritchContent;
+
 import mortvana.thaumrev.library.ThaumRevLibrary;
-import mortvana.thaumrev.melteddashboard.util.module.ModuleLoader;
 import mortvana.thaumrev.core.network.CommonProxy;
 import mortvana.thaumrev.melteddashboard.lib.ThaumcraftLibrary;
-import mortvana.thaumrev.warden.common.WardenContent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -26,25 +23,19 @@ public class ThaumicRevelations {
 	// Move to Melted Dashboard Core once I have enough stuff to warrant creating it as a separate library.
     public static final Logger logger = LogManager.getLogger("Flux Gear");
 
-    public ModuleLoader moduleLoader = new ModuleLoader(ThaumRevLibrary.MOD_ID, logger);
-
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        moduleLoader.addModule("Core", true, new ThaumRevContent(), new ThaumRevCoreConfig(event, "Mortvana/ThaumicRevelations-Core.cfg"));
-        moduleLoader.addModule("ThaumicWarden", ThaumRevCoreConfig.enableWarden, new WardenContent(), new ThaumicWardenConfig(event, "Mortvana/ThaumicRevelations-ThaumicWarden.cfg"));
-        moduleLoader.addModule("Eldritch Workings", ThaumRevCoreConfig.enableEldritch, new EldritchContent(), new EldritchWorkingsConfig(event, "Mortvana/ThaumicRevelations-EldritchWorkings.cfg"));
-
-        moduleLoader.preInit(event);
+	    ThaumRevContent.preInit();
     }
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
-        moduleLoader.init(event);
+        ThaumRevContent.init();
     }
 
     @EventHandler
     public void postInit(FMLPostInitializationEvent event) {
 	    ThaumcraftLibrary.init();
-        moduleLoader.postInit(event);
+        ThaumRevContent.postInit();
     }
 }

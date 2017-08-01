@@ -43,9 +43,6 @@ public class ThaumRevLibrary {
     public static final Aspect FLUX = new Aspect("fluxus", 0xAD0200, new Aspect[] { MAGNET, MECHANISM }, new ResourceLocation(RESOURCE_PREFIX, "textures/aspects/fluxus.png"), 771);
     public static final Aspect REVELATIONS = new Aspect("patefactio", 0x3971AD, new Aspect[] { TRAVEL, MIND }, new ResourceLocation(RESOURCE_PREFIX, "textures/aspects/revelatiofez.png"), 771);
 
-	/** ARMOR ARRAYS **/
-	public int[] discountWardencloth = new int[] {5, 2, 2, 1};
-
 	/** ENCHANTMENTS **/
     public static Enchantment enchantStabilizing;
 
@@ -188,7 +185,7 @@ public class ThaumRevLibrary {
 	public static ShapedArcaneRecipe recipeWardenBronzePlate;
 
 	public static ShapedArcaneRecipe recipeWardenicChainHelmet;
-	public static ShapedArcaneRecipe recipeWardenicMail;
+	public static ShapedArcaneRecipe recipeWardenicChainmail;
 	public static ShapedArcaneRecipe recipeWardenicChainGreaves;
 	public static ShapedArcaneRecipe recipeWardenicChainBoots;
 
@@ -232,11 +229,11 @@ public class ThaumRevLibrary {
 	public static ResearchItem researchExcubituraOil;
 	public static String keyExcubituraOil = "EXCUBITURA_OIL";
 
-	public static ResearchItem researchWardenBronze;
-	public static String keyWardenBronze = "WARDENBRONZE";
+	public static ResearchItem researchWardenChain;
+	public static String keyWardenChain = "WARDENCHAIN";
 
-	public static ResearchItem researchArmorWardenBronze;
-	public static String keyArmorWardenBronze = "ARMOR_WARDENBRONZE";
+	public static ResearchItem researchArmorWardenChain;
+	public static String keyArmorWardenChain = "ARMOR_WARDENCHAIN";
 
     /** RENDER IDs **/
     public static int wardedChestRenderID = -1;
@@ -246,6 +243,7 @@ public class ThaumRevLibrary {
 			"excubitura"
 	};
 
+	public static final String matPrimal = "PRIMAL";
 	public static final String matWardencloth = "WARDENCLOTH";
 	public static final String matWardenicChain = "WARDENIC_CHAIN";
 

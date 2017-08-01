@@ -176,15 +176,19 @@ public abstract class ItemArmorFluxGear extends ItemArmor {
 
 	/** PROXY MATERIAL FUNCTIONS **/
 	public static void addArmorMaterial(String name, int durability, int helmProt, int chestProt, int legProt, int bootProt, int enchant) {
-		addArmorMaterial(name, durability, new int[] {helmProt, chestProt, legProt, bootProt}, enchant);
+		addMaterial(name, durability, new int[] {helmProt, chestProt, legProt, bootProt}, enchant);
 	}
 
 	public static void addArmorMaterial(String name, int durability, int[] protection, int enchant) {
 		/*if (protection.length == 4) {*/
-		materials.put(name, new ArmorMaterialEntry(durability, protection, enchant));
+		addMaterial(name, durability, protection, enchant);
 		/*} else {
 			ThaumicRevelations.logger.error("Someone registered ");
 		}*/
+	}
+
+	protected static void addMaterial(String name, int durability, int[] protection, int enchant) {
+		materials.put(name, new ArmorMaterialEntry(durability, protection, enchant));
 	}
 
 	@Override

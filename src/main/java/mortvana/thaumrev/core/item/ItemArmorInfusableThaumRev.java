@@ -7,13 +7,18 @@ import gnu.trove.map.TMap;
 import gnu.trove.map.hash.THashMap;
 import mortvana.thaumrev.api.util.enums.EnumEquipmentType;
 import mortvana.thaumrev.core.common.ThaumicRevelations;
+import mortvana.thaumrev.util.item.data.ThaumRevMaterialData;
+import mortvana.thaumrev.util.item.data.ThaumRevMaterialDataSet;
 import mortvana.thaumrev.library.ThaumRevLibrary;
 import mortvana.thaumrev.melteddashboard.util.helpers.StringHelper;
 import mortvana.thaumrev.util.item.ItemArmorInfusableBase;
+import thaumcraft.api.IRunicArmor;
 
-public class ItemArmorInfusableThaumRev extends ItemArmorInfusableBase {
+public class ItemArmorInfusableThaumRev extends ItemArmorInfusableBase implements IRunicArmor {
 
 	public static TMap<String, ThaumRevMaterialDataSet> materialData = new THashMap<String, ThaumRevMaterialDataSet>(32);
+
+	public boolean isGoggles = false;
 
 	public ItemArmorInfusableThaumRev(String material, int index, int type) {
 		super(material, index, type);
@@ -53,13 +58,27 @@ public class ItemArmorInfusableThaumRev extends ItemArmorInfusableBase {
 
 	@Override
 	public boolean showNodes(ItemStack stack, EntityLivingBase entity) {
-		return armorType == 0;
+		return isGoggles;
 	}
 
 	@Override
 	public boolean showIngamePopups(ItemStack stack, EntityLivingBase entity) {
-		return armorType == 0;
+		return isGoggles;
 	}
 
+	@Override
+	public int getRunicCharge(ItemStack stack) {
+		return 0;
+	}
+
+	public ItemArmorInfusableThaumRev setDiscount(int discount) {
+		visDiscount = new int[] {discount, discount, discount, discount, discount, discount};
+		return this;
+	}
+
+	public ItemArmorInfusableThaumRev setGoggles() {
+		isGoggles = true;
+		return this;
+	}
 }
 

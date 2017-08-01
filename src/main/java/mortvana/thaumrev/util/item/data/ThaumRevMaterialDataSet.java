@@ -1,4 +1,4 @@
-package mortvana.thaumrev.core.item;
+package mortvana.thaumrev.util.item.data;
 
 import net.minecraft.item.EnumRarity;
 
@@ -165,4 +165,41 @@ public class ThaumRevMaterialDataSet {
 
 	//setRegName
 
+	//setIcon
+
+	public ThaumRevMaterialDataSet setRepair(String repairHelm, String repairChest, String repairLegs, String repairBoot) {
+		helmData.setRepair(repairHelm);
+		chestData.setRepair(repairChest);
+		legsData.setRepair(repairLegs);
+		bootData.setRepair(repairBoot);
+		return this;
+	}
+
+	//setTexture
+
+	public ThaumRevMaterialDataSet setRarity(EnumRarity rarityHelm, EnumRarity rarityChest, EnumRarity rarityLegs, EnumRarity rarityBoot) {
+		helmData.setRarity(rarityHelm);
+		chestData.setRarity(rarityChest);
+		legsData.setRarity(rarityLegs);
+		bootData.setRarity(rarityBoot);
+		return this;
+	}
+
+	//setUnlocName
+
+	//setRegName
+
+	public ThaumRevMaterialDataSet setNonColorized(int type) {
+		switch (type) {
+			case 0:
+				helmData.setColor(0xFFFFFF);
+			case 1:
+				chestData.setColor(0xFFFFFF);
+			case 2:
+				legsData.setColor(0xFFFFFF);
+			case 3:
+				bootData.setColor(0xFFFFFF);
+		}
+		return this;
+	}
 }

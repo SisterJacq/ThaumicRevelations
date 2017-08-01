@@ -1,4 +1,4 @@
-package mortvana.thaumrev.warden.world;
+package mortvana.thaumrev.world;
 
 import java.util.Random;
 

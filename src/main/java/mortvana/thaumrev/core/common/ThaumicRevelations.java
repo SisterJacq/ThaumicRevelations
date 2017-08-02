@@ -23,8 +23,11 @@ public class ThaumicRevelations {
 	// Move to Melted Dashboard Core once I have enough stuff to warrant creating it as a separate library.
     public static final Logger logger = LogManager.getLogger("Flux Gear");
 
+	public static ThaumRevConfig config;
+
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
+	    config = new ThaumRevConfig(event, "/Mortvana/ThaumicRevelations.cfg");
 	    ThaumRevContent.preInit();
     }
 

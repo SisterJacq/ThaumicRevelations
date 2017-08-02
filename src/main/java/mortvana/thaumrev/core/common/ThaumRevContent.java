@@ -7,10 +7,12 @@ import net.minecraft.util.ResourceLocation;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
 
+import baubles.api.BaubleType;
 import magicbees.api.MagicBeesAPI;
 import mortvana.thaumrev.core.block.BlockThaumicPlant;
 import mortvana.thaumrev.core.block.ItemBlockThaumicPlant;
 import mortvana.thaumrev.core.item.*;
+import mortvana.thaumrev.melteddashboard.intermod.baubles.util.DefaultBaubleData;
 import mortvana.thaumrev.util.item.data.ThaumRevMaterialDataSet;
 import mortvana.thaumrev.melteddashboard.ColorLibrary;
 import mortvana.thaumrev.melteddashboard.intermod.thaumcraft.research.FluxGearResearchItem;
@@ -71,10 +73,11 @@ public class ThaumRevContent {
 
 	public static void createItems() {
 		generalItem = new ItemThaumRev();
+		thaumicBauble = new ItemThaumicBauble();
 	}
 
 	public static void setResearchLevel() {
-		/*int lvl = ThaumRevCoreConfig.researchLevel;
+		/*int lvl = ThaumRevConfig.researchLevel;
 		if (lvl < -1) {
 			ThaumicRevelations.logger.error("Someone manually set our difficulty to " + lvl + "! Value should be between -1 and 2, inclusive. SETTING IT TO -1 FOR THIS LAUNCH!");
 			lvl = -1;
@@ -173,13 +176,15 @@ public class ThaumRevContent {
 	}
 
 	public static void loadMaterials() {
+		ItemArmorFluxGear.addArmorMaterial(matPrimal, 25, new int[] { 1, 3, 2, 1 }, 25);
+		ItemArmorFluxGear.addArmorMaterial(matBronzeChain, 20, new int[] {2, 5, 4, 2}, 30);
 		ItemArmorFluxGear.addArmorMaterial(matWardencloth, 30, new int[] {1, 3, 2, 1}, 20);
 		ItemArmorFluxGear.addArmorMaterial(matWardenicChain, 15, new int[]{2, 5, 4, 1}, 20);
-		ItemArmorFluxGear.addArmorMaterial(matPrimal, 25, new int[] { 1, 3, 2, 1 }, 25);
 
-		ItemArmorInfusableThaumRev.materialData.put(matWardencloth, new ThaumRevMaterialDataSet().setUnlocName(".wardencloth.", new String[] {"skullcap", "tunic", "pants", "boots"}).setIcon("wardencloth", new String[] {"Skullcap", "Tunic", "Pants", "Boots"}).setRepair("itemWardencloth").setColor(ColorLibrary.COLOR_TEAL_MAGNEQUAZAR).setTexture("wardencloth").setRarity(EnumRarity.uncommon).setRegName("Wardencloth", new String[] {"Skullcap", "Tunic", "Pants", "Boots"}));
-		ItemArmorInfusableThaumRev.materialData.put(matWardenicChain, new ThaumRevMaterialDataSet().setUnlocName(".wardenicChain", new String[] {"helmet", "mail", "greaves", "boots"}).setIcon("wardenicChain", new String[] {"Helmet", "mail", "Greaves", "Boots"}).setRepair("itemChainWardenBronze").setTexture("wardenicChain").setRarity(EnumRarity.uncommon).setRegName("WardenicChain", new String[] {"Helmet", "mail", "Greaves", "Boots"}));
 		ItemArmorInfusableThaumRev.materialData.put(matPrimal, new ThaumRevMaterialDataSet().setUnlocName(".primal.", new String[] {"goggles", "robes", "pants", "boots"}).setIcon("primal", new String[] {"Goggles", "Robes", "Pants", "Boots"}).setRepair("ingotGold", "itemEnchantedFabric", "itemEnchantedFabric", "itemEnchantedFabric").setColor(0x6A3880).setTexture("primal").setRarity(EnumRarity.rare, EnumRarity.uncommon, EnumRarity.uncommon, EnumRarity.uncommon).setRegName("Primal", new String[] {"Goggles", "Robes", "Pants", "Boots"}).setNonColorized(0));
+		ItemArmorInfusableThaumRev.materialData.put(matBronzeChain, new ThaumRevMaterialDataSet().setUnlocName(".bronzeChain.", new String[] {"helmet", "mail", "greaves", "boots"}).setIcon("bronzeChain", new String[] {"Helmet", "mail", "Greaves", "Boots"}).setRepair("itemThaumicBronzeChain").setTexture("bronzeChain").setRarity(EnumRarity.uncommon).setRegName("BronzeChain", new String[] {"Helmet", "mail", "Greaves", "Boots"}));
+		ItemArmorInfusableThaumRev.materialData.put(matWardencloth, new ThaumRevMaterialDataSet().setUnlocName(".wardencloth.", new String[] {"skullcap", "tunic", "pants", "boots"}).setIcon("wardencloth", new String[] {"Skullcap", "Tunic", "Pants", "Boots"}).setRepair("itemWardencloth").setColor(ColorLibrary.COLOR_TEAL_MAGNEQUAZAR).setTexture("wardencloth").setRarity(EnumRarity.uncommon).setRegName("Wardencloth", new String[] {"Skullcap", "Tunic", "Pants", "Boots"}));
+		ItemArmorInfusableThaumRev.materialData.put(matWardenicChain, new ThaumRevMaterialDataSet().setUnlocName(".wardenicChain.", new String[] {"helmet", "mail", "greaves", "boots"}).setIcon("wardenicChain", new String[] {"Helmet", "mail", "Greaves", "Boots"}).setRepair("itemChainWardenBronze").setTexture("wardenicChain").setRarity(EnumRarity.uncommon).setRegName("WardenicChain", new String[] {"Helmet", "mail", "Greaves", "Boots"}));
 	}
 
 	public static void loadArmor() {
@@ -187,6 +192,11 @@ public class ThaumRevContent {
 		primalRobes = new ItemArmorInfusableThaumRev(matPrimal, 1, 1).setDiscount(2);
 		primalPants = new ItemArmorInfusableThaumRev(matPrimal, 2, 2).setDiscount(2);
 		primalBoots = new ItemArmorInfusableThaumRev(matPrimal, 1, 3).setDiscount(1);
+
+		bronzeChainHelmet = new ItemArmorInfusableThaumRev(matBronzeChain, 1, 0);
+		bronzeChainmail = new ItemArmorInfusableThaumRev(matBronzeChain, 1, 1);
+		bronzeChainGreaves = new ItemArmorInfusableThaumRev(matBronzeChain, 1, 2);
+		bronzeChainBoots = new ItemArmorInfusableThaumRev(matBronzeChain, 1, 3);
 
 		wardenclothSkullcap = new ItemArmorInfusableThaumRev(matWardencloth, 0, 0).setGoggles();
 		wardenclothTunic = new ItemArmorInfusableThaumRev(matWardencloth, 0, 1);
@@ -201,7 +211,10 @@ public class ThaumRevContent {
 
 	public static void loadTools() {}
 
-	public static void loadBaubles() {}
+	public static void loadBaubles() {
+		wardenAmulet = thaumicBauble.addMetaBauble(0, "wardenAmulet", new DefaultBaubleData(BaubleType.AMULET), 2);
+		loveRing = thaumicBauble.addMetaBauble(1, "loveRing", new DefaultBaubleData(BaubleType.RING).setUnequip(false), 3);
+	}
 
 	public static void loadWorldGen() {
 		GameRegistry.registerWorldGenerator(new ExcubituraGenerator(), 1);
@@ -232,11 +245,11 @@ public class ThaumRevContent {
 
 		recipeThaumicBronzeChain = ThaumcraftApi.addArcaneCraftingRecipe(keyBronzeChain, ItemHelper.cloneStack(thaumicBronzeChain, 12), new AspectList().add(ORDER, 10).add(FIRE, 5), " X ", "X X", 'X', "ingotThaumicBronze");
 
-/*		recipeBronzeChainHelmet = ThaumcraftApi.addArcaneCraftingRecipe(keyArmorBronzeChain, bronzeChainHelmet.stack, new AspectList().add(ORDER, 10).add(EARTH, 5).add(FIRE, 5), "XXX", "X X", 'X', "itemChainThaumicBronze");
-		recipeBronzeMail = ThaumcraftApi.addArcaneCraftingRecipe(keyArmorBronzeChain, bronzeMail.stack, new AspectList().add(ORDER, 25).add(EARTH, 12).add(FIRE, 12), "X X", "XXX", "XXX", 'X', "itemChainThaumicBronze");
-		recipeBronzeChainGreaves = ThaumcraftApi.addArcaneCraftingRecipe(keyArmorBronzeChain, bronzeChainGreaves.stack, new AspectList().add(ORDER, 20).add(EARTH, 10).add(FIRE, 10), "XXX", "X X", "X X", 'X', "itemChainThaumicBronze");
-		recipeBronzeChainBoots = ThaumcraftApi.addArcaneCraftingRecipe(keyArmorBronzeChain, bronzeChainBoots.stack, new AspectList().add(ORDER, 5).add(EARTH, 3).add(FIRE, 3), "X X", "X X", 'X', "itemChainThaumicBronze");
-*/
+		recipeBronzeChainHelmet = ThaumcraftApi.addArcaneCraftingRecipe(keyArmorBronzeChain, bronzeChainHelmet.getItemStack(), new AspectList().add(ORDER, 10).add(EARTH, 5).add(FIRE, 5), "XXX", "X X", 'X', "itemChainThaumicBronze");
+		recipeBronzeChainmail = ThaumcraftApi.addArcaneCraftingRecipe(keyArmorBronzeChain, bronzeChainmail.getItemStack(), new AspectList().add(ORDER, 25).add(EARTH, 12).add(FIRE, 12), "X X", "XXX", "XXX", 'X', "itemChainThaumicBronze");
+		recipeBronzeChainGreaves = ThaumcraftApi.addArcaneCraftingRecipe(keyArmorBronzeChain, bronzeChainGreaves.getItemStack(), new AspectList().add(ORDER, 20).add(EARTH, 10).add(FIRE, 10), "XXX", "X X", "X X", 'X', "itemChainThaumicBronze");
+		recipeBronzeChainBoots = ThaumcraftApi.addArcaneCraftingRecipe(keyArmorBronzeChain, bronzeChainBoots.getItemStack(), new AspectList().add(ORDER, 5).add(EARTH, 3).add(FIRE, 3), "X X", "X X", 'X', "itemChainThaumicBronze");
+
 		recipePrimalGoggles = ThaumcraftApi.addInfusionCraftingRecipe(keyRobesPrimal, primalGoggles.getItemStack(), 5, new AspectList().add(MAGIC, 12).add(CRAFT, 16).add(ORDER, 16), stackGoggles, new ItemStack[] { itemEnchantedFabric, itemEnchantedFabric, dustSalisMundus, dustSalisMundus, itemPrimalCharm, stackThaumometer });
 		recipePrimalRobes = ThaumcraftApi.addInfusionCraftingRecipe(keyRobesPrimal, primalRobes.getItemStack(), 5, new AspectList().add(MAGIC, 12).add(CRAFT, 16).add(ORDER, 16), stackChestRobe, new ItemStack[] { itemEnchantedFabric, itemEnchantedFabric, dustSalisMundus, dustSalisMundus, itemPrimalCharm, ingotThaumium });
 		recipePrimalPants = ThaumcraftApi.addInfusionCraftingRecipe(keyRobesPrimal, primalPants.getItemStack(), 5, new AspectList().add(MAGIC, 12).add(CRAFT, 16).add(ORDER, 16), stackLegsRobe, new ItemStack[] { itemEnchantedFabric, itemEnchantedFabric, dustSalisMundus, dustSalisMundus, itemPrimalCharm, itemNitor });
@@ -269,6 +282,7 @@ public class ThaumRevContent {
 		researchThaumRev = new FluxGearResearchItem(keyThaumRev, RESEARCH_KEY, new AspectList(), 0, 0, 0, new ItemStack(Items.potato));
 		researchThaumicBronze = new FluxGearResearchItem(keyThaumicBronze, RESEARCH_KEY, new AspectList().add(METAL, 4).add(MAGIC, 3).add(ORDER, 1), 0, 3, 1, ingotThaumicBronze);
 		researchBronzeChain = new FluxGearResearchItem(keyBronzeChain, RESEARCH_KEY, new AspectList().add(METAL, 4).add(MAGIC, 2).add(CRAFT, 3), -2, 4, 1, thaumicBronzeChain);
+		researchArmorBronzeChain = new FluxGearResearchItem(keyArmorBronzeChain, RESEARCH_KEY, new AspectList().add(METAL, 4).add(MAGIC, 3).add(ARMOR, 3), -4, 5, 1, bronzeChainmail.getItemStack());
 		researchPrimalRobes = new FluxGearResearchItem(keyRobesPrimal, RESEARCH_KEY, new AspectList().add(MAGIC, 4).add(CLOTH, 4).add(ARMOR, 3).add(ENERGY, 2).add(SENSES, 2).add(ThaumcraftHelper.newPrimalAspectList(1)), 1, 5, 3, primalRobes.getItemStack());
 
 		researchWardenry = new FluxGearResearchItem(keyWardenry, new AspectList().add(WARDEN, 4).add(MAGIC, 3).add(ELDRITCH, 2).add(ENERGY, 2), -2, 0, 2, new ItemStack(blockThaumicPlant));
@@ -284,10 +298,10 @@ public class ThaumRevContent {
 		researchThaumRev.setRound().setSpecial().setAutoUnlock().registerResearchItem();
 		researchPrimalRobes.setParents(keyThaumRev, "THAUMIUM", "ENCHFABRIC", "GOGGLES", "NITOR", "INFUSION", "INFUSIONENCHANTMENT").registerResearchItem();
 
-
 		if (researchLevel == 0) { //EASY-MODE
-			researchThaumicBronze.setParents(keyThaumRev, "THAUMIUM").setSiblings(keyBronzeChain).registerResearchItem();
+			researchThaumicBronze.setParents(keyThaumRev, "THAUMIUM").setSiblings(keyBronzeChain, keyArmorBronzeChain).registerResearchItem();
 			researchBronzeChain.setParents(keyThaumicBronze).setSecondary().registerResearchItem();
+			researchArmorBronzeChain.setParents(keyBronzeChain).setSecondary().registerResearchItem();
 			researchWardenry.setParents(keyThaumRev).setRound().setSpecial().registerResearchItem();
 			researchExcubituraPaste.setConcealed().setParents(keyWardenry).setParentsHidden("ENCHFABRIC", "GOGGLES").setSiblings(keyWardencloth, keyArmorWardencloth).registerResearchItem();
 			researchWardencloth.setParents(keyExcubituraPaste).setSecondary().registerResearchItem();
@@ -298,16 +312,18 @@ public class ThaumRevContent {
 		} else if (researchLevel == 2) { //HARD-MODE
 			researchThaumicBronze.setParents(keyThaumRev, "THAUMIUM").registerResearchItem();
 			researchBronzeChain.setParents(keyThaumicBronze).setSecondary().registerResearchItem();
+			researchArmorBronzeChain.setParents(keyBronzeChain).setSecondary().registerResearchItem();
 			researchWardenry.setParents(keyThaumRev).setLost()/*.setItemTriggers(wardenJournal1)*/.setRound().setSpecial().registerResearchItem();
-			researchExcubituraPaste.setParents(keyWardenry).setConcealed().registerResearchItem();
+			researchExcubituraPaste.setConcealed().setParents(keyWardenry).registerResearchItem();
 			researchWardencloth.setParents(keyExcubituraPaste, "ENCHFABRIC").registerResearchItem();
 			researchArmorWardencloth.setParents(keyWardencloth, "GOGGLES").setSecondary().registerResearchItem();
 			researchExcubituraOil.setConcealed().setParents(keyExcubituraPaste, "ALUMENTUM").registerResearchItem();
 			researchWardenChain.setParents(keyExcubituraOil).setParentsHidden(keyBronzeChain).registerResearchItem();
-			researchArmorWardenChain.setParents(keyWardenChain).setParentsHidden(keyArmorBronzeChain).registerResearchItem();
+			researchArmorWardenChain.setParents(keyWardenChain).setSecondary().setParentsHidden(keyArmorBronzeChain).registerResearchItem();
 		} else { //NORMAL-MODE
 			researchThaumicBronze.setParents(keyThaumRev, "THAUMIUM").registerResearchItem();
-			researchBronzeChain.setParents(keyThaumicBronze).setSecondary().registerResearchItem();
+			researchBronzeChain.setParents(keyThaumicBronze).setSiblings(keyArmorBronzeChain).setSecondary().registerResearchItem();
+			researchArmorBronzeChain.setParents(keyBronzeChain).setSecondary().registerResearchItem();
 			researchWardenry.setParents(keyThaumRev).setLost()/*.setItemTriggers(wardenJournal1)*/.setRound().setSpecial().registerResearchItem();
 			researchExcubituraPaste.setConcealed().setParents(keyWardenry).registerResearchItem();
 			researchWardencloth.setParents(keyExcubituraPaste).setParentsHidden("ENCHFABRIC", "GOGGLES").setSiblings(keyArmorWardencloth).registerResearchItem();
@@ -318,18 +334,11 @@ public class ThaumRevContent {
 		}
 	}
 
-	public static void temp() {
-		ThaumicRevelations.logger.fatal("Null robes! NULL ROBES!!!!");
-	}
-
 	public static void setPages() {
-		if (recipePrimalGoggles == null ||recipePrimalRobes == null || recipePrimalPants == null || recipePrimalBoots == null) {
-			temp();
-		}
-
 		researchThaumRev.setPages(new ResearchPage("0"));
 		researchThaumicBronze.setPages(new ResearchPage("0"), new ResearchPage(recipeThaumicBronzeRaw), new ResearchPage(recipeThaumicBronzeCoated), new ResearchPage(coatedThaumicBronze), new ResearchPage("1"));
 		researchBronzeChain.setPages(new ResearchPage("0"), new ResearchPage(recipeThaumicBronzeChain));
+		researchArmorBronzeChain.setPages(new ResearchPage("0"), new ResearchPage(recipeBronzeChainHelmet), new ResearchPage(recipeBronzeChainmail), new ResearchPage(recipeBronzeChainGreaves), new ResearchPage(recipeBronzeChainBoots));
 		researchPrimalRobes.setPages(new ResearchPage("0"), new ResearchPage(recipePrimalGoggles), new ResearchPage(recipePrimalRobes), new ResearchPage(recipePrimalPants), new ResearchPage(recipePrimalBoots));
 
 		researchWardenry.setPages(new ResearchPage("0"));

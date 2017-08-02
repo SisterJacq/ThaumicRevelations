@@ -55,6 +55,8 @@ item.thaumrev.material.wardencloth.name=Wardencloth
 item.thaumrev.material.excubituraOil.name=Excubitura Petal Oil
 item.thaumrev.material.thaumicBronzeChain.name=Thaumic Bronze Chain
 item.thaumrev.material.wardenBronzeChain.name=Warden's Bronze Chain
+item.thaumrev.material.primalBronzeChain.name=Primal Bronze Chain
+item.thaumrev.material.plateWardenBronze.name=Warden's Bronze Plate
 
 item.thaumrev.material.excubituraOilPure.name=Purified Excubitura Petal Oil
 
@@ -71,10 +73,20 @@ item.thaumrev.primal.robes.name=Primal Robes
 item.thaumrev.primal.pants.name=Primal Pants
 item.thaumrev.primal.boots.name=Primal Boots
 
+item.thaumrev.bronzeChain.helmet.name=Thaumic Bronze Chain Helmet
+item.thaumrev.bronzeChain.mail.name=Thaumic Bronze Mail
+item.thaumrev.bronzeChain.greaves.name=Thaumic Bronze Chain Greaves
+item.thaumrev.bronzeChain.boots.name=Thaumic Bronze Chain Boots
+
 item.thaumrev.wardencloth.skullcap.name=Wardencloth Skullcap
 item.thaumrev.wardencloth.tunic.name=Wardencloth Tunic
 item.thaumrev.wardencloth.pants.name=Wardencloth Pants
 item.thaumrev.wardencloth.boots.name=Wardencloth Boots
+
+item.thaumrev.wardenicChain.helmet.name=Wardenic Bronze Chain Helmet
+item.thaumrev.wardenicChain.mail.name=Wardenic Bronze Mail
+item.thaumrev.wardenicChain.greaves.name=Wardenic Bronze Chain Greaves
+item.thaumrev.wardenicChain.boots.name=Wardenic Bronze Chain Boots
 
 #Blocks
 tile.thaumrev.plant.excubitura.name=Excubitura Rose

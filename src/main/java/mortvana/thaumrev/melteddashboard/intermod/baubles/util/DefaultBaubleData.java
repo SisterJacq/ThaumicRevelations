@@ -4,7 +4,7 @@ import baubles.api.BaubleType;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
 
-public final class DefaultBaubleData extends BaubleData {
+public class DefaultBaubleData extends BaubleData {
 
 	public DefaultBaubleData(BaubleType type) {
 		super(type, true, true);

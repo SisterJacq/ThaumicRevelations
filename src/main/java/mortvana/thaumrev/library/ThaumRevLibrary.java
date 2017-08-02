@@ -13,6 +13,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
 import mortvana.thaumrev.melteddashboard.item.ItemArmorFluxGear;
+import mortvana.thaumrev.melteddashboard.util.helpers.StringHelper;
 import mortvana.thaumrev.util.item.ItemArmorInfusableBase;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.crafting.*;
@@ -132,7 +133,7 @@ public class ThaumRevLibrary {
 
 	/** ARMORS **/
 	public static ItemArmorFluxGear bronzeChainHelmet;
-	public static ItemArmorFluxGear bronzeMail;
+	public static ItemArmorFluxGear bronzeChainmail;
 	public static ItemArmorFluxGear bronzeChainGreaves;
 	public static ItemArmorFluxGear bronzeChainBoots;
 
@@ -158,7 +159,7 @@ public class ThaumRevLibrary {
 	public static ShapedArcaneRecipe recipeThaumicBronzeChain;
 
 	public static ShapedArcaneRecipe recipeBronzeChainHelmet;
-	public static ShapedArcaneRecipe recipeBronzeMail;
+	public static ShapedArcaneRecipe recipeBronzeChainmail;
 	public static ShapedArcaneRecipe recipeBronzeChainGreaves;
 	public static ShapedArcaneRecipe recipeBronzeChainBoots;
 
@@ -244,6 +245,7 @@ public class ThaumRevLibrary {
 	};
 
 	public static final String matPrimal = "PRIMAL";
+	public static final String matBronzeChain = "BRONZE_CHAIN";
 	public static final String matWardencloth = "WARDENCLOTH";
 	public static final String matWardenicChain = "WARDENIC_CHAIN";
 

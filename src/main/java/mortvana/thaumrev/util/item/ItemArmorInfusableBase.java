@@ -50,6 +50,7 @@ public abstract class ItemArmorInfusableBase extends ItemArmorFluxGear implement
 
 	@Override
 	public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean par4) {
+		ThaumcraftHelper.addDiscountInformation(stack, player, list, par4);
 		AspectInfusionHelper.addInformation(stack, player, list, par4);
 		super.addInformation(stack, player, list, par4);
 	}

@@ -343,10 +343,6 @@ public class StringHelper {
 		return LIGHT_GRAY + localize(TOOLTIP + "hold") + " " + TEAL + ITALIC + localize(TOOLTIP + "shift") + " " + END + LIGHT_GRAY + localize(TOOLTIP + "details") + END;
 	}
 
-	public static String visDiscount(int discount) {
-		return PURPLE + localize("tc.visdicount" + ": " + discount + "%");
-	}
-
 	/** Tutorial Tabs **/
 	public static String tutorialTabAugment() {
 		return localize(TUTORIAL + "tabAugment");

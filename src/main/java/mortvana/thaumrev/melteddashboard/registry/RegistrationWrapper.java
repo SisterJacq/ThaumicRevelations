@@ -5,7 +5,11 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
+import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.oredict.OreDictionary;
+import net.minecraftforge.oredict.ShapelessOreRecipe;
+
+import mortvana.thaumrev.melteddashboard.util.helpers.ItemHelper;
 
 public class RegistrationWrapper {
 
@@ -50,7 +54,17 @@ public class RegistrationWrapper {
         FurnaceRecipes.smelting().func_151394_a(input, output, experience);
     }
 
-    public static void registerSquareRecipe(ItemStack input, ItemStack output) {
-        GameRegistry.addRecipe(output, "##", "##", '#', input);
+	public static IRecipe registerShapedRecipe(ItemStack output, Object... stuff) {
+		return GameRegistry.addShapedRecipe(output, stuff);
+	}
+
+    public static IRecipe registerSquareRecipe(ItemStack input, ItemStack output) {
+        return GameRegistry.addShapedRecipe(output, "##", "##", '#', input);
     }
+
+	public static ShapelessOreRecipe registerShapelessSizedOreRecipe(ItemStack input, int modifier, String... stuff) {
+		ShapelessOreRecipe r = new ShapelessOreRecipe(ItemHelper.cloneStack(input, stuff.length + modifier), stuff);
+		GameRegistry.addRecipe(r);
+		return r;
+	}
 }

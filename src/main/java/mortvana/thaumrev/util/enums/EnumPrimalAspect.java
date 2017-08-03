@@ -40,4 +40,23 @@ public enum EnumPrimalAspect {
 		}
 		return null;
 	}
+
+	public static String  getString(Aspect aspect) {
+		if (aspect.isPrimal()) {
+			if (aspect.equals(WATER)) {
+				return "Aqua";
+			} else if (aspect.equals(FIRE)) {
+				return "Ignis";
+			} else if (aspect.equals(AIR)) {
+				return "Aer";
+			} else if (aspect.equals(EARTH)) {
+				return "Terra";
+			} else if (aspect.equals(ORDER)) {
+				return "Ordo";
+			} else if (aspect.equals(ENTROPY)) {
+				return "Perditio";
+			}
+		}
+		return null;
+	}
 }

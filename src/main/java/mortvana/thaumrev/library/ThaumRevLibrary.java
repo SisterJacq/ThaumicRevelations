@@ -12,6 +12,8 @@ import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
+import net.minecraftforge.oredict.ShapelessOreRecipe;
+
 import mortvana.thaumrev.melteddashboard.item.ItemArmorFluxGear;
 import mortvana.thaumrev.melteddashboard.util.helpers.StringHelper;
 import mortvana.thaumrev.util.item.ItemArmorInfusableBase;
@@ -96,12 +98,15 @@ public class ThaumRevLibrary {
 	public static ItemStack dustVoidbrass;                  //00054
 	public static ItemStack dustVoidsteel;                  //00055
 
+	public static ItemStack rawBrass;
+	public static ItemStack rawBronze;
 	public static ItemStack rawThaumicBronze;               //00062
 
 	public static ItemStack coatedThaumicBronze;            //00072
 
 	public static ItemStack ceramicSlag;                    //00080
 	public static ItemStack thaumicSlag;                    //00081
+	public static ItemStack arcaneSingularity;              //00082
 
 	public static ItemStack thaumicBronzeChain;             //0090
 
@@ -113,16 +118,24 @@ public class ThaumRevLibrary {
 
 	public static ItemStack excubituraOilUnproc;            //00120
 	public static ItemStack excubituraOil;                  //00121
-	public static ItemStack wardenBronzeChain;              //00122
+	public static ItemStack wardenicBronzeChain;              //00122
 	public static ItemStack primalBronzeChain;              //00123
-	public static ItemStack wardenBronzePlate;              //00124
+	public static ItemStack wardenicBronzePlate;              //00124
 
 	public static ItemStack excubituraOilPure;              //00130
+	public static ItemStack wardenicSteelChain;             //00131
+	public static ItemStack wardenicSteelPlate;             //00132
+	public static ItemStack detailedSteelPlate;             //00133
+	public static ItemStack runicSteelPlate;                //00134
 
 	public static ItemStack wardenicQuartz;                 //00140
 	public static ItemStack excubituraCrystal;              //00141
 
 	public static ItemStack excubituraCrystalAwakened;      //00150
+
+
+	public static ItemStack ingotWardenicSteel;               //00500
+
 
 	public static ItemStack wardenJournal1;                 //01001
 
@@ -153,6 +166,9 @@ public class ThaumRevLibrary {
 	public static ItemArmorInfusableBase wardenicChainBoots;
 
 	/** RECIPES **/
+	public static ShapelessOreRecipe recipeBrass;
+	public static ShapelessOreRecipe recipeBronze;
+
 	public static ShapelessArcaneRecipe recipeThaumicBronzeRaw;
 	public static ShapelessArcaneRecipe recipeThaumicBronzeCoated;
 
@@ -194,6 +210,9 @@ public class ThaumRevLibrary {
 	// /** RESEARCH **/
 	public static ResearchItem researchThaumRev;
 	public static String keyThaumRev = "THAUMIC_REVELATIONS";
+
+	public static ResearchItem researchAlloy;
+	public static String keyAlloy = "ALLOYS";
 
 	public static ResearchItem researchWardenry;
 	public static String keyWardenry = "THAUMIC_WARDEN";
@@ -248,6 +267,7 @@ public class ThaumRevLibrary {
 	public static final String matBronzeChain = "BRONZE_CHAIN";
 	public static final String matWardencloth = "WARDENCLOTH";
 	public static final String matWardenicChain = "WARDENIC_CHAIN";
+	public static final String matWardenicSteel = "WARDENIC_STEEL";
 
 	/** NBT KEYS **/
 	public static final String DURABILITY = "DURABILITY";

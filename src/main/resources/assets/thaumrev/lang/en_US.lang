@@ -45,6 +45,7 @@ item.thaumrev.material.ingotThaumicBronzeCoated.name=Coated Thaumic Bronze Ingot
 
 item.thaumrev.material.itemSlagCeramic.name=Ceramic Mold Slag
 item.thaumrev.material.itemSlagThaumic.name=Thaumic Mold Slag
+item.thaumrev.material.itemArcaneSingularity.name=Arcane Singularity
 
 item.thaumrev.material.excubituraPetal.name=Excubitura Petal
 
@@ -54,16 +55,26 @@ item.thaumrev.material.wardencloth.name=Wardencloth
 
 item.thaumrev.material.excubituraOil.name=Excubitura Petal Oil
 item.thaumrev.material.thaumicBronzeChain.name=Thaumic Bronze Chain
-item.thaumrev.material.wardenBronzeChain.name=Warden's Bronze Chain
+item.thaumrev.material.wardenicBronzeChain.name=Wardenic Bronze Chain
 item.thaumrev.material.primalBronzeChain.name=Primal Bronze Chain
-item.thaumrev.material.plateWardenBronze.name=Warden's Bronze Plate
+item.thaumrev.material.wardenicBronzePlate.name=Wardenic Bronze Plate
 
 item.thaumrev.material.excubituraOilPure.name=Purified Excubitura Petal Oil
+item.thaumrev.material.wardenicSteelChain.name=Wardenic Steel Chain
+item.thaumrev.material.wardenicSteelPlate.name=Wardenic Steel Plate
+item.thaumrev.material.detailedSteelPlate.name=Detailed Wardenic Steel Plate
+item.thaumrev.material.runicSteelPlate.name=Runic Wardenic Steel Plate
 
 item.thaumrev.material.wardenicQuartz.name=Wardenic Quartz
 item.thaumrev.material.wardenicCrystal.name=Wardenic Crystal
 
 item.thaumrev.material.wardenicCrystalAwakened.name=Awakened Wardenic Crystal
+
+item.thaumrev.material.ingotWardenicSteel.name=Wardenic Steel Ingot
+
+item.thaumrev.material.nuggetWardenicSteel.name=Wardenic Steel Nugget
+
+item.thaumrev.material.dustWardenicSteel.name=Wardenic Steel Dust
 
 item.thaumrev.material.ingotThaumicBronzeFired.name=Fired Thaumic Bronze Ingot
 

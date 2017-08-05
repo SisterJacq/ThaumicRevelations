@@ -4,6 +4,8 @@ import net.minecraft.block.Block;
 import net.minecraft.item.*;
 
 import thaumcraft.api.ItemApi;
+import thaumcraft.common.config.ConfigBlocks;
+import thaumcraft.common.config.ConfigItems;
 
 public class ThaumcraftLibrary {
 
@@ -17,22 +19,17 @@ public class ThaumcraftLibrary {
 	}
 
 	private static void load() {
-		blockWoodenDevice = getBlock("blockWoodenDevice");
+		loadReference();
 
-		itemGoggles = getItem("itemGoggles");
-
-		itemChestRobe = getItem("itemChestRobe");
-		itemLegsRobe = getItem("itemLegsRobe");
-		itemBootsRobe = getItem("itemBootsRobe");
-
-		itemThaumonomicon = getItem("itemThaumonomicon");
-		itemThaumometer = getItem("itemThaumometer");
-
-		itemResource = getItem("itemResource");
-		itemShard = getItem("itemShard");
-		itemNugget = getItem("itemNugget");
+		visRelay = new ItemStack(blockMetalDevice, 1, 14);
 
 		planksGreatwood = new ItemStack(blockWoodenDevice, 1, 6);
+
+		table = new ItemStack(blockTable, 1, 0);
+
+		obsTotem = new ItemStack(blockCosmeticSolid, 1, 0);
+
+		arcStoneSlab = new ItemStack(blockSlabStone, 1, 0);
 
 		stackGoggles = new ItemStack(itemGoggles);
 
@@ -46,13 +43,70 @@ public class ThaumcraftLibrary {
 		itemAlumentum = new ItemStack(itemResource, 1, 0);
 		itemNitor = new ItemStack(itemResource, 1, 1);
 		ingotThaumium = new ItemStack(itemResource, 1, 2);
+		quicksilver = new ItemStack(itemResource, 1, 3);
 		itemEnchantedFabric = new ItemStack(itemResource, 1, 7);
 		dustSalisMundus = new ItemStack(itemResource, 1, 14);
 		itemPrimalCharm = new ItemStack(itemResource, 1, 15);
 
-		shardBalanced = new ItemStack(itemShard, 1, 6);
+		itemShardAir = new ItemStack(itemShard, 1, 0);
+		itemShardFire = new ItemStack(itemShard, 1, 1);
+		itemShardWater = new ItemStack(itemShard, 1, 2);
+		itemShardEarth = new ItemStack(itemShard, 1, 3);
+		itemShardOrder = new ItemStack(itemShard, 1, 4);
+		itemShardEntropy = new ItemStack(itemShard, 1, 5);
+		itemShardBalanced = new ItemStack(itemShard, 1, 6);
 
 		itemQuicksilverDrop = new ItemStack(itemNugget, 1, 5);
+	}
+
+	private static void loadReflection() {
+		blockMetalDevice = getBlock("blockMetalDevice");
+
+		blockWoodenDevice = getBlock("blockWoodenDevice");
+
+		blockTable = getBlock("blockTable");
+
+		blockCosmeticSolid = getBlock("blockCosmeticSolid");
+
+		blockSlabStone = getBlock("blockSlabStone");
+
+		itemGoggles = getItem("itemGoggles");
+
+		itemChestRobe = getItem("itemChestRobe");
+		itemLegsRobe = getItem("itemLegsRobe");
+		itemBootsRobe = getItem("itemBootsRobe");
+
+		itemThaumonomicon = getItem("itemThaumonomicon");
+		itemThaumometer = getItem("itemThaumometer");
+
+		itemResource = getItem("itemResource");
+		itemShard = getItem("itemShard");
+		itemNugget = getItem("itemNugget");
+	}
+
+	private static void loadReference() {
+		blockMetalDevice = ConfigBlocks.blockMetalDevice;
+
+		blockWoodenDevice = ConfigBlocks.blockWoodenDevice;
+
+		blockTable = ConfigBlocks.blockTable;
+
+		blockCosmeticSolid = ConfigBlocks.blockCosmeticSolid;
+
+		blockSlabStone = ConfigBlocks.blockSlabStone;
+
+		itemGoggles = ConfigItems.itemGoggles;
+
+		itemChestRobe = ConfigItems.itemChestRobe;
+		itemLegsRobe = ConfigItems.itemLegsRobe;
+		itemBootsRobe = ConfigItems.itemBootsRobe;
+
+		itemThaumonomicon = ConfigItems.itemThaumonomicon;
+		itemThaumometer = ConfigItems.itemThaumometer;
+
+		itemResource = ConfigItems.itemResource;
+		itemShard = ConfigItems.itemShard;
+		itemNugget = ConfigItems.itemNugget;
 	}
 
 	public static Block getBlock(String field) {
@@ -138,7 +192,15 @@ public class ThaumcraftLibrary {
 	public static Item itemNugget;
 
 	/** ITEMSTACKS (BLOCK) **/
+	public static ItemStack visRelay;
+
 	public static ItemStack planksGreatwood;
+
+	public static ItemStack table;
+
+	public static ItemStack obsTotem;
+
+	public static ItemStack arcStoneSlab;
 
 	/** ITEMSTACKS (EQUIPMENT) **/
 	public static ItemStack stackGoggles;
@@ -155,11 +217,18 @@ public class ThaumcraftLibrary {
 	public static ItemStack itemAlumentum;
 	public static ItemStack itemNitor;
 	public static ItemStack ingotThaumium;
+	public static ItemStack quicksilver;
 	public static ItemStack itemEnchantedFabric;
 	public static ItemStack dustSalisMundus;
 	public static ItemStack itemPrimalCharm;
 
-	public static ItemStack shardBalanced;
+	public static ItemStack itemShardAir;
+	public static ItemStack itemShardFire;
+	public static ItemStack itemShardWater;
+	public static ItemStack itemShardEarth;
+	public static ItemStack itemShardOrder;
+	public static ItemStack itemShardEntropy;
+	public static ItemStack itemShardBalanced;
 
 	public static ItemStack itemQuicksilverDrop;
 
@@ -219,14 +288,14 @@ public class ThaumcraftLibrary {
 	public static Block blockFluidPure;
 	public static Block blockFluidDeath;
 	public static Block blockHole;
-	public static Block blockArcaneFurnace;
+	public static Block blockArcaneFurnace;*/
 	public static Block blockMetalDevice;
-	public static Block blockMagicalLog;
-	public static Block blockStoneDevice;*/
+	//public static Block blockMagicalLog;
+	//public static Block blockStoneDevice;
 	public static Block blockWoodenDevice;
-	/**public static Block blockMagicalLeaves;
+	//public static Block blockMagicalLeaves;
 	public static Block blockTable;
-	public static Block blockChestHungry;
+	 /**public static Block blockChestHungry;
 	public static Block blockCustomOre;
 	public static Block blockCustomPlant;
 	public static Block blockCandle;
@@ -236,9 +305,9 @@ public class ThaumcraftLibrary {
 	public static Block blockLifter;
 	public static Block blockAiry;
 	public static Block blockCrystal;
-	public static Block blockCosmeticOpaque;
+	public static Block blockCosmeticOpaque;*/
 	public static Block blockCosmeticSolid;
-	public static Block blockMirror;
+	/*public static Block blockMirror;
 	public static Block blockTaint;
 	public static Block blockTaintFibres;
 	public static Block blockManaPod;
@@ -251,12 +320,21 @@ public class ThaumcraftLibrary {
 	public static Block blockStairsSilverwood;
 	public static Block blockStairsGreatwood;
 	public static Block blockStairsEldritch;
-	public static Block blockSlabWood;
+	public static Block blockSlabWood;*/
 	public static Block blockSlabStone;
-	public static Block blockDoubleSlabWood;
+	/*public static Block blockDoubleSlabWood;
 	public static Block blockDoubleSlabStone;
 	public static Block blockEldritchNothing;
 	public static Block blockAlchemyFurnace;
 	public static Block blockLootUrn;
 	public static Block blockLootCrate;*/
+
+	/** RESEARCH KEYS **/
+	public static String keyThaumium = "THAUMIUM";
+	public static String keyFabric = "ENCHFABRIC";
+	public static String keyGoggles = "GOGGLES";
+	public static String keyNitor = "NITOR";
+	public static String keyAlumentum = "ALEMENTUM";
+	public static String keyInfusion = "INFUSION";
+	public static String keyVisPower = "VISPOWER";
 }

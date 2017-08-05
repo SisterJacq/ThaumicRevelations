@@ -54,8 +54,8 @@ public class FluxGearBlockBase extends Block {
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public IIcon getIcon(int side, int metadata) {
-		return icons[metadata];
+	public IIcon getIcon(int side, int meta) {
+		return icons[meta];
 	}
 
 	@Override
@@ -72,5 +72,10 @@ public class FluxGearBlockBase extends Block {
 		for (int i = 0; i < names.length; i++) {
 			list.add(new ItemStack(item, 1, i));
 		}
+	}
+
+	@Override
+	public int damageDropped(int i) {
+		return i;
 	}
 }

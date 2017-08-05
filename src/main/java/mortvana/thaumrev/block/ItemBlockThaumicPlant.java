@@ -1,4 +1,4 @@
-package mortvana.thaumrev.core.block;
+package mortvana.thaumrev.block;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;

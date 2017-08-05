@@ -1,4 +1,4 @@
-package mortvana.thaumrev.core.common;
+package mortvana.thaumrev.common;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.*;
@@ -6,7 +6,7 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.*;
 
 import mortvana.thaumrev.library.ThaumRevLibrary;
-import mortvana.thaumrev.core.network.CommonProxy;
+import mortvana.thaumrev.network.CommonProxy;
 import mortvana.thaumrev.melteddashboard.lib.ThaumcraftLibrary;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -17,7 +17,7 @@ public class ThaumicRevelations {
     @Instance
     public static ThaumicRevelations instance;
 
-    @SidedProxy(clientSide = "mortvana.thaumrev.core.network.ClientProxy", serverSide = "mortvana.thaumrev.core.network.CommonProxy", modId = ThaumRevLibrary.MOD_ID)
+    @SidedProxy(clientSide = "mortvana.thaumrev.network.ClientProxy", serverSide = "mortvana.thaumrev.network.CommonProxy", modId = ThaumRevLibrary.MOD_ID)
     public static CommonProxy proxy;
 
 	// Move to Melted Dashboard Core once I have enough stuff to warrant creating it as a separate library.

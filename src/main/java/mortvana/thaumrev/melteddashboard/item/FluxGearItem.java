@@ -3,7 +3,7 @@ package mortvana.thaumrev.melteddashboard.item;
 import java.util.ArrayList;
 import java.util.List;
 
-import mortvana.thaumrev.core.common.ThaumicRevelations;
+import mortvana.thaumrev.common.ThaumicRevelations;
 import mortvana.thaumrev.melteddashboard.util.helpers.StringHelper;
 import mortvana.thaumrev.melteddashboard.util.helpers.TextureHelper;
 import net.minecraft.client.renderer.texture.IIconRegister;

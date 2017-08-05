@@ -8,6 +8,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.Enchantment;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
@@ -58,6 +59,8 @@ public class ThaumRevLibrary {
     /** BLOCKS **/
     public static Block blockThaumicPlant;
     public static Block blockFakeAir;
+	public static Block blockStoneDecor;
+	public static Block blockStoneDevice;
 
     /** ITEMS **/
     public static FluxGearItemInteractive generalItem;
@@ -65,6 +68,13 @@ public class ThaumRevLibrary {
 
 
     /** ITEMSTACKS **/
+    public static ItemStack potato = new ItemStack(Items.potato); //Used for debugging, placeholding, and such
+
+	public static ItemStack excubituraRose;
+
+	public static ItemStack wardenicObsidian;
+	public static ItemStack eldritchStone;
+
 	public static ItemStack ingotCopper;                    //00000
 	public static ItemStack ingotZinc;                      //00001
 	public static ItemStack ingotTin;                       //00002
@@ -102,25 +112,28 @@ public class ThaumRevLibrary {
 	public static ItemStack rawBronze;
 	public static ItemStack rawThaumicBronze;               //00062
 
+	public static ItemStack dustSalisMundusTiny;            //00070
+
 	public static ItemStack coatedThaumicBronze;            //00072
 
 	public static ItemStack ceramicSlag;                    //00080
 	public static ItemStack thaumicSlag;                    //00081
 	public static ItemStack arcaneSingularity;              //00082
+	public static ItemStack stabilizedSingularity;          //00083
 
-	public static ItemStack thaumicBronzeChain;             //0090
+	public static ItemStack thaumicBronzeChain;             //00090
 
 	public static ItemStack excubituraPetal;                //00100
 
 	public static ItemStack excubituraPaste;                //00110
 	public static ItemStack excubituraFabric;               //00111
-	public static ItemStack wardencloth;                    //00112
+	public static ItemStack itemWardencloth;                //00112
 
 	public static ItemStack excubituraOilUnproc;            //00120
 	public static ItemStack excubituraOil;                  //00121
-	public static ItemStack wardenicBronzeChain;              //00122
+	public static ItemStack wardenicBronzeChain;            //00122
 	public static ItemStack primalBronzeChain;              //00123
-	public static ItemStack wardenicBronzePlate;              //00124
+	public static ItemStack wardenicBronzePlate;            //00124
 
 	public static ItemStack excubituraOilPure;              //00130
 	public static ItemStack wardenicSteelChain;             //00131
@@ -138,6 +151,8 @@ public class ThaumRevLibrary {
 
 
 	public static ItemStack wardenJournal1;                 //01001
+
+	public static ItemStack wardenicHardener;               //01050
 
 	public static ItemStack firedThaumicBronze;             //01102
 
@@ -168,6 +183,8 @@ public class ThaumRevLibrary {
 	/** RECIPES **/
 	public static ShapelessOreRecipe recipeBrass;
 	public static ShapelessOreRecipe recipeBronze;
+	public static ShapelessOreRecipe recipeSalisTiny;
+	public static ShapelessOreRecipe recipeSalis;
 
 	public static ShapelessArcaneRecipe recipeThaumicBronzeRaw;
 	public static ShapelessArcaneRecipe recipeThaumicBronzeCoated;
@@ -179,10 +196,23 @@ public class ThaumRevLibrary {
 	public static ShapedArcaneRecipe recipeBronzeChainGreaves;
 	public static ShapedArcaneRecipe recipeBronzeChainBoots;
 
+	public static ShapedArcaneRecipe recipeRunicInfuser;
+	public static ShapelessArcaneRecipe recipeArcaneSingularity;
+	public static ShapelessArcaneRecipe recipeStableSingularity;
+
+	public static ShapedArcaneRecipe recipeDarkRunicInfuser;
+
+	public static InfusionRecipe recipeAlchemicalInfuser;
+
+	public static InfusionRecipe recipeDarkAlchemicalInfuser;
+
 	public static InfusionRecipe recipePrimalGoggles;
 	public static InfusionRecipe recipePrimalRobes;
 	public static InfusionRecipe recipePrimalPants;
 	public static InfusionRecipe recipePrimalBoots;
+
+	public static InfusionRecipe recipeWardenicHardener;
+	public static InfusionRecipe recipeWardenicHardenerAlt;
 
 	public static ShapelessArcaneRecipe recipeExcubituraPaste;
 
@@ -206,13 +236,19 @@ public class ThaumRevLibrary {
 	public static ShapedArcaneRecipe recipeWardenicChainGreaves;
 	public static ShapedArcaneRecipe recipeWardenicChainBoots;
 
+	public static ShapelessArcaneRecipe recipePureOil;
+
+	public static InfusionRecipe[] recipesWardenSteel;
+
+	public static ShapedArcaneRecipe recipeWardenSteelChain;
+	public static /*ThaumicCompressorRecipe*/ ShapedArcaneRecipe recipeWardenSteelPlate;
+	public static ShapedArcaneRecipe recipeDetailedSteelPlate;
+	public static InfusionRecipe recipeRunicSteelPlate;
+
 
 	// /** RESEARCH **/
 	public static ResearchItem researchThaumRev;
 	public static String keyThaumRev = "THAUMIC_REVELATIONS";
-
-	public static ResearchItem researchAlloy;
-	public static String keyAlloy = "ALLOYS";
 
 	public static ResearchItem researchWardenry;
 	public static String keyWardenry = "THAUMIC_WARDEN";
@@ -224,6 +260,10 @@ public class ThaumRevLibrary {
 	public static String keyMagneoturgy = "MAGNEOTURGY";
 
 
+	public static ResearchItem researchMaterial;
+	public static String keyMaterial = "MATERIAL_TRv";
+
+
 	public static ResearchItem researchThaumicBronze;
 	public static String keyThaumicBronze = "THAUMIC_BRONZE";
 
@@ -233,8 +273,18 @@ public class ThaumRevLibrary {
 	public static ResearchItem researchArmorBronzeChain;
 	public static String keyArmorBronzeChain = "ARMOR_TBRONZE";
 
+	public static ResearchItem researchRunicInfuser;
+	public static String keyRunicInfuser = "RUNIC_INFUSER";
+
 	public static ResearchItem researchPrimalRobes;
 	public static String keyRobesPrimal = "ROBES_PRIMAL";
+
+
+	public static ResearchItem researchWardenicObsidian;
+	public static String keyWardenicObsidian = "WARDENIC_OBSIDIAN";
+
+	public static ResearchItem researchThaumicCompressor;
+	public static String keyThaumicCompressor = "THAUMIC_COMPRESSOR";
 
 
 	public static ResearchItem researchExcubituraPaste;
@@ -255,12 +305,26 @@ public class ThaumRevLibrary {
 	public static ResearchItem researchArmorWardenChain;
 	public static String keyArmorWardenChain = "ARMOR_WARDENCHAIN";
 
+	public static ResearchItem researchPureOil;
+	public static String keyPureOil = "PURE_OIL";
+
+	public static ResearchItem researchWardenSteel;
+	public static String keyWardenSteel = "WARDEN_STEEL";
+
+	public static ResearchItem researchWardenPlate;
+	public static String keyWardenPlate = "WARDEN_PLATE";
+
     /** RENDER IDs **/
     public static int wardedChestRenderID = -1;
 
 	/** BLOCK NAMES **/
 	public static final String[] PLANT_NAMES = new String[] {
 			"excubitura"
+	};
+
+	public static final String[] DECOR_STONE_NAMES = new String[] {
+			"obsidianWardenic",
+			"stoneEldritch"
 	};
 
 	public static final String matPrimal = "PRIMAL";

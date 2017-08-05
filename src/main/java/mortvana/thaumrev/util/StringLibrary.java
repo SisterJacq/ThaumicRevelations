@@ -1,22 +1,35 @@
 package mortvana.thaumrev.util;
 
 public final class StringLibrary {
-	public static final String SALISMUNDUS = "dustSalisMundus";
-	public static final String ENCHFABRIC = "itemEnchantedFabric";
+	public static String redstone = "dustRedstone";
+	public static String nAu = "nuggetGold";
 
-	public static final String ICU = "ingotCopper";
-	public static final String IZN = "ingotZinc";
-	public static final String ISN = "ingotTin";
+	public static String enchFabric = "itemEnchantedFabric";
+	public static String mirror = "itemMirroredGlass";
+	public static String salisMundus = "dustSalisMundus";
+	public static String voidSeed = "itemVoidSeed";
 
-	public static final String NBRONZE = "nuggetBronze";
+	public static String shardBalanced = "shardBalanced";
 
-	public static final String PASTE = "itemExcubituraPaste";
+	public static String nHg = "itemDropQuicksilver";
 
-	public static final String WARDENCLOTH = "itemWardencloth";
+	public static String iCu = "ingotCopper";
+	public static String iZn = "ingotZinc";
+	public static String iSn = "ingotTin";
 
-	public static final String CHAINTBRONZE = "itemChainThaumicBronze";
-	public static final String CHAINWBRONZE = "itemChainWardenicBronze";
-	public static final String CHAINPBRONZE = "itemChainPrimalBronze";
+	public static String nBronze = "nuggetBronze";
 
+	public static String salisPinch = "dustSalisMundusTiny";
 
+	public static String singularity ="itemArcaneSingularity";
+	public static String stableSingularity = "itemStabilizedSingularity";
+
+	public static String paste = "itemExcubituraPaste";
+
+	public static String wardencloth = "itemWardencloth";
+
+	public static String oilExcu = "itemExcubituraOil";
+	public static String chainTBronze = "itemChainThaumicBronze";
+	public static String chainWBronze = "itemChainWardenicBronze";
+	public static String chainPBronze = "itemChainPrimalBronze";
 }

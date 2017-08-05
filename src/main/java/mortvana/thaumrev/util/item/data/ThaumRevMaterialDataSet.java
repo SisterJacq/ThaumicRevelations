@@ -2,7 +2,7 @@ package mortvana.thaumrev.util.item.data;
 
 import net.minecraft.item.EnumRarity;
 
-import mortvana.thaumrev.core.common.ThaumicRevelations;
+import mortvana.thaumrev.common.ThaumicRevelations;
 
 public class ThaumRevMaterialDataSet {
 	protected ThaumRevMaterialData helmData, chestData, legsData, bootData;

@@ -1,4 +1,4 @@
-package mortvana.thaumrev.core.item;
+package mortvana.thaumrev.item;
 
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
@@ -6,7 +6,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import gnu.trove.map.TMap;
 import gnu.trove.map.hash.THashMap;
 import mortvana.thaumrev.api.util.enums.EnumEquipmentType;
-import mortvana.thaumrev.core.common.ThaumicRevelations;
+import mortvana.thaumrev.common.ThaumicRevelations;
 import mortvana.thaumrev.util.item.data.ThaumRevMaterialData;
 import mortvana.thaumrev.util.item.data.ThaumRevMaterialDataSet;
 import mortvana.thaumrev.library.ThaumRevLibrary;

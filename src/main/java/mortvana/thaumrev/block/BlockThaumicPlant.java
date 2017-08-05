@@ -1,4 +1,4 @@
-package mortvana.thaumrev.core.block;
+package mortvana.thaumrev.block;
 
 import java.util.ArrayList;
 

@@ -5,9 +5,9 @@ import thaumcraft.api.aspects.Aspect;
 import static thaumcraft.api.aspects.Aspect.*;
 
 public enum EnumPrimalAspect {
-	AQUA(WATER),
-	IGNIS(FIRE),
 	AER(AIR),
+	IGNIS(FIRE),
+	AQUA(WATER),
 	TERRA(EARTH),
 	ORDO(ORDER),
 	PERDITIO(ENTROPY);
@@ -24,12 +24,12 @@ public enum EnumPrimalAspect {
 
 	public static EnumPrimalAspect getPrimal(Aspect aspect) {
 		if (aspect.isPrimal()) {
-			if (aspect.equals(WATER)) {
-				return AQUA;
+			if (aspect.equals(AIR)) {
+				return AER;
 			} else if (aspect.equals(FIRE)) {
 				return IGNIS;
-			} else if (aspect.equals(AIR)) {
-				return AER;
+			} else if (aspect.equals(WATER)) {
+				return AQUA;
 			} else if (aspect.equals(EARTH)) {
 				return TERRA;
 			} else if (aspect.equals(ORDER)) {
@@ -43,12 +43,12 @@ public enum EnumPrimalAspect {
 
 	public static String  getString(Aspect aspect) {
 		if (aspect.isPrimal()) {
-			if (aspect.equals(WATER)) {
-				return "Aqua";
+			if (aspect.equals(AIR)) {
+				return "Aer";
 			} else if (aspect.equals(FIRE)) {
 				return "Ignis";
-			} else if (aspect.equals(AIR)) {
-				return "Aer";
+			} else if (aspect.equals(WATER)) {
+				return "Aqua";
 			} else if (aspect.equals(EARTH)) {
 				return "Terra";
 			} else if (aspect.equals(ORDER)) {

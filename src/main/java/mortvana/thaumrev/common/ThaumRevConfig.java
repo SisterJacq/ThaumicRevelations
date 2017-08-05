@@ -1,7 +1,7 @@
-package mortvana.thaumrev.core.common;
+package mortvana.thaumrev.common;
 
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import mortvana.thaumrev.core.common.ThaumicRevelations;
+
 import mortvana.thaumrev.melteddashboard.util.ConfigBase;
 import net.minecraftforge.common.config.Configuration;
 
@@ -35,6 +35,8 @@ public class ThaumRevConfig extends ConfigBase {
 
 	    researchLevel = config.get("Miscellaneous", "Research Difficulty", -1, "Independent from Thaumcraft's Research Difficulty. Determines which researches auto-unlock. -1 for using Thaumcraft's difficulty, 0 for easy, 1 for normal (default Thaumcraft setting), 2 for hard.").getInt();
 
+	    cuAlloys = config.get("Miscellaneous", "Enable Bronze and Brass", true, "Determines whether or not our Bronze and Brass is craftable. Disabling without other mods adding Bronze and Brass will break stuff.").getBoolean();
+
         if (config.hasChanged()) {
             config.save();
         }
@@ -58,4 +60,6 @@ public class ThaumRevConfig extends ConfigBase {
     public static boolean enableStandardist;
 
 	public static int researchLevel;
+
+	public static boolean cuAlloys;
 }

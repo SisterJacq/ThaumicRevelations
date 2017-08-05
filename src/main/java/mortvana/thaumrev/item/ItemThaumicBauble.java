@@ -1,4 +1,4 @@
-package mortvana.thaumrev.core.item;
+package mortvana.thaumrev.item;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;

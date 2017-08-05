@@ -1,4 +1,4 @@
-package mortvana.thaumrev.core.network;
+package mortvana.thaumrev.network;
 
 public class ClientProxy extends CommonProxy {
 }

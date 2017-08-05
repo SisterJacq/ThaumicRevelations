@@ -71,7 +71,7 @@ public abstract class ItemArmorInfusableBase extends ItemArmorFluxGear implement
 
 	@Override
 	public ArmorProperties getProperties(EntityLivingBase player, ItemStack armor, DamageSource source, double damage, int slot) {
-		return null;
+		return new ArmorProperties(0, damageReduceAmount / 25D, 20);
 	}
 
 	@Override

@@ -44,9 +44,12 @@ public class ThaumcraftLibrary {
 		itemNitor = new ItemStack(itemResource, 1, 1);
 		ingotThaumium = new ItemStack(itemResource, 1, 2);
 		quicksilver = new ItemStack(itemResource, 1, 3);
+
 		itemEnchantedFabric = new ItemStack(itemResource, 1, 7);
+
 		dustSalisMundus = new ItemStack(itemResource, 1, 14);
 		itemPrimalCharm = new ItemStack(itemResource, 1, 15);
+		ingotVoidmetal = new ItemStack(itemResource, 1, 16);
 
 		itemShardAir = new ItemStack(itemShard, 1, 0);
 		itemShardFire = new ItemStack(itemShard, 1, 1);
@@ -221,6 +224,7 @@ public class ThaumcraftLibrary {
 	public static ItemStack itemEnchantedFabric;
 	public static ItemStack dustSalisMundus;
 	public static ItemStack itemPrimalCharm;
+	public static ItemStack ingotVoidmetal;
 
 	public static ItemStack itemShardAir;
 	public static ItemStack itemShardFire;

@@ -23,6 +23,7 @@ public class FluxGearBlockBase extends Block {
 
 	public String[] names;
 	public String[] textures;
+	@SideOnly(Side.CLIENT)
 	public IIcon[] icons;
 	public String directory;
 
@@ -61,7 +62,9 @@ public class FluxGearBlockBase extends Block {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister register) {
-		icons = new IIcon[textures.length];
+		if (icons == null) {
+			icons = new IIcon[textures.length];
+		}
 		for (int i = 0; i < textures.length; i++) {
 			icons[i] = register.registerIcon(directory + StringHelper.camelCase(names[i]));
 		}

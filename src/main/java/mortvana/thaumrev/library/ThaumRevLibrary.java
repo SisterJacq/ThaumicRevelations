@@ -48,7 +48,7 @@ public class ThaumRevLibrary {
     public static final Aspect REVELATIONS = new Aspect("patefactio", 0x3971AD, new Aspect[] { TRAVEL, MIND }, new ResourceLocation(RESOURCE_PREFIX, "textures/aspects/revelatiofez.png"), 771);
 
 	/** ENCHANTMENTS **/
-    public static Enchantment enchantStabilizing;
+    //public static Enchantment enchantStabilizing;
 
     /** CREATIVE TABS **/
     public static CreativeTabs thaumicRevelationsTab; //= new FluxGearCreativeTab("PFG-Thaumic", "fluxgear.thaumicTab", wardenAmulet);
@@ -59,8 +59,14 @@ public class ThaumRevLibrary {
     /** BLOCKS **/
     public static Block blockThaumicPlant;
     public static Block blockFakeAir;
+	public static Block blockWoodDecor;
 	public static Block blockStoneDecor;
+	public static Block blockMetalDecor;
+	public static Block blockStorage;
+	public static Block blockTransparent;
+	public static Block blockWoodDevice;
 	public static Block blockStoneDevice;
+	public static Block blockMetalDevice;
 
     /** ITEMS **/
     public static FluxGearItemInteractive generalItem;
@@ -74,87 +80,27 @@ public class ThaumRevLibrary {
 
 	public static ItemStack wardenicObsidian;
 	public static ItemStack eldritchStone;
+	public static ItemStack wardenicQuartzBlock;
+	public static ItemStack wardenicQuartzChiseled;
+	public static ItemStack wardenicQuartzPillar;
 
-	public static ItemStack ingotCopper;                    //00000
-	public static ItemStack ingotZinc;                      //00001
-	public static ItemStack ingotTin;                       //00002
-
-	public static ItemStack nuggetCopper;                   //00010
-	public static ItemStack nuggetZinc;                     //00011
-	public static ItemStack nuggetTin;                      //00012
-
-	public static ItemStack dustCopper;                     //00020
-	public static ItemStack dustZinc;                       //00021
-	public static ItemStack dustTin;                        //00022
-
-	public static ItemStack ingotBrass;                     //00030
-	public static ItemStack ingotBronze;                    //00031
-	public static ItemStack ingotThaumicBronze;             //00032
-	public static ItemStack ingotSteel;                     //00033
-	public static ItemStack ingotVoidbrass;                 //00034
-	public static ItemStack ingotVoidsteel;                 //00035
-
-	public static ItemStack nuggetBrass;                    //00040
-	public static ItemStack nuggetBronze;                   //00041
-	public static ItemStack nuggetThaumicBronze;            //00042
-	public static ItemStack nuggetSteel;                    //00043
-	public static ItemStack nuggetVoidbrass;                //00044
-	public static ItemStack nuggetVoidsteel;                //00045
-
-	public static ItemStack dustBrass;                      //00050
-	public static ItemStack dustBronze;                     //00051
-	public static ItemStack dustThaumicBronze;              //00052
-	public static ItemStack dustSteel;                      //00053
-	public static ItemStack dustVoidbrass;                  //00054
-	public static ItemStack dustVoidsteel;                  //00055
-
-	public static ItemStack rawBrass;
-	public static ItemStack rawBronze;
-	public static ItemStack rawThaumicBronze;               //00062
-
-	public static ItemStack dustSalisMundusTiny;            //00070
-
-	public static ItemStack coatedThaumicBronze;            //00072
-
-	public static ItemStack ceramicSlag;                    //00080
-	public static ItemStack thaumicSlag;                    //00081
-	public static ItemStack arcaneSingularity;              //00082
-	public static ItemStack stabilizedSingularity;          //00083
-
-	public static ItemStack thaumicBronzeChain;             //00090
-
-	public static ItemStack excubituraPetal;                //00100
-
-	public static ItemStack excubituraPaste;                //00110
-	public static ItemStack excubituraFabric;               //00111
-	public static ItemStack itemWardencloth;                //00112
-
-	public static ItemStack excubituraOilUnproc;            //00120
-	public static ItemStack excubituraOil;                  //00121
-	public static ItemStack wardenicBronzeChain;            //00122
-	public static ItemStack primalBronzeChain;              //00123
-	public static ItemStack wardenicBronzePlate;            //00124
-
-	public static ItemStack excubituraOilPure;              //00130
-	public static ItemStack wardenicSteelChain;             //00131
-	public static ItemStack wardenicSteelPlate;             //00132
-	public static ItemStack detailedSteelPlate;             //00133
-	public static ItemStack runicSteelPlate;                //00134
-
-	public static ItemStack wardenicQuartz;                 //00140
-	public static ItemStack excubituraCrystal;              //00141
-
-	public static ItemStack excubituraCrystalAwakened;      //00150
-
-
-	public static ItemStack ingotWardenicSteel;               //00500
+	public static ItemStack blockCopper;
+	public static ItemStack blockZinc;
+	public static ItemStack blockTin;
+	public static ItemStack blockSilver;
+	public static ItemStack blockBrass;
+	public static ItemStack blockBronze;
+	public static ItemStack blockThaumicBronze;
+	public static ItemStack blockSteel;
+	public static ItemStack blockVoidbrass;
+	public static ItemStack blockVoidsteel;
+	public static ItemStack blockElectrum;
+	public static ItemStack blockWardenicSteel;
+	public static ItemStack blockThaumicElectrum;
+	public static ItemStack blockVoidmetal;
 
 
 	public static ItemStack wardenJournal1;                 //01001
-
-	public static ItemStack wardenicHardener;               //01050
-
-	public static ItemStack firedThaumicBronze;             //01102
 
     public static ItemStack wardenAmulet;                   //00000
     public static ItemStack loveRing;                       //00001
@@ -318,13 +264,39 @@ public class ThaumRevLibrary {
     public static int wardedChestRenderID = -1;
 
 	/** BLOCK NAMES **/
-	public static final String[] PLANT_NAMES = new String[] {
-			"excubitura"
+	public static final String[] PLANT_NAMES = {
+			"excubitura",
+			"wildCotton",
+			"thistle"
 	};
 
-	public static final String[] DECOR_STONE_NAMES = new String[] {
+	public static final String[] DECOR_STONE_NAMES = {
 			"obsidianWardenic",
-			"stoneEldritch"
+			"stoneEldritch",
+			"wardenicQuartz",
+			"wardenicQuartzChiseled",
+			"wardenicQuartzPillar",
+			"wardenicQuartzPillar",
+			"wardenicQuartzPillar",
+	};
+
+	public static final String[] STORAGE_NAMES = {
+			"blockCopper",
+			"blockZinc",
+			"blockTin",
+			"blockSilver",
+			"blockBrass",
+			"blockBronze",
+			"blockThaumicBronze",
+			"blockSteel",
+			"blockVoidbrass",
+			"blockVoidsteel",
+			"blockElectrum",
+			"blockWardenicSteel",
+			"blockThaumicElectrum",
+			"blockVoid"//,
+			//"",
+			//""
 	};
 
 	public static final String matPrimal = "PRIMAL";

@@ -11,26 +11,49 @@ tc.aspect.fluxus=Flux, Fluctuation, Energy
 tc.aspect.patefactio=Revelations, Uncovering, Epiphany
 
 #Research
-tc.research_category.thaumrev=Thaumic Revelations
+tc.research_category.THAUMREV=Thaumic Revelations
 
 #Blocks
 tile.thaumrev.plant.excubitura.name=Excubitura Rose
+tile.thaumrev.plant.wildCotton.name=Wild Cotton
+tile.thaumrev.plant.thistle.name=Thistle
 
 tile.thaumrev.stoneDecor.obsidianWardenic.name=Wardenic Obsidian
 tile.thaumrev.stoneDecor.stoneEldritch.name=Eldritch Stone
+tile.thaumrev.stoneDecor.wardenicQuartz.name=Wardenic Quartz
+tile.thaumrev.stoneDecor.wardenicQuartzChiseled.name=Chiseled Wardenic Quartz
+tile.thaumrev.stoneDecor.wardenicQuartzPillar.name=Wardenic Quartz Pillar [WIP]
+
+tile.thaumrev.storage.blockCopper.name=Copper Block
+tile.thaumrev.storage.blockZinc.name=Zinc Block
+tile.thaumrev.storage.blockTin.name=Tin Block
+tile.thaumrev.storage.blockSilver.name=Silver Block
+tile.thaumrev.storage.blockBrass.name=Brass Block
+tile.thaumrev.storage.blockBronze.name=Bronze Block
+tile.thaumrev.storage.blockThaumicBronze.name=Thaumic Bronze Block
+tile.thaumrev.storage.blockSteel.name=Steel Block
+tile.thaumrev.storage.blockVoidbrass.name=Voidbrass Block
+tile.thaumrev.storage.blockVoidsteel.name=Voidsteel Block
+tile.thaumrev.storage.blockElectrum.name=Electrum Block
+tile.thaumrev.storage.blockWardenicSteel.name=Wardenic Steel Block
+tile.thaumrev.storage.blockThaumicElectrum.name=Thaumic Electrum Block
+tile.thaumrev.storage.blockVoidmetal.name=Voidmetal Block
 
 #Items
 item.thaumrev.material.ingotCopper.name=Copper Ingot
 item.thaumrev.material.ingotZinc.name=Zinc Ingot
 item.thaumrev.material.ingotTin.name=Tin Ingot
+item.thaumrev.material.ingotSilver.name=Silver Ingot
 
 item.thaumrev.material.nuggetCopper.name=Copper Nugget
 item.thaumrev.material.nuggetZinc.name=Zinc Nugget
 item.thaumrev.material.nuggetTin.name=Tin Nugget
+item.thaumrev.material.nuggetSilver.name=Silver Nugget
 
 item.thaumrev.material.dustCopper.name=Copper Dust
 item.thaumrev.material.dustZinc.name=Zinc Dust
 item.thaumrev.material.dustTin.name=Tin Dust
+item.thaumrev.material.dustSilver.name=Silver Dust
 
 item.thaumrev.material.ingotBrass.name=Brass Ingot
 item.thaumrev.material.ingotBronze.name=Bronze Ingot
@@ -38,6 +61,7 @@ item.thaumrev.material.ingotThaumicBronze.name=Thaumic Bronze Ingot
 item.thaumrev.material.ingotVoidbrass.name=Voidbrass Ingot
 item.thaumrev.material.ingotSteel.name=Steel Ingot
 item.thaumrev.material.ingotVoidsteel.name=Voidsteel Ingot
+item.thaumrev.material.ingotElectrum.name=Electrum Ingot
 
 item.thaumrev.material.nuggetBrass.name=Brass Nugget
 item.thaumrev.material.nuggetBronze.name=Bronze Nugget
@@ -45,6 +69,7 @@ item.thaumrev.material.nuggetThaumicBronze.name=Thaumic Bronze Nugget
 item.thaumrev.material.nuggetVoidbrass.name=Voidbrass Nugget
 item.thaumrev.material.nuggetSteel.name=Steel Nugget
 item.thaumrev.material.nuggetVoidsteel.name=Voidsteel Nugget
+item.thaumrev.material.nuggetElectrum.name=Electrum Nugget
 
 item.thaumrev.material.dustBrass.name=Brass Dust
 item.thaumrev.material.dustBronze.name=Bronze Dust
@@ -52,19 +77,26 @@ item.thaumrev.material.dustThaumicBronze.name=Thaumic Bronze Dust
 item.thaumrev.material.dustVoidbrass.name=Voidbrass Dust
 item.thaumrev.material.dustSteel.name=Steel Dust
 item.thaumrev.material.dustVoidsteel.name=Voidsteel Dust
+item.thaumrev.material.dustElectrum.name=Electrum Dust
 
 item.thaumrev.material.ingotBrassRaw.name=Raw Brass Ingot
 item.thaumrev.material.ingotBronzeRaw.name=Raw Bronze Ingot
 item.thaumrev.material.ingotThaumicBronzeRaw.name=Raw Thaumic Bronze Ingot
+item.thaumrev.material.ingotElectrumRaw.name=Raw Electrum Ingot
 
 item.thaumrev.material.dustSalisMundusTiny.name=Pinch of Salis Mundus
-
+item.thaumrev.material.dustVoidmetal.name=Voidmetal Dust
 item.thaumrev.material.ingotThaumicBronzeCoated.name=Coated Thaumic Bronze Ingot
 
 item.thaumrev.material.itemSlagCeramic.name=Ceramic Mold Slag
 item.thaumrev.material.itemSlagThaumic.name=Thaumic Mold Slag
 item.thaumrev.material.itemArcaneSingularity.name=Arcane Singularity
 item.thaumrev.material.itemStabilizedSingularity.name=Stabilized Singularity
+item.thaumrev.material.itemCottonFiber.name=Cotton
+
+item.thaumrev.material.cottonFabric.name=Cotton Fabric
+item.thaumrev.material.enchCottonFabric.name=Enchanted Cotton Fabric
+item.thaumrev.material.thaumicBronzeChain.name=Thaumic Bronze Chain
 
 item.thaumrev.material.excubituraPetal.name=Excubitura Petal
 
@@ -74,7 +106,6 @@ item.thaumrev.material.wardencloth.name=Wardencloth
 
 item.thaumrev.material.excubituraOilUnproc.name=Excubitura Petal Slurry
 item.thaumrev.material.excubituraOil.name=Excubitura Petal Oil
-item.thaumrev.material.thaumicBronzeChain.name=Thaumic Bronze Chain
 item.thaumrev.material.wardenicBronzeChain.name=Wardenic Bronze Chain
 item.thaumrev.material.primalBronzeChain.name=Primal Bronze Chain
 item.thaumrev.material.wardenicBronzePlate.name=Wardenic Bronze Plate
@@ -87,18 +118,29 @@ item.thaumrev.material.runicSteelPlate.name=Runic Wardenic Steel Plate
 
 item.thaumrev.material.wardenicQuartz.name=Wardenic Quartz
 item.thaumrev.material.wardenicCrystal.name=Wardenic Crystal
+item.thaumrev.material.dustWardenicQuartz.name=Wardenic Quartz Dust
+item.thaumrev.material.dustWardenicCrystal.name=Crushed Wardenic Crystal
+item.thaumrev.material.binderWardenic.name=Wardenic Binding Compound
+item.thaumrev.material.ingotWardenicComposite.name=Wardenic Composite Alloy
+item.thaumrev.material.itemPlateWardenicComposite.name=Wardenic Composite Plate
 
 item.thaumrev.material.wardenicCrystalAwakened.name=Awakened Wardenic Crystal
 
 item.thaumrev.material.ingotWardenicSteel.name=Wardenic Steel Ingot
+item.thaumrev.material.ingotThaumicElectrum.name=Thaumic Electrum Ingot
 
 item.thaumrev.material.nuggetWardenicSteel.name=Wardenic Steel Nugget
+item.thaumrev.material.nuggetThaumicElectrum.name=Thaumic Electrum Nugget
 
 item.thaumrev.material.dustWardenicSteel.name=Wardenic Steel Dust
+item.thaumrev.material.dustThaumicElectrum.name=Thaumic Electrum Dust
 
 item.thaumrev.material.itemWardenicHardener.name=Wardenic Hardening Compound
 
 item.thaumrev.material.ingotThaumicBronzeFired.name=Fired Thaumic Bronze Ingot
+
+item.thaumrev.material.seedExcubitura.name=Excubitura Seed
+item.thaumrev.material.seedCotton.name=Cotton Seed
 
 #Armor
 item.thaumrev.primal.goggles.name=Primal Goggles
@@ -125,6 +167,49 @@ item.thaumrev.wardenicSteel.helmet.name=Wardenic Steel Plate Helmet
 item.thaumrev.wardenicSteel.mail.name=Wardenic Steel Chestplate
 item.thaumrev.wardenicSteel.greaves.name=Wardenic Steel Plate Greaves
 item.thaumrev.wardenicSteel.boots.name=Wardenic Steel Plate Boots
+
+#Research
+thaumrev.name.THAUMIC_REVELATIONS=Thaumic Revelations
+thaumrev.text.THAUMIC_REVELATIONS=[TRv] Hey, hey, you don't know, what you're missing now!
+
+thaumrev.name.MATERIAL_TRv=Materials
+
+thaumrev.name.THAUMIC_BRONZE=Thaumic Bronze
+thaumrev.text.THAUMIC_BRONZE=[TRv]
+
+thaumrev.name.TBRONZE_CHAIN=Thaumic Bronze Chain
+
+thaumrev.name.ARMOR_TBRONZE=Thaumic Bronze Chainmail
+
+thaumrev.name.RUNIC_INFUSER=Runic Infuser
+
+thaumrev.name.ROBES_PRIMAL=Primal Robes
+thaumrev.text.ROBES_PRIMAL=[TRv] Mending and Stylish
+
+
+thaumrev.name.THAUMIC_WARDEN=Thaumic Wardenry
+thaumrev.text.THAUMIC_WARDEN=[TRv] Protectors of Apirimort
+thaumrev.page.THAUMIC_WARDEN.0=When studying a strange purple rose-like flower you remembered stories from your youth, stories of a mythical order of thaumaturges who fought the Eldritch and protected their homeland. The most orthodox branch of the order, the Abdonian Thaumic Wardens are said to have used the essential oils from the petals of a nearly identical flower which grew in large amounts in the highlands near their headquarters at Fort Rose to make their legendary armor.<BR>While you cannot be completely sure yet, you believe this flower to be the mythical Excubitura used by the Thaumic Wardens. It seems that like the Excubitura Rose of legend, it has
+thaumrev.page.THAUMIC_WARDEN.1=been mutated by thaumic energies, and the stigma is undoubtedly covered by beautiful, albeit tiny, crystals. Another reason you believe it to be the Excubitura Rose is the vibrant color and unusual nature about the petals.
+
+thaumrev.name.EXCUBITURA_PASTE=Excubitura Paste
+
+thaumrev.name.WARDENCLOTH=Wardencloth
+thaumrev.text.WARDENCLOTH=[TRv] Durable and Wardenic
+thaumrev.page.WARDENCLOTH.0=You think you are on to something, by smearing Excubitura Paste all over some Enchanted Fabric, you end up with a fabric that is a lot more durable. However, the paste washes off of the fabric easily, meaning it would be unsuitable for use as armor, but perhaps there is a way around that.<BR>On further examination it seem, somewhat counter-intuitively, that by boiling the cloth in water with essentia of certain aspects, the cloth not only tightens up, making it more protective, but it also solves the issue with water washing off the paste.
+
+thaumrev.name.ARMOR_WARDENCLOTH=Wardencloth Armor
+thaumrev.text.ARMOR_WARDENCLOTH=[TRv] Like leather, but better (and thaumic)
+
+#Thaumcraft Voidmetal Capitalization Rectification
+item.ItemResource.16.name=Voidmetal Ingot
+item.ItemNugget.7.name=Voidmetal Nugget
+
+
+
+
+
+
 
 #OLD STUFF
 item.itemWardenAmulet.name=Warden's Amulet
@@ -155,24 +240,6 @@ tile.blockInfusedQuartzStair.name=Infused Quartz Stair
 tile.blockInfusedQuartzChiseled.name=Chiseled Infused Quartz Block
 tile.blockInfusedQuartzPillar.name=Infused Quartz Pillar Block
 tile.blockWitor.name=Wardenic Light
-
-thaumrev.name.THAUMIC_REVELATIONS=Thaumic Revelations
-thaumrev.text.THAUMIC_REVELATIONS=[TRv] Hey, hey, you don't know, what you're missing now!
-
-thaumrev.name.MATERIAL_TRv=Materials
-
-thaumrev.name.THAUMIC_BRONZE=Thaumic Wardenry
-thaumrev.text.THAUMIC_BRONZE=[TRv]
-
-
-
-
-thaumrev.name.THAUMIC_WARDEN=Thaumic Wardenry
-thaumrev.text.THAUMIC_WARDEN=[TRv] Protectors of Apirimort
-thaumrev.page.THAUMIC_WARDEN.0=When studying a strange purple rose-like flower you remembered stories from your youth, stories of a mythical order of thaumaturges who fought the Eldritch and protected their homeland. The most orthodox branch of the order, the Abdonian Thaumic Wardens are said to have used the essential oils from the petals of a nearly identical flower which grew in large amounts in the highlands near their headquarters at Fort Rose to make their legendary armor.<BR>While you cannot be completely sure yet, you believe this flower to be the mythical Excubitura used by the Thaumic Wardens. It seems that like the Excubitura Rose of legend, it has
-thaumrev.page.THAUMIC_WARDEN.1=been mutated by thaumic energies, and the stigma is undoubtedly covered by beautiful, albeit tiny, crystals. Another reason you believe it to be the Excubitura Rose is the vibrant color and unusual nature about the petals.
-
-
 
 trresearch.name.QUARTZ=Wardenic Quartz
 trresearch.text.QUARTZ=Quartzing destiny!

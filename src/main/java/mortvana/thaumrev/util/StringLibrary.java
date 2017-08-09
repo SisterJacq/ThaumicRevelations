@@ -21,9 +21,6 @@ public final class StringLibrary {
 
 	public static String salisPinch = "dustSalisMundusTiny";
 
-	public static String singularity ="itemArcaneSingularity";
-	public static String stableSingularity = "itemStabilizedSingularity";
-
 	public static String paste = "itemExcubituraPaste";
 
 	public static String wardencloth = "itemWardencloth";

@@ -7,6 +7,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
+import mortvana.thaumrev.library.EnumItemGeneral;
 import mortvana.thaumrev.library.ThaumRevLibrary;
 import mortvana.thaumrev.melteddashboard.block.FluxGearBlockPlant;
 
@@ -26,7 +27,7 @@ public class BlockThaumicPlant extends FluxGearBlockPlant {
 
 		/*switch (meta) {
 			case 0:*/
-				list.add(ThaumRevLibrary.excubituraPetal);
+				list.add(EnumItemGeneral.excubituraPetal.getStack());
 		//}
 
 		return list;

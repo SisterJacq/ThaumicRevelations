@@ -11,6 +11,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.*;
 
 import mortvana.thaumrev.melteddashboard.util.IEnumItem;
+import mortvana.thaumrev.melteddashboard.util.IStackProvider;
 import mortvana.thaumrev.melteddashboard.util.helpers.ItemHelper;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.AspectList;
@@ -88,7 +89,7 @@ public class RecipeHelper {
 		return ThaumcraftApi.addShapelessArcaneCraftingRecipe(research, result, aspects, recipe);
 	}
 
-	public static ShapelessArcaneRecipe addShapelessArcaneCraftingRecipe(String research, IEnumItem result, AspectList aspects, Object ... recipe){
+	public static ShapelessArcaneRecipe addShapelessArcaneCraftingRecipe(String research, IStackProvider result, AspectList aspects, Object ... recipe){
 		return ThaumcraftApi.addShapelessArcaneCraftingRecipe(research, result.getStack(), aspects, recipe);
 	}
 

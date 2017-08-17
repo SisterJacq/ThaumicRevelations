@@ -6,7 +6,9 @@ import net.minecraft.util.ResourceLocation;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+import mortvana.thaumrev.library.ThaumRevLibrary;
 import mortvana.thaumrev.melteddashboard.util.IEnumItem;
+import mortvana.thaumrev.melteddashboard.util.IStackProvider;
 import mortvana.thaumrev.melteddashboard.util.helpers.StringHelper;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.research.ResearchItem;
@@ -43,7 +45,7 @@ public class FluxGearResearchItem extends ResearchItem {
 	}
 
 
-	public FluxGearResearchItem(String key, AspectList tags, int col, int row, int complex, IEnumItem icon) {
+	public FluxGearResearchItem(String key, AspectList tags, int col, int row, int complex, IStackProvider icon) {
 		super(key, KEY, tags, col, row, complex, icon.getStack());
 	}
 

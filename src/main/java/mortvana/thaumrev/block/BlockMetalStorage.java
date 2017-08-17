@@ -10,7 +10,6 @@ import mortvana.thaumrev.melteddashboard.lib.ThaumcraftLibrary;
 import mortvana.thaumrev.util.RecipeHelper;
 
 import static mortvana.thaumrev.library.ThaumRevLibrary.*;
-import static mortvana.thaumrev.library.EnumItemGeneral.*;
 
 public class BlockMetalStorage extends FluxGearBlockBase {
 
@@ -69,19 +68,19 @@ public class BlockMetalStorage extends FluxGearBlockBase {
 			"ingotVoid"
 	};
 	public static final ItemStack[] INGOT_STACKS = {
-			ingotCopper.getStack(),
-			ingotZinc.getStack(),
-			ingotTin.getStack(),
-			ingotSilver.getStack(),
-			ingotBrass.getStack(),
-			ingotBronze.getStack(),
-			ingotThaumicBronze.getStack(),
-			ingotSteel.getStack(),
-			ingotVoidbrass.getStack(),
-			ingotVoidsteel.getStack(),
-			ingotElectrum.getStack(),
-			ingotWardenicSteel.getStack(),
-			ingotThaumicElectrum.getStack(),
+			ingotCopper,
+			ingotZinc,
+			ingotTin,
+			ingotSilver,
+			ingotBrass,
+			ingotBronze,
+			ingotThaumicBronze,
+			ingotSteel,
+			ingotVoidbrass,
+			ingotVoidsteel,
+			ingotElectrum,
+			ingotWardenicSteel,
+			ingotThaumicElectrum,
 			ThaumcraftLibrary.ingotVoidmetal
 	};
 }

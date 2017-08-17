@@ -24,9 +24,10 @@ import com.google.common.collect.Multimap;
 import gnu.trove.map.TMap;
 import gnu.trove.map.hash.THashMap;
 import mortvana.thaumrev.melteddashboard.ColorLibrary;
+import mortvana.thaumrev.melteddashboard.util.IStackProvider;
 import mortvana.thaumrev.melteddashboard.util.helpers.OreDictHelper;
 
-public abstract class ItemArmorFluxGear extends ItemArmor {
+public abstract class ItemArmorFluxGear extends ItemArmor implements IStackProvider {
 
 	public static final ArmorMaterial MATERIAL = EnumHelper.addArmorMaterial("FLUXGEARWRAPPER", 0, new int[] { 0, 0, 0, 0 }, 0);
 
@@ -163,7 +164,7 @@ public abstract class ItemArmorFluxGear extends ItemArmor {
 		return rarity;
 	}
 
-	public ItemStack getItemStack() {
+	public ItemStack getStack() {
 		return new ItemStack(this);
 	}
 

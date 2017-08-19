@@ -37,7 +37,7 @@ tile.thaumrev.storage.blockVoidsteel.name=Voidsteel Block
 tile.thaumrev.storage.blockElectrum.name=Electrum Block
 tile.thaumrev.storage.blockWardenicSteel.name=Wardenic Steel Block
 tile.thaumrev.storage.blockThaumicElectrum.name=Thaumic Electrum Block
-tile.thaumrev.storage.blockVoidmetal.name=Voidmetal Block
+tile.thaumrev.storage.blockVoid.name=Voidmetal Block
 
 #Items
 item.thaumrev.material.ingotCopper.name=Copper Ingot
@@ -164,9 +164,11 @@ item.thaumrev.wardenicChain.greaves.name=Wardenic Bronze Chain Greaves
 item.thaumrev.wardenicChain.boots.name=Wardenic Bronze Chain Boots
 
 item.thaumrev.wardenicSteel.helmet.name=Wardenic Steel Plate Helmet
-item.thaumrev.wardenicSteel.mail.name=Wardenic Steel Chestplate
+item.thaumrev.wardenicSteel.chestplate.name=Wardenic Steel Chestplate
 item.thaumrev.wardenicSteel.greaves.name=Wardenic Steel Plate Greaves
 item.thaumrev.wardenicSteel.boots.name=Wardenic Steel Plate Boots
+
+item.thaumrev.focusPurity.name=Wand Focus: Purity
 
 #Research
 thaumrev.name.THAUMIC_REVELATIONS=Thaumic Revelations

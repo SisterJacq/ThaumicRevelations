@@ -136,6 +136,11 @@ public class BlockStoneDecor extends FluxGearBlockBase {
 	}
 
 	@Override
+	public int damageDropped(int meta) {
+		return meta < 5 ? meta : 4;
+	}
+
+	/*@Override
 	public ArrayList<ItemStack> getDrops(World world, int x, int y, int z, int meta, int fortune) {
 		ArrayList<ItemStack> list = new ArrayList<ItemStack>();
 
@@ -155,7 +160,7 @@ public class BlockStoneDecor extends FluxGearBlockBase {
 		}
 
 		return list;
-	}
+	}*/
 
 	@Override
 	public MapColor getMapColor(int par1) {

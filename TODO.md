@@ -1,5 +1,4 @@
-Before v0.0.1
-Fix research crashing
+Before v0.0.1:
 Fix Texture Issue
 Wild Cotton
 Quartz Renderer
@@ -16,8 +15,9 @@ Flux Robes
 Aspect Infusion System
 Excubitor Aspect Stats
 Fluxus Aspect Stats
+Fix Purity Focus
 
-Maybe Before v0.0.1
+Maybe Before v0.0.1:
 Thaumium and Void Shears and Sickles
 Thaumic Compressor
 Tier 2-5 Magneoturge armor
@@ -31,3 +31,32 @@ Bloodwood Wands
 Wand Caps
 Runic Infuser
 Infernal Blast Furnace
+
+Classes to Reimplement:
+../block/BlockQuartzSlab (Reimplement as BlockStoneSlab)
+../block/BlockQuartzStair (No comment)
+../block/BlockWitor (Reimplement in BlockFakeAir)
+../block/tile/TileWitor (Reimplement as non-TE rendering in BlockFakeAir)
+../client/ModelFleshGolem (Reimplement alongside Flesh Golems [WIP])
+../client/gui/GuiHandler (Reimplement when first TE or Wesly's Hammer is added)
+../client/gui/GuiWaslieHammer (Reimplement alongside Wesly's Hammer)
+../client/render/RenderFleshGolem (Reimplement alongside Flesh Golems [WIP])
+../common/TRevelations (Reimplement invocations and such)
+../crafting/ModRecipes (Reimplement some parts alongside Tier 4 Wardenic things and Wesly's Hammer)
+../entity/EntityFleshProjectile (Reimplement alongside Flesh Golems [WIP])
+../entity/FleshGolem (Reimplement alongside Flesh Golems [WIP] as EntityFleshGolem)
+../inventory/ContainerHammer (Reimplement alongside Wesly's Hammer)
+../item/ItemFocusIllumination (Reimplement with Witor)
+../item/ItemWardenArmor (Replace with T5 armor)
+../item/ItemWardenBoots (Unneeded with new system)
+../item/ItemWardenChest (Unneeded with new system)
+../item/ItemWardenHelm (Unneeded with new system)
+../item/ItemWardenLegs (Unneeded with new system)
+../item/ItemWardenWeapon (Replace with T5 sword)
+../item/ItemWaslieHammer (Reimplement after Tier 5 Wardenic)
+../research/ModResearch (Reimplement some parts alongside Tier 4 Wardenic things and Wesly's Hammer)
+../util/DamageSourceWarden (Not sure how/if I'll redo damage)
+../util/wardenic/WardenicChargeEvents (Reimplement as AspectInfusionHandler and modify for new system)
+../util/wardenic/WardenicChargeHelper (Move contents into AspectInfusionHelper and modify for new system)
+../util/wardenic/WardenicUpgrades (Move to ThaumRevLibrary and ThaumRevContent)
+../util/wardenic/upgrade/* (Reimplement along Aspect Infusion)

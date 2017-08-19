@@ -13,6 +13,7 @@ import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
+import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
 import mortvana.thaumrev.melteddashboard.item.ItemArmorFluxGear;
@@ -22,6 +23,7 @@ import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.crafting.*;
 import thaumcraft.api.research.IScanEventHandler;
 import thaumcraft.api.research.ResearchItem;
+import thaumcraft.api.wands.ItemFocusBasic;
 
 import static thaumcraft.api.aspects.Aspect.*;
 
@@ -231,11 +233,27 @@ public class ThaumRevLibrary {
 	public static ItemArmorInfusableBase wardenicPlateGreaves;
 	public static ItemArmorInfusableBase wardenicPlateBoots;
 
+	/** TOOLS **/
+
+	/** OTHER EQUIPMENT **/
+	public static ItemFocusBasic itemFocusPurity;
+
 	/** RECIPES **/
 	public static ShapelessOreRecipe recipeBrass;
 	public static ShapelessOreRecipe recipeBronze;
 	public static ShapelessOreRecipe recipeSalisTiny;
 	public static ShapelessOreRecipe recipeSalis;
+
+	public static ShapedOreRecipe recipeQuartzBlock;
+	public static ShapedOreRecipe recipeQuartzChiseled;
+	public static ShapedOreRecipe recipeQuartzPillar;
+	public static ShapedOreRecipe recipeQuartzSlab;
+	public static ShapedOreRecipe recipeQuartzStair;
+	public static ShapelessOreRecipe recipeQuartzDeblock;
+	public static ShapelessOreRecipe recipeQuartzDeslab;
+	public static ShapelessOreRecipe recipeQuartzDestair;
+	public static ShapelessOreRecipe recipeQuartzResetChiseled;
+	public static ShapelessOreRecipe recipeQuartzResetPillar;
 
 	public static ShapelessArcaneRecipe recipeThaumicBronzeRaw;
 	public static ShapelessArcaneRecipe recipeThaumicBronzeCoated;

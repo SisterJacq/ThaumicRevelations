@@ -39,6 +39,8 @@ public class ThaumRevContent {
         thaumicRevelationsTab = new FluxGearCreativeTab("Thaumic Revelations", "thaumicRevelations", wardenAmulet);
 	    createBlocks();
 	    createItems();
+	    registerBlocks();
+	    registerItems();
 	    setResearchLevel();
     }
 
@@ -71,7 +73,16 @@ public class ThaumRevContent {
 		blockStoneDecor = new BlockStoneDecor();
 
 		blockStorage = new BlockMetalStorage();
+	}
 
+	public static void createItems() {
+		generalItem = new ItemThaumRev();
+		thaumicBauble = new ItemThaumicBauble();
+
+		itemFocusPurity = new ItemFocusPurity();
+	}
+
+	public static void registerBlocks() {
 		GameRegistry.registerBlock(blockThaumicPlant, ItemBlockThaumicPlant.class, "blockThaumicPlant");
 
 		GameRegistry.registerBlock(blockStoneDecor, ItemBlockDecorStone.class, "blockDecorStone");
@@ -79,9 +90,8 @@ public class ThaumRevContent {
 		GameRegistry.registerBlock(blockStorage, ItemBlockMetalStorage.class, "blockStorage");
 	}
 
-	public static void createItems() {
-		generalItem = new ItemThaumRev();
-		thaumicBauble = new ItemThaumicBauble();
+	public static void registerItems() {
+		GameRegistry.registerItem(itemFocusPurity, "itemFocusPurity");
 	}
 
 	public static void setResearchLevel() {
@@ -217,7 +227,7 @@ public class ThaumRevContent {
 		detailedSteelPlate = generalItem.addOreDictItem(133, "detailedSteelPlate", "itemPlateWardenicSteelDetailed");
 		runicSteelPlate = generalItem.addOreDictItem(134, "runicSteelPlate", "itemPlateWardenicSteelRunic");
 
-		wardenicQuartz = generalItem.addOreDictItem(140, "wardenQuartz", "gemQuartzWardenic");
+		wardenicQuartz = generalItem.addOreDictItem(140, "wardenicQuartz", "gemQuartzWardenic");
 		wardenicCrystal = generalItem.addOreDictItem(141, "wardenicCrystal", "crystalWardenic");
 		dustWardenicQuartz = generalItem.addOreDictItem(142, "dustWardenicQuartz");
 		wardenicCrystalCrushed = generalItem.addOreDictItem(143, "dustWardenicCrystal", "dustWardenic");
@@ -317,8 +327,8 @@ public class ThaumRevContent {
 			RecipeHelper.addRecipe(recipeBrass);
 			RecipeHelper.addRecipe(recipeBrass);
 
-			RecipeHelper.addSmelting(rawBrass, ingotBrass, 1.2F);
-			RecipeHelper.addSmelting(rawBronze, ingotBronze, 1.05F);
+			RecipeHelper.addSmelting(rawBrass, ingotBrass, 1.0F);
+			RecipeHelper.addSmelting(rawBronze, ingotBronze, 1.0F);
 
 			//RecipeHelper.addStorageRecipes(nuggetBrass, ingotBrass, blockBrass);
 		}
@@ -326,7 +336,18 @@ public class ThaumRevContent {
 		recipeSalisTiny = RecipeHelper.addReverseStorageRecipe(dustSalisMundusTiny, salisMundus);
 		recipeSalis = RecipeHelper.addStorageRecipe(dustSalisMundus, salisPinch);
 
-		RecipeHelper.addSmelting(coatedThaumicBronze, firedThaumicBronze, 2.0F);
+		RecipeHelper.addSmelting(coatedThaumicBronze, firedThaumicBronze, 1.0F);
+
+		recipeQuartzBlock = RecipeHelper.addSquareRecipe(quartz, wardenicQuartzBlock);
+		//recipeQuartzChiseled
+		recipeQuartzPillar = RecipeHelper.addStickRecipe(qBlock, wardenicQuartzPillar);
+		//recipeQuartzSlab
+		//recipeQuartzStair
+		recipeQuartzDeblock = RecipeHelper.addDeblockingRecipe(wardenicQuartz, wardenicQuartzBlock);
+		//recipeQuartzDeslab
+		//recipeQuartzDestair
+		recipeQuartzResetChiseled = RecipeHelper.addShapelessRecipe(wardenicQuartzBlock, wardenicQuartzChiseled);
+		recipeQuartzResetPillar = RecipeHelper.addShapelessRecipe(wardenicQuartzBlock, wardenicQuartzPillar);
 	}
 
 	public static void loadThaumicRecipes() {
@@ -406,7 +427,7 @@ public class ThaumRevContent {
 
 		researchWardenry = new FluxGearResearchItem(keyWardenry, new AspectList().add(WARDEN, 4).add(MAGIC, 3).add(ELDRITCH, 2).add(ENERGY, 2), -2, 0, 2, new ItemStack(blockThaumicPlant));
 
-		researchWardenicObsidian = new FluxGearResearchItem(keyWardenicObsidian, new AspectList().add(EARTH, 4).add(CRYSTAL, 4).add(FIRE, 3).add(MAGIC, 3).add(ARMOR, 4).add(WARDEN, 1), -3, -2, 2, wardenicHardener);
+		researchWardenicObsidian = new FluxGearResearchItem(keyWardenicObsidian, new AspectList().add(EARTH, 4).add(CRYSTAL, 4).add(FIRE, 3).add(MAGIC, 3).add(ARMOR, 4).add(WARDEN, 1), -3, -2, 2, wardenicObsidian);
 
 		researchExcubituraPaste = new FluxGearResearchItem(keyExcubituraPaste, new AspectList().add(PLANT, 4).add(MAGIC, 4).add(WARDEN, 1), -4, 2, 1, excubituraPaste);
 		researchWardencloth = new FluxGearResearchItem(keyWardencloth, new AspectList().add(MAGIC, 4).add(CLOTH, 4).add(ARMOR, 3).add(WARDEN, 1), -6, 1, 1, itemWardencloth);
@@ -538,6 +559,8 @@ public class ThaumRevContent {
 		researchWardenSteel.setPages(new ResearchPage("0"), new ResearchPage(recipesWardenSteel));
 		researchWardenPlate.setPages(new ResearchPage("0"), new ResearchPage(recipeWardenSteelChain), new ResearchPage(recipeWardenSteelPlate), new ResearchPage(recipeDetailedSteelPlate), new ResearchPage(recipeRunicSteelPlate));
 		researchArmorWardenSteel.setPages(new ResearchPage("0"), new ResearchPage(recipeWardenicPlateHelmet), new ResearchPage(recipeWardenicChestplate), new ResearchPage(recipeWardenicPlateGreaves), new ResearchPage(recipeWardenicPlateBoots));
+
+		//researchWardenQuartz.setPages(new ResearchPage("0"), new ResearchPage(recipeQuartzBlock), new ResearchPage(recipeQuartzChiseled), new ResearchPage(recipeQuartzPillar), new ResearchPage(recipeQuartzSlab), new ResearchPage(recipeQuartzStair), new ResearchPage(recipeQuartzDeblock), new ResearchPage(recipeQuartzDeslab), new ResearchPage(recipeQuartzDestair), new ResearchPage(recipeQuartzResetChiseled), new ResearchPage(recipeQuartzResetPillar));
 	}
 
     public static void determineTempus() {

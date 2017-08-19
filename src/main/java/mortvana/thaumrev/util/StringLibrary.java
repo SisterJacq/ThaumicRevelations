@@ -29,4 +29,7 @@ public final class StringLibrary {
 	public static String chainTBronze = "itemChainThaumicBronze";
 	public static String chainWBronze = "itemChainWardenicBronze";
 	public static String chainPBronze = "itemChainPrimalBronze";
+
+	public static String quartz = "gemQuartzWardenic";
+	public static String qBlock = "blockQuartzWardenic";
 }

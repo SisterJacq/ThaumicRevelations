@@ -24,7 +24,7 @@ public class RecipeHelper {
 	}
 
 	//Shaped Crafting
-	public static IRecipe addShapedRecipe(ItemStack output, Object... stuff) {
+	public static ShapedOreRecipe addShapedRecipe(ItemStack output, Object... stuff) {
 		ShapedOreRecipe r = new ShapedOreRecipe(output, stuff);
 		GameRegistry.addRecipe(r);
 		return r;
@@ -34,15 +34,37 @@ public class RecipeHelper {
 		return addShapedRecipe(output, "##", "##", '#', input);
 	}
 
+	public static ShapedOreRecipe addSquareRecipe(String input, ItemStack output) {
+		return addShapedRecipe(output, "##", "##", '#', input);
+	}
+
+	public static IRecipe addStickRecipe(ItemStack input, ItemStack output) {
+		return addShapedRecipe(output, "##", "##", '#', input);
+	}
+
+	public static ShapedOreRecipe addStickRecipe(String input, ItemStack output) {
+		return addShapedRecipe(output, "##", "##", '#', input);
+	}
+
 	//Shapeless Crafting
-	public static ShapelessOreRecipe addShapelessRecipe(ItemStack output, String... stuff) {
+	public static ShapelessOreRecipe addShapelessRecipe(ItemStack output, ItemStack... stuff) {
 		ShapelessOreRecipe r = new ShapelessOreRecipe(output, stuff);
 		GameRegistry.addRecipe(r);
 		return r;
 	}
 
+	public static ShapelessOreRecipe addDeblockingRecipe(ItemStack result, ItemStack input) {
+		return addShapelessRecipe(ItemHelper.cloneStack(result, 4), input);
+	}
+
+	//Shapeless Ore Crafting
+	public static ShapelessOreRecipe addShapelessOreRecipe(ItemStack output, String... stuff) {
+		ShapelessOreRecipe r = new ShapelessOreRecipe(output, stuff);
+		GameRegistry.addRecipe(r);
+		return r;
+	}
 	public static ShapelessOreRecipe addShapelessSizedOreRecipe(ItemStack input, int modifier, String... stuff) {
-		return addShapelessRecipe(ItemHelper.cloneStack(input, stuff.length + modifier), stuff);
+		return addShapelessOreRecipe(ItemHelper.cloneStack(input, stuff.length + modifier), stuff);
 	}
 
 	public static ShapelessOreRecipe generateShapelessSizedOreRecipe(ItemStack input, int modifier, String... stuff) {
@@ -50,11 +72,15 @@ public class RecipeHelper {
 	}
 
 	public static ShapelessOreRecipe addStorageRecipe(ItemStack result, String oreDict) {
-		return addShapelessRecipe(result, oreDict, oreDict, oreDict, oreDict, oreDict, oreDict, oreDict, oreDict, oreDict);
+		return addShapelessOreRecipe(result, oreDict, oreDict, oreDict, oreDict, oreDict, oreDict, oreDict, oreDict, oreDict);
+	}
+
+	public static ShapelessOreRecipe addDeblockingRecipe(ItemStack result, String oreDict) {
+		return addShapelessOreRecipe(ItemHelper.cloneStack(result, 4), oreDict);
 	}
 
 	public static ShapelessOreRecipe addReverseStorageRecipe(ItemStack result, String oreDict) {
-		return addShapelessRecipe(ItemHelper.cloneStack(result, 9), oreDict);
+		return addShapelessOreRecipe(ItemHelper.cloneStack(result, 9), oreDict);
 	}
 
 	//Smelting

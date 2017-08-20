@@ -3,9 +3,9 @@ package mortvana.thaumrev.melteddashboard;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 
-public class MaterialHardAir extends Material {
+public class MaterialFalseAir extends Material {
 
-    public MaterialHardAir() {
+    public MaterialFalseAir() {
         super(MapColor.airColor);
         setNoPushMobility();
         setRequiresTool();

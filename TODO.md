@@ -41,7 +41,6 @@ Classes to Reimplement:
 ../client/gui/GuiHandler (Reimplement when first TE or Wesly's Hammer is added)
 ../client/gui/GuiWaslieHammer (Reimplement alongside Wesly's Hammer)
 ../client/render/RenderFleshGolem (Reimplement alongside Flesh Golems [WIP])
-../common/TRevelations (Reimplement invocations and such)
 ../crafting/ModRecipes (Reimplement some parts alongside Tier 4 Wardenic things and Wesly's Hammer)
 ../entity/EntityFleshProjectile (Reimplement alongside Flesh Golems [WIP])
 ../entity/FleshGolem (Reimplement alongside Flesh Golems [WIP] as EntityFleshGolem)

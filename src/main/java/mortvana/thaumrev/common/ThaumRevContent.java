@@ -36,7 +36,7 @@ import static mortvana.thaumrev.util.StringLibrary.*;
 public class ThaumRevContent {
 
     public static void preInit() {
-        thaumicRevelationsTab = new FluxGearCreativeTab("Thaumic Revelations", "thaumicRevelations", wardenAmulet);
+	    thaumicRevelationsTab = new FluxGearCreativeTab("Thaumic Revelations", "thaumicRevelations");
 	    createBlocks();
 	    createItems();
 	    registerBlocks();
@@ -52,6 +52,8 @@ public class ThaumRevContent {
 	    loadTools();
 	    loadBaubles();
 	    loadWorldGen();
+
+	    ((FluxGearCreativeTab) thaumicRevelationsTab).setItem(wardenAmulet);
     }
 
     public static void postInit() {
@@ -206,8 +208,11 @@ public class ThaumRevContent {
 		thaumicSlag = generalItem.addOreDictItem(81, "itemSlagThaumic");
 		arcaneSingularity = generalItem.addOreDictItem(82, "itemArcaneSingularity");
 		stabilizedSingularity = generalItem.addOreDictItem(83, "itemStabilizedSingularity");
+		animatedPiston = generalItem.addOreDictItem(84, "animatedPiston", "itemAnimatedPiston");
+		enchantedSilverwood = generalItem.addOreDictItem(85, "enchantedSilverwood", "itemEnchantedSilverwood");
 
 		thaumicBronzeChain = generalItem.addOreDictItem(92, "thaumicBronzeChain", chainTBronze);
+		eldritchCog = generalItem.addOreDictItem(93, "eldritchCog", "itemEldritchCog");
 
 		excubituraPetal = generalItem.addOreDictItem(100, "excubituraPetal", "itemExcubituraPetal");
 
@@ -351,6 +356,8 @@ public class ThaumRevContent {
 	}
 
 	public static void loadThaumicRecipes() {
+		recipeAniPiston = RecipeHelper.addArcaneCraftingRecipe(keyMaterial, animatedPiston, new AspectList().add(AIR, 5), "IGI", "TAT", "BRB", 'I', "nuggetIron", 'G', greatwoodSlab, 'T', "nuggetThaumium", 'A', "shardAir", 'B', "nuggetBrass", 'R', "dustRedstone");
+
 		recipeThaumicBronzeRaw = RecipeHelper.addShapelessArcaneCraftingRecipe(keyThaumicBronze, rawThaumicBronze, new AspectList().add(ORDER, 5).add(EARTH, 5).add(FIRE, 5), nBronze, nBronze, nBronze, nBronze, nBronze, nBronze, "nuggetThaumium", "nuggetThaumium", "nuggetBrass");
 		recipeThaumicBronzeCoated = RecipeHelper.addShapelessArcaneCraftingRecipe(keyThaumicBronze, coatedThaumicBronze, new AspectList().add(EARTH, 5).add(WATER, 5), "ingotThaumicBronzeRaw", nHg, salisPinch, "itemClay");
 
@@ -529,11 +536,12 @@ public class ThaumRevContent {
 	public static void setPages() {
 		researchThaumRev.setPages(new ResearchPage("0"));
 
+		researchMaterial.setPages(new ResearchPage("0"));
 		if (ThaumRevConfig.cuAlloys) {
-			researchMaterial.setPages(new ResearchPage("0"), new ResearchPage(recipeBrass), new ResearchPage(rawBrass), new ResearchPage(recipeBronze), new ResearchPage(rawBronze), new ResearchPage(recipeSalisTiny), new ResearchPage(recipeSalis));
-		} else {
-			researchMaterial.setPages(new ResearchPage("0"), new ResearchPage(recipeSalisTiny), new ResearchPage(recipeSalis));
+			((FluxGearResearchItem) researchMaterial).addPages(new ResearchPage(recipeBrass), new ResearchPage(rawBrass), new ResearchPage(recipeBronze), new ResearchPage(rawBronze));
 		}
+		((FluxGearResearchItem) researchMaterial).addPages(new ResearchPage(recipeSalisTiny), new ResearchPage(recipeSalis), new ResearchPage(recipeAniPiston));
+
 
 		researchThaumicBronze.setPages(new ResearchPage("0"), new ResearchPage(recipeThaumicBronzeRaw), new ResearchPage(recipeThaumicBronzeCoated), new ResearchPage(coatedThaumicBronze), new ResearchPage("1"));
 		researchBronzeChain.setPages(new ResearchPage("0"), new ResearchPage(recipeThaumicBronzeChain));

@@ -1,15 +1,13 @@
 package mortvana.thaumrev.library;
 
+import mortvana.thaumrev.melteddashboard.MaterialFalseAir;
 import mortvana.thaumrev.melteddashboard.item.FluxGearItemInteractive;
-import mortvana.thaumrev.melteddashboard.MaterialHardAir;
 import mortvana.thaumrev.melteddashboard.intermod.baubles.item.FluxGearItemBauble;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.enchantment.Enchantment;
 import net.minecraft.init.Items;
-import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
@@ -17,11 +15,9 @@ import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
 import mortvana.thaumrev.melteddashboard.item.ItemArmorFluxGear;
-import mortvana.thaumrev.melteddashboard.util.helpers.StringHelper;
 import mortvana.thaumrev.util.item.ItemArmorInfusableBase;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.crafting.*;
-import thaumcraft.api.research.IScanEventHandler;
 import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.wands.ItemFocusBasic;
 
@@ -54,10 +50,10 @@ public class ThaumRevLibrary {
     //public static Enchantment enchantStabilizing;
 
     /** CREATIVE TABS **/
-    public static CreativeTabs thaumicRevelationsTab; //= new FluxGearCreativeTab("PFG-Thaumic", "fluxgear.thaumicTab", wardenAmulet);
+    public static CreativeTabs thaumicRevelationsTab;
 
     /** MATERIALS **/
-    public static Material materialHardAir = new MaterialHardAir();
+    public static Material materialFalseAir = new MaterialFalseAir();
 
     /** BLOCKS **/
     public static Block blockThaumicPlant;
@@ -155,8 +151,11 @@ public class ThaumRevLibrary {
 	public static ItemStack thaumicSlag;                    //00081
 	public static ItemStack arcaneSingularity;              //00082
 	public static ItemStack stabilizedSingularity;          //00083
+	public static ItemStack animatedPiston;                 //00084
+	public static ItemStack enchantedSilverwood;            //00085
 
-	public static ItemStack thaumicBronzeChain;             //00090
+	public static ItemStack thaumicBronzeChain;             //00092
+	public static ItemStack eldritchCog;                    //00093
 
 	public static ItemStack excubituraPetal;                //00100
 
@@ -243,6 +242,7 @@ public class ThaumRevLibrary {
 	public static ShapelessOreRecipe recipeBronze;
 	public static ShapelessOreRecipe recipeSalisTiny;
 	public static ShapelessOreRecipe recipeSalis;
+	public static ShapedArcaneRecipe recipeAniPiston;
 
 	public static ShapedOreRecipe recipeQuartzBlock;
 	public static ShapedOreRecipe recipeQuartzChiseled;
@@ -390,8 +390,7 @@ public class ThaumRevLibrary {
 	public static ResearchItem researchArmorWardenSteel;
 	public static String keyArmorWardenSteel = "ARMOR_WARDEN_STEEL";
 
-    /** RENDER IDs **/
-    public static int wardedChestRenderID = -1;
+
 
 	/** BLOCK NAMES **/
 	public static final String[] PLANT_NAMES = {
@@ -429,6 +428,10 @@ public class ThaumRevLibrary {
 			//""
 	};
 
+	public static final String[] FALSE_AIR_NAMES = {
+			"witor"
+	};
+
 	public static final String matPrimal = "PRIMAL";
 	public static final String matBronzeChain = "BRONZE_CHAIN";
 	public static final String matWardencloth = "WARDENCLOTH";
@@ -440,4 +443,8 @@ public class ThaumRevLibrary {
 	public static final String REVEALING = "REVEALING";
 	public static final String BROKEN = "BROKEN";
 	public static final String VISMODIFIER = "VISDISCOUNT";
+
+	/** CLIENT-SIDE **/
+	public static int renderDecorStoneID;
+	//public static int wardedChestRenderID = -1;
 }

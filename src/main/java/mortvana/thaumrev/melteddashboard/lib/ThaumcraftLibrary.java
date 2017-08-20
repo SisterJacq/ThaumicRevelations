@@ -29,6 +29,7 @@ public class ThaumcraftLibrary {
 
 		obsTotem = new ItemStack(blockCosmeticSolid, 1, 0);
 
+		greatwoodSlab = new ItemStack(blockSlabWood, 1, 0);
 		arcStoneSlab = new ItemStack(blockSlabStone, 1, 0);
 
 		stackGoggles = new ItemStack(itemGoggles);
@@ -96,6 +97,7 @@ public class ThaumcraftLibrary {
 
 		blockCosmeticSolid = ConfigBlocks.blockCosmeticSolid;
 
+		blockSlabWood = ConfigBlocks.blockSlabWood;
 		blockSlabStone = ConfigBlocks.blockSlabStone;
 
 		itemGoggles = ConfigItems.itemGoggles;
@@ -122,6 +124,51 @@ public class ThaumcraftLibrary {
 
 
 	/** BLOCKS **/
+	/*public static Block blockFluxGoo;
+	public static Block blockFluxGas;
+	public static Block blockFluidPure;
+	public static Block blockFluidDeath;
+	public static Block blockHole;
+	public static Block blockArcaneFurnace;*/
+	public static Block blockMetalDevice;
+	//public static Block blockMagicalLog;
+	//public static Block blockStoneDevice;
+	public static Block blockWoodenDevice;
+	//public static Block blockMagicalLeaves;
+	public static Block blockTable;
+	/**public static Block blockChestHungry;
+	 public static Block blockCustomOre;
+	 public static Block blockCustomPlant;
+	 public static Block blockCandle;
+	 public static Block blockJar;
+	 public static Block blockArcaneDoor;
+	 public static Block blockWarded;
+	 public static Block blockLifter;
+	 public static Block blockAiry;
+	 public static Block blockCrystal;
+	 public static Block blockCosmeticOpaque;*/
+	public static Block blockCosmeticSolid;
+	/*public static Block blockMirror;
+	public static Block blockTaint;
+	public static Block blockTaintFibres;
+	public static Block blockManaPod;
+	public static Block blockTube;
+	public static Block blockMagicBox;
+	public static Block blockEldritch;
+	public static Block blockEldritchPortal;
+	public static Block blockEssentiaReservoir;
+	public static Block blockStairsArcaneStone;
+	public static Block blockStairsSilverwood;
+	public static Block blockStairsGreatwood;
+	public static Block blockStairsEldritch;*/
+	public static Block blockSlabWood;
+	public static Block blockSlabStone;
+	/*public static Block blockDoubleSlabWood;
+	public static Block blockDoubleSlabStone;
+	public static Block blockEldritchNothing;
+	public static Block blockAlchemyFurnace;
+	public static Block blockLootUrn;
+	public static Block blockLootCrate;*/
 
 	/** EQUIPMENT **/
 	public static Item itemGoggles;
@@ -193,6 +240,53 @@ public class ThaumcraftLibrary {
 	public static Item itemResource;
 	public static Item itemShard;
 	public static Item itemNugget;
+	/**public static Item itemWandCap;
+	 public static Item itemWandRod;
+	 public static Item itemEssence;
+	 public static Item itemWispEssence;
+	 public static Item itemCrystalEssence;
+	 public static Item itemNuggetChicken;
+	 public static Item itemNuggetBeef;
+	 public static Item itemNuggetPork;
+	 public static Item itemNuggetFish;
+	 public static Item itemTripleMeatTreat;
+	 public static Item itemPhotoPlate;
+	 public static Item itemManaBean;
+	 public static Item itemZombieBrain;
+	 public static Item itemResearchNotes;
+	 public static Item itemInkwell;
+	 public static Item itemSpawnerEgg;
+	 public static Item itemFocusPortableHole;
+	 public static Item itemFocusPech;
+	 public static Item itemFlyingCarpet;
+	 public static Item itemGolemPlacer;
+	 public static Item itemGolemBell;
+	 public static Item itemGolemDecoration;
+	 public static Item itemGolemCore;
+	 public static Item itemGolemUpgrade;
+	 public static Item itemArcaneDoor;
+	 public static Item itemJarFilled;
+	 public static Item itemJarNode;
+	 public static Item itemKey;
+	 public static Item itemHandMirror;
+	 public static Item itemTrunkSpawner;
+	 public static Item itemResonator;
+	 public static Item itemBathSalts;
+	 public static Item itemBucketDeath;
+	 public static Item itemBucketPure;
+	 public static Item itemEldritchObject;
+	 public static Item itemSanitySoap;
+	 public static Item itemSanityChecker;
+	 public static Item itemBottleTaint;
+	 public static Item itemLootbag;
+	 public static Item itemBaubleBlanks;
+	 public static Item itemAmuletRunic;
+	 public static Item itemRingRunic;
+	 public static Item itemGirdleRunic;
+	 public static Item itemGirdleHover;
+	 public static Item itemAmuletVis;
+	 public static Item itemPrimalArrow;
+	 public static Item itemCompassStone;*/
 
 	/** ITEMSTACKS (BLOCK) **/
 	public static ItemStack visRelay;
@@ -203,6 +297,7 @@ public class ThaumcraftLibrary {
 
 	public static ItemStack obsTotem;
 
+	public static ItemStack greatwoodSlab;
 	public static ItemStack arcStoneSlab;
 
 	/** ITEMSTACKS (EQUIPMENT) **/
@@ -239,99 +334,9 @@ public class ThaumcraftLibrary {
 
 
 
-	/**public static Item itemWandCap;
-	public static Item itemWandRod;
-	public static Item itemEssence;
-	public static Item itemWispEssence;
-	public static Item itemCrystalEssence;
-	public static Item itemNuggetChicken;
-	public static Item itemNuggetBeef;
-	public static Item itemNuggetPork;
-	public static Item itemNuggetFish;
-	public static Item itemTripleMeatTreat;
-	public static Item itemPhotoPlate;
-	public static Item itemManaBean;
-	public static Item itemZombieBrain;
-	public static Item itemResearchNotes;
-	public static Item itemInkwell;
-	public static Item itemSpawnerEgg;
-	public static Item itemFocusPortableHole;
-	public static Item itemFocusPech;
-	public static Item itemFlyingCarpet;
-	public static Item itemGolemPlacer;
-	public static Item itemGolemBell;
-	public static Item itemGolemDecoration;
-	public static Item itemGolemCore;
-	public static Item itemGolemUpgrade;
-	public static Item itemArcaneDoor;
-	public static Item itemJarFilled;
-	public static Item itemJarNode;
-	public static Item itemKey;
-	public static Item itemHandMirror;
-	public static Item itemTrunkSpawner;
-	public static Item itemResonator;
-	public static Item itemBathSalts;
-	public static Item itemBucketDeath;
-	public static Item itemBucketPure;
-	public static Item itemEldritchObject;
-	public static Item itemSanitySoap;
-	public static Item itemSanityChecker;
-	public static Item itemBottleTaint;
-	public static Item itemLootbag;
-	public static Item itemBaubleBlanks;
-	public static Item itemAmuletRunic;
-	public static Item itemRingRunic;
-	public static Item itemGirdleRunic;
-	public static Item itemGirdleHover;
-	public static Item itemAmuletVis;
-	public static Item itemPrimalArrow;
-	public static Item itemCompassStone;
 
-	public static Block blockFluxGoo;
-	public static Block blockFluxGas;
-	public static Block blockFluidPure;
-	public static Block blockFluidDeath;
-	public static Block blockHole;
-	public static Block blockArcaneFurnace;*/
-	public static Block blockMetalDevice;
-	//public static Block blockMagicalLog;
-	//public static Block blockStoneDevice;
-	public static Block blockWoodenDevice;
-	//public static Block blockMagicalLeaves;
-	public static Block blockTable;
-	 /**public static Block blockChestHungry;
-	public static Block blockCustomOre;
-	public static Block blockCustomPlant;
-	public static Block blockCandle;
-	public static Block blockJar;
-	public static Block blockArcaneDoor;
-	public static Block blockWarded;
-	public static Block blockLifter;
-	public static Block blockAiry;
-	public static Block blockCrystal;
-	public static Block blockCosmeticOpaque;*/
-	public static Block blockCosmeticSolid;
-	/*public static Block blockMirror;
-	public static Block blockTaint;
-	public static Block blockTaintFibres;
-	public static Block blockManaPod;
-	public static Block blockTube;
-	public static Block blockMagicBox;
-	public static Block blockEldritch;
-	public static Block blockEldritchPortal;
-	public static Block blockEssentiaReservoir;
-	public static Block blockStairsArcaneStone;
-	public static Block blockStairsSilverwood;
-	public static Block blockStairsGreatwood;
-	public static Block blockStairsEldritch;
-	public static Block blockSlabWood;*/
-	public static Block blockSlabStone;
-	/*public static Block blockDoubleSlabWood;
-	public static Block blockDoubleSlabStone;
-	public static Block blockEldritchNothing;
-	public static Block blockAlchemyFurnace;
-	public static Block blockLootUrn;
-	public static Block blockLootCrate;*/
+
+
 
 	/** RESEARCH KEYS **/
 	public static String keyThaumium = "THAUMIUM";

@@ -15,11 +15,18 @@ import net.minecraft.item.ItemStack;
  */
 public class FluxGearCreativeTab extends CreativeTabs {
 
+	private ItemStack display;
+	private String name;
 
 	public FluxGearCreativeTab(String internalName, String label, ItemStack icon) {
 		super(internalName);
 		name = label;
 		display = icon;
+	}
+
+	public FluxGearCreativeTab(String internalName, String label) {
+		super(internalName);
+		name = label;
 	}
 
 	@Override
@@ -40,6 +47,7 @@ public class FluxGearCreativeTab extends CreativeTabs {
 		return name;
 	}
 
-	private ItemStack display;
-	private String name;
+	public void setItem(ItemStack stack) {
+		display = stack;
+	}
 }

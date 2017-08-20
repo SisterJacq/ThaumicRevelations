@@ -27,7 +27,10 @@ public class ThaumicRevelations {
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-	    config = new ThaumRevConfig(event, "/Mortvana/ThaumicRevelations.cfg");
+		config = new ThaumRevConfig(event, "/Mortvana/ThaumicRevelations.cfg");
+	    proxy.initRenderers();
+	    //GuiHandler.init();
+	    //AspectInfusionHandler.init();
 	    ThaumRevContent.preInit();
     }
 

@@ -16,6 +16,7 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+import mortvana.thaumrev.library.ThaumRevLibrary;
 import mortvana.thaumrev.melteddashboard.block.FluxGearBlockBase;
 import mortvana.thaumrev.melteddashboard.util.helpers.StringHelper;
 
@@ -121,9 +122,9 @@ public class BlockStoneDecor extends FluxGearBlockBase {
 		}
 	}
 
-	/*@Override //TODO: RENDERER FOR QUARTZ
+	/*@Override //TODO: Fix Renderer
 	public int getRenderType() {
-		return ;
+		return ThaumRevLibrary.renderDecorStoneID;
 	}*/
 
 	@Override

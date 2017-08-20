@@ -1,5 +1,7 @@
 package mortvana.thaumrev.melteddashboard.intermod.thaumcraft.research;
 
+import java.util.ArrayList;
+
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
@@ -75,5 +77,13 @@ public class FluxGearResearchItem extends ResearchItem {
 	@SideOnly(Side.CLIENT)
 	public String getText() {
 		return StringHelper.localize(textPrefix + ".text." + key);
+	}
+
+	public void addPages(ResearchPage... pages) {
+		ResearchPage[] pgs = getPages();
+		ResearchPage[] temp = new ResearchPage[pgs.length + pages.length];
+		System.arraycopy(pgs, 0, temp, 0, pgs.length);
+		System.arraycopy(pages, 0, temp, pgs.length, pages.length);
+		setPages(temp);
 	}
 }

@@ -1,15 +1,11 @@
 package mortvana.thaumrev.melteddashboard.intermod.thaumcraft.research;
 
-import java.util.ArrayList;
-
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-import mortvana.thaumrev.library.ThaumRevLibrary;
-import mortvana.thaumrev.melteddashboard.util.IEnumItem;
 import mortvana.thaumrev.melteddashboard.util.IStackProvider;
 import mortvana.thaumrev.melteddashboard.util.helpers.StringHelper;
 import thaumcraft.api.aspects.AspectList;
@@ -79,11 +75,44 @@ public class FluxGearResearchItem extends ResearchItem {
 		return StringHelper.localize(textPrefix + ".text." + key);
 	}
 
-	public void addPages(ResearchPage... pages) {
+	public FluxGearResearchItem addPages(boolean bool, ResearchPage... pages) {
+		if (bool) {
+			addPages(pages);
+		}
+		return this;
+	}
+
+	public FluxGearResearchItem addPages(ResearchPage... pages) {
 		ResearchPage[] pgs = getPages();
 		ResearchPage[] temp = new ResearchPage[pgs.length + pages.length];
 		System.arraycopy(pgs, 0, temp, 0, pgs.length);
 		System.arraycopy(pages, 0, temp, pgs.length, pages.length);
 		setPages(temp);
+		return this;
+	}
+
+	public FluxGearResearchItem addParents(String... par) {
+		String[] temp = new String[parents.length + par.length];
+		System.arraycopy(parents, 0, temp, 0, parents.length);
+		System.arraycopy(par, 0, temp, parents.length, par.length);
+		setParents(temp);
+		return this;
+	}
+
+
+	public FluxGearResearchItem addParentsHidden(String... par) {
+		String[] temp = new String[parentsHidden.length + par.length];
+		System.arraycopy(parentsHidden, 0, temp, 0, parentsHidden.length);
+		System.arraycopy(par, 0, temp, parentsHidden.length, par.length);
+		setParents(temp);
+		return this;
+	}
+
+	public FluxGearResearchItem addSiblings(String... sib) {
+		String[] temp = new String[siblings.length + sib.length];
+		System.arraycopy(siblings, 0, temp, 0, siblings.length);
+		System.arraycopy(sib, 0, temp, siblings.length, sib.length);
+		setParents(temp);
+		return this;
 	}
 }

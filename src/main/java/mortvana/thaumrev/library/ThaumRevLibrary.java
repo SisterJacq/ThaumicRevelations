@@ -1,6 +1,6 @@
 package mortvana.thaumrev.library;
 
-import mortvana.thaumrev.melteddashboard.MaterialFalseAir;
+import mortvana.thaumrev.melteddashboard.block.material.MaterialFalseAir;
 import mortvana.thaumrev.melteddashboard.item.FluxGearItemInteractive;
 import mortvana.thaumrev.melteddashboard.intermod.baubles.item.FluxGearItemBauble;
 
@@ -66,6 +66,8 @@ public class ThaumRevLibrary {
 	public static Block blockWoodDevice;
 	public static Block blockStoneDevice;
 	public static Block blockMetalDevice;
+	public static Block blockStoneSlab;
+	public static Block blockStoneSlabDouble;
 
     /** ITEMS **/
     public static FluxGearItemInteractive generalItem;
@@ -82,6 +84,7 @@ public class ThaumRevLibrary {
 	public static ItemStack wardenicQuartzBlock;
 	public static ItemStack wardenicQuartzChiseled;
 	public static ItemStack wardenicQuartzPillar;
+	public static ItemStack oreSphalerite;
 
 	public static ItemStack blockCopper;
 	public static ItemStack blockZinc;
@@ -97,6 +100,12 @@ public class ThaumRevLibrary {
 	public static ItemStack blockWardenicSteel;
 	public static ItemStack blockThaumicElectrum;
 	public static ItemStack blockVoidmetal;
+	public static ItemStack blockWardenicMetal;
+	public static ItemStack blockWardenicComposite;
+
+	public static ItemStack slabWardenicObsidian;
+	public static ItemStack slabEldritch;
+	public static ItemStack slabWardenicQuartz;
 
 	public static ItemStack ingotCopper;                    //00000
 	public static ItemStack ingotZinc;                      //00001
@@ -153,7 +162,12 @@ public class ThaumRevLibrary {
 	public static ItemStack stabilizedSingularity;          //00083
 	public static ItemStack animatedPiston;                 //00084
 	public static ItemStack enchantedSilverwood;            //00085
-
+	public static ItemStack consecratedSilverwood;          //00086
+	public static ItemStack cotton;                         //00087
+	public static ItemStack cottonFiber;                    //00088
+	public static ItemStack cottonFabric;                   //00089
+	public static ItemStack cottonTreated;                  //00090
+	public static ItemStack cottonEnchanted;                //00091
 	public static ItemStack thaumicBronzeChain;             //00092
 	public static ItemStack eldritchCog;                    //00093
 
@@ -171,28 +185,44 @@ public class ThaumRevLibrary {
 
 	public static ItemStack excubituraOilPure;              //00130
 	public static ItemStack wardenicSteelChain;             //00131
-	public static ItemStack wardenicSteelPlate;             //00132
-	public static ItemStack detailedSteelPlate;             //00133
-	public static ItemStack runicSteelPlate;                //00134
+	public static ItemStack oiledSteelChain;                //00132
+	public static ItemStack wardenicSteelPlate;             //00133
+	public static ItemStack detailedSteelPlate;             //00134
+	public static ItemStack runicSteelPlate;                //00135
+	public static ItemStack consecratedSteelPlate;          //00136
 
 	public static ItemStack wardenicQuartz;                 //00140
 	public static ItemStack wardenicCrystal;                //00141
-	public static ItemStack dustWardenicQuartz;             //00142
-	public static ItemStack wardenicCrystalCrushed;         //00143
-	public static ItemStack binderWardenic;                 //00144
-	public static ItemStack ingotWardenicAlloy;             //00145
-	public static ItemStack plateWardenic;                  //00146
+	public static ItemStack wardenicQuartzInf;              //00142
+	public static ItemStack dustWardenicQuartz;             //00143
+	public static ItemStack dustWardenicCrystal;            //00144
+	public static ItemStack binderWardenic;                 //00145
+	public static ItemStack rawWardenicComposite;           //00146
+	public static ItemStack ingotWardenicComposite;         //00147
+	public static ItemStack wardenicCompositePlate;         //00148
+	public static ItemStack fittedCompositePlate;           //00149
+	public static ItemStack detailedCompositePlate;         //00150
+	public static ItemStack runicCompositePlate;            //00151
+	public static ItemStack consecratedCompositePlate;      //00152
+	public static ItemStack primalCompositePlate;           //00153
 
-	public static ItemStack wardenicCrystalAwakened;        //00150
+	public static ItemStack wardenicCrystalAwakened;        //00155
 
 	public static ItemStack ingotWardenicSteel;             //00500
 	public static ItemStack ingotThaumicElectrum;           //00501
+	public static ItemStack ingotWardenicMetal;             //00502
 
 	public static ItemStack nuggetWardenicSteel;            //00510
 	public static ItemStack nuggetThaumicElectrum;          //00511
+	public static ItemStack nuggetWardenicMetal;            //00502
 
 	public static ItemStack dustWardenicSteel;              //00520
 	public static ItemStack dustThaumicElectrum;            //00521
+	public static ItemStack dustWardenicMetal;              //00522
+
+	public static ItemStack rawWardenicMetal;               //00532
+
+
 
 	public static ItemStack wardenJournal1;                 //01001
 
@@ -202,6 +232,8 @@ public class ThaumRevLibrary {
 
 	public static ItemStack seedExcubitura;                 //01200
 	public static ItemStack seedCotton;                     //01201
+
+	public static ItemStack aluDenseTemp;                   //30000
 
     public static ItemStack wardenAmulet;                   //00000
     public static ItemStack loveRing;                       //00001
@@ -232,6 +264,11 @@ public class ThaumRevLibrary {
 	public static ItemArmorInfusableBase wardenicPlateGreaves;
 	public static ItemArmorInfusableBase wardenicPlateBoots;
 
+	public static ItemArmorInfusableBase wardenicCompositeHelmet;
+	public static ItemArmorInfusableBase wardenicCompositeChestplate;
+	public static ItemArmorInfusableBase wardenicCompositeGreaves;
+	public static ItemArmorInfusableBase wardenicCompositeBoots;
+
 	/** TOOLS **/
 
 	/** OTHER EQUIPMENT **/
@@ -240,9 +277,15 @@ public class ThaumRevLibrary {
 	/** RECIPES **/
 	public static ShapelessOreRecipe recipeBrass;
 	public static ShapelessOreRecipe recipeBronze;
+	public static ShapelessOreRecipe recipeElectrum;
+
 	public static ShapelessOreRecipe recipeSalisTiny;
 	public static ShapelessOreRecipe recipeSalis;
-	public static ShapedArcaneRecipe recipeAniPiston;
+
+	public static ShapedOreRecipe recipeWardsidianSlab;
+	public static ShapedOreRecipe recipeEldritchSlab;
+	public static ShapelessOreRecipe recipeWardsidianDeslab;
+	public static ShapelessOreRecipe recipeEldritchDeslab;
 
 	public static ShapedOreRecipe recipeQuartzBlock;
 	public static ShapedOreRecipe recipeQuartzChiseled;
@@ -255,6 +298,13 @@ public class ThaumRevLibrary {
 	public static ShapelessOreRecipe recipeQuartzResetChiseled;
 	public static ShapelessOreRecipe recipeQuartzResetPillar;
 
+	public static ShapelessOreRecipe recipeCottonFiber;
+	public static ShapelessOreRecipe recipeCottonFabric;
+	public static ShapedArcaneRecipe recipeTreatedCotton;
+	public static CrucibleRecipe recipeEnchantedCotton;
+
+	public static ShapedArcaneRecipe recipeAniPiston;
+
 	public static ShapelessArcaneRecipe recipeThaumicBronzeRaw;
 	public static ShapelessArcaneRecipe recipeThaumicBronzeCoated;
 
@@ -266,8 +316,11 @@ public class ThaumRevLibrary {
 	public static ShapedArcaneRecipe recipeBronzeChainBoots;
 
 	public static ShapedArcaneRecipe recipeRunicInfuser;
-	public static ShapelessArcaneRecipe recipeArcaneSingularity;
-	public static ShapelessArcaneRecipe recipeStableSingularity;
+	public static /*RunicInfuserRecipe*/ ShapelessArcaneRecipe recipeArcaneSingularity;
+	public static /*RunicInfuserRecipe*/ ShapelessArcaneRecipe recipeStableSingularity;
+
+	public static /*RunicInfuserRecipe*/ ShapelessArcaneRecipe recipeEnchSilverwood;
+	public static /*RunicInfuserRecipe*/ ShapelessArcaneRecipe recipeConsSilverwood;
 
 	public static ShapedArcaneRecipe recipeDarkRunicInfuser;
 
@@ -294,7 +347,7 @@ public class ThaumRevLibrary {
 	public static ShapedArcaneRecipe recipeWardenclothBoots;
 
 	public static ShapelessArcaneRecipe recipeExcubituraOilUnproc;
-	public static ShapelessArcaneRecipe recipeExcubituraOil;
+	public static /*RunicInfuserRecipe*/ ShapelessArcaneRecipe recipeExcubituraOil;
 
 	public static ShapedArcaneRecipe recipeWardenBronzeChain;
 	public static ShapedArcaneRecipe recipePrimalBronzeChain;
@@ -305,19 +358,49 @@ public class ThaumRevLibrary {
 	public static ShapedArcaneRecipe recipeWardenicChainGreaves;
 	public static ShapedArcaneRecipe recipeWardenicChainBoots;
 
-	public static ShapelessArcaneRecipe recipePureOil;
+	public static /*RunicInfuserRecipe*/ ShapelessArcaneRecipe recipePureOil;
 
-	public static InfusionRecipe[] recipesWardenSteel;
+	public static InfusionRecipe recipeWardenSteel;
 
 	public static ShapedArcaneRecipe recipeWardenSteelChain;
+	public static ShapedArcaneRecipe recipeWardenSteelChainOiled;
 	public static /*ThaumicCompressorRecipe*/ ShapedArcaneRecipe recipeWardenSteelPlate;
 	public static ShapedArcaneRecipe recipeDetailedSteelPlate;
-	public static InfusionRecipe recipeRunicSteelPlate;
+	public static /*AlchemicalInfuserRecipe*/ InfusionRecipe recipeRunicSteelPlate;
+	public static /*RunicInfuserRecipe*/ InfusionRecipe recipesConsecratedSteelPlate;
 
 	public static ShapedArcaneRecipe recipeWardenicPlateHelmet;
 	public static ShapedArcaneRecipe recipeWardenicChestplate;
 	public static ShapedArcaneRecipe recipeWardenicPlateGreaves;
 	public static ShapedArcaneRecipe recipeWardenicPlateBoots;
+
+	public static CrucibleRecipe recipeWardenicQuartz;
+	public static CrucibleRecipe recipeWardenicQuartzDust;
+	public static CrucibleRecipe recipeWardenicQuartzReconst;
+	public static InfusionRecipe recipeWardenicQuartzInf;
+
+	public static CrucibleRecipe recipeWardenicCrystal;
+	public static CrucibleRecipe recipeWardenicCrystalDust;
+	public static CrucibleRecipe recipeWardenicCrystalReconst;
+
+	public static InfusionRecipe recipeWardenicBinder;
+	public static ShapelessOreRecipe recipeWardenicMetal;
+	public static ShapedArcaneRecipe recipeWardenicCompositeRaw;
+	public static InfusionRecipe recipeWardenicCompositeIngot;
+
+	public static ShapelessOreRecipe recipeAluDenseTemp;    //TEMP-TODO: Add Thaumic Hammermill
+	public static /*ThaumicCompressorRecipe*/ ShapedArcaneRecipe recipeWardenicCompositePlate;
+
+	public static /*ThaumicCompressorRecipe*/ ShapedArcaneRecipe recipeFittedCompositePlate;
+	public static ShapedArcaneRecipe recipeDetailedCompositePlate;
+	public static /*AlchemicalInfuserRecipe*/ InfusionRecipe recipeRunicCompositePlate;
+	public static InfusionRecipe recipeConsecratedCompositePlate;
+	public static InfusionRecipe recipePrimalCompositePlate;
+
+	public static ShapedArcaneRecipe recipeWardenicCompositeHelmet;
+	public static ShapedArcaneRecipe recipeWardenicCompositeChestplate;
+	public static ShapedArcaneRecipe recipeWardenicCompositeGreaves;
+	public static ShapedArcaneRecipe recipeWardenicCompositeBoots;
 
 	// /** RESEARCH **/
 	public static ResearchItem researchThaumRev;
@@ -336,6 +419,11 @@ public class ThaumRevLibrary {
 	public static ResearchItem researchMaterial;
 	public static String keyMaterial = "MATERIAL_TRv";
 
+	public static ResearchItem researchCotton;
+	public static String keyCotton = "ENCHCOTTON";
+
+	public static ResearchItem researchAniPiston;
+	public static String keyAniPiston = "ANIMATED_PISTON";
 
 	public static ResearchItem researchThaumicBronze;
 	public static String keyThaumicBronze = "THAUMIC_BRONZE";
@@ -349,6 +437,10 @@ public class ThaumRevLibrary {
 	public static ResearchItem researchRunicInfuser;
 	public static String keyRunicInfuser = "RUNIC_INFUSER";
 
+	public static ResearchItem researchEnchSilverwood;
+	public static String keyEnchSilverwood = "ENCH_SILVERWOOD";
+
+
 	public static ResearchItem researchPrimalRobes;
 	public static String keyRobesPrimal = "ROBES_PRIMAL";
 
@@ -356,8 +448,8 @@ public class ThaumRevLibrary {
 	public static ResearchItem researchWardenicObsidian;
 	public static String keyWardenicObsidian = "WARDENIC_OBSIDIAN";
 
-	public static ResearchItem researchThaumicCompressor;
-	public static String keyThaumicCompressor = "THAUMIC_COMPRESSOR";
+	public static ResearchItem researchThaumicHammermill;
+	public static String keyThaumicHammermill = "WARDENIC_OBSIDIAN"; //"THAUMIC_HAMMERMILL";
 
 
 	public static ResearchItem researchExcubituraPaste;
@@ -390,6 +482,23 @@ public class ThaumRevLibrary {
 	public static ResearchItem researchArmorWardenSteel;
 	public static String keyArmorWardenSteel = "ARMOR_WARDEN_STEEL";
 
+	public static ResearchItem researchQuartz;
+	public static String keyQuartz = "WARDEN_QUARTZ";
+
+	public static ResearchItem researchWardenCrystal;
+	public static String keyWardenCrystal = "WARDEN_CRYSTAL";
+
+	public static ResearchItem researchWardenComposite;
+	public static String keyWardenComposite = "WARDEN_COMPOSITE";
+
+	public static ResearchItem researchWardenCompositePlate;
+	public static String keyWardenCompositePlate = "WARDEN_COMPOSITE_PLATE";
+
+	public static ResearchItem researchWardenCompositeFitting;
+	public static String keyWardenCompositeFitting = "WARDEN_COMPOSITE_FITTING";
+
+	public static ResearchItem researchArmorWardenComposite;
+	public static String keyArmorWardenComposite = "ARMOR_WARDEN_COMPOSITE";
 
 
 	/** BLOCK NAMES **/
@@ -407,9 +516,10 @@ public class ThaumRevLibrary {
 			"wardenicQuartzPillar",
 			"wardenicQuartzPillar",
 			"wardenicQuartzPillar",
+			"oreSphalerite"
 	};
 
-	public static final String[] STORAGE_NAMES = {
+	public static final String[] STORAGE_MAIN_NAMES = {
 			"blockCopper",
 			"blockZinc",
 			"blockTin",
@@ -423,13 +533,19 @@ public class ThaumRevLibrary {
 			"blockElectrum",
 			"blockWardenicSteel",
 			"blockThaumicElectrum",
-			"blockVoid"//,
-			//"",
-			//""
+			"blockVoid",
+			"blockWardenicMetal",
+			"blockWardenicComposite"
 	};
 
 	public static final String[] FALSE_AIR_NAMES = {
 			"witor"
+	};
+
+	public static final String[] SLAB_STONE_NAMES = {
+			"obsidianWardenic",
+			"stoneEldritch",
+			"wardenicQuartz"
 	};
 
 	public static final String matPrimal = "PRIMAL";
@@ -437,6 +553,7 @@ public class ThaumRevLibrary {
 	public static final String matWardencloth = "WARDENCLOTH";
 	public static final String matWardenicChain = "WARDENIC_CHAIN";
 	public static final String matWardenicSteel = "WARDENIC_STEEL";
+	public static final String matWardenicComposite = "WARDENIC_COMPOSITE";
 
 	/** NBT KEYS **/
 	public static final String DURABILITY = "DURABILITY";

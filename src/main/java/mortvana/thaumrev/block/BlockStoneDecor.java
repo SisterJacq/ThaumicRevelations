@@ -1,6 +1,5 @@
 package mortvana.thaumrev.block;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import net.minecraft.block.material.MapColor;
@@ -16,9 +15,10 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-import mortvana.thaumrev.library.ThaumRevLibrary;
 import mortvana.thaumrev.melteddashboard.block.FluxGearBlockBase;
+import mortvana.thaumrev.melteddashboard.util.helpers.ItemHelper;
 import mortvana.thaumrev.melteddashboard.util.helpers.StringHelper;
+import mortvana.thaumrev.util.RecipeHelper;
 
 import static mortvana.thaumrev.library.ThaumRevLibrary.*;
 
@@ -37,6 +37,34 @@ public class BlockStoneDecor extends FluxGearBlockBase {
 
 		setData(TEX_LOC_DEFAULT + "stoneDecor/", DECOR_STONE_NAMES);
 		icons = new IIcon[18];
+	}
+
+	public void register() {
+		wardenicObsidian = new ItemStack(this, 1, 0);
+		eldritchStone = new ItemStack(this, 1, 1);
+		wardenicQuartzBlock = new ItemStack(this, 1, 2);
+		wardenicQuartzChiseled = new ItemStack(this, 1, 3);
+		wardenicQuartzPillar = new ItemStack(this, 1, 4);
+		oreSphalerite = new ItemStack(this, 1, 7);
+
+		RecipeHelper.registerOreDict(wardenicObsidian, "blockWardenicObsidian");
+		RecipeHelper.registerOreDict(eldritchStone, "blockEldritchStone");
+		for (int i = 2; i < 5; i++) {
+			RecipeHelper.registerOreDict(new ItemStack(this, 1, i), "blockQuartzWardenic");
+		}
+		RecipeHelper.registerOreDict(oreSphalerite, "oreZinc", "oreSphalerite");
+	}
+
+	public void recipes() {
+		recipeQuartzBlock = RecipeHelper.addSquareRecipe(wardenicQuartzBlock, "gemQuartzWardenic");
+		recipeQuartzChiseled = RecipeHelper.addShapedRecipe(wardenicQuartzChiseled, "X", "X", 'X', "slabQuartzWardenic");
+		recipeQuartzPillar = RecipeHelper.addShapedRecipe(ItemHelper.cloneStack(wardenicQuartzPillar, 2), "X", "X", 'X', "blockQuartzWardenic");
+		recipeQuartzDeblock = RecipeHelper.addDeblockingRecipe(wardenicQuartz, wardenicQuartzBlock);
+
+		recipeQuartzResetChiseled = RecipeHelper.addShapelessRecipe(wardenicQuartzBlock, wardenicQuartzChiseled);
+		recipeQuartzResetPillar = RecipeHelper.addShapelessRecipe(wardenicQuartzBlock, wardenicQuartzPillar);
+
+		RecipeHelper.addSmelting(oreSphalerite, ingotZinc, 0.95F);
 	}
 
 	@Override
@@ -109,6 +137,7 @@ public class BlockStoneDecor extends FluxGearBlockBase {
 		addIcons(register, 4, names[4] + "_side");          //Wardenic Quartz Pillar (Side)
 		addIcons(register, 5, names[4] + "_end");           //Wardenic Quartz Pillar (Ends)
 		addIcons(register, 6, names[3] + "_end");           //Chiseled Wardenic Quartz (Ends)
+		addIcons(register, 7, names[7]);                    //Sphalerite Ore
 		addIcons(register, 16, names[2] + "_top");          //Wardenic Quartz (Top)
 		addIcons(register, 17, names[2] + "_bottom");       //Wardenic Quartz (Bottom)
 	}
@@ -134,11 +163,12 @@ public class BlockStoneDecor extends FluxGearBlockBase {
 		list.add(new ItemStack(item, 1, 2));
 		list.add(new ItemStack(item, 1, 3));
 		list.add(new ItemStack(item, 1, 4));
+		list.add(new ItemStack(item, 1, 7));
 	}
 
 	@Override
 	public int damageDropped(int meta) {
-		return meta < 5 ? meta : 4;
+		return meta != 5 && meta != 6 ? meta : 4;
 	}
 
 	/*@Override
@@ -176,7 +206,7 @@ public class BlockStoneDecor extends FluxGearBlockBase {
 		icons[index] = register.registerIcon(directory + name);
 	}
 
-	public static final float[] HARDNESS = { 25F, 10F, 0.8F, 0.8F, 0.8F, 0.8F, 0.8F };
-	public static final float[] RESISTANCE = { 5000F, 500F, 25F, 25F, 25F, 25F, 25F };
-	public static final int[] RARITY = { 2, 1, 1, 1, 1, 1, 1 };
+	public static final float[] HARDNESS = { 25F, 10F, 0.8F, 0.8F, 0.8F, 0.8F, 0.8F, 2.5F };
+	public static final float[] RESISTANCE = { 5000F, 500F, 25F, 25F, 25F, 25F, 25F, 4F };
+	public static final int[] RARITY = { 2, 1, 1, 1, 1, 1, 1, 0 };
 }

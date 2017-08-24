@@ -35,7 +35,11 @@ public class ThaumRevConfig extends ConfigBase {
 
 	    researchLevel = config.get("Miscellaneous", "Research Difficulty", -1, "Independent from Thaumcraft's Research Difficulty. Determines which researches auto-unlock. -1 for using Thaumcraft's difficulty, 0 for easy, 1 for normal (default Thaumcraft setting), 2 for hard.").getInt();
 
-	    cuAlloys = config.get("Miscellaneous", "Enable Bronze and Brass", true, "Determines whether or not our Bronze and Brass is craftable. Disabling without other mods adding Bronze and Brass will break stuff.").getBoolean();
+	    enableBrass = config.get("Miscellaneous", "Enable Brass", true, "Determines whether or not our Brass is craftable. Disabling without other mods adding Brass will break stuff.").getBoolean();
+	    enableBronze = config.get("Miscellaneous", "Enable Bronze", true, "Determines whether or not our Bronze is craftable. Disabling without other mods adding Bronze will break stuff.").getBoolean();
+	    enableElectrum = config.get("Miscellaneous", "Enable Electrum", true, "Determines whether or not our Electrum is craftable. Disabling without other mods adding Electrum will break stuff.").getBoolean();
+
+		enableSphalerite = config.get("World", "Enable Sphalerite", true, "Adds Sphalerite (Zinc) Ore to the Nether. Disabling without other mods adding a source of Zinc will break stuff.").getBoolean();
 
         if (config.hasChanged()) {
             config.save();
@@ -61,5 +65,9 @@ public class ThaumRevConfig extends ConfigBase {
 
 	public static int researchLevel;
 
-	public static boolean cuAlloys;
+	public static boolean enableBrass;
+	public static boolean enableBronze;
+	public static boolean enableElectrum;
+
+	public static boolean enableSphalerite;
 }

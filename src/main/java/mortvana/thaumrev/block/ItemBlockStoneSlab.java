@@ -7,19 +7,19 @@ import net.minecraft.item.ItemStack;
 import mortvana.thaumrev.library.ThaumRevLibrary;
 import mortvana.thaumrev.melteddashboard.block.FluxGearItemBlockBase;
 
-public class ItemBlockMetalStorage extends FluxGearItemBlockBase {
+public class ItemBlockStoneSlab extends FluxGearItemBlockBase {
 
-	public ItemBlockMetalStorage(Block block) {
+	public ItemBlockStoneSlab(Block block) {
 		super(block);
 	}
 
 	@Override
 	public String getUnlocalizedName(ItemStack stack) {
-		return "tile.thaumrev.storage." + ThaumRevLibrary.STORAGE_MAIN_NAMES[stack.getItemDamage()] + ".name";
+		return "tile.thaumrev.stoneSlab." + ThaumRevLibrary.SLAB_STONE_NAMES[stack.getItemDamage()] + ".name";
 	}
 
 	@Override
 	public EnumRarity getRarity(ItemStack stack) {
-		return EnumRarity.values()[BlockMetalStorageMain.RARITY[stack.getItemDamage()]];
+		return EnumRarity.values()[BlockStoneSlab.RARITY[stack.getItemDamage()]];
 	}
 }

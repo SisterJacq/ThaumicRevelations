@@ -23,7 +23,10 @@ public class ThaumcraftLibrary {
 
 		visRelay = new ItemStack(blockMetalDevice, 1, 14);
 
+		silverwoodLog = new ItemStack(blockMagicalLog, 1, 1);
+
 		planksGreatwood = new ItemStack(blockWoodenDevice, 1, 6);
+		planksSilverwood = new ItemStack(blockWoodenDevice, 1, 7);
 
 		table = new ItemStack(blockTable, 1, 0);
 
@@ -61,6 +64,8 @@ public class ThaumcraftLibrary {
 		itemShardBalanced = new ItemStack(itemShard, 1, 6);
 
 		itemQuicksilverDrop = new ItemStack(itemNugget, 1, 5);
+
+		itemPhial = new ItemStack(itemEssence, 1, 0);
 	}
 
 	private static void loadReflection() {
@@ -90,6 +95,7 @@ public class ThaumcraftLibrary {
 
 	private static void loadReference() {
 		blockMetalDevice = ConfigBlocks.blockMetalDevice;
+		blockMagicalLog = ConfigBlocks.blockMagicalLog;
 
 		blockWoodenDevice = ConfigBlocks.blockWoodenDevice;
 
@@ -112,6 +118,8 @@ public class ThaumcraftLibrary {
 		itemResource = ConfigItems.itemResource;
 		itemShard = ConfigItems.itemShard;
 		itemNugget = ConfigItems.itemNugget;
+
+		itemEssence = ConfigItems.itemEssence;
 	}
 
 	public static Block getBlock(String field) {
@@ -131,7 +139,7 @@ public class ThaumcraftLibrary {
 	public static Block blockHole;
 	public static Block blockArcaneFurnace;*/
 	public static Block blockMetalDevice;
-	//public static Block blockMagicalLog;
+	public static Block blockMagicalLog;
 	//public static Block blockStoneDevice;
 	public static Block blockWoodenDevice;
 	//public static Block blockMagicalLeaves;
@@ -240,58 +248,61 @@ public class ThaumcraftLibrary {
 	public static Item itemResource;
 	public static Item itemShard;
 	public static Item itemNugget;
-	/**public static Item itemWandCap;
-	 public static Item itemWandRod;
-	 public static Item itemEssence;
-	 public static Item itemWispEssence;
-	 public static Item itemCrystalEssence;
-	 public static Item itemNuggetChicken;
-	 public static Item itemNuggetBeef;
-	 public static Item itemNuggetPork;
-	 public static Item itemNuggetFish;
-	 public static Item itemTripleMeatTreat;
-	 public static Item itemPhotoPlate;
-	 public static Item itemManaBean;
-	 public static Item itemZombieBrain;
-	 public static Item itemResearchNotes;
-	 public static Item itemInkwell;
-	 public static Item itemSpawnerEgg;
-	 public static Item itemFocusPortableHole;
-	 public static Item itemFocusPech;
-	 public static Item itemFlyingCarpet;
-	 public static Item itemGolemPlacer;
-	 public static Item itemGolemBell;
-	 public static Item itemGolemDecoration;
-	 public static Item itemGolemCore;
-	 public static Item itemGolemUpgrade;
-	 public static Item itemArcaneDoor;
-	 public static Item itemJarFilled;
-	 public static Item itemJarNode;
-	 public static Item itemKey;
-	 public static Item itemHandMirror;
-	 public static Item itemTrunkSpawner;
-	 public static Item itemResonator;
-	 public static Item itemBathSalts;
-	 public static Item itemBucketDeath;
-	 public static Item itemBucketPure;
-	 public static Item itemEldritchObject;
-	 public static Item itemSanitySoap;
-	 public static Item itemSanityChecker;
-	 public static Item itemBottleTaint;
-	 public static Item itemLootbag;
-	 public static Item itemBaubleBlanks;
-	 public static Item itemAmuletRunic;
-	 public static Item itemRingRunic;
-	 public static Item itemGirdleRunic;
-	 public static Item itemGirdleHover;
-	 public static Item itemAmuletVis;
-	 public static Item itemPrimalArrow;
-	 public static Item itemCompassStone;*/
+	//public static Item itemWandCap;
+	//public static Item itemWandRod;
+	public static Item itemEssence;
+	/*public static Item itemWispEssence;
+	public static Item itemCrystalEssence;
+	public static Item itemNuggetChicken;
+	public static Item itemNuggetBeef;
+	public static Item itemNuggetPork;
+	public static Item itemNuggetFish;
+	public static Item itemTripleMeatTreat;
+	public static Item itemPhotoPlate;
+	public static Item itemManaBean;
+	public static Item itemZombieBrain;
+	public static Item itemResearchNotes;
+	public static Item itemInkwell;
+	public static Item itemSpawnerEgg;
+	public static Item itemFocusPortableHole;
+	public static Item itemFocusPech;
+	public static Item itemFlyingCarpet;
+	public static Item itemGolemPlacer;
+	public static Item itemGolemBell;
+	public static Item itemGolemDecoration;
+	public static Item itemGolemCore;
+	public static Item itemGolemUpgrade;
+	public static Item itemArcaneDoor;
+	public static Item itemJarFilled;
+	public static Item itemJarNode;
+	public static Item itemKey;
+	public static Item itemHandMirror;
+	public static Item itemTrunkSpawner;
+	public static Item itemResonator;
+	public static Item itemBathSalts;
+	public static Item itemBucketDeath;
+	public static Item itemBucketPure;
+	public static Item itemEldritchObject;
+	public static Item itemSanitySoap;
+	public static Item itemSanityChecker;
+	public static Item itemBottleTaint;
+	public static Item itemLootbag;
+	public static Item itemBaubleBlanks;
+	public static Item itemAmuletRunic;
+	public static Item itemRingRunic;
+	public static Item itemGirdleRunic;
+	public static Item itemGirdleHover;
+	public static Item itemAmuletVis;
+	public static Item itemPrimalArrow;
+	public static Item itemCompassStone;*/
 
 	/** ITEMSTACKS (BLOCK) **/
 	public static ItemStack visRelay;
 
+	public static ItemStack silverwoodLog;
+
 	public static ItemStack planksGreatwood;
+	public static ItemStack planksSilverwood;
 
 	public static ItemStack table;
 
@@ -331,7 +342,7 @@ public class ThaumcraftLibrary {
 
 	public static ItemStack itemQuicksilverDrop;
 
-
+	public static ItemStack itemPhial;
 
 
 

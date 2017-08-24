@@ -1,4 +1,4 @@
-package mortvana.thaumrev.melteddashboard;
+package mortvana.thaumrev.melteddashboard.block.material;
 
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;

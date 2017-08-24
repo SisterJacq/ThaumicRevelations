@@ -18,6 +18,7 @@ public class FluxGearBlockPlant extends BlockBush {
 
 	public String[] names;
 	public String[] textures;
+	@SideOnly(Side.CLIENT)
 	public IIcon[] icons;
 	public String directory;
 

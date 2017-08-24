@@ -1,25 +1,25 @@
 Before v0.0.1:
 Fix Texture Issue
 Wild Cotton
+Cotton Crafting
 Quartz Renderer
-Wardenic Obsidian
 Zinc Transmutation
 Zinc Clusters
 Arcane Singularity Booms
 Primal Pendant
-Animated Piston
-Ench. Ag-wood
-Tier 3-5 Wardenic Armor
+Wardenic Composite Armor
+Awakened Wardenic Composite Armor
 Infused Riftish Cotton Clothes
 Flux Robes
 Aspect Infusion System
 Excubitor Aspect Stats
 Fluxus Aspect Stats
-Fix Purity Focus
 
 Maybe Before v0.0.1:
 Thaumium and Void Shears and Sickles
 Thaumic Compressor
+
+Fix Purity Focus
 Tier 2-5 Magneoturge armor
 All 5 tiers of Eldritch Armor
 All 5 tiers of Wardenic Tools
@@ -31,9 +31,12 @@ Bloodwood Wands
 Wand Caps
 Runic Infuser
 Infernal Blast Furnace
+Alumentum Pressurizer
+Brass Pipe
+Wardenic TiC Modifier
+
 
 Classes to Reimplement:
-../block/BlockQuartzSlab (Reimplement as BlockStoneSlab)
 ../block/BlockQuartzStair (No comment)
 ../block/BlockWitor (Reimplement in BlockFakeAir)
 ../block/tile/TileWitor (Reimplement as non-TE rendering in BlockFakeAir)

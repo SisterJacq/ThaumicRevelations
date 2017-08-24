@@ -10,6 +10,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
+import gnu.trove.map.TMap;
+import gnu.trove.map.hash.THashMap;
 import mortvana.thaumrev.library.ThaumRevLibrary;
 import mortvana.thaumrev.melteddashboard.item.FluxGearItemInteractive;
 
@@ -30,21 +32,6 @@ public class ItemThaumRev extends FluxGearItemInteractive {
 	@Override
 	public void playSound(int metadata, World world, EntityPlayer player) {
 		world.playSoundAtEntity(player, "stone", 1.0F, 1.0F);
-	}
-
-	@Override
-	public boolean hasContainerItem(ItemStack stack) {
-		return stack.getItemDamage() == 110;
-	}
-
-	@Override
-	public ItemStack getContainerItem(ItemStack stack) {
-		return stack.getItemDamage() == 110 ? new ItemStack(Items.bowl) : null;
-	}
-
-	@Override
-	public boolean hasCustomEntity(ItemStack stack) {
-		return stack.getItemDamage() == 1050 || super.hasCustomEntity(stack);
 	}
 
 	@Override

@@ -1,7 +1,6 @@
 package mortvana.thaumrev.melteddashboard.item;
 
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.*;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.item.EntityItem;
@@ -14,7 +13,9 @@ import gnu.trove.map.hash.THashMap;
 
 public class FluxGearItemInteractive extends FluxGearItem {
 
-	public TMap<Integer, ArrayList<ItemStack>> lootMap = new THashMap<Integer, ArrayList<ItemStack>>(32);
+	public TMap<Integer, ArrayList<ItemStack>> lootMap = new THashMap<Integer, ArrayList<ItemStack>>(32, 8);
+	public TMap<Integer, ItemStack> containers = new THashMap<Integer, ItemStack>(32, 8);
+	public List<Integer> customEntities = new ArrayList<Integer>(16);
 
 	public FluxGearItemInteractive() {
 		setHasSubtypes(true);
@@ -65,4 +66,27 @@ public class FluxGearItemInteractive extends FluxGearItem {
 
 	//You should override this in your classes!
 	public void playSound(int metadata, World world, EntityPlayer player) {}
+
+	@Override
+	public boolean hasContainerItem(ItemStack stack) {
+		return containers.containsKey(stack.getItemDamage());
+	}
+
+	@Override
+	public ItemStack getContainerItem(ItemStack stack) {
+		return containers.containsKey(stack.getItemDamage()) ? containers.get(stack.getItemDamage()) : null;
+	}
+
+	public void addContainer(int meta, ItemStack stack) {
+		containers.put(meta, stack);
+	}
+
+	@Override
+	public boolean hasCustomEntity(ItemStack stack) {
+		return customEntities.contains(stack.getItemDamage()) || super.hasCustomEntity(stack);
+	}
+
+	public void addCustomEntity(int meta) {
+		customEntities.add(meta);
+	}
 }

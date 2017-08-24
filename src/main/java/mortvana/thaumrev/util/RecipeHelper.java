@@ -3,16 +3,18 @@ package mortvana.thaumrev.util;
 import java.util.ArrayList;
 
 import net.minecraft.block.Block;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.nbt.NBTTagCompound;
 import cpw.mods.fml.common.event.FMLInterModComms;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.*;
 
-import mortvana.thaumrev.melteddashboard.util.IEnumItem;
 import mortvana.thaumrev.melteddashboard.util.IStackProvider;
 import mortvana.thaumrev.melteddashboard.util.helpers.ItemHelper;
+import mortvana.thaumrev.melteddashboard.util.helpers.StringHelper;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.crafting.*;
@@ -23,120 +25,108 @@ public class RecipeHelper {
 		GameRegistry.addRecipe(recipe);
 	}
 
-	//Shaped Crafting
-	public static ShapedOreRecipe addShapedRecipe(ItemStack output, Object... stuff) {
-		ShapedOreRecipe r = new ShapedOreRecipe(output, stuff);
+	/** SHAPED CRAFTING **/
+	public static ShapedOreRecipe addShapedRecipe(ItemStack result, Object... stuff) {
+		ShapedOreRecipe r = new ShapedOreRecipe(result, stuff);
+		addRecipe(r);
+		return r;
+	}
+
+	public static ShapedOreRecipe addSquareRecipe(ItemStack result, Object input) {
+		return addShapedRecipe(result, "##", "##", '#', input);
+	}
+
+	public static ShapedOreRecipe addStickRecipe(ItemStack result, Object input) {
+		return addShapedRecipe(ItemHelper.cloneStack(result, 4), "#", "#", '#', input);
+	}
+
+	public static ShapedOreRecipe addSlabRecipe(ItemStack result, Object input) {
+		return addShapedRecipe(result, "###", '#', input);
+	}
+
+	/** SHAPELESS CRAFTING **/
+	public static ShapelessOreRecipe addShapelessRecipe(ItemStack result, Object... input) {
+		ShapelessOreRecipe r = new ShapelessOreRecipe(result, input);
 		GameRegistry.addRecipe(r);
 		return r;
 	}
 
-	public static IRecipe addSquareRecipe(ItemStack input, ItemStack output) {
-		return addShapedRecipe(output, "##", "##", '#', input);
+	public static ShapelessOreRecipe addShapelessSizedOreRecipe(ItemStack result, int modifier, String... input) {
+		return addShapelessRecipe(ItemHelper.cloneStack(result, input.length + modifier), input);
 	}
 
-	public static ShapedOreRecipe addSquareRecipe(String input, ItemStack output) {
-		return addShapedRecipe(output, "##", "##", '#', input);
+	public static ShapelessOreRecipe generateShapelessSizedOreRecipe(ItemStack result, int modifier, String... input) {
+		return new ShapelessOreRecipe(ItemHelper.cloneStack(result, input.length + modifier), input);
 	}
 
-	public static IRecipe addStickRecipe(ItemStack input, ItemStack output) {
-		return addShapedRecipe(output, "##", "##", '#', input);
+	public static ShapelessOreRecipe addStorageRecipe(ItemStack result, Object input) {
+		return addShapelessRecipe(result, input, input, input, input, input, input, input, input, input);
 	}
 
-	public static ShapedOreRecipe addStickRecipe(String input, ItemStack output) {
-		return addShapedRecipe(output, "##", "##", '#', input);
-	}
-
-	//Shapeless Crafting
-	public static ShapelessOreRecipe addShapelessRecipe(ItemStack output, ItemStack... stuff) {
-		ShapelessOreRecipe r = new ShapelessOreRecipe(output, stuff);
-		GameRegistry.addRecipe(r);
-		return r;
-	}
-
-	public static ShapelessOreRecipe addDeblockingRecipe(ItemStack result, ItemStack input) {
+	public static ShapelessOreRecipe addDeblockingRecipe(ItemStack result, Object input) {
 		return addShapelessRecipe(ItemHelper.cloneStack(result, 4), input);
 	}
 
-	//Shapeless Ore Crafting
-	public static ShapelessOreRecipe addShapelessOreRecipe(ItemStack output, String... stuff) {
-		ShapelessOreRecipe r = new ShapelessOreRecipe(output, stuff);
-		GameRegistry.addRecipe(r);
-		return r;
-	}
-	public static ShapelessOreRecipe addShapelessSizedOreRecipe(ItemStack input, int modifier, String... stuff) {
-		return addShapelessOreRecipe(ItemHelper.cloneStack(input, stuff.length + modifier), stuff);
+	public static ShapelessOreRecipe addReverseStorageRecipe(ItemStack result, Object input) {
+		return addShapelessRecipe(ItemHelper.cloneStack(result, 9), input);
 	}
 
-	public static ShapelessOreRecipe generateShapelessSizedOreRecipe(ItemStack input, int modifier, String... stuff) {
-		return new ShapelessOreRecipe(ItemHelper.cloneStack(input, stuff.length + modifier), stuff);
+	public static ShapelessOreRecipe addDeslabingRecipe(ItemStack result, Object input) {
+		return addShapelessRecipe(result, input, input);
 	}
 
-	public static ShapelessOreRecipe addStorageRecipe(ItemStack result, String oreDict) {
-		return addShapelessOreRecipe(result, oreDict, oreDict, oreDict, oreDict, oreDict, oreDict, oreDict, oreDict, oreDict);
+	/** SMELTING **/
+	public static void addSmelting(ItemStack input, ItemStack result, float experience) {
+		FurnaceRecipes.smelting().func_151394_a(input, result, experience);
 	}
 
-	public static ShapelessOreRecipe addDeblockingRecipe(ItemStack result, String oreDict) {
-		return addShapelessOreRecipe(ItemHelper.cloneStack(result, 4), oreDict);
+	public static void addSmelting(ItemStack input, ItemStack result) {
+		addSmelting(input, result, 0);
 	}
 
-	public static ShapelessOreRecipe addReverseStorageRecipe(ItemStack result, String oreDict) {
-		return addShapelessOreRecipe(ItemHelper.cloneStack(result, 9), oreDict);
-	}
-
-	//Smelting
-	public static void addSmelting(ItemStack input, ItemStack output, float experience) {
-		FurnaceRecipes.smelting().func_151394_a(input, output, experience);
-	}
-
-	//OreDicting
-	public static void registerOreDict(ItemStack itemstack, String... oreDict) {
+	/** ORE DICTIONARY **/
+	public static void registerOreDict(ItemStack stack, String... oreDict) {
 		for (String name : oreDict) {
-			OreDictionary.registerOre(name, itemstack);
+			OreDictionary.registerOre(name, stack);
 		}
 	}
 
-	//FMP
+	/** FORGE MULTIPART **/
 	public static void registerFMP(Block block, int maxMeta) {
 		for (int i = 0; i < maxMeta; i++) {
 			registerFMP(new ItemStack(block, 1, i));
 		}
 	}
 
-	public static void registerFMP(ItemStack itemstack) {
-		FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", itemstack);
+	public static void registerFMP(ItemStack stack) {
+		FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", stack);
 	}
 
-	//Thaumcraft
-	public static ShapedArcaneRecipe addArcaneCraftingRecipe(String research, ItemStack result, AspectList aspects, Object ... recipe) {
+	/** THAUMCRAFT - SHAPED ARCANE CRAFTING **/
+	public static ShapedArcaneRecipe addArcaneCraftingRecipe(String research, ItemStack result, AspectList aspects, Object... recipe) {
 		return ThaumcraftApi.addArcaneCraftingRecipe(research, result, aspects, recipe);
 	}
 
-	public static ShapelessArcaneRecipe addShapelessArcaneCraftingRecipe(String research, ItemStack result, AspectList aspects, Object ... recipe){
+	/** THAUMCRAFT - SHAPELESS ARCANE CRAFTING **/
+	public static ShapelessArcaneRecipe addShapelessArcaneCraftingRecipe(String research, ItemStack result, AspectList aspects, Object... recipe){
 		return ThaumcraftApi.addShapelessArcaneCraftingRecipe(research, result, aspects, recipe);
 	}
 
-	public static ShapelessArcaneRecipe addShapelessArcaneCraftingRecipe(String research, IStackProvider result, AspectList aspects, Object ... recipe){
+	public static ShapelessArcaneRecipe addShapelessArcaneCraftingRecipe(String research, IStackProvider result, AspectList aspects, Object... recipe){
 		return ThaumcraftApi.addShapelessArcaneCraftingRecipe(research, result.getStack(), aspects, recipe);
 	}
 
-	public static InfusionRecipe addInfusionCraftingRecipe(String research, Object result, int instability, AspectList aspects, ItemStack input, ItemStack[] recipe) {
+	/** THAUMCRAFT - INFUSION CRAFTING **/
+	public static InfusionRecipe addInfusionCraftingRecipe(String research, Object result, int instability, AspectList aspects, ItemStack input, ItemStack... recipe) {
 		return ThaumcraftApi.addInfusionCraftingRecipe(research, result, instability, aspects, input, recipe);
 	}
 
-	public static InfusionRecipe[] addInfusionCraftingRecipes(String research, Object result, int instability, AspectList aspects, String input, ItemStack[] recipe) {
-		ArrayList<InfusionRecipe> recipes = new ArrayList<InfusionRecipe>();
-		for (ItemStack stack : OreDictionary.getOres(input)) {
-			recipes.add(addInfusionCraftingRecipe(research, result, instability, aspects, stack, recipe));
-		}
-		InfusionRecipe[] r = new InfusionRecipe[recipes.size()];
-		recipes.toArray(r);
-		return r;
-	}
-
+	/** THAUMCRAFT - CRUCIBLE CRAFTING **/
 	public static CrucibleRecipe addCrucibleRecipe(String key, ItemStack result, Object catalyst, AspectList tags) {
 		return ThaumcraftApi.addCrucibleRecipe(key, result, catalyst, tags);
 	}
 
+	/** THAUMCRAFT - ASPECTS **/
 	public static AspectList addAspects(ItemStack stack, AspectStack... aspects) {
 		AspectList list = new AspectList(stack);
 		for (AspectStack aspect : aspects) {
@@ -146,7 +136,217 @@ public class RecipeHelper {
 		return list;
 	}
 
-	//Others
+	/** THERMAL EXPANSION - FURNACE CRAFTING **/
+	public static void addFurnaceRecipe(int flux, ItemStack input, ItemStack output) {
+		if (input != null && output != null) {
+			NBTTagCompound nbt = new NBTTagCompound();
+
+			nbt.setInteger("energy", flux);
+			nbt.setTag("input", new NBTTagCompound());
+			nbt.setTag("output", new NBTTagCompound());
+
+			input.writeToNBT(nbt.getCompoundTag("input"));
+			output.writeToNBT(nbt.getCompoundTag("output"));
+			FMLInterModComms.sendMessage("ThermalExpansion", "FurnaceRecipe", nbt);
+		}
+	}
+
+	public static void removeFurnaceRecipe(ItemStack input) {
+		if (input != null) {
+			NBTTagCompound nbt = new NBTTagCompound();
+
+			nbt.setTag("input", new NBTTagCompound());
+
+			input.writeToNBT(nbt.getCompoundTag("input"));
+			FMLInterModComms.sendMessage("ThermalExpansion", "RemoveFurnaceRecipe", nbt);
+		}
+	}
+
+	/** THERMAL EXPANSION - PULVERIZER CRAFTING **/
+	public static void addPulverizerRecipe(int flux, ItemStack input, ItemStack output) {
+		addPulverizerRecipe(flux, input, output, null, 0);
+	}
+
+	public static void addPulverizerRecipe(int flux, ItemStack input, ItemStack primaryOutput, ItemStack secondaryOutput) {
+		addPulverizerRecipe(flux, input, primaryOutput, secondaryOutput, 100);
+	}
+
+	public static void addPulverizerRecipe(int flux, ItemStack input, ItemStack primaryOutput, ItemStack secondaryOutput, int secondaryChance) {
+		if (input != null && primaryOutput != null) {
+			NBTTagCompound nbt = new NBTTagCompound();
+
+			nbt.setInteger("energy", flux);
+			nbt.setTag("input", new NBTTagCompound());
+			nbt.setTag("primaryOutput", new NBTTagCompound());
+
+			if (secondaryOutput != null) {
+				nbt.setTag("secondaryOutput", new NBTTagCompound());
+			}
+
+			input.writeToNBT(nbt.getCompoundTag("input"));
+			primaryOutput.writeToNBT(nbt.getCompoundTag("primaryOutput"));
+
+			if (secondaryOutput != null) {
+				secondaryOutput.writeToNBT(nbt.getCompoundTag("secondaryOutput"));
+				nbt.setInteger("secondaryChance", secondaryChance);
+			}
+
+			FMLInterModComms.sendMessage("ThermalExpansion", "PulverizerRecipe", nbt);
+		}
+	}
+
+	public static void addPulverizerRecycleRecipe(ItemStack output, ItemStack input, int amount) {
+		addPulverizerRecipe((amount * 300) + 600, input, ItemHelper.cloneStack(output, amount));
+	}
+
+	public static void addPulverizerRecycleRecipes(ItemStack output, ItemStack[] inputs, int[] amounts) {
+		if (output != null && inputs.length == amounts.length) {
+			for (int i = 0; i < inputs.length; i++) {
+				addPulverizerRecycleRecipe(output, inputs[i], amounts[i]);
+			}
+		}
+	}
+
+	public static void removePulverizerRecipe(ItemStack input) {
+		if (input != null) {
+			NBTTagCompound toSend = new NBTTagCompound();
+
+			toSend.setTag("input", new NBTTagCompound());
+
+			input.writeToNBT(toSend.getCompoundTag("input"));
+			FMLInterModComms.sendMessage("ThermalExpansion", "RemovePulverizerRecipe", toSend);
+		}
+	}
+
+	/** THERMAL EXPANSION - SAWMILL CRAFTING **/
+
+	/** THERMAL EXPANSION - INDUCTION SMELTER CRAFTING **/
+	public static void addInductionSmelterRecipe(int flux, ItemStack primaryInput, ItemStack secondaryInput, ItemStack output) {
+		addInductionSmelterRecipe(flux, primaryInput, secondaryInput, output, null, 0);
+	}
+
+	public static void addInductionSmelterRecipe(int flux, ItemStack primaryInput, ItemStack secondaryInput, ItemStack primaryOutput, ItemStack secondaryOutput) {
+		addInductionSmelterRecipe(flux, primaryInput, secondaryInput, primaryOutput, secondaryOutput, 100);
+	}
+
+	public static void addInductionSmelterRecipe(int flux, ItemStack primaryInput, ItemStack secondaryInput, ItemStack primaryOutput, ItemStack secondaryOutput, int secondaryChance) {
+		if (primaryInput != null && secondaryInput != null && primaryOutput != null) {
+			NBTTagCompound nbt = new NBTTagCompound();
+
+			nbt.setInteger("energy", flux);
+			nbt.setTag("primaryInput", new NBTTagCompound());
+			nbt.setTag("secondaryInput", new NBTTagCompound());
+			nbt.setTag("primaryOutput", new NBTTagCompound());
+
+			if (secondaryOutput != null) {
+				nbt.setTag("secondaryOutput", new NBTTagCompound());
+			}
+
+			primaryInput.writeToNBT(nbt.getCompoundTag("primaryInput"));
+			secondaryInput.writeToNBT(nbt.getCompoundTag("secondaryInput"));
+			primaryOutput.writeToNBT(nbt.getCompoundTag("primaryOutput"));
+
+			if (secondaryOutput != null) {
+				secondaryOutput.writeToNBT(nbt.getCompoundTag("secondaryOutput"));
+				nbt.setInteger("secondaryChance", secondaryChance);
+			}
+			FMLInterModComms.sendMessage("ThermalExpansion", "SmelterRecipe", nbt);
+		}
+	}
+
+	public static void addInductionAlloyRecipe(String solventName, int solventAmount, String soluteName, int soluteAmount, ItemStack output) {
+		//Dust
+		ArrayList<ItemStack> primaryOreList = OreDictionary.getOres("dust" + solventName);
+		ArrayList<ItemStack> secondaryOreList = OreDictionary.getOres("dust" + soluteName);
+
+		if (primaryOreList.size() > 0 && secondaryOreList.size() > 0) {
+			addInductionSmelterRecipe(1600, ItemHelper.cloneStack(primaryOreList.get(0), solventAmount), ItemHelper.cloneStack(secondaryOreList.get(0), soluteAmount), ItemHelper.cloneStack(output, solventAmount + soluteAmount));
+		}
+
+		primaryOreList = OreDictionary.getOres("ingot" + solventName);
+		secondaryOreList = OreDictionary.getOres("ingot" + soluteName);
+
+		if (primaryOreList.size() > 0 && secondaryOreList.size() > 0) {
+			addInductionSmelterRecipe(2400, ItemHelper.cloneStack(primaryOreList.get(0), solventAmount), ItemHelper.cloneStack(secondaryOreList.get(0), soluteAmount), ItemHelper.cloneStack(output, solventAmount + soluteAmount));
+		}
+	}
+
+	public static void removeSmelterRecipe(ItemStack primaryInput, ItemStack secondaryInput) {
+		if (primaryInput != null && secondaryInput != null) {
+			NBTTagCompound toSend = new NBTTagCompound();
+
+			toSend.setTag("primaryInput", new NBTTagCompound());
+			toSend.setTag("secondaryInput", new NBTTagCompound());
+
+			primaryInput.writeToNBT(toSend.getCompoundTag("primaryInput"));
+			secondaryInput.writeToNBT(toSend.getCompoundTag("secondaryInput"));
+			FMLInterModComms.sendMessage("ThermalExpansion", "RemoveSmelterRecipe", toSend);
+		}
+	}
+
+	/**
+	 * Use this to register an Ore TYPE as a "Blast" recipe - it will require Pyrotheum Dust to smelt. Do not add the prefix. This is an opt-in for ores which
+	 * do NOT have vanilla furnace recipes.
+	 *
+	 * Ex: "Steel" or "ElectrumFlux", not "dustSteel" or "dustElectrumFlux"
+	 *
+	 * @param oreType
+	 */
+	public static void addSmelterBlastOre(String oreType) {
+		NBTTagCompound nbt = new NBTTagCompound();
+
+		nbt.setString("oreType", oreType);
+
+		FMLInterModComms.sendMessage("ThermalExpansion", "SmelterBlastOreType", nbt);
+	}
+
+	/** THERMAL EXPANSION - MAGMA CRUCIBLE CRAFTING **/
+
+	/** THERMAL EXPANSION - FLUID TRANSPOSER CRAFTING **/
+
+	/** THERMAL EXPANSION - INSOLATOR CRAFTING **/
+
+	/** THERMAL EXPANSION - MAGMATIC FUEL **/
+	public static void addMagmaticFuel(String fluidName, int energy) {
+		NBTTagCompound nbt = new NBTTagCompound();
+
+		nbt.setString("fluidName", fluidName);
+		nbt.setInteger("energy", energy);
+
+		FMLInterModComms.sendMessage("ThermalExpansion", "MagmaticFuel", nbt);
+	}
+
+	/** THERMAL EXPANSION - COMPRESSION FUEL **/
+	public static void addCompressionFuel(String fluidName, int energy) {
+		NBTTagCompound nbt = new NBTTagCompound();
+
+		nbt.setString("fluidName", fluidName);
+		nbt.setInteger("energy", energy);
+
+		FMLInterModComms.sendMessage("ThermalExpansion", "CompressionFuel", nbt);
+	}
+
+	/** THERMAL EXPANSION - REACTANT FUEL **/
+	public static void addReactantFuel(String fluidName, int energy) {
+		NBTTagCompound nbt = new NBTTagCompound();
+
+		nbt.setString("fluidName", fluidName);
+		nbt.setInteger("energy", energy);
+
+		FMLInterModComms.sendMessage("ThermalExpansion", "ReactantFuel", nbt);
+	}
+
+	/** THERMAL EXPANSION - DYNAMO COOLANT **/
+	public static void addCoolant(String fluidName, int energy) {
+		NBTTagCompound nbt = new NBTTagCompound();
+
+		nbt.setString("fluidName", fluidName);
+		nbt.setInteger("energy", energy);
+
+		FMLInterModComms.sendMessage("ThermalExpansion", "Coolant", nbt);
+	}
+
+	/** OTHERS/MULTIPLE **/
 	public static void registerWithHandlers(ItemStack itemstack, String name, String... oreDict) {
 		GameRegistry.registerCustomItemStack(name, itemstack);
 		registerFMP(itemstack);

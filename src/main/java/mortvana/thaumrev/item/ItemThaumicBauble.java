@@ -5,7 +5,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
 import mortvana.thaumrev.library.ThaumRevLibrary;
-import mortvana.thaumrev.melteddashboard.intermod.baubles.item.FluxGearItemBauble;
+import mortvana.melteddashboard.intermod.baubles.item.FluxGearItemBauble;
 
 public class ItemThaumicBauble extends FluxGearItemBauble {
 

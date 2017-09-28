@@ -7,7 +7,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 import mortvana.thaumrev.library.ThaumRevLibrary;
-import mortvana.thaumrev.melteddashboard.block.FluxGearBlockBase;
+import mortvana.melteddashboard.block.FluxGearBlockBase;
 
 import static mortvana.thaumrev.library.ThaumRevLibrary.*;
 

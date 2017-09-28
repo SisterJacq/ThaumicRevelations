@@ -13,7 +13,7 @@ import net.minecraft.world.World;
 import gnu.trove.map.TMap;
 import gnu.trove.map.hash.THashMap;
 import mortvana.thaumrev.library.ThaumRevLibrary;
-import mortvana.thaumrev.melteddashboard.item.FluxGearItemInteractive;
+import mortvana.melteddashboard.item.FluxGearItemInteractive;
 
 public class ItemThaumRev extends FluxGearItemInteractive {
 

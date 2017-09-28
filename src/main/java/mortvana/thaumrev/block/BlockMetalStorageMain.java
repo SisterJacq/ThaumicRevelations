@@ -5,8 +5,8 @@ import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-import mortvana.thaumrev.melteddashboard.block.FluxGearBlockBase;
-import mortvana.thaumrev.melteddashboard.lib.ThaumcraftLibrary;
+import mortvana.melteddashboard.block.FluxGearBlockBase;
+import mortvana.melteddashboard.lib.ThaumcraftLibrary;
 import mortvana.thaumrev.util.RecipeHelper;
 
 import static mortvana.thaumrev.library.ThaumRevLibrary.*;

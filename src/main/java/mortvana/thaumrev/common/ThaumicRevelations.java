@@ -7,7 +7,7 @@ import cpw.mods.fml.common.event.*;
 
 import mortvana.thaumrev.library.ThaumRevLibrary;
 import mortvana.thaumrev.network.CommonProxy;
-import mortvana.thaumrev.melteddashboard.lib.ThaumcraftLibrary;
+import mortvana.melteddashboard.lib.ThaumcraftLibrary;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

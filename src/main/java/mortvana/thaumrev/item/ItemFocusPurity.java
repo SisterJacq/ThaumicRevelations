@@ -6,7 +6,7 @@ import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 
 import mortvana.thaumrev.entity.EntityPurity;
-import mortvana.thaumrev.melteddashboard.util.helpers.mod.ThaumcraftHelper;
+import mortvana.melteddashboard.util.helpers.mod.ThaumcraftHelper;
 import mortvana.thaumrev.util.item.ItemFocusBase;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.wands.FocusUpgradeType;

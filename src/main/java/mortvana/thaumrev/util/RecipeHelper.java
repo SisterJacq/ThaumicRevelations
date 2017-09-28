@@ -12,9 +12,8 @@ import cpw.mods.fml.common.event.FMLInterModComms;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.*;
 
-import mortvana.thaumrev.melteddashboard.util.IStackProvider;
-import mortvana.thaumrev.melteddashboard.util.helpers.ItemHelper;
-import mortvana.thaumrev.melteddashboard.util.helpers.StringHelper;
+import mortvana.melteddashboard.util.IStackProvider;
+import mortvana.melteddashboard.util.helpers.ItemHelper;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.crafting.*;

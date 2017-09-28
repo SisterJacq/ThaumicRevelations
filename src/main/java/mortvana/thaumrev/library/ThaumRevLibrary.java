@@ -1,8 +1,8 @@
 package mortvana.thaumrev.library;
 
-import mortvana.thaumrev.melteddashboard.block.material.MaterialFalseAir;
-import mortvana.thaumrev.melteddashboard.item.FluxGearItemInteractive;
-import mortvana.thaumrev.melteddashboard.intermod.baubles.item.FluxGearItemBauble;
+import mortvana.melteddashboard.block.material.MaterialFalseAir;
+import mortvana.melteddashboard.item.FluxGearItemInteractive;
+import mortvana.melteddashboard.intermod.baubles.item.FluxGearItemBauble;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -14,7 +14,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
-import mortvana.thaumrev.melteddashboard.item.ItemArmorFluxGear;
+import mortvana.melteddashboard.item.ItemArmorFluxGear;
 import mortvana.thaumrev.util.item.ItemArmorInfusableBase;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.crafting.*;

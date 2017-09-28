@@ -6,7 +6,7 @@ import net.minecraft.world.IBlockAccess;
 import cpw.mods.fml.client.registry.ISimpleBlockRenderingHandler;
 
 import mortvana.thaumrev.library.ThaumRevLibrary;
-import mortvana.thaumrev.melteddashboard.util.helpers.RenderHelper;
+import mortvana.melteddashboard.util.helpers.RenderHelper;
 import org.lwjgl.opengl.GL11;
 
 public class RenderDecorStone implements ISimpleBlockRenderingHandler {

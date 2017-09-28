@@ -164,7 +164,7 @@ public class ExcubituraGenerator implements IWorldGenerator {
 			modifier *= 10;
 		}
 
-		return modifier;
+		return modifier * 5;
 	}
 
 

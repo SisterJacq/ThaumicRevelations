@@ -15,9 +15,9 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-import mortvana.thaumrev.melteddashboard.block.FluxGearBlockBase;
-import mortvana.thaumrev.melteddashboard.util.helpers.ItemHelper;
-import mortvana.thaumrev.melteddashboard.util.helpers.StringHelper;
+import mortvana.melteddashboard.block.FluxGearBlockBase;
+import mortvana.melteddashboard.util.helpers.ItemHelper;
+import mortvana.melteddashboard.util.helpers.StringHelper;
 import mortvana.thaumrev.util.RecipeHelper;
 
 import static mortvana.thaumrev.library.ThaumRevLibrary.*;

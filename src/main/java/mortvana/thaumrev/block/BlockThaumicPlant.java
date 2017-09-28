@@ -8,7 +8,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
 import mortvana.thaumrev.library.ThaumRevLibrary;
-import mortvana.thaumrev.melteddashboard.block.FluxGearBlockPlant;
+import mortvana.melteddashboard.block.FluxGearBlockPlant;
 
 public class BlockThaumicPlant extends FluxGearBlockPlant {
 

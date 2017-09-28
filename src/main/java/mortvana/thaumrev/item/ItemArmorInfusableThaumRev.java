@@ -10,7 +10,7 @@ import mortvana.thaumrev.common.ThaumicRevelations;
 import mortvana.thaumrev.util.item.data.ThaumRevMaterialData;
 import mortvana.thaumrev.util.item.data.ThaumRevMaterialDataSet;
 import mortvana.thaumrev.library.ThaumRevLibrary;
-import mortvana.thaumrev.melteddashboard.util.helpers.StringHelper;
+import mortvana.melteddashboard.util.helpers.StringHelper;
 import mortvana.thaumrev.util.item.ItemArmorInfusableBase;
 import thaumcraft.api.IRunicArmor;
 

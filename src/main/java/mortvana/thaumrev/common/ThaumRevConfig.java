@@ -2,7 +2,7 @@ package mortvana.thaumrev.common;
 
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
-import mortvana.thaumrev.melteddashboard.util.ConfigBase;
+import mortvana.melteddashboard.util.ConfigBase;
 import net.minecraftforge.common.config.Configuration;
 
 import java.io.File;

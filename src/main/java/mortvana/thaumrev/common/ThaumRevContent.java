@@ -12,17 +12,16 @@ import baubles.api.BaubleType;
 import magicbees.api.MagicBeesAPI;
 import mortvana.thaumrev.block.*;
 import mortvana.thaumrev.item.*;
-import mortvana.thaumrev.melteddashboard.intermod.baubles.util.DefaultBaubleData;
-import mortvana.thaumrev.melteddashboard.intermod.thaumcraft.research.FluxGearResearchItem;
-import mortvana.thaumrev.melteddashboard.util.helpers.NBTHelper;
+import mortvana.melteddashboard.intermod.baubles.util.DefaultBaubleData;
+import mortvana.melteddashboard.intermod.thaumcraft.research.FluxGearResearchItem;
 import mortvana.thaumrev.util.AspectStack;
 import mortvana.thaumrev.util.RecipeHelper;
 import mortvana.thaumrev.util.item.data.ThaumRevMaterialDataSet;
-import mortvana.thaumrev.melteddashboard.ColorLibrary;
-import mortvana.thaumrev.melteddashboard.inventory.FluxGearCreativeTab;
-import mortvana.thaumrev.melteddashboard.item.ItemArmorFluxGear;
-import mortvana.thaumrev.melteddashboard.util.helpers.ItemHelper;
-import mortvana.thaumrev.melteddashboard.util.helpers.mod.ThaumcraftHelper;
+import mortvana.melteddashboard.ColorLibrary;
+import mortvana.melteddashboard.inventory.FluxGearCreativeTab;
+import mortvana.melteddashboard.item.ItemArmorFluxGear;
+import mortvana.melteddashboard.util.helpers.ItemHelper;
+import mortvana.melteddashboard.util.helpers.mod.ThaumcraftHelper;
 import mortvana.thaumrev.world.ExcubituraGenerator;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -31,7 +30,7 @@ import thaumcraft.api.research.ResearchPage;
 
 import static thaumcraft.api.aspects.Aspect.*;
 import static mortvana.thaumrev.library.ThaumRevLibrary.*;
-import static mortvana.thaumrev.melteddashboard.lib.ThaumcraftLibrary.*;
+import static mortvana.melteddashboard.lib.ThaumcraftLibrary.*;
 import static mortvana.thaumrev.util.RecipeHelper.*;
 
 public class ThaumRevContent {
@@ -146,12 +145,12 @@ public class ThaumRevContent {
 	}
 
 	public static void loadItems() {
-		ingotCopper = generalItem.addOreDictItem(0, iCu);
-		ingotZinc = generalItem.addOreDictItem(1, "ingotZinc");
+		ingotCopper = generalItem.addColorizedOreDictItem(0, iCu, "ingot", ColorLibrary.CMAT_COPPER);
+		ingotZinc = generalItem.addColorizedOreDictItem(1, "ingotZinc", "ingot", ColorLibrary.CMAT_ZINC);
 		ingotTin = generalItem.addOreDictItem(2, iSn);
 		ingotSilver = generalItem.addOreDictItem(3, "ingotSilver");
 
-		nuggetCopper = generalItem.addOreDictItem(10, "nuggetCopper");
+		nuggetCopper = generalItem.addColorizedOreDictItem(10, "nuggetCopper", "nugget", ColorLibrary.CMAT_COPPER);
 		nuggetZinc = generalItem.addOreDictItem(11, "nuggetZinc");
 		nuggetTin = generalItem.addOreDictItem(12, "nuggetTin");
 		nuggetSilver = generalItem.addOreDictItem(13, "nuggetSilver");
@@ -727,7 +726,7 @@ public class ThaumRevContent {
 		researchWardenry.setPages(new ResearchPage("0"), new ResearchPage("1"));
 
 		researchWardenicObsidian.setPages(new ResearchPage("0"), new ResearchPage(recipeWardenicHardener));
-		((FluxGearResearchItem) researchWardenicObsidian).addPages(recipeWardenicHardenerAlt != null, new ResearchPage(recipeWardenicHardenerAlt));
+		//((FluxGearResearchItem) researchWardenicObsidian).addPages(recipeWardenicHardenerAlt != null, new ResearchPage(recipeWardenicHardenerAlt));
 
 		researchExcubituraPaste.setPages(new ResearchPage("0"), new ResearchPage(recipeExcubituraPaste));
 		researchWardencloth.setPages(new ResearchPage("0"), new ResearchPage(recipeExcubituraFabric), new ResearchPage(recipeWardencloth));

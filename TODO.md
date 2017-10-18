@@ -1,13 +1,15 @@
 Before v0.0.1:
 - [ ] Fix Texture Issue
+- [ ] Colorizer
 - [ ] Wild Cotton
 - [ ] Thistle
 - [x] Cotton Crafting
 - [ ] Quartz Renderer
 - [x] Wardernic Obsidian
 - [x] Eldritch Stone
-- [ ] Eldrich Keystone
+- [x] Eldrich Keystone
 - [ ] Ores
+	- [ ] Chalcocite
 	- [ ] Sphalerite
 	- [ ] Cassiterite
 	- [ ] Tetrahedrite
@@ -40,31 +42,35 @@ Maybe Before v0.0.1:
 - [ ] Excubitura Farming
 - [ ] Thaumium and Void Shears and Sickles
 - [ ] Transmutaions
-	Vannila:
+	- Vannila:
 		- [ ] Diamond
 		- [ ] Emerald
 		- [ ] Coal
 		- [ ] Redstone
 		- [ ] Lapis Lazuli
 		- [ ] Nether Quartz
-	Other OreDict:
+	- Other OreDict:
 		- [ ] Nickel (TF, ElC)
 		- [ ] Aluminium (TiC, ElC)
 		- [ ] Platinum (TF, ElC)
 		- [ ] Uranium (IC2, ReC, BR)
-	Thaumcraft:
+	- Thaumcraft:
 		- [ ] Shards
 		- [ ] Amber
 		- [ ] Quicksilver
 		- [ ] Salis Mundus
-	Thaumic Revelations/Project Flux Gear:
+	- Thaumic Revelations/Project Flux Gear:
 		- [ ] Zinc
 		- [ ] Bismuth
 		- [ ] Arsenic
 		- [ ] Antimony
 		- [ ] Tungsten
 		- [ ] Iridium
-	Project Flux Gear Future-proofing:
+		- [ ] Osmium
+		- [ ] Dioptase
+        - [ ] Pyrope
+        - [ ] Fluonic Sapphire
+	- Project Flux Gear Future-proofing:
 		- [ ] Titanium
 		- [ ] Molybdenum
 		- [ ] Palladium
@@ -73,19 +79,14 @@ Maybe Before v0.0.1:
 		- [ ] Tellurium
 		- [ ] Cadmium
 		- [ ] Myuvil
-		- [ ] Dioptase
-		- [ ] Pyrope
-		- [ ] Metebelis Sapphire (Working Name)
 		- [ ] Neodymium
 		- [ ] Vanadium
 		- [ ] Manganese
 		- [ ] Thorium
-	Mekanism:
-		- [ ] Osmium
-	Tinker's Construct:
+	- Tinker's Construct:
 		- [ ] Nether Cobalt
 		- [ ] Ardite
-	Various Gems:
+	- Various Gems:
 		- [ ] Corrundum
 		- [ ] Ruby
 		- [ ] Sapphire
@@ -95,37 +96,37 @@ Maybe Before v0.0.1:
 		- [ ] Topaz
 		- [ ] Tanzanite
 		- [ ] Malachite
-	AM2:
+	- AM2:
 		- [ ] Blue Topaz
 		- [ ] Chimerite
 		- [ ] Sunstone
 		- [ ] Moonstone
 		- [ ] Vitreum?
-	Railcraft:
+	- Railcraft:
 		- [ ] Sulfur
 		- [ ] Saltpeter
 		- [ ] Firestone
-	Project:Red:
+	- Project:Red:
 		- [ ] Electrotine
-	Applied Energistic 2:
+	- Applied Energistic 2:
 		- [ ] Certus Quartz
 		- [ ] Fluix Quartz	
-	Forestry:
+	- Forestry:
 		- [ ] Apatite
-	Magical Crops:
+	- Magical Crops:
 		- [ ] Essence
-	Thaumic Tinkerer 2:
+	- Thaumic Tinkerer 2:
 		- [ ] Nether Shards
 		- [ ] End Shards
-	Forrbiden Magic:
+	- Forrbiden Magic:
 		- [ ] Sin Shards
 		- [ ] Tainted Shard
-	Metallurgy:
+	- Metallurgy:
 		- [ ] Fantasy
 		- [ ] Nether
 		- [ ] End
 		- [ ] Other
-	ReactorCraft (if Reika allows):
+	- ReactorCraft (if Reika allows):
 		- [ ] Indium
 		- [ ] Cadmium
 		- [ ] Ammonium Chloride

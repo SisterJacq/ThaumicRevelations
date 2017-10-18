@@ -36,7 +36,7 @@ public class ItemThaumRev extends FluxGearItemInteractive {
 
 	@Override
 	public Entity createEntity(World world, Entity entityItem, ItemStack stack) {
-		if (stack.getItemDamage() == 1050) {
+		if (stack.getItemDamage() == 275) {
 			entityItem.isImmuneToFire = true;
 		}
 		return super.createEntity(world, entityItem, stack);
@@ -44,7 +44,7 @@ public class ItemThaumRev extends FluxGearItemInteractive {
 
 	@Override
 	public boolean onEntityItemUpdate(EntityItem entityItem) {
-		if (entityItem.getEntityItem().getItemDamage() == 1050) {
+		if (entityItem.getEntityItem().getItemDamage() == 275) {
 			int x = MathHelper.floor_double(entityItem.posX);
 			int y = MathHelper.floor_double(entityItem.posY + 0.1F);
 			int z = MathHelper.floor_double(entityItem.posZ);

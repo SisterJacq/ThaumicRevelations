@@ -44,22 +44,22 @@ public class BlockMetalStorageMain extends FluxGearBlockBase {
 			RecipeHelper.registerOreDict(new ItemStack(this, 1, i), STORAGE_MAIN_NAMES[i]);
 		}
 
-		blockCopper = new ItemStack(blockStorage, 1, 0);
-		blockZinc = new ItemStack(blockStorage, 1, 1);
-		blockTin = new ItemStack(blockStorage, 1, 2);
-		blockSilver = new ItemStack(blockStorage, 1, 3);
-		blockBrass = new ItemStack(blockStorage, 1, 4);
-		blockBronze = new ItemStack(blockStorage, 1, 5);
-		blockThaumicBronze = new ItemStack(blockStorage, 1, 6);
-		blockSteel = new ItemStack(blockStorage, 1, 7);
-		blockVoidbrass = new ItemStack(blockStorage, 1, 8);
-		blockVoidsteel = new ItemStack(blockStorage, 1, 9);
-		blockElectrum = new ItemStack(blockStorage, 1, 10);
-		blockWardenicSteel = new ItemStack(blockStorage, 1, 11);
-		blockThaumicElectrum = new ItemStack(blockStorage, 1, 12);
-		blockVoidmetal = new ItemStack(blockStorage, 1, 13);
-		blockWardenicMetal = new ItemStack(blockStorage, 1, 14);
-		blockWardenicComposite = new ItemStack(blockStorage, 1, 15);
+		blockCopper = new ItemStack(blockStorageMain, 1, 0);
+		blockZinc = new ItemStack(blockStorageMain, 1, 1);
+		blockTin = new ItemStack(blockStorageMain, 1, 2);
+		blockSilver = new ItemStack(blockStorageMain, 1, 3);
+		blockBrass = new ItemStack(blockStorageMain, 1, 4);
+		blockBronze = new ItemStack(blockStorageMain, 1, 5);
+		blockThaumicBronze = new ItemStack(blockStorageMain, 1, 6);
+		blockSteel = new ItemStack(blockStorageMain, 1, 7);
+		blockVoidbrass = new ItemStack(blockStorageMain, 1, 8);
+		blockVoidsteel = new ItemStack(blockStorageMain, 1, 9);
+		blockElectrum = new ItemStack(blockStorageMain, 1, 10);
+		blockWardenicSteel = new ItemStack(blockStorageMain, 1, 11);
+		blockThaumicElectrum = new ItemStack(blockStorageMain, 1, 12);
+		blockVoidmetal = new ItemStack(blockStorageMain, 1, 13);
+		blockWardenicMetal = new ItemStack(blockStorageMain, 1, 14);
+		blockWardenicComposite = new ItemStack(blockStorageMain, 1, 15);
 	}
 
 	public void recipes() {

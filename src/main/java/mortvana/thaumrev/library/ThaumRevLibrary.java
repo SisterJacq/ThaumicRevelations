@@ -30,7 +30,7 @@ public class ThaumRevLibrary {
 	public static final String MOD_NAME = "Thaumic Revelations";
 	public static final String MOD_VERSION = "vPO.TA.TO.RANDOM-DEV";
 	public static final String MOD_DEPENDENCIES = "required-after:Thaumcraft; after:MagicBees[2.3.0)";
-	public static final String API_NAME = "thaumicrevelationsapi";
+	public static final String API_NAME = "ThaumicRevelationsAPI";
     public static final String RESOURCE_PREFIX = "thaumrev";
     public static final String TEX_LOC_DEFAULT = "thaumrev:";
 
@@ -57,11 +57,13 @@ public class ThaumRevLibrary {
 
     /** BLOCKS **/
     public static Block blockThaumicPlant;
+	public static Block blockOre;
     public static Block blockFakeAir;
 	public static Block blockWoodDecor;
 	public static Block blockStoneDecor;
 	public static Block blockMetalDecor;
-	public static Block blockStorage;
+	public static Block blockStorageMain;
+	public static Block blockStorageAux;
 	public static Block blockTransparent;
 	public static Block blockWoodDevice;
 	public static Block blockStoneDevice;
@@ -73,18 +75,32 @@ public class ThaumRevLibrary {
     public static FluxGearItemInteractive generalItem;
     public static FluxGearItemBauble thaumicBauble;
 
-
     /** ITEMSTACKS **/
     public static ItemStack potato = new ItemStack(Items.potato); //Used for debugging, placeholding, and such
 
 	public static ItemStack excubituraRose;
+	public static ItemStack wildCotton;
+	public static ItemStack wildThistle;
 
 	public static ItemStack wardenicObsidian;
 	public static ItemStack eldritchStone;
 	public static ItemStack wardenicQuartzBlock;
 	public static ItemStack wardenicQuartzChiseled;
 	public static ItemStack wardenicQuartzPillar;
+
+	public static ItemStack oreChalcocite;
 	public static ItemStack oreSphalerite;
+	public static ItemStack oreCassiterite;
+	public static ItemStack oreTetrahedrite;
+	public static ItemStack oreTennantite;
+	public static ItemStack oreNativeSilver;
+	public static ItemStack oreIridosmium;
+	public static ItemStack oreWolframite;
+	public static ItemStack oreBismuthinite;
+	public static ItemStack orePyrope;
+	public static ItemStack oreDioptase;
+	public static ItemStack oreFluonicSapphire;
+	public static ItemStack oreXenotime;
 
 	public static ItemStack blockCopper;
 	public static ItemStack blockZinc;
@@ -107,131 +123,194 @@ public class ThaumRevLibrary {
 	public static ItemStack slabEldritch;
 	public static ItemStack slabWardenicQuartz;
 
+	//GENERAL ITEM
 	public static ItemStack ingotCopper;                    //00000
 	public static ItemStack ingotZinc;                      //00001
 	public static ItemStack ingotTin;                       //00002
-	public static ItemStack ingotSilver;                    //00003
+	public static ItemStack ingotAntimonialBronze;          //00003
+	public static ItemStack ingotArsenicalBronze;           //00004
+	public static ItemStack ingotSilver;                    //00005
+	public static ItemStack ingotTungsten;                  //00006
+	public static ItemStack ingotOsmium;                    //00007
+	public static ItemStack ingotIridium;                   //00008
+	public static ItemStack ingotBismuth;                   //00009
 
 	public static ItemStack nuggetCopper;                   //00010
 	public static ItemStack nuggetZinc;                     //00011
 	public static ItemStack nuggetTin;                      //00012
-	public static ItemStack nuggetSilver;                   //00013
+	public static ItemStack nuggetAntimonialBronze;         //00013
+	public static ItemStack nuggetArsenicalBronze;          //00014
+	public static ItemStack nuggetSilver;                   //00015
+	public static ItemStack nuggetTungsten;                 //00016
+	public static ItemStack nuggetOsmium;                   //00017
+	public static ItemStack nuggetIridium;                  //00018
+	public static ItemStack nuggetBismuth;                  //00019
 
 	public static ItemStack dustCopper;                     //00020
 	public static ItemStack dustZinc;                       //00021
 	public static ItemStack dustTin;                        //00022
-	public static ItemStack dustSilver;                     //00023
+	public static ItemStack dustAntimonialBronze;           //00023
+	public static ItemStack dustArsenicalBronze;            //00024
+	public static ItemStack dustSilver;                     //00025
+	public static ItemStack dustTungsten;                   //00026
+	public static ItemStack dustOsmium;                     //00027
+	public static ItemStack dustIridium;                    //00028
+	public static ItemStack dustBismuth;                    //00029
 
-	public static ItemStack ingotBrass;                     //00030
-	public static ItemStack ingotBronze;                    //00031
-	public static ItemStack ingotThaumicBronze;             //00032
-	public static ItemStack ingotSteel;                     //00033
-	public static ItemStack ingotVoidbrass;                 //00034
-	public static ItemStack ingotVoidsteel;                 //00035
-	public static ItemStack ingotElectrum;                  //00036
+	public static ItemStack gemPyrope;                      //00030
+	public static ItemStack gemDioptase;                    //00031
+	public static ItemStack gemFluonicSapphire;             //00032
+	public static ItemStack shardPyrope;                    //00033
+	public static ItemStack shardDioptase;                  //00034
+	public static ItemStack shardFluonicSapphire;           //00035
+	public static ItemStack dustPyrope;                     //00036
+	public static ItemStack dustDioptase;                   //00037
+	public static ItemStack dustFluonicSapphire;            //00038
+	public static ItemStack dustVoidmetal;                  //00039
 
-	public static ItemStack nuggetBrass;                    //00040
-	public static ItemStack nuggetBronze;                   //00041
-	public static ItemStack nuggetThaumicBronze;            //00042
-	public static ItemStack nuggetSteel;                    //00043
-	public static ItemStack nuggetVoidbrass;                //00044
-	public static ItemStack nuggetVoidsteel;                //00045
-	public static ItemStack nuggetElectrum;                 //00046
+	public static ItemStack ingotBrass;                     //00040
+	public static ItemStack ingotBronze;                    //00041
+	public static ItemStack ingotThaumicBronze;             //00042
+	public static ItemStack ingotSteel;                     //00043
+	public static ItemStack ingotVoidbrass;                 //00044
+	public static ItemStack ingotVoidsteel;                 //00045
+	public static ItemStack ingotElectrum;                  //00046
+	public static ItemStack ingotThaumicElectrum;           //00047
+	public static ItemStack ingotVoidtungsten;              //00048
+	public static ItemStack ingotOsLu;                      //00049
+	public static ItemStack ingotWardenicSteel;             //00050
+	public static ItemStack ingotWardenicMetal;             //00051
+	public static ItemStack ingotMithril;                   //00052
+	public static ItemStack ingotTinkersBronze;             //00053
+	public static ItemStack ingotThaumicTinkersBronze;      //00054
+	public static ItemStack ingotWardenicTinkersBronze;     //00055
 
-	public static ItemStack dustBrass;                      //00050
-	public static ItemStack dustBronze;                     //00051
-	public static ItemStack dustThaumicBronze;              //00052
-	public static ItemStack dustSteel;                      //00053
-	public static ItemStack dustVoidbrass;                  //00054
-	public static ItemStack dustVoidsteel;                  //00055
-	public static ItemStack dustElectrum;                   //00056
+	public static ItemStack nuggetBrass;                    //00060
+	public static ItemStack nuggetBronze;                   //00061
+	public static ItemStack nuggetThaumicBronze;            //00062
+	public static ItemStack nuggetSteel;                    //00063
+	public static ItemStack nuggetVoidbrass;                //00064
+	public static ItemStack nuggetVoidsteel;                //00065
+	public static ItemStack nuggetElectrum;                 //00066
+	public static ItemStack nuggetThaumicElectrum;          //00067
+	public static ItemStack nuggetVoidtungsten;             //00068
+	public static ItemStack nuggetOsLu;                     //00069
+	public static ItemStack nuggetWardenicSteel;            //00070
+	public static ItemStack nuggetWardenicMetal;            //00071
+	public static ItemStack nuggetMithril;                  //00072
+	public static ItemStack nuggetTinkersBronze;            //00073
+	public static ItemStack nuggetThaumicTinkersBronze;     //00074
+	public static ItemStack nuggetWardenicTinkersBronze;    //00075
 
-	public static ItemStack rawBrass;                       //00060
-	public static ItemStack rawBronze;                      //00061
-	public static ItemStack rawThaumicBronze;               //00062
+	public static ItemStack dustBrass;                      //00080
+	public static ItemStack dustBronze;                     //00081
+	public static ItemStack dustThaumicBronze;              //00082
+	public static ItemStack dustSteel;                      //00083
+	public static ItemStack dustVoidbrass;                  //00084
+	public static ItemStack dustVoidsteel;                  //00085
+	public static ItemStack dustElectrum;                   //00086
+	public static ItemStack dustThaumicElectrum;            //00087
+	public static ItemStack dustVoidtungsten;               //00088
+	public static ItemStack dustOsLu;                       //00089
+	public static ItemStack dustWardenicSteel;              //00090
+	public static ItemStack dustWardenicMetal;              //00091
+	public static ItemStack dustMithril;                    //00092
+	public static ItemStack dustTinkersBronze;              //00093
+	public static ItemStack dustThaumicTinkersBronze;       //00094
+	public static ItemStack dustWardenicTinkersBronze;      //00095
 
-	public static ItemStack rawElectrum;                    //00066
+	public static ItemStack rawBrass;                       //00100
+	public static ItemStack rawBronze;                      //00101
+	public static ItemStack rawThaumicBronze;               //00102
+	public static ItemStack rawElectrum;                    //00103
+	public static ItemStack rawOsLu;                        //00104
+	public static ItemStack rawWardenicMetal;               //00105
+	public static ItemStack rawMithril;                     //00106
+	public static ItemStack rawTinkersBronze;               //00107
+	public static ItemStack rawThaumicTinkersBronze;        //00108
 
-	public static ItemStack dustSalisMundusTiny;            //00070
+	public static ItemStack coatedThaumicBronze;            //00110
+	public static ItemStack coatedMithril;                  //00111
+	public static ItemStack coatedTinkersBronze;            //00112
+	public static ItemStack coatedThaumicTinkersBronze;     //00113
 
-	public static ItemStack coatedThaumicBronze;            //00072
+	public static ItemStack firedThaumicBronze;             //00120
+	public static ItemStack firedMithril;                   //00121
+	public static ItemStack firedTinkersBronze;             //00122
+	public static ItemStack firedThaumicTinkersBronze;      //00123
 
-	public static ItemStack ceramicSlag;                    //00080
-	public static ItemStack thaumicSlag;                    //00081
-	public static ItemStack arcaneSingularity;              //00082
-	public static ItemStack stabilizedSingularity;          //00083
-	public static ItemStack animatedPiston;                 //00084
-	public static ItemStack enchantedSilverwood;            //00085
-	public static ItemStack consecratedSilverwood;          //00086
-	public static ItemStack cotton;                         //00087
-	public static ItemStack cottonFiber;                    //00088
-	public static ItemStack cottonFabric;                   //00089
-	public static ItemStack cottonTreated;                  //00090
-	public static ItemStack cottonEnchanted;                //00091
-	public static ItemStack thaumicBronzeChain;             //00092
-	public static ItemStack eldritchCog;                    //00093
+	public static ItemStack dustAer;                        //00130
+	public static ItemStack dustIgnis;                      //00131
+	public static ItemStack dustAqua;                       //00132
+	public static ItemStack dustTerra;                      //00133
+	public static ItemStack dustOrdo;                       //00134
+	public static ItemStack dustPerditio;                   //00135
+	public static ItemStack dustSalisMundusTiny;            //00136
+	public static ItemStack gemFluonicPyroptase;            //00137
+	public static ItemStack shardFluonicPyroptase;          //00138
+	public static ItemStack dustFluonicPyroptase;           //00139
 
-	public static ItemStack excubituraPetal;                //00100
-
-	public static ItemStack excubituraPaste;                //00110
-	public static ItemStack excubituraFabric;               //00111
-	public static ItemStack itemWardencloth;                //00112
-
-	public static ItemStack excubituraOilUnproc;            //00120
-	public static ItemStack excubituraOil;                  //00121
-	public static ItemStack wardenicBronzeChain;            //00122
-	public static ItemStack primalBronzeChain;              //00123
-	public static ItemStack wardenicBronzePlate;            //00124
-
-	public static ItemStack excubituraOilPure;              //00130
-	public static ItemStack wardenicSteelChain;             //00131
-	public static ItemStack oiledSteelChain;                //00132
-	public static ItemStack wardenicSteelPlate;             //00133
-	public static ItemStack detailedSteelPlate;             //00134
-	public static ItemStack runicSteelPlate;                //00135
-	public static ItemStack consecratedSteelPlate;          //00136
-
-	public static ItemStack wardenicQuartz;                 //00140
-	public static ItemStack wardenicCrystal;                //00141
-	public static ItemStack wardenicQuartzInf;              //00142
-	public static ItemStack dustWardenicQuartz;             //00143
-	public static ItemStack dustWardenicCrystal;            //00144
-	public static ItemStack binderWardenic;                 //00145
-	public static ItemStack rawWardenicComposite;           //00146
-	public static ItemStack ingotWardenicComposite;         //00147
-	public static ItemStack wardenicCompositePlate;         //00148
-	public static ItemStack fittedCompositePlate;           //00149
-	public static ItemStack detailedCompositePlate;         //00150
-	public static ItemStack runicCompositePlate;            //00151
-	public static ItemStack consecratedCompositePlate;      //00152
-	public static ItemStack primalCompositePlate;           //00153
-
-	public static ItemStack wardenicCrystalAwakened;        //00155
-
-	public static ItemStack ingotWardenicSteel;             //00500
-	public static ItemStack ingotThaumicElectrum;           //00501
-	public static ItemStack ingotWardenicMetal;             //00502
-
-	public static ItemStack nuggetWardenicSteel;            //00510
-	public static ItemStack nuggetThaumicElectrum;          //00511
-	public static ItemStack nuggetWardenicMetal;            //00502
-
-	public static ItemStack dustWardenicSteel;              //00520
-	public static ItemStack dustThaumicElectrum;            //00521
-	public static ItemStack dustWardenicMetal;              //00522
-
-	public static ItemStack rawWardenicMetal;               //00532
+	public static ItemStack ceramicSlag;                    //00140
+	public static ItemStack thaumicSlag;                    //00141
 
 
+	public static ItemStack arcaneSingularity;              //00150
+	public static ItemStack stabilizedSingularity;          //00151
+	public static ItemStack animatedPiston;                 //00152
+	public static ItemStack enchantedSilverwood;            //00153
+	public static ItemStack consecratedSilverwood;          //00154
+	public static ItemStack cotton;                         //00155
+	public static ItemStack cottonFiber;                    //00156
+	public static ItemStack cottonFabric;                   //00157
+	public static ItemStack cottonTreated;                  //00158
+	public static ItemStack cottonEnchanted;                //00159
+	public static ItemStack thaumicBronzeChain;             //00160
+	public static ItemStack eldritchCog;                    //00161
+	public static ItemStack eldritchKeystone;               //00162
+
+	public static ItemStack seedExcubitura;                 //00190
+	public static ItemStack seedCotton;                     //00191
+
+	public static ItemStack excubituraPetal;                //00200
+
+	public static ItemStack excubituraPaste;                //00210
+	public static ItemStack excubituraFabric;               //00211
+	public static ItemStack itemWardencloth;                //00212
+
+	public static ItemStack excubituraOilUnproc;            //00220
+	public static ItemStack excubituraOil;                  //00221
+	public static ItemStack wardenicBronzeChain;            //00222
+	public static ItemStack primalBronzeChain;              //00223
+	public static ItemStack wardenicBronzePlate;            //00224
+
+	public static ItemStack excubituraOilPure;              //00230
+	public static ItemStack wardenicSteelChain;             //00231
+	public static ItemStack oiledSteelChain;                //00232
+	public static ItemStack wardenicSteelPlate;             //00233
+	public static ItemStack detailedSteelPlate;             //00234
+	public static ItemStack runicSteelPlate;                //00235
+	public static ItemStack consecratedSteelPlate;          //00236
+
+	public static ItemStack wardenicQuartz;                 //00240
+	public static ItemStack wardenicCrystal;                //00241
+	public static ItemStack wardenicQuartzInf;              //00242
+	public static ItemStack dustWardenicQuartz;             //00243
+	public static ItemStack dustWardenicCrystal;            //00244
+	public static ItemStack binderWardenic;                 //00245
+	public static ItemStack rawWardenicComposite;           //00246
+	public static ItemStack ingotWardenicComposite;         //00247
+	public static ItemStack wardenicCompositePlate;         //00248
+	public static ItemStack fittedCompositePlate;           //00249
+	public static ItemStack detailedCompositePlate;         //00250
+	public static ItemStack runicCompositePlate;            //00251
+	public static ItemStack consecratedCompositePlate;      //00252
+	public static ItemStack primalCompositePlate;           //00253
+
+	public static ItemStack wardenicCrystalAwakened;        //00255
+
+	public static ItemStack wardenicHardener;               //00275
 
 	public static ItemStack wardenJournal1;                 //01001
-
-	public static ItemStack wardenicHardener;               //01050
-
-	public static ItemStack firedThaumicBronze;             //01102
-
-	public static ItemStack seedExcubitura;                 //01200
-	public static ItemStack seedCotton;                     //01201
 
 	public static ItemStack aluDenseTemp;                   //30000
 
@@ -516,7 +595,21 @@ public class ThaumRevLibrary {
 			"wardenicQuartzPillar",
 			"wardenicQuartzPillar",
 			"wardenicQuartzPillar",
-			"oreSphalerite"
+	};
+
+	public static final String[] ORE_NAMES = {
+			"oreChalcocite",
+			"oreSphalerite",
+			"oreCassiterite",
+			"oreTetrahedrite",
+			"oreTennantite",
+			"oreNativeSilver",
+			"oreIridosmium",
+			"oreWolframite",
+			"oreBismuthinite",
+			"orePyrope",
+			"oreDioptase",
+			"oreFluonicSapphire"
 	};
 
 	public static final String[] STORAGE_MAIN_NAMES = {

@@ -45,14 +45,12 @@ public class BlockStoneDecor extends FluxGearBlockBase {
 		wardenicQuartzBlock = new ItemStack(this, 1, 2);
 		wardenicQuartzChiseled = new ItemStack(this, 1, 3);
 		wardenicQuartzPillar = new ItemStack(this, 1, 4);
-		oreSphalerite = new ItemStack(this, 1, 7);
 
 		RecipeHelper.registerOreDict(wardenicObsidian, "blockWardenicObsidian");
 		RecipeHelper.registerOreDict(eldritchStone, "blockEldritchStone");
 		for (int i = 2; i < 5; i++) {
 			RecipeHelper.registerOreDict(new ItemStack(this, 1, i), "blockQuartzWardenic");
 		}
-		RecipeHelper.registerOreDict(oreSphalerite, "oreZinc", "oreSphalerite");
 	}
 
 	public void recipes() {
@@ -63,8 +61,6 @@ public class BlockStoneDecor extends FluxGearBlockBase {
 
 		recipeQuartzResetChiseled = RecipeHelper.addShapelessRecipe(wardenicQuartzBlock, wardenicQuartzChiseled);
 		recipeQuartzResetPillar = RecipeHelper.addShapelessRecipe(wardenicQuartzBlock, wardenicQuartzPillar);
-
-		RecipeHelper.addSmelting(oreSphalerite, ingotZinc, 0.95F);
 	}
 
 	@Override
@@ -137,7 +133,6 @@ public class BlockStoneDecor extends FluxGearBlockBase {
 		addIcons(register, 4, names[4] + "_side");          //Wardenic Quartz Pillar (Side)
 		addIcons(register, 5, names[4] + "_end");           //Wardenic Quartz Pillar (Ends)
 		addIcons(register, 6, names[3] + "_end");           //Chiseled Wardenic Quartz (Ends)
-		addIcons(register, 7, names[7]);                    //Sphalerite Ore
 		addIcons(register, 16, names[2] + "_top");          //Wardenic Quartz (Top)
 		addIcons(register, 17, names[2] + "_bottom");       //Wardenic Quartz (Bottom)
 	}
@@ -163,35 +158,12 @@ public class BlockStoneDecor extends FluxGearBlockBase {
 		list.add(new ItemStack(item, 1, 2));
 		list.add(new ItemStack(item, 1, 3));
 		list.add(new ItemStack(item, 1, 4));
-		list.add(new ItemStack(item, 1, 7));
 	}
 
 	@Override
 	public int damageDropped(int meta) {
 		return meta != 5 && meta != 6 ? meta : 4;
 	}
-
-	/*@Override
-	public ArrayList<ItemStack> getDrops(World world, int x, int y, int z, int meta, int fortune) {
-		ArrayList<ItemStack> list = new ArrayList<ItemStack>();
-
-		switch (meta) {
-			case 0:
-				list.add(wardenicObsidian);
-			case 1:
-				list.add(eldritchStone);
-			case 2:
-				list.add(wardenicQuartzBlock);
-			case 3:
-				list.add(wardenicQuartzChiseled);
-			case 4:
-			case 5:
-			case 6:
-				list.add(wardenicQuartzPillar);
-		}
-
-		return list;
-	}*/
 
 	@Override
 	public MapColor getMapColor(int par1) {
@@ -206,7 +178,7 @@ public class BlockStoneDecor extends FluxGearBlockBase {
 		icons[index] = register.registerIcon(directory + name);
 	}
 
-	public static final float[] HARDNESS = { 25F, 10F, 0.8F, 0.8F, 0.8F, 0.8F, 0.8F, 2.5F };
-	public static final float[] RESISTANCE = { 5000F, 500F, 25F, 25F, 25F, 25F, 25F, 4F };
-	public static final int[] RARITY = { 2, 1, 1, 1, 1, 1, 1, 0 };
+	public static final float[] HARDNESS = { 25F, 10F, 0.8F, 0.8F, 0.8F, 0.8F, 0.8F };
+	public static final float[] RESISTANCE = { 5000F, 500F, 25F, 25F, 25F, 25F, 25F };
+	public static final int[] RARITY = { 2, 1, 1, 1, 1, 1, 1 };
 }

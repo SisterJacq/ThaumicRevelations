@@ -110,7 +110,7 @@ public final class ColorLibrary {
 
 
 
-	public static final int COLOR_ORE_CHALCOCITE = 0x000000;
+	public static final int COLOR_ORE_CHALCOCITE = 0x53686A;
 	public static final int COLOR_ORE_CASSITERITE = 0x000000;
 	public static final int COLOR_ORE_GALENA = 0x000000;
 	public static final int COLOR_ORE_ACANTHITE = 0x000000;

@@ -295,7 +295,7 @@ public class FluxGearItem extends Item {
         return TextureHelper.itemTextureExists(getIconFromMeta(metadata));
     }
 
-    @Override
+/*    @Override
     public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean par4) {
         int meta = stack.getItemDamage();
         if (itemList.contains(meta)) {
@@ -306,5 +306,5 @@ public class FluxGearItem extends Item {
         } /*else {
             list.add(ThaumRevLibrary.NULL_TOOLTIP);
         }*/
-    }
+    //}
 }

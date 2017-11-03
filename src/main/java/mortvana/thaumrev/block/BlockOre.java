@@ -36,6 +36,7 @@ public class BlockOre extends FluxGearBlockBase {
 		setHarvestLevel("pickaxe", 3, 10);
 		setHarvestLevel("pickaxe", 3, 11);
 		setHarvestLevel("pickaxe", 2, 12);
+		setHarvestLevel("pickaxe", 2, 13);
 	}
 
 	public void register() {
@@ -52,6 +53,7 @@ public class BlockOre extends FluxGearBlockBase {
 		oreDioptase = new ItemStack(this, 1, 10);
 		oreFluonicSapphire = new ItemStack(this, 1, 11);
 		oreXenotime = new ItemStack(this, 1, 12);
+		oreMillerite = new ItemStack(this, 1, 13);
 
 		RecipeHelper.registerOreDict(oreChalcocite, "oreCopper", "oreChalcocite");
 		RecipeHelper.registerOreDict(oreSphalerite, "oreZinc", "oreSphalerite");
@@ -66,6 +68,7 @@ public class BlockOre extends FluxGearBlockBase {
 		RecipeHelper.registerOreDict(oreDioptase, "oreDioptase");
 		RecipeHelper.registerOreDict(oreFluonicSapphire, "oreFluonicSapphire");
 		RecipeHelper.registerOreDict(oreXenotime, "oreXenotime");
+		RecipeHelper.registerOreDict(oreMillerite, "oreNickel", "oreMillerite");
 	}
 
 	public void recipes() {
@@ -82,6 +85,7 @@ public class BlockOre extends FluxGearBlockBase {
 		RecipeHelper.addSmelting(oreDioptase, gemDioptase, 1.0F);
 		RecipeHelper.addSmelting(oreFluonicSapphire, gemFluonicSapphire, 1.0F);
 		//Rare Earths mock your primitive furnace-based attempts at separating them
+		RecipeHelper.addSmelting(oreMillerite, ingotNickel, 1.2F);
 	}
 
 	@Override
@@ -140,5 +144,5 @@ public class BlockOre extends FluxGearBlockBase {
 		}
 	}
 
-	public static final int[] RARITY = { 0, 0, 0, 0, 0, 0, 2, 1, 0, 2, 2, 2, 1 };
+	public static final int[] RARITY = { 0, 0, 0, 0, 0, 0, 2, 1, 0, 2, 2, 2, 1, 0 };
 }

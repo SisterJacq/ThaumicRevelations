@@ -39,7 +39,20 @@ public class ThaumRevConfig extends ConfigBase {
 	    enableBronze = config.get("Miscellaneous", "Enable Bronze", true, "Determines whether or not our Bronze is craftable. Disabling without other mods adding Bronze will break stuff.").getBoolean();
 	    enableElectrum = config.get("Miscellaneous", "Enable Electrum", true, "Determines whether or not our Electrum is craftable. Disabling without other mods adding Electrum will break stuff.").getBoolean();
 
-		enableSphalerite = config.get("World", "Enable Sphalerite", true, "Adds Sphalerite (Zinc) Ore to the Nether. Disabling without other mods adding a source of Zinc will break stuff.").getBoolean();
+	    enableChalcocite = config.get("World", "Enable Chalcocite", true, "Adds Chalcocite (Copper Sulfide) Ore to the Overworld. Disabling without other mods adding a source of Copper will break stuff.").getBoolean();
+	    enableSphalerite = config.get("World", "Enable Sphalerite", true, "Adds Sphalerite (Zinc Sulfide) Ore to the Overworld. Disabling without other mods adding a source of Zinc will break stuff.").getBoolean();
+	    enableCassiterite = config.get("World", "Enable Cassiterite", true, "Adds Sphalerite (Tin Oxide) Ore to the Overworld. Disabling without other mods adding a source of Tin will break stuff.").getBoolean();
+	    enableTetrahedrite = config.get("World", "Enable Tetrahedrite", true, "Adds Tetrahedrite (Copper Antimony Sulfide) Ore to the Overworld. Disabling without other mods adding a source of Antimony will break stuff.").getBoolean();
+	    enableTennantite = config.get("World", "Enable Tennantite", true, "Adds Tennantite (Copper Arsenic Sulfide) Ore to the Overworld. Disabling without other mods adding a source of Arsenic will break stuff.").getBoolean();
+	    enableNativeSilver = config.get("World", "Enable Native Silver", true, "Adds Native Silver Ore to the Overworld. Disabling without other mods adding a source of Silver will break stuff.").getBoolean();
+	    enableIridosmium = config.get("World", "Enable Iridosmium", true, "Adds Iridosmium (Natural Iridium-Osmium Alloy) Ore to the Nether. Disabling without other mods adding a source of Osmium and Iridium will break stuff.").getBoolean();
+	    enableWolframite = config.get("World", "Enable Wolframite", true, "Adds Wolframite (Iron-Tungsten Oxide) Ore to the Overworld. Disabling without other mods adding a source of Tungsten will break stuff.").getBoolean();
+	    enableBismuthinite = config.get("World", "Enable Bismuthinite", true, "Adds Bismuthinite (Bismuth Sulfide) Ore to the Overworld. Disabling without other mods adding a source of Bismuth will break stuff.").getBoolean();
+	    enablePyrope = config.get("World", "Enable Pyrope", true, "Adds Pyrope Ore to the Nether. Disabling without other mods adding a source of Pyrope will break stuff.").getBoolean();
+	    enableDioptase = config.get("World", "Enable Dioptase", true, "Adds Dioptase Ore to the Overworld. Disabling without other mods adding a source of Dioptase will break stuff.").getBoolean();
+	    enableFluonicSapphire = config.get("World", "Enable Sphalerite", true, "Adds Fluonic Sapphire Ore to the Overworld. Disabling without other mods adding a source of Fluonic Sapphire will break stuff.").getBoolean();
+	    enableXenotime = config.get("World", "Enable Xenotime", true, "Adds Xenotime (Rare Earth Phosphate) Ore to the Overworld. Disabling without other mods adding a source of Lutetium will break stuff.").getBoolean();
+	    enableMillerite = config.get("World", "Enable Millerite", true, "Adds Millerite (Nickel Sulfide) Ore to the Nether. Disabling without other mods adding a source of Nickel will break stuff.").getBoolean();
 
         if (config.hasChanged()) {
             config.save();
@@ -69,5 +82,18 @@ public class ThaumRevConfig extends ConfigBase {
 	public static boolean enableBronze;
 	public static boolean enableElectrum;
 
+	public static boolean enableChalcocite;
 	public static boolean enableSphalerite;
+	public static boolean enableCassiterite;
+	public static boolean enableTetrahedrite;
+	public static boolean enableTennantite;
+	public static boolean enableNativeSilver;
+	public static boolean enableIridosmium;
+	public static boolean enableWolframite;
+	public static boolean enableBismuthinite;
+	public static boolean enablePyrope;
+	public static boolean enableDioptase;
+	public static boolean enableFluonicSapphire;
+	public static boolean enableXenotime;
+	public static boolean enableMillerite;
 }

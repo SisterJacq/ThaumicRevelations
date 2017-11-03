@@ -17,6 +17,7 @@ import mortvana.melteddashboard.util.helpers.ItemHelper;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.crafting.*;
+import thaumcraft.common.lib.utils.Utils;
 
 public class RecipeHelper {
 
@@ -133,6 +134,30 @@ public class RecipeHelper {
 		}
 		ThaumcraftApi.registerObjectTag(stack, list);
 		return list;
+	}
+
+	/** THAUMCRAFT - NATIVE CLUSTERS **/
+	public static void addCluster(String ore, ItemStack cluster) {
+		addCluster(ore, cluster, 1.0F);
+	}
+
+	public static void addCluster(String ore, ItemStack cluster, float modifier) {
+		for (ItemStack stack : OreDictionary.getOres(ore)) {
+			Utils.addSpecialMiningResult(stack, cluster, modifier);
+		}
+	}
+
+	public static void addCluster(ItemStack ore, ItemStack cluster) {
+		addCluster(ore, cluster, 1.0F);
+	}
+
+	public static void addCluster(ItemStack ore, ItemStack cluster, float modifier) {
+		Utils.addSpecialMiningResult(ore, cluster, modifier);
+	}
+
+	public static void addCluster(int oreID, int oreMeta, int clusterID, int clusterMeta, float modifier) {
+		String val = oreID + "," + oreMeta + "," + clusterID + "," + clusterMeta + "," + modifier;
+		FMLInterModComms.sendMessage("Thaumcraft", "nativeCluster", val);
 	}
 
 	/** THERMAL EXPANSION - FURNACE CRAFTING **/

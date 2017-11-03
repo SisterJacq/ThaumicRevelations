@@ -18,8 +18,8 @@ Before v0.0.1:
 	- [ ] Native Iridium
 	- [ ] Wolframite
 	- [ ] Bismuthinite
-- [ ] Zinc Transmutation
-- [ ] Zinc Clusters
+- [ ] Ore Transmutation
+- [x] Ore Clusters
 - [ ] Arcane Singularity Booms
 - [ ] Primal Pendant
 - [ ] Thaumic Electrum

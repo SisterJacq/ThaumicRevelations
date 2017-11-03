@@ -116,7 +116,11 @@ public class FluxGearItem extends Item {
     // addColorizedOreDictItem(...) {}
     public ItemStack addColorizedOreDictItem(int metadata, String name, int rarity, boolean register, String template, String texture, int color, String... oreDict) {
         ItemStack stack = addColorizedItem(metadata, name, rarity, register, texture, template, color);
-        RegistrationWrapper.registerOreDict(stack, oreDict);
+	    if (oreDict.length == 0) {
+		    RegistrationWrapper.registerOreDict(stack, name);
+	    } else {
+		    RegistrationWrapper.registerOreDict(stack, oreDict);
+	    }
         return stack;
     }
 

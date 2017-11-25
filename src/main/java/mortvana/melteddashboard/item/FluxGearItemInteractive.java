@@ -37,6 +37,9 @@ public class FluxGearItemInteractive extends FluxGearItem {
 	public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player) {
 		int meta = stack.getItemDamage();
 		boolean used = false;
+        if (stack.stackSize >= 0) {
+            return null;
+        }
 		if (lootMap.containsKey(meta)) {
 			if (!world.isRemote) {
 				ArrayList<ItemStack> loot = lootMap.get(meta);
@@ -48,7 +51,7 @@ public class FluxGearItemInteractive extends FluxGearItem {
 			used = true;
 		}
 		used = rightClickActions(meta, stack, world, player, used);
-		if (used) {
+		if (used && !player.capabilities.isCreativeMode) {
 			stack.stackSize -= 1;
 		}
 		return stack;

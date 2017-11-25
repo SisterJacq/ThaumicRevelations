@@ -16,9 +16,23 @@ tc.research_category.THAUMREV=Thaumic Revelations
 #Blocks
 tile.thaumrev.plant.excubitura.name=Excubitura Rose
 tile.thaumrev.plant.wildCotton.name=Wild Cotton
-tile.thaumrev.plant.thistle.name=Thistle
+tile.thaumrev.plant.thistle.name=Wild Thistle
 
+tile.thaumrev.ore.oreChalcocite.name=Chalcocite Ore
 tile.thaumrev.ore.oreSphalerite.name=Sphalerite Ore
+tile.thaumrev.ore.oreCassiterite.name=Sphalerite Ore
+tile.thaumrev.ore.oreMillerite.name=Millerite Ore
+tile.thaumrev.ore.oreNativeSilver.name=Native Silver Ore
+tile.thaumrev.ore.oreGalena.name=Galena Ore
+tile.thaumrev.ore.oreXenotime.name=Xenotime Ore
+tile.thaumrev.ore.oreWolframite.name=Wolframite Ore
+tile.thaumrev.ore.oreIridosmium.name=Iridosmium Ore
+tile.thaumrev.ore.oreBismuthinite.name=Bismuthinite Ore
+tile.thaumrev.ore.oreTennantite.name=Tennantite Ore
+tile.thaumrev.ore.oreTetrahedite.name=Tetrahedite Ore
+tile.thaumrev.ore.orePyrope.name=Pyrope Ore
+tile.thaumrev.ore.oreDioptase.name=Dioptase Ore
+tile.thaumrev.ore.oreFluonicSapphire.name=Fluonic Sapphire Ore
 
 tile.thaumrev.stoneDecor.obsidianWardenic.name=Wardenic Obsidian
 tile.thaumrev.stoneDecor.stoneEldritch.name=Eldritch Stone
@@ -48,16 +62,72 @@ tile.thaumrev.stoneSlab.stoneEldritch.name=Eldritch Stone Slab
 tile.thaumrev.stoneSlab.wardenicQuartz.name=Wardenic Quartz Slab
 
 #Items
+
+item.thaumrev.material.itemArcaneSingularity.name=Arcane Singularity
+item.thaumrev.material.itemStabilizedSingularity.name=Stabilized Singularity
+item.thaumrev.material.animatedPiston.name=Animated Piston
+item.thaumrev.material.enchantedSilverwood.name=Enchanted Silverwood
+item.thaumrev.material.consecratedSilverwood.name=Consecrated Silverwood
+item.thaumrev.material.cotton.name=Cotton
+item.thaumrev.material.cottonFiber.name=Cotton Fiber
+item.thaumrev.material.cottonFabric.name=Cotton Fabric
+item.thaumrev.material.cottonTreated.name=Treated Cotton Fabric
+item.thaumrev.material.cottonEnchanted.name=Enchanted Cotton Fabric
+item.thaumrev.material.thaumicBronzeChain.name=Thaumic Bronze Chain
+item.thaumrev.material.eldritchCog.name=Eldritch Cog
+item.thaumrev.material.eldritchKeystone.name=Eldritch Keystone
+item.thaumrev.material.thistleLeaf.name=Thistle Leaf
+item.thaumrev.material.thistleFlower.name=Thistle Flower
+
+item.thaumrev.material.seedExcubitura.name=Excubitura Seed
+item.thaumrev.material.seedCotton.name=Cotton Seed
+item.thaumrev.material.seedThistle.name=Thistle Seed
+
 item.thaumrev.material.ingotCopper.name=Copper Ingot
 item.thaumrev.material.ingotZinc.name=Zinc Ingot
 item.thaumrev.material.ingotTin.name=Tin Ingot
-item.thaumrev.material.ingotAntimonialBronze.name=Antimonial Bronze Ingot
-item.thaumrev.material.ingotArsenicalBronze.name=Arsenical Bronze Ingot
+item.thaumrev.material.ingotNickel.name=Nickel Ingot
 item.thaumrev.material.ingotSilver.name=Silver Ingot
+item.thaumrev.material.ingotLead.name=Lead Ingot
+item.thaumrev.material.ingotXenotime.name=Lanthanide Ingot
 item.thaumrev.material.ingotTungsten.name=Tungsten Ingot
-item.thaumrev.material.ingotOsmium.name=Osmium Ingot
 item.thaumrev.material.ingotIridium.name=Iridium Ingot
 item.thaumrev.material.ingotBismuth.name=Bismuth Ingot
+item.thaumrev.material.ingotArsenicalBronze.name=Arsenical Bronze Ingot
+item.thaumrev.material.ingotAntimonialBronze.name=Antimonial Bronze Ingot
+item.thaumrev.material.gemPyrope.name=Pyrope
+item.thaumrev.material.gemDioptase.name=Dioptase
+item.thaumrev.material.gemFluonicSapphire.name=Fluonic Sapphire
+item.thaumrev.material.ingotOsmium.name=Osmium Ingot
+item.thaumrev.material.ingotNeodymium.name=Neodymium Ingot
+item.thaumrev.material.ingotLutetium.name=Lutetium Ingot
+item.thaumrev.material.ingotPalladium.name=Palladium Ingot
+item.thaumrev.material.ingotIridosmium.name=Iridosmium Ingot
+item.thaumrev.material.ingotBrass.name=Brass Ingot
+item.thaumrev.material.ingotBronze.name=Bronze Ingot
+item.thaumrev.material.ingotBismuthBronze.name=Bismuth Bronze Ingot
+item.thaumrev.material.ingotMithril.name=Mithril Ingot
+item.thaumrev.material.ingotThaumicBronze.name=Thaumic Bronze Ingot
+item.thaumrev.material.ingotTinkersBronze.name=Tinker's Bronze Ingot
+item.thaumrev.material.ingotThaumicTinkersBronze.name=Thaumic Tinker's Bronze Ingot
+item.thaumrev.material.ingotWardenicTinkersBronze.name=Wardenic Tinker's Bronze Ingot
+item.thaumrev.material.ingotElectrum.name=Electrum Ingot
+item.thaumrev.material.ingotThaumicElectrum.name=Thaumic Electrum Ingot
+item.thaumrev.material.ingotSteel.name=Steel Ingot
+item.thaumrev.material.ingotWardenicSteel.name=Wardenic Steel Ingot
+item.thaumrev.material.ingotWardenicMetal.name=Wardenic Metal Ingot
+item.thaumrev.material.ingotOsmiumLutetium.name=Osmium-Lutetium Alloy Ingot
+item.thaumrev.material.ingotVoidbrass.name=Voidbrass Ingot
+item.thaumrev.material.ingotVoidsteel.name=Voidsteel Ingot
+item.thaumrev.material.ingotVoidtungsten.name=Voidtungsten Ingot
+item.thaumrev.material.gemFluonicPyroptase.name=Fluonic Pyroptase
+item.thaumrev.material.ingotLanthanides.name=Leftover Lanthanide Ingot
+item.thaumrev.material.ingotAluminium.name=Aluminium Ingot
+item.thaumrev.material.ingotAluminiumBronze.name=Aluminium Bronze Ingot
+
+
+
+
 
 item.thaumrev.material.nuggetCopper.name=Copper Nugget
 item.thaumrev.material.nuggetZinc.name=Zinc Nugget
@@ -70,43 +140,9 @@ item.thaumrev.material.nuggetOsmium.name=Osmium Nugget
 item.thaumrev.material.nuggetIridium.name=Iridium Nugget
 item.thaumrev.material.nuggetBismuth.name=Bismuth Nugget
 
-item.thaumrev.material.dustCopper.name=Copper Dust
-item.thaumrev.material.dustZinc.name=Zinc Dust
-item.thaumrev.material.dustTin.name=Tin Dust
-item.thaumrev.material.dustAntimonialBronze.name=Antimonial Bronze Dust
-item.thaumrev.material.dustArsenicalBronze.name=Arsenical Bronze Dust
-item.thaumrev.material.dustSilver.name=Silver Dust
-item.thaumrev.material.dustTungsten.name=Tungsten Dust
-item.thaumrev.material.dustOsmium.name=Osmium Dust
-item.thaumrev.material.dustIridium.name=Iridium Dust
-item.thaumrev.material.dustBismuth.name=Bismuth Dust
-
-item.thaumrev.material.gemPyrope.name=Pyrope
-item.thaumrev.material.gemDioptase.name=Dioptase
-item.thaumrev.material.gemFluonicSapphire.name=Fluonic Sapphire
 item.thaumrev.material.shardPyrope.name=Pyrope Shard
 item.thaumrev.material.shardDioptase.name=Dioptase Shard
 item.thaumrev.material.shardFluonicSapphire.name=Fluonic Sapphire Shard
-item.thaumrev.material.dustPyrope.name=Pyrope Dust
-item.thaumrev.material.dustDioptase.name=Dioptase Dust
-item.thaumrev.material.dustFluonicSapphire.name=Fluonic Sapphire Dust
-
-item.thaumrev.material.ingotBrass.name=Brass Ingot
-item.thaumrev.material.ingotBronze.name=Bronze Ingot
-item.thaumrev.material.ingotThaumicBronze.name=Thaumic Bronze Ingot
-item.thaumrev.material.ingotSteel.name=Steel Ingot
-item.thaumrev.material.ingotVoidbrass.name=Voidbrass Ingot
-item.thaumrev.material.ingotVoidsteel.name=Voidsteel Ingot
-item.thaumrev.material.ingotElectrum.name=Electrum Ingot
-item.thaumrev.material.ingotThaumicElectrum.name=Thaumic Electrum Ingot
-item.thaumrev.material.ingotVoidtungsten.name=Voidtungsten Ingot
-item.thaumrev.material.ingotOsmiumLutetium.name=Osmium-Lutetium Alloy Ingot
-item.thaumrev.material.ingotWardenicSteel.name=Wardenic Steel Ingot
-item.thaumrev.material.ingotWardenicMetal.name=Wardenic Metal Ingot
-item.thaumrev.material.ingotMithril.name=Mithril Ingot
-item.thaumrev.material.ingotTinkersBronze.name=Tinker's Bronze Ingot
-item.thaumrev.material.ingotThaumicTinkersBronze.name=Thaumic Tinker's Bronze Ingot
-item.thaumrev.material.ingotWardenicTinkersBronze.name=Wardenic Tinker's Bronze Ingot
 
 item.thaumrev.material.nuggetBrass.name=Brass Nugget
 item.thaumrev.material.nuggetBronze.name=Bronze Nugget
@@ -125,6 +161,25 @@ item.thaumrev.material.nuggetTinkersBronze.name=Tinker's Bronze Nugget
 item.thaumrev.material.nuggetThaumicTinkersBronze.name=Thaumic Tinker's Bronze Nugget
 item.thaumrev.material.nuggetWardenicTinkersBronze.name=Wardenic Tinker's Bronze Nugget
 
+
+
+
+
+item.thaumrev.material.dustCopper.name=Copper Dust
+item.thaumrev.material.dustZinc.name=Zinc Dust
+item.thaumrev.material.dustTin.name=Tin Dust
+item.thaumrev.material.dustAntimonialBronze.name=Antimonial Bronze Dust
+item.thaumrev.material.dustArsenicalBronze.name=Arsenical Bronze Dust
+item.thaumrev.material.dustSilver.name=Silver Dust
+item.thaumrev.material.dustTungsten.name=Tungsten Dust
+item.thaumrev.material.dustOsmium.name=Osmium Dust
+item.thaumrev.material.dustIridium.name=Iridium Dust
+item.thaumrev.material.dustBismuth.name=Bismuth Dust
+
+item.thaumrev.material.dustPyrope.name=Pyrope Dust
+item.thaumrev.material.dustDioptase.name=Dioptase Dust
+item.thaumrev.material.dustFluonicSapphire.name=Fluonic Sapphire Dust
+
 item.thaumrev.material.dustBrass.name=Brass Dust
 item.thaumrev.material.dustBronze.name=Bronze Dust
 item.thaumrev.material.dustThaumicBronze.name=Thaumic Bronze Dust
@@ -141,6 +196,14 @@ item.thaumrev.material.dustMithril.name=Mithril Dust
 item.thaumrev.material.dustTinkersBronze.name=Tinker's Bronze Dust
 item.thaumrev.material.dustThaumicTinkersBronze.name=Thaumic Tinker's Bronze Dust
 item.thaumrev.material.dustWardenicTinkersBronze.name=Wardenic Tinker's Bronze Dust
+
+item.thaumrev.material.shardFluonicPyroptase.name=Fluonic Pyroptase Shard
+item.thaumrev.material.dustFluonicPyroptase.name=Fluonic Pyroptase Dust
+
+
+
+
+
 
 item.thaumrev.material.ingotBrassRaw.name=Raw Brass Ingot
 item.thaumrev.material.ingotBronzeRaw.name=Raw Bronze Ingot
@@ -168,31 +231,34 @@ item.thaumrev.material.dustAqua.name=Crushed Water Shard
 item.thaumrev.material.dustTerra.name=Crushed Earth Shard
 item.thaumrev.material.dustOrdo.name=Crushed Order Shard
 item.thaumrev.material.dustPerditio.name=Crushed Entropy Shard
+item.thaumrev.material.dustIron.name=Iron Dust
+item.thaumrev.material.dustGold.name=Gold Dust
+item.thaumrev.material.dustThaumium.name=Thaumium Dust
+item.thaumrev.material.dustVoid.name=Voidmetal Dust
+
+
+
 item.thaumrev.material.dustSalisMundusTiny.name=Pinch of Salis Mundus
-item.thaumrev.material.gemFluonicPyroptase.name=Fluonic Pyroptase
-item.thaumrev.material.shardFluonicPyroptase.name=Fluonic Pyroptase Shard
-item.thaumrev.material.dustFluonicPyroptase.name=Fluonic Pyroptase Dust
-item.thaumrev.material.dustVoidmetal.name=Voidmetal Dust
+
+
+item.thaumrev.material.clusterZinc.name=Zinc Cluster
+item.thaumrev.material.clusterNickel.name=Nickel Cluster
+item.thaumrev.material.clusterXenotime.name=Xenotime Cluster
+item.thaumrev.material.clusterTungsten.name=Tungsten Cluster
+item.thaumrev.material.clusterIridosmium.name=Iridosmium Cluster
+item.thaumrev.material.clusterBismuth.name=Bismuth Cluster
+item.thaumrev.material.clusterTennantite.name=Tennantite Cluster
+item.thaumrev.material.clusterTetrahedrite.name=Tetrahedrite Cluster
+
+
+
 
 item.thaumrev.material.itemSlagCeramic.name=Ceramic Mold Slag
 item.thaumrev.material.itemSlagThaumic.name=Thaumic Mold Slag
 
-item.thaumrev.material.itemArcaneSingularity.name=Arcane Singularity
-item.thaumrev.material.itemStabilizedSingularity.name=Stabilized Singularity
-item.thaumrev.material.animatedPiston.name=Animated Piston
-item.thaumrev.material.enchantedSilverwood.name=Enchanted Silverwood
-item.thaumrev.material.consecratedSilverwood.name=Consecrated Silverwood
-item.thaumrev.material.cotton.name=Cotton
-item.thaumrev.material.cottonFiber.name=Cotton Fiber
-item.thaumrev.material.cottonFabric.name=Cotton Fabric
-item.thaumrev.material.cottonTreated.name=Treated Cotton Fabric
-item.thaumrev.material.cottonEnchanted.name=Enchanted Cotton Fabric
-item.thaumrev.material.thaumicBronzeChain.name=Thaumic Bronze Chain
-item.thaumrev.material.eldritchCog.name=Eldritch Cog
-item.thaumrev.material.eldritchKeystone.name=Eldritch Keystone
 
-item.thaumrev.material.seedExcubitura.name=Excubitura Seed
-item.thaumrev.material.seedCotton.name=Cotton Seed
+
+
 
 item.thaumrev.material.excubituraPetal.name=Excubitura Petal
 

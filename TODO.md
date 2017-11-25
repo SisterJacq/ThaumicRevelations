@@ -5,6 +5,7 @@ Before v0.0.1:
 - [ ] Thistle
 - [x] Cotton Crafting
 - [ ] Quartz Renderer
+- [ ] Quartz Stairs
 - [x] Wardernic Obsidian
 - [x] Eldritch Stone
 - [x] Eldrich Keystone
@@ -12,14 +13,20 @@ Before v0.0.1:
 	- [ ] Chalcocite
 	- [ ] Sphalerite
 	- [ ] Cassiterite
-	- [ ] Tetrahedrite
-	- [ ] Tennantite
+	- [ ] Millerite
 	- [ ] Native Silver
-	- [ ] Native Iridium
+	- [ ] Galena
+	- [ ] Xenotime
 	- [ ] Wolframite
+	- [ ] Iridosmium
 	- [ ] Bismuthinite
+	- [ ] Tennantite
+	- [ ] Tetrahedrite
+	- [ ] Pyrope
+	- [ ] Dioptase
+	- [ ] Fluonic Sapphire
 - [ ] Ore Transmutation
-- [x] Ore Clusters
+- [ ] Ore Clusters
 - [ ] Arcane Singularity Booms
 - [ ] Primal Pendant
 - [ ] Thaumic Electrum

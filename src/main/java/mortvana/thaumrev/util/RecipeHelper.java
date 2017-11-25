@@ -25,6 +25,12 @@ public class RecipeHelper {
 		GameRegistry.addRecipe(recipe);
 	}
 
+    public static void addRecipe(IRecipe... recipes) {
+        for (IRecipe recipe: recipes) {
+            GameRegistry.addRecipe(recipe);
+        }
+    }
+
 	/** SHAPED CRAFTING **/
 	public static ShapedOreRecipe addShapedRecipe(ItemStack result, Object... stuff) {
 		ShapedOreRecipe r = new ShapedOreRecipe(result, stuff);
@@ -58,6 +64,14 @@ public class RecipeHelper {
 	public static ShapelessOreRecipe generateShapelessSizedOreRecipe(ItemStack result, int modifier, String... input) {
 		return new ShapelessOreRecipe(ItemHelper.cloneStack(result, input.length + modifier), input);
 	}
+
+    public static ShapelessOreRecipe generateShapelessRecipe(ItemStack result, int size, String... input) {
+        return new ShapelessOreRecipe(ItemHelper.cloneStack(result, size), input);
+    }
+
+    public static ShapelessOreRecipe generateShapelessRecipe(ItemStack result, String... input) {
+        return new ShapelessOreRecipe(result, input);
+    }
 
 	public static ShapelessOreRecipe addStorageRecipe(ItemStack result, Object input) {
 		return addShapelessRecipe(result, input, input, input, input, input, input, input, input, input);

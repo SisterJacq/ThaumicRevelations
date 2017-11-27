@@ -5,8 +5,9 @@ import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 
-import mortvana.melteddashboard.util.helpers.mod.ThaumcraftHelper;
 import thaumcraft.common.Thaumcraft;
+
+import mortvana.melteddashboard.util.helpers.mod.ThaumcraftHelper;
 
 public class EntityPurity extends EntityThrowable {
 

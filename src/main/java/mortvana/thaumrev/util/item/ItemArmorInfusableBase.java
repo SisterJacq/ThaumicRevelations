@@ -4,25 +4,26 @@ import java.util.List;
 
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.*;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
-
 import cpw.mods.fml.common.Optional;
 import net.minecraftforge.common.ISpecialArmor;
 
-import mortvana.thaumrev.api.item.infusion.*;
-import mortvana.thaumrev.api.util.enums.EnumEquipmentType;
-import mortvana.thaumrev.library.ThaumRevLibrary;
-import mortvana.melteddashboard.item.ItemArmorFluxGear;
-import mortvana.melteddashboard.util.helpers.AspectInfusionHelper;
-import mortvana.melteddashboard.util.helpers.NBTHelper;
-import mortvana.melteddashboard.util.helpers.mod.ThaumcraftHelper;
-import mortvana.thaumrev.util.enums.EnumPrimalAspect;
 import thaumcraft.api.IGoggles;
 import thaumcraft.api.IVisDiscountGear;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.nodes.IRevealer;
+
+import mortvana.melteddashboard.item.ItemArmorFluxGear;
+import mortvana.melteddashboard.util.helpers.AspectInfusionHelper;
+import mortvana.melteddashboard.util.helpers.NBTHelper;
+import mortvana.melteddashboard.util.helpers.mod.ThaumcraftHelper;
+
+import mortvana.thaumrev.api.item.infusion.IInfusableItem;
+import mortvana.thaumrev.api.util.enums.EnumEquipmentType;
+import mortvana.thaumrev.library.ThaumRevLibrary;
+import mortvana.thaumrev.util.enums.EnumPrimalAspect;
 
 public abstract class ItemArmorInfusableBase extends ItemArmorFluxGear implements ISpecialArmor, IInfusableItem, IVisDiscountGear, IRevealer, IGoggles {
 

@@ -46,7 +46,7 @@ The code of Thaumic Revelations in source and/or binary is the intellectual prop
 - Most importantly, you MUST follow Wheaton's Law; Don't be a Dick (appending Cheney is optional) (Also don't be a cork soaker, a Greggy-Greg, etc.)
 - Always remember to end one sentence per README with a comma,
 
-If you have queries about any license or the above support restrictions, ~~drop by our IRC channel, #ProjectFluxGear on irc.esper.net. Alternatively you can~~ hop on our Discord at https://discord.gg/5gkrYhg
+If you have queries about any license or the above support restrictions, hop on our Discord at https://discord.gg/QUzU27b
 
 ## Legal Bullshit
 

@@ -3,16 +3,19 @@ package mortvana.thaumrev.item;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.registry.GameRegistry;
+
+import thaumcraft.api.IRunicArmor;
+
+import mortvana.melteddashboard.util.helpers.StringHelper;
+
 import gnu.trove.map.TMap;
 import gnu.trove.map.hash.THashMap;
 import mortvana.thaumrev.api.util.enums.EnumEquipmentType;
 import mortvana.thaumrev.common.ThaumicRevelations;
+import mortvana.thaumrev.library.ThaumRevLibrary;
+import mortvana.thaumrev.util.item.ItemArmorInfusableBase;
 import mortvana.thaumrev.util.item.data.ThaumRevMaterialData;
 import mortvana.thaumrev.util.item.data.ThaumRevMaterialDataSet;
-import mortvana.thaumrev.library.ThaumRevLibrary;
-import mortvana.melteddashboard.util.helpers.StringHelper;
-import mortvana.thaumrev.util.item.ItemArmorInfusableBase;
-import thaumcraft.api.IRunicArmor;
 
 public class ItemArmorInfusableThaumRev extends ItemArmorInfusableBase implements IRunicArmor {
 
@@ -26,30 +29,30 @@ public class ItemArmorInfusableThaumRev extends ItemArmorInfusableBase implement
 	}
 
 	public void register(String material, int type) {
-        this.type = EnumEquipmentType.values()[type];
-        setCreativeTab(ThaumRevLibrary.thaumicRevelationsTab);
-        setModName(ThaumRevLibrary.RESOURCE_PREFIX);
+		this.type = EnumEquipmentType.values()[type];
+		setCreativeTab(ThaumRevLibrary.thaumicRevelationsTab);
+		setModName(ThaumRevLibrary.RESOURCE_PREFIX);
 
 		ThaumRevMaterialData data;
 		if (materialData.containsKey(material)) {
 			data = materialData.get(material).getData(type);
 			if (data == null) {
 				ThaumicRevelations.logger.error("Someone didn't register data for the " + StringHelper.getArmorForInt(type) + " of this set! Not registering this item!");
-                return;
+				return;
 			}
 		} else {
 			ThaumicRevelations.logger.error("Someone either forgot to register their material data, or used the wrong string for it! Not registering this item!");
 			return;
 		}
-        setUnlocalizedName(ThaumRevLibrary.RESOURCE_PREFIX + data.getUnlocName());
-        setItemIcon(data.getIcon());
-        setRepairMaterial(data.getRepair());
-        setTextures(data.getTexture());
-        setRarity(data.getRarity());
-        if(data.getColorized()) {
-            setDefaultColor(data.getColor());
-        }
-        GameRegistry.registerItem(this, data.getRegName());
+		setUnlocalizedName(ThaumRevLibrary.RESOURCE_PREFIX + data.getUnlocName());
+		setItemIcon(data.getIcon());
+		setRepairMaterial(data.getRepair());
+		setTextures(data.getTexture());
+		setRarity(data.getRarity());
+		if (data.getColorized()) {
+			setDefaultColor(data.getColor());
+		}
+		GameRegistry.registerItem(this, data.getRegName());
 	}
 
 	public static void setDefaultInfusions(String material, int type) {

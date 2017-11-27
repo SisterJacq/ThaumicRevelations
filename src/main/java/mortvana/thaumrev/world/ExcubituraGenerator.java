@@ -6,11 +6,10 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.chunk.IChunkProvider;
 import cpw.mods.fml.common.IWorldGenerator;
-
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeDictionary.Type;
 
-import static mortvana.thaumrev.library.ThaumRevLibrary.*;
+import static mortvana.thaumrev.library.ThaumRevLibrary.blockThaumicPlant;
 
 public class ExcubituraGenerator implements IWorldGenerator {
 
@@ -27,13 +26,12 @@ public class ExcubituraGenerator implements IWorldGenerator {
 	}
 
 	/**
+	 * @param world - World they plant is generating in...
+	 * @param x     - X coordinate, duh.
+	 * @param y     - Y coordinate, duh.
+	 * @param z     - Z coordinate, duh.
 	 *
-	 *
-	 *  @param world - World they plant is generating in...
-	 *  @param x - X coordinate, duh.
-	 *  @param y - Y coordinate, duh.
-	 *  @param z - Z coordinate, duh.
-	 *  @return
+	 * @return
 	 */
 	public double getModifier(World world, int x, int y, int z) {
 		double modifier = 5F;
@@ -84,7 +82,7 @@ public class ExcubituraGenerator implements IWorldGenerator {
 		// They like a decent amount of water
 		if (BiomeDictionary.isBiomeOfType(biome, Type.DRY)) {
 			modifier *= 0.75;
-		} else if (!BiomeDictionary.isBiomeOfType(biome, Type.WET)){
+		} else if (!BiomeDictionary.isBiomeOfType(biome, Type.WET)) {
 			modifier *= 1.1F;
 		}
 

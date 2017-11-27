@@ -6,15 +6,16 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
-
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-import mortvana.thaumrev.library.ThaumRevLibrary;
-import mortvana.melteddashboard.util.helpers.StringHelper;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.wands.FocusUpgradeType;
 import thaumcraft.api.wands.ItemFocusBasic;
+
+import mortvana.melteddashboard.util.helpers.StringHelper;
+
+import mortvana.thaumrev.library.ThaumRevLibrary;
 
 public abstract class ItemFocusBase extends ItemFocusBasic {
 

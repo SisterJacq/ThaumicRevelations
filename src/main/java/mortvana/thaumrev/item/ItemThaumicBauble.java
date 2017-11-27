@@ -4,14 +4,15 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-import mortvana.thaumrev.library.ThaumRevLibrary;
 import mortvana.melteddashboard.intermod.baubles.item.FluxGearItemBauble;
+
+import mortvana.thaumrev.library.ThaumRevLibrary;
 
 public class ItemThaumicBauble extends FluxGearItemBauble {
 
 	public ItemThaumicBauble() {
 		super(ThaumRevLibrary.RESOURCE_PREFIX, ThaumRevLibrary.thaumicRevelationsTab);
-        setFolder("/baubles");
+		setFolder("/baubles");
 	}
 
 	@Override

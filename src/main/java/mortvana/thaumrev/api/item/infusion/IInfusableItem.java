@@ -8,10 +8,10 @@ import cofh.api.item.IInventoryContainerItem;
 import mortvana.thaumrev.api.util.enums.EnumEquipmentType;
 
 /**
- *  An interface to implement on Items, either armor, weapons, or tools, to allow for them to use Thaumic Revelations'
- *  Aspect Infusion Orbs (and other IInfusionItems) to augment them.
+ * An interface to implement on Items, either armor, weapons, or tools, to allow for them to use Thaumic Revelations'
+ * Aspect Infusion Orbs (and other IInfusionItems) to augment them.
  *
- *  @author Mortvana
+ * @author Mortvana
  */
 
 @Optional.Interface(modid = "CoFHAPI|energy", iface = "cofh.api.energy.IEnergyContainerItem")
@@ -27,17 +27,18 @@ public interface IInfusableItem extends IInventoryContainerItem, IEnergyContaine
 	//IInfusableItem setNumberSlots(int unlocked, int locked);
 
 	/**
-	 *  Returns the EnumEquipmentType of the IInfusableItem, which determines the effect given by a given Aspect.
+	 * Returns the EnumEquipmentType of the IInfusableItem, which determines the effect given by a given Aspect.
 	 *
-	 *  @return - EnumEquipmentType of the item queried
+	 * @return - EnumEquipmentType of the item queried
 	 */
 	EnumEquipmentType getType();
 
 	/**
-	 *  Sets the EnumEquipmentType of the IInfusableItem, which determines the effect given by a given Aspect.
+	 * Sets the EnumEquipmentType of the IInfusableItem, which determines the effect given by a given Aspect.
 	 *
-	 *  @param type - New EnumEquipmentType of the IInfusableItem
-	 *  @return - IInfusableItem that had its type set
+	 * @param type - New EnumEquipmentType of the IInfusableItem
+	 *
+	 * @return - IInfusableItem that had its type set
 	 */
 	IInfusableItem setType(EnumEquipmentType type);
 }

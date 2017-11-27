@@ -28,7 +28,7 @@ public class AspectStack {
 		return aspect;
 	}
 
-	public int getSize(){
+	public int getSize() {
 		return size;
 	}
 }

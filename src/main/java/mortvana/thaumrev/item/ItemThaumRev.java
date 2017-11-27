@@ -1,6 +1,5 @@
 package mortvana.thaumrev.item;
 
-import mortvana.thaumrev.entity.EntitySingularity;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityItem;
@@ -24,16 +23,16 @@ public class ItemThaumRev extends FluxGearItemInteractive {
 	}
 
 	@Override
-	public boolean rightClickActions(int meta, ItemStack stack, World world, EntityPlayer player, boolean used){
+	public boolean rightClickActions(int meta, ItemStack stack, World world, EntityPlayer player, boolean used) {
 		//TODO: Fix crashing
 		/*if (meta == arcaneSingularity.getItemDamage()) {
-            world.playSoundAtEntity(player, "random.bow", 0.3F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
+	        world.playSoundAtEntity(player, "random.bow", 0.3F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
             if (!world.isRemote) {
                 world.spawnEntityInWorld(new EntitySingularity(world, player));
             }
             return true;
         }*/
-        return used;
+		return used;
 	}
 
 	@Override

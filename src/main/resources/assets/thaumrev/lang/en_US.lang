@@ -103,127 +103,150 @@ item.thaumrev.material.ingotNeodymium.name=Neodymium Ingot
 item.thaumrev.material.ingotLutetium.name=Lutetium Ingot
 item.thaumrev.material.ingotPalladium.name=Palladium Ingot
 item.thaumrev.material.ingotIridosmium.name=Iridosmium Ingot
+item.thaumrev.material.ingotAluminium.name=Aluminium Ingot
+item.thaumrev.material.ingotLanthanides.name=Leftover Lanthanide Ingot
+
 item.thaumrev.material.ingotBrass.name=Brass Ingot
 item.thaumrev.material.ingotBronze.name=Bronze Ingot
 item.thaumrev.material.ingotBismuthBronze.name=Bismuth Bronze Ingot
 item.thaumrev.material.ingotMithril.name=Mithril Ingot
-item.thaumrev.material.ingotThaumicBronze.name=Thaumic Bronze Ingot
+item.thaumrev.material.ingotAluminiumBronze.name=Aluminium Bronze Ingot
+item.thaumrev.material.ingotCupronickel.name=Cupronickel Ingot
 item.thaumrev.material.ingotTinkersBronze.name=Tinker's Bronze Ingot
-item.thaumrev.material.ingotThaumicTinkersBronze.name=Thaumic Tinker's Bronze Ingot
-item.thaumrev.material.ingotWardenicTinkersBronze.name=Wardenic Tinker's Bronze Ingot
+item.thaumrev.material.ingotConstantan.name=Constantan Ingot
+item.thaumrev.material.ingotInvar.name=Invar Ingot
 item.thaumrev.material.ingotElectrum.name=Electrum Ingot
+item.thaumrev.material.ingotWardenicMetal.name=Wardenic Metal Ingot
+
+item.thaumrev.material.ingotThaumicBronze.name=Thaumic Bronze Ingot
+item.thaumrev.material.ingotOsmiumLutetium.name=Osmium-Lutetium Alloy Ingot
+item.thaumrev.material.gemFluonicPyroptase.name=Fluonic Pyroptase
+
 item.thaumrev.material.ingotThaumicElectrum.name=Thaumic Electrum Ingot
+item.thaumrev.material.ingotThaumicTinkersBronze.name=Thaumic Tinker's Bronze Ingot
 item.thaumrev.material.ingotSteel.name=Steel Ingot
 item.thaumrev.material.ingotWardenicSteel.name=Wardenic Steel Ingot
-item.thaumrev.material.ingotWardenicMetal.name=Wardenic Metal Ingot
-item.thaumrev.material.ingotOsmiumLutetium.name=Osmium-Lutetium Alloy Ingot
+item.thaumrev.material.ingotWardenicTinkersBronze.name=Wardenic Tinker's Bronze Ingot
 item.thaumrev.material.ingotVoidbrass.name=Voidbrass Ingot
 item.thaumrev.material.ingotVoidsteel.name=Voidsteel Ingot
 item.thaumrev.material.ingotVoidtungsten.name=Voidtungsten Ingot
-item.thaumrev.material.gemFluonicPyroptase.name=Fluonic Pyroptase
-item.thaumrev.material.ingotLanthanides.name=Leftover Lanthanide Ingot
-item.thaumrev.material.ingotAluminium.name=Aluminium Ingot
-item.thaumrev.material.ingotAluminiumBronze.name=Aluminium Bronze Ingot
-
-
-
-
 
 item.thaumrev.material.nuggetCopper.name=Copper Nugget
 item.thaumrev.material.nuggetZinc.name=Zinc Nugget
 item.thaumrev.material.nuggetTin.name=Tin Nugget
-item.thaumrev.material.nuggetAntimonialBronze.name=Antimonial Bronze Nugget
-item.thaumrev.material.nuggetArsenicalBronze.name=Arsenical Bronze Nugget
+item.thaumrev.material.nuggetNickel.name=Nickel Nugget
 item.thaumrev.material.nuggetSilver.name=Silver Nugget
+item.thaumrev.material.nuggetLead.name=Lead Nugget
+item.thaumrev.material.nuggetXenotime.name=Lanthanide Nugget
 item.thaumrev.material.nuggetTungsten.name=Tungsten Nugget
-item.thaumrev.material.nuggetOsmium.name=Osmium Nugget
 item.thaumrev.material.nuggetIridium.name=Iridium Nugget
 item.thaumrev.material.nuggetBismuth.name=Bismuth Nugget
-
+item.thaumrev.material.nuggetArsenicalBronze.name=Arsenical Bronze Nugget
+item.thaumrev.material.nuggetAntimonialBronze.name=Antimonial Bronze Nugget
 item.thaumrev.material.shardPyrope.name=Pyrope Shard
 item.thaumrev.material.shardDioptase.name=Dioptase Shard
 item.thaumrev.material.shardFluonicSapphire.name=Fluonic Sapphire Shard
+item.thaumrev.material.nuggetOsmium.name=Osmium Nugget
+item.thaumrev.material.nuggetNeodymium.name=Neodymium Nugget
+item.thaumrev.material.nuggetLutetium.name=Lutetium Nugget
+item.thaumrev.material.nuggetPalladium.name=Palladium Nugget
+item.thaumrev.material.nuggetIridosmium.name=Iridosmium Nugget
+item.thaumrev.material.nuggetAluminium.name=Aluminium Nugget
+item.thaumrev.material.nuggetLanthanides.name=Leftover Lanthanide Nugget
 
 item.thaumrev.material.nuggetBrass.name=Brass Nugget
 item.thaumrev.material.nuggetBronze.name=Bronze Nugget
+item.thaumrev.material.nuggetBismuthBronze.name=Bismuth Bronze Nugget
+item.thaumrev.material.nuggetMithril.name=Mithril Nugget
+item.thaumrev.material.nuggetAluminiumBronze.name=Aluminium Bronze Nugget
+item.thaumrev.material.nuggetCupronickel.name=Cupronickel Nugget
+item.thaumrev.material.nuggetTinkersBronze.name=Tinker's Bronze Nugget
+item.thaumrev.material.nuggetConstantan.name=Constantan Nugget
+item.thaumrev.material.nuggetInvar.name=Invar Nugget
+item.thaumrev.material.nuggetElectrum.name=Electrum Nugget
+item.thaumrev.material.nuggetWardenicMetal.name=Wardenic Metal Nugget
+
 item.thaumrev.material.nuggetThaumicBronze.name=Thaumic Bronze Nugget
+item.thaumrev.material.nuggetOsmiumLutetium.name=Osmium-Lutetium Alloy Nugget
+item.thaumrev.material.shardFluonicPyroptase.name=Fluonic Pyroptase Shard
+
+item.thaumrev.material.nuggetThaumicElectrum.name=Thaumic Electrum Nugget
+item.thaumrev.material.nuggetThaumicTinkersBronze.name=Thaumic Tinker's Bronze Nugget
 item.thaumrev.material.nuggetSteel.name=Steel Nugget
+item.thaumrev.material.nuggetWardenicSteel.name=Wardenic Steel Nugget
+item.thaumrev.material.nuggetWardenicTinkersBronze.name=Wardenic Tinker's Bronze Nugget
 item.thaumrev.material.nuggetVoidbrass.name=Voidbrass Nugget
 item.thaumrev.material.nuggetVoidsteel.name=Voidsteel Nugget
-item.thaumrev.material.nuggetElectrum.name=Electrum Nugget
-item.thaumrev.material.nuggetThaumicElectrum.name=Thaumic Electrum Nugget
 item.thaumrev.material.nuggetVoidtungsten.name=Voidtungsten Nugget
-item.thaumrev.material.nuggetOsmiumLutetium.name=Osmium-Lutetium Alloy Nugget
-item.thaumrev.material.nuggetWardenicSteel.name=Wardenic Steel Nugget
-item.thaumrev.material.nuggetWardenicMetal.name=Wardenic Metal Nugget
-item.thaumrev.material.nuggetMithril.name=Mithril Nugget
-item.thaumrev.material.nuggetTinkersBronze.name=Tinker's Bronze Nugget
-item.thaumrev.material.nuggetThaumicTinkersBronze.name=Thaumic Tinker's Bronze Nugget
-item.thaumrev.material.nuggetWardenicTinkersBronze.name=Wardenic Tinker's Bronze Nugget
-
-
-
-
 
 item.thaumrev.material.dustCopper.name=Copper Dust
 item.thaumrev.material.dustZinc.name=Zinc Dust
 item.thaumrev.material.dustTin.name=Tin Dust
-item.thaumrev.material.dustAntimonialBronze.name=Antimonial Bronze Dust
-item.thaumrev.material.dustArsenicalBronze.name=Arsenical Bronze Dust
+item.thaumrev.material.dustNickel.name=Nickel Dust
 item.thaumrev.material.dustSilver.name=Silver Dust
+item.thaumrev.material.dustLead.name=Lead Dust
+item.thaumrev.material.dustXenotime.name=Lanthanide Dust
 item.thaumrev.material.dustTungsten.name=Tungsten Dust
-item.thaumrev.material.dustOsmium.name=Osmium Dust
 item.thaumrev.material.dustIridium.name=Iridium Dust
 item.thaumrev.material.dustBismuth.name=Bismuth Dust
-
+item.thaumrev.material.dustArsenicalBronze.name=Arsenical Bronze Dust
+item.thaumrev.material.dustAntimonialBronze.name=Antimonial Bronze Dust
 item.thaumrev.material.dustPyrope.name=Pyrope Dust
 item.thaumrev.material.dustDioptase.name=Dioptase Dust
 item.thaumrev.material.dustFluonicSapphire.name=Fluonic Sapphire Dust
+item.thaumrev.material.dustOsmium.name=Osmium Dust
+item.thaumrev.material.dustNeodymium.name=Neodymium Dust
+item.thaumrev.material.dustLutetium.name=Lutetium Dust
+item.thaumrev.material.dustPalladium.name=Palladium Dust
+item.thaumrev.material.dustIridosmium.name=Iridosmium Dust
+item.thaumrev.material.dustAluminium.name=Aluminium Dust
+item.thaumrev.material.dustLanthanides.name=Leftover Lanthanide Dust
 
 item.thaumrev.material.dustBrass.name=Brass Dust
 item.thaumrev.material.dustBronze.name=Bronze Dust
-item.thaumrev.material.dustThaumicBronze.name=Thaumic Bronze Dust
-item.thaumrev.material.dustSteel.name=Steel Dust
-item.thaumrev.material.dustVoidbrass.name=Voidbrass Dust
-item.thaumrev.material.dustVoidsteel.name=Voidsteel Dust
-item.thaumrev.material.dustElectrum.name=Electrum Dust
-item.thaumrev.material.dustThaumicElectrum.name=Thaumic Electrum Dust
-item.thaumrev.material.dustVoidtungsten.name=Voidtungsten Dust
-item.thaumrev.material.dustOsmiumLutetium.name=Osmium-Lutetium Alloy Dust
-item.thaumrev.material.dustWardenicSteel.name=Wardenic Steel Dust
-item.thaumrev.material.dustWardenicMetal.name=Wardenic Metal Dust
+item.thaumrev.material.dustBismuthBronze.name=Bismuth Bronze Dust
 item.thaumrev.material.dustMithril.name=Mithril Dust
+item.thaumrev.material.dustAluminiumBronze.name=Aluminium Bronze Dust
+item.thaumrev.material.dustCupronickel.name=Cupronickel Dust
 item.thaumrev.material.dustTinkersBronze.name=Tinker's Bronze Dust
-item.thaumrev.material.dustThaumicTinkersBronze.name=Thaumic Tinker's Bronze Dust
-item.thaumrev.material.dustWardenicTinkersBronze.name=Wardenic Tinker's Bronze Dust
+item.thaumrev.material.dustConstantan.name=Constantan Dust
+item.thaumrev.material.dustInvar.name=Invar Dust
+item.thaumrev.material.dustElectrum.name=Electrum Dust
+item.thaumrev.material.dustWardenicMetal.name=Wardenic Metal Dust
 
-item.thaumrev.material.shardFluonicPyroptase.name=Fluonic Pyroptase Shard
+item.thaumrev.material.dustThaumicBronze.name=Thaumic Bronze Dust
+item.thaumrev.material.dustOsmiumLutetium.name=Osmium-Lutetium Alloy Dust
 item.thaumrev.material.dustFluonicPyroptase.name=Fluonic Pyroptase Dust
 
-
-
-
-
+item.thaumrev.material.dustThaumicElectrum.name=Thaumic Electrum Dust
+item.thaumrev.material.dustThaumicTinkersBronze.name=Thaumic Tinker's Bronze Dust
+item.thaumrev.material.dustSteel.name=Steel Dust
+item.thaumrev.material.dustWardenicSteel.name=Wardenic Steel Dust
+item.thaumrev.material.dustWardenicTinkersBronze.name=Wardenic Tinker's Bronze Dust
+item.thaumrev.material.dustVoidbrass.name=Voidbrass Dust
+item.thaumrev.material.dustVoidsteel.name=Voidsteel Dust
+item.thaumrev.material.dustVoidtungsten.name=Voidtungsten Dust
 
 item.thaumrev.material.ingotBrassRaw.name=Raw Brass Ingot
 item.thaumrev.material.ingotBronzeRaw.name=Raw Bronze Ingot
-item.thaumrev.material.ingotThaumicBronzeRaw.name=Raw Thaumic Bronze Ingot
-item.thaumrev.material.ingotElectrumRaw.name=Raw Electrum Ingot
-item.thaumrev.material.ingotOsmiumLutetiumRaw.name=Raw Osmium-Lutetium Alloy Ingot
-item.thaumrev.material.ingotWardenicMetalRaw.name=Raw Wardenic Metal Ingot
+item.thaumrev.material.ingotBismuthBronzeRaw.name=Raw Bismuth Bronze Ingot
 item.thaumrev.material.ingotMithrilRaw.name=Raw Mithril Ingot
+item.thaumrev.material.ingotAluminiumBronzeRaw.name=Raw Aluminium Bronze Ingot
+item.thaumrev.material.ingotCupronickelRaw.name=Raw Cupronickel Ingot
 item.thaumrev.material.ingotTinkersBronzeRaw.name=Raw Tinker's Bronze Ingot
-item.thaumrev.material.ingotThaumicTinkersBronzeRaw.name=Raw Thaumic Tinker's Bronze Ingot
+item.thaumrev.material.ingotConstantanRaw.name=Raw Constantan Ingot
+item.thaumrev.material.ingotInvarRaw.name=Raw Invar Ingot
+item.thaumrev.material.ingotElectrumRaw.name=Raw Electrum Ingot
+item.thaumrev.material.ingotWardenicMetalRaw.name=Raw Wardenic Metal Ingot
+
+item.thaumrev.material.ingotThaumicBronzeRaw.name=Raw Thaumic Bronze Ingot
+item.thaumrev.material.ingotOsmiumLutetiumRaw.name=Raw Osmium-Lutetium Alloy Ingot
 
 item.thaumrev.material.ingotThaumicBronzeCoated.name=Coated Thaumic Bronze Ingot
-item.thaumrev.material.ingotMithrilCoated.name=Coated Mithril Ingot
-item.thaumrev.material.ingotTinkersBronzeCoated.name=Coated Tinker's Bronze Ingot
-item.thaumrev.material.ingotThaumicTinkersBronzeCoated.name=Coated Thaumic Tinker's Bronze Ingot
+item.thaumrev.material.ingotOsmiumLutetiumCoated.name=Coated Osmium-Lutetium Alloy Ingot
 
 item.thaumrev.material.ingotThaumicBronzeFired.name=Fired Thaumic Bronze Ingot
-item.thaumrev.material.ingotMithrilFired.name=Fired Mithril Ingot
-item.thaumrev.material.ingotTinkersBronzeFired.name=Fired Tinker's Bronze Ingot
-item.thaumrev.material.ingotThaumicTinkersBronzeFired.name=Fired Thaumic Tinker's Bronze Ingot
+item.thaumrev.material.ingotOsmiumLutetiumFired.name=Fired Osmium-Lutetium Alloy Ingot
 
 item.thaumrev.material.dustAer.name=Crushed Air Shard
 item.thaumrev.material.dustIgnis.name=Crushed Fire Shard
@@ -236,10 +259,7 @@ item.thaumrev.material.dustGold.name=Gold Dust
 item.thaumrev.material.dustThaumium.name=Thaumium Dust
 item.thaumrev.material.dustVoid.name=Voidmetal Dust
 
-
-
 item.thaumrev.material.dustSalisMundusTiny.name=Pinch of Salis Mundus
-
 
 item.thaumrev.material.clusterZinc.name=Zinc Cluster
 item.thaumrev.material.clusterNickel.name=Nickel Cluster
@@ -250,15 +270,8 @@ item.thaumrev.material.clusterBismuth.name=Bismuth Cluster
 item.thaumrev.material.clusterTennantite.name=Tennantite Cluster
 item.thaumrev.material.clusterTetrahedrite.name=Tetrahedrite Cluster
 
-
-
-
 item.thaumrev.material.itemSlagCeramic.name=Ceramic Mold Slag
 item.thaumrev.material.itemSlagThaumic.name=Thaumic Mold Slag
-
-
-
-
 
 item.thaumrev.material.excubituraPetal.name=Excubitura Petal
 
@@ -340,6 +353,41 @@ thaumrev.text.THAUMIC_REVELATIONS=[TRv] Hey, hey, you don't know, what you're mi
 
 thaumrev.name.MATERIAL_TRv=Materials
 
+thaumrev.name.ALLOYS_TRv=Alloys
+thaumrev.text.ALLOYS_TRv=[TRv] Not-so-magical Metallurgy
+
+thaumrev.page.ALLOYS_TRv.0=You have realized the true lack of variety in the metals used in thaumaturgy, and have decided to experiment with various alloys.<BR>One of the alloys, Brass, is a mixture of copper, a metal only rarely used by thaumaturges, but highly used in technological fields, and zinc, a whitish metal similar to tin, which is occasionally used for coating of metal parts. The resulting alloys is malleable and may make for an decent-enough conductor of mystical energy.
+thaumrev.page.ALLOYS_TRv.1=Bronze, the more commonly used cousin of Brass, more suited to casting than machining, is made with tin, a more widely used metal, albeit one never used in thaumaturgy, instead of zinc. Unlike brass, it seems like it would be less receptive to magic, although it could make better, less corrodable, parts than iron.
+thaumrev.page.ALLOYS_TRv.2=Bismuth Bronze is a similar copper alloy, which despite technically being a brass with bismuth crystals in it behaves like a bronze. Containing copper, zinc, and the heavy metal bismuth, examination of the alloy it may lead to a usage in mystical components, however, it is primarily used in making another alloy.
+thaumrev.page.ALLOYS_TRv.3=Mithril, or Arseno-Antimonial Bronze, is what one gets when they alloy equal parts arsenical bronze, the result of smelting tennantite ore, and antimonial bronze, likewise from tetrahedrite ore. This alloy is incredibly strong, stronger than most common metals, but not terribly receptive to magic.
+thaumrev.page.ALLOYS_TRv.4=Aluminium Bronze, a gold-like copper alloy using the metal aluminium, which is extracted from clay, instead of tin, this alloy is neither terribly expensive, nor durable, but is receptive to magical infusion.
+thaumrev.page.ALLOYS_TRv.5=Cupronickel, an alloy of copper and nickel, as the name suggests, is occasionally used in heating in technical fields, this alloy is surprisingly good at conducting §cIgnis§0 vis, but not great at much else.
+thaumrev.page.ALLOYS_TRv.6=Tinker's Bronze, also called Riftish Bronze, is an alloy of eight different metals, often taking the form of alloy six different copper alloys, containing copper, tin, zinc, arsenic, antimony, nickel, bismuth, and aluminium. The alloy itself is incredibly durable, yet malleable at high temperatures. While not terrible good at transferring mystical energies, it makes tools of exquisite quality, better than even thaumium, although it does not enchant as well.
+thaumrev.page.ALLOYS_TRv.7=Constantan, is an alloy of copper and nickel in roughly equal parts, used in technical fields, which may be of use in future endeavors. Invar, an alloy of iron and nickel is in a similar boat as constantan.<LINE>Electrum, an alloy of equal parts gold and silver, however is of interest, and is likely an even better conductor than gold.
+
+thaumrev.page.ALLOYS_TRv.71=Constantan, is an alloy of copper and nickel in roughly equal parts, used in technical fields, which may be of use in future endeavors.
+thaumrev.page.ALLOYS_TRv.72=Invar, is an alloy of iron and nickel, used in technical fields, which may be of use in future endeavors.
+thaumrev.page.ALLOYS_TRv.73=Electrum, an alloy of equal parts gold and silver, however is of interest, and is likely an even better conductor than gold.
+thaumrev.page.ALLOYS_TRv.7a=Invar, is an alloy of iron and nickel, used in technical fields, which may be of use in future endeavors.<LINE>Electrum, an alloy of equal parts gold and silver, however is of interest, and is likely an even better conductor than gold.
+thaumrev.page.ALLOYS_TRv.7b=Constantan, is an alloy of copper and nickel in roughly equal parts, used in technical fields, which may be of use in future endeavors.<LINE>Electrum, an alloy of equal parts gold and silver, however is of interest, and is likely an even better conductor than gold.
+thaumrev.page.ALLOYS_TRv.7c=Constantan, is an alloy of copper and nickel in roughly equal parts, used in technical fields, which may be of use in future endeavors. Invar, an alloy of iron and nickel is in a similar boat as constantan.
+
+thaumrev.page.ALLOYS_TRv.a=You have realized the true lack of variety in the metals used in thaumaturgy, and have decided to experiment with various alloys.<BR>Bronze, the more commonly used cousin of Brass, more suited to casting than machining, is made with tin, a more widely used metal, albeit one never used in thaumaturgy, instead of zinc. Unlike brass, it seems like it would be less receptive to magic, although it could make better, less corrodable, parts than iron.
+thaumrev.page.ALLOYS_TRv.b=You have realized the true lack of variety in the metals used in thaumaturgy, and have decided to experiment with various alloys.<BR>Bismuth Bronze is a similar copper alloy, which despite technically being a brass with bismuth crystals in it behaves like a bronze. Containing copper, zinc, and the heavy metal bismuth, examination of the alloy it may lead to a usage in mystical components, however, it is primarily used in making another alloy.
+thaumrev.page.ALLOYS_TRv.c=You have realized the true lack of variety in the metals used in thaumaturgy, and have decided to experiment with various alloys.<BR>Mithril, or Arseno-Antimonial Bronze, is what one gets when they alloy equal parts arsenical bronze, the result of smelting tennantite ore, and antimonial bronze, likewise from tetrahedrite ore. This alloy is incredibly strong, stronger than most common metals, but not terribly receptive to magic.
+thaumrev.page.ALLOYS_TRv.d=You have realized the true lack of variety in the metals used in thaumaturgy, and have decided to experiment with various alloys.<BR>Aluminium Bronze, a gold-like copper alloy using the metal aluminium, which is extracted from clay, instead of tin, this alloy is neither terribly expensive, nor durable, but is receptive to magical infusion.
+thaumrev.page.ALLOYS_TRv.e=You have realized the true lack of variety in the metals used in thaumaturgy, and have decided to experiment with various alloys.<BR>Cupronickel, an alloy of copper and nickel, as the name suggests, is occasionally used in heating in technical fields, this alloy is surprisingly good at conducting §cIgnis§0 vis, but not great at much else.
+thaumrev.page.ALLOYS_TRv.f=You have realized the true lack of variety in the metals used in thaumaturgy, and have decided to experiment with various alloys.<BR>Tinker's Bronze, also called Riftish Bronze, is an alloy of eight different metals, often taking the form of alloy six different copper alloys, containing copper, tin, zinc, arsenic, antimony, nickel, bismuth, and aluminium. The alloy itself is incredibly durable, yet malleable at high temperatures. While not terrible good at transferring mystical energies, it makes tools of exquisite quality, better than even thaumium, although it does not enchant as well.
+thaumrev.page.ALLOYS_TRv.g=You have realized the true lack of variety in the metals used in thaumaturgy, and have decided to experiment with various alloys.<BR>Constantan, is an alloy of copper and nickel in roughly equal parts, used in technical fields, which may be of use in future endeavors. Invar, an alloy of iron and nickel is in a similar boat as constantan.<LINE>Electrum, an alloy of equal parts gold and silver, however is of interest, and is likely an even better conductor than gold.
+
+thaumrev.page.ALLOYS_TRv.g1=You have realized the true lack of variety in the metals used in thaumaturgy, and have decided to experiment with various alloys.<BR>Constantan, is an alloy of copper and nickel in roughly equal parts, used in technical fields, which may be of use in future endeavors.
+thaumrev.page.ALLOYS_TRv.g2=You have realized the true lack of variety in the metals used in thaumaturgy, and have decided to experiment with various alloys.<BR>Invar, is an alloy of iron and nickel, used in technical fields, which may be of use in future endeavors.
+thaumrev.page.ALLOYS_TRv.g3=You have realized the true lack of variety in the metals used in thaumaturgy, and have decided to experiment with various alloys.<BR>Electrum, an alloy of equal parts gold and silver, however is of interest, and is likely an even better conductor than gold.
+thaumrev.page.ALLOYS_TRv.ga=You have realized the true lack of variety in the metals used in thaumaturgy, and have decided to experiment with various alloys.<BR>Invar, is an alloy of iron and nickel, used in technical fields, which may be of use in future endeavors.<LINE>Electrum, an alloy of equal parts gold and silver, however is of interest, and is likely an even better conductor than gold.
+thaumrev.page.ALLOYS_TRv.gb=You have realized the true lack of variety in the metals used in thaumaturgy, and have decided to experiment with various alloys.<BR>Constantan, is an alloy of copper and nickel in roughly equal parts, used in technical fields, which may be of use in future endeavors.<LINE>Electrum, an alloy of equal parts gold and silver, however is of interest, and is likely an even better conductor than gold.
+thaumrev.page.ALLOYS_TRv.gc=You have realized the true lack of variety in the metals used in thaumaturgy, and have decided to experiment with various alloys.<BR>Constantan, is an alloy of copper and nickel in roughly equal parts, used in technical fields, which may be of use in future endeavors. Invar, an alloy of iron and nickel is in a similar boat as constantan.
+
+
 thaumrev.name.THAUMIC_BRONZE=Thaumic Bronze
 thaumrev.text.THAUMIC_BRONZE=[TRv]
 
@@ -354,14 +402,17 @@ thaumrev.text.ROBES_PRIMAL=[TRv] Mending and Stylish
 
 thaumrev.name.THAUMIC_WARDEN=Thaumic Wardenry
 thaumrev.text.THAUMIC_WARDEN=[TRv] Protectors of Apirimort
-thaumrev.page.THAUMIC_WARDEN.0=When studying a strange purple rose-like flower you remembered stories from your youth, stories of a mythical order of thaumaturges who fought the Eldritch and protected their homeland. The most orthodox branch of the order, the Abdonian Thaumic Wardens are said to have used the essential oils from the petals of a nearly identical flower which grew in large amounts in the highlands near their headquarters at Fort Rose to make their legendary armor.<BR>While you cannot be completely sure yet, you believe this flower to be the mythical Excubitura used by the Thaumic Wardens. It seems that like the Excubitura Rose of legend, it has
-thaumrev.page.THAUMIC_WARDEN.1=been mutated by thaumic energies, and the stigma is undoubtedly covered by beautiful, albeit tiny, crystals. Another reason you believe it to be the Excubitura Rose is the vibrant color and unusual nature about the petals.
+thaumrev.page.THAUMIC_WARDEN.0=When studying a strange purple rose-like flower you remembered stories from your youth, stories of a mythical order of thaumaturges, descended from the legendary Abysswalkers, who fought the Eldritch and protected their homeland. The most orthodox branch of the order, the Abdonian Thaumic Wardens are said to have used the essential oils from the petals of a nearly identical flower which grew in large amounts in the highlands near their headquarters at Fort Rose to make their legendary armor.<BR>While you cannot be completely sure yet, you believe this flower to be the mythical Excubitura used by the Thaumic Wardens. It seems that like
+thaumrev.page.THAUMIC_WARDEN.1=the Excubitura Rose of legend, it has been mutated by thaumic energies, and the stigma is undoubtedly covered by beautiful, albeit tiny, crystals. Another reason you believe it to be the Excubitura Rose is the vibrant color and unusual nature about the petals.<BR>Now, if only you could figure out a way to harness the hidden power of this flower...
 
 thaumrev.name.EXCUBITURA_PASTE=Excubitura Paste
+thaumrev.text.EXCUBITURA_PASTE=[TRv] The start of great things
+thaumrev.page.EXCUBITURA_PASTE.0=After finding what you now know to be an Excubitura Rose, you started searching for any mention on how the Thaumic Wardens created their armor of exquisite quality. References were lacking, so it took time to figure out, but in the few texts you could find, they all agreed on one thing, the first step in processing the Excubitura's petals. By simply grinding the petals, the resulting paste is said to have been used to treat the armor. However, a few of your sources mention the paste only affecting cloth, so you'll have to figure out how to get around that.
 
 thaumrev.name.WARDENCLOTH=Wardencloth
 thaumrev.text.WARDENCLOTH=[TRv] Durable and Wardenic
-thaumrev.page.WARDENCLOTH.0=You think you are on to something, by smearing Excubitura Paste all over some Enchanted Fabric, you end up with a fabric that is a lot more durable. However, the paste washes off of the fabric easily, meaning it would be unsuitable for use as armor, but perhaps there is a way around that.<BR>On further examination it seem, somewhat counter-intuitively, that by boiling the cloth in water with essentia of certain aspects, the cloth not only tightens up, making it more protective, but it also solves the issue with water washing off the paste.
+thaumrev.page.WARDENCLOTH.0=You think you are on to something, by smearing Excubitura Paste all over some Enchanted Cotton Fabric, as one of the texts mentions the difficulty in using wool or silk for the process, you end up with a fabric that is a lot more durable. However, the paste washes off of the fabric easily, meaning it would be unsuitable for use as armor, but perhaps there is a way around that.
+thaumrev.page.WARDENCLOTH.1=On further examination it seem, somewhat counter-intuitively at first, but after thinking about it making perfect sense, that by boiling the cloth in water with essentia of certain aspects, the cloth not only tightens up slightly, as it is cotton, making it more negligibly more protective, but it also solves the issue with water washing off the paste, as the paste.
 
 thaumrev.name.ARMOR_WARDENCLOTH=Wardencloth Armor
 thaumrev.text.ARMOR_WARDENCLOTH=[TRv] Like leather, but better (and thaumic)

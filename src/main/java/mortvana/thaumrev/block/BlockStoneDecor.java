@@ -11,13 +11,13 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
-
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 import mortvana.melteddashboard.block.FluxGearBlockBase;
 import mortvana.melteddashboard.util.helpers.ItemHelper;
 import mortvana.melteddashboard.util.helpers.StringHelper;
+
 import mortvana.thaumrev.util.RecipeHelper;
 
 import static mortvana.thaumrev.library.ThaumRevLibrary.*;
@@ -178,7 +178,7 @@ public class BlockStoneDecor extends FluxGearBlockBase {
 		icons[index] = register.registerIcon(directory + name);
 	}
 
-	public static final float[] HARDNESS = { 25F, 10F, 0.8F, 0.8F, 0.8F, 0.8F, 0.8F };
-	public static final float[] RESISTANCE = { 5000F, 500F, 25F, 25F, 25F, 25F, 25F };
-	public static final int[] RARITY = { 2, 1, 1, 1, 1, 1, 1 };
+	public static final float[] HARDNESS = {25F, 10F, 0.8F, 0.8F, 0.8F, 0.8F, 0.8F};
+	public static final float[] RESISTANCE = {5000F, 500F, 25F, 25F, 25F, 25F, 25F};
+	public static final int[] RARITY = {2, 1, 1, 1, 1, 1, 1};
 }

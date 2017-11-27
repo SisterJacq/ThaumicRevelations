@@ -4,8 +4,9 @@ import net.minecraft.block.Block;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
 
-import mortvana.thaumrev.library.ThaumRevLibrary;
 import mortvana.melteddashboard.block.FluxGearItemBlockBase;
+
+import mortvana.thaumrev.library.ThaumRevLibrary;
 
 public class ItemBlockStoneSlab extends FluxGearItemBlockBase {
 

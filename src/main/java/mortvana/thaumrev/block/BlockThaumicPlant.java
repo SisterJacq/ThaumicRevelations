@@ -28,16 +28,16 @@ public class BlockThaumicPlant extends FluxGearBlockPlant {
 		switch (meta) {
 			case 0:
 				list.add(excubituraPetal);
-            case 1:
-                list.add(cotton);
+			case 1:
+				list.add(cotton);
 		}
 
 		return list;
 	}
 
-    public void register() {
-        excubituraRose = new ItemStack(blockThaumicPlant, 1, 0);
-        wildCotton = new ItemStack(blockThaumicPlant, 1, 1);
-        wildThistle = new ItemStack(blockThaumicPlant, 1, 2);
-    }
+	public void register() {
+		excubituraRose = new ItemStack(blockThaumicPlant, 1, 0);
+		wildCotton = new ItemStack(blockThaumicPlant, 1, 1);
+		wildThistle = new ItemStack(blockThaumicPlant, 1, 2);
+	}
 }

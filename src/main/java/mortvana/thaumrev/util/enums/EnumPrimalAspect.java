@@ -41,7 +41,7 @@ public enum EnumPrimalAspect {
 		return null;
 	}
 
-	public static String  getString(Aspect aspect) {
+	public static String getString(Aspect aspect) {
 		if (aspect.isPrimal()) {
 			if (aspect.equals(AIR)) {
 				return "Aer";

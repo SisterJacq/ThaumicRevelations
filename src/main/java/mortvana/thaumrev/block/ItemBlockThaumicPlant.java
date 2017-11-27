@@ -3,8 +3,9 @@ package mortvana.thaumrev.block;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 
-import mortvana.thaumrev.library.ThaumRevLibrary;
 import mortvana.melteddashboard.block.FluxGearItemBlockBase;
+
+import mortvana.thaumrev.library.ThaumRevLibrary;
 
 public class ItemBlockThaumicPlant extends FluxGearItemBlockBase {
 

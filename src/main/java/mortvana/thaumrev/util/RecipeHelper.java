@@ -3,7 +3,6 @@ package mortvana.thaumrev.util;
 import java.util.ArrayList;
 
 import net.minecraft.block.Block;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.item.crafting.IRecipe;
@@ -12,12 +11,13 @@ import cpw.mods.fml.common.event.FMLInterModComms;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.*;
 
-import mortvana.melteddashboard.util.IStackProvider;
-import mortvana.melteddashboard.util.helpers.ItemHelper;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.crafting.*;
 import thaumcraft.common.lib.utils.Utils;
+
+import mortvana.melteddashboard.util.IStackProvider;
+import mortvana.melteddashboard.util.helpers.ItemHelper;
 
 public class RecipeHelper {
 
@@ -25,13 +25,13 @@ public class RecipeHelper {
 		GameRegistry.addRecipe(recipe);
 	}
 
-    public static void addRecipe(IRecipe... recipes) {
-        for (IRecipe recipe: recipes) {
-            GameRegistry.addRecipe(recipe);
-        }
-    }
+	public static void addRecipe(IRecipe... recipes) {
+		for (IRecipe recipe : recipes) {
+			GameRegistry.addRecipe(recipe);
+		}
+	}
 
-	/** SHAPED CRAFTING **/
+	/** SHAPED CRAFTING * */
 	public static ShapedOreRecipe addShapedRecipe(ItemStack result, Object... stuff) {
 		ShapedOreRecipe r = new ShapedOreRecipe(result, stuff);
 		addRecipe(r);
@@ -50,7 +50,7 @@ public class RecipeHelper {
 		return addShapedRecipe(result, "###", '#', input);
 	}
 
-	/** SHAPELESS CRAFTING **/
+	/** SHAPELESS CRAFTING * */
 	public static ShapelessOreRecipe addShapelessRecipe(ItemStack result, Object... input) {
 		ShapelessOreRecipe r = new ShapelessOreRecipe(result, input);
 		GameRegistry.addRecipe(r);
@@ -65,13 +65,13 @@ public class RecipeHelper {
 		return new ShapelessOreRecipe(ItemHelper.cloneStack(result, input.length + modifier), input);
 	}
 
-    public static ShapelessOreRecipe generateShapelessRecipe(ItemStack result, int size, String... input) {
-        return new ShapelessOreRecipe(ItemHelper.cloneStack(result, size), input);
-    }
+	public static ShapelessOreRecipe generateShapelessRecipe(ItemStack result, int size, String... input) {
+		return new ShapelessOreRecipe(ItemHelper.cloneStack(result, size), input);
+	}
 
-    public static ShapelessOreRecipe generateShapelessRecipe(ItemStack result, String... input) {
-        return new ShapelessOreRecipe(result, input);
-    }
+	public static ShapelessOreRecipe generateShapelessRecipe(ItemStack result, String... input) {
+		return new ShapelessOreRecipe(result, input);
+	}
 
 	public static ShapelessOreRecipe addStorageRecipe(ItemStack result, Object input) {
 		return addShapelessRecipe(result, input, input, input, input, input, input, input, input, input);
@@ -89,7 +89,7 @@ public class RecipeHelper {
 		return addShapelessRecipe(result, input, input);
 	}
 
-	/** SMELTING **/
+	/** SMELTING * */
 	public static void addSmelting(ItemStack input, ItemStack result, float experience) {
 		FurnaceRecipes.smelting().func_151394_a(input, result, experience);
 	}
@@ -98,14 +98,14 @@ public class RecipeHelper {
 		addSmelting(input, result, 0);
 	}
 
-	/** ORE DICTIONARY **/
+	/** ORE DICTIONARY * */
 	public static void registerOreDict(ItemStack stack, String... oreDict) {
 		for (String name : oreDict) {
 			OreDictionary.registerOre(name, stack);
 		}
 	}
 
-	/** FORGE MULTIPART **/
+	/** FORGE MULTIPART * */
 	public static void registerFMP(Block block, int maxMeta) {
 		for (int i = 0; i < maxMeta; i++) {
 			registerFMP(new ItemStack(block, 1, i));
@@ -116,31 +116,31 @@ public class RecipeHelper {
 		FMLInterModComms.sendMessage("ForgeMicroblock", "microMaterial", stack);
 	}
 
-	/** THAUMCRAFT - SHAPED ARCANE CRAFTING **/
+	/** THAUMCRAFT - SHAPED ARCANE CRAFTING * */
 	public static ShapedArcaneRecipe addArcaneCraftingRecipe(String research, ItemStack result, AspectList aspects, Object... recipe) {
 		return ThaumcraftApi.addArcaneCraftingRecipe(research, result, aspects, recipe);
 	}
 
-	/** THAUMCRAFT - SHAPELESS ARCANE CRAFTING **/
-	public static ShapelessArcaneRecipe addShapelessArcaneCraftingRecipe(String research, ItemStack result, AspectList aspects, Object... recipe){
+	/** THAUMCRAFT - SHAPELESS ARCANE CRAFTING * */
+	public static ShapelessArcaneRecipe addShapelessArcaneCraftingRecipe(String research, ItemStack result, AspectList aspects, Object... recipe) {
 		return ThaumcraftApi.addShapelessArcaneCraftingRecipe(research, result, aspects, recipe);
 	}
 
-	public static ShapelessArcaneRecipe addShapelessArcaneCraftingRecipe(String research, IStackProvider result, AspectList aspects, Object... recipe){
+	public static ShapelessArcaneRecipe addShapelessArcaneCraftingRecipe(String research, IStackProvider result, AspectList aspects, Object... recipe) {
 		return ThaumcraftApi.addShapelessArcaneCraftingRecipe(research, result.getStack(), aspects, recipe);
 	}
 
-	/** THAUMCRAFT - INFUSION CRAFTING **/
+	/** THAUMCRAFT - INFUSION CRAFTING * */
 	public static InfusionRecipe addInfusionCraftingRecipe(String research, Object result, int instability, AspectList aspects, ItemStack input, ItemStack... recipe) {
 		return ThaumcraftApi.addInfusionCraftingRecipe(research, result, instability, aspects, input, recipe);
 	}
 
-	/** THAUMCRAFT - CRUCIBLE CRAFTING **/
+	/** THAUMCRAFT - CRUCIBLE CRAFTING * */
 	public static CrucibleRecipe addCrucibleRecipe(String key, ItemStack result, Object catalyst, AspectList tags) {
 		return ThaumcraftApi.addCrucibleRecipe(key, result, catalyst, tags);
 	}
 
-	/** THAUMCRAFT - ASPECTS **/
+	/** THAUMCRAFT - ASPECTS * */
 	public static AspectList addAspects(ItemStack stack, AspectStack... aspects) {
 		AspectList list = new AspectList(stack);
 		for (AspectStack aspect : aspects) {
@@ -150,7 +150,7 @@ public class RecipeHelper {
 		return list;
 	}
 
-	/** THAUMCRAFT - NATIVE CLUSTERS **/
+	/** THAUMCRAFT - NATIVE CLUSTERS * */
 	public static void addCluster(String ore, ItemStack cluster) {
 		addCluster(ore, cluster, 1.0F);
 	}
@@ -174,7 +174,7 @@ public class RecipeHelper {
 		FMLInterModComms.sendMessage("Thaumcraft", "nativeCluster", val);
 	}
 
-	/** THERMAL EXPANSION - FURNACE CRAFTING **/
+	/** THERMAL EXPANSION - FURNACE CRAFTING * */
 	public static void addFurnaceRecipe(int flux, ItemStack input, ItemStack output) {
 		if (input != null && output != null) {
 			NBTTagCompound nbt = new NBTTagCompound();
@@ -200,7 +200,7 @@ public class RecipeHelper {
 		}
 	}
 
-	/** THERMAL EXPANSION - PULVERIZER CRAFTING **/
+	/** THERMAL EXPANSION - PULVERIZER CRAFTING * */
 	public static void addPulverizerRecipe(int flux, ItemStack input, ItemStack output) {
 		addPulverizerRecipe(flux, input, output, null, 0);
 	}
@@ -258,7 +258,7 @@ public class RecipeHelper {
 
 	/** THERMAL EXPANSION - SAWMILL CRAFTING **/
 
-	/** THERMAL EXPANSION - INDUCTION SMELTER CRAFTING **/
+	/** THERMAL EXPANSION - INDUCTION SMELTER CRAFTING * */
 	public static void addInductionSmelterRecipe(int flux, ItemStack primaryInput, ItemStack secondaryInput, ItemStack output) {
 		addInductionSmelterRecipe(flux, primaryInput, secondaryInput, output, null, 0);
 	}
@@ -344,7 +344,7 @@ public class RecipeHelper {
 
 	/** THERMAL EXPANSION - INSOLATOR CRAFTING **/
 
-	/** THERMAL EXPANSION - MAGMATIC FUEL **/
+	/** THERMAL EXPANSION - MAGMATIC FUEL * */
 	public static void addMagmaticFuel(String fluidName, int energy) {
 		NBTTagCompound nbt = new NBTTagCompound();
 
@@ -354,7 +354,7 @@ public class RecipeHelper {
 		FMLInterModComms.sendMessage("ThermalExpansion", "MagmaticFuel", nbt);
 	}
 
-	/** THERMAL EXPANSION - COMPRESSION FUEL **/
+	/** THERMAL EXPANSION - COMPRESSION FUEL * */
 	public static void addCompressionFuel(String fluidName, int energy) {
 		NBTTagCompound nbt = new NBTTagCompound();
 
@@ -364,7 +364,7 @@ public class RecipeHelper {
 		FMLInterModComms.sendMessage("ThermalExpansion", "CompressionFuel", nbt);
 	}
 
-	/** THERMAL EXPANSION - REACTANT FUEL **/
+	/** THERMAL EXPANSION - REACTANT FUEL * */
 	public static void addReactantFuel(String fluidName, int energy) {
 		NBTTagCompound nbt = new NBTTagCompound();
 
@@ -374,7 +374,7 @@ public class RecipeHelper {
 		FMLInterModComms.sendMessage("ThermalExpansion", "ReactantFuel", nbt);
 	}
 
-	/** THERMAL EXPANSION - DYNAMO COOLANT **/
+	/** THERMAL EXPANSION - DYNAMO COOLANT * */
 	public static void addCoolant(String fluidName, int energy) {
 		NBTTagCompound nbt = new NBTTagCompound();
 
@@ -384,7 +384,7 @@ public class RecipeHelper {
 		FMLInterModComms.sendMessage("ThermalExpansion", "Coolant", nbt);
 	}
 
-	/** OTHERS/MULTIPLE **/
+	/** OTHERS/MULTIPLE * */
 	public static void registerWithHandlers(ItemStack itemstack, String name, String... oreDict) {
 		GameRegistry.registerCustomItemStack(name, itemstack);
 		registerFMP(itemstack);

@@ -2,14 +2,15 @@ package mortvana.thaumrev.block;
 
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IIconRegister;
-
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-import mortvana.thaumrev.library.ThaumRevLibrary;
 import mortvana.melteddashboard.block.FluxGearBlockBase;
 
-import static mortvana.thaumrev.library.ThaumRevLibrary.*;
+import mortvana.thaumrev.library.ThaumRevLibrary;
+
+import static mortvana.thaumrev.library.ThaumRevLibrary.FALSE_AIR_NAMES;
+import static mortvana.thaumrev.library.ThaumRevLibrary.TEX_LOC_DEFAULT;
 
 public class BlockFalseAir extends FluxGearBlockBase {
 

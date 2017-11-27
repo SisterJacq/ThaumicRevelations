@@ -5,12 +5,14 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 
-import mortvana.thaumrev.entity.EntityPurity;
-import mortvana.melteddashboard.util.helpers.mod.ThaumcraftHelper;
-import mortvana.thaumrev.util.item.ItemFocusBase;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.wands.FocusUpgradeType;
 import thaumcraft.common.items.wands.ItemWandCasting;
+
+import mortvana.melteddashboard.util.helpers.mod.ThaumcraftHelper;
+
+import mortvana.thaumrev.entity.EntityPurity;
+import mortvana.thaumrev.util.item.ItemFocusBase;
 
 public class ItemFocusPurity extends ItemFocusBase {
 

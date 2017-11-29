@@ -9,7 +9,7 @@ Before v0.0.1:
 - [x] Wardernic Obsidian
 - [x] Eldritch Stone
 - [x] Eldrich Keystone
-- [ ] Ores
+- [ ] Ore Generation 
 	- [ ] Chalcocite
 	- [ ] Sphalerite
 	- [ ] Cassiterite
@@ -25,18 +25,31 @@ Before v0.0.1:
 	- [ ] Pyrope
 	- [ ] Dioptase
 	- [ ] Fluonic Sapphire
-- [ ] Ore Transmutation
-	- [ ] Zinc
-	- [ ] Nickel
-	- [ ] Palladium
-	- [ ] Lutetium
-	- [ ] Neodymium
-	- [ ] Tungsten
-	- [ ] Iridium
-	- [ ] Osmium
-	- [ ] Bismuth
-	- [ ] Arsenic
-	- [ ] Antimony
+- [x] Metal Transmutation
+	- [x] Zinc
+	- [x] Nickel
+	- [x] Palladium
+	- [x] Lutetium
+	- [x] Neodymium
+	- [x] Tungsten
+	- [x] Iridium
+	- [x] Osmium
+	- [x] Bismuth
+	- [x] Arsenic
+	- [x] Antimony
+	- [x] Platinum
+	- [x] Aluminium
+- [x] Cluster Purification
+    - [x] Zinc
+    - [x] Nickel
+    - [x] Xenotime
+    - [x] Tungsten
+    - [x] Iridosmium
+    - [x] Bismuth
+    - [x] Tennantite
+    - [x] Tetrahedrite
+    - [x] Platinum
+    - [x] Aluminium
 - [x] Ore Clusters
 - [ ] Arcane Singularity Booms
 - [ ] Primal Pendant
@@ -53,10 +66,17 @@ Before v0.0.1:
 - [ ] Aspect Infusion System
 - [ ] Excubitor Aspect Stats
 - [ ] Fluxus Aspect Stats
-- [ ] Enderio Alloying
+- [ ] Item Aspects
+- [ ] Textures
+- [ ] Tiny Dusts
 
 Maybe Before v0.0.1/v0.0.x Content:
-- [ ] Tiny Dusts
+- [ ] Enderio Alloying (EnderIO does its recipes weirdly)
+- [ ] IE Alloying
+- [ ] TiC Ore Processing
+- [ ] TiC Fluids
+- [ ] TiC Alloying
+- [ ] RotaryCraft Ore Processing
 - [ ] Wand Focus: Illumination (Witor)
 - [ ] Cotton and Thistle Farming
 - [ ] Excubitura Farming
@@ -70,28 +90,18 @@ Maybe Before v0.0.1/v0.0.x Content:
 		- [ ] Lapis Lazuli
 		- [ ] Nether Quartz
 	- Other OreDict:
-		- [ ] Nickel (TF, ElC)
-		- [ ] Aluminium (TiC, ElC)
-		- [ ] Platinum (TF, ElC)
 		- [ ] Uranium (IC2, ReC, BR)
+		- [ ] Sulfur (TF, RC)
+        - [ ] Saltpeter (TF, RC)
 	- Thaumcraft:
 		- [ ] Shards
 		- [ ] Amber
 		- [ ] Quicksilver
 		- [ ] Salis Mundus
 	- Thaumic Revelations/Project Flux Gear:
-		- [ ] Zinc
-		- [ ] Bismuth
-		- [ ] Arsenic
-		- [ ] Antimony
-		- [ ] Tungsten
-		- [ ] Iridium
-		- [ ] Osmium
 		- [ ] Dioptase
         - [ ] Pyrope
         - [ ] Fluonic Sapphire
-        - [ ] Neodymium
-        - [ ] Palladium
 	- Project Flux Gear Future-proofing:
 		- [ ] Titanium
 		- [ ] Molybdenum
@@ -122,19 +132,9 @@ Maybe Before v0.0.1/v0.0.x Content:
 		- [ ] Sunstone
 		- [ ] Moonstone
 		- [ ] Vitreum?
-	- Railcraft:
-		- [ ] Sulfur
-		- [ ] Saltpeter
-		- [ ] Firestone
-	- Project:Red:
-		- [ ] Electrotine
 	- Applied Energistic 2:
 		- [ ] Certus Quartz
 		- [ ] Fluix Quartz	
-	- Forestry:
-		- [ ] Apatite
-	- Magical Crops:
-		- [ ] Essence
 	- Thaumic Tinkerer 2:
 		- [ ] Nether Shards
 		- [ ] End Shards
@@ -153,6 +153,11 @@ Maybe Before v0.0.1/v0.0.x Content:
 		- [ ] Calcite
 		- [ ] Fluorite
 		- [ ] Magnetite
+	- Other:
+		- [ ] Apatite (Forestry)
+		- [ ] Firestone (Railcraft)
+		- [ ] Electrotine (Project:Red)
+		- [ ] Essence (Magical Crops)
 - [ ] Wesly's Hammer
 - [ ] Elemental Shears
 - [ ] Elemental Sickle
@@ -194,8 +199,15 @@ Maybe Before v0.0.1/v0.0.x Content:
 - [ ] Warded Chest
 - [ ] Alumentum Pressurizer
 - [ ] Brass Pipe
+- [ ] TiC Real AlBronze Config
 
-v0.1.0 Content:
+Investigate Status for 0.0.x:
+- Mek Processing
+- Railcraft Processing
+- IE Processing
+- IC2 Processing
+
+v0.1.x Content:
 * Aspect Orbs (Impulse (active)/Radiant (passive); Alchemical (Essentia)/Energized (RF)/Sanguine (LP)/Nodal (Vis Powered))
 * Alchemical Tools
 * Wardenic TiC Modifier

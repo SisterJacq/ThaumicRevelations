@@ -296,7 +296,7 @@ public class ThaumRevLibrary {
 	public static ItemStack dustOsLu;						//00551
 	public static ItemStack dustFluonicPyroptase;			//00552
 
-	//00475-00499 SPECIAL ALLOY NUGGETS
+	//00475-00499 SPECIAL ALLOY DUSTS
 	public static ItemStack dustThaumicElectrum;			//00575
 	public static ItemStack dustThaumicTinkersBronze;		//00551
 	public static ItemStack dustSteel;						//00576
@@ -306,6 +306,58 @@ public class ThaumRevLibrary {
 	public static ItemStack dustVoidsteel;					//00580
 	public static ItemStack dustVoidtungsten;				//00581
 
+	//00400-00424 BASE METAL TINY DUSTS/NATURAL GEM TINY DUSTS
+	public static ItemStack tinyCopper;						//00600
+	public static ItemStack tinyZinc;						//00601
+	public static ItemStack tinyTin;						//00602
+	public static ItemStack tinyNickel;						//00603
+	public static ItemStack tinySilver;						//00604
+	public static ItemStack tinyLead;						//00605
+	public static ItemStack tinyLanthanides;				//00606
+	public static ItemStack tinyTungsten;					//00607
+	public static ItemStack tinyIridium;					//00608
+	public static ItemStack tinyBismuth;					//00609
+	public static ItemStack tinyArsenicalBronze;			//00610
+	public static ItemStack tinyAntimonialBronze;			//00611
+	public static ItemStack tinyPyrope;						//00612
+	public static ItemStack tinyDioptase;					//00613
+	public static ItemStack tinyFluonicSapphire;			//00614
+	public static ItemStack tinyOsmium;						//00615
+	public static ItemStack tinyNeodymium;					//00616
+	public static ItemStack tinyLutetium;					//00617
+	public static ItemStack tinyPalladium;					//00618
+	public static ItemStack tinyIridosmium;					//00619
+	public static ItemStack tinyAluminium;					//00620
+	public static ItemStack tinyXenotimeJunk;				//00621
+
+	//00425-00449 SIMPLE ALLOY TINY DUSTS
+	public static ItemStack tinyBrass;						//00625
+	public static ItemStack tinyBronze;						//00626
+	public static ItemStack tinyBismuthBronze;				//00627
+	public static ItemStack tinyMithril;					//00628
+	public static ItemStack tinyAluminiumBronze;			//00629
+	public static ItemStack tinyCupronickel;				//00630
+	public static ItemStack tinyTinkersBronze;				//00631
+	public static ItemStack tinyConstantan;					//00632
+	public static ItemStack tinyInvar;						//00633
+	public static ItemStack tinyElectrum;					//00634
+	public static ItemStack tinyWardenicMetal;				//00635
+
+	//00450-00474 COMPLEX ALLOY TINY DUSTS/COMPOUND GEM TINY DUSTS
+	public static ItemStack tinyThaumicBronze;				//00650
+	public static ItemStack tinyOsLu;						//00651
+	public static ItemStack tinyFluonicPyroptase;			//00652
+
+	//00475-00499 SPECIAL ALLOY TINY DUSTS
+	public static ItemStack tinyThaumicElectrum;			//00675
+	public static ItemStack tinyThaumicTinkersBronze;		//00651
+	public static ItemStack tinySteel;						//00676
+	public static ItemStack tinyWardenicSteel;				//00677
+	public static ItemStack tinyWardenicTinkersBronze;		//00678
+	public static ItemStack tinyVoidbrass;					//00679
+	public static ItemStack tinyVoidsteel;					//00680
+	public static ItemStack tinyVoidtungsten;				//00681
+	
 	//00700-00724 RAW SIMPLE ALLOY INGOTS
 	public static ItemStack rawBrass;						//00700
 	public static ItemStack rawBronze;						//00701
@@ -350,13 +402,27 @@ public class ThaumRevLibrary {
 	public static ItemStack dustWardenicBinder;				//00830
 
 	//00850-00899 OTHER TINY DUSTS
+	public static ItemStack tinyAer;						//00800
+	public static ItemStack tinyIgnis;						//00801
+	public static ItemStack tinyAqua;						//00802
+	public static ItemStack tinyTerra;						//00803
+	public static ItemStack tinyOrdo;						//00804
+	public static ItemStack tinyPerditio;					//00805
+	public static ItemStack tinyIron;						//00806
+	public static ItemStack tinyGold;						//00807
+	public static ItemStack tinyThaumium;					//00808
+	public static ItemStack tinyVoidmetal;					//00809
+	public static ItemStack tinyArsenic;					//00810
+	public static ItemStack tinyAntimony;					//00811
 	public static ItemStack tinySalisMundus;				//00862
 
 	public static ItemStack tinyWardenicBinder;				//00880
 
-	//00900-00924 ORE CLUSTERS
+	//00900-00919 ORE CLUSTERS
 	public static ItemStack clusterZinc;					//00901
+	public static ItemStack clusterAluminium;				//00902
 	public static ItemStack clusterNickel;					//00903
+	public static ItemStack clusterPlatinum;				//00904
 	public static ItemStack clusterXenotime;				//00906
 	public static ItemStack clusterTungsten;				//00907
 	public static ItemStack clusterIridosmium;				//00908
@@ -529,14 +595,17 @@ public class ThaumRevLibrary {
 	public static ShapedArcaneRecipe recipeTreatedCotton;
 	public static CrucibleRecipe recipeEnchantedCotton;
 
+	public static InfusionRecipe recipePrimalGoggles;
+	public static InfusionRecipe recipePrimalRobes;
+	public static InfusionRecipe recipePrimalPants;
+	public static InfusionRecipe recipePrimalBoots;
+
 	public static ShapedArcaneRecipe recipeAniPiston;
 
 	public static ShapelessArcaneRecipe recipeThaumicBronzeRaw;
 	public static ShapelessArcaneRecipe recipeThaumicBronzeCoated;
 
 	public static InfusionRecipe recipeThaumicTBronze;
-
-	public static CrucibleRecipe recipeThaumicElectrum;
 
 	public static ShapedArcaneRecipe recipeThaumicBronzeChain;
 
@@ -558,10 +627,32 @@ public class ThaumRevLibrary {
 
 	//public static InfusionRecipe recipeDarkAlchemicalInfuser;
 
-	public static InfusionRecipe recipePrimalGoggles;
-	public static InfusionRecipe recipePrimalRobes;
-	public static InfusionRecipe recipePrimalPants;
-	public static InfusionRecipe recipePrimalBoots;
+	public static CrucibleRecipe recipeTransNickel;
+	public static CrucibleRecipe recipeTransAluminium;
+	public static CrucibleRecipe recipeTransNeodymium;
+	public static CrucibleRecipe recipeTransZinc;
+	public static CrucibleRecipe recipeTransArsenic;
+	public static CrucibleRecipe recipeTransAntimony;
+	public static CrucibleRecipe recipeTransBismuth;
+	public static CrucibleRecipe recipeTransTungsten;
+	public static CrucibleRecipe recipeTransLutetium;
+	public static CrucibleRecipe recipeTransPalladium;
+	public static CrucibleRecipe recipeTransPlatinum;
+	public static CrucibleRecipe recipeTransOsmium;
+	public static CrucibleRecipe recipeTransIridium;
+
+	public static CrucibleRecipe recipeClusterNickel;
+	public static CrucibleRecipe recipeClusterAluminium;
+	public static CrucibleRecipe recipeClusterXenotime;
+
+	public static CrucibleRecipe recipeClusterZinc;
+
+	public static CrucibleRecipe recipeClusterBismuth;
+	public static CrucibleRecipe recipeClusterTennantite;
+	public static CrucibleRecipe recipeClusterTertahedrite;
+	public static CrucibleRecipe recipeClusterPlatinum;
+	public static CrucibleRecipe recipeClusterTungsten;
+	public static CrucibleRecipe recipeClusterIridosmium;
 
 	public static InfusionRecipe recipeWardenicHardener;
 	public static InfusionRecipe recipeWardenicHardenerAlt;
@@ -636,6 +727,8 @@ public class ThaumRevLibrary {
 	public static ShapedArcaneRecipe recipeWardenicCompositeGreaves;
 	public static ShapedArcaneRecipe recipeWardenicCompositeBoots;
 
+	public static CrucibleRecipe recipeThaumicElectrum;
+
 	// /** RESEARCH **/
 	public static ResearchItem researchThaumRev;
 	public static String keyThaumRev = "THAUMIC_REVELATIONS";
@@ -671,9 +764,6 @@ public class ThaumRevLibrary {
 	public static ResearchItem researchThaumicTBronze;
 	public static String keyThaumicTBronze = "THAUMIC_TINKERS_BRONZE";
 
-	public static ResearchItem researchThaumicElectrum;
-	public static String keyThaumicElectrum = "THAUMIC_ELECTRUM";
-
 	public static ResearchItem researchBronzeChain;
 	public static String keyBronzeChain = "TBRONZE_CHAIN";
 
@@ -687,7 +777,105 @@ public class ThaumRevLibrary {
 	public static String keyEnchSilverwood = "ENCH_SILVERWOOD";
 
 
+	public static ResearchItem researchTransmutationFe;
+	public static String keyTransmutationFe = "TRv_TRANSMUTATION_FE";
 
+	public static ResearchItem researchTransmutationSn;
+	public static String keyTransmutationSn = "TRv_TRANSMUTATION_SN";
+	
+	public static ResearchItem researchTransmutationAg;
+	public static String keyTransmutationAg = "TRv_TRANSMUTATION_AG";
+
+	public static ResearchItem researchTransmutationPb;
+	public static String keyTransmutationPb = "TRv_TRANSMUTATION_PB";
+
+	public static ResearchItem researchTransmutationAu;
+	public static String keyTransmutationAu = "TRv_TRANSMUTATION_AU";
+
+	public static ResearchItem researchTransmutationNi;
+	public static String keyTransmutationNi = "TRv_TRANSMUTATION_NI";
+
+	public static ResearchItem researchTransmutationAl;
+	public static String keyTransmutationAl = "TRv_TRANSMUTATION_AL";
+
+	public static ResearchItem researchTransmutationNd;
+	public static String keyTransmutationNd = "TRv_TRANSMUTATION_ND";
+
+	public static ResearchItem researchTransmutationZn;
+	public static String keyTransmutationZn = "TRv_TRANSMUTATION_ZN";
+
+	public static ResearchItem researchTransmutationAs;
+	public static String keyTransmutationAs = "TRv_TRANSMUTATION_AS";
+
+	public static ResearchItem researchTransmutationSb;
+	public static String keyTransmutationSb = "TRv_TRANSMUTATION_SB";
+
+	public static ResearchItem researchTransmutationBi;
+	public static String keyTransmutationBi = "TRv_TRANSMUTATION_BI";
+
+	public static ResearchItem researchTransmutationW;
+	public static String keyTransmutationW = "TRv_TRANSMUTATION_W";
+
+	public static ResearchItem researchTransmutationLu;
+	public static String keyTransmutationLu = "TRv_TRANSMUTATION_LU";
+
+	public static ResearchItem researchTransmutationPd;
+	public static String keyTransmutationPd = "TRv_TRANSMUTATION_PD";
+
+	public static ResearchItem researchTransmutationPt;
+	public static String keyTransmutationPt = "TRv_TRANSMUTATION_PT";
+
+	public static ResearchItem researchTransmutationOs;
+	public static String keyTransmutationOs = "TRv_TRANSMUTATION_OS";
+
+	public static ResearchItem researchTransmutationIr;
+	public static String keyTransmutationIr = "TRv_TRANSMUTATION_IR";
+
+
+	public static ResearchItem researchClusterFe;
+	public static String keyClusterFe = "TRv_CLUSTER_FE";
+
+	public static ResearchItem researchClusterCu;
+	public static String keyClusterCu = "TRv_CLUSTER_CU";
+
+	public static ResearchItem researchClusterSn;
+	public static String keyClusterSn = "TRv_CLUSTER_SN";
+
+	public static ResearchItem researchClusterPb;
+	public static String keyClusterPb = "TRv_CLUSTER_PB";
+
+	public static ResearchItem researchClusterAu;
+	public static String keyClusterAu = "TRv_CLUSTER_AU";
+
+	public static ResearchItem researchClusterNi;
+	public static String keyClusterNi = "TRv_CLUSTER_NI";
+
+	public static ResearchItem researchClusterAl;
+	public static String keyClusterAl = "TRv_CLUSTER_AL";
+
+	public static ResearchItem researchClusterYPO;
+	public static String keyClusterYPO = "TRv_CLUSTER_YPO";
+
+	public static ResearchItem researchClusterZn;
+	public static String keyClusterZn = "TRv_CLUSTER_ZN";
+
+	public static ResearchItem researchClusterBi;
+	public static String keyClusterBi = "TRv_CLUSTER_Bi";
+
+	public static ResearchItem researchClusterCuAs;
+	public static String keyClusterCuAs = "TRv_CLUSTER_CUAS";
+
+	public static ResearchItem researchClusterCuSb;
+	public static String keyClusterCuSb = "TRv_CLUSTER_CUSB";
+
+	public static ResearchItem researchClusterPt;
+	public static String keyClusterPt = "TRv_CLUSTER_PT";
+
+	public static ResearchItem researchClusterW;
+	public static String keyClusterW = "TRv_CLUSTER_W";
+
+	public static ResearchItem researchClusterIrOs;
+	public static String keyClusterIrOs = "TRv_CLUSTER_IROS";
 
 
 	public static ResearchItem researchWardenicObsidian;
@@ -747,6 +935,10 @@ public class ThaumRevLibrary {
 
 	public static ResearchItem researchArmorWardenComposite;
 	public static String keyArmorWardenComposite = "ARMOR_WARDEN_COMPOSITE";
+
+
+	public static ResearchItem researchThaumicElectrum;
+	public static String keyThaumicElectrum = "THAUMIC_ELECTRUM";
 
 
 	/** BLOCK NAMES * */

@@ -63,7 +63,19 @@ public class ThaumcraftLibrary {
 		itemShardEntropy = new ItemStack(itemShard, 1, 5);
 		itemShardBalanced = new ItemStack(itemShard, 1, 6);
 
+		nuggetIronTC = new ItemStack(itemNugget, 1, 0);
+		nuggetCopperTC = new ItemStack(itemNugget, 1, 1);
+		nuggetTinTC = new ItemStack(itemNugget, 1, 2);
+		nuggetSilverTC = new ItemStack(itemNugget, 1, 3);
+		nuggetLeadTC = new ItemStack(itemNugget, 1, 4);
 		itemQuicksilverDrop = new ItemStack(itemNugget, 1, 5);
+
+		clusterIron = new ItemStack(itemNugget, 1, 16);
+		clusterCopper = new ItemStack(itemNugget, 1, 17);
+		clusterTin = new ItemStack(itemNugget, 1, 18);
+		clusterSilver = new ItemStack(itemNugget, 1, 19);
+		clusterLead = new ItemStack(itemNugget, 1, 20);
+		clusterGold = new ItemStack(itemNugget, 1, 31);
 
 		itemPhial = new ItemStack(itemEssence, 1, 0);
 	}
@@ -340,12 +352,21 @@ public class ThaumcraftLibrary {
 	public static ItemStack itemShardEntropy;
 	public static ItemStack itemShardBalanced;
 
+	public static ItemStack nuggetIronTC;
+	public static ItemStack nuggetCopperTC;
+	public static ItemStack nuggetTinTC;
+	public static ItemStack nuggetSilverTC;
+	public static ItemStack nuggetLeadTC;
 	public static ItemStack itemQuicksilverDrop;
 
+	public static ItemStack clusterIron;
+	public static ItemStack clusterCopper;
+	public static ItemStack clusterTin;
+	public static ItemStack clusterSilver;
+	public static ItemStack clusterLead;
+	public static ItemStack clusterGold;
+
 	public static ItemStack itemPhial;
-
-
-
 
 
 

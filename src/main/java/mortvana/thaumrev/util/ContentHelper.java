@@ -6,6 +6,8 @@ import java.util.List;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 
+import net.minecraftforge.oredict.OreDictionary;
+
 import thaumcraft.api.research.ResearchPage;
 
 import mortvana.thaumrev.common.ThaumRevConfig;
@@ -201,5 +203,18 @@ public class ContentHelper {
 		} else {
 			return '0';
 		}
+	}
+
+	public static ItemStack[] getPlatinumTriggers() {
+		List<ItemStack> triggers = new ArrayList<ItemStack>();
+		triggers.addAll(OreDictionary.getOres("ingotPlatinum"));
+		triggers.addAll(OreDictionary.getOres("nuggetPlatinum"));
+		triggers.addAll(OreDictionary.getOres("dustPlatinum"));
+		triggers.addAll(OreDictionary.getOres("blockPlatinum"));
+		triggers.addAll(OreDictionary.getOres("dustPlatinumTiny"));
+
+		ItemStack[] ret = new ItemStack[triggers.size()];
+		triggers.toArray(ret);
+		return ret;
 	}
 }

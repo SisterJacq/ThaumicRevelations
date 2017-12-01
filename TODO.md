@@ -1,7 +1,7 @@
 Before v0.0.1:
 - [ ] Fix Texture Issue
 - [ ] Colorizer
-- [ ] Wild Cotton
+- [x] Wild Cotton
 - [ ] Thistle
 - [x] Cotton Crafting
 - [ ] Quartz Renderer
@@ -68,7 +68,8 @@ Before v0.0.1:
 - [ ] Fluxus Aspect Stats
 - [ ] Item Aspects
 - [ ] Textures
-- [ ] Tiny Dusts
+- [x] Tiny Dusts
+- [ ] Aluminium Extraction
 
 Maybe Before v0.0.1/v0.0.x Content:
 - [ ] Enderio Alloying (EnderIO does its recipes weirdly)

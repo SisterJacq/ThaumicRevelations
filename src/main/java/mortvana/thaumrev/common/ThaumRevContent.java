@@ -1,8 +1,5 @@
 package mortvana.thaumrev.common;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.EnumRarity;
@@ -16,10 +13,8 @@ import net.minecraftforge.oredict.ShapelessOreRecipe;
 import baubles.api.BaubleType;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
-import thaumcraft.api.crafting.CrucibleRecipe;
 import thaumcraft.api.research.ResearchCategories;
 import thaumcraft.api.research.ResearchPage;
-import thaumcraft.common.config.ConfigResearch;
 
 import magicbees.api.MagicBeesAPI;
 
@@ -29,7 +24,6 @@ import mortvana.melteddashboard.intermod.thaumcraft.research.DummyResearchItem;
 import mortvana.melteddashboard.intermod.thaumcraft.research.FluxGearResearchItem;
 import mortvana.melteddashboard.inventory.FluxGearCreativeTab;
 import mortvana.melteddashboard.item.ItemArmorFluxGear;
-import mortvana.melteddashboard.lib.ThaumcraftLibrary;
 import mortvana.melteddashboard.util.helpers.ItemHelper;
 import mortvana.melteddashboard.util.helpers.mod.ThaumcraftHelper;
 
@@ -37,7 +31,7 @@ import mortvana.thaumrev.block.*;
 import mortvana.thaumrev.item.*;
 import mortvana.thaumrev.util.*;
 import mortvana.thaumrev.util.item.data.ThaumRevMaterialDataSet;
-import mortvana.thaumrev.world.ExcubituraGenerator;
+import mortvana.thaumrev.world.ThaumRevWorldGenerator;
 
 import static mortvana.melteddashboard.lib.ThaumcraftLibrary.*;
 import static mortvana.thaumrev.library.ThaumRevLibrary.*;
@@ -62,7 +56,9 @@ public class ThaumRevContent {
 		loadArmor();
 		loadTools();
 		loadBaubles();
-		loadWorldGen();
+
+		GameRegistry.registerWorldGenerator(new ThaumRevWorldGenerator(), 1);
+
 		loadInit();
 
 		((FluxGearCreativeTab) thaumicRevelationsTab).setItem(wardenAmulet);
@@ -537,10 +533,6 @@ public class ThaumRevContent {
 		loveRing = thaumicBauble.addMetaBauble(1, "loveRing", new DefaultBaubleData(BaubleType.RING).setUnequip(false), 3);
 	}
 
-	public static void loadWorldGen() {
-		GameRegistry.registerWorldGenerator(new ExcubituraGenerator(), 1);
-	}
-
 	public static void loadInit() {
 		RecipeHelper.addCluster("oreZinc", clusterZinc);
 		RecipeHelper.addCluster("oreNickel", clusterNickel);
@@ -683,12 +675,60 @@ public class ThaumRevContent {
 		addSmelting(dustAluminium, ingotAluminium);
 		addSmelting(dustXenotimeJunk, ingotXenotimeJunk);
 
+		addStorageRecipe(dustCopper, "dustCopperTiny");
+		addStorageRecipe(dustZinc, "dustZincTiny");
+		addStorageRecipe(dustTin, "dustTinTiny");
+		addStorageRecipe(dustNickel, "dustNickelTiny");
+		addStorageRecipe(dustSilver, "dustSilverTiny");
+		addStorageRecipe(dustLead, "dustLeadTiny");
+		addStorageRecipe(dustLanthanides, "dustXenotimeLanthanidesTiny");
+		addStorageRecipe(dustTungsten, "dustTungstenTiny");
+		addStorageRecipe(dustIridium, "dustIridiumTiny");
+		addStorageRecipe(dustBismuth, "dustBismuthTiny");
+		addStorageRecipe(dustArsenicalBronze, "dustArsenicalBronzeTiny");
+		addStorageRecipe(dustAntimonialBronze, "dustAntimonialBronzeTiny");
+		addStorageRecipe(dustPyrope, "dustPyropeTiny");
+		addStorageRecipe(dustDioptase, "dustDioptaseTiny");
+		addStorageRecipe(dustFluonicSapphire, "dustFluonicSapphireTiny");
+		addStorageRecipe(dustOsmium, "dustOsmiumTiny");
+		addStorageRecipe(dustNeodymium, "dustNeodymiumTiny");
+		addStorageRecipe(dustLutetium, "dustLutetiumTiny");
+		addStorageRecipe(dustPalladium, "dustPalladiumTiny");
+		addStorageRecipe(dustIridosmium, "dustIridosmiumTiny");
+		addStorageRecipe(dustAluminium, "dustAluminiumTiny");
+		addStorageRecipe(dustXenotimeJunk, "dustXenotimeWasteTiny");
+
+		addReverseStorageRecipe(tinyCopper, "dustCopper");
+		addReverseStorageRecipe(tinyZinc, "dustZinc");
+		addReverseStorageRecipe(tinyTin, "dustTin");
+		addReverseStorageRecipe(tinyNickel, "dustNickel");
+		addReverseStorageRecipe(tinySilver, "dustSilver");
+		addReverseStorageRecipe(tinyLead, "dustLead");
+		addReverseStorageRecipe(tinyLanthanides, "dustXenotimeLanthanides");
+		addReverseStorageRecipe(tinyTungsten, "dustTungsten");
+		addReverseStorageRecipe(tinyIridium, "dustIridium");
+		addReverseStorageRecipe(tinyBismuth, "dustBismuth");
+		addReverseStorageRecipe(tinyArsenicalBronze, "dustArsenicalBronze");
+		addReverseStorageRecipe(tinyAntimonialBronze, "dustAntimonialBronze");
+		addReverseStorageRecipe(tinyPyrope, "gemPyrope");
+		addReverseStorageRecipe(tinyDioptase, "gemDioptase");
+		addReverseStorageRecipe(tinyFluonicSapphire, "gemFluonicSapphire");
+		addReverseStorageRecipe(tinyOsmium, "dustOsmium");
+		addReverseStorageRecipe(tinyNeodymium, "dustNeodymium");
+		addReverseStorageRecipe(tinyLutetium, "dustLutetium");
+		addReverseStorageRecipe(tinyPalladium, "dustPalladium");
+		addReverseStorageRecipe(tinyIridosmium, "dustIridosmium");
+		addReverseStorageRecipe(tinyAluminium, "dustAluminium");
+		addReverseStorageRecipe(tinyXenotimeJunk, "dustXenotimeWaste");
+
 		if (ThaumRevConfig.enableBrass) {
 			addRecipe(recipeBrass);
 			addRecipe(recDustBrass);
 			addSmelting(rawBrass, ingotBrass, 1.2F);
 			addStorageRecipe(ingotBrass, "nuggetBrass");
 			addReverseStorageRecipe(nuggetBrass, "ingotBrass");
+			addStorageRecipe(dustBrass, "dustBrassTiny");
+			addReverseStorageRecipe(tinyBrass, "dustBrass");
 			addSmelting(dustBrass, ingotBrass);
 		}
 		if (ThaumRevConfig.enableBronze) {
@@ -697,6 +737,8 @@ public class ThaumRevContent {
 			addSmelting(rawBronze, ingotBronze, 1.05F);
 			addStorageRecipe(ingotBronze, "nuggetBronze");
 			addReverseStorageRecipe(nuggetBronze, "ingotBronze");
+			addStorageRecipe(dustBronze, "dustBronzeTiny");
+			addReverseStorageRecipe(tinyBronze, "dustBronze");
 			addSmelting(dustBronze, ingotBronze);
 		}
 		if (ThaumRevConfig.enableBismuthBronze) {
@@ -705,6 +747,8 @@ public class ThaumRevContent {
 			addSmelting(rawBismuthBronze, ingotBismuthBronze, 1.35F);
 			addStorageRecipe(ingotBismuthBronze, "nuggetBismuthBronze");
 			addReverseStorageRecipe(nuggetBismuthBronze, "ingotBismuthBronze");
+			addStorageRecipe(dustBismuthBronze, "dustBismuthBronzeTiny");
+			addReverseStorageRecipe(tinyBismuthBronze, "dustBismuthBronze");
 			addSmelting(dustBismuthBronze, ingotBismuthBronze);
 		}
 		if (ThaumRevConfig.enableMithril) {
@@ -713,6 +757,8 @@ public class ThaumRevContent {
 			addSmelting(rawMithril, ingotMithril, 1.65F);
 			addStorageRecipe(ingotMithril, "nuggetArsenoAntimonialBronze");
 			addReverseStorageRecipe(nuggetMithril, "ingotArsenoAntimonialBronze");
+			addStorageRecipe(dustMithril, "dustArsenoAntimonialBronzeTiny");
+			addReverseStorageRecipe(tinyMithril, "dustArsenoAntimonialBronze");
 			addSmelting(dustMithril, ingotMithril);
 		}
 		if (ThaumRevConfig.enableAlBronze) {
@@ -721,6 +767,8 @@ public class ThaumRevContent {
 			addSmelting(rawAluminiumBronze, ingotAluminiumBronze, 1.15F);
 			addStorageRecipe(ingotAluminiumBronze, "nuggetAluminiumBronze");
 			addReverseStorageRecipe(nuggetAluminiumBronze, "ingotAluminiumBronze");
+			addStorageRecipe(dustAluminiumBronze, "dustAluminiumBronzeTiny");
+			addReverseStorageRecipe(tinyAluminiumBronze, "dustAluminiumBronze");
 			addSmelting(dustAluminiumBronze, ingotAluminiumBronze);
 		}
 		if (ThaumRevConfig.enableCupronickel) {
@@ -729,6 +777,8 @@ public class ThaumRevContent {
 			addSmelting(rawCupronickel, ingotCupronickel, 1.15F);
 			addStorageRecipe(ingotCupronickel, "nuggetCupronickel");
 			addReverseStorageRecipe(nuggetCupronickel, "ingotCupronickel");
+			addStorageRecipe(dustCupronickel, "dustCupronickelTiny");
+			addReverseStorageRecipe(tinyCupronickel, "dustCupronickel");
 			addSmelting(dustCupronickel, ingotCupronickel);
 		}
 		if (ThaumRevConfig.enableTinkersBronze) {
@@ -737,6 +787,8 @@ public class ThaumRevContent {
 			addSmelting(rawTinkersBronze, ingotTinkersBronze, 1.85F);
 			addStorageRecipe(ingotTinkersBronze, "nuggetTinkersBronze");
 			addReverseStorageRecipe(nuggetTinkersBronze, "ingotTinkersBronze");
+			addStorageRecipe(dustTinkersBronze, "dustTinkersBronzeTiny");
+			addReverseStorageRecipe(tinyTinkersBronze, "dustTinkersBronze");
 			addSmelting(dustTinkersBronze, ingotTinkersBronze);
 		}
 		if (ThaumRevConfig.enableConstantan) {
@@ -745,6 +797,8 @@ public class ThaumRevContent {
 			addSmelting(rawConstantan, ingotConstantan, 1.15F);
 			addStorageRecipe(ingotConstantan, "nuggetConstantan");
 			addReverseStorageRecipe(nuggetConstantan, "ingotConstantan");
+			addStorageRecipe(dustConstantan, "dustConstantanTiny");
+			addReverseStorageRecipe(tinyConstantan, "dustConstantan");
 			addSmelting(dustConstantan, ingotConstantan);
 		}
 		if (ThaumRevConfig.enableInvar) {
@@ -753,6 +807,8 @@ public class ThaumRevContent {
 			addSmelting(rawInvar, ingotInvar, 1.15F);
 			addStorageRecipe(ingotInvar, "nuggetInvar");
 			addReverseStorageRecipe(nuggetInvar, "ingotInvar");
+			addStorageRecipe(dustInvar, "dustInvarTiny");
+			addReverseStorageRecipe(tinyInvar, "dustInvar");
 			addSmelting(dustInvar, ingotInvar);
 		}
 		if (ThaumRevConfig.enableElectrum) {
@@ -761,11 +817,15 @@ public class ThaumRevContent {
 			addSmelting(rawElectrum, ingotElectrum, 1.5F);
 			addStorageRecipe(ingotElectrum, "nuggetElectrum");
 			addReverseStorageRecipe(nuggetElectrum, "ingotElectrum");
+			addStorageRecipe(dustElectrum, "dustElectrumTiny");
+			addReverseStorageRecipe(tinyElectrum, "dustElectrum");
 			addSmelting(dustElectrum, ingotElectrum);
 		}
 
 		addStorageRecipe(ingotWardenicMetal, "nuggetWardenicMetal");
 		addReverseStorageRecipe(nuggetWardenicMetal, "ingotWardenicMetal");
+		addStorageRecipe(dustWardenicMetal, "dustWardenicMetalTiny");
+		addReverseStorageRecipe(tinyWardenicMetal, "dustWardenicMetal");
 		addSmelting(dustWardenicMetal, ingotWardenicMetal);
 		addSmelting(rawWardenicMetal, ingotWardenicMetal, 1.3F);
 
@@ -781,6 +841,16 @@ public class ThaumRevContent {
 		addReverseStorageRecipe(nuggetThaumicTinkersBronze, "ingotThaumicTinkersBronze");
 		addReverseStorageRecipe(nuggetOsLu, "ingotOsmiumLutetium");
 		addReverseStorageRecipe(shardFluonicPyroptase, "gemFluonicPyroptase");
+
+		addStorageRecipe(dustThaumicBronze, "dustThaumicBronzeTiny");
+		addStorageRecipe(dustThaumicTinkersBronze, "dustThaumicTinkersBronzeTiny");
+		addStorageRecipe(dustOsLu, "dustOsmiumLutetiumTiny");
+		addStorageRecipe(dustFluonicPyroptase, "dustFluonicPyroptaseTiny");
+
+		addReverseStorageRecipe(tinyThaumicBronze, "dustThaumicBronze");
+		addReverseStorageRecipe(tinyThaumicTinkersBronze, "dustThaumicTinkersBronze");
+		addReverseStorageRecipe(tinyOsLu, "dustOsmiumLutetium");
+		addReverseStorageRecipe(tinyFluonicPyroptase, "dustFluonicPyroptase");
 
 		addSmelting(dustThaumicBronze, ingotThaumicBronze);
 		addSmelting(dustThaumicTinkersBronze, ingotThaumicTinkersBronze);
@@ -802,6 +872,22 @@ public class ThaumRevContent {
 		addReverseStorageRecipe(nuggetVoidbrass, "ingotVoidbrass");
 		addReverseStorageRecipe(nuggetVoidsteel, "ingotVoidsteel");
 		addReverseStorageRecipe(nuggetVoidtungsten, "ingotVoidtungsten");
+
+		addStorageRecipe(dustThaumicElectrum, "dustThaumicElectrumTiny");
+		addStorageRecipe(dustSteel, "dustSteelTiny");
+		addStorageRecipe(dustWardenicSteel, "dustWardenicSteelTiny");
+		addStorageRecipe(dustWardenicTinkersBronze, "dustWardenicTinkersBronzeTiny");
+		addStorageRecipe(dustVoidbrass, "dustVoidbrassTiny");
+		addStorageRecipe(dustVoidsteel, "dustVoidsteelTiny");
+		addStorageRecipe(dustVoidtungsten, "dustVoidtungstenTiny");
+
+		addReverseStorageRecipe(tinyThaumicElectrum, "dustThaumicElectrum");
+		addReverseStorageRecipe(tinySteel, "dustSteel");
+		addReverseStorageRecipe(tinyWardenicSteel, "dustWardenicSteel");
+		addReverseStorageRecipe(tinyWardenicTinkersBronze, "dustWardenicTinkersBronze");
+		addReverseStorageRecipe(tinyVoidbrass, "dustVoidbrass");
+		addReverseStorageRecipe(tinyVoidsteel, "dustVoidsteel");
+		addReverseStorageRecipe(tinyVoidtungsten, "dustVoidtungsten");
 
 		addSmelting(dustThaumicElectrum, ingotThaumicElectrum);
 		addSmelting(dustSteel, ingotSteel);

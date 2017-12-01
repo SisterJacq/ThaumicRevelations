@@ -6,6 +6,9 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.World;
+import net.minecraft.world.gen.feature.WorldGenFlowers;
+import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
@@ -18,6 +21,7 @@ import mortvana.melteddashboard.block.material.MaterialFalseAir;
 import mortvana.melteddashboard.intermod.baubles.item.FluxGearItemBauble;
 import mortvana.melteddashboard.item.FluxGearItemInteractive;
 import mortvana.melteddashboard.item.ItemArmorFluxGear;
+import mortvana.melteddashboard.world.WorldGenPlant;
 
 import mortvana.thaumrev.util.item.ItemArmorInfusableBase;
 
@@ -25,7 +29,7 @@ import static thaumcraft.api.aspects.Aspect.*;
 
 public class ThaumRevLibrary {
 
-	/** MOD CONSTANTS * */
+	/** MOD CONSTANTS **/
 	public static final String MOD_ID = "ThaumicRevelations";
 	public static final String MOD_NAME = "Thaumic Revelations";
 	public static final String MOD_VERSION = "vPO.TA.TO.RANDOM-DEV";
@@ -36,10 +40,10 @@ public class ThaumRevLibrary {
 
 	public static int researchLevel;
 
-	/** RESEARCH CATEGORIES * */
+	/** RESEARCH CATEGORIES **/
 	public static final String RESEARCH_KEY = "THAUMREV";
 
-	/** ASPECTS * */
+	/** ASPECTS **/
 	public static final Aspect WARDEN = new Aspect("excubitor", 0x3CD4FC, new Aspect[] {ELDRITCH, DEATH}, new ResourceLocation(RESOURCE_PREFIX, "textures/aspects/exubitor.png"), 771);
 	public static final Aspect CITRUS = new Aspect("citrus", 0xFF6E00, new Aspect[] {TREE, SENSES}, new ResourceLocation(RESOURCE_PREFIX, "textures/aspects/citrus.png"), 771);
 	public static final Aspect MAGNET = new Aspect("magnes", 0x515970, new Aspect[] {METAL, ENERGY}, new ResourceLocation(RESOURCE_PREFIX, "textures/aspects/magnes.png"), 771);
@@ -49,13 +53,13 @@ public class ThaumRevLibrary {
 	/** ENCHANTMENTS **/
 	//public static Enchantment enchantStabilizing;
 
-	/** CREATIVE TABS * */
+	/** CREATIVE TABS **/
 	public static CreativeTabs thaumicRevelationsTab;
 
-	/** MATERIALS * */
+	/** MATERIALS **/
 	public static Material materialFalseAir = new MaterialFalseAir();
 
-	/** BLOCKS * */
+	/** BLOCKS **/
 	public static Block blockThaumicPlant;
 	public static Block blockOre;
 	//public static Block blockFakeAir;
@@ -71,11 +75,11 @@ public class ThaumRevLibrary {
 	public static Block blockStoneSlab;
 	public static Block blockStoneSlabDouble;
 
-	/** ITEMS * */
+	/** ITEMS **/
 	public static FluxGearItemInteractive generalItem;
 	public static FluxGearItemBauble thaumicBauble;
 
-	/** ITEMSTACKS * */
+	/** ITEMSTACKS **/
 	public static ItemStack potato = new ItemStack(Items.potato); //Used for debugging, placeholding, and such
 
 	public static ItemStack excubituraRose;
@@ -502,7 +506,7 @@ public class ThaumRevLibrary {
 	public static ItemStack wardenAmulet;					//00000
 	public static ItemStack loveRing;						//00001
 
-	/** ARMORS * */
+	/** ARMORS **/
 	public static ItemArmorFluxGear bronzeChainHelmet;
 	public static ItemArmorFluxGear bronzeChainmail;
 	public static ItemArmorFluxGear bronzeChainGreaves;
@@ -535,10 +539,10 @@ public class ThaumRevLibrary {
 
 	/** TOOLS **/
 
-	/** OTHER EQUIPMENT * */
+	/** OTHER EQUIPMENT **/
 	public static ItemFocusBasic itemFocusPurity;
 
-	/** RECIPES * */
+	/** RECIPES **/
 	public static ShapelessOreRecipe recipeBrass;
 	public static ShapelessOreRecipe recipeBronze;
 	public static ShapelessOreRecipe[] recipeBismuthBronze;
@@ -729,7 +733,7 @@ public class ThaumRevLibrary {
 
 	public static CrucibleRecipe recipeThaumicElectrum;
 
-	// /** RESEARCH **/
+	/** RESEARCH **/
 	public static ResearchItem researchThaumRev;
 	public static String keyThaumRev = "THAUMIC_REVELATIONS";
 
@@ -940,9 +944,15 @@ public class ThaumRevLibrary {
 	public static ResearchItem researchThaumicElectrum;
 	public static String keyThaumicElectrum = "THAUMIC_ELECTRUM";
 
+	/** WORLD GENERATORS **/
+	public static WorldGenPlant genExcubitura;
+	public static WorldGenPlant genCotton;
+	public static WorldGenPlant genThistle;
+	public static WorldGenMinable genChalcocite;
 
-	/** BLOCK NAMES * */
-	public static final String[] PLANT_NAMES = {"excubitura", "wildCotton", "thistle"};
+
+	/** BLOCK NAMES **/
+	public static final String[] PLANT_NAMES = {"excubitura", "cotton_wild", "thistle"};
 
 	public static final String[] DECOR_STONE_NAMES = {"obsidianWardenic", "stoneEldritch", "wardenicQuartz", "wardenicQuartzChiseled", "wardenicQuartzPillar", "wardenicQuartzPillar", "wardenicQuartzPillar",};
 

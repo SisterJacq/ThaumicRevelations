@@ -10,8 +10,8 @@ public class MathHelper {
 
 	/* *=-=-=-=* Constants *=-=-=-=* */
 	public static final double PHI = 1.618034;
-	public static final Random RANDOM = new Random();
 	public static final double[] SINE_TABLE = new double[65536];
+	public static final Random RANDOM = new Random();
 
 	static {
 		for (int i = 0; i < 65536; i++) {
@@ -121,5 +121,18 @@ public class MathHelper {
 
 	public static int diffRand(int min, int max) {
 		return min != max ? RANDOM.nextInt(max - min) + min : min;
+	}
+
+	/**
+	 *	Returns a values on a bell-curve between the positive and negative value of range - 1 (due to the way
+	 *	Random.nextInt(int) works)
+	 *
+	 *	@param range - The range, with exclusive upper limit for values, both positive and negative.
+	 *	@return - A value between (excluisve) -range and range, values are distributed along a bell-curve centered on 0.
+	 *
+	 *	NOTE: If your IDE says this should simplify to zero, it's being stupid, and should pull its head out of its ass.
+	 */
+	public static int getOffsetInt(int range) {
+		return RANDOM.nextInt(range) - RANDOM.nextInt(range); //This isn't zero, IntelliJ, it's a beel-curve centered on zero!
 	}
 }

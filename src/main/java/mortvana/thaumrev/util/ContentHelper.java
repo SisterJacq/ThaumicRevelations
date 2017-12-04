@@ -238,20 +238,20 @@ public class ContentHelper {
 	 * @return - A modifier for generation of Excubitura Roses. Also used to determine growth speed.
 	 */
 	public static double getExcubituraModifier(World world, int x, int y, int z) {
-		double modifier = 5F;
+		double modifier = 5D;
 		BiomeGenBase biome = world.getBiomeGenForCoords(x, z);
 		// First off, these guys don't grow in the End, Nether, or Mushroom Biomes. They also won't grow in dead places and wastelands.
 		if (BiomeDictionary.isBiomeOfType(biome, Type.END) || BiomeDictionary.isBiomeOfType(biome, Type.NETHER) || BiomeDictionary.isBiomeOfType(biome, Type.MUSHROOM) ||
 				BiomeDictionary.isBiomeOfType(biome, Type.DEAD) || BiomeDictionary.isBiomeOfType(biome, Type.WASTELAND)) {
-			return 0F;
+			return 0D;
 		}
 
 		// Modify the modifier for temperature.
-		float temp = biome.getFloatTemperature(x, y, z);
-		if (temp < 0.35F) {
-			modifier -= (0.70F - (temp * 2));
-		} else if (temp > 0.75F) {
-			modifier -= (temp - 0.75F);
+		double temp = (double) biome.getFloatTemperature(x, y, z);
+		if (temp < 0.35D) {
+			modifier -= (0.70D - (temp * 2));
+		} else if (temp > 0.75D) {
+			modifier -= (temp - 0.75D);
 		}
 
 		// They don't like snow...
@@ -260,112 +260,112 @@ public class ContentHelper {
 		}
 
 		// Modify the modifier for rainfall.
-		float rain = biome.rainfall;
-		if (rain < 0.2F) {
-			modifier -= (2F - (rain * 10));
-		} else if (rain < 0.35F) {
-			modifier -= (1.4F - (rain * 4));
-		} else if (rain > 0.85F) {
-			modifier -= ((2 * rain) - 1.70F);
-		} else if (rain > 0.75F) {
-			modifier -= (rain - .75F);
+		double rain = (double) biome.rainfall;
+		if (rain < 0.2D) {
+			modifier -= (2D - (rain * 10));
+		} else if (rain < 0.35D) {
+			modifier -= (1.4D - (rain * 4));
+		} else if (rain > 0.85D) {
+			modifier -= ((2 * rain) - 1.70D);
+		} else if (rain > 0.75D) {
+			modifier -= (rain - .75D);
 		}
 
 		// They really don't like being dried out or drenched...
-		if (rain > 0.1F || rain < 0.95F) {
-			modifier = modifier / 10;
+		if (rain > 0.1D || rain < 0.95D) {
+			modifier /= 10.0D;
 		}
 
 		// They like moderate temperatures
 		if (BiomeDictionary.isBiomeOfType(biome, Type.HOT) || BiomeDictionary.isBiomeOfType(biome, Type.COLD)) {
-			modifier *= 0.75F;
+			modifier *= 0.75D;
 		} else {
-			modifier *= 1.1F;
+			modifier *= 1.1D;
 		}
 
 		// They like a decent amount of water
 		if (BiomeDictionary.isBiomeOfType(biome, Type.DRY)) {
-			modifier *= 0.75;
+			modifier *= 0.7D;
 		} else if (!BiomeDictionary.isBiomeOfType(biome, Type.WET)) {
-			modifier *= 1.1F;
+			modifier *= 1.1D;
 		}
 
 		// They are just like regular plants...
 		if (BiomeDictionary.isBiomeOfType(biome, Type.SPARSE)) {
-			modifier *= 0.75F;
+			modifier *= 0.75D;
 		}
 		if (BiomeDictionary.isBiomeOfType(biome, Type.LUSH)) {
-			modifier *= 1.65F;
+			modifier *= 1.65D;
 		}
 
 		// They dislike jungles, and aren't fond of savannas. They do like coniferous forests though.
 		if (BiomeDictionary.isBiomeOfType(biome, Type.JUNGLE)) {
-			modifier *= 0.5F;
+			modifier *= 0.5D;
 		}
 		if (BiomeDictionary.isBiomeOfType(biome, Type.SAVANNA)) {
-			modifier *= 0.75F;
+			modifier *= 0.75D;
 		}
 		if (BiomeDictionary.isBiomeOfType(biome, Type.CONIFEROUS)) {
-			modifier *= 1.25F;
+			modifier *= 1.25D;
 		}
 
 		// They dislike saltwater, but love a good stream!
 		if (BiomeDictionary.isBiomeOfType(biome, Type.BEACH) || BiomeDictionary.isBiomeOfType(biome, Type.OCEAN)) {
-			modifier *= .625F;
+			modifier *= .625D;
 		}
 		if (BiomeDictionary.isBiomeOfType(biome, Type.RIVER)) { //Something about the planet Miranda...
-			modifier *= 1.375F;
+			modifier *= 1.375D;
 		}
 
 		// No snow! Even bigger no to deserts!
 		if (BiomeDictionary.isBiomeOfType(biome, Type.SNOWY)) {
-			modifier /= 4;
+			modifier /= 4.0D;
 		}
 		if (BiomeDictionary.isBiomeOfType(biome, Type.SANDY)) {
-			modifier /= 8;
+			modifier /= 8.0D;
 		}
 
 		// Take your sorry ass back to Florida...
 		if (BiomeDictionary.isBiomeOfType(biome, Type.SWAMP)) {
-			modifier *= 0.1875F;
+			modifier *= 0.1875D;
 		}
 
 		// They do like some clay in the soil...
 		if (BiomeDictionary.isBiomeOfType(biome, Type.MESA)) {
-			modifier *= 1.05F;
+			modifier *= 1.05D;
 		}
 
 		// Plains are good, Forests are better!
 		if (BiomeDictionary.isBiomeOfType(biome, Type.PLAINS)) {
-			modifier *= 1.125F;
+			modifier *= 1.125D;
 		}
 		if (BiomeDictionary.isBiomeOfType(biome, Type.FOREST)) {
-			modifier *= 1.75F;
+			modifier *= 1.75D;
 		}
 
 		// Mountains are good, but they prefer big hills.
 		if (BiomeDictionary.isBiomeOfType(biome, Type.MOUNTAIN)) {
-			modifier *= 1.25F;
+			modifier *= 1.25D;
 		}
 		if (BiomeDictionary.isBiomeOfType(biome, Type.HILLS)) {
-			modifier *= 1.5F;
+			modifier *= 1.5D;
 		}
 
 		// Use Botania for the lushest hair possible. Trust me, I'm a wereporcupine.
 		if (BiomeDictionary.isBiomeOfType(biome, Type.LUSH)) {
-			modifier *= 2;
+			modifier *= 2.0D;
 		}
 
 		// 3 FOR THE PRICE OF 2 IF YOU WANT TO BELIEVE...
 		if (BiomeDictionary.isBiomeOfType(biome, Type.SPOOKY)) {
-			modifier *= 1.5F;
+			modifier *= 1.5D;
 		}
 
 		// They are a thaumic rose. They like magical biomes.
 		if (BiomeDictionary.isBiomeOfType(biome, Type.MAGICAL)) {
-			modifier *= 10;
+			modifier *= 10.0D;
 		}
 
-		return modifier * 5;
+		return modifier * 2.0D;
 	}
 }

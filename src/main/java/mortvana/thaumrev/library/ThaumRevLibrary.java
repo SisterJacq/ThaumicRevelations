@@ -21,7 +21,7 @@ import mortvana.melteddashboard.block.material.MaterialFalseAir;
 import mortvana.melteddashboard.intermod.baubles.item.FluxGearItemBauble;
 import mortvana.melteddashboard.item.FluxGearItemInteractive;
 import mortvana.melteddashboard.item.ItemArmorFluxGear;
-import mortvana.melteddashboard.world.WorldGenPlant;
+import mortvana.melteddashboard.world.*;
 
 import mortvana.thaumrev.util.item.ItemArmorInfusableBase;
 
@@ -717,7 +717,7 @@ public class ThaumRevLibrary {
 	public static ShapedArcaneRecipe recipeWardenicCompositeRaw;
 	public static InfusionRecipe recipeWardenicCompositeIngot;
 
-	public static ShapelessOreRecipe recipeAluDenseTemp;    //TEMP-TODO: Add Thaumic Hammermill
+	public static ShapelessOreRecipe recipeAluDenseTemp;    //TODO: Add Thaumic Hammermill
 	public static /*ThaumicCompressorRecipe*/ ShapedArcaneRecipe recipeWardenicCompositePlate;
 
 	public static /*ThaumicCompressorRecipe*/ ShapedArcaneRecipe recipeFittedCompositePlate;
@@ -730,6 +730,8 @@ public class ThaumRevLibrary {
 	public static ShapedArcaneRecipe recipeWardenicCompositeChestplate;
 	public static ShapedArcaneRecipe recipeWardenicCompositeGreaves;
 	public static ShapedArcaneRecipe recipeWardenicCompositeBoots;
+
+	public static InfusionRecipe recipeWardenicCrystalAwakened;
 
 	public static CrucibleRecipe recipeThaumicElectrum;
 
@@ -941,6 +943,10 @@ public class ThaumRevLibrary {
 	public static String keyArmorWardenComposite = "ARMOR_WARDEN_COMPOSITE";
 
 
+	public static ResearchItem researchWardenCrystalAwakened;
+	public static String keyWardenCrystalAwakened = "WARDEN_CRYSTAL_AWAKENED";
+
+
 	public static ResearchItem researchThaumicElectrum;
 	public static String keyThaumicElectrum = "THAUMIC_ELECTRUM";
 
@@ -948,11 +954,28 @@ public class ThaumRevLibrary {
 	public static WorldGenPlant genExcubitura;
 	public static WorldGenPlant genCotton;
 	public static WorldGenPlant genThistle;
-	public static WorldGenMinable genChalcocite;
-
+	public static WorldGenOreVein genChalcocite;
+	public static WorldGenOreVein genSphalerite;
+	public static WorldGenOreVein genCassiterite;
+	public static WorldGenOreVein genMillerite;
+	public static WorldGenOreVein genNativeSilver;
+	public static WorldGenOreVein genGalena;
+	public static WorldGenOreVein genXenotime;
+	public static WorldGenOreVein genWolframite;
+	public static WorldGenOreVein genIridosmium;
+	public static WorldGenOreVein genBismuthinite;
+	public static WorldGenOreVein genTennantite;
+	public static WorldGenOreVein genTetrahedite;
+	public static WorldGenOreVein genPyrope;
+	public static WorldGenOreVein genDioptase;
+	public static WorldGenOreVein genFluonicSapphire;
+	public static WorldGenMixedOreVein genCopperMix;
+	public static WorldGenMixedOreVein genAgPb;
+	public static WorldGenMixedOreVein genWSn;
+	public static WorldGenMixedOreVein genAgPbBi;
 
 	/** BLOCK NAMES **/
-	public static final String[] PLANT_NAMES = {"excubitura", "cotton_wild", "thistle"};
+	public static final String[] PLANT_NAMES = {"excubitura", "cotton_wild", "thistle_wild"};
 
 	public static final String[] DECOR_STONE_NAMES = {"obsidianWardenic", "stoneEldritch", "wardenicQuartz", "wardenicQuartzChiseled", "wardenicQuartzPillar", "wardenicQuartzPillar", "wardenicQuartzPillar",};
 

@@ -10,21 +10,25 @@ Before v0.0.1:
 - [x] Eldritch Stone
 - [x] Eldrich Keystone
 - [ ] Ore Generation 
-	- [ ] Chalcocite
-	- [ ] Sphalerite
-	- [ ] Cassiterite
-	- [ ] Millerite
-	- [ ] Native Silver
-	- [ ] Galena
-	- [ ] Xenotime
-	- [ ] Wolframite
-	- [ ] Iridosmium
-	- [ ] Bismuthinite
-	- [ ] Tennantite
-	- [ ] Tetrahedrite
-	- [ ] Pyrope
-	- [ ] Dioptase
-	- [ ] Fluonic Sapphire
+	- [x] Chalcocite
+	- [x] Sphalerite
+	- [x] Cassiterite
+	- [x] Millerite
+	- [x] Native Silver
+	- [x] Galena
+	- [x] Xenotime
+	- [x] Wolframite
+	- [x] Iridosmium
+	- [x] Bismuthinite
+	- [x] Tennantite
+	- [x] Tetrahedrite
+	- [x] Pyrope
+	- [x] Dioptase
+	- [x] Fluonic Sapphire
+	- [ ] Mixed Copper (Chalcocite, Tennantite, and Tetrahedrite)
+	- [ ] Silver and Lead
+	- [ ] Bismuth, Lead, and Silver
+	- [ ] Tungsten with Tin
 - [x] Metal Transmutation
 	- [x] Zinc
 	- [x] Nickel

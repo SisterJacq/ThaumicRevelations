@@ -2,7 +2,7 @@ Before v0.0.1:
 - [ ] Fix Texture Issue
 - [ ] Colorizer
 - [x] Wild Cotton
-- [ ] Thistle
+- [x] Thistle
 - [x] Cotton Crafting
 - [ ] Quartz Renderer
 - [ ] Quartz Stairs
@@ -74,6 +74,7 @@ Before v0.0.1:
 - [ ] Textures
 - [x] Tiny Dusts
 - [ ] Aluminium Extraction
+- [ ] Cotton and Thistle Farming
 
 Maybe Before v0.0.1/v0.0.x Content:
 - [ ] Enderio Alloying (EnderIO does its recipes weirdly)
@@ -83,11 +84,10 @@ Maybe Before v0.0.1/v0.0.x Content:
 - [ ] TiC Alloying
 - [ ] RotaryCraft Ore Processing
 - [ ] Wand Focus: Illumination (Witor)
-- [ ] Cotton and Thistle Farming
 - [ ] Excubitura Farming
 - [ ] Thaumium and Void Shears and Sickles
-- [ ] Transmutaions
-	- Vannila:
+- [ ] Transmutaions/Synthesis
+	- Vanilla:
 		- [ ] Diamond
 		- [ ] Emerald
 		- [ ] Coal
@@ -205,6 +205,8 @@ Maybe Before v0.0.1/v0.0.x Content:
 - [ ] Alumentum Pressurizer
 - [ ] Brass Pipe
 - [ ] TiC Real AlBronze Config
+- [ ] Gold -> Brass for Goggle and Thaumometer (config)
+- [ ] Shinier Mirror config (Makes mirrors require silver)
 
 Investigate Status for 0.0.x:
 - Mek Processing
@@ -215,7 +217,6 @@ Investigate Status for 0.0.x:
 v0.1.x Content:
 * Aspect Orbs (Impulse (active)/Radiant (passive); Alchemical (Essentia)/Energized (RF)/Sanguine (LP)/Nodal (Vis Powered))
 * Alchemical Tools
-* Wardenic TiC Modifier
 * TC/TRv materials for TiC
 * Void Chest
 * Void Interface
@@ -230,7 +231,7 @@ v0.1.x Content:
 * Hellfire Fuel
 * Ironwood
 * Duskwood
-* 15 Elemental Voidsteel Tools
+* 16 Elemental Voidsteel Tools
 * Infernal Bracelet
 * Infernal Gauntlet
 * Inkwell
@@ -239,11 +240,9 @@ v0.1.x Content:
 * Voidsteel, Quartz, Endstone, Obsidian, Infernal, <some cap for Aer>, <some cap for Aqua>, Nomad's, Artificer's and Sanguine Wand Caps
 * Ironwood and Duskwood Wand/Staff Cores
 * Advanced Mnemonic Matrix?
-* Gold -> Brass for Goggle and Thaumometer (config)
 * Portable Hole Item (uses stored vis)
 * Brain Purifacation (old TX Brain in a Jar crafting step; config)
 * TX Boots of the Comet/Meteor taking Seven Legaue Boots instead of Boots of the Traveler (config)
-* Shinier Mirror config (Makes mirrors require silver)
 * Wardenbraü
 
 Classes to Reimplement:

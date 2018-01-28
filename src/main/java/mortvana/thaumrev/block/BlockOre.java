@@ -76,9 +76,9 @@ public class BlockOre extends FluxGearBlockBase {
 		RecipeHelper.addSmelting(oreXenotime, ingotLanthanides, 1.0F); //Rare Earths mock your primitive furnace-based attempts at separating them
 		//Tungsten laughs at your mundane smelting
 		//Refractory Alloys mock your simple furnace
-		RecipeHelper.addSmelting(oreTetrahedrite, ingotAntimonialBronze, 1.35F);
-		RecipeHelper.addSmelting(oreTennantite, ingotArsenicalBronze, 1.35F);
 		RecipeHelper.addSmelting(oreBismuthinite, ingotBismuth, 1.15F);
+		RecipeHelper.addSmelting(oreTennantite, ingotArsenicalBronze, 1.35F);
+		RecipeHelper.addSmelting(oreTetrahedrite, ingotAntimonialBronze, 1.35F);
 		RecipeHelper.addSmelting(orePyrope, gemPyrope, 1.0F);
 		RecipeHelper.addSmelting(oreDioptase, gemDioptase, 1.0F);
 		RecipeHelper.addSmelting(oreFluonicSapphire, gemFluonicSapphire, 1.0F);

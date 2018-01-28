@@ -41,7 +41,7 @@ public class ThaumRevConfig extends ConfigBase {
 		enableMithril = config.get("Resources", "Enable Mithril", true, "Determines whether or not our Mithril (Arseno-Antimonial Bronze) is craftable. Disabling without other mods adding REAL Mithril (Fantasy Mithril doesn't count) will break stuff.").getBoolean();
 		enableAlBronze = config.get("Resources", "Enable Aluminium Bronze", true, "Determines whether or not our Aluminium Bronze is craftable. Disabling without other mods adding Aluminium Bronze will break stuff.").getBoolean();
 		enableCupronickel = config.get("Resources", "Enable Cupronickel", true, "Determines whether or not our Cupronickel is craftable. Disabling without other mods adding Cupronickel will break stuff.").getBoolean();
-		enableTinkersBronze = config.get("Resources", "Enable Tinker's Bronze", true, "Determines whether or not our Tinker's Bronze is craftable. Disabling without other mods adding Tinker's Bronze will break stuff.").getBoolean();
+		enableRiftishBronze = config.get("Resources", "Enable Tinker's Bronze", true, "Determines whether or not our Tinker's Bronze is craftable. Disabling without other mods adding Tinker's Bronze will break stuff.").getBoolean();
 		enableConstantan = config.get("Resources", "Enable Constantan", true, "Determines whether or not our Constantan is craftable. Disabling without other mods adding Constantan will break stuff.").getBoolean();
 		enableInvar = config.get("Resources", "Enable Invar", true, "Determines whether or not our Invar is craftable. Disabling without other mods adding Invar will break stuff.").getBoolean();
 		enableElectrum = config.get("Resources", "Enable Electrum", true, "Determines whether or not our Electrum is craftable. Disabling without other mods adding Electrum will break stuff.").getBoolean();
@@ -99,7 +99,7 @@ public class ThaumRevConfig extends ConfigBase {
 	public static boolean enableMithril;
 	public static boolean enableAlBronze;
 	public static boolean enableCupronickel;
-	public static boolean enableTinkersBronze;
+	public static boolean enableRiftishBronze;
 	public static boolean enableConstantan;
 	public static boolean enableInvar;
 	public static boolean enableElectrum;

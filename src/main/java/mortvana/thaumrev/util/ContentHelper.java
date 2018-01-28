@@ -111,16 +111,16 @@ public class ContentHelper {
 			smelting.add(new ResearchPage(rawCupronickel));
 			dusts.add(recDustCupronickel);
 		}
-		if (enableTinkersBronze) {
+		if (enableRiftishBronze) {
 			if (!start) {
 				list.add(new ResearchPage("f"));
 				start = true;
 			} else {
 				list.add(new ResearchPage("6"));
 			}
-			list.add(new ResearchPage(recipeTinkersBronze));
-			smelting.add(new ResearchPage(rawTinkersBronze));
-			dusts.add(recDustTinkersBronze);
+			list.add(new ResearchPage(recipeRiftishBronze));
+			smelting.add(new ResearchPage(rawRiftishBronze));
+			dusts.add(recDustRiftishBronze);
 		}
 		if (enableConstantan || enableInvar || enableElectrum) {
 			char val = getCIEValue();
@@ -182,7 +182,7 @@ public class ContentHelper {
 	}
 
 	public static boolean enableAlloys() {
-		return enableBrass || enableBronze || enableBismuthBronze || enableMithril || enableAlBronze || enableCupronickel || enableTinkersBronze || enableConstantan || enableInvar || enableElectrum;
+		return enableBrass || enableBronze || enableBismuthBronze || enableMithril || enableAlBronze || enableCupronickel || enableRiftishBronze || enableConstantan || enableInvar || enableElectrum;
 	}
 
 	public static char getCIEValue() {

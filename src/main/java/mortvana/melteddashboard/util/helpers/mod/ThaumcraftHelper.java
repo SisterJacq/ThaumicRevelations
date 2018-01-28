@@ -35,7 +35,7 @@ public class ThaumcraftHelper {
 		return new AspectList().add(AIR, size).add(FIRE, size).add(WATER, size).add(EARTH, size).add(ORDER, size).add(ENTROPY, size);
 	}
 
-	public static AspectList newPrimalAspectList(int aer, int ignis, int aqua, int terra,  int ordo, int perditio) {
+	public static AspectList newPrimalAspectList(int aer, int ignis, int aqua, int terra, int ordo, int perditio) {
 		AspectList list = new AspectList();
 		if (aer > 0) {
 			list.add(AIR, aer);

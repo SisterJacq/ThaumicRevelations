@@ -41,7 +41,9 @@ public class ThaumRevLibrary {
 	public static int researchLevel;
 
 	/** RESEARCH CATEGORIES **/
-	public static final String RESEARCH_KEY = "THAUMREV";
+	public static final String RESEARCH_KEY_MAIN = "TRvMAIN";
+	public static final String RESEARCH_KEY_METAL = "TRvMETAL";
+	public static final String RESEARCH_KEY_EQUIP = "TRvEQUIPMENT";
 
 	/** ASPECTS **/
 	public static final Aspect WARDEN = new Aspect("excubitor", 0x3CD4FC, new Aspect[] {ELDRITCH, DEATH}, new ResourceLocation(RESOURCE_PREFIX, "textures/aspects/exubitor.png"), 771);
@@ -146,8 +148,9 @@ public class ThaumRevLibrary {
 	public static ItemStack eldritchKeystone;				//00012
 	public static ItemStack thistleLeaf;					//00013
 	public static ItemStack thistleFlower;					//00014
+	public static ItemStack aspectOrbReceptor;				//00015
 
-	public static ItemStack aluminiumHydroxide;				//00016
+	//public static ItemStack aluminiumHydroxide;				//00016
 
 	//00280-00299 SEEDS
 	public static ItemStack seedExcubitura;					//00280
@@ -755,6 +758,9 @@ public class ThaumRevLibrary {
 
 	public static ResearchItem researchAlloys;
 	public static String keyAlloys = "ALLOYS_TRv";
+
+	public static ResearchItem researchAspectOrb;
+	public static String keyAspectOrb = "ASPECT_ORB";
 
 	public static ResearchItem researchCotton;
 	public static String keyCotton = "ENCHCOTTON";

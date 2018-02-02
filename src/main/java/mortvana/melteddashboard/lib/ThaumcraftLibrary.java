@@ -168,7 +168,7 @@ public class ThaumcraftLibrary {
 	 public static Block blockCrystal;
 	 public static Block blockCosmeticOpaque;*/
 	public static Block blockCosmeticSolid;
-	/*public static Block blockMirror;
+	/**public static Block blockMirror;
 	public static Block blockTaint;
 	public static Block blockTaintFibres;
 	public static Block blockManaPod;
@@ -183,7 +183,7 @@ public class ThaumcraftLibrary {
 	public static Block blockStairsEldritch;*/
 	public static Block blockSlabWood;
 	public static Block blockSlabStone;
-	/*public static Block blockDoubleSlabWood;
+	/**public static Block blockDoubleSlabWood;
 	public static Block blockDoubleSlabStone;
 	public static Block blockEldritchNothing;
 	public static Block blockAlchemyFurnace;
@@ -263,7 +263,7 @@ public class ThaumcraftLibrary {
 	//public static Item itemWandCap;
 	//public static Item itemWandRod;
 	public static Item itemEssence;
-	/*public static Item itemWispEssence;
+	/**public static Item itemWispEssence;
 	public static Item itemCrystalEssence;
 	public static Item itemNuggetChicken;
 	public static Item itemNuggetBeef;

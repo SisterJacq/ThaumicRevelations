@@ -34,6 +34,7 @@ import mortvana.thaumrev.util.item.data.ThaumRevMaterialDataSet;
 import mortvana.thaumrev.world.ThaumRevWorldGenerator;
 
 import static mortvana.melteddashboard.lib.ThaumcraftLibrary.*;
+import static mortvana.melteddashboard.lib.ThermalLibrary.*;
 import static mortvana.thaumrev.library.ThaumRevLibrary.*;
 import static mortvana.thaumrev.util.RecipeHelper.*;
 import static thaumcraft.api.aspects.Aspect.*;
@@ -65,7 +66,7 @@ public class ThaumRevContent {
 	}
 
 	public static void postInit() {
-		ResearchCategories.registerCategory(RESEARCH_KEY, new ResourceLocation(RESOURCE_PREFIX, "textures/items/baubles/amuletWarden.png"), new ResourceLocation("thaumrev", "textures/gui/gui_researchbackthaumrev.png"));
+		ResearchCategories.registerCategory(RESEARCH_KEY_MAIN, new ResourceLocation(RESOURCE_PREFIX, "textures/items/baubles/amuletWarden.png"), new ResourceLocation("thaumrev", "textures/gui/gui_researchbackthaumrev.png"));
 		aluminiumArc();
 		addLoot();
 		determineTempus();
@@ -172,13 +173,14 @@ public class ThaumRevContent {
 		eldritchKeystone = generalItem.addOreDictItem(12, "eldritchKeystone", "itemEldritchKeystone");
 		thistleLeaf = generalItem.addOreDictItem(13, "thistleLeaf", "itemThistleLeaf");
 		thistleFlower = generalItem.addOreDictItem(14, "thistleFlower", "itemThistleFlower");
+		aspectOrbReceptor = generalItem.addOreDictItem(15, "aspectOrbReceptor", "itemAspectOrbReceptor");
 
 		seedExcubitura = generalItem.addOreDictItem(280, "seedExcubitura");
 		seedCotton = generalItem.addOreDictItem(281, "seedCotton");
 		seedThistle = generalItem.addOreDictItem(282, "seedThistle");
 
-		ingotCopper = generalItem.addColorizedOreDictItem(300, iCu, "ingot", ColorLibrary.CMAT_COPPER);
-		ingotZinc = generalItem.addColorizedOreDictItem(301, "ingotZinc", "ingot", ColorLibrary.CMAT_ZINC);
+		ingotCopper = generalItem.addOreDictItem(300, iCu);
+		ingotZinc = generalItem.addOreDictItem(301, "ingotZinc");
 		ingotTin = generalItem.addOreDictItem(302, iSn);
 		ingotNickel = generalItem.addOreDictItem(303, "ingotNickel");
 		ingotSilver = generalItem.addOreDictItem(304, "ingotSilver");
@@ -225,7 +227,7 @@ public class ThaumRevContent {
 		ingotVoidsteel = generalItem.addOreDictItem(381, "ingotVoidsteel", 1);
 		ingotVoidtungsten = generalItem.addOreDictItem(382, "ingotVoidtungsten", 2);
 
-		nuggetCopper = generalItem.addColorizedOreDictItem(400, "nuggetCopper", "nugget", ColorLibrary.CMAT_COPPER);
+		nuggetCopper = generalItem.addOreDictItem(400, "nuggetCopper");
 		nuggetZinc = generalItem.addOreDictItem(401, "nuggetZinc");
 		nuggetTin = generalItem.addOreDictItem(402, "nuggetTin");
 		nuggetNickel = generalItem.addOreDictItem(403, "nuggetNickel");
@@ -673,7 +675,6 @@ public class ThaumRevContent {
 		addSmelting(dustNeodymium, ingotNeodymium);
 		addSmelting(dustLutetium, ingotLutetium);
 		addSmelting(dustPalladium, ingotPalladium);
-		//addSmelting(dustIridosmium, ingotIridosmium);
 		addSmelting(dustAluminium, ingotAluminium);
 		addSmelting(dustXenotimeJunk, ingotXenotimeJunk);
 
@@ -904,6 +905,14 @@ public class ThaumRevContent {
 		recipeBinderTiny = addReverseStorageRecipe(tinyWardenicBinder, "dustWardenicBinder");
 		recipeBinderCombine = addStorageRecipe(dustWardenicBinder, "dustWardenicBinderTiny");
 
+		addRefractorySmelting(coatedOsLu, firedOsLu, 2.0F);
+
+		addRefractorySmelting(dustTungsten, ingotTungsten);
+		addRefractorySmelting(dustOsmium, ingotOsmium);
+		addRefractorySmelting(dustIridium, ingotIridium);
+		addRefractorySmelting(dustOsLu, ingotOsLu, 1.5F);
+		addRefractorySmelting(dustVoidtungsten, ingotVoidtungsten);
+
 		if (Loader.isModLoaded("ThermalExpansion")) {
 			addInductionAlloyRecipe("Copper", 3, "Zinc", 1, ingotBrass);
 			addInductionAlloyRecipe("ArsenicalBronze", 1, "AntimonialBronze", 1, ingotMithril);
@@ -911,6 +920,7 @@ public class ThaumRevContent {
 			addInductionAlloyRecipe("Copper", 3, "Nickel", 1, ingotCupronickel);
 			addInductionAlloyRecipe("Copper", 3, "Arsenic", 1, ingotArsenicalBronze);
 			addInductionAlloyRecipe("Copper", 3, "Antimony", 1, ingotAntimonialBronze);
+			addInductionAlloyRecipe("Copper", 1, "Nickel", 1, ingotConstantan);
 
 			addPulverizerRecycleRecipe(wardenicQuartz, wardenicQuartzBlock, 4);
 			addPulverizerRecycleRecipe(wardenicQuartz, wardenicQuartzChiseled, 4);
@@ -931,6 +941,8 @@ public class ThaumRevContent {
 	}
 
 	public static void loadThaumicRecipes() {
+		//recipeOrbReceptor = addArcaneCraftingRecipe(keyAspectOrb)
+
 		recipeTreatedCotton = addArcaneCraftingRecipe(keyCotton, cottonTreated, ThaumcraftHelper.newPrimalAspectList(2), " S ", "FCF", " F ", 'S', salisPinch, 'F', "itemCottonFiber", 'C', "itemCottonFabric");
 		recipeEnchantedCotton = addCrucibleRecipe(keyCotton, cottonEnchanted, "itemCottonFabricTreated", new AspectList().add(CLOTH, 2).add(MAGIC, 1));
 
@@ -939,7 +951,7 @@ public class ThaumRevContent {
 		recipePrimalPants = addInfusionCraftingRecipe(keyRobesPrimal, primalPants.getStack(), 5, new AspectList().add(MAGIC, 12).add(CRAFT, 16).add(ORDER, 16), stackLegsRobe, ingotThaumicElectrum, ingotThaumicRiftishBronze, cottonEnchanted, dustSalisMundus, dustSalisMundus, dustSalisMundus, itemPrimalCharm, itemNitor);
 		recipePrimalBoots = addInfusionCraftingRecipe(keyRobesPrimal, primalBoots.getStack(), 5, new AspectList().add(MAGIC, 12).add(CRAFT, 16).add(ORDER, 16), stackBootsRobe, ingotThaumicElectrum, ingotThaumicRiftishBronze, cottonEnchanted, dustSalisMundus, dustSalisMundus, dustSalisMundus, itemPrimalCharm, planksGreatwood);
 
-		recipeAniPiston = addArcaneCraftingRecipe(keyMaterial, animatedPiston, new AspectList().add(AIR, 5), "IGI", "TAT", "BRB", 'I', "nuggetIron", 'G', greatwoodSlab, 'T', "nuggetThaumium", 'A', "shardAir", 'B', "nuggetBrass", 'R', "dustRedstone");
+		recipeAniPiston = addArcaneCraftingRecipe(keyMaterial, animatedPiston, new AspectList().add(AIR, 5), "IGI", "TAT", "BRB", 'I', "nuggetIron", 'G', greatwoodSlab, 'T', "nuggetThaumium", 'A', "shardAir", 'B', "nuggetBrass", 'R', "dustRedstone"); //TODO: v0.0.8: Runic Infuser
 
 		recipeThaumicBronzeRaw = addShapelessArcaneCraftingRecipe(keyThaumicBronze, rawThaumicBronze, new AspectList().add(ORDER, 5).add(EARTH, 5).add(FIRE, 5), nBronze, nBronze, nBronze, nBronze, nBronze, nBronze, "nuggetThaumium", "nuggetThaumium", "nuggetBrass");
 		recipeThaumicBronzeCoated = addShapelessArcaneCraftingRecipe(keyThaumicBronze, coatedThaumicBronze, new AspectList().add(EARTH, 5).add(WATER, 5), "ingotThaumicBronzeRaw", nHg, salisPinch, "itemClay");
@@ -954,11 +966,11 @@ public class ThaumRevContent {
 		recipeBronzeChainBoots = addArcaneCraftingRecipe(keyArmorBronzeChain, bronzeChainBoots.getStack(), new AspectList().add(ORDER, 5).add(EARTH, 3).add(FIRE, 3), "X X", "X X", 'X', chainTBronze);
 
 		//recipeRunicInfuser = addArcaneCraftingRecipe(keyRunicInfuser, runicInfuser, ThaumcraftHelper.newPrimalAspectList(25, 10, 10, 15, 30, 15), "QRQ", "SBS", "ITI", 'Q', nHg, 'R', visRelay, 'S', arcStoneSlab, 'B', shardBalanced, 'I', "ingotThaumium", 'T', table);
-		recipeArcaneSingularity = addShapelessArcaneCraftingRecipe(keyRunicInfuser, arcaneSingularity, ThaumcraftHelper.newPrimalAspectList(2, 10, 0, 0, 5, 5), itemAlumentum, itemNitor);
-		recipeStableSingularity = addShapelessArcaneCraftingRecipe(keyRunicInfuser, stabilizedSingularity, ThaumcraftHelper.newPrimalAspectList(7, 15, 5, 5, 35, 10), arcaneSingularity, redstone, salisMundus);
+		recipeArcaneSingularity = addShapelessArcaneCraftingRecipe(keyRunicInfuser, arcaneSingularity, ThaumcraftHelper.newPrimalAspectList(2, 10, 0, 0, 5, 5), itemAlumentum, itemNitor); //TODO: v0.0.8: Runic Infuser
+		recipeStableSingularity = addShapelessArcaneCraftingRecipe(keyRunicInfuser, stabilizedSingularity, ThaumcraftHelper.newPrimalAspectList(7, 15, 5, 5, 35, 10), arcaneSingularity, redstone, salisMundus); //TODO: v0.0.8: Runic Infuser
 
-		recipeEnchSilverwood = addShapelessArcaneCraftingRecipe(keyEnchSilverwood, enchantedSilverwood, new AspectList().add(ORDER, 5), planksSilverwood, salisMundus, salisMundus);
-		recipeConsSilverwood = addShapelessArcaneCraftingRecipe(keyEnchSilverwood, consecratedSilverwood, new AspectList().add(ORDER, 10).add(FIRE, 5), enchantedSilverwood, salisPinch, salisPinch, "nuggetSilver", nHg, itemNitor); //TODO: Infusionize
+		recipeEnchSilverwood = addShapelessArcaneCraftingRecipe(keyEnchSilverwood, enchantedSilverwood, new AspectList().add(ORDER, 5), planksSilverwood, salisMundus, salisMundus); //TODO: v0.0.8: Runic Infuser
+		recipeConsSilverwood = addShapelessArcaneCraftingRecipe(keyEnchSilverwood, consecratedSilverwood, new AspectList().add(ORDER, 10).add(FIRE, 5), enchantedSilverwood, salisPinch, salisPinch, "nuggetSilver", nHg, itemNitor); //TODO: Infusionize //TODO: v0.0.9: Alchemical Infuser
 
 		//recipeDarkAlchemicalInfuser = addArcaneCraftingRecipe(keyDarkRunicInfuser, darkRunicInfuser, ThaumcraftHelper.newPrimalAspectList(15, 5, 10, 10, 20, 30), "GVG", "MSM", "ORO", 'G', nAu, 'V', voidSeed, 'M', mirror, 'S', stableSingularity, 'O', obsTotem, 'R', runicInfuser);
 
@@ -1005,9 +1017,9 @@ public class ThaumRevContent {
 		recipeWardenclothBoots = addArcaneCraftingRecipe(keyArmorWardencloth, wardenclothBoots.getStack(), ThaumcraftHelper.newPrimalAspectList(10), "W W", "E E", 'E', enchCotton, 'W', wardencloth);
 
 		recipeExcubituraOilUnproc = addShapelessArcaneCraftingRecipe(keyExcubituraOil, excubituraOilUnproc, new AspectList().add(EARTH, 1).add(ORDER, 1), itemPhial, paste, paste, paste, paste);
-		recipeExcubituraOil = addShapelessArcaneCraftingRecipe(keyExcubituraOil, excubituraOil, ThaumcraftHelper.newPrimalAspectList(0, 10, 5, 5, 25, 5), "itemExcubituraOilUnprocessed", nHg, salisPinch, itemAlumentum);
+		recipeExcubituraOil = addShapelessArcaneCraftingRecipe(keyExcubituraOil, excubituraOil, ThaumcraftHelper.newPrimalAspectList(0, 10, 5, 5, 25, 5), "itemExcubituraOilUnprocessed", nHg, salisPinch, itemAlumentum); //TODO: v0.0.8: Runic Infuser
 
-		recipeWardenBronzeChain = addArcaneCraftingRecipe(keyWardenChain, ItemHelper.cloneStack(wardenicBronzeChain, 6), ThaumcraftHelper.newPrimalAspectList(5, 5, 0, 5, 10, 0), "TTT", "SOS", "TTT", 'T', chainTBronze, 'S', salisPinch, 'O', oilExcu);
+		recipeWardenBronzeChain = addArcaneCraftingRecipe(keyWardenChain, ItemHelper.cloneStack(wardenicBronzeChain, 8), ThaumcraftHelper.newPrimalAspectList(5, 5, 0, 5, 10, 0), "TTT", "SOS", "TTT", 'T', chainTBronze, 'S', salisPinch, 'O', oilExcu);
 		recipePrimalBronzeChain = addArcaneCraftingRecipe(keyWardenChain, ItemHelper.cloneStack(primalBronzeChain, 2), ThaumcraftHelper.newPrimalAspectList(10).add(ORDER, 10), "NCS", "PBP", "SCN", 'N', "nuggetBrass", 'C', chainWBronze, 'S', salisPinch, 'P', itemPrimalCharm, 'B', shardBalanced);
 		recipeWardenBronzePlate = addArcaneCraftingRecipe(keyWardenChain, ItemHelper.cloneStack(wardenicBronzePlate, 2), ThaumcraftHelper.newPrimalAspectList(5, 5, 0, 5, 15, 0), "IQC", "SOS", "CRI", 'I', "ingotThaumicBronze", 'C', chainWBronze, 'S', salisPinch, 'Q', nHg, 'O', oilExcu, 'R', "nuggetThaumium");
 
@@ -1016,19 +1028,19 @@ public class ThaumRevContent {
 		recipeWardenicChainGreaves = addArcaneCraftingRecipe(keyArmorWardenChain, wardenicChainGreaves.getStack(), ThaumcraftHelper.newPrimalAspectList(35), "WBW", "P P", "W W", 'W', chainWBronze, 'P', chainPBronze, 'B', "itemPlateWardenicBronze");
 		recipeWardenicChainBoots = addArcaneCraftingRecipe(keyArmorWardenChain, wardenicChainBoots.getStack(), ThaumcraftHelper.newPrimalAspectList(13), "P P", "W W", 'W', chainWBronze, 'P', chainPBronze);
 
-		recipePureOil = addShapelessArcaneCraftingRecipe(keyPureOil, excubituraOilPure, ThaumcraftHelper.newPrimalAspectList(0, 10, 10, 15, 40, 5), oilExcu, oilExcu, oilExcu, oilExcu, salisMundus, "itemArcaneSingularity", itemPhial);
+		recipePureOil = addShapelessArcaneCraftingRecipe(keyPureOil, excubituraOilPure, ThaumcraftHelper.newPrimalAspectList(0, 10, 10, 15, 50, 5), oilExcu, oilExcu, oilExcu, oilExcu, salisMundus, "itemArcaneSingularity", itemPhial); //TODO: v0.0.9: Alchemical Infuser
 
-		recipeWardenSteel = addInfusionCraftingRecipe(keyWardenSteel, ingotWardenicSteel, 1, new AspectList().add(METAL, 4).add(ARMOR, 2).add(TOOL, 2).add(ORDER, 4).add(MAGIC, 4).add(WARDEN, 2), ingotSteel, tinySalisMundus, tinySalisMundus, excubituraOilPure, itemQuicksilverDrop);
+		recipeWardenSteel = addInfusionCraftingRecipe(keyWardenSteel, ingotWardenicSteel, 2, new AspectList().add(METAL, 12).add(ARMOR, 8).add(TOOL, 8).add(ORDER, 16).add(MAGIC, 16).add(WARDEN, 8), ingotSteel, dustSalisMundus, dustSalisMundus, excubituraOilPure, quicksilver);
 
 		recipeWardenicHardener = addInfusionCraftingRecipe(keyWardenicObsidian, wardenicHardener, 2, new AspectList().add(EARTH, 8).add(COLD, 8).add(MAGIC, 4).add(ORDER, 8), stabilizedSingularity, new ItemStack(Items.redstone), dustSalisMundus, excubituraOilPure, itemShardWater, itemShardWater, itemShardOrder);
 		if (Loader.isModLoaded("ThermalFoundation")) {
-			recipeWardenicHardenerAlt = addInfusionCraftingRecipe(keyWardenicObsidian, wardenicHardener, 2, new AspectList().add(EARTH, 8).add(COLD, 8).add(MAGIC, 4).add(ORDER, 8), stabilizedSingularity, new ItemStack(Items.redstone), dustSalisMundus, excubituraOilPure, new ItemStack(GameRegistry.findItem("ThermalFoundation", "material"), 1, 513));
+			recipeWardenicHardenerAlt = addInfusionCraftingRecipe(keyWardenicObsidian, wardenicHardener, 2, new AspectList().add(EARTH, 8).add(COLD, 8).add(MAGIC, 4).add(ORDER, 8), stabilizedSingularity, new ItemStack(Items.redstone), dustSalisMundus, excubituraOilPure, dustCryotheum);
 		}
 
 		recipeWardenSteelChain = addArcaneCraftingRecipe(keyWardenPlate, ItemHelper.cloneStack(wardenicSteelChain, 12), new AspectList().add(ORDER, 25).add(FIRE, 15), " X ", "X X", 'X', "ingotWardenicSteel");
 		recipeWardenSteelChainOiled = addArcaneCraftingRecipe(keyWardenPlate, ItemHelper.cloneStack(oiledSteelChain, 6), ThaumcraftHelper.newPrimalAspectList(10, 10, 0, 10, 25, 5), "CCC", "SOS", "CCC", 'C', "itemChainWardenicSteel", 'S', salisMundus, 'O', "itemExcubituraOilPure");
 
-		recipeWardenSteelPlate = addArcaneCraftingRecipe(keyWardenPlate, wardenicSteelPlate, new AspectList().add(ORDER, 1), " A ", "ASA", " A ", 'A', itemAlumentum, 'S', "ingotWardenicSteel");
+		recipeWardenSteelPlate = addArcaneCraftingRecipe(keyWardenPlate, wardenicSteelPlate, new AspectList().add(ORDER, 1), " A ", "ASA", " A ", 'A', itemAlumentum, 'S', "ingotWardenicSteel"); //TODO: v0.0.8: Thaumic Hammermill
 		recipeDetailedSteelPlate = addArcaneCraftingRecipe(keyWardenPlate, detailedSteelPlate, ThaumcraftHelper.newPrimalAspectList(0, 10, 5, 5, 15, 0), "TCB", "QPQ", "BCT", 'T', "nuggetThaumium", 'B', "nuggetBrass", 'C', "itemChainWardenicSteelOiled", 'Q', nHg, 'P', "itemPlateWardenicSteel");
 		recipeRunicSteelPlate = addInfusionCraftingRecipe(keyWardenPlate, runicSteelPlate, 1, new AspectList().add(ARMOR, 4).add(MAGIC, 4).add(ENERGY, 4).add(FLIGHT, 4), detailedSteelPlate, tinySalisMundus, tinySalisMundus, tinySalisMundus, tinySalisMundus, itemWardencloth, new ItemStack(Items.redstone));
 		recipesConsecratedSteelPlate = addInfusionCraftingRecipe(keyWardenPlate, consecratedSteelPlate, 2, new AspectList().add(ARMOR, 8).add(MAGIC, 4).add(ORDER, 4), runicSteelPlate, nuggetSilver, itemQuicksilverDrop, new ItemStack(Items.glowstone_dust), consecratedSilverwood, tinySalisMundus);
@@ -1053,7 +1065,7 @@ public class ThaumRevContent {
 		recipeWardenicCompositeRaw = addArcaneCraftingRecipe(keyWardenComposite, ItemHelper.cloneStack(rawWardenicComposite, 2), ThaumcraftHelper.newPrimalAspectList(0, 5, 0, 10, 20, 0), "BBB", "SSS", "WWW", 'B', "ingotWardenicRiftishBronze", 'S', "ingotWardenicSteel", 'W', "ingotWardenicMetal");
 		recipeWardenicCompositeIngot = addInfusionCraftingRecipe(keyWardenComposite, ingotWardenicComposite, 3, new AspectList().add(METAL, 4).add(MAGIC, 4).add(WARDEN, 4).add(ARMOR, 2).add(TOOL, 2).add(ORDER, 4), rawWardenicComposite, dustWardenicBinder, dustWardenicBinder, dustSalisMundus, dustWardenicQuartz);
 
-		recipeWardenicCompositePlate = addArcaneCraftingRecipe(keyWardenCompositePlate, wardenicCompositePlate, new AspectList().add(ORDER, 1), " A ", "AIA", " A ", 'A', aluDenseTemp, 'I', "ingotWardenicComposite");
+		recipeWardenicCompositePlate = addArcaneCraftingRecipe(keyWardenCompositePlate, wardenicCompositePlate, new AspectList().add(ORDER, 1), " A ", "AIA", " A ", 'A', aluDenseTemp, 'I', "ingotWardenicComposite"); //TODO: v0.0.8: Thaumic Hammermill
 
 		recipeFittedCompositePlate = addArcaneCraftingRecipe(keyWardenCompositeFitting, fittedCompositePlate, ThaumcraftHelper.newPrimalAspectList(0, 15, 0, 10, 15, 0), "CNW", "BPB", "WNC", 'C', "itemChainWardenicSteelOiled", 'W', wardencloth, 'N', "nuggetWardenicSteel", 'B', "dustWardenicBinder", 'P', "itemPlateWardenicComposite");
 		recipeDetailedCompositePlate = addArcaneCraftingRecipe(keyWardenCompositeFitting, detailedCompositePlate, ThaumcraftHelper.newPrimalAspectList(0, 10, 5, 10, 15, 0), "EQE", "TPT", "BSB", 'E', "nuggetThaumicElectrum", 'Q', "quicksilver", 'T', "nuggetThaumium", 'P', "itemPlateWardenicCompositeFitted", 'B', "nuggetBismuthBronze", 'S', salisMundus);

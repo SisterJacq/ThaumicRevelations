@@ -7,6 +7,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.nbt.NBTTagCompound;
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.event.FMLInterModComms;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.*;
@@ -16,8 +17,11 @@ import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.crafting.*;
 import thaumcraft.common.lib.utils.Utils;
 
+import mortvana.melteddashboard.lib.ThermalLibrary;
 import mortvana.melteddashboard.util.IStackProvider;
 import mortvana.melteddashboard.util.helpers.ItemHelper;
+
+import static mortvana.melteddashboard.lib.ThermalLibrary.*;
 
 public class RecipeHelper {
 
@@ -391,4 +395,13 @@ public class RecipeHelper {
 		registerOreDict(itemstack, oreDict);
 	}
 
+	public static void addRefractorySmelting(ItemStack input, ItemStack output) {
+		addRefractorySmelting(input, output, 1.0F);
+	}
+
+	public static void addRefractorySmelting(ItemStack input, ItemStack output, float mult) {
+		if (Loader.isModLoaded("ThermalExpansion")) {
+			addInductionSmelterRecipe((int) (8000 * mult), input, dustPyrotheum, output);
+		}
+	}
 }

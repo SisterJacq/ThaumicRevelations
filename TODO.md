@@ -86,8 +86,8 @@ Maybe Before v0.0.1/v0.0.x Content:
 - [ ] Wand Focus: Illumination (Witor)
 - [ ] Excubitura Farming
 - [ ] Thaumium and Void Shears and Sickles
-- [ ] Transmutaions/Synthesis
-	- Vanilla:
+- [ ] Transmutaions
+	- Vannila:
 		- [ ] Diamond
 		- [ ] Emerald
 		- [ ] Coal
@@ -175,7 +175,7 @@ Maybe Before v0.0.1/v0.0.x Content:
 - [ ] All 5 tiers of Eldritch Armor
 - [ ] All 5 tiers of Wardenic Tools
 - [ ] All 5 tiers of Magneoturge Tools
-- [ ] All 5 tiers of Eldritch Tools
+- [ ] All 5 tiers of Eldritch Tools 
 - [ ] Thaumium and Void Bows and Fishing Rods
 - [ ] Elemental Fishing Rod
 - [ ] Bloodwood Wand/Staff Core
@@ -205,8 +205,6 @@ Maybe Before v0.0.1/v0.0.x Content:
 - [ ] Alumentum Pressurizer
 - [ ] Brass Pipe
 - [ ] TiC Real AlBronze Config
-- [ ] Gold -> Brass for Goggle and Thaumometer (config)
-- [ ] Shinier Mirror config (Makes mirrors require silver)
 
 Investigate Status for 0.0.x:
 - Mek Processing
@@ -217,6 +215,7 @@ Investigate Status for 0.0.x:
 v0.1.x Content:
 * Aspect Orbs (Impulse (active)/Radiant (passive); Alchemical (Essentia)/Energized (RF)/Sanguine (LP)/Nodal (Vis Powered))
 * Alchemical Tools
+* Wardenic TiC Modifier
 * TC/TRv materials for TiC
 * Void Chest
 * Void Interface
@@ -231,7 +230,7 @@ v0.1.x Content:
 * Hellfire Fuel
 * Ironwood
 * Duskwood
-* 16 Elemental Voidsteel Tools
+* 15 Elemental Voidsteel Tools
 * Infernal Bracelet
 * Infernal Gauntlet
 * Inkwell
@@ -240,9 +239,11 @@ v0.1.x Content:
 * Voidsteel, Quartz, Endstone, Obsidian, Infernal, <some cap for Aer>, <some cap for Aqua>, Nomad's, Artificer's and Sanguine Wand Caps
 * Ironwood and Duskwood Wand/Staff Cores
 * Advanced Mnemonic Matrix?
+* Gold -> Brass for Goggle and Thaumometer (config)
 * Portable Hole Item (uses stored vis)
 * Brain Purifacation (old TX Brain in a Jar crafting step; config)
 * TX Boots of the Comet/Meteor taking Seven Legaue Boots instead of Boots of the Traveler (config)
+* Shinier Mirror config (Makes mirrors require silver)
 * Wardenbraü
 
 Classes to Reimplement:

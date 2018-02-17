@@ -551,6 +551,7 @@ public class ThaumRevContent {
 	public static void aluminiumArc() {
 		registerOreDict(new ItemStack(Items.clay_ball), "itemClay");
 		registerOreDict(new ItemStack(Items.glass_bottle), "itemBottle");
+		registerOreDict(new ItemStack(Items.quartz), "gemQuartz");
 		registerOreDict(itemAlumentum, "itemAlumentum");
 		registerOreDict(itemNitor, "itemNitor");
 		registerOreDict(dustSalisMundus, salisMundus);

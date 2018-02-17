@@ -1,6 +1,6 @@
 package mortvana.thaumrev.world;
 
-import java.util.Random;
+import java.util.*;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
@@ -8,8 +8,7 @@ import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.chunk.IChunkProvider;
 import cpw.mods.fml.common.IWorldGenerator;
 
-import mortvana.melteddashboard.util.WeightedBlock;
-import mortvana.melteddashboard.util.WeightedBlockList;
+import mortvana.melteddashboard.util.WeightedRandomBlock;
 import mortvana.melteddashboard.world.*;
 
 import mortvana.thaumrev.util.ContentHelper;
@@ -36,7 +35,7 @@ public class ThaumRevWorldGenerator implements IWorldGenerator {
 		genGalena = new WorldGenOreVein(blockOre, 5, stone, 0, 8, 2, 10, 40);
 		genXenotime = new WorldGenOreVein(blockOre, 6, stone, 0, 6, 4, 5, 30);
 		genWolframite = new WorldGenOreVein(blockOre, 7, stone, 0, 2, 2, 5, 25);
-		genIridosmium = new WorldGenOreVein(blockOre, 8, netherrack, 0, 6, 2, 5, 125);
+		genIridosmium = new WorldGenOreVein(blockOre, 8, netherrack, 0, 2, 2, 5, 125);
 		genBismuthinite = new WorldGenOreVein(blockOre, 9, stone, 0, 9, 2, 10, 55);
 		genTennantite = new WorldGenOreVein(blockOre, 10, stone, 0, 6, 4, 30, 75);
 		genTetrahedite = new WorldGenOreVein(blockOre, 11, stone, 0, 6, 4, 30, 75);
@@ -44,14 +43,28 @@ public class ThaumRevWorldGenerator implements IWorldGenerator {
 		genDioptase = new WorldGenOreVein(blockOre, 13, stone, 0, 4, 2, 7, 11);
 		genFluonicSapphire = new WorldGenOreVein(blockOre, 14, stone, 0, 4, 2, 7, 11);
 
-		/*WeightedBlockList cu = new WeightedBlockList(new WeightedBlock(blockOre, 0, 30), new WeightedBlock(blockOre, 10, 35), new WeightedBlock(blockOre, 11, 35));
-		genCopperMix = new WorldGenMixedOreVein(cu, stone, 0, 8, 12, 25, 70);
-		WeightedBlockList pb = new WeightedBlockList(new WeightedBlock(blockOre, 4, 45), new WeightedBlock(blockOre, 5, 55));
-		genAgPb = new WorldGenMixedOreVein(pb, stone, 0, 17, 4, 5, 35);
-		WeightedBlockList bi = new WeightedBlockList(new WeightedBlock(blockOre, 9, 65), new WeightedBlock(blockOre, 5, 30), new WeightedBlock(blockOre, 4, 5));
-		genAgPbBi = new WorldGenMixedOreVein(bi, stone, 0, 12, 4, 10, 40);
-		WeightedBlockList w = new WeightedBlockList(new WeightedBlock(blockOre, 2, 40), new WeightedBlock(blockOre, 7, 60));
-		genWSn = new WorldGenMixedOreVein(w, stone, 0, 8, 2, 10, 25);*/
+		List<WeightedRandomBlock> cu = new ArrayList<WeightedRandomBlock>();
+		cu.add(new WeightedRandomBlock(blockOre, 0, 30));
+		cu.add(new WeightedRandomBlock(blockOre, 10, 35));
+		cu.add(new WeightedRandomBlock(blockOre, 11, 35));
+		genCopperMix = new WorldGenMixedOreVein(cu, stone, 8, 8, 25, 70);
+
+		List<WeightedRandomBlock> pb = new ArrayList<WeightedRandomBlock>();
+		pb.add(new WeightedRandomBlock(blockOre, 4, 45));
+		pb.add(new WeightedRandomBlock(blockOre, 5, 55));
+		genAgPb = new WorldGenMixedOreVein(pb, stone, 17, 4, 5, 35);
+
+		List<WeightedRandomBlock> bi = new ArrayList<WeightedRandomBlock>();
+		bi.add(new WeightedRandomBlock(blockOre, 9, 65));
+		bi.add(new WeightedRandomBlock(blockOre, 5, 30));
+		bi.add(new WeightedRandomBlock(blockOre, 4, 5));
+		genAgPbBi = new WorldGenMixedOreVein(bi, stone, 12, 2, 10, 40);
+
+		List<WeightedRandomBlock> w = new ArrayList<WeightedRandomBlock>();
+		w.add(new WeightedRandomBlock(blockOre, 2, 35));
+		w.add(new WeightedRandomBlock(blockOre, 7, 60));
+		w.add(new WeightedRandomBlock(Blocks.iron_ore, 0, 5));
+		genWSn = new WorldGenMixedOreVein(w, stone, 6, 3, 10, 25);
 	}
 
 	@Override
@@ -80,10 +93,10 @@ public class ThaumRevWorldGenerator implements IWorldGenerator {
 		genDioptase.generateOres(world, chunkX, chunkZ, random);
 		genFluonicSapphire.generateOres(world, chunkX, chunkZ, random);
 
-		/*genCopperMix.generateOres(world, chunkX, chunkZ, random);
+		genCopperMix.generateOres(world, chunkX, chunkZ, random);
 		genAgPb.generateOres(world, chunkX, chunkZ, random);
 		genAgPbBi.generateOres(world, chunkX, chunkZ, random);
-		genWSn.generateOres(world, chunkX, chunkZ, random);*/
+		genWSn.generateOres(world, chunkX, chunkZ, random);
 	}
 
 	public void generatePlants(Random random, int chunkX, int chunkZ, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {

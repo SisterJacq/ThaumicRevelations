@@ -9,7 +9,7 @@ Before v0.0.1:
 - [x] Wardernic Obsidian
 - [x] Eldritch Stone
 - [x] Eldrich Keystone
-- [ ] Ore Generation 
+- [x] Ore Generation 
 	- [x] Chalcocite
 	- [x] Sphalerite
 	- [x] Cassiterite
@@ -25,10 +25,10 @@ Before v0.0.1:
 	- [x] Pyrope
 	- [x] Dioptase
 	- [x] Fluonic Sapphire
-	- [ ] Mixed Copper (Chalcocite, Tennantite, and Tetrahedrite)
-	- [ ] Silver and Lead
-	- [ ] Bismuth, Lead, and Silver
-	- [ ] Tungsten with Tin
+	- [x] Mixed Copper (Chalcocite, Tennantite, and Tetrahedrite)
+	- [x] Silver and Lead
+	- [x] Bismuth, Lead, and Silver
+	- [x] Tungsten with Tin
 - [x] Metal Transmutation
 	- [x] Zinc
 	- [x] Nickel
@@ -230,7 +230,7 @@ v0.1.x Content:
 * Hellfire Fuel
 * Ironwood
 * Duskwood
-* 15 Elemental Voidsteel Tools
+* 16 Elemental Voidsteel Tools
 * Infernal Bracelet
 * Infernal Gauntlet
 * Inkwell
@@ -254,16 +254,11 @@ Classes to Reimplement:
 * ../client/gui/GuiHandler (Reimplement when first TE or Wesly's Hammer is added)
 * ../client/gui/GuiWaslieHammer (Reimplement alongside Wesly's Hammer)
 * ../client/render/RenderFleshGolem (Reimplement alongside Flesh Golems [WIP])
-* ../crafting/ModRecipes (Reimplement some parts alongside Wesly's Hammer)
 * ../entity/EntityFleshProjectile (Reimplement alongside Flesh Golems [WIP])
 * ../entity/FleshGolem (Reimplement alongside Flesh Golems [WIP] as EntityFleshGolem)
 * ../inventory/ContainerHammer (Reimplement alongside Wesly's Hammer)
 * ../item/ItemFocusIllumination (Reimplement with Witor)
 * ../item/ItemWardenArmor (Replace with T5 armor)
-* ../item/ItemWardenBoots (Unneeded with new system)
-* ../item/ItemWardenChest (Unneeded with new system)
-* ../item/ItemWardenHelm (Unneeded with new system)
-* ../item/ItemWardenLegs (Unneeded with new system)
 * ../item/ItemWardenWeapon (Replace with T5 sword)
 * ../item/ItemWaslieHammer (Reimplement after Tier 5 Wardenic)
 * ../research/ModResearch (Reimplement some parts alongside Wesly's Hammer)

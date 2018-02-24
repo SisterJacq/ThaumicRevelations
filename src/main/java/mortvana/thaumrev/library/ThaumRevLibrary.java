@@ -405,6 +405,7 @@ public class ThaumRevLibrary {
 	public static ItemStack dustArsenic;					//00810
 	public static ItemStack dustAntimony;					//00811
 	//Salis Mundus
+	public static ItemStack dustSulfur;						//00813
 
 	public static ItemStack dustWardenicBinder;				//00830
 

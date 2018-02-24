@@ -262,7 +262,9 @@ item.thaumrev.material.dustVoid.name=Voidmetal Dust
 item.thaumrev.material.dustSalisMundusTiny.name=Pinch of Salis Mundus
 
 item.thaumrev.material.clusterZinc.name=Zinc Cluster
+item.thaumrev.material.clusterAluminium.name=Aluminium Cluster
 item.thaumrev.material.clusterNickel.name=Nickel Cluster
+item.thaumrev.material.clusterPlatinum.name=Platinum Cluster
 item.thaumrev.material.clusterXenotime.name=Xenotime Cluster
 item.thaumrev.material.clusterTungsten.name=Tungsten Cluster
 item.thaumrev.material.clusterIridosmium.name=Iridosmium Cluster

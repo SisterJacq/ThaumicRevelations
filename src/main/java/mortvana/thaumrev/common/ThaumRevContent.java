@@ -405,6 +405,8 @@ public class ThaumRevContent {
 		dustArsenic = generalItem.addOreDictItem(810, "dustArsenic");
 		dustAntimony = generalItem.addOreDictItem(811, "dustAntimony");
 
+		dustSulfur = generalItem.addOreDictItem(813, "dustSulfur");
+
 		dustWardenicBinder = generalItem.addOreDictItem(830, "dustWardenicBinder");
 
 		tinyAer = generalItem.addOreDictItem(850, "dustAerTiny");
@@ -908,6 +910,9 @@ public class ThaumRevContent {
 
 		addRefractorySmelting(coatedOsLu, firedOsLu, 2.0F);
 
+		addRefractoryOreSmelting(oreWolframite, ingotTungsten, 1.0F, ingotFe);
+		addRefractoryOreSmelting(oreIridosmium, ingotIridosmium, 1.0F, ingotFe);
+
 		addRefractorySmelting(dustTungsten, ingotTungsten);
 		addRefractorySmelting(dustOsmium, ingotOsmium);
 		addRefractorySmelting(dustIridium, ingotIridium);
@@ -930,6 +935,24 @@ public class ThaumRevContent {
 			//addPulverizerRecycleRecipe(wardenicQuartz, , 6);
 			addPulverizerRecipe(1600, wardenicQuartz, dustWardenicQuartz);
 			addPulverizerRecipe(3200, wardenicCrystal, dustWardenicCrystal);
+
+			addPulverizerOreRecipe(oreSphalerite, dustZinc, dustLead);
+			addPulverizerOreRecipe(oreXenotime, dustLanthanides, dustArsenic);
+			addPulverizerOreRecipe(oreWolframite, dustTungsten, dustIron);
+			addPulverizerRecipe(4800, oreIridosmium, ItemHelper.cloneStack(dustIridosmium, 2), dustIron, 15);
+			addPulverizerOreRecipe(oreBismuthinite, dustBismuth, dustLead);
+			addPulverizerOreRecipe(oreTennantite, dustArsenicalBronze, dustSilver);
+			addPulverizerRecipe(4000, oreTetrahedrite, ItemHelper.cloneStack(dustAntimonialBronze, 2), itemQuicksilverDrop);
+			addPulverizerRecipe(4000, oreDioptase, ItemHelper.cloneStack(gemDioptase, 2));
+			addPulverizerRecipe(4000, orePyrope, ItemHelper.cloneStack(gemPyrope, 2));
+			addPulverizerRecipe(4000, oreFluonicSapphire, ItemHelper.cloneStack(gemFluonicSapphire, 2));
+
+			addInductionOreRecipes("Zinc", ingotLead);
+			addInductionOreRecipes("Xenotime", "XenotimeLanthanides", dustArsenic);
+			addInductionOreRecipes("Bismuth", ingotLead);
+			addInductionOreRecipes("Tennantite", "ArsenicalBronze", ingotSilver);
+			addInductionOreRecipes("Tetrahedrite", "AntimonialBronze", quicksilver);
+
 		}
 
 		//recipeQuartzStair
@@ -1465,6 +1488,8 @@ public class ThaumRevContent {
 	}
 
 	public static Aspect tempus;
+
+	public static ItemStack ingotFe = new ItemStack(Items.iron_ingot);
 
 	public static String redstone = "dustRedstone";
 	public static String nAu = "nuggetGold";

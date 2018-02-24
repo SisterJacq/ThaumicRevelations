@@ -9,24 +9,43 @@ public class ThermalLibrary {
 	private static boolean loaded = false;
 
 	static final String TF = "ThermalFoundation";
+	static final String TE = "ThermalExpansion";
 
-	public static void init() {}
-
-	private static void load() {
-		itemMaterial = GameRegistry.findItem(TF, "material");
-
-		dustPyrotheum = new ItemStack(itemMaterial, 1, 512);
-		dustCryotheum = new ItemStack(itemMaterial, 1, 513);
+	public static void init() {
+		if (!loaded) {
+			load();
+		}
+		loaded = true;
 	}
 
-	/** BLOCKS (TF) **/
+	private static void load() {
+		itemMaterialTF = GameRegistry.findItem(TF, "material");
+		itemMaterialTE = GameRegistry.findItem(TE, "material");
 
-	/** EQUIPMENT (TF) **/
+		itemCinnabar = new ItemStack(itemMaterialTF, 1, 20);
 
-	/** ITEMS (TF) **/
-	public static Item itemMaterial;
+		dustPyrotheum = new ItemStack(itemMaterialTF, 1, 512);
+		dustCryotheum = new ItemStack(itemMaterialTF, 1, 513);
+
+		itemSlag = new ItemStack(itemMaterialTE, 1, 514);
+		itemSlagRich = new ItemStack(itemMaterialTE, 1, 515);
+	}
+
+	/** BLOCKS **/
+
+	/** EQUIPMENT **/
+
+	/** ITEMS **/
+	public static Item itemMaterialTF;
+	public static Item itemMaterialTE;
 
 	/** ITEMSTACKS (TF) **/
+	public static ItemStack itemCinnabar;
+
 	public static ItemStack dustPyrotheum;
 	public static ItemStack dustCryotheum;
+
+	/** ITEMSTACKS (TE) **/
+	public static ItemStack itemSlag;
+	public static ItemStack itemSlagRich;
 }

@@ -3,6 +3,7 @@ package mortvana.thaumrev.util;
 import java.util.ArrayList;
 
 import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.item.crafting.IRecipe;
@@ -249,6 +250,10 @@ public class RecipeHelper {
 		}
 	}
 
+	public static void addPulverizerOreRecipe(ItemStack input, ItemStack primaryOutput, ItemStack secondaryOutput) {
+		addPulverizerRecipe(4000, input, ItemHelper.cloneStack(primaryOutput, 2), secondaryOutput, 10);
+	}
+
 	public static void removePulverizerRecipe(ItemStack input) {
 		if (input != null) {
 			NBTTagCompound toSend = new NBTTagCompound();
@@ -311,6 +316,22 @@ public class RecipeHelper {
 		if (primaryOreList.size() > 0 && secondaryOreList.size() > 0) {
 			addInductionSmelterRecipe(2400, ItemHelper.cloneStack(primaryOreList.get(0), solventAmount), ItemHelper.cloneStack(secondaryOreList.get(0), soluteAmount), ItemHelper.cloneStack(output, solventAmount + soluteAmount));
 		}
+	}
+
+	public static void addInductionOreRecipes(String oreName, String ingotName, ItemStack bonusIngot) {
+		ItemStack ore = OreDictionary.getOres("ore" + oreName).get(0);
+		ItemStack ingot  = OreDictionary.getOres("ingot" + ingotName).get(0);
+
+		//TODO: Get quantity from TE Config
+
+		addInductionSmelterRecipe(3200, new ItemStack(Blocks.sand), ore, ItemHelper.cloneStack(ingot, 2), itemSlagRich, 5); //Zn,YPO,Bi,Cu2
+		addInductionSmelterRecipe(4000, itemSlagRich, ore, ItemHelper.cloneStack(ingot, 3), itemSlag, 75); //YPO,Cu2
+		addInductionSmelterRecipe(4000, dustPyrotheum, ore, ItemHelper.cloneStack(ingot, 2), itemSlagRich, 15); //YPO,Cu2
+		addInductionSmelterRecipe(4000, itemCinnabar, ore, ItemHelper.cloneStack(ingot, 3), bonusIngot == null ? itemSlagRich : bonusIngot, bonusIngot == null ? 75 : 100); //YPO,Cu2
+	}
+
+	public static void addInductionOreRecipes(String name, ItemStack bonusIngot) {
+		addInductionOreRecipes(name, name, bonusIngot);
 	}
 
 	public static void removeSmelterRecipe(ItemStack primaryInput, ItemStack secondaryInput) {
@@ -393,6 +414,16 @@ public class RecipeHelper {
 		GameRegistry.registerCustomItemStack(name, itemstack);
 		registerFMP(itemstack);
 		registerOreDict(itemstack, oreDict);
+	}
+
+	public static void addRefractoryOreSmelting(ItemStack input, ItemStack output) {
+		addRefractorySmelting(input, output, 1.0F);
+	}
+
+	public static void addRefractoryOreSmelting(ItemStack input, ItemStack output, float mult, ItemStack bonusIngot) {
+		if (Loader.isModLoaded("ThermalExpansion")) {
+			addInductionSmelterRecipe((int) (8000 * mult), input, dustPyrotheum, output, itemSlagRich, 15);
+		}
 	}
 
 	public static void addRefractorySmelting(ItemStack input, ItemStack output) {

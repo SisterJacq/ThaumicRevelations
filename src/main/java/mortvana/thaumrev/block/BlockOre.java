@@ -31,59 +31,6 @@ public class BlockOre extends FluxGearBlockBase {
 		setHarvestLevels();
 	}
 
-	public void register() {
-		oreChalcocite = new ItemStack(this, 1, 0);
-		oreSphalerite = new ItemStack(this, 1, 1);
-		oreCassiterite = new ItemStack(this, 1, 2);
-		oreMillerite = new ItemStack(this, 1, 3);
-		oreNativeSilver = new ItemStack(this, 1, 4);
-		oreGalena = new ItemStack(this, 1, 5);
-		oreXenotime = new ItemStack(this, 1, 6);
-		oreWolframite = new ItemStack(this, 1, 7);
-		oreIridosmium = new ItemStack(this, 1, 8);
-		oreBismuthinite = new ItemStack(this, 1, 9);
-		oreTennantite = new ItemStack(this, 1, 10);
-		oreTetrahedrite = new ItemStack(this, 1, 11);
-		orePyrope = new ItemStack(this, 1, 12);
-		oreDioptase = new ItemStack(this, 1, 13);
-		oreFluonicSapphire = new ItemStack(this, 1, 14);
-
-		RecipeHelper.registerOreDict(oreChalcocite, "oreCopper", "oreChalcocite");
-		RecipeHelper.registerOreDict(oreSphalerite, "oreZinc", "oreSphalerite");
-		RecipeHelper.registerOreDict(oreCassiterite, "oreTin", "oreCassiterite");
-		RecipeHelper.registerOreDict(oreMillerite, "oreNickel", "oreMillerite");
-		RecipeHelper.registerOreDict(oreNativeSilver, "oreSilver", "oreNativeSilver");
-		RecipeHelper.registerOreDict(oreGalena, "oreLead", "oreGalena");
-		RecipeHelper.registerOreDict(oreXenotime, "oreXenotime");
-		RecipeHelper.registerOreDict(oreWolframite, "oreTungsten", "oreWolframite");
-		RecipeHelper.registerOreDict(oreIridosmium, "oreIridosmium");
-		RecipeHelper.registerOreDict(oreBismuthinite, "oreBismuth", "oreBismuthinite");
-		RecipeHelper.registerOreDict(oreTennantite, "oreTennantite");
-		RecipeHelper.registerOreDict(oreTetrahedrite, "oreTetrahedrite");
-		RecipeHelper.registerOreDict(orePyrope, "orePyrope");
-		RecipeHelper.registerOreDict(oreDioptase, "oreDioptase");
-		RecipeHelper.registerOreDict(oreFluonicSapphire, "oreFluonicSapphire");
-
-	}
-
-	public void recipes() {
-		RecipeHelper.addSmelting(oreChalcocite, ingotCopper, 0.85F);
-		RecipeHelper.addSmelting(oreSphalerite, ingotZinc, 0.95F);
-		RecipeHelper.addSmelting(oreCassiterite, ingotTin, 0.975F);
-		RecipeHelper.addSmelting(oreMillerite, ingotNickel, 1.2F);
-		RecipeHelper.addSmelting(oreNativeSilver, ingotSilver, 1.5F);
-		RecipeHelper.addSmelting(oreGalena, ingotLead, 1.0F);
-		RecipeHelper.addSmelting(oreXenotime, ingotLanthanides, 1.0F); //Rare Earths mock your primitive furnace-based attempts at separating them
-		//Tungsten laughs at your mundane smelting
-		//Refractory Alloys mock your simple furnace
-		RecipeHelper.addSmelting(oreBismuthinite, ingotBismuth, 1.15F);
-		RecipeHelper.addSmelting(oreTennantite, ingotArsenicalBronze, 1.35F);
-		RecipeHelper.addSmelting(oreTetrahedrite, ingotAntimonialBronze, 1.35F);
-		RecipeHelper.addSmelting(orePyrope, gemPyrope, 1.0F);
-		RecipeHelper.addSmelting(oreDioptase, gemDioptase, 1.0F);
-		RecipeHelper.addSmelting(oreFluonicSapphire, gemFluonicSapphire, 1.0F);
-	}
-
 	@Override
 	public int getLightValue(IBlockAccess world, int x, int y, int z) {
 		switch (world.getBlockMetadata(x, y, z)) {

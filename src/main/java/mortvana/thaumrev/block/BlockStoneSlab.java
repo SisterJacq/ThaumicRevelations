@@ -46,26 +46,6 @@ public class BlockStoneSlab extends FluxGearBlockSlab {
 		setData(TEX_LOC_DEFAULT + "stoneDecor/", SLAB_STONE_NAMES);
 	}
 
-	public void register() {
-		slabWardenicObsidian = new ItemStack(blockStoneSlab, 1, 0);
-		slabEldritch = new ItemStack(blockStoneSlab, 1, 1);
-		slabWardenicQuartz = new ItemStack(blockStoneSlab, 1, 2);
-
-		RecipeHelper.registerOreDict(slabWardenicObsidian, "slabWardenicObsidian");
-		RecipeHelper.registerOreDict(slabEldritch, "slabEldritchStone");
-		RecipeHelper.registerOreDict(slabWardenicQuartz, "slabQuartzWardenic");
-	}
-
-	public void recipes() {
-		recipeWardsidianSlab = RecipeHelper.addSlabRecipe(slabWardenicObsidian, "blockWardenicObsidian");
-		recipeEldritchSlab = RecipeHelper.addSlabRecipe(slabEldritch, "blockEldritchStone");
-		recipeQuartzSlab = RecipeHelper.addSlabRecipe(slabWardenicQuartz, "blockQuartzWardenic");
-
-		recipeWardsidianDeslab = RecipeHelper.addDeslabingRecipe(wardenicObsidian, "slabWardenicObsidian");
-		recipeEldritchDeslab = RecipeHelper.addDeslabingRecipe(eldritchStone, "slabEldritchStone");
-		recipeQuartzDeslab = RecipeHelper.addDeslabingRecipe(wardenicQuartz, "slabQuartzWardenic");
-	}
-
 	@Override
 	public float getBlockHardness(World world, int x, int y, int z) {
 		return HARDNESS[world.getBlockMetadata(x, y, z)];

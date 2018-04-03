@@ -2,11 +2,16 @@ package mortvana.melteddashboard.intermod.baubles.item;
 
 import baubles.api.BaubleType;
 import baubles.api.IBauble;
+import baubles.common.container.InventoryBaubles;
+import baubles.common.lib.PlayerHandler;
+
 import mortvana.melteddashboard.intermod.baubles.util.BaubleData;
 import mortvana.melteddashboard.item.FluxGearItem;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -25,6 +30,32 @@ public class FluxGearItemBauble extends FluxGearItem implements IBauble {
 
 	public FluxGearItemBauble(String modName, CreativeTabs tab) {
 		super(modName, tab);
+	}
+
+	@Override
+	public ItemStack onItemRightClick(ItemStack itemstack, World world, EntityPlayer player) {
+		if (canEquip(itemstack, player)) {
+			InventoryBaubles baubles = PlayerHandler.getPlayerBaubles(player);
+			for (int i = 0; i < baubles.getSizeInventory(); i++) {
+				if (baubles.isItemValidForSlot(i, itemstack)) {
+					ItemStack slotStack = baubles.getStackInSlot(i);
+					if (slotStack == null || ((IBauble) slotStack.getItem()).canUnequip(slotStack, player)) {
+						if (!world.isRemote) {
+							baubles.setInventorySlotContents(i, itemstack.copy());
+							if (!player.capabilities.isCreativeMode) {
+								player.inventory.setInventorySlotContents(player.inventory.currentItem, null);
+							}
+						}
+						if (slotStack != null) {
+							((IBauble) slotStack.getItem()).onUnequipped(slotStack, player);
+							return slotStack.copy();
+						}
+						break;
+					}
+				}
+			}
+		}
+		return itemstack;
 	}
 
 	@Override
@@ -80,4 +111,5 @@ public class FluxGearItemBauble extends FluxGearItem implements IBauble {
 		baubleData.put(metadata, data);
 		return addItem(metadata, name, rarity);
 	}
+
 }

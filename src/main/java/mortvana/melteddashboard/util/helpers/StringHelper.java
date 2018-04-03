@@ -71,11 +71,19 @@ public class StringHelper {
 	}
 
 	public static String camelCase(String string) {
-		return string.substring(0, 1).toLowerCase(Locale.US) + string.substring(1);
+		if (string.length() == 0) {
+			return "";
+		} else {
+			return string.substring(0, 1).toLowerCase(Locale.US) + string.substring(1);
+		}
 	}
 
 	public static String titleCase(String string) {
-		return string.substring(0, 1).toUpperCase(Locale.US) + string.substring(1);
+		if (string.length() == 0) {
+			return "";
+		} else {
+			return string.substring(0, 1).toUpperCase(Locale.US) + string.substring(1);
+		}
 	}
 
 	public static String localize(String string) {

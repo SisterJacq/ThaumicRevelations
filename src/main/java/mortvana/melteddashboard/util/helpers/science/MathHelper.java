@@ -123,6 +123,10 @@ public class MathHelper {
 		return min != max ? RANDOM.nextInt(max - min) + min : min;
 	}
 
+	public static int random(int val) {
+		return RANDOM.nextInt(val);
+	}
+
 	/**
 	 *	Returns a values on a bell-curve between the positive and negative value of range - 1 (due to the way
 	 *	Random.nextInt(int) works)
@@ -133,6 +137,6 @@ public class MathHelper {
 	 *	NOTE: If your IDE says this should simplify to zero, it's being stupid, and should pull its head out of its ass.
 	 */
 	public static int getOffsetInt(int range) {
-		return RANDOM.nextInt(range) - RANDOM.nextInt(range); //This isn't zero, IntelliJ, it's a beel-curve centered on zero!
+		return RANDOM.nextInt(range) - RANDOM.nextInt(range); //This isn't zero, IntelliJ, it's a bell-curve centered on zero!
 	}
 }

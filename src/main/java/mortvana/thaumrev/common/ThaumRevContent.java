@@ -28,6 +28,7 @@ import mortvana.melteddashboard.util.helpers.ItemHelper;
 import mortvana.melteddashboard.util.helpers.mod.ThaumcraftHelper;
 
 import mortvana.thaumrev.block.*;
+import mortvana.thaumrev.block.itemblock.*;
 import mortvana.thaumrev.item.*;
 import mortvana.thaumrev.util.*;
 import mortvana.thaumrev.util.item.data.ThaumRevMaterialDataSet;
@@ -82,9 +83,11 @@ public class ThaumRevContent {
 		blockThaumicPlant = new BlockThaumicPlant();
 		blockOre = new BlockOre();
 
+		//blockWoodDecor = new BlockWoodDecor();
 		blockStoneDecor = new BlockStoneDecor();
 
-		//blockStorageMain = new BlockMetalStorageMain();
+		blockStorageOre = new BlockStorageOre();
+		blockStorageAlloy1 = new BlockStorageAlloy1();
 
 		blockStoneSlab = new BlockStoneSlab();
 		blockStoneSlabDouble = new BlockStoneSlab(blockStoneSlab);
@@ -103,7 +106,8 @@ public class ThaumRevContent {
 
 		GameRegistry.registerBlock(blockStoneDecor, ItemBlockDecorStone.class, "blockDecorStone");
 
-		//GameRegistry.registerBlock(blockStorageMain, ItemBlockMetalStorage.class, "blockStorageMain");
+		GameRegistry.registerBlock(blockStorageOre, ItemBlockStorageOre.class, "blockStorageOre");
+		GameRegistry.registerBlock(blockStorageAlloy1, ItemBlockStorageAlloy1.class, "blockStorageAlloy1");
 
 		GameRegistry.registerBlock(blockStoneSlab, ItemBlockStoneSlab.class, "stoneSlab");
 		GameRegistry.registerBlock(blockStoneSlabDouble, ItemBlockStoneSlab.class, "stoneSlabDouble");
@@ -146,15 +150,71 @@ public class ThaumRevContent {
 	}
 
 	public static void loadBlocks() {
-		((BlockThaumicPlant) blockThaumicPlant).register();
+		excubituraRose = new ItemStack(blockThaumicPlant, 1, 0);
+		wildCotton = new ItemStack(blockThaumicPlant, 1, 1);
+		wildThistle = new ItemStack(blockThaumicPlant, 1, 2);
 
-		((BlockOre) blockOre).register();
+		shiverpearl = new ItemStack(blockThaumicPlant, 1, 5);
+		stormpearl = new ItemStack(blockThaumicPlant, 1, 6);
+		stonepearl = new ItemStack(blockThaumicPlant, 1, 7);
 
-		((BlockStoneDecor) blockStoneDecor).register();
+		oreChalcocite = new ItemStack(blockOre, 1, 0);
+		oreSphalerite = new ItemStack(blockOre, 1, 1);
+		oreCassiterite = new ItemStack(blockOre, 1, 2);
+		oreMillerite = new ItemStack(blockOre, 1, 3);
+		oreNativeSilver = new ItemStack(blockOre, 1, 4);
+		oreGalena = new ItemStack(blockOre, 1, 5);
+		oreXenotime = new ItemStack(blockOre, 1, 6);
+		oreWolframite = new ItemStack(blockOre, 1, 7);
+		oreIridosmium = new ItemStack(blockOre, 1, 8);
+		oreBismuthinite = new ItemStack(blockOre, 1, 9);
+		oreTennantite = new ItemStack(blockOre, 1, 10);
+		oreTetrahedrite = new ItemStack(blockOre, 1, 11);
+		orePyrope = new ItemStack(blockOre, 1, 12);
+		oreDioptase = new ItemStack(blockOre, 1, 13);
+		oreFluonicSapphire = new ItemStack(blockOre, 1, 14);
 
-		//((BlockMetalStorageMain) blockStorageMain).register();
+		RecipeHelper.registerOreDict(oreChalcocite, "oreCopper", "oreChalcocite");
+		RecipeHelper.registerOreDict(oreSphalerite, "oreZinc", "oreSphalerite");
+		RecipeHelper.registerOreDict(oreCassiterite, "oreTin", "oreCassiterite");
+		RecipeHelper.registerOreDict(oreMillerite, "oreNickel", "oreMillerite");
+		RecipeHelper.registerOreDict(oreNativeSilver, "oreSilver", "oreNativeSilver");
+		RecipeHelper.registerOreDict(oreGalena, "oreLead", "oreGalena");
+		RecipeHelper.registerOreDict(oreXenotime, "oreXenotime");
+		RecipeHelper.registerOreDict(oreWolframite, "oreTungsten", "oreWolframite");
+		RecipeHelper.registerOreDict(oreIridosmium, "oreIridosmium");
+		RecipeHelper.registerOreDict(oreBismuthinite, "oreBismuth", "oreBismuthinite");
+		RecipeHelper.registerOreDict(oreTennantite, "oreTennantite");
+		RecipeHelper.registerOreDict(oreTetrahedrite, "oreTetrahedrite");
+		RecipeHelper.registerOreDict(orePyrope, "orePyrope");
+		RecipeHelper.registerOreDict(oreDioptase, "oreDioptase");
+		RecipeHelper.registerOreDict(oreFluonicSapphire, "oreFluonicSapphire");
 
-		((BlockStoneSlab) blockStoneSlab).register();
+		wardenicObsidian = new ItemStack(blockStoneDecor, 1, 0);
+		eldritchStone = new ItemStack(blockStoneDecor, 1, 1);
+		wardenicQuartzBlock = new ItemStack(blockStoneDecor, 1, 2);
+		wardenicQuartzChiseled = new ItemStack(blockStoneDecor, 1, 3);
+		wardenicQuartzPillar = new ItemStack(blockStoneDecor, 1, 4);
+		thaumicStone = new ItemStack(blockStoneDecor, 1, 5);
+		infernalBlastBrick = new ItemStack(blockStoneDecor, 1, 6);
+		shadowforgeBrick = new ItemStack(blockStoneDecor, 1, 7);
+
+		RecipeHelper.registerOreDict(wardenicObsidian, "blockWardenicObsidian");
+		RecipeHelper.registerOreDict(eldritchStone, "blockEldritchStone");
+		for (int i = 2; i < 5; i++) {
+			RecipeHelper.registerOreDict(new ItemStack(blockStoneDecor, 1, i), "blockQuartzWardenic");
+		}
+		RecipeHelper.registerOreDict(thaumicStone, "blockThaumicStone");
+		RecipeHelper.registerOreDict(infernalBlastBrick, "blockInfernalBastFurnaceBrick");
+		RecipeHelper.registerOreDict(shadowforgeBrick, "blockShadowforgeBrick");
+
+		slabWardenicObsidian = new ItemStack(blockStoneSlab, 1, 0);
+		slabEldritch = new ItemStack(blockStoneSlab, 1, 1);
+		slabWardenicQuartz = new ItemStack(blockStoneSlab, 1, 2);
+
+		RecipeHelper.registerOreDict(slabWardenicObsidian, "slabWardenicObsidian");
+		RecipeHelper.registerOreDict(slabEldritch, "slabEldritchStone");
+		RecipeHelper.registerOreDict(slabWardenicQuartz, "slabQuartzWardenic");
 	}
 
 	public static void loadItems() {
@@ -175,311 +235,494 @@ public class ThaumRevContent {
 		thistleFlower = generalItem.addOreDictItem(14, "thistleFlower", "itemThistleFlower");
 		aspectOrbReceptor = generalItem.addOreDictItem(15, "aspectOrbReceptor", "itemAspectOrbReceptor");
 
-		seedExcubitura = generalItem.addOreDictItem(280, "seedExcubitura");
-		seedCotton = generalItem.addOreDictItem(281, "seedCotton");
-		seedThistle = generalItem.addOreDictItem(282, "seedThistle");
 
-		ingotCopper = generalItem.addOreDictItem(300, iCu);
-		ingotZinc = generalItem.addOreDictItem(301, "ingotZinc");
-		ingotTin = generalItem.addOreDictItem(302, iSn);
-		ingotNickel = generalItem.addOreDictItem(303, "ingotNickel");
-		ingotSilver = generalItem.addOreDictItem(304, "ingotSilver");
-		ingotLead = generalItem.addOreDictItem(305, "ingotLead");
-		ingotLanthanides = generalItem.addOreDictItem(306, "ingotXenotime", 1, "ingotXenotimeLanthanides");
-		ingotTungsten = generalItem.addOreDictItem(307, "ingotTungsten", 1);
-		ingotIridium = generalItem.addOreDictItem(308, "ingotIridium", 2);
-		ingotBismuth = generalItem.addOreDictItem(309, "ingotBismuth");
-		ingotArsenicalBronze = generalItem.addOreDictItem(310, "ingotArsenicalBronze");
-		ingotAntimonialBronze = generalItem.addOreDictItem(311, "ingotAntimonialBronze");
-		gemPyrope = generalItem.addOreDictItem(312, "gemPyrope", 2);
-		gemDioptase = generalItem.addOreDictItem(313, "gemDioptase", 2);
-		gemFluonicSapphire = generalItem.addOreDictItem(314, "gemFluonicSapphire", 2);
-		ingotOsmium = generalItem.addOreDictItem(315, "ingotOsmium", 1);
-		ingotNeodymium = generalItem.addOreDictItem(316, "ingotNeodymium", 1);
-		ingotLutetium = generalItem.addOreDictItem(317, "ingotLutetium", 2);
-		ingotPalladium = generalItem.addOreDictItem(318, "ingotPalladium", 1);
-		ingotIridosmium = generalItem.addOreDictItem(319, "ingotIridosmium", 2);
-		ingotAluminium = generalItem.addOreDictItem(320, "ingotAluminium");
-		ingotXenotimeJunk = generalItem.addOreDictItem(321, "ingotLanthanides", 1, "ingotXenotimeWaste");
+		ingotCopper = generalItem.addOreDictItem(200, iCu);
+		ingotZinc = generalItem.addOreDictItem(201, "ingotZinc");
+		ingotTin = generalItem.addOreDictItem(202, iSn);
+		ingotNickel = generalItem.addOreDictItem(203, "ingotNickel");
+		ingotSilver = generalItem.addOreDictItem(204, "ingotSilver");
+		ingotLead = generalItem.addOreDictItem(205, "ingotLead");
+		ingotLanthanides = generalItem.addOreDictItem(206, "ingotXenotime", 1, "ingotXenotimeLanthanides");
+		ingotTungsten = generalItem.addOreDictItem(207, "ingotTungsten", 1);
+		ingotIridium = generalItem.addOreDictItem(208, "ingotIridium", 2);
+		ingotBismuth = generalItem.addOreDictItem(209, "ingotBismuth");
+		ingotArsenicalBronze = generalItem.addOreDictItem(210, "ingotArsenicalBronze");
+		ingotAntimonialBronze = generalItem.addOreDictItem(211, "ingotAntimonialBronze");
+		gemPyrope = generalItem.addOreDictItem(212, "gemPyrope", 2);
+		gemDioptase = generalItem.addOreDictItem(213, "gemDioptase", 2);
+		gemFluonicSapphire = generalItem.addOreDictItem(214, "gemFluonicSapphire", 2);
+		ingotOsmium = generalItem.addOreDictItem(215, "ingotOsmium", 1);
+		ingotNeodymium = generalItem.addOreDictItem(216, "ingotNeodymium", 1);
+		ingotLutetium = generalItem.addOreDictItem(217, "ingotLutetium", 2);
+		ingotPalladium = generalItem.addOreDictItem(218, "ingotPalladium", 1);
+		ingotIridosmium = generalItem.addOreDictItem(219, "ingotIridosmium", 2);
+		ingotAluminium = generalItem.addOreDictItem(220, "ingotAluminium");
+		ingotXenotimeJunk = generalItem.addOreDictItem(221, "ingotLanthanides", 1, "ingotXenotimeWaste");
 
-		ingotBrass = generalItem.addOreDictItem(325, "ingotBrass");
-		ingotBronze = generalItem.addOreDictItem(326, "ingotBronze");
-		ingotBismuthBronze = generalItem.addOreDictItem(327, "ingotBismuthBronze");
-		ingotMithril = generalItem.addOreDictItem(328, "ingotMithril", 1, "ingotArsenoAntimonialBronze");
-		ingotAluminiumBronze = generalItem.addOreDictItem(329, "ingotAluminiumBronze");
-		ingotCupronickel = generalItem.addOreDictItem(330, "ingotCupronickel");
-		ingotRiftishBronze = generalItem.addOreDictItem(331, "ingotRiftishBronze");
-		ingotConstantan = generalItem.addOreDictItem(332, "ingotConstantan");
-		ingotInvar = generalItem.addOreDictItem(333, "ingotInvar");
-		ingotElectrum = generalItem.addOreDictItem(334, "ingotElectrum");
-		ingotWardenicMetal = generalItem.addOreDictItem(335, "ingotWardenicMetal");
+		ingotBrass = generalItem.addOreDictItem(225, "ingotBrass");
+		ingotBronze = generalItem.addOreDictItem(226, "ingotBronze");
+		ingotBismuthBronze = generalItem.addOreDictItem(227, "ingotBismuthBronze");
+		ingotMithril = generalItem.addOreDictItem(228, "ingotMithril", 1, "ingotArsenoAntimonialBronze");
+		ingotAluminiumBronze = generalItem.addOreDictItem(229, "ingotAluminiumBronze");
+		ingotCupronickel = generalItem.addOreDictItem(230, "ingotCupronickel");
+		ingotRiftishBronze = generalItem.addOreDictItem(231, "ingotRiftishBronze", 1);
+		ingotConstantan = generalItem.addOreDictItem(232, "ingotConstantan");
+		ingotInvar = generalItem.addOreDictItem(233, "ingotInvar");
+		ingotElectrum = generalItem.addOreDictItem(234, "ingotElectrum");
+		ingotWardenicMetal = generalItem.addOreDictItem(235, "ingotWardenicMetal");
+		ingotRedsolder = generalItem.addOreDictItem(236, "ingotRedsolder");
 
-		ingotThaumicBronze = generalItem.addOreDictItem(350, "ingotThaumicBronze");
-		ingotOsLu = generalItem.addOreDictItem(351, "ingotOsmiumLutetium", 2);
-		gemFluonicPyroptase = generalItem.addOreDictItem(352, "gemFluonicPyroptase", 3);
+		ingotThaumicBronze = generalItem.addOreDictItem(250, "ingotThaumicBronze");
+		ingotOsLu = generalItem.addOreDictItem(251, "ingotOsmiumLutetium", 2);
+		gemFluonicPyroptase = generalItem.addOreDictItem(252, "gemFluonicPyroptase", 3);
 
-		ingotThaumicElectrum = generalItem.addOreDictItem(375, "ingotThaumicElectrum", 1);
-		ingotThaumicRiftishBronze = generalItem.addOreDictItem(376, "ingotThaumicRiftishBronze", 1);
-		ingotSteel = generalItem.addOreDictItem(377, "ingotSteel");
-		ingotWardenicSteel = generalItem.addOreDictItem(378, "ingotWardenicSteel", 1);
-		ingotWardenicRiftishBronze = generalItem.addOreDictItem(379, "ingotWardenicRiftishBronze", 1);
-		ingotVoidbrass = generalItem.addOreDictItem(380, "ingotVoidbrass", 1);
-		ingotVoidsteel = generalItem.addOreDictItem(381, "ingotVoidsteel", 1);
-		ingotVoidtungsten = generalItem.addOreDictItem(382, "ingotVoidtungsten", 2);
+		ingotArsenic = generalItem.addOreDictItem(255, "ingotArsenic");
+		ingotAntimony = generalItem.addOreDictItem(256, "ingotAntimony");
 
-		nuggetCopper = generalItem.addOreDictItem(400, "nuggetCopper");
-		nuggetZinc = generalItem.addOreDictItem(401, "nuggetZinc");
-		nuggetTin = generalItem.addOreDictItem(402, "nuggetTin");
-		nuggetNickel = generalItem.addOreDictItem(403, "nuggetNickel");
-		nuggetSilver = generalItem.addOreDictItem(404, "nuggetSilver");
-		nuggetLead = generalItem.addOreDictItem(405, "nuggetLead");
-		nuggetLanthanides = generalItem.addOreDictItem(406, "nuggetXenotime", 1, "nuggetXenotimeLanthanides");
-		nuggetTungsten = generalItem.addOreDictItem(407, "nuggetTungsten", 1);
-		nuggetIridium = generalItem.addOreDictItem(408, "nuggetIridium", 2);
-		nuggetBismuth = generalItem.addOreDictItem(409, "nuggetBismuth");
-		nuggetArsenicalBronze = generalItem.addOreDictItem(410, "nuggetArsenicalBronze");
-		nuggetAntimonialBronze = generalItem.addOreDictItem(411, "nuggetAntimonialBronze");
-		shardPyrope = generalItem.addOreDictItem(412, "shardPyrope", 2, "nuggetPyrope");
-		shardDioptase = generalItem.addOreDictItem(413, "shardDioptase", 2, "nuggetDioptase");
-		shardFluonicSapphire = generalItem.addOreDictItem(414, "shardFluonicSapphire", 2, "nuggetFluonicSapphire");
-		nuggetOsmium = generalItem.addOreDictItem(415, "nuggetOsmium", 1);
-		nuggetNeodymium = generalItem.addOreDictItem(416, "nuggetNeodymium", 1);
-		nuggetLutetium = generalItem.addOreDictItem(417, "nuggetLutetium", 2);
-		nuggetPalladium = generalItem.addOreDictItem(418, "nuggetPalladium", 1);
-		nuggetIridosmium = generalItem.addOreDictItem(419, "nuggetIridosmium", 2);
-		nuggetAluminium = generalItem.addOreDictItem(420, "nuggetAluminium");
-		nuggetXenotimeJunk = generalItem.addOreDictItem(421, "nuggetLanthanides", 1, "nuggetXenotimeWaste");
+		ingotThaumicElectrum = generalItem.addOreDictItem(260, "ingotThaumicElectrum", 1);
+		ingotThaumicRiftishBronze = generalItem.addOreDictItem(261, "ingotThaumicRiftishBronze", 1);
+		ingotSteel = generalItem.addOreDictItem(262, "ingotSteel");
+		ingotVoidbrass = generalItem.addOreDictItem(263, "ingotVoidbrass", 1);
+		ingotVoidsteel = generalItem.addOreDictItem(264, "ingotVoidsteel", 1);
+		ingotVoidtungsten = generalItem.addOreDictItem(265, "ingotVoidtungsten", 2);
 
-		nuggetBrass = generalItem.addOreDictItem(425, "nuggetBrass");
-		nuggetBronze = generalItem.addOreDictItem(426, nBronze);
-		nuggetBismuthBronze = generalItem.addOreDictItem(427, "nuggetBismuthBronze");
-		nuggetMithril = generalItem.addOreDictItem(428, "nuggetMithril", 1, "nuggetArsenoAntimonialBronze");
-		nuggetAluminiumBronze = generalItem.addOreDictItem(429, "nuggetAluminiumBronze");
-		nuggetCupronickel = generalItem.addOreDictItem(430, "nuggetCupronickel");
-		nuggetRiftishBronze = generalItem.addOreDictItem(431, "nuggetRiftishBronze");
-		nuggetConstantan = generalItem.addOreDictItem(432, "nuggetConstantan");
-		nuggetInvar = generalItem.addOreDictItem(433, "nuggetInvar");
-		nuggetElectrum = generalItem.addOreDictItem(434, "nuggetElectrum");
-		nuggetWardenicMetal = generalItem.addOreDictItem(435, "nuggetWardenicMetal");
+		ingotWardenicBronze = generalItem.addOreDictItem(270, "ingotWardenicBronze");
+		ingotWardenicSteel = generalItem.addOreDictItem(271, "ingotWardenicSteel", 1);
+		ingotWardenicRiftishBronze = generalItem.addOreDictItem(272, "ingotWardenicRiftishBronze", 1);
+		gemWardenicQuartz = generalItem.addOreDictItem(273, "gemWardenicQuartz", 1);
+		gemWardenicCrystal = generalItem.addOreDictItem(274, "gemWardenicCrystal", 2);
+		gemWardenicCrystalActivated = generalItem.addOreDictItem(275, "gemWardenicCrystalActivated", 2);
+		ingotWardenicComposite = generalItem.addOreDictItem(276, "ingotWardenicComposite", 2);
 
-		nuggetThaumicBronze = generalItem.addOreDictItem(450, "nuggetThaumicBronze");
-		nuggetOsLu = generalItem.addOreDictItem(451, "nuggetOsmiumLutetium", 2);
-		shardFluonicPyroptase = generalItem.addOreDictItem(452, "shardFluonicPyroptase", 3, "nuggetFluonicPyroptase");
+		ingotRedsolderArcane = generalItem.addOreDictItem(280, "ingotArcaneRedsolder");
+		ingotRedbronze = generalItem.addOreDictItem(281, "ingotRedbronze");
+		ingotRedbronzeHardened = generalItem.addOreDictItem(282, "ingotHardenedRedbronze", 1);
+		ingotFluxsteel = generalItem.addOreDictItem(283, "ingotFluxsteel", 1);
+		gemRedquartz = generalItem.addOreDictItem(284, "gemRedquartz", 1);
+		ingotFluxedTungsten = generalItem.addOreDictItem(285, "ingotFluxedTungsten", 2);
+		ingotMagneoturgicComposite = generalItem.addOreDictItem(286, "ingotMagneoturgicComposite", 2);
+		ingotFluxedComposite = generalItem.addOreDictItem(287, "ingotFluxedComposite", 2);
+		ingotResonantFluxedComposite = generalItem.addOreDictItem(288, "ingotResonantFluxedComposite", 3);
+		
+		nuggetCopper = generalItem.addOreDictItem(300, "nuggetCopper");
+		nuggetZinc = generalItem.addOreDictItem(301, "nuggetZinc");
+		nuggetTin = generalItem.addOreDictItem(302, "nuggetTin");
+		nuggetNickel = generalItem.addOreDictItem(303, "nuggetNickel");
+		nuggetSilver = generalItem.addOreDictItem(304, "nuggetSilver");
+		nuggetLead = generalItem.addOreDictItem(305, "nuggetLead");
+		nuggetLanthanides = generalItem.addOreDictItem(306, "nuggetXenotime", 1, "nuggetXenotimeLanthanides");
+		nuggetTungsten = generalItem.addOreDictItem(307, "nuggetTungsten", 1);
+		nuggetIridium = generalItem.addOreDictItem(308, "nuggetIridium", 2);
+		nuggetBismuth = generalItem.addOreDictItem(309, "nuggetBismuth");
+		nuggetArsenicalBronze = generalItem.addOreDictItem(310, "nuggetArsenicalBronze");
+		nuggetAntimonialBronze = generalItem.addOreDictItem(311, "nuggetAntimonialBronze");
+		shardPyrope = generalItem.addOreDictItem(312, "shardPyrope", 2, "nuggetPyrope");
+		shardDioptase = generalItem.addOreDictItem(313, "shardDioptase", 2, "nuggetDioptase");
+		shardFluonicSapphire = generalItem.addOreDictItem(314, "shardFluonicSapphire", 2, "nuggetFluonicSapphire");
+		nuggetOsmium = generalItem.addOreDictItem(315, "nuggetOsmium", 1);
+		nuggetNeodymium = generalItem.addOreDictItem(316, "nuggetNeodymium", 1);
+		nuggetLutetium = generalItem.addOreDictItem(317, "nuggetLutetium", 2);
+		nuggetPalladium = generalItem.addOreDictItem(318, "nuggetPalladium", 1);
+		nuggetIridosmium = generalItem.addOreDictItem(319, "nuggetIridosmium", 2);
+		nuggetAluminium = generalItem.addOreDictItem(320, "nuggetAluminium");
+		nuggetXenotimeJunk = generalItem.addOreDictItem(321, "nuggetLanthanides", 1, "nuggetXenotimeWaste");
 
-		nuggetThaumicElectrum = generalItem.addOreDictItem(475, "nuggetThaumicElectrum", 1);
-		nuggetThaumicRiftishBronze = generalItem.addOreDictItem(476, "nuggetThaumicRiftishBronze", 1);
-		nuggetSteel = generalItem.addOreDictItem(477, "nuggetSteel");
-		nuggetWardenicSteel = generalItem.addOreDictItem(478, "nuggetWardenicSteel", 1);
-		nuggetWardenicRiftishBronze = generalItem.addOreDictItem(479, "nuggetWardenicRiftishBronze", 1);
-		nuggetVoidbrass = generalItem.addOreDictItem(480, "nuggetVoidbrass", 1);
-		nuggetVoidsteel = generalItem.addOreDictItem(481, "nuggetVoidsteel", 1);
-		nuggetVoidtungsten = generalItem.addOreDictItem(482, "nuggetVoidtungsten", 2);
+		nuggetBrass = generalItem.addOreDictItem(325, "nuggetBrass");
+		nuggetBronze = generalItem.addOreDictItem(326, nBronze);
+		nuggetBismuthBronze = generalItem.addOreDictItem(327, "nuggetBismuthBronze");
+		nuggetMithril = generalItem.addOreDictItem(328, "nuggetMithril", 1, "nuggetArsenoAntimonialBronze");
+		nuggetAluminiumBronze = generalItem.addOreDictItem(329, "nuggetAluminiumBronze");
+		nuggetCupronickel = generalItem.addOreDictItem(330, "nuggetCupronickel");
+		nuggetRiftishBronze = generalItem.addOreDictItem(331, "nuggetRiftishBronze", 1);
+		nuggetConstantan = generalItem.addOreDictItem(332, "nuggetConstantan");
+		nuggetInvar = generalItem.addOreDictItem(333, "nuggetInvar");
+		nuggetElectrum = generalItem.addOreDictItem(334, "nuggetElectrum");
+		nuggetWardenicMetal = generalItem.addOreDictItem(335, "nuggetWardenicMetal");
+		nuggetRedsolder = generalItem.addOreDictItem(336, "nuggetRedsolder");
 
-		dustCopper = generalItem.addOreDictItem(500, "dustCopper");
-		dustZinc = generalItem.addOreDictItem(501, "dustZinc");
-		dustTin = generalItem.addOreDictItem(502, "dustTin");
-		dustNickel = generalItem.addOreDictItem(503, "dustNickel");
-		dustSilver = generalItem.addOreDictItem(504, "dustSilver");
-		dustLead = generalItem.addOreDictItem(505, "dustLead");
-		dustLanthanides = generalItem.addOreDictItem(506, "dustXenotime", 1, "dustXenotimeLanthanides");
-		dustTungsten = generalItem.addOreDictItem(507, "dustTungsten", 1);
-		dustIridium = generalItem.addOreDictItem(508, "dustIridium", 2);
-		dustBismuth = generalItem.addOreDictItem(509, "dustBismuth");
-		dustArsenicalBronze = generalItem.addOreDictItem(510, "dustArsenicalBronze");
-		dustAntimonialBronze = generalItem.addOreDictItem(511, "dustAntimonialBronze");
-		dustPyrope = generalItem.addOreDictItem(512, "dustPyrope", 2);
-		dustDioptase = generalItem.addOreDictItem(513, "dustDioptase", 2);
-		dustFluonicSapphire = generalItem.addOreDictItem(514, "dustFluonicSapphire", 2);
-		dustOsmium = generalItem.addOreDictItem(515, "dustOsmium", 1);
-		dustNeodymium = generalItem.addOreDictItem(516, "dustNeodymium", 1);
-		dustLutetium = generalItem.addOreDictItem(517, "dustLutetium", 2);
-		dustPalladium = generalItem.addOreDictItem(518, "dustPalladium", 1);
-		dustIridosmium = generalItem.addOreDictItem(519, "dustIridosmium", 2);
-		dustAluminium = generalItem.addOreDictItem(520, "dustAluminium");
-		dustXenotimeJunk = generalItem.addOreDictItem(521, "dustLanthanides", 1, "dustXenotimeWaste");
+		nuggetThaumicBronze = generalItem.addOreDictItem(350, "nuggetThaumicBronze");
+		nuggetOsLu = generalItem.addOreDictItem(351, "nuggetOsmiumLutetium", 2);
+		shardFluonicPyroptase = generalItem.addOreDictItem(352, "shardFluonicPyroptase", 3, "nuggetFluonicPyroptase");
 
-		dustBrass = generalItem.addOreDictItem(525, "dustBrass");
-		dustBronze = generalItem.addOreDictItem(526, "dustBronze");
-		dustBismuthBronze = generalItem.addOreDictItem(527, "dustBismuthBronze");
-		dustMithril = generalItem.addOreDictItem(528, "dustMithril", 1, "dustArsenoAntimonialBronze");
-		dustAluminiumBronze = generalItem.addOreDictItem(529, "dustAluminiumBronze");
-		dustCupronickel = generalItem.addOreDictItem(530, "dustCupronickel");
-		dustRiftishBronze = generalItem.addOreDictItem(531, "dustRiftishBronze");
-		dustConstantan = generalItem.addOreDictItem(532, "dustConstantan");
-		dustInvar = generalItem.addOreDictItem(533, "dustInvar");
-		dustElectrum = generalItem.addOreDictItem(534, "dustElectrum");
-		dustWardenicMetal = generalItem.addOreDictItem(535, "dustWardenicMetal");
+		nuggetArsenic = generalItem.addOreDictItem(355, "nuggetArsenic");
+		nuggetAntimony = generalItem.addOreDictItem(356, "nuggetAntimony");
 
-		dustThaumicBronze = generalItem.addOreDictItem(550, "dustThaumicBronze");
-		dustOsLu = generalItem.addOreDictItem(551, "dustOsmiumLutetium", 2);
-		dustFluonicPyroptase = generalItem.addOreDictItem(552, "dustFluonicPyroptase", 3);
+		nuggetThaumicElectrum = generalItem.addOreDictItem(360, "nuggetThaumicElectrum", 1);
+		nuggetThaumicRiftishBronze = generalItem.addOreDictItem(361, "nuggetThaumicRiftishBronze", 1);
+		nuggetSteel = generalItem.addOreDictItem(362, "nuggetSteel");
+		nuggetVoidbrass = generalItem.addOreDictItem(363, "nuggetVoidbrass", 1);
+		nuggetVoidsteel = generalItem.addOreDictItem(364, "nuggetVoidsteel", 1);
+		nuggetVoidtungsten = generalItem.addOreDictItem(365, "nuggetVoidtungsten", 2);
 
-		dustThaumicElectrum = generalItem.addOreDictItem(575, "dustThaumicElectrum", 1);
-		dustThaumicRiftishBronze = generalItem.addOreDictItem(576, "dustThaumicRiftishBronze", 1);
-		dustSteel = generalItem.addOreDictItem(577, "dustSteel");
-		dustWardenicSteel = generalItem.addOreDictItem(578, "dustWardenicSteel", 1);
-		dustWardenicRiftishBronze = generalItem.addOreDictItem(579, "dustWardenicRiftishBronze", 1);
-		dustVoidbrass = generalItem.addOreDictItem(580, "dustVoidbrass", 1);
-		dustVoidsteel = generalItem.addOreDictItem(581, "dustVoidsteel", 1);
-		dustVoidtungsten = generalItem.addOreDictItem(582, "dustVoidtungsten", 2);
+		nuggetWardenicBronze = generalItem.addOreDictItem(370, "nuggetWardenicBronze");
+		nuggetWardenicSteel = generalItem.addOreDictItem(371, "nuggetWardenicSteel", 1);
+		nuggetWardenicRiftishBronze = generalItem.addOreDictItem(372, "nuggetWardenicRiftishBronze", 1);
+		shardWardenicQuartz = generalItem.addOreDictItem(373, "shardWardenicQuartz", 1, "nuggetWardenicQuartz");
+		shardWardenicCrystal = generalItem.addOreDictItem(374, "shardWardenicCrystal", 2, "nuggetWardenicCrystal");
+		shardWardenicCrystalActivated = generalItem.addOreDictItem(375, "shardWardenicCrystalActivated", 2, "nuggetWardenicCrystalActivated");
+		nuggetWardenicComposite = generalItem.addOreDictItem(376, "nuggetWardenicComposite", 2);
 
-		tinyCopper = generalItem.addOreDictItem(600, "dustCopperTiny");
-		tinyZinc = generalItem.addOreDictItem(601, "dustZincTiny");
-		tinyTin = generalItem.addOreDictItem(602, "dustTinTiny");
-		tinyNickel = generalItem.addOreDictItem(603, "dustNickelTiny");
-		tinySilver = generalItem.addOreDictItem(604, "dustSilverTiny");
-		tinyLead = generalItem.addOreDictItem(605, "dustLeadTiny");
-		tinyLanthanides = generalItem.addOreDictItem(606, "dustXenotimeTiny", 1, "dustXenotimeLanthanidesTiny");
-		tinyTungsten = generalItem.addOreDictItem(607, "dustTungstenTiny", 1);
-		tinyIridium = generalItem.addOreDictItem(608, "dustIridiumTiny", 2);
-		tinyBismuth = generalItem.addOreDictItem(609, "dustBismuthTiny");
-		tinyArsenicalBronze = generalItem.addOreDictItem(610, "dustArsenicalBronzeTiny");
-		tinyAntimonialBronze = generalItem.addOreDictItem(611, "dustAntimonialBronzeTiny");
-		tinyPyrope = generalItem.addOreDictItem(612, "dustPyropeTiny", 2);
-		tinyDioptase = generalItem.addOreDictItem(613, "dustDioptaseTiny", 2);
-		tinyFluonicSapphire = generalItem.addOreDictItem(614, "dustFluonicSapphireTiny", 2);
-		tinyOsmium = generalItem.addOreDictItem(615, "dustOsmiumTiny", 1);
-		tinyNeodymium = generalItem.addOreDictItem(616, "dustNeodymiumTiny", 1);
-		tinyLutetium = generalItem.addOreDictItem(617, "dustLutetiumTiny", 2);
-		tinyPalladium = generalItem.addOreDictItem(618, "dustPalladiumTiny", 1);
-		tinyIridosmium = generalItem.addOreDictItem(619, "dustIridosmiumTiny", 2);
-		tinyAluminium = generalItem.addOreDictItem(620, "dustAluminiumTiny");
-		tinyXenotimeJunk = generalItem.addOreDictItem(621, "dustLanthanidesTiny", 1, "dustXenotimeWasteTiny");
+		nuggetRedsolderArcane = generalItem.addOreDictItem(380, "nuggetArcaneRedsolder");
+		nuggetRedbronze = generalItem.addOreDictItem(381, "nuggetRedbronze");
+		nuggetRedbronzeHardened = generalItem.addOreDictItem(382, "nuggetHardenedRedbronze", 1);
+		nuggetFluxsteel = generalItem.addOreDictItem(383, "nuggetFluxsteel", 1);
+		shardRedquartz = generalItem.addOreDictItem(384, "shardRedquartz", 1);
+		nuggetFluxedTungsten = generalItem.addOreDictItem(385, "nuggetFluxedTungsten", 2);
+		nuggetMagneoturgicComposite = generalItem.addOreDictItem(386, "nuggetMagneoturgicComposite", 2);
+		nuggetFluxedComposite = generalItem.addOreDictItem(387, "nuggetFluxedComposite", 2);
+		nuggetResonantFluxedComposite = generalItem.addOreDictItem(388, "nuggetResonantFluxedComposite", 3);
 
-		tinyBrass = generalItem.addOreDictItem(625, "dustBrassTiny");
-		tinyBronze = generalItem.addOreDictItem(626, "dustBronzeTiny");
-		tinyBismuthBronze = generalItem.addOreDictItem(627, "dustBismuthBronzeTiny");
-		tinyMithril = generalItem.addOreDictItem(628, "dustMithrilTiny", 1, "dustArsenoAntimonialBronzeTiny");
-		tinyAluminiumBronze = generalItem.addOreDictItem(629, "dustAluminiumBronzeTiny");
-		tinyCupronickel = generalItem.addOreDictItem(630, "dustCupronickelTiny");
-		tinyRiftishBronze = generalItem.addOreDictItem(631, "dustRiftishBronzeTiny");
-		tinyConstantan = generalItem.addOreDictItem(632, "dustConstantanTiny");
-		tinyInvar = generalItem.addOreDictItem(633, "dustInvarTiny");
-		tinyElectrum = generalItem.addOreDictItem(634, "dustElectrumTiny");
-		tinyWardenicMetal = generalItem.addOreDictItem(635, "dustWardenicMetalTiny");
+		dustCopper = generalItem.addOreDictItem(400, "dustCopper");
+		dustZinc = generalItem.addOreDictItem(401, "dustZinc");
+		dustTin = generalItem.addOreDictItem(402, "dustTin");
+		dustNickel = generalItem.addOreDictItem(403, "dustNickel");
+		dustSilver = generalItem.addOreDictItem(404, "dustSilver");
+		dustLead = generalItem.addOreDictItem(405, "dustLead");
+		dustLanthanides = generalItem.addOreDictItem(406, "dustXenotime", 1, "dustXenotimeLanthanides");
+		dustTungsten = generalItem.addOreDictItem(407, "dustTungsten", 1);
+		dustIridium = generalItem.addOreDictItem(408, "dustIridium", 2);
+		dustBismuth = generalItem.addOreDictItem(409, "dustBismuth");
+		dustArsenicalBronze = generalItem.addOreDictItem(410, "dustArsenicalBronze");
+		dustAntimonialBronze = generalItem.addOreDictItem(411, "dustAntimonialBronze");
+		dustPyrope = generalItem.addOreDictItem(412, "dustPyrope", 2);
+		dustDioptase = generalItem.addOreDictItem(413, "dustDioptase", 2);
+		dustFluonicSapphire = generalItem.addOreDictItem(414, "dustFluonicSapphire", 2);
+		dustOsmium = generalItem.addOreDictItem(415, "dustOsmium", 1);
+		dustNeodymium = generalItem.addOreDictItem(416, "dustNeodymium", 1);
+		dustLutetium = generalItem.addOreDictItem(417, "dustLutetium", 2);
+		dustPalladium = generalItem.addOreDictItem(418, "dustPalladium", 1);
+		dustIridosmium = generalItem.addOreDictItem(419, "dustIridosmium", 2);
+		dustAluminium = generalItem.addOreDictItem(420, "dustAluminium");
+		dustXenotimeJunk = generalItem.addOreDictItem(421, "dustLanthanides", 1, "dustXenotimeWaste");
 
-		tinyThaumicBronze = generalItem.addOreDictItem(650, "dustThaumicBronzeTiny");
-		tinyOsLu = generalItem.addOreDictItem(651, "dustOsmiumLutetiumTiny", 2);
-		tinyFluonicPyroptase = generalItem.addOreDictItem(652, "dustFluonicPyroptaseTiny", 3);
+		dustBrass = generalItem.addOreDictItem(425, "dustBrass");
+		dustBronze = generalItem.addOreDictItem(426, "dustBronze");
+		dustBismuthBronze = generalItem.addOreDictItem(427, "dustBismuthBronze");
+		dustMithril = generalItem.addOreDictItem(428, "dustMithril", 1, "dustArsenoAntimonialBronze");
+		dustAluminiumBronze = generalItem.addOreDictItem(429, "dustAluminiumBronze");
+		dustCupronickel = generalItem.addOreDictItem(430, "dustCupronickel");
+		dustRiftishBronze = generalItem.addOreDictItem(431, "dustRiftishBronze", 1);
+		dustConstantan = generalItem.addOreDictItem(432, "dustConstantan");
+		dustInvar = generalItem.addOreDictItem(433, "dustInvar");
+		dustElectrum = generalItem.addOreDictItem(434, "dustElectrum");
+		dustWardenicMetal = generalItem.addOreDictItem(435, "dustWardenicMetal");
+		dustRedsolder = generalItem.addOreDictItem(436, "dustRedsolder");
 
-		tinyThaumicElectrum = generalItem.addOreDictItem(675, "dustThaumicElectrumTiny", 1);
-		tinyThaumicRiftishBronze = generalItem.addOreDictItem(676, "dustThaumicRiftishBronzeTiny", 1);
-		tinySteel = generalItem.addOreDictItem(677, "dustSteelTiny");
-		tinyWardenicSteel = generalItem.addOreDictItem(678, "dustWardenicSteelTiny", 1);
-		tinyWardenicRiftishBronze = generalItem.addOreDictItem(679, "dustWardenicRiftishBronzeTiny", 1);
-		tinyVoidbrass = generalItem.addOreDictItem(680, "dustVoidbrassTiny", 1);
-		tinyVoidsteel = generalItem.addOreDictItem(681, "dustVoidsteelTiny", 1);
-		tinyVoidtungsten = generalItem.addOreDictItem(682, "dustVoidtungstenTiny", 2);
+		dustThaumicBronze = generalItem.addOreDictItem(450, "dustThaumicBronze");
+		dustOsLu = generalItem.addOreDictItem(451, "dustOsmiumLutetium", 2);
+		dustFluonicPyroptase = generalItem.addOreDictItem(452, "dustFluonicPyroptase", 3);
+		dustArsenic = generalItem.addOreDictItem(455, "dustArsenic");
+		dustAntimony = generalItem.addOreDictItem(456, "dustAntimony");
 
-		rawBrass = generalItem.addOreDictItem(700, "ingotBrassRaw");
-		rawBronze = generalItem.addOreDictItem(701, "ingotBronzeRaw");
-		rawBismuthBronze = generalItem.addOreDictItem(702, "ingotBismuthBronzeRaw");
-		rawMithril = generalItem.addOreDictItem(703, "ingotMithrilRaw", 1, "ingotArsenoAntimonialBronzeRaw");
-		rawAluminiumBronze = generalItem.addOreDictItem(704, "ingotAluminiumBronzeRaw");
-		rawCupronickel = generalItem.addOreDictItem(705, "ingotCupronickelRaw");
-		rawRiftishBronze = generalItem.addOreDictItem(706, "ingotRiftishBronzeRaw");
-		rawConstantan = generalItem.addOreDictItem(707, "ingotConstantanRaw");
-		rawInvar = generalItem.addOreDictItem(708, "ingotInvarRaw");
-		rawElectrum = generalItem.addOreDictItem(709, "ingotElectrumRaw");
-		rawWardenicMetal = generalItem.addOreDictItem(710, "ingotWardenicMetalRaw");
+		dustThaumicElectrum = generalItem.addOreDictItem(460, "dustThaumicElectrum", 1);
+		dustThaumicRiftishBronze = generalItem.addOreDictItem(461, "dustThaumicRiftishBronze", 1);
+		dustSteel = generalItem.addOreDictItem(462, "dustSteel");
+		dustVoidbrass = generalItem.addOreDictItem(463, "dustVoidbrass", 1);
+		dustVoidsteel = generalItem.addOreDictItem(464, "dustVoidsteel", 1);
+		dustVoidtungsten = generalItem.addOreDictItem(465, "dustVoidtungsten", 2);
 
-		rawThaumicBronze = generalItem.addOreDictItem(725, "ingotThaumicBronzeRaw");
-		rawOsLu = generalItem.addOreDictItem(726, "ingotOsmiumLutetiumRaw", 2);
+		dustWardenicBronze = generalItem.addOreDictItem(470, "dustWardenicBronze");
+		dustWardenicSteel = generalItem.addOreDictItem(471, "dustWardenicSteel", 1);
+		dustWardenicRiftishBronze = generalItem.addOreDictItem(472, "dustWardenicRiftishBronze", 1);
+		dustWardenicQuartz = generalItem.addOreDictItem(473, "dustWardenicQuartz", 1);
+		dustWardenicCrystal = generalItem.addOreDictItem(474, "dustWardenicCrystal", 2);
+		dustWardenicCrystalActivated = generalItem.addOreDictItem(475, "dustWardenicCrystalActivated", 2);
+		dustWardenicComposite = generalItem.addOreDictItem(476, "dustWardenicComposite", 2);
 
-		coatedThaumicBronze = generalItem.addOreDictItem(750, "ingotThaumicBronzeCoated");
-		coatedOsLu = generalItem.addOreDictItem(751, "ingotOsmiumLutetiumCoated", 2);
+		dustRedsolderArcane = generalItem.addOreDictItem(480, "dustArcaneRedsolder");
+		dustRedbronze = generalItem.addOreDictItem(481, "dustRedbronze");
+		dustRedbronzeHardened = generalItem.addOreDictItem(482, "dustHardenedRedbronze", 1);
+		dustFluxsteel = generalItem.addOreDictItem(483, "dustFluxsteel", 1);
+		dustRedquartz = generalItem.addOreDictItem(484, "dustRedquartz", 1);
+		dustFluxedTungsten = generalItem.addOreDictItem(485, "dustFluxedTungsten", 2);
+		dustMagneoturgicComposite = generalItem.addOreDictItem(486, "dustMagneoturgicComposite", 2);
+		dustFluxedComposite = generalItem.addOreDictItem(487, "dustFluxedComposite", 2);
+		dustResonantFluxedComposite = generalItem.addOreDictItem(488, "dustResonantFluxedComposite", 3);
+
+		tinyCopper = generalItem.addOreDictItem(500, "dustCopperTiny");
+		tinyZinc = generalItem.addOreDictItem(501, "dustZincTiny");
+		tinyTin = generalItem.addOreDictItem(502, "dustTinTiny");
+		tinyNickel = generalItem.addOreDictItem(503, "dustNickelTiny");
+		tinySilver = generalItem.addOreDictItem(504, "dustSilverTiny");
+		tinyLead = generalItem.addOreDictItem(505, "dustLeadTiny");
+		tinyLanthanides = generalItem.addOreDictItem(506, "dustXenotimeTiny", 1, "dustXenotimeLanthanidesTiny");
+		tinyTungsten = generalItem.addOreDictItem(507, "dustTungstenTiny", 1);
+		tinyIridium = generalItem.addOreDictItem(508, "dustIridiumTiny", 2);
+		tinyBismuth = generalItem.addOreDictItem(509, "dustBismuthTiny");
+		tinyArsenicalBronze = generalItem.addOreDictItem(510, "dustArsenicalBronzeTiny");
+		tinyAntimonialBronze = generalItem.addOreDictItem(511, "dustAntimonialBronzeTiny");
+		tinyPyrope = generalItem.addOreDictItem(512, "dustPyropeTiny", 2);
+		tinyDioptase = generalItem.addOreDictItem(513, "dustDioptaseTiny", 2);
+		tinyFluonicSapphire = generalItem.addOreDictItem(514, "dustFluonicSapphireTiny", 2);
+		tinyOsmium = generalItem.addOreDictItem(515, "dustOsmiumTiny", 1);
+		tinyNeodymium = generalItem.addOreDictItem(516, "dustNeodymiumTiny", 1);
+		tinyLutetium = generalItem.addOreDictItem(517, "dustLutetiumTiny", 2);
+		tinyPalladium = generalItem.addOreDictItem(518, "dustPalladiumTiny", 1);
+		tinyIridosmium = generalItem.addOreDictItem(519, "dustIridosmiumTiny", 2);
+		tinyAluminium = generalItem.addOreDictItem(520, "dustAluminiumTiny");
+		tinyXenotimeJunk = generalItem.addOreDictItem(521, "dustLanthanidesTiny", 1, "dustXenotimeWasteTiny");
+
+		tinyBrass = generalItem.addOreDictItem(525, "dustBrassTiny");
+		tinyBronze = generalItem.addOreDictItem(526, "dustBronzeTiny");
+		tinyBismuthBronze = generalItem.addOreDictItem(527, "dustBismuthBronzeTiny");
+		tinyMithril = generalItem.addOreDictItem(528, "dustMithrilTiny", 1, "dustArsenoAntimonialBronzeTiny");
+		tinyAluminiumBronze = generalItem.addOreDictItem(529, "dustAluminiumBronzeTiny");
+		tinyCupronickel = generalItem.addOreDictItem(530, "dustCupronickelTiny");
+		tinyRiftishBronze = generalItem.addOreDictItem(531, "dustRiftishBronzeTiny", 1);
+		tinyConstantan = generalItem.addOreDictItem(532, "dustConstantanTiny");
+		tinyInvar = generalItem.addOreDictItem(533, "dustInvarTiny");
+		tinyElectrum = generalItem.addOreDictItem(534, "dustElectrumTiny");
+		tinyWardenicMetal = generalItem.addOreDictItem(535, "dustWardenicMetalTiny");
+		tinyRedsolder = generalItem.addOreDictItem(536, "dustRedsolderTiny");
+
+		tinyThaumicBronze = generalItem.addOreDictItem(550, "dustThaumicBronzeTiny");
+		tinyOsLu = generalItem.addOreDictItem(551, "dustOsmiumLutetiumTiny", 2);
+		tinyFluonicPyroptase = generalItem.addOreDictItem(552, "dustFluonicPyroptaseTiny", 3);
+
+		tinyArsenic = generalItem.addOreDictItem(555, "dustArsenicTiny");
+		tinyAntimony = generalItem.addOreDictItem(556, "dustAntimonyTiny");
+
+		tinyThaumicElectrum = generalItem.addOreDictItem(560, "dustThaumicElectrumTiny", 1);
+		tinyThaumicRiftishBronze = generalItem.addOreDictItem(561, "dustThaumicRiftishBronzeTiny", 1);
+		tinySteel = generalItem.addOreDictItem(562, "dustSteelTiny");
+		tinyVoidbrass = generalItem.addOreDictItem(563, "dustVoidbrassTiny", 1);
+		tinyVoidsteel = generalItem.addOreDictItem(564, "dustVoidsteelTiny", 1);
+		tinyVoidtungsten = generalItem.addOreDictItem(565, "dustVoidtungstenTiny", 2);
+
+		tinyWardenicBronze = generalItem.addOreDictItem(570, "dustWardenicBronzeTiny");
+		tinyWardenicSteel = generalItem.addOreDictItem(571, "dustWardenicSteelTiny", 1);
+		tinyWardenicRiftishBronze = generalItem.addOreDictItem(572, "dustWardenicRiftishBronzeTiny", 1);
+		tinyWardenicQuartz = generalItem.addOreDictItem(573, "dustWardenicQuartzTiny", 1);
+		tinyWardenicCrystal = generalItem.addOreDictItem(574, "dustWardenicCrystalTiny", 2);
+		tinyWardenicCrystalActivated = generalItem.addOreDictItem(575, "dustWardenicCrystalActivatedTiny", 2);
+		tinyWardenicComposite = generalItem.addOreDictItem(576, "dustWardenicCompositeTiny", 2);
+
+		tinyRedsolderArcane = generalItem.addOreDictItem(580, "dustArcaneRedsolderTiny");
+		tinyRedbronze = generalItem.addOreDictItem(581, "dustRedbronzeTiny");
+		tinyRedbronzeHardened = generalItem.addOreDictItem(582, "dustHardenedRedbronzeTiny", 1);
+		tinyFluxsteel = generalItem.addOreDictItem(583, "dustFluxsteelTiny", 1);
+		tinyRedquartz = generalItem.addOreDictItem(584, "dustRedquartzTiny", 1);
+		tinyFluxedTungsten = generalItem.addOreDictItem(585, "dustFluxedTungstenTiny", 2);
+		tinyMagneoturgicComposite = generalItem.addOreDictItem(586, "dustMagneoturgicCompositeTiny", 2);
+		tinyFluxedComposite = generalItem.addOreDictItem(587, "dustFluxedCompositeTiny", 2);
+		tinyResonantFluxedComposite = generalItem.addOreDictItem(588, "dustResonantFluxedCompositeTiny", 3);
+
+		plateCopper = generalItem.addOreDictItem(600, "plateCopper");
+		plateZinc = generalItem.addOreDictItem(601, "plateZinc");
+		plateTin = generalItem.addOreDictItem(602, "plateTin");
+		plateNickel = generalItem.addOreDictItem(603, "plateNickel");
+		plateSilver = generalItem.addOreDictItem(604, "plateSilver");
+		plateLead = generalItem.addOreDictItem(605, "plateLead");
+		plateTungsten = generalItem.addOreDictItem(607, "plateTungsten", 1);
+		plateIridium = generalItem.addOreDictItem(608, "plateIridium", 2);
+		plateBismuth = generalItem.addOreDictItem(609, "plateBismuth");
+		plateArsenicalBronze = generalItem.addOreDictItem(610, "plateArsenicalBronze");
+		plateAntimonialBronze = generalItem.addOreDictItem(611, "plateAntimonialBronze");
+		plateOsmium = generalItem.addOreDictItem(615, "plateOsmium", 1);
+		plateNeodymium = generalItem.addOreDictItem(616, "plateNeodymium", 1);
+		plateLutetium = generalItem.addOreDictItem(617, "plateLutetium", 2);
+		platePalladium = generalItem.addOreDictItem(618, "platePalladium", 1);
+		plateIridosmium = generalItem.addOreDictItem(619, "plateIridosmium", 2);
+		plateAluminium = generalItem.addOreDictItem(620, "plateAluminium");
+
+		plateBrass = generalItem.addOreDictItem(625, "plateBrass");
+		plateBronze = generalItem.addOreDictItem(626, "plateBronze");
+		plateBismuthBronze = generalItem.addOreDictItem(627, "plateBismuthBronze");
+		plateMithril = generalItem.addOreDictItem(628, "plateMithril", 1, "plateArsenoAntimonialBronze");
+		plateAluminiumBronze = generalItem.addOreDictItem(629, "plateAluminiumBronze");
+		plateCupronickel = generalItem.addOreDictItem(630, "plateCupronickel");
+		plateRiftishBronze = generalItem.addOreDictItem(631, "plateRiftishBronze", 1);
+		plateConstantan = generalItem.addOreDictItem(632, "plateConstantan");
+		plateInvar = generalItem.addOreDictItem(633, "plateInvar");
+		plateElectrum = generalItem.addOreDictItem(634, "plateElectrum");
+		plateWardenicMetal = generalItem.addOreDictItem(635, "plateWardenicMetal");
+		plateRedsolder = generalItem.addOreDictItem(636, "plateRedsolder");
+
+		plateThaumicBronze = generalItem.addOreDictItem(650, "plateThaumicBronze");
+		plateOsLu = generalItem.addOreDictItem(651, "plateOsmiumLutetium", 2);
+
+		plateThaumicElectrum = generalItem.addOreDictItem(660, "plateThaumicElectrum", 1);
+		plateThaumicRiftishBronze = generalItem.addOreDictItem(661, "plateThaumicRiftishBronze", 1);
+		plateSteel = generalItem.addOreDictItem(662, "plateSteel");
+		plateVoidbrass = generalItem.addOreDictItem(663, "plateVoidbrass", 1);
+		plateVoidsteel = generalItem.addOreDictItem(664, "plateVoidsteel", 1);
+		plateVoidtungsten = generalItem.addOreDictItem(665, "plateVoidtungsten", 2);
+
+		plateWardenicBronze = generalItem.addOreDictItem(670, "plateWardenicBronze");
+		plateWardenicSteel = generalItem.addOreDictItem(671, "plateWardenicSteel", 1);
+		plateWardenicRiftishBronze = generalItem.addOreDictItem(672, "plateWardenicRiftishBronze", 1);
+		plateWardenicComposite = generalItem.addOreDictItem(676, "plateWardenicComposite",2);
+
+		plateRedsolderArcane = generalItem.addOreDictItem(680, "plateArcaneRedsolder");
+		plateRedbronze = generalItem.addOreDictItem(681, "plateRedbronze");
+		plateRedbronzeHardened = generalItem.addOreDictItem(682, "plateHardenedRedbronze", 1);
+		plateFluxsteel = generalItem.addOreDictItem(683, "plateFluxsteel", 1);
+		plateFluxedTungsten = generalItem.addOreDictItem(685, "plateFluxedTungsten", 2);
+		plateMagneoturgicComposite = generalItem.addOreDictItem(686, "plateMagneoturgicComposite", 2);
+		plateFluxedComposite = generalItem.addOreDictItem(687, "plateFluxedComposite", 2);
+		plateResonantFluxedComposite = generalItem.addOreDictItem(688, "plateResonantFluxedComposite", 3);
+
+		rawBrass = generalItem.addOreDictItem(730, "ingotBrassRaw");
+		rawBronze = generalItem.addOreDictItem(731, "ingotBronzeRaw");
+		rawBismuthBronze = generalItem.addOreDictItem(732, "ingotBismuthBronzeRaw");
+		rawMithril = generalItem.addOreDictItem(733, "ingotMithrilRaw", 1, "ingotArsenoAntimonialBronzeRaw");
+		rawAluminiumBronze = generalItem.addOreDictItem(734, "ingotAluminiumBronzeRaw");
+		rawCupronickel = generalItem.addOreDictItem(735, "ingotCupronickelRaw");
+		rawRiftishBronze = generalItem.addOreDictItem(736, "ingotRiftishBronzeRaw");
+		rawConstantan = generalItem.addOreDictItem(737, "ingotConstantanRaw");
+		rawInvar = generalItem.addOreDictItem(738, "ingotInvarRaw");
+		rawElectrum = generalItem.addOreDictItem(739, "ingotElectrumRaw");
+		rawWardenicMetal = generalItem.addOreDictItem(740, "ingotWardenicMetalRaw");
+		rawRedsolder = generalItem.addOreDictItem(741, "ingotRedsolderRaw");
+
+		rawThaumicBronze = generalItem.addOreDictItem(755, "ingotThaumicBronzeRaw");
+		rawOsLu = generalItem.addOreDictItem(756, "ingotOsmiumLutetiumRaw", 2);
+		blendFluonicPyrotase = generalItem.addOreDictItem(757, "blendFluonicPyroptase", 2, "itemBlendFluonicPyroptase");
+
+		rawWardenicComposite = generalItem.addOreDictItem(760, "ingotWardenicCompositeRaw", 2);
+		rawMagneoturgicComposite = generalItem.addOreDictItem(761, "ingotMagneoturgicCompositeRaw", 2);
+
+		coatedThaumicBronze = generalItem.addOreDictItem(770, "ingotThaumicBronzeCoated");
+		coatedOsLu = generalItem.addOreDictItem(771, "ingotOsmiumLutetiumCoated", 2);
 
 		firedThaumicBronze = generalItem.addOreDictItem(775, "ingotThaumicBronzeFired");
 		firedOsLu = generalItem.addOreDictItem(776, "ingotOsmiumLutetiumFired", 2);
 
-		dustAer = generalItem.addOreDictItem(800, "dustAer");
-		dustIgnis = generalItem.addOreDictItem(801, "dustIgnis");
-		dustAqua = generalItem.addOreDictItem(802, "dustAqua");
-		dustTerra = generalItem.addOreDictItem(803, "dustTerra");
-		dustOrdo = generalItem.addOreDictItem(804, "dustOrdo");
-		dustPerditio = generalItem.addOreDictItem(805, "dustPerditio");
-		dustIron = generalItem.addOreDictItem(806, "dustIron");
-		dustGold = generalItem.addOreDictItem(807, "dustGold");
-		dustThaumium = generalItem.addOreDictItem(808, "dustThaumium");
-		dustVoidmetal = generalItem.addOreDictItem(809, "dustVoid");
-		dustArsenic = generalItem.addOreDictItem(810, "dustArsenic");
-		dustAntimony = generalItem.addOreDictItem(811, "dustAntimony");
+		carbonSlag = generalItem.addOreDictItem(780, "itemSlagCarbon");
+		ceramicSlag = generalItem.addOreDictItem(781, "itemSlagCeramic");
+		thaumicSlag = generalItem.addOreDictItem(782, "itemSlagThaumic");
 
-		dustSulfur = generalItem.addOreDictItem(813, "dustSulfur");
+		clusterZinc = generalItem.addOreDictItem(801, "clusterZinc");
+		clusterAluminium = generalItem.addOreDictItem(802, "clusterAluminium");
+		clusterNickel = generalItem.addOreDictItem(803, "clusterNickel");
+		clusterPlatinum = generalItem.addOreDictItem(804, "clusterPlatinum");
+		clusterXenotime = generalItem.addOreDictItem(806, "clusterXenotime");
+		clusterTungsten = generalItem.addOreDictItem(807, "clusterTungsten");
+		clusterIridosmium = generalItem.addOreDictItem(808, "clusterIridosmium");
+		clusterBismuth = generalItem.addOreDictItem(809, "clusterBismuth");
+		clusterTennantite = generalItem.addOreDictItem(810, "clusterTennantite");
+		clusterTetrahedrite = generalItem.addOreDictItem(811, "clusterTetrahedrite");
 
-		dustWardenicBinder = generalItem.addOreDictItem(830, "dustWardenicBinder");
+		dustAer = generalItem.addOreDictItem(890, "dustAer");
+		dustIgnis = generalItem.addOreDictItem(891, "dustIgnis");
+		dustAqua = generalItem.addOreDictItem(892, "dustAqua");
+		dustTerra = generalItem.addOreDictItem(893, "dustTerra");
+		dustOrdo = generalItem.addOreDictItem(894, "dustOrdo");
+		dustPerditio = generalItem.addOreDictItem(895, "dustPerditio");
+		dustIron = generalItem.addOreDictItem(896, "dustIron");
+		dustGold = generalItem.addOreDictItem(897, "dustGold");
+		dustThaumium = generalItem.addOreDictItem(898, "dustThaumium");
+		dustVoidmetal = generalItem.addOreDictItem(899, "dustVoid");
+		//Salis Mundus
+		dustPrimalEssence = generalItem.addOreDictItem(901, "dustPrimalEssence");
+		dustSulfur = generalItem.addOreDictItem(902, "dustSulfur");
 
-		tinyAer = generalItem.addOreDictItem(850, "dustAerTiny");
-		tinyIgnis = generalItem.addOreDictItem(851, "dustIgnisTiny");
-		tinyAqua = generalItem.addOreDictItem(852, "dustAquaTiny");
-		tinyTerra = generalItem.addOreDictItem(853, "dustTerraTiny");
-		tinyOrdo = generalItem.addOreDictItem(854, "dustOrdoTiny");
-		tinyPerditio = generalItem.addOreDictItem(855, "dustPerditioTiny");
-		tinyIron = generalItem.addOreDictItem(856, "dustIronTiny");
-		tinyGold = generalItem.addOreDictItem(857, "dustGoldTiny");
-		tinyThaumium = generalItem.addOreDictItem(858, "dustThaumiumTiny");
-		tinyVoidmetal = generalItem.addOreDictItem(859, "dustVoidTiny");
-		tinyArsenic = generalItem.addOreDictItem(860, "dustArsenicTiny");
-		tinyAntimony = generalItem.addOreDictItem(861, "dustAntimonyTiny");
-		tinySalisMundus = generalItem.addOreDictItem(862, salisPinch);
+		dustWardenicBinder = generalItem.addOreDictItem(910, "dustWardenicBinder");
 
-		tinyWardenicBinder = generalItem.addOreDictItem(880, "dustWardenicBinderTiny");
+		tinyAer = generalItem.addOreDictItem(940, "dustAerTiny");
+		tinyIgnis = generalItem.addOreDictItem(941, "dustIgnisTiny");
+		tinyAqua = generalItem.addOreDictItem(942, "dustAquaTiny");
+		tinyTerra = generalItem.addOreDictItem(943, "dustTerraTiny");
+		tinyOrdo = generalItem.addOreDictItem(944, "dustOrdoTiny");
+		tinyPerditio = generalItem.addOreDictItem(945, "dustPerditioTiny");
+		tinyIron = generalItem.addOreDictItem(946, "dustIronTiny");
+		tinyGold = generalItem.addOreDictItem(947, "dustGoldTiny");
+		tinyThaumium = generalItem.addOreDictItem(948, "dustThaumiumTiny");
+		tinyVoidmetal = generalItem.addOreDictItem(949, "dustVoidTiny");
+		tinySalisMundus = generalItem.addOreDictItem(950, salisPinch);
+		tinyPrimalEssence = generalItem.addOreDictItem(951, "dustPrimalEssenceTiny");
+		tinySulfur = generalItem.addOreDictItem(952, "dustSulfurTiny");
 
-		clusterZinc = generalItem.addOreDictItem(901, "clusterZinc");
-		clusterAluminium = generalItem.addOreDictItem(902, "clusterAluminium");
-		clusterNickel = generalItem.addOreDictItem(903, "clusterNickel");
-		clusterPlatinum = generalItem.addOreDictItem(904, "clusterPlatinum");
-		clusterXenotime = generalItem.addOreDictItem(906, "clusterXenotime");
-		clusterTungsten = generalItem.addOreDictItem(907, "clusterTungsten");
-		clusterIridosmium = generalItem.addOreDictItem(908, "clusterIridosmium");
-		clusterBismuth = generalItem.addOreDictItem(909, "clusterBismuth");
-		clusterTennantite = generalItem.addOreDictItem(910, "clusterTennantite");
-		clusterTetrahedrite = generalItem.addOreDictItem(911, "clusterTetrahedrite");
+		tinyWardenicBinder = generalItem.addOreDictItem(960, "dustWardenicBinderTiny");
 
-		ceramicSlag = generalItem.addOreDictItem(950, "itemSlagCeramic");
-		thaumicSlag = generalItem.addOreDictItem(951, "itemSlagThaumic");
+		seedExcubitura = generalItem.addOreDictItem(990, "seedExcubitura");
+		seedCotton = generalItem.addOreDictItem(991, "seedCotton");
+		seedThistle = generalItem.addOreDictItem(992, "seedThistle");
+		seedShimmerleaf = generalItem.addOreDictItem(993, "seedShimmerleaf");
+		seedCinderpearl = generalItem.addOreDictItem(994, "seedCinderpearl");
+		seedShiverpearl = generalItem.addOreDictItem(995, "seedShiverpearl");
+		seedStormpearl = generalItem.addOreDictItem(996, "seedStormpearl");
+		seedStonepearl = generalItem.addOreDictItem(997, "seedStonepearl");
 
 		//WARDENIC ARSENAL
 		excubituraPetal = generalItem.addOreDictItem(1000, "excubituraPetal", "itemExcubituraPetal");
+		excubituraPaste = generalItem.addOreDictItem(1001, "excubituraPaste", paste);
+		excubituraFabric = generalItem.addOreDictItem(1002, "excubituraFabric", "itemExcubituraFabric");
+		itemWardencloth = generalItem.addOreDictItem(1003, "wardencloth", wardencloth);
 
-		excubituraPaste = generalItem.addOreDictItem(1020, "excubituraPaste", paste);
-		excubituraFabric = generalItem.addOreDictItem(1021, "excubituraFabric", "itemExcubituraFabric");
-		itemWardencloth = generalItem.addOreDictItem(1022, "wardencloth", wardencloth);
+		excubituraOilUnproc = generalItem.addOreDictItem(1035, "excubituraOilUnproc", "itemExcubituraOilUnprocessed");
+		excubituraOil = generalItem.addOreDictItem(1036, "excubituraOil", oilExcu);
+		wardenicBronzeChain = generalItem.addOreDictItem(1037, "wardenicBronzeChain", chainWBronze);
+		primalBronzeChain = generalItem.addOreDictItem(1038, "primalBronzeChain", chainPBronze);
 
-		excubituraOilUnproc = generalItem.addOreDictItem(1040, "excubituraOilUnproc", "itemExcubituraOilUnprocessed");
-		excubituraOil = generalItem.addOreDictItem(1041, "excubituraOil", oilExcu);
-		wardenicBronzeChain = generalItem.addOreDictItem(1042, "wardenicBronzeChain", chainWBronze);
-		primalBronzeChain = generalItem.addOreDictItem(1043, "primalBronzeChain", chainPBronze);
-		wardenicBronzePlate = generalItem.addOreDictItem(1044, "wardenicBronzePlate", "itemPlateWardenicBronze");
+		excubituraOilPure = generalItem.addOreDictItem(1070, "excubituraOilPure", "itemExcubituraOilPure");
+		wardenicSteelChain = generalItem.addOreDictItem(1071, "wardenicSteelChain", "itemChainWardenicSteel");
+		oiledSteelChain = generalItem.addOreDictItem(1072, "wardenicSteelChainOiled", "itemChainWardenicSteelOiled");
+		detailedSteelPlate = generalItem.addOreDictItem(1073, "detailedSteelPlate", "itemPlateWardenicSteelDetailed");
+		runicSteelPlate = generalItem.addOreDictItem(1074, "runicSteelPlate", "itemPlateWardenicSteelRunic");
+		consecratedSteelPlate = generalItem.addOreDictItem(1075, "consecratedSteelPlate", "itemPlateWardenicSteelConsecrated");
 
-		excubituraOilPure = generalItem.addOreDictItem(1060, "excubituraOilPure", "itemExcubituraOilPure");
-		wardenicSteelChain = generalItem.addOreDictItem(1061, "wardenicSteelChain", "itemChainWardenicSteel");
-		oiledSteelChain = generalItem.addOreDictItem(1062, "wardenicSteelChainOiled", "itemChainWardenicSteelOiled");
-		wardenicSteelPlate = generalItem.addOreDictItem(1063, "wardenicSteelPlate", "itemPlateWardenicSteel");
-		detailedSteelPlate = generalItem.addOreDictItem(1064, "detailedSteelPlate", "itemPlateWardenicSteelDetailed");
-		runicSteelPlate = generalItem.addOreDictItem(1065, "runicSteelPlate", "itemPlateWardenicSteelRunic");
-		consecratedSteelPlate = generalItem.addOreDictItem(1066, "consecratedSteelPlate", "itemPlateWardenicSteelConsecrated");
+		wardenicQuartzInf = generalItem.addOreDictItem(1105, "wardenicQuartzInf", "gemQuartzWardenicInfused");
+		fittedCompositePlate = generalItem.addOreDictItem(1106, "fittedCompositePlate", "itemPlateWardenicCompositeFitted");
+		detailedCompositePlate = generalItem.addOreDictItem(1107, "detailedCompositePlate", "itemPlateWardenicCompositeDetailed");
+		runicCompositePlate = generalItem.addOreDictItem(1108, "runicCompositePlate", "itemPlateWardenicCompositeRunic");
+		consecratedCompositePlate = generalItem.addOreDictItem(1109, "consecratedCompositePlate", "itemPlateWardenicCompositeConsecrated");
+		primalCompositePlate = generalItem.addOreDictItem(1110, "primalCompositePlate", "itemPlateWardenicCompositePrimal");
 
-		wardenicQuartz = generalItem.addOreDictItem(1080, "wardenicQuartz", "gemQuartzWardenic");
-		wardenicCrystal = generalItem.addOreDictItem(1081, "wardenicCrystal", "crystalWardenic");
-		wardenicQuartzInf = generalItem.addOreDictItem(1082, "wardenicQuartzInf", "gemQuartzWardenicInfused");
-		dustWardenicQuartz = generalItem.addOreDictItem(1083, "dustWardenicQuartz");
-		dustWardenicCrystal = generalItem.addOreDictItem(1084, "dustWardenicCrystal", "dustWardenicCrystal");
-		rawWardenicComposite = generalItem.addOreDictItem(1085, "ingotWardenicCompositeRaw");
-		ingotWardenicComposite = generalItem.addOreDictItem(1086, "ingotWardenicComposite");
-		wardenicCompositePlate = generalItem.addOreDictItem(1087, "wardenicCompositePlate", "itemPlateWardenicComposite");
-		fittedCompositePlate = generalItem.addOreDictItem(1088, "fittedCompositePlate", "itemPlateWardenicCompositeFitted");
-		detailedCompositePlate = generalItem.addOreDictItem(1089, "detailedCompositePlate", "itemPlateWardenicCompositeDetailed");
-		runicCompositePlate = generalItem.addOreDictItem(1090, "runicCompositePlate", "itemPlateWardenicCompositeRunic");
-		consecratedCompositePlate = generalItem.addOreDictItem(1091, "consecratedCompositePlate", "itemPlateWardenicCompositeConsecrated");
-		primalCompositePlate = generalItem.addOreDictItem(1092, "primalCompositePlate", "itemPlateWardenicCompositePrimal");
+		gemWardenicCrystalAwakened = generalItem.addOreDictItem(1140, "gemWardenicCrystalAwakened", "crystalWardenicAwakened");
 
-		wardenicCrystalAwakened = generalItem.addOreDictItem(1100, "wardenicCrystalAwakened", "crystalWardenicAwakened");
-
-		wardenicHardener = generalItem.addOreDictItem(1160, "itemWardenicHardener");
+		wardenicHardener = generalItem.addOreDictItem(1175, "itemWardenicHardener");
 
 
 		aluDenseTemp = generalItem.addItem(30000, "tempAluDense");
+	}
+
+	public static void loadMetals() {
+
+
+
+
+		blockCopper = new ItemStack(blockStorageOre, 1, 0);
+		blockZinc = new ItemStack(blockStorageOre, 1, 1);
+		blockTin = new ItemStack(blockStorageOre, 1, 2);
+		blockNickel = new ItemStack(blockStorageOre, 1, 3);
+		blockSilver = new ItemStack(blockStorageOre, 1, 4);
+		blockLead = new ItemStack(blockStorageOre, 1, 5);
+		blockLanthanides = new ItemStack(blockStorageOre, 1, 6);
+		blockTungsten = new ItemStack(blockStorageOre, 1, 7);
+		blockIridium = new ItemStack(blockStorageOre, 1, 8);
+		blockBismuth = new ItemStack(blockStorageOre, 1, 9);
+		blockAsBronze = new ItemStack(blockStorageOre, 1, 10);
+		blockSbBronze = new ItemStack(blockStorageOre, 1, 11);
+		blockPyrope = new ItemStack(blockStorageOre, 1, 12);
+		blockDioptase = new ItemStack(blockStorageOre, 1, 13);
+		blockFluonicSapphire = new ItemStack(blockStorageOre, 1, 14);
+		blockOsmium = new ItemStack(blockStorageOre, 1, 15);
+
+		for (int i = 0; i < STORAGE_ORE_NAMES.length; i++) {
+			RecipeHelper.registerOreDict(new ItemStack(blockStorageOre, 1, i), STORAGE_ORE_NAMES[i]);
+		}
+
+
+		blockBrass = new ItemStack(blockStorageAlloy1, 1, 0);
+		blockBronze = new ItemStack(blockStorageAlloy1, 1, 1);
+		blockBiBronze = new ItemStack(blockStorageAlloy1, 1, 2);
+		blockMithril = new ItemStack(blockStorageAlloy1, 1, 3);
+		blockAlBronze = new ItemStack(blockStorageAlloy1, 1, 4);
+		blockCupronickel = new ItemStack(blockStorageAlloy1, 1, 5);
+		blockRiftishBronze = new ItemStack(blockStorageAlloy1, 1, 6);
+		blockConstantan = new ItemStack(blockStorageAlloy1, 1, 7);
+		blockInvar = new ItemStack(blockStorageAlloy1, 1, 8);
+		blockElectrum = new ItemStack(blockStorageAlloy1, 1, 9);
+		blockWardenicMetal = new ItemStack(blockStorageAlloy1, 1, 10);
+		blockDullRedsolder = new ItemStack(blockStorageAlloy1, 1, 11);
+		blockRedsolder = new ItemStack(blockStorageAlloy1, 1, 12);
+
+
+
+
+		//block = new ItemStack(blockStorage, 1, );
+		//RecipeHelper.registerOreDict(new ItemStack(blockStorageOre, 1, ), "block");
 	}
 
 	public static void loadMaterials() {
@@ -571,13 +814,39 @@ public class ThaumRevContent {
 	}
 
 	public static void loadRecipes() {
-		((BlockOre) blockOre).recipes();
+		RecipeHelper.addSmelting(oreChalcocite, ingotCopper, 0.85F);
+		RecipeHelper.addSmelting(oreSphalerite, ingotZinc, 0.95F);
+		RecipeHelper.addSmelting(oreCassiterite, ingotTin, 0.975F);
+		RecipeHelper.addSmelting(oreMillerite, ingotNickel, 1.2F);
+		RecipeHelper.addSmelting(oreNativeSilver, ingotSilver, 1.5F);
+		RecipeHelper.addSmelting(oreGalena, ingotLead, 1.0F);
+		RecipeHelper.addSmelting(oreXenotime, ingotLanthanides, 1.0F); //Rare Earths mock your primitive furnace-based attempts at separating them, but will smelt.
+		//Tungsten laughs at your mundane smelting
+		//Refractory Alloys mock your simple furnace
+		RecipeHelper.addSmelting(oreBismuthinite, ingotBismuth, 1.15F);
+		RecipeHelper.addSmelting(oreTennantite, ingotArsenicalBronze, 1.35F);
+		RecipeHelper.addSmelting(oreTetrahedrite, ingotAntimonialBronze, 1.35F);
+		RecipeHelper.addSmelting(orePyrope, gemPyrope, 1.0F);
+		RecipeHelper.addSmelting(oreDioptase, gemDioptase, 1.0F);
+		RecipeHelper.addSmelting(oreFluonicSapphire, gemFluonicSapphire, 1.0F);
 
-		((BlockStoneDecor) blockStoneDecor).recipes();
+		recipeQuartzBlock = RecipeHelper.addSquareRecipe(wardenicQuartzBlock, "gemQuartzWardenic");
+		recipeQuartzChiseled = RecipeHelper.addShapedRecipe(wardenicQuartzChiseled, "X", "X", 'X', "slabQuartzWardenic");
+		recipeQuartzPillar = RecipeHelper.addShapedRecipe(ItemHelper.cloneStack(wardenicQuartzPillar, 2), "X", "X", 'X', "blockQuartzWardenic");
+		recipeQuartzDeblock = RecipeHelper.addDeblockingRecipe(gemWardenicQuartz, wardenicQuartzBlock);
 
-		//((BlockMetalStorageMain) blockStorageMain).recipes();
+		recipeQuartzResetChiseled = RecipeHelper.addShapelessRecipe(wardenicQuartzBlock, wardenicQuartzChiseled);
+		recipeQuartzResetPillar = RecipeHelper.addShapelessRecipe(wardenicQuartzBlock, wardenicQuartzPillar);
 
-		((BlockStoneSlab) blockStoneSlab).recipes();
+		recipeWardsidianSlab = RecipeHelper.addSlabRecipe(slabWardenicObsidian, "blockWardenicObsidian");
+		recipeEldritchSlab = RecipeHelper.addSlabRecipe(slabEldritch, "blockEldritchStone");
+		recipeQuartzSlab = RecipeHelper.addSlabRecipe(slabWardenicQuartz, "blockQuartzWardenic");
+
+		recipeWardsidianDeslab = RecipeHelper.addDeslabingRecipe(wardenicObsidian, "slabWardenicObsidian");
+		recipeEldritchDeslab = RecipeHelper.addDeslabingRecipe(eldritchStone, "slabEldritchStone");
+		recipeQuartzDeslab = RecipeHelper.addDeslabingRecipe(gemWardenicQuartz, "slabQuartzWardenic");
+
+
 
 		recipeBismuthBronze = new ShapelessOreRecipe[2];
 		recDustBismuthBronze = new ShapelessOreRecipe[2];
@@ -928,13 +1197,13 @@ public class ThaumRevContent {
 			addInductionAlloyRecipe("Copper", 3, "Antimony", 1, ingotAntimonialBronze);
 			addInductionAlloyRecipe("Copper", 1, "Nickel", 1, ingotConstantan);
 
-			addPulverizerRecycleRecipe(wardenicQuartz, wardenicQuartzBlock, 4);
-			addPulverizerRecycleRecipe(wardenicQuartz, wardenicQuartzChiseled, 4);
-			addPulverizerRecycleRecipe(wardenicQuartz, wardenicQuartzPillar, 4);
-			addPulverizerRecycleRecipe(wardenicQuartz, slabWardenicQuartz, 2);
+			addPulverizerRecycleRecipe(gemWardenicQuartz, wardenicQuartzBlock, 4);
+			addPulverizerRecycleRecipe(gemWardenicQuartz, wardenicQuartzChiseled, 4);
+			addPulverizerRecycleRecipe(gemWardenicQuartz, wardenicQuartzPillar, 4);
+			addPulverizerRecycleRecipe(gemWardenicQuartz, slabWardenicQuartz, 2);
 			//addPulverizerRecycleRecipe(wardenicQuartz, , 6);
-			addPulverizerRecipe(1600, wardenicQuartz, dustWardenicQuartz);
-			addPulverizerRecipe(3200, wardenicCrystal, dustWardenicCrystal);
+			addPulverizerRecipe(1600, gemWardenicQuartz, dustWardenicQuartz);
+			addPulverizerRecipe(3200, gemWardenicCrystal, dustWardenicCrystal);
 
 			addPulverizerOreRecipe(oreSphalerite, dustZinc, dustLead);
 			addPulverizerOreRecipe(oreXenotime, dustLanthanides, dustArsenic);
@@ -964,6 +1233,10 @@ public class ThaumRevContent {
 
 	}
 
+	/*public static void loadMetalRecipes() {
+		//((BlockStorageOre) blockStorageOre).recipes();
+	}*/
+
 	public static void loadThaumicRecipes() {
 		//recipeOrbReceptor = addArcaneCraftingRecipe(keyAspectOrb)
 
@@ -989,14 +1262,14 @@ public class ThaumRevContent {
 		recipeBronzeChainGreaves = addArcaneCraftingRecipe(keyArmorBronzeChain, bronzeChainGreaves.getStack(), new AspectList().add(ORDER, 20).add(EARTH, 10).add(FIRE, 10), "XXX", "X X", "X X", 'X', chainTBronze);
 		recipeBronzeChainBoots = addArcaneCraftingRecipe(keyArmorBronzeChain, bronzeChainBoots.getStack(), new AspectList().add(ORDER, 5).add(EARTH, 3).add(FIRE, 3), "X X", "X X", 'X', chainTBronze);
 
-		//recipeRunicInfuser = addArcaneCraftingRecipe(keyRunicInfuser, runicInfuser, ThaumcraftHelper.newPrimalAspectList(25, 10, 10, 15, 30, 15), "QRQ", "SBS", "ITI", 'Q', nHg, 'R', visRelay, 'S', arcStoneSlab, 'B', shardBalanced, 'I', "ingotThaumium", 'T', table);
+		//recipeRunicInfuser = addArcaneCraftingRecipe(keyRunicInfuser, runicInfuser, ThaumcraftHelper.newPrimalAspectList(25, 25, 25, 25, 25, 25), "QRQ", "SBS", "ITI", 'Q', nHg, 'R', visRelay, 'S', arcStoneSlab, 'B', shardBalanced, 'I', "ingotThaumium", 'T', table);
 		recipeArcaneSingularity = addShapelessArcaneCraftingRecipe(keyRunicInfuser, arcaneSingularity, ThaumcraftHelper.newPrimalAspectList(2, 10, 0, 0, 5, 5), itemAlumentum, itemNitor); //TODO: v0.0.8: Runic Infuser
 		recipeStableSingularity = addShapelessArcaneCraftingRecipe(keyRunicInfuser, stabilizedSingularity, ThaumcraftHelper.newPrimalAspectList(7, 15, 5, 5, 35, 10), arcaneSingularity, redstone, salisMundus); //TODO: v0.0.8: Runic Infuser
 
 		recipeEnchSilverwood = addShapelessArcaneCraftingRecipe(keyEnchSilverwood, enchantedSilverwood, new AspectList().add(ORDER, 5), planksSilverwood, salisMundus, salisMundus); //TODO: v0.0.8: Runic Infuser
 		recipeConsSilverwood = addShapelessArcaneCraftingRecipe(keyEnchSilverwood, consecratedSilverwood, new AspectList().add(ORDER, 10).add(FIRE, 5), enchantedSilverwood, salisPinch, salisPinch, "nuggetSilver", nHg, itemNitor); //TODO: Infusionize //TODO: v0.0.9: Alchemical Infuser
 
-		//recipeDarkAlchemicalInfuser = addArcaneCraftingRecipe(keyDarkRunicInfuser, darkRunicInfuser, ThaumcraftHelper.newPrimalAspectList(15, 5, 10, 10, 20, 30), "GVG", "MSM", "ORO", 'G', nAu, 'V', voidSeed, 'M', mirror, 'S', stableSingularity, 'O', obsTotem, 'R', runicInfuser);
+		//recipeDarkAlchemicalInfuser = addArcaneCraftingRecipe(keyDarkRunicInfuser, darkRunicInfuser, ThaumcraftHelper.newPrimalAspectList(20, 10, 15, 15, 25, 35), "GVG", "MSM", "ORO", 'G', nAu, 'V', voidSeed, 'M', mirror, 'S', stableSingularity, 'O', obsTotem, 'R', runicInfuser);
 
 		recipeTransNickel = addCrucibleRecipe(keyTransmutationNi, ItemHelper.cloneStack(nuggetNickel, 3), "nuggetNickel", new AspectList().add(METAL, 2).add(VOID, 1));
 		recipeTransAluminium = addCrucibleRecipe(keyTransmutationAl, ItemHelper.cloneStack(nuggetAluminium, 3), "nuggetAluminium", new AspectList().add(METAL, 2).add(ORDER, 1));
@@ -1045,7 +1318,7 @@ public class ThaumRevContent {
 
 		recipeWardenBronzeChain = addArcaneCraftingRecipe(keyWardenChain, ItemHelper.cloneStack(wardenicBronzeChain, 8), ThaumcraftHelper.newPrimalAspectList(5, 5, 0, 5, 10, 0), "TTT", "SOS", "TTT", 'T', chainTBronze, 'S', salisPinch, 'O', oilExcu);
 		recipePrimalBronzeChain = addArcaneCraftingRecipe(keyWardenChain, ItemHelper.cloneStack(primalBronzeChain, 2), ThaumcraftHelper.newPrimalAspectList(10).add(ORDER, 10), "NCS", "PBP", "SCN", 'N', "nuggetBrass", 'C', chainWBronze, 'S', salisPinch, 'P', itemPrimalCharm, 'B', shardBalanced);
-		recipeWardenBronzePlate = addArcaneCraftingRecipe(keyWardenChain, ItemHelper.cloneStack(wardenicBronzePlate, 2), ThaumcraftHelper.newPrimalAspectList(5, 5, 0, 5, 15, 0), "IQC", "SOS", "CRI", 'I', "ingotThaumicBronze", 'C', chainWBronze, 'S', salisPinch, 'Q', nHg, 'O', oilExcu, 'R', "nuggetThaumium");
+		recipeWardenBronzePlate = addArcaneCraftingRecipe(keyWardenChain, ItemHelper.cloneStack(plateWardenicBronze, 2), ThaumcraftHelper.newPrimalAspectList(5, 5, 0, 5, 15, 0), "IQC", "SOS", "CRI", 'I', "ingotThaumicBronze", 'C', chainWBronze, 'S', salisPinch, 'Q', nHg, 'O', oilExcu, 'R', "nuggetThaumium");
 
 		recipeWardenicChainHelmet = addArcaneCraftingRecipe(keyArmorWardenChain, wardenicChainHelmet.getStack(), ThaumcraftHelper.newPrimalAspectList(20), "PWP", "WGW", 'W', chainWBronze, 'P', chainPBronze, 'G', itemGoggles);
 		recipeWardenicChainmail = addArcaneCraftingRecipe(keyArmorWardenChain, wardenicChainmail.getStack(), ThaumcraftHelper.newPrimalAspectList(42), "P P", "WBW", "WWW", 'W', chainWBronze, 'P', chainPBronze, 'B', "itemPlateWardenicBronze");
@@ -1064,7 +1337,7 @@ public class ThaumRevContent {
 		recipeWardenSteelChain = addArcaneCraftingRecipe(keyWardenPlate, ItemHelper.cloneStack(wardenicSteelChain, 12), new AspectList().add(ORDER, 25).add(FIRE, 15), " X ", "X X", 'X', "ingotWardenicSteel");
 		recipeWardenSteelChainOiled = addArcaneCraftingRecipe(keyWardenPlate, ItemHelper.cloneStack(oiledSteelChain, 6), ThaumcraftHelper.newPrimalAspectList(10, 10, 0, 10, 25, 5), "CCC", "SOS", "CCC", 'C', "itemChainWardenicSteel", 'S', salisMundus, 'O', "itemExcubituraOilPure");
 
-		recipeWardenSteelPlate = addArcaneCraftingRecipe(keyWardenPlate, wardenicSteelPlate, new AspectList().add(ORDER, 1), " A ", "ASA", " A ", 'A', itemAlumentum, 'S', "ingotWardenicSteel"); //TODO: v0.0.8: Thaumic Hammermill
+		recipeWardenSteelPlate = addArcaneCraftingRecipe(keyWardenPlate, plateWardenicSteel, new AspectList().add(ORDER, 1), " A ", "ASA", " A ", 'A', itemAlumentum, 'S', "ingotWardenicSteel"); //TODO: v0.0.8: Thaumic Hammermill
 		recipeDetailedSteelPlate = addArcaneCraftingRecipe(keyWardenPlate, detailedSteelPlate, ThaumcraftHelper.newPrimalAspectList(0, 10, 5, 5, 15, 0), "TCB", "QPQ", "BCT", 'T', "nuggetThaumium", 'B', "nuggetBrass", 'C', "itemChainWardenicSteelOiled", 'Q', nHg, 'P', "itemPlateWardenicSteel");
 		recipeRunicSteelPlate = addInfusionCraftingRecipe(keyWardenPlate, runicSteelPlate, 1, new AspectList().add(ARMOR, 4).add(MAGIC, 4).add(ENERGY, 4).add(FLIGHT, 4), detailedSteelPlate, tinySalisMundus, tinySalisMundus, tinySalisMundus, tinySalisMundus, itemWardencloth, new ItemStack(Items.redstone));
 		recipesConsecratedSteelPlate = addInfusionCraftingRecipe(keyWardenPlate, consecratedSteelPlate, 2, new AspectList().add(ARMOR, 8).add(MAGIC, 4).add(ORDER, 4), runicSteelPlate, nuggetSilver, itemQuicksilverDrop, new ItemStack(Items.glowstone_dust), consecratedSilverwood, tinySalisMundus);
@@ -1074,14 +1347,14 @@ public class ThaumRevContent {
 		recipeWardenicPlateGreaves = addArcaneCraftingRecipe(keyArmorWardenSteel, wardenicPlateGreaves.getStack(), ThaumcraftHelper.newPrimalAspectList(50), "RCR", "R R", "C C", 'R', "itemPlateWardenicSteelRunic", 'C', "itemPlateWardenicSteelConsecrated");
 		recipeWardenicPlateBoots = addArcaneCraftingRecipe(keyArmorWardenSteel, wardenicPlateBoots.getStack(), ThaumcraftHelper.newPrimalAspectList(20), "R R", "C C", 'R', "itemPlateWardenicSteelRunic", 'C', "itemPlateWardenicSteelConsecrated");
 
-		recipeWardenicQuartz = addCrucibleRecipe(keyQuartz, wardenicQuartz, "gemQuartz", new AspectList().add(MAGIC, 4).add(CRYSTAL, 2).add(ENERGY, 2).add(WARDEN, 1));
+		recipeWardenicQuartz = addCrucibleRecipe(keyQuartz, gemWardenicQuartz, "gemQuartz", new AspectList().add(MAGIC, 4).add(CRYSTAL, 2).add(ENERGY, 2).add(WARDEN, 1));
 		recipeWardenicQuartzDust = addCrucibleRecipe(keyQuartz, dustWardenicQuartz, "gemWardenicQuartz", new AspectList().add(ENTROPY, 2));
-		recipeWardenicQuartzReconst = addCrucibleRecipe(keyQuartz, wardenicQuartz, "dustWardenicQuartz", new AspectList().add(ORDER, 2).add(CRYSTAL, 4));
+		recipeWardenicQuartzReconst = addCrucibleRecipe(keyQuartz, gemWardenicQuartz, "dustWardenicQuartz", new AspectList().add(ORDER, 2).add(CRYSTAL, 4));
 		recipeWardenicQuartzInf = addInfusionCraftingRecipe(keyQuartz, wardenicQuartzInf, 2, new AspectList().add(WARDEN, 4).add(MAGIC, 8).add(CRYSTAL, 4), wardenicQuartzBlock, dustSalisMundus, excubituraOilPure);
 
-		recipeWardenicCrystal = addCrucibleRecipe(keyWardenCrystal, wardenicCrystal, "gemWardenicQuartzInfused", new AspectList().add(CRYSTAL, 32).add(AURA, 8).add(ORDER, 8).add(WARDEN, 16));
+		recipeWardenicCrystal = addCrucibleRecipe(keyWardenCrystal, gemWardenicCrystal, "gemWardenicQuartzInfused", new AspectList().add(CRYSTAL, 32).add(AURA, 8).add(ORDER, 8).add(WARDEN, 16));
 		recipeWardenicCrystalDust = addCrucibleRecipe(keyWardenCrystal, dustWardenicCrystal, "gemWardenicCrystal", new AspectList().add(ENTROPY, 4));
-		recipeWardenicCrystalReconst = addCrucibleRecipe(keyWardenCrystal, wardenicCrystal, "dustWardenicCrystal", new AspectList().add(ORDER, 4).add(CRYSTAL, 8));
+		recipeWardenicCrystalReconst = addCrucibleRecipe(keyWardenCrystal, gemWardenicCrystal, "dustWardenicCrystal", new AspectList().add(ORDER, 4).add(CRYSTAL, 8));
 		recipeWardenicBinder = addInfusionCraftingRecipe(keyWardenCrystal, ItemHelper.cloneStack(dustWardenicBinder, 8), 2, new AspectList().add(MAGIC, 8).add(ENERGY, 4).add(WARDEN, 8), dustWardenicCrystal, dustWardenicQuartz, dustWardenicQuartz, dustSalisMundus, dustSalisMundus, dustSalisMundus, dustSalisMundus, quicksilver, excubituraOilPure);
 
 		recipeWardenBronze = addInfusionCraftingRecipe(keyWardenBronze, ingotWardenicRiftishBronze, 2, new AspectList().add(WARDEN, 4).add(MAGIC, 4).add(ARMOR, 2).add(TOOL, 2), ingotThaumicRiftishBronze, tinyWardenicBinder, tinyWardenicBinder, tinyWardenicBinder);
@@ -1089,7 +1362,7 @@ public class ThaumRevContent {
 		recipeWardenicCompositeRaw = addArcaneCraftingRecipe(keyWardenComposite, ItemHelper.cloneStack(rawWardenicComposite, 2), ThaumcraftHelper.newPrimalAspectList(0, 5, 0, 10, 20, 0), "BBB", "SSS", "WWW", 'B', "ingotWardenicRiftishBronze", 'S', "ingotWardenicSteel", 'W', "ingotWardenicMetal");
 		recipeWardenicCompositeIngot = addInfusionCraftingRecipe(keyWardenComposite, ingotWardenicComposite, 3, new AspectList().add(METAL, 4).add(MAGIC, 4).add(WARDEN, 4).add(ARMOR, 2).add(TOOL, 2).add(ORDER, 4), rawWardenicComposite, dustWardenicBinder, dustWardenicBinder, dustSalisMundus, dustWardenicQuartz);
 
-		recipeWardenicCompositePlate = addArcaneCraftingRecipe(keyWardenCompositePlate, wardenicCompositePlate, new AspectList().add(ORDER, 1), " A ", "AIA", " A ", 'A', aluDenseTemp, 'I', "ingotWardenicComposite"); //TODO: v0.0.8: Thaumic Hammermill
+		recipeWardenicCompositePlate = addArcaneCraftingRecipe(keyWardenCompositePlate, plateWardenicComposite, new AspectList().add(ORDER, 1), " A ", "AIA", " A ", 'A', aluDenseTemp, 'I', "ingotWardenicComposite"); //TODO: v0.0.8: Thaumic Hammermill
 
 		recipeFittedCompositePlate = addArcaneCraftingRecipe(keyWardenCompositeFitting, fittedCompositePlate, ThaumcraftHelper.newPrimalAspectList(0, 15, 0, 10, 15, 0), "CNW", "BPB", "WNC", 'C', "itemChainWardenicSteelOiled", 'W', wardencloth, 'N', "nuggetWardenicSteel", 'B', "dustWardenicBinder", 'P', "itemPlateWardenicComposite");
 		recipeDetailedCompositePlate = addArcaneCraftingRecipe(keyWardenCompositeFitting, detailedCompositePlate, ThaumcraftHelper.newPrimalAspectList(0, 10, 5, 10, 15, 0), "EQE", "TPT", "BSB", 'E', "nuggetThaumicElectrum", 'Q', "quicksilver", 'T', "nuggetThaumium", 'P', "itemPlateWardenicCompositeFitted", 'B', "nuggetBismuthBronze", 'S', salisMundus);
@@ -1102,7 +1375,7 @@ public class ThaumRevContent {
 		recipeWardenicCompositeGreaves = addArcaneCraftingRecipe(keyArmorWardenComposite, wardenicCompositeGreaves.getStack(), ThaumcraftHelper.newPrimalAspectList(100), "PCP", "C C", "C C", 'C', "itemPlateWardenicCompositeConsecrated", 'P', "itemPlateWardenicCompositePrimal");
 		recipeWardenicCompositeBoots = addArcaneCraftingRecipe(keyArmorWardenComposite, wardenicCompositeBoots.getStack(), ThaumcraftHelper.newPrimalAspectList(60), "P P", "C C", 'C', "itemPlateWardenicCompositeConsecrated", 'P', "itemPlateWardenicCompositePrimal");
 
-		recipeWardenicCrystalAwakened = addInfusionCraftingRecipe(keyWardenCrystalAwakened, wardenicCrystalAwakened, 4, ThaumcraftHelper.newPrimalAspectList(16).add(MAGIC, 32).add(WARDEN, 64).add(CRYSTAL, 16).add(ENERGY, 48), wardenicCrystal, dustWardenicBinder, dustWardenicBinder, dustWardenicBinder, dustWardenicBinder, excubituraOilPure, excubituraOilPure, dustSalisMundus, new ItemStack(Items.nether_star));
+		recipeWardenicCrystalAwakened = addInfusionCraftingRecipe(keyWardenCrystalAwakened, gemWardenicCrystalAwakened, 4, ThaumcraftHelper.newPrimalAspectList(16).add(MAGIC, 32).add(WARDEN, 64).add(CRYSTAL, 16).add(ENERGY, 48), gemWardenicCrystal, dustWardenicBinder, dustWardenicBinder, dustWardenicBinder, dustWardenicBinder, excubituraOilPure, excubituraOilPure, dustSalisMundus, new ItemStack(Items.nether_star));
 
 		recipeThaumicElectrum = addCrucibleRecipe(keyThaumicElectrum, ingotThaumicElectrum, "ingotElectrum", new AspectList().add(MAGIC, 6).add(ENERGY, 3));
 	}
@@ -1179,18 +1452,18 @@ public class ThaumRevContent {
 
 		researchPureOil = new FluxGearResearchItem(keyPureOil, new AspectList().add(MAGIC, 4).add(WATER, 4).add(WARDEN, 3).add(ENERGY, 3), -6, -4, 2, excubituraOilPure);
 		researchWardenSteel = new FluxGearResearchItem(keyWardenSteel, new AspectList().add(METAL, 5).add(MAGIC, 4).add(TOOL, 2).add(ARMOR, 2).add(WARDEN, 3), -8, -5, 2, ingotWardenicSteel);
-		researchWardenPlate = new FluxGearResearchItem(keyWardenPlate, new AspectList().add(METAL, 4).add(MAGIC, 3).add(ARMOR, 3).add(WARDEN, 3), -10, -6, 2, wardenicSteelPlate);
+		researchWardenPlate = new FluxGearResearchItem(keyWardenPlate, new AspectList().add(METAL, 4).add(MAGIC, 3).add(ARMOR, 3).add(WARDEN, 3), -10, -6, 2, plateWardenicSteel);
 		researchArmorWardenSteel = new FluxGearResearchItem(keyArmorWardenSteel, new AspectList().add(ARMOR, 4).add(METAL, 4).add(MAGIC, 4).add(WARDEN, 4), -12, -8, 2, wardenicChestplate);
 
-		researchQuartz = new FluxGearResearchItem(keyQuartz, new AspectList().add(CRYSTAL, 4).add(MAGIC, 4).add(WARDEN, 4).add(ENERGY, 3).add(TOOL, 2), -7, -7, 2, wardenicQuartz);
-		researchWardenCrystal = new FluxGearResearchItem(keyWardenCrystal, new AspectList().add(MAGIC, 4).add(CRYSTAL, 4).add(WARDEN, 4).add(ENERGY, 3).add(ORDER, 3), -9, -8, 2, wardenicCrystal);
+		researchQuartz = new FluxGearResearchItem(keyQuartz, new AspectList().add(CRYSTAL, 4).add(MAGIC, 4).add(WARDEN, 4).add(ENERGY, 3).add(TOOL, 2), -7, -7, 2, gemWardenicQuartz);
+		researchWardenCrystal = new FluxGearResearchItem(keyWardenCrystal, new AspectList().add(MAGIC, 4).add(CRYSTAL, 4).add(WARDEN, 4).add(ENERGY, 3).add(ORDER, 3), -9, -8, 2, gemWardenicCrystal);
 		researchWardenBronze = new FluxGearResearchItem(keyWardenBronze, new AspectList().add(METAL, 5).add(MAGIC, 4).add(WARDEN, 4).add(ARMOR, 3).add(TOOL, 3), -8, -11, 2, ingotWardenicRiftishBronze);
-		researchWardenComposite = new FluxGearResearchItem(keyWardenComposite, new AspectList().add(METAL, 6).add(MAGIC, 4).add(ARMOR, 4).add(TOOL, 3).add(WARDEN, 4), -11, -10, 2, wardenicCompositePlate);
-		researchWardenCompositePlate = new FluxGearResearchItem(keyWardenCompositePlate, new AspectList().add(METAL, 3).add(MAGIC, 2).add(WARDEN, 1), -12, -12, 1, wardenicCompositePlate);
+		researchWardenComposite = new FluxGearResearchItem(keyWardenComposite, new AspectList().add(METAL, 6).add(MAGIC, 4).add(ARMOR, 4).add(TOOL, 3).add(WARDEN, 4), -11, -10, 2, plateWardenicComposite);
+		researchWardenCompositePlate = new FluxGearResearchItem(keyWardenCompositePlate, new AspectList().add(METAL, 3).add(MAGIC, 2).add(WARDEN, 1), -12, -12, 1, plateWardenicComposite);
 		researchWardenCompositeFitting = new FluxGearResearchItem(keyWardenCompositeFitting, new AspectList().add(METAL, 5).add(MAGIC, 4).add(ARMOR, 4).add(WARDEN, 4).add(ENERGY, 2), -11, -14, 3, consecratedCompositePlate);
 		researchArmorWardenComposite = new FluxGearResearchItem(keyArmorWardenComposite, new AspectList().add(ARMOR, 4).add(METAL, 4).add(WARDEN, 4).add(MAGIC, 4).add(ORDER, 4), -9, -15, 3, wardenicCompositeChestplate);
 
-		researchWardenCrystalAwakened = new FluxGearResearchItem(keyWardenCrystalAwakened, ThaumcraftHelper.newPrimalAspectList(3).add(WARDEN, 6).add(MAGIC, 6).add(CRYSTAL, 4).add(ENERGY, 6), -6, -10, 3, wardenicCrystalAwakened);
+		researchWardenCrystalAwakened = new FluxGearResearchItem(keyWardenCrystalAwakened, ThaumcraftHelper.newPrimalAspectList(3).add(WARDEN, 6).add(MAGIC, 6).add(CRYSTAL, 4).add(ENERGY, 6), -6, -10, 3, gemWardenicCrystalAwakened);
 
 		researchThaumicElectrum = new FluxGearResearchItem(keyThaumicElectrum, new AspectList().add(METAL, 4).add(MAGIC, 4).add(GREED, 2).add(ENERGY, 2).add(ORDER, 1), 0, -2, 2, ingotThaumicElectrum);
 

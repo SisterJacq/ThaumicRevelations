@@ -127,38 +127,28 @@ public class ThaumcraftHelper {
 	}
 
 	public static Entity getPureState(Entity entity) {
-
 		if (entity instanceof EntityTaintChicken) {
 			return new EntityChicken(entity.worldObj);
 		}
-
 		if (entity instanceof EntityTaintCow) {
 			return new EntityCow(entity.worldObj);
 		}
-
 		if (entity instanceof EntityTaintCreeper) {
 			return new EntityCreeper(entity.worldObj);
 		}
-
 		if (entity instanceof EntityTaintPig) {
 			return new EntityPig(entity.worldObj);
 		}
-
 		if (entity instanceof EntityTaintSheep) {
 			return new EntitySheep(entity.worldObj);
 		}
-
 		if (entity instanceof EntityTaintSpider) {
 			return new EntitySpider(entity.worldObj);
 		}
-
 		if (entity instanceof EntityTaintVillager) {
 			return new EntityVillager(entity.worldObj);
 		}
 
 		return entity;
-
 	}
-
-
 }

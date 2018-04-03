@@ -25,7 +25,7 @@ public class FluxGearBlockPlant extends BlockBush {
 	public FluxGearBlockPlant(Material material) {
 		super(material);
 		setTickRandomly(true);
-		setBlockBounds(0.3F, 0.0F, 0.3F, 0.7F, 0.6F, 0.7F);
+		setBlockBounds(0.1F, 0.0F, 0.1F, 0.9F, 0.8F, 0.9F);
 	}
 
 	public FluxGearBlockPlant() {

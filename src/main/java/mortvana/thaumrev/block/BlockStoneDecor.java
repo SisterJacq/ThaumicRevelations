@@ -39,30 +39,6 @@ public class BlockStoneDecor extends FluxGearBlockBase {
 		icons = new IIcon[18];
 	}
 
-	public void register() {
-		wardenicObsidian = new ItemStack(this, 1, 0);
-		eldritchStone = new ItemStack(this, 1, 1);
-		wardenicQuartzBlock = new ItemStack(this, 1, 2);
-		wardenicQuartzChiseled = new ItemStack(this, 1, 3);
-		wardenicQuartzPillar = new ItemStack(this, 1, 4);
-
-		RecipeHelper.registerOreDict(wardenicObsidian, "blockWardenicObsidian");
-		RecipeHelper.registerOreDict(eldritchStone, "blockEldritchStone");
-		for (int i = 2; i < 5; i++) {
-			RecipeHelper.registerOreDict(new ItemStack(this, 1, i), "blockQuartzWardenic");
-		}
-	}
-
-	public void recipes() {
-		recipeQuartzBlock = RecipeHelper.addSquareRecipe(wardenicQuartzBlock, "gemQuartzWardenic");
-		recipeQuartzChiseled = RecipeHelper.addShapedRecipe(wardenicQuartzChiseled, "X", "X", 'X', "slabQuartzWardenic");
-		recipeQuartzPillar = RecipeHelper.addShapedRecipe(ItemHelper.cloneStack(wardenicQuartzPillar, 2), "X", "X", 'X', "blockQuartzWardenic");
-		recipeQuartzDeblock = RecipeHelper.addDeblockingRecipe(wardenicQuartz, wardenicQuartzBlock);
-
-		recipeQuartzResetChiseled = RecipeHelper.addShapelessRecipe(wardenicQuartzBlock, wardenicQuartzChiseled);
-		recipeQuartzResetPillar = RecipeHelper.addShapelessRecipe(wardenicQuartzBlock, wardenicQuartzPillar);
-	}
-
 	@Override
 	public float getBlockHardness(World world, int x, int y, int z) {
 		return HARDNESS[world.getBlockMetadata(x, y, z)];

@@ -35,7 +35,7 @@ public class BlockStoneDecor extends FluxGearBlockBase {
 		setHarvestLevel("pickaxe", 3, 0);
 		setHarvestLevel("pickaxe", 2, 1);
 
-		setData(TEX_LOC_DEFAULT + "stoneDecor/", DECOR_STONE_NAMES);
+		setData(TEX_LOC_DEFAULT + "stoneDecor/", NAMES);
 		icons = new IIcon[18];
 	}
 
@@ -154,6 +154,7 @@ public class BlockStoneDecor extends FluxGearBlockBase {
 		icons[index] = register.registerIcon(directory + name);
 	}
 
+	public static final String[] NAMES = { "obsidianWardenic", "stoneEldritch", "wardenicQuartz", "wardenicQuartzChiseled", "wardenicQuartzPillar", "wardenicQuartzPillar", "wardenicQuartzPillar", "thaumicStone", "infernalBlastBrick", "shadowforgeBrick" };
 	public static final float[] HARDNESS = {25F, 10F, 0.8F, 0.8F, 0.8F, 0.8F, 0.8F};
 	public static final float[] RESISTANCE = {5000F, 500F, 25F, 25F, 25F, 25F, 25F};
 	public static final int[] RARITY = {2, 1, 1, 1, 1, 1, 1};

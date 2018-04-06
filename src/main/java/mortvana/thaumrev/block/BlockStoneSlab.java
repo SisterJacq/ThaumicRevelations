@@ -43,7 +43,7 @@ public class BlockStoneSlab extends FluxGearBlockSlab {
 		setHarvestLevel("pickaxe", 3, 0);
 		setHarvestLevel("pickaxe", 2, 1);
 
-		setData(TEX_LOC_DEFAULT + "stoneDecor/", SLAB_STONE_NAMES);
+		setData(TEX_LOC_DEFAULT + "stoneDecor/", NAMES);
 	}
 
 	@Override
@@ -102,7 +102,8 @@ public class BlockStoneSlab extends FluxGearBlockSlab {
 		icons[meta] = ((BlockStoneDecor) blockStoneDecor).icons[index];
 	}
 
-	public static final float[] HARDNESS = {25F, 10F, 0.8F};
-	public static final float[] RESISTANCE = {5000F, 500F, 25F};
-	public static final int[] RARITY = {2, 1, 1};
+	public static final String[] NAMES = { "obsidianWardenic", "stoneEldritch", "wardenicQuartz" };
+	public static final float[] HARDNESS = { 25F, 10F, 0.8F };
+	public static final float[] RESISTANCE = { 5000F, 500F, 25F };
+	public static final int[] RARITY = { 2, 1, 1 };
 }

@@ -16,7 +16,7 @@ public class BlockStorageAlloy1 extends FluxGearBlockBase {
 		setStepSound(soundTypeMetal);
 		setCreativeTab(thaumicRevelationsTab);
 		setBlockName("thaumrev.storageMain");
-		setData(TEX_LOC_DEFAULT + "storage/", STORAGE_ALLOY_NAMES_1);
+		setData(TEX_LOC_DEFAULT + "storage/", NAMES);
 		setHarvestLevels();
 	}
 
@@ -41,9 +41,10 @@ public class BlockStorageAlloy1 extends FluxGearBlockBase {
 		}
 	}
 
+	public static final String[] NAMES = { "blockBrass", "blockBronze", "blockBismuthBronze", "blockArsenoAntimonialBronze", "blockAluminiumBronze", "blockCupronickel", "blockRiftishBronze", "blockConstantan", "blockInvar", "blockElectrum", "blockWardenicMetal", "blockDulRedsolder", "blockRedsolder" };
 	public static final int[] MINE_LVL = { 1, 1, 1, 2, 1, 1, 2, 1, 2, 2, 2, 2, 2 };
 	public static final float[] HARDNESS = { 5, 5, 5, 5, 5, 5, 6, 5, 6, 5, 5, 5, 5 };
 	public static final float[] RESISTANCE = { 6, 7, 8, 10, 6, 6, 12, 6, 8, 6, 6, 6, 6 };
-	public static final int[] LIGHT = { 0, 0, 1, 0, 0, 0, 1, 0, 0, 4, 0, 2, 2 };
+	public static final int[] LIGHT = { 0, 0, 1, 0, 0, 0, 1, 0, 0, 2, 0, 2, 2 };
 	public static final int[] RARITY = { 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0 };
 }

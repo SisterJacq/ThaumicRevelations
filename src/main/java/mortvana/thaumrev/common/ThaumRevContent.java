@@ -34,11 +34,11 @@ import mortvana.thaumrev.util.*;
 import mortvana.thaumrev.util.item.data.ThaumRevMaterialDataSet;
 import mortvana.thaumrev.world.ThaumRevWorldGenerator;
 
+import static thaumcraft.api.aspects.Aspect.*;
 import static mortvana.melteddashboard.lib.ThaumcraftLibrary.*;
 import static mortvana.melteddashboard.lib.ThermalLibrary.*;
 import static mortvana.thaumrev.library.ThaumRevLibrary.*;
 import static mortvana.thaumrev.util.RecipeHelper.*;
-import static thaumcraft.api.aspects.Aspect.*;
 
 public class ThaumRevContent {
 
@@ -83,7 +83,7 @@ public class ThaumRevContent {
 		blockThaumicPlant = new BlockThaumicPlant();
 		blockOre = new BlockOre();
 
-		//blockWoodDecor = new BlockWoodDecor();
+		blockWoodDecor = new BlockWoodDecor();
 		blockStoneDecor = new BlockStoneDecor();
 
 		blockStorageOre = new BlockStorageOre();
@@ -91,6 +91,7 @@ public class ThaumRevContent {
 
 		blockStoneSlab = new BlockStoneSlab();
 		blockStoneSlabDouble = new BlockStoneSlab(blockStoneSlab);
+		blockQuartzStairs = new BlockStairsWardenicQuartz();
 	}
 
 	public static void createItems() {
@@ -104,7 +105,7 @@ public class ThaumRevContent {
 		GameRegistry.registerBlock(blockThaumicPlant, ItemBlockThaumicPlant.class, "blockThaumicPlant");
 		GameRegistry.registerBlock(blockOre, ItemBlockOre.class, "blockOre");
 
-		GameRegistry.registerBlock(blockStoneDecor, ItemBlockDecorStone.class, "blockDecorStone");
+		GameRegistry.registerBlock(blockStoneDecor, ItemBlockStoneDecor.class, "blockDecorStone");
 
 		GameRegistry.registerBlock(blockStorageOre, ItemBlockStorageOre.class, "blockStorageOre");
 		GameRegistry.registerBlock(blockStorageAlloy1, ItemBlockStorageAlloy1.class, "blockStorageAlloy1");
@@ -235,7 +236,6 @@ public class ThaumRevContent {
 		thistleFlower = generalItem.addOreDictItem(14, "thistleFlower", "itemThistleFlower");
 		aspectOrbReceptor = generalItem.addOreDictItem(15, "aspectOrbReceptor", "itemAspectOrbReceptor");
 
-
 		ingotCopper = generalItem.addOreDictItem(200, iCu);
 		ingotZinc = generalItem.addOreDictItem(201, "ingotZinc");
 		ingotTin = generalItem.addOreDictItem(202, iSn);
@@ -270,7 +270,8 @@ public class ThaumRevContent {
 		ingotInvar = generalItem.addOreDictItem(233, "ingotInvar");
 		ingotElectrum = generalItem.addOreDictItem(234, "ingotElectrum");
 		ingotWardenicMetal = generalItem.addOreDictItem(235, "ingotWardenicMetal");
-		ingotRedsolder = generalItem.addOreDictItem(236, "ingotRedsolder");
+		ingotDullRedsolder = generalItem.addOreDictItem(236, "ingotDullRedsolder");
+		ingotRedsolder = generalItem.addOreDictItem(237, "ingotRedsolder");
 
 		ingotThaumicBronze = generalItem.addOreDictItem(250, "ingotThaumicBronze");
 		ingotOsLu = generalItem.addOreDictItem(251, "ingotOsmiumLutetium", 2);
@@ -281,7 +282,7 @@ public class ThaumRevContent {
 
 		ingotThaumicElectrum = generalItem.addOreDictItem(260, "ingotThaumicElectrum", 1);
 		ingotThaumicRiftishBronze = generalItem.addOreDictItem(261, "ingotThaumicRiftishBronze", 1);
-		ingotSteel = generalItem.addOreDictItem(262, "ingotSteel");
+		ingotSteel = generalItem.addOreDictItem(262, "ingotSteel", 1);
 		ingotVoidbrass = generalItem.addOreDictItem(263, "ingotVoidbrass", 1);
 		ingotVoidsteel = generalItem.addOreDictItem(264, "ingotVoidsteel", 1);
 		ingotVoidtungsten = generalItem.addOreDictItem(265, "ingotVoidtungsten", 2);
@@ -338,6 +339,7 @@ public class ThaumRevContent {
 		nuggetInvar = generalItem.addOreDictItem(333, "nuggetInvar");
 		nuggetElectrum = generalItem.addOreDictItem(334, "nuggetElectrum");
 		nuggetWardenicMetal = generalItem.addOreDictItem(335, "nuggetWardenicMetal");
+		nuggetDullRedsolder = generalItem.addOreDictItem(336, "nuggetDullRedsolder");
 		nuggetRedsolder = generalItem.addOreDictItem(336, "nuggetRedsolder");
 
 		nuggetThaumicBronze = generalItem.addOreDictItem(350, "nuggetThaumicBronze");
@@ -349,7 +351,7 @@ public class ThaumRevContent {
 
 		nuggetThaumicElectrum = generalItem.addOreDictItem(360, "nuggetThaumicElectrum", 1);
 		nuggetThaumicRiftishBronze = generalItem.addOreDictItem(361, "nuggetThaumicRiftishBronze", 1);
-		nuggetSteel = generalItem.addOreDictItem(362, "nuggetSteel");
+		nuggetSteel = generalItem.addOreDictItem(362, "nuggetSteel", 1);
 		nuggetVoidbrass = generalItem.addOreDictItem(363, "nuggetVoidbrass", 1);
 		nuggetVoidsteel = generalItem.addOreDictItem(364, "nuggetVoidsteel", 1);
 		nuggetVoidtungsten = generalItem.addOreDictItem(365, "nuggetVoidtungsten", 2);
@@ -406,7 +408,8 @@ public class ThaumRevContent {
 		dustInvar = generalItem.addOreDictItem(433, "dustInvar");
 		dustElectrum = generalItem.addOreDictItem(434, "dustElectrum");
 		dustWardenicMetal = generalItem.addOreDictItem(435, "dustWardenicMetal");
-		dustRedsolder = generalItem.addOreDictItem(436, "dustRedsolder");
+		dustDullRedsolder = generalItem.addOreDictItem(436, "dustDullRedsolder");
+		dustRedsolder = generalItem.addOreDictItem(437, "dustRedsolder");
 
 		dustThaumicBronze = generalItem.addOreDictItem(450, "dustThaumicBronze");
 		dustOsLu = generalItem.addOreDictItem(451, "dustOsmiumLutetium", 2);
@@ -416,7 +419,7 @@ public class ThaumRevContent {
 
 		dustThaumicElectrum = generalItem.addOreDictItem(460, "dustThaumicElectrum", 1);
 		dustThaumicRiftishBronze = generalItem.addOreDictItem(461, "dustThaumicRiftishBronze", 1);
-		dustSteel = generalItem.addOreDictItem(462, "dustSteel");
+		dustSteel = generalItem.addOreDictItem(462, "dustSteel", 1);
 		dustVoidbrass = generalItem.addOreDictItem(463, "dustVoidbrass", 1);
 		dustVoidsteel = generalItem.addOreDictItem(464, "dustVoidsteel", 1);
 		dustVoidtungsten = generalItem.addOreDictItem(465, "dustVoidtungsten", 2);
@@ -473,7 +476,8 @@ public class ThaumRevContent {
 		tinyInvar = generalItem.addOreDictItem(533, "dustInvarTiny");
 		tinyElectrum = generalItem.addOreDictItem(534, "dustElectrumTiny");
 		tinyWardenicMetal = generalItem.addOreDictItem(535, "dustWardenicMetalTiny");
-		tinyRedsolder = generalItem.addOreDictItem(536, "dustRedsolderTiny");
+		tinyDullRedsolder = generalItem.addOreDictItem(536, "dustDullRedsolderTiny");
+		tinyRedsolder = generalItem.addOreDictItem(537, "dustRedsolderTiny");
 
 		tinyThaumicBronze = generalItem.addOreDictItem(550, "dustThaumicBronzeTiny");
 		tinyOsLu = generalItem.addOreDictItem(551, "dustOsmiumLutetiumTiny", 2);
@@ -484,7 +488,7 @@ public class ThaumRevContent {
 
 		tinyThaumicElectrum = generalItem.addOreDictItem(560, "dustThaumicElectrumTiny", 1);
 		tinyThaumicRiftishBronze = generalItem.addOreDictItem(561, "dustThaumicRiftishBronzeTiny", 1);
-		tinySteel = generalItem.addOreDictItem(562, "dustSteelTiny");
+		tinySteel = generalItem.addOreDictItem(562, "dustSteelTiny", 1);
 		tinyVoidbrass = generalItem.addOreDictItem(563, "dustVoidbrassTiny", 1);
 		tinyVoidsteel = generalItem.addOreDictItem(564, "dustVoidsteelTiny", 1);
 		tinyVoidtungsten = generalItem.addOreDictItem(565, "dustVoidtungstenTiny", 2);
@@ -536,14 +540,15 @@ public class ThaumRevContent {
 		plateInvar = generalItem.addOreDictItem(633, "plateInvar");
 		plateElectrum = generalItem.addOreDictItem(634, "plateElectrum");
 		plateWardenicMetal = generalItem.addOreDictItem(635, "plateWardenicMetal");
-		plateRedsolder = generalItem.addOreDictItem(636, "plateRedsolder");
+		plateDullRedsolder = generalItem.addOreDictItem(636, "plateDullRedsolder");
+		plateRedsolder = generalItem.addOreDictItem(637, "plateRedsolder");
 
 		plateThaumicBronze = generalItem.addOreDictItem(650, "plateThaumicBronze");
 		plateOsLu = generalItem.addOreDictItem(651, "plateOsmiumLutetium", 2);
 
 		plateThaumicElectrum = generalItem.addOreDictItem(660, "plateThaumicElectrum", 1);
 		plateThaumicRiftishBronze = generalItem.addOreDictItem(661, "plateThaumicRiftishBronze", 1);
-		plateSteel = generalItem.addOreDictItem(662, "plateSteel");
+		plateSteel = generalItem.addOreDictItem(662, "plateSteel", 1);
 		plateVoidbrass = generalItem.addOreDictItem(663, "plateVoidbrass", 1);
 		plateVoidsteel = generalItem.addOreDictItem(664, "plateVoidsteel", 1);
 		plateVoidtungsten = generalItem.addOreDictItem(665, "plateVoidtungsten", 2);
@@ -591,6 +596,7 @@ public class ThaumRevContent {
 		carbonSlag = generalItem.addOreDictItem(780, "itemSlagCarbon");
 		ceramicSlag = generalItem.addOreDictItem(781, "itemSlagCeramic");
 		thaumicSlag = generalItem.addOreDictItem(782, "itemSlagThaumic");
+		fluonicSlag = generalItem.addOreDictItem(783, "itemSlagFluonic");
 
 		clusterZinc = generalItem.addOreDictItem(801, "clusterZinc");
 		clusterAluminium = generalItem.addOreDictItem(802, "clusterAluminium");
@@ -699,10 +705,9 @@ public class ThaumRevContent {
 		blockFluonicSapphire = new ItemStack(blockStorageOre, 1, 14);
 		blockOsmium = new ItemStack(blockStorageOre, 1, 15);
 
-		for (int i = 0; i < STORAGE_ORE_NAMES.length; i++) {
-			RecipeHelper.registerOreDict(new ItemStack(blockStorageOre, 1, i), STORAGE_ORE_NAMES[i]);
+		for (int i = 0; i < BlockStorageOre.NAMES.length; i++) {
+			RecipeHelper.registerOreDict(new ItemStack(blockStorageOre, 1, i), BlockStorageOre.NAMES[i]);
 		}
-
 
 		blockBrass = new ItemStack(blockStorageAlloy1, 1, 0);
 		blockBronze = new ItemStack(blockStorageAlloy1, 1, 1);
@@ -718,8 +723,30 @@ public class ThaumRevContent {
 		blockDullRedsolder = new ItemStack(blockStorageAlloy1, 1, 11);
 		blockRedsolder = new ItemStack(blockStorageAlloy1, 1, 12);
 
+		for (int i = 0; i < BlockStorageAlloy1.NAMES.length; i++) {
+			RecipeHelper.registerOreDict(new ItemStack(blockStorageAlloy1, 1, i), BlockStorageAlloy1.NAMES[i]);
+		}
 
+		blockThaumicElectrum = new ItemStack(blockStorageSpecial1, 1, 0);
+		blockThaumicRiftishBronze = new ItemStack(blockStorageSpecial1, 1, 1);
+		blockSteel = new ItemStack(blockStorageSpecial1, 1, 2);
+		blockVoidbrass = new ItemStack(blockStorageSpecial1, 1, 3);
+		blockVoidsteel = new ItemStack(blockStorageSpecial1, 1, 4);
+		blockVoidtungsten = new ItemStack(blockStorageSpecial1, 1, 5);
+		blockWardenicBronze = new ItemStack(blockStorageSpecial1, 1, 6);
+		blockWardenicSteel = new ItemStack(blockStorageSpecial1, 1, 7);
+		blockWardenicRiftishBronze = new ItemStack(blockStorageSpecial1, 1, 8);
+		blockWardenicCrystal = new ItemStack(blockStorageSpecial1, 1, 9);
+		blockWardenicCrystalActivated = new ItemStack(blockStorageSpecial1, 1, 10);
+		blockWardenicComposite = new ItemStack(blockStorageSpecial1, 1, 11);
+		blockArcaneRedsolder = new ItemStack(blockStorageSpecial1, 1, 12);
+		blockRedbronze = new ItemStack(blockStorageSpecial1, 1, 13);
+		blockHardenedRedbronze = new ItemStack(blockStorageSpecial1, 1, 14);
+		blockFluxsteel = new ItemStack(blockStorageSpecial1, 1, 15);
 
+		for (int i = 0; i < BlockStorageSpecial1.NAMES.length; i++) {
+			RecipeHelper.registerOreDict(new ItemStack(blockStorageSpecial1, 1, i), BlockStorageSpecial1.NAMES[i]);
+		}
 
 		//block = new ItemStack(blockStorage, 1, );
 		//RecipeHelper.registerOreDict(new ItemStack(blockStorageOre, 1, ), "block");
@@ -806,11 +833,12 @@ public class ThaumRevContent {
 	}
 
 	public static void addLoot() {
-		generalItem.addContainer(1020, new ItemStack(Items.bowl));
-		generalItem.addContainer(1041, itemPhial);
-		generalItem.addContainer(1060, itemPhial);
+		generalItem.addContainer(1001, new ItemStack(Items.bowl));
+		generalItem.addContainer(1036, itemPhial);
+		generalItem.addContainer(1070, itemPhial);
 
 		generalItem.addLoot(775, ingotThaumicBronze, thaumicSlag);
+		generalItem.addLoot(776, ingotOsLu, fluonicSlag);
 	}
 
 	public static void loadRecipes() {

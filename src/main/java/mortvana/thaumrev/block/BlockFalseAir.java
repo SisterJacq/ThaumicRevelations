@@ -9,8 +9,7 @@ import mortvana.melteddashboard.block.FluxGearBlockBase;
 
 import mortvana.thaumrev.library.ThaumRevLibrary;
 
-import static mortvana.thaumrev.library.ThaumRevLibrary.FALSE_AIR_NAMES;
-import static mortvana.thaumrev.library.ThaumRevLibrary.TEX_LOC_DEFAULT;
+import static mortvana.thaumrev.library.ThaumRevLibrary.*;
 
 public class BlockFalseAir extends FluxGearBlockBase {
 
@@ -19,7 +18,7 @@ public class BlockFalseAir extends FluxGearBlockBase {
 		setStepSound(Block.soundTypeCloth);
 		setBlockName("thaumrev.falseAir");
 
-		setData(TEX_LOC_DEFAULT, FALSE_AIR_NAMES);
+		setData(TEX_LOC_DEFAULT, NAMES);
 	}
 
 	@Override
@@ -28,5 +27,6 @@ public class BlockFalseAir extends FluxGearBlockBase {
 		icons[0] = register.registerIcon("thaumcraft:blank");
 	}
 
+	public static final String[] NAMES = { "witor" };
 
 }

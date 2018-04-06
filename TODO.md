@@ -5,7 +5,7 @@ Before v0.0.1:
 - [x] Thistle
 - [x] Cotton Crafting
 - [ ] Quartz Renderer
-- [ ] Quartz Stairs
+- [x] Quartz Stairs
 - [x] Wardernic Obsidian
 - [x] Eldritch Stone
 - [x] Eldrich Keystone
@@ -247,7 +247,15 @@ v0.1.x Content:
 * Wardenbraü
 
 Classes to Reimplement:
-* ../block/BlockQuartzStair (No comment)
+v0.0.1
+* ../item/ItemWardenArmor (Replace with T5 armor)
+* ../item/ItemWardenWeapon (Replace with T5 sword)
+* ../util/DamageSourceWarden (Not sure how/if I'll redo damage)
+* ../util/wardenic/WardenicChargeEvents (Reimplement as AspectInfusionHandler and modify for new system)
+* ../util/wardenic/WardenicChargeHelper (Move contents into AspectInfusionHelper and modify for new system)
+* ../util/wardenic/WardenicUpgrades (Move to ThaumRevLibrary and ThaumRevContent)
+* ../util/wardenic/upgrade/* (Reimplement along Aspect Infusion)
+v0.0.6
 * ../block/BlockWitor (Reimplement in BlockFakeAir)
 * ../block/tile/TileWitor (Reimplement as non-TE rendering in BlockFakeAir)
 * ../client/ModelFleshGolem (Reimplement alongside Flesh Golems [WIP])
@@ -258,12 +266,5 @@ Classes to Reimplement:
 * ../entity/FleshGolem (Reimplement alongside Flesh Golems [WIP] as EntityFleshGolem)
 * ../inventory/ContainerHammer (Reimplement alongside Wesly's Hammer)
 * ../item/ItemFocusIllumination (Reimplement with Witor)
-* ../item/ItemWardenArmor (Replace with T5 armor)
-* ../item/ItemWardenWeapon (Replace with T5 sword)
 * ../item/ItemWaslieHammer (Reimplement after Tier 5 Wardenic)
 * ../research/ModResearch (Reimplement some parts alongside Wesly's Hammer)
-* ../util/DamageSourceWarden (Not sure how/if I'll redo damage)
-* ../util/wardenic/WardenicChargeEvents (Reimplement as AspectInfusionHandler and modify for new system)
-* ../util/wardenic/WardenicChargeHelper (Move contents into AspectInfusionHelper and modify for new system)
-* ../util/wardenic/WardenicUpgrades (Move to ThaumRevLibrary and ThaumRevContent)
-* ../util/wardenic/upgrade/* (Reimplement along Aspect Infusion)

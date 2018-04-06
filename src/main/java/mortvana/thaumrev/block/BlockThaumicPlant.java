@@ -27,7 +27,7 @@ public class BlockThaumicPlant extends FluxGearBlockPlant {
 		setBlockName("blockThaumicPlant");
 		setCreativeTab(thaumicRevelationsTab);
 		setStepSound(Block.soundTypeGrass);
-		setData(TEX_LOC_DEFAULT + "plant/", PLANT_NAMES);
+		setData(TEX_LOC_DEFAULT + "plant/", NAMES);
 	}
 
 	@Override
@@ -84,5 +84,7 @@ public class BlockThaumicPlant extends FluxGearBlockPlant {
 	@SideOnly(Side.CLIENT)
 	public void randomDisplayTick(World world, int i, int j, int k, Random random) {}*/
 
+	public static final String[] NAMES = { "excubitura", "cotton_wild", "thistle_wild", "", "", "shiverpearl", "stormpearl", "stonepearl", "blazereed", "blizzreed", "blitzreed", "basalzreed" };
 	public static final int[] LIGHT = { 4, 0, 0, 0, 0, 8, 8, 8, 8, 8, 8, 8 };
+
 }

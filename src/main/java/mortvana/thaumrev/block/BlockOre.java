@@ -23,7 +23,7 @@ public class BlockOre extends FluxGearBlockBase {
 		setCreativeTab(thaumicRevelationsTab);
 		setBlockName("thaumrev.ore");
 
-		setData(TEX_LOC_DEFAULT + "ore/", ORE_NAMES);
+		setData(TEX_LOC_DEFAULT + "ore/", NAMES);
 
 		setHardness(3.0F);
 		setResistance(5.0F);
@@ -93,6 +93,7 @@ public class BlockOre extends FluxGearBlockBase {
 		}
 	}
 
+	public static final String[] NAMES = { "oreChalcocite", "oreSphalerite", "oreCassiterite", "oreMillerite", "oreNativeSilver", "oreGalena", "oreXenotime", "oreWolframite", "oreIridosmium", "oreBismuthinite", "oreTennantite", "oreTetrahedrite", "orePyrope", "oreDioptase", "oreFluonicSapphire" };
 	public static final int[] HARVEST = {1, 1, 1, 2, 2, 2, 2, 3, 3, 1, 1, 1, 3, 3, 3};
 	public static final int[] RARITY = {0, 0, 0, 0, 0, 0, 1, 1, 2, 0, 0, 0, 2, 2, 2};
 }

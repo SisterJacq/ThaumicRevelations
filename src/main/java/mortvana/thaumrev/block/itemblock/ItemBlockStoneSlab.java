@@ -17,7 +17,7 @@ public class ItemBlockStoneSlab extends FluxGearItemBlockBase {
 
 	@Override
 	public String getUnlocalizedName(ItemStack stack) {
-		return "tile.thaumrev.stoneSlab." + ThaumRevLibrary.SLAB_STONE_NAMES[stack.getItemDamage()] + ".name";
+		return "tile.thaumrev.stoneSlab." + BlockStoneSlab.NAMES[stack.getItemDamage()] + ".name";
 	}
 
 	@Override

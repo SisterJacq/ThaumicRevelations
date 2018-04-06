@@ -21,7 +21,7 @@ public class BlockStorageOre extends FluxGearBlockBase {
 		setCreativeTab(thaumicRevelationsTab);
 		setBlockName("thaumrev.storageMain");
 
-		setData(TEX_LOC_DEFAULT + "storage/", STORAGE_ORE_NAMES);
+		setData(TEX_LOC_DEFAULT + "storage/", NAMES);
 		setHarvestLevels();
 	}
 
@@ -54,18 +54,18 @@ public class BlockStorageOre extends FluxGearBlockBase {
 		}
 	}*/
 
+	public static final String[] NAMES = { "blockCopper", "blockZinc", "blockTin", "blockNickel", "blockSilver", "blockLead", "blockXenotimeLanthanides", "blockTungsten", "blockIridium", "blockBismuth", "blockArsenicalBronze", "blockAntimonialBronze", "blockPyrope", "blockDioptase", "blockFluonicSapphire", "blockOsmium" };
 	public static final int[] MINE_LVL = { 1, 1, 1, 2, 2, 2, 2, 3, 3, 1, 1, 1, 3, 3, 3, 2 };
 	public static final float[] HARDNESS = { 5, 5, 5, 7, 5, 4, 5, 10, 13, 5, 6, 6, 7, 7, 7, 11 };
 	public static final float[] RESISTANCE = { 6, 6, 6, 6, 6, 12, 6, 25, 16, 8, 8, 8, 13, 13, 13, 13 };
-	public static final int[] LIGHT = { 0, 0, 0, 0, 4, 0, 0, 0, 2, 2, 0, 0, 4, 4, 8, 1 };
+	public static final int[] LIGHT = { 0, 0, 0, 0, 4, 0, 0, 0, 4, 2, 0, 0, 4, 4, 8, 1 };
 	public static final int[] RARITY = 	{ 0, 0, 0, 0, 0, 0, 1, 1, 2, 0, 0, 0, 2, 2, 2, 1 };
 	//public static final String[] INGOT_NAMES = {"ingotCopper", "ingotZinc", "ingotTin", "ingotSilver", "ingotBrass", "ingotBronze", "ingotThaumicBronze", "ingotSteel", "ingotVoidbrass", "ingotVoidsteel", "ingotElectrum", "ingotWardenicSteel", "ingotThaumicElectrum", "ingotVoid", "ingotWardenicMetal", "itemPlateWardenicComposite"};
-	//public static final int[] MINE_LVL = 		{ 2,  2,  1,  2,  2,  2, 1,  1, 3  };
-	//public static final float[] HARDNESS = 	{ 6,  8,  6,  10, 11, 6, 6,  6, 25 };
-	//public static final float[] RESISTANCE = 	{ 10, 13, 12, 25, 25, 8, 10, 8, 50 };
-	//public static final int[] LIGHT = 		{ 0,  0,  0,  0,  1,  6, 0,  0, 2  };
-	//public static final int[] RARITY = 		{ 0,  1,  1,  1,  1,  1, 0,  0, 2  };
-	//public static final String[] INGOT_NAMES = { "ingotThaumicBronze", "ingotSteel", "ingotVoidbrass", "ingotVoidsteel",
-	// 			"ingotWardenicSteel", "ingotThaumicElectrum", "ingotVoid", "ingotWardenicMetal", "itemPlateWardenicComposite"};
+	//public static final int[] MINE_LVL = 		{ 2,  1  };
+	//public static final float[] HARDNESS = 	{ 6,  6  };
+	//public static final float[] RESISTANCE = 	{ 10, 10 };
+	//public static final int[] LIGHT = 		{ 0,  0  };
+	//public static final int[] RARITY = 		{ 0,  0  };
+	//public static final String[] INGOT_NAMES = { "ingotThaumicBronze", "ingotVoid" };
 
 }

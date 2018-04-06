@@ -69,7 +69,7 @@ public class ThaumRevLibrary {
 	//public static Block blockMetalDecor;
 	public static Block blockStorageOre;
 	public static Block blockStorageAlloy1;
-	public static Block blockStorageAlloy2;
+	//public static Block blockStorageAlloy2;
 	public static Block blockStorageSpecial1;
 	public static Block blockStorageSpecial2;
 	public static Block blockStorageMisc;
@@ -79,6 +79,7 @@ public class ThaumRevLibrary {
 	//public static Block blockMetalDevice;
 	public static Block blockStoneSlab;
 	public static Block blockStoneSlabDouble;
+	public static Block blockQuartzStairs;
 
 	/** ITEMS **/
 	public static FluxGearItemInteractive generalItem;
@@ -155,14 +156,33 @@ public class ThaumRevLibrary {
 	public static ItemStack blockRedsolder;
 
 
-	/*public static ItemStack blockVoidmetal;
-	public static ItemStack blockThaumicBronze;
+	public static ItemStack blockThaumicElectrum;
+	public static ItemStack blockThaumicRiftishBronze;
 	public static ItemStack blockSteel;
 	public static ItemStack blockVoidbrass;
 	public static ItemStack blockVoidsteel;
+	public static ItemStack blockVoidtungsten;
+	public static ItemStack blockWardenicBronze;
 	public static ItemStack blockWardenicSteel;
-	public static ItemStack blockThaumicElectrum;
-	public static ItemStack blockWardenicComposite;*/
+	public static ItemStack blockWardenicRiftishBronze;
+	public static ItemStack blockWardenicCrystal;
+	public static ItemStack blockWardenicCrystalActivated;
+	public static ItemStack blockWardenicComposite;
+	public static ItemStack blockArcaneRedsolder;
+	public static ItemStack blockRedbronze;
+	public static ItemStack blockHardenedRedbronze;
+	public static ItemStack blockFluxsteel;
+
+	public static ItemStack blockFluxedTungsten;
+
+
+	/*public static ItemStack blockVoidmetal;
+	public static ItemStack blockThaumicBronze;
+
+
+
+
+	*/
 
 	public static ItemStack slabWardenicObsidian;
 	public static ItemStack slabEldritch;
@@ -225,7 +245,8 @@ public class ThaumRevLibrary {
 	public static ItemStack ingotInvar;						//00233
 	public static ItemStack ingotElectrum;					//00234
 	public static ItemStack ingotWardenicMetal;				//00235
-	public static ItemStack ingotRedsolder;					//00236
+	public static ItemStack ingotDullRedsolder;				//00236
+	public static ItemStack ingotRedsolder;					//00237
 
 	//00250-00259 COMPLEX ALLOY INGOTS/COMPOUND GEMS/DUST METAL INGOTS
 	public static ItemStack ingotThaumicBronze;				//00250
@@ -297,7 +318,8 @@ public class ThaumRevLibrary {
 	public static ItemStack nuggetInvar;					//00333
 	public static ItemStack nuggetElectrum;					//00334
 	public static ItemStack nuggetWardenicMetal;			//00335
-	public static ItemStack nuggetRedsolder;				//00336
+	public static ItemStack nuggetDullRedsolder;			//00336
+	public static ItemStack nuggetRedsolder;				//00337
 
 	//00350-00359 COMPLEX ALLOY NUGGETS/COMPOUND GEM SHARDS/DUST METAL NUGGETS
 	public static ItemStack nuggetThaumicBronze;			//00350
@@ -369,7 +391,8 @@ public class ThaumRevLibrary {
 	public static ItemStack dustInvar;						//00433
 	public static ItemStack dustElectrum;					//00434
 	public static ItemStack dustWardenicMetal;				//00435
-	public static ItemStack dustRedsolder;					//00436
+	public static ItemStack dustDullRedsolder;				//00436
+	public static ItemStack dustRedsolder;					//00437
 
 	//00450-00459 COMPLEX ALLOY DUSTS/COMPOUND GEM DUSTS/DUST METAL DUSTS
 	public static ItemStack dustThaumicBronze;				//00450
@@ -441,7 +464,8 @@ public class ThaumRevLibrary {
 	public static ItemStack tinyInvar;						//00533
 	public static ItemStack tinyElectrum;					//00534
 	public static ItemStack tinyWardenicMetal;				//00535
-	public static ItemStack tinyRedsolder;					//00536
+	public static ItemStack tinyDullRedsolder;				//00536
+	public static ItemStack tinyRedsolder;					//00537
 
 	//00550-00559 COMPLEX ALLOY TINY DUSTS/COMPOUND GEM TINY DUSTS/DUST METAL TINY DUSTS
 	public static ItemStack tinyThaumicBronze;				//00550
@@ -510,7 +534,8 @@ public class ThaumRevLibrary {
 	public static ItemStack plateInvar;						//00633
 	public static ItemStack plateElectrum;					//00634
 	public static ItemStack plateWardenicMetal;				//00635
-	public static ItemStack plateRedsolder;					//00636
+	public static ItemStack plateDullRedsolder;				//00636
+	public static ItemStack plateRedsolder;					//00637
 
 	//00650-00659 COMPLEX ALLOY PLATES
 	public static ItemStack plateThaumicBronze;				//00650
@@ -533,7 +558,6 @@ public class ThaumRevLibrary {
 	public static ItemStack plateRedbronze;					//00681
 	public static ItemStack plateRedbronzeHardened;			//00682
 	public static ItemStack plateFluxsteel;					//00683
-	public static ItemStack plateRedquartz;					//00684
 	public static ItemStack plateFluxedTungsten;			//00685
 	public static ItemStack plateMagneoturgicComposite;		//00686
 	public static ItemStack plateFluxedComposite;			//00687
@@ -576,6 +600,7 @@ public class ThaumRevLibrary {
 	public static ItemStack carbonSlag;						//00780
 	public static ItemStack ceramicSlag;					//00781
 	public static ItemStack thaumicSlag;					//00782
+	public static ItemStack fluonicSlag;					//00783
 
 	//00800-00839 ORE CLUSTERS
 	public static ItemStack clusterZinc;					//00801
@@ -1173,19 +1198,8 @@ public class ThaumRevLibrary {
 	public static WorldGenMixedOreVein genWSn;
 	public static WorldGenMixedOreVein genAgPbBi;
 
-	/** BLOCK NAMES **/
-	public static final String[] PLANT_NAMES = { "excubitura", "cotton_wild", "thistle_wild", "", "", "shiverpearl", "stormpearl", "stonepearl", "blazereed", "blizzreed", "blitzreed", "basalzreed" };
-
-	public static final String[] DECOR_STONE_NAMES = { "obsidianWardenic", "stoneEldritch", "wardenicQuartz", "wardenicQuartzChiseled", "wardenicQuartzPillar", "wardenicQuartzPillar", "wardenicQuartzPillar", "thaumicStone", "infernalBlastBrick", "shadowforgeBrick" };
-
-	public static final String[] ORE_NAMES = { "oreChalcocite", "oreSphalerite", "oreCassiterite", "oreMillerite", "oreNativeSilver", "oreGalena", "oreXenotime", "oreWolframite", "oreIridosmium", "oreBismuthinite", "oreTennantite", "oreTetrahedrite", "orePyrope", "oreDioptase", "oreFluonicSapphire" };
-
-	public static final String[] STORAGE_ORE_NAMES = { "blockCopper", "blockZinc", "blockTin", "blockNickel", "blockSilver", "blockLead", "blockXenotimeLanthanides", "blockTungsten", "blockIridium", "blockBismuth", "blockArsenicalBronze", "blockAntimonialBronze", "blockPyrope", "blockDioptase", "blockFluonicSapphire", "blockOsmium" };
-	public static final String[] STORAGE_ALLOY_NAMES_1 = { "blockBrass", "blockBronze", "blockBismuthBronze", "blockArsenoAntimonialBronze", "blockAluminiumBronze", "blockCupronickel", "blockRiftishBronze", "blockConstantan", "blockInvar", "blockElectrum", "blockWardenicMetal", "blockDulRedsolder", "blockRedsolder" };
-
-	public static final String[] FALSE_AIR_NAMES = { "witor" };
-
-	public static final String[] SLAB_STONE_NAMES = { "obsidianWardenic", "stoneEldritch", "wardenicQuartz" };
+	/** BLOCK NAMES  **/
+	// Migrated until v0.1.0 //
 
 	public static final String matPrimal = "PRIMAL";
 	public static final String matBronzeChain = "BRONZE_CHAIN";

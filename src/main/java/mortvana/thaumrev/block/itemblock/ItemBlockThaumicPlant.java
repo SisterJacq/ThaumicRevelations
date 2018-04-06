@@ -9,6 +9,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 import mortvana.melteddashboard.block.FluxGearItemBlockBase;
 
+import mortvana.thaumrev.block.BlockThaumicPlant;
 import mortvana.thaumrev.library.ThaumRevLibrary;
 
 public class ItemBlockThaumicPlant extends FluxGearItemBlockBase {
@@ -19,7 +20,7 @@ public class ItemBlockThaumicPlant extends FluxGearItemBlockBase {
 
 	@Override
 	public String getUnlocalizedName(ItemStack stack) {
-		return "tile.thaumrev.plant." + ThaumRevLibrary.PLANT_NAMES[stack.getItemDamage()] + ".name";
+		return "tile.thaumrev.plant." + BlockThaumicPlant.NAMES[stack.getItemDamage()] + ".name";
 	}
 
 	@SideOnly(Side.CLIENT)

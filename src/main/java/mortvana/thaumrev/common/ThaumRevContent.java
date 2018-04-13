@@ -92,7 +92,7 @@ public class ThaumRevContent {
 
 		blockStoneSlab = new BlockStoneSlab();
 		blockStoneSlabDouble = new BlockStoneSlab(blockStoneSlab);
-		blockQuartzStairs = new BlockStairsWardenicQuartz();
+		blockWardenicQuartzStairs = new BlockStairsWardenicQuartz();
 	}
 
 	public static void createItems() {
@@ -106,13 +106,15 @@ public class ThaumRevContent {
 		GameRegistry.registerBlock(blockThaumicPlant, ItemBlockThaumicPlant.class, "blockThaumicPlant");
 		GameRegistry.registerBlock(blockOre, ItemBlockOre.class, "blockOre");
 
-		GameRegistry.registerBlock(blockStoneDecor, ItemBlockStoneDecor.class, "blockDecorStone");
+		GameRegistry.registerBlock(blockWoodDecor, ItemBlockWoodDecor.class, "blockWoodDecor");
+		GameRegistry.registerBlock(blockStoneDecor, ItemBlockStoneDecor.class, "blockStoneDecor");
 
 		GameRegistry.registerBlock(blockStorageOre, ItemBlockStorageOre.class, "blockStorageOre");
 		GameRegistry.registerBlock(blockStorageAlloy1, ItemBlockStorageAlloy1.class, "blockStorageAlloy1");
 
 		GameRegistry.registerBlock(blockStoneSlab, ItemBlockStoneSlab.class, "stoneSlab");
 		GameRegistry.registerBlock(blockStoneSlabDouble, ItemBlockStoneSlab.class, "stoneSlabDouble");
+		GameRegistry.registerBlock(blockWardenicQuartzStairs, ItemBlockStairsWardenicQuartz.class, "wardenicQuartzStairs");
 	}
 
 	public static void registerItems() {
@@ -194,9 +196,9 @@ public class ThaumRevContent {
 
 		wardenicObsidian = new ItemStack(blockStoneDecor, 1, 0);
 		eldritchStone = new ItemStack(blockStoneDecor, 1, 1);
-		wardenicQuartzBlock = new ItemStack(blockStoneDecor, 1, 2);
-		wardenicQuartzChiseled = new ItemStack(blockStoneDecor, 1, 3);
-		wardenicQuartzPillar = new ItemStack(blockStoneDecor, 1, 4);
+		blockWardenicQuartz = new ItemStack(blockStoneDecor, 1, 2);
+		blockWardenicQuartzChiseled = new ItemStack(blockStoneDecor, 1, 3);
+		blockWardenicQuartzPillar = new ItemStack(blockStoneDecor, 1, 4);
 		thaumicStone = new ItemStack(blockStoneDecor, 1, 5);
 		infernalBlastBrick = new ItemStack(blockStoneDecor, 1, 6);
 		shadowforgeBrick = new ItemStack(blockStoneDecor, 1, 7);
@@ -204,7 +206,7 @@ public class ThaumRevContent {
 		RecipeHelper.registerOreDict(wardenicObsidian, "blockWardenicObsidian");
 		RecipeHelper.registerOreDict(eldritchStone, "blockEldritchStone");
 		for (int i = 2; i < 5; i++) {
-			RecipeHelper.registerOreDict(new ItemStack(blockStoneDecor, 1, i), "blockQuartzWardenic");
+			RecipeHelper.registerOreDict(new ItemStack(blockStoneDecor, 1, i), "blockWardenicQuartz");
 		}
 		RecipeHelper.registerOreDict(thaumicStone, "blockThaumicStone");
 		RecipeHelper.registerOreDict(infernalBlastBrick, "blockInfernalBastFurnaceBrick");
@@ -216,26 +218,41 @@ public class ThaumRevContent {
 
 		RecipeHelper.registerOreDict(slabWardenicObsidian, "slabWardenicObsidian");
 		RecipeHelper.registerOreDict(slabEldritch, "slabEldritchStone");
-		RecipeHelper.registerOreDict(slabWardenicQuartz, "slabQuartzWardenic");
+		RecipeHelper.registerOreDict(slabWardenicQuartz, "slabWardenicQuartz");
+
+		stairsWardenicQuartz = new ItemStack(blockWardenicQuartzStairs, 1, 0);
 	}
 
 	public static void loadItems() {
-		arcaneSingularity = generalItem.addOreDictItem(0, "itemArcaneSingularity");
-		stabilizedSingularity = generalItem.addOreDictItem(1, "itemStabilizedSingularity");
-		animatedPiston = generalItem.addOreDictItem(2, "animatedPiston", "itemAnimatedPiston");
-		enchantedSilverwood = generalItem.addOreDictItem(3, "enchantedSilverwood", "itemEnchantedSilverwood");
-		consecratedSilverwood = generalItem.addOreDictItem(4, "consecratedSilverwood", "itemConsecratedSilverwood");
-		cotton = generalItem.addOreDictItem(5, "cotton", "itemCotton");
-		cottonFiber = generalItem.addOreDictItem(6, "cottonFiber", "itemCottonFiber");
-		cottonFabric = generalItem.addOreDictItem(7, "cottonFabric", "itemCottonFabric");
-		cottonTreated = generalItem.addOreDictItem(8, "cottonTreated", "itemCottonFabricTreated");
-		cottonEnchanted = generalItem.addOreDictItem(9, "cottonEnchanted", enchCotton);
-		thaumicBronzeChain = generalItem.addOreDictItem(10, "thaumicBronzeChain", chainTBronze);
-		eldritchCog = generalItem.addOreDictItem(11, "eldritchCog", "itemEldritchCog");
-		eldritchKeystone = generalItem.addOreDictItem(12, "eldritchKeystone", "itemEldritchKeystone");
-		thistleLeaf = generalItem.addOreDictItem(13, "thistleLeaf", "itemThistleLeaf");
-		thistleFlower = generalItem.addOreDictItem(14, "thistleFlower", "itemThistleFlower");
-		aspectOrbReceptor = generalItem.addOreDictItem(15, "aspectOrbReceptor", "itemAspectOrbReceptor");
+		cotton = generalItem.addOreDictItem(0, "cotton", "itemCotton");
+		cottonFiber = generalItem.addOreDictItem(1, "cottonFiber", "itemCottonFiber");
+		cottonFabric = generalItem.addOreDictItem(2, "cottonFabric", "itemCottonFabric");
+		cottonTreated = generalItem.addOreDictItem(3, "cottonTreated", "itemCottonFabricTreated");
+		cottonEnchanted = generalItem.addOreDictItem(4, "cottonEnchanted", enchCotton);
+		thistleLeaf = generalItem.addOreDictItem(5, "thistleLeaf", "itemThistleLeaf");
+		thistleFlower = generalItem.addOreDictItem(6, "thistleFlower", "itemThistleFlower");
+
+		arcaneSingularity = generalItem.addOreDictItem(10, "arcaneSingularity", "itemArcaneSingularity");
+		stabilizedSingularity = generalItem.addOreDictItem(11, "itemStabilizedSingularity");
+		animatedPiston = generalItem.addOreDictItem(12, "animatedPiston", "itemAnimatedPiston");
+
+		aspectOrbReceptor = generalItem.addOreDictItem(20, "aspectOrbReceptor", "itemAspectOrbReceptor");
+
+		eldritchCog = generalItem.addOreDictItem(30, "eldritchCog", "itemEldritchCog");
+		eldritchKeystone = generalItem.addOreDictItem(31, "eldritchKeystone", "itemEldritchKeystone");
+
+		greatwoodShaft = generalItem.addOreDictItem(40, "shaftGreatwood", "itemShaftGreatwood");
+		greatwoodEnchanted = generalItem.addOreDictItemWithEffect(41, "plankEnchantedGreatwood", "plankGreatwood", "itemPlankEnchantedGreatwood");
+		greatwoodShaftEnchanted = generalItem.addOreDictItemWithEffect(42, "shaftEnchantedGreatwood", "itemShaftEnchantedGreatwood");
+
+		silverwoodDensified = generalItem.addOreDictItem(50, "densifiedSilverwood", "itemDensifiedSilverwood");
+		silverwoodEnchanted = generalItem.addOreDictItemWithEffect(51, "plankEnchantedSilverwood", "plankSilverwood", "itemPlankEnchantedSilverwood");
+		silverwoodEnchantedDensified = generalItem.addOreDictItemWithEffect(52, "plankDensifiedSilverwood", "itemPlankEnchantedDensifiedSilverwood");
+		silverwoodConsecrated = generalItem.addOreDictItemWithEffect(53, "plankConsecratedSilverwood", "itemPlankConsecratedSilverwood");
+		silverwoodShaftEnchanted = generalItem.addOreDictItemWithEffect(54, "shaftEnchantedSilverwood", "shaftSilverwood", "itemShaftEnchantedSilverwood");
+		silverwoodShaftConsecrated = generalItem.addOreDictItemWithEffect(55, "shaftConsecratedSilverwood", "itemShaftConsecratedSilverwood");
+
+		thaumicBronzeChain = generalItem.addOreDictItem(60, "thaumicBronzeChain", chainTBronze);
 
 		ingotCopper = generalItem.addOreDictItem(200, iCu);
 		ingotZinc = generalItem.addOreDictItem(201, "ingotZinc");
@@ -859,22 +876,24 @@ public class ThaumRevContent {
 		RecipeHelper.addSmelting(oreDioptase, gemDioptase, 1.0F);
 		RecipeHelper.addSmelting(oreFluonicSapphire, gemFluonicSapphire, 1.0F);
 
-		recipeQuartzBlock = RecipeHelper.addSquareRecipe(wardenicQuartzBlock, "gemQuartzWardenic");
-		recipeQuartzChiseled = RecipeHelper.addShapedRecipe(wardenicQuartzChiseled, "X", "X", 'X', "slabQuartzWardenic");
-		recipeQuartzPillar = RecipeHelper.addShapedRecipe(ItemHelper.cloneStack(wardenicQuartzPillar, 2), "X", "X", 'X', "blockQuartzWardenic");
-		recipeQuartzDeblock = RecipeHelper.addDeblockingRecipe(gemWardenicQuartz, wardenicQuartzBlock);
+		recipeQuartzBlock = RecipeHelper.addSquareRecipe(blockWardenicQuartz, "gemWardenicQuartz");
+		recipeQuartzChiseled = RecipeHelper.addShapedRecipe(blockWardenicQuartzChiseled, "X", "X", 'X', "slabWardenicQuartz");
+		recipeQuartzPillar = RecipeHelper.addShapedRecipe(ItemHelper.cloneStack(blockWardenicQuartzPillar, 2), "X", "X", 'X', "blockWardenicQuartz");
+		recipeQuartzDeblock = RecipeHelper.addDeblockingRecipe(gemWardenicQuartz, blockWardenicQuartz);
 
-		recipeQuartzResetChiseled = RecipeHelper.addShapelessRecipe(wardenicQuartzBlock, wardenicQuartzChiseled);
-		recipeQuartzResetPillar = RecipeHelper.addShapelessRecipe(wardenicQuartzBlock, wardenicQuartzPillar);
+		recipeQuartzResetChiseled = RecipeHelper.addShapelessRecipe(blockWardenicQuartz, blockWardenicQuartzChiseled);
+		recipeQuartzResetPillar = RecipeHelper.addShapelessRecipe(blockWardenicQuartz, blockWardenicQuartzPillar);
 
 		recipeWardsidianSlab = RecipeHelper.addSlabRecipe(slabWardenicObsidian, "blockWardenicObsidian");
 		recipeEldritchSlab = RecipeHelper.addSlabRecipe(slabEldritch, "blockEldritchStone");
-		recipeQuartzSlab = RecipeHelper.addSlabRecipe(slabWardenicQuartz, "blockQuartzWardenic");
+		recipeQuartzSlab = RecipeHelper.addSlabRecipe(slabWardenicQuartz, "blockWardenicQuartz");
 
 		recipeWardsidianDeslab = RecipeHelper.addDeslabingRecipe(wardenicObsidian, "slabWardenicObsidian");
 		recipeEldritchDeslab = RecipeHelper.addDeslabingRecipe(eldritchStone, "slabEldritchStone");
-		recipeQuartzDeslab = RecipeHelper.addDeslabingRecipe(gemWardenicQuartz, "slabQuartzWardenic");
+		recipeQuartzDeslab = RecipeHelper.addDeslabingRecipe(gemWardenicQuartz, "slabWardenicQuartz");
 
+		recipeQuartzStair = RecipeHelper.addStairRecipe(stairsWardenicQuartz, "blockWardenicQuartz");
+		recipeQuartzDestair = RecipeHelper.addDestairRecipe(blockWardenicQuartz, stairsWardenicQuartz);
 
 
 		recipeBismuthBronze = new ShapelessOreRecipe[2];
@@ -1226,11 +1245,11 @@ public class ThaumRevContent {
 			addInductionAlloyRecipe("Copper", 3, "Antimony", 1, ingotAntimonialBronze);
 			addInductionAlloyRecipe("Copper", 1, "Nickel", 1, ingotConstantan);
 
-			addPulverizerRecycleRecipe(gemWardenicQuartz, wardenicQuartzBlock, 4);
-			addPulverizerRecycleRecipe(gemWardenicQuartz, wardenicQuartzChiseled, 4);
-			addPulverizerRecycleRecipe(gemWardenicQuartz, wardenicQuartzPillar, 4);
+			addPulverizerRecycleRecipe(gemWardenicQuartz, blockWardenicQuartz, 4);
+			addPulverizerRecycleRecipe(gemWardenicQuartz, blockWardenicQuartzChiseled, 4);
+			addPulverizerRecycleRecipe(gemWardenicQuartz, blockWardenicQuartzPillar, 4);
 			addPulverizerRecycleRecipe(gemWardenicQuartz, slabWardenicQuartz, 2);
-			//addPulverizerRecycleRecipe(wardenicQuartz, , 6);
+			addPulverizerRecycleRecipe(gemWardenicQuartz, stairsWardenicQuartz, 6);
 			addPulverizerRecipe(1600, gemWardenicQuartz, dustWardenicQuartz);
 			addPulverizerRecipe(3200, gemWardenicCrystal, dustWardenicCrystal);
 
@@ -1253,8 +1272,7 @@ public class ThaumRevContent {
 
 		}
 
-		//recipeQuartzStair
-		//recipeQuartzDestair
+
 		//
 
 		//Temporary
@@ -1272,10 +1290,10 @@ public class ThaumRevContent {
 		recipeTreatedCotton = addArcaneCraftingRecipe(keyCotton, cottonTreated, ThaumcraftHelper.newPrimalAspectList(2), " S ", "FCF", " F ", 'S', salisPinch, 'F', "itemCottonFiber", 'C', "itemCottonFabric");
 		recipeEnchantedCotton = addCrucibleRecipe(keyCotton, cottonEnchanted, "itemCottonFabricTreated", new AspectList().add(CLOTH, 2).add(MAGIC, 1));
 
-		recipePrimalGoggles = addInfusionCraftingRecipe(keyRobesPrimal, primalGoggles.getStack(), 5, new AspectList().add(MAGIC, 12).add(CRAFT, 16).add(ORDER, 16), stackGoggles, ingotThaumicElectrum, ingotThaumicRiftishBronze, cottonEnchanted, dustSalisMundus, dustSalisMundus, dustSalisMundus, itemPrimalCharm, stackThaumometer);
-		recipePrimalRobes = addInfusionCraftingRecipe(keyRobesPrimal, primalRobes.getStack(), 5, new AspectList().add(MAGIC, 12).add(CRAFT, 16).add(ORDER, 16), stackChestRobe, ingotThaumicElectrum, ingotThaumicRiftishBronze, cottonEnchanted, dustSalisMundus, dustSalisMundus, dustSalisMundus, itemPrimalCharm, ingotThaumium);
-		recipePrimalPants = addInfusionCraftingRecipe(keyRobesPrimal, primalPants.getStack(), 5, new AspectList().add(MAGIC, 12).add(CRAFT, 16).add(ORDER, 16), stackLegsRobe, ingotThaumicElectrum, ingotThaumicRiftishBronze, cottonEnchanted, dustSalisMundus, dustSalisMundus, dustSalisMundus, itemPrimalCharm, itemNitor);
-		recipePrimalBoots = addInfusionCraftingRecipe(keyRobesPrimal, primalBoots.getStack(), 5, new AspectList().add(MAGIC, 12).add(CRAFT, 16).add(ORDER, 16), stackBootsRobe, ingotThaumicElectrum, ingotThaumicRiftishBronze, cottonEnchanted, dustSalisMundus, dustSalisMundus, dustSalisMundus, itemPrimalCharm, planksGreatwood);
+		recipePrimalGoggles = addInfusionCraftingRecipe(keyRobesPrimal, primalGoggles.getStack(), 5, new AspectList().add(MAGIC, 12).add(CRAFT, 16).add(ORDER, 16), stackGoggles, ingotThaumicElectrum, ingotThaumicRiftishBronze, cottonEnchanted, cottonEnchanted, dustSalisMundus, dustSalisMundus, dustSalisMundus, itemPrimalCharm);
+		recipePrimalRobes = addInfusionCraftingRecipe(keyRobesPrimal, primalRobes.getStack(), 5, new AspectList().add(MAGIC, 12).add(CRAFT, 16).add(ORDER, 16), stackChestRobe, ingotThaumicElectrum, ingotThaumicRiftishBronze, ingotThaumicRiftishBronze, cottonEnchanted, dustSalisMundus, dustSalisMundus, dustSalisMundus, itemPrimalCharm);
+		recipePrimalPants = addInfusionCraftingRecipe(keyRobesPrimal, primalPants.getStack(), 5, new AspectList().add(MAGIC, 12).add(CRAFT, 16).add(ORDER, 16), stackLegsRobe, ingotThaumicElectrum, ingotThaumicRiftishBronze, ingotThaumicRiftishBronze, cottonEnchanted, dustSalisMundus, dustSalisMundus, dustSalisMundus, itemPrimalCharm);
+		recipePrimalBoots = addInfusionCraftingRecipe(keyRobesPrimal, primalBoots.getStack(), 5, new AspectList().add(MAGIC, 12).add(CRAFT, 16).add(ORDER, 16), stackBootsRobe, ingotThaumicElectrum, ingotThaumicRiftishBronze, ingotThaumicRiftishBronze, cottonEnchanted, dustSalisMundus, dustSalisMundus, dustSalisMundus, itemPrimalCharm);
 
 		recipeAniPiston = addArcaneCraftingRecipe(keyMaterial, animatedPiston, new AspectList().add(AIR, 5), "IGI", "TAT", "BRB", 'I', "nuggetIron", 'G', greatwoodSlab, 'T', "nuggetThaumium", 'A', "shardAir", 'B', "nuggetBrass", 'R', "dustRedstone"); //TODO: v0.0.8: Runic Infuser
 
@@ -1295,8 +1313,8 @@ public class ThaumRevContent {
 		recipeArcaneSingularity = addShapelessArcaneCraftingRecipe(keyRunicInfuser, arcaneSingularity, ThaumcraftHelper.newPrimalAspectList(2, 10, 0, 0, 5, 5), itemAlumentum, itemNitor); //TODO: v0.0.8: Runic Infuser
 		recipeStableSingularity = addShapelessArcaneCraftingRecipe(keyRunicInfuser, stabilizedSingularity, ThaumcraftHelper.newPrimalAspectList(7, 15, 5, 5, 35, 10), arcaneSingularity, redstone, salisMundus); //TODO: v0.0.8: Runic Infuser
 
-		recipeEnchSilverwood = addShapelessArcaneCraftingRecipe(keyEnchSilverwood, enchantedSilverwood, new AspectList().add(ORDER, 5), planksSilverwood, salisMundus, salisMundus); //TODO: v0.0.8: Runic Infuser
-		recipeConsSilverwood = addShapelessArcaneCraftingRecipe(keyEnchSilverwood, consecratedSilverwood, new AspectList().add(ORDER, 10).add(FIRE, 5), enchantedSilverwood, salisPinch, salisPinch, "nuggetSilver", nHg, itemNitor); //TODO: Infusionize //TODO: v0.0.9: Alchemical Infuser
+		recipeEnchSilverwood = addShapelessArcaneCraftingRecipe(keyEnchSilverwood, silverwoodEnchanted, new AspectList().add(ORDER, 5), planksSilverwood, salisMundus, salisMundus); //TODO: v0.0.8: Runic Infuser
+		recipeConsSilverwood = addInfusionCraftingRecipe(keyEnchSilverwood, silverwoodConsecrated, 3, new AspectList().add(ORDER, 10).add(FIRE, 5), silverwoodEnchanted, silverwoodEnchanted, silverwoodEnchanted, silverwoodEnchanted, silverwoodEnchanted, tinySalisMundus, tinySalisMundus, nuggetSilver, itemQuicksilverDrop, itemNitor, nuggetPalladium); //TODO: Infusionize //TODO: v0.0.9: Alchemical Infuser
 
 		//recipeDarkAlchemicalInfuser = addArcaneCraftingRecipe(keyDarkRunicInfuser, darkRunicInfuser, ThaumcraftHelper.newPrimalAspectList(20, 10, 15, 15, 25, 35), "GVG", "MSM", "ORO", 'G', nAu, 'V', voidSeed, 'M', mirror, 'S', stableSingularity, 'O', obsTotem, 'R', runicInfuser);
 
@@ -1369,7 +1387,7 @@ public class ThaumRevContent {
 		recipeWardenSteelPlate = addArcaneCraftingRecipe(keyWardenPlate, plateWardenicSteel, new AspectList().add(ORDER, 1), " A ", "ASA", " A ", 'A', itemAlumentum, 'S', "ingotWardenicSteel"); //TODO: v0.0.8: Thaumic Hammermill
 		recipeDetailedSteelPlate = addArcaneCraftingRecipe(keyWardenPlate, detailedSteelPlate, ThaumcraftHelper.newPrimalAspectList(0, 10, 5, 5, 15, 0), "TCB", "QPQ", "BCT", 'T', "nuggetThaumium", 'B', "nuggetBrass", 'C', "itemChainWardenicSteelOiled", 'Q', nHg, 'P', "itemPlateWardenicSteel");
 		recipeRunicSteelPlate = addInfusionCraftingRecipe(keyWardenPlate, runicSteelPlate, 1, new AspectList().add(ARMOR, 4).add(MAGIC, 4).add(ENERGY, 4).add(FLIGHT, 4), detailedSteelPlate, tinySalisMundus, tinySalisMundus, tinySalisMundus, tinySalisMundus, itemWardencloth, new ItemStack(Items.redstone));
-		recipesConsecratedSteelPlate = addInfusionCraftingRecipe(keyWardenPlate, consecratedSteelPlate, 2, new AspectList().add(ARMOR, 8).add(MAGIC, 4).add(ORDER, 4), runicSteelPlate, nuggetSilver, itemQuicksilverDrop, new ItemStack(Items.glowstone_dust), consecratedSilverwood, tinySalisMundus);
+		recipesConsecratedSteelPlate = addInfusionCraftingRecipe(keyWardenPlate, consecratedSteelPlate, 2, new AspectList().add(ARMOR, 8).add(MAGIC, 4).add(ORDER, 4), runicSteelPlate, nuggetSilver, itemQuicksilverDrop, new ItemStack(Items.glowstone_dust), silverwoodConsecrated, tinySalisMundus);
 
 		recipeWardenicPlateHelmet = addArcaneCraftingRecipe(keyArmorWardenSteel, wardenicPlateHelmet.getStack(), ThaumcraftHelper.newPrimalAspectList(30), "CRC", "RGR", 'R', "itemPlateWardenicSteelRunic", 'C', "itemPlateWardenicSteelConsecrated", 'G', stackGoggles);
 		recipeWardenicChestplate = addArcaneCraftingRecipe(keyArmorWardenSteel, wardenicChestplate.getStack(), ThaumcraftHelper.newPrimalAspectList(70), "C C", "CRC", "RCR", 'R', "itemPlateWardenicSteelRunic", 'C', "itemPlateWardenicSteelConsecrated");
@@ -1379,7 +1397,7 @@ public class ThaumRevContent {
 		recipeWardenicQuartz = addCrucibleRecipe(keyQuartz, gemWardenicQuartz, "gemQuartz", new AspectList().add(MAGIC, 4).add(CRYSTAL, 2).add(ENERGY, 2).add(WARDEN, 1));
 		recipeWardenicQuartzDust = addCrucibleRecipe(keyQuartz, dustWardenicQuartz, "gemWardenicQuartz", new AspectList().add(ENTROPY, 2));
 		recipeWardenicQuartzReconst = addCrucibleRecipe(keyQuartz, gemWardenicQuartz, "dustWardenicQuartz", new AspectList().add(ORDER, 2).add(CRYSTAL, 4));
-		recipeWardenicQuartzInf = addInfusionCraftingRecipe(keyQuartz, wardenicQuartzInf, 2, new AspectList().add(WARDEN, 4).add(MAGIC, 8).add(CRYSTAL, 4), wardenicQuartzBlock, dustSalisMundus, excubituraOilPure);
+		recipeWardenicQuartzInf = addInfusionCraftingRecipe(keyQuartz, wardenicQuartzInf, 2, new AspectList().add(WARDEN, 4).add(MAGIC, 8).add(CRYSTAL, 4), blockWardenicQuartz, dustSalisMundus, excubituraOilPure);
 
 		recipeWardenicCrystal = addCrucibleRecipe(keyWardenCrystal, gemWardenicCrystal, "gemWardenicQuartzInfused", new AspectList().add(CRYSTAL, 32).add(AURA, 8).add(ORDER, 8).add(WARDEN, 16));
 		recipeWardenicCrystalDust = addCrucibleRecipe(keyWardenCrystal, dustWardenicCrystal, "gemWardenicCrystal", new AspectList().add(ENTROPY, 4));
@@ -1396,7 +1414,7 @@ public class ThaumRevContent {
 		recipeFittedCompositePlate = addArcaneCraftingRecipe(keyWardenCompositeFitting, fittedCompositePlate, ThaumcraftHelper.newPrimalAspectList(0, 15, 0, 10, 15, 0), "CNW", "BPB", "WNC", 'C', "itemChainWardenicSteelOiled", 'W', wardencloth, 'N', "nuggetWardenicSteel", 'B', "dustWardenicBinder", 'P', "itemPlateWardenicComposite");
 		recipeDetailedCompositePlate = addArcaneCraftingRecipe(keyWardenCompositeFitting, detailedCompositePlate, ThaumcraftHelper.newPrimalAspectList(0, 10, 5, 10, 15, 0), "EQE", "TPT", "BSB", 'E', "nuggetThaumicElectrum", 'Q', "quicksilver", 'T', "nuggetThaumium", 'P', "itemPlateWardenicCompositeFitted", 'B', "nuggetBismuthBronze", 'S', salisMundus);
 		recipeRunicCompositePlate = addInfusionCraftingRecipe(keyWardenCompositeFitting, runicCompositePlate, 2, new AspectList().add(ARMOR, 4).add(MAGIC, 8).add(ENERGY, 4).add(FLIGHT, 4).add(WARDEN, 2), detailedCompositePlate, dustSalisMundus, dustSalisMundus, nuggetThaumicElectrum, new ItemStack(Items.redstone));
-		recipeConsecratedCompositePlate = addInfusionCraftingRecipe(keyWardenCompositeFitting, consecratedCompositePlate, 4, new AspectList().add(ARMOR, 8).add(MAGIC, 12).add(ORDER, 4).add(ENERGY, 4).add(WARDEN, 2), runicCompositePlate, nuggetSilver, itemQuicksilverDrop, new ItemStack(Items.glowstone_dust), consecratedSilverwood, consecratedSilverwood, dustSalisMundus);
+		recipeConsecratedCompositePlate = addInfusionCraftingRecipe(keyWardenCompositeFitting, consecratedCompositePlate, 4, new AspectList().add(ARMOR, 8).add(MAGIC, 12).add(ORDER, 4).add(ENERGY, 4).add(WARDEN, 2), runicCompositePlate, nuggetSilver, itemQuicksilverDrop, new ItemStack(Items.glowstone_dust), silverwoodConsecrated, silverwoodConsecrated, dustSalisMundus);
 		recipePrimalCompositePlate = addInfusionCraftingRecipe(keyWardenCompositeFitting, primalCompositePlate, 6, ThaumcraftHelper.newPrimalAspectList(8).add(MAGIC, 16).add(ENERGY, 8).add(WARDEN, 4).add(ARMOR, 4), consecratedCompositePlate, itemPrimalCharm, dustSalisMundus, dustSalisMundus, itemShardBalanced, nuggetBrass, quicksilver);
 
 		recipeWardenicCompositeHelmet = addArcaneCraftingRecipe(keyArmorWardenComposite, wardenicCompositeHelmet.getStack(), ThaumcraftHelper.newPrimalAspectList(65), "PCP", "CGC", 'C', "itemPlateWardenicCompositeConsecrated", 'P', "itemPlateWardenicCompositePrimal", 'G', stackGoggles);
@@ -1425,7 +1443,7 @@ public class ThaumRevContent {
 
 		researchRunicInfuser = new FluxGearResearchItem(keyRunicInfuser, key, new AspectList().add(ENERGY, 4).add(MAGIC, 4).add(AURA, 2).add(CRAFT, 3).add(MECHANISM, 4), 1, 6, 2, arcaneSingularity);
 		researchAniPiston = new FluxGearResearchItem(keyAniPiston, key, new AspectList().add(AIR, 3).add(MECHANISM, 3).add(MOTION, 3), 0, 8, 1, animatedPiston);
-		researchEnchSilverwood = new FluxGearResearchItem(keyEnchSilverwood, key, new AspectList().add(TREE, 3).add(MAGIC, 3).add(AURA, 3).add(ORDER, 3), 7, 8, 1, enchantedSilverwood);
+		researchEnchSilverwood = new FluxGearResearchItem(keyEnchSilverwood, key, new AspectList().add(TREE, 3).add(MAGIC, 3).add(AURA, 3).add(ORDER, 3), 7, 8, 1, silverwoodEnchanted);
 
 		researchWardenry = new FluxGearResearchItem(keyWardenry, key, new AspectList().add(WARDEN, 4).add(MAGIC, 3).add(ELDRITCH, 2).add(ENERGY, 2), -2, 0, 2, new ItemStack(blockThaumicPlant));
 
@@ -1477,27 +1495,26 @@ public class ThaumRevContent {
 		researchTransmutationOs = new FluxGearResearchItem(keyTransmutationOs, key, new AspectList().add(METAL, 3).add(EXCHANGE, 2).add(ARMOR, 1).add(ORDER, 1), -31, -23, 1, nuggetPalladium);
 		researchTransmutationIr = new FluxGearResearchItem(keyTransmutationIr, key, new AspectList().add(METAL, 3).add(EXCHANGE, 2).add(ARMOR, 1).add(ORDER, 1).add(LIGHT, 1).add(ENERGY, 1), -29, -24, 1, nuggetPalladium);
 
-		/*researchClusterFe = new DummyResearchItem(keyClusterFe, "PUREIRON", "ALCHEMY", -16, -4, clusterIron).registerResearchItem();
-		researchClusterCu = new DummyResearchItem(keyClusterCu, "PURECOPPER", "ALCHEMY", -14, -6, clusterCopper).setParents(keyClusterFe).registerResearchItem();
-		researchClusterSn = new DummyResearchItem(keyClusterSn, "PURETIN", "ALCHEMY", -12, -2, clusterTin).setParents(keyClusterFe).registerResearchItem();
-		researchClusterPb = new DummyResearchItem(keyClusterPb, "PURELEAD", "ALCHEMY", -16, -1, clusterLead).setParents(keyClusterFe).registerResearchItem();
-		researchClusterAu = new DummyResearchItem(keyClusterAu, "PUREGOLD", "ALCHEMY", -18, -2, clusterGold).setParents(keyClusterFe).registerResearchItem();
+		researchClusterFe = new DummyResearchItem(keyClusterFe, key, "PUREIRON", "ALCHEMY", 8, -12, clusterIron).registerResearchItem();
+		researchClusterCu = new DummyResearchItem(keyClusterCu, key, "PURECOPPER", "ALCHEMY", 12, -17, clusterCopper).setParents(keyClusterFe).registerResearchItem();
+		researchClusterSn = new DummyResearchItem(keyClusterSn, key, "PURETIN", "ALCHEMY", 14, -15, clusterTin).setParents(keyClusterFe).registerResearchItem();
+		researchClusterPb = new DummyResearchItem(keyClusterPb, key, "PURELEAD", "ALCHEMY", 14, -13, clusterLead).setParents(keyClusterFe).registerResearchItem();
+		researchClusterAu = new DummyResearchItem(keyClusterAu, key, "PUREGOLD", "ALCHEMY", 13, -11, clusterGold).setParents(keyClusterFe).registerResearchItem();
 
-		researchClusterNi = new FluxGearResearchItem(keyClusterNi, new AspectList().add(Aspect.METAL, 3).add(Aspect.ORDER, 2).add(VOID, 1), -19, -4, 1, clusterNickel);
+		researchClusterNi = new FluxGearResearchItem(keyClusterNi, key, new AspectList().add(Aspect.METAL, 3).add(Aspect.ORDER, 2).add(VOID, 1), 8, -18, 1, clusterNickel);
 		if (OreDictionary.doesOreNameExist("oreAluminium")) {
-			researchClusterAl = new FluxGearResearchItem(keyClusterAl, new AspectList().add(Aspect.METAL, 3).add(Aspect.ORDER, 3), -18, -6, 1, clusterAluminium);
+			researchClusterAl = new FluxGearResearchItem(keyClusterAl, key, new AspectList().add(Aspect.METAL, 3).add(Aspect.ORDER, 3), 11, -7, 1, clusterAluminium);
 		}
-		researchClusterYPO = new FluxGearResearchItem(keyClusterYPO, new AspectList().add(Aspect.METAL, 3).add(Aspect.ORDER, 2).add(EARTH, 2).add(ENERGY, 1), -16, -7, 1, clusterXenotime);
-		researchClusterZn = new FluxGearResearchItem(keyClusterZn, new AspectList().add(Aspect.METAL, 3).add(Aspect.ORDER, 2).add(CRYSTAL, 1), -11, 0, 1, clusterZinc);
-		researchClusterBi = new FluxGearResearchItem(keyClusterBi, new AspectList().add(Aspect.METAL, 3).add(Aspect.ORDER, 3), -14, 0, 1, clusterBismuth);
-		researchClusterCuAs = new FluxGearResearchItem(keyClusterCuAs, new AspectList().add(Aspect.METAL, 3).add(Aspect.ORDER, 2).add(EXCHANGE, 1).add(POISON, 1), -12, -5, 1, clusterTennantite);
-		researchClusterCuSb = new FluxGearResearchItem(keyClusterCuSb, new AspectList().add(Aspect.METAL, 3).add(Aspect.ORDER, 2).add(EXCHANGE, 1).add(POISON, 1), -14, -4, 1, clusterTetrahedrite);
-		researchClusterW = new FluxGearResearchItem(keyClusterW, new AspectList().add(Aspect.METAL, 3).add(Aspect.ORDER, 2).add(MECHANISM, 1).add(ARMOR, 1), -18, 0, 1, clusterTungsten);
+		researchClusterYPO = new FluxGearResearchItem(keyClusterYPO, key, new AspectList().add(Aspect.METAL, 3).add(Aspect.ORDER, 2).add(EARTH, 2).add(ENERGY, 1), 2, -13, 1, clusterXenotime);
+		researchClusterZn = new FluxGearResearchItem(keyClusterZn, key, new AspectList().add(Aspect.METAL, 3).add(Aspect.ORDER, 2).add(CRYSTAL, 1), 20, -15, 1, clusterZinc);
+		researchClusterBi = new FluxGearResearchItem(keyClusterBi, key, new AspectList().add(Aspect.METAL, 3).add(Aspect.ORDER, 3), 16, -14, 1, clusterBismuth);
+		researchClusterCuAs = new FluxGearResearchItem(keyClusterCuAs, key, new AspectList().add(Aspect.METAL, 3).add(Aspect.ORDER, 2).add(EXCHANGE, 1).add(POISON, 1), 13, -19, 1, clusterTennantite);
+		researchClusterCuSb = new FluxGearResearchItem(keyClusterCuSb, key, new AspectList().add(Aspect.METAL, 3).add(Aspect.ORDER, 2).add(EXCHANGE, 1).add(POISON, 1), 15, -17, 1, clusterTetrahedrite);
+		researchClusterW = new FluxGearResearchItem(keyClusterW, key, new AspectList().add(Aspect.METAL, 3).add(Aspect.ORDER, 2).add(MECHANISM, 1).add(ARMOR, 1), 16, -12, 1, clusterTungsten);
 		if (OreDictionary.doesOreNameExist("orePlatinum")) {
-			researchClusterPt = new FluxGearResearchItem(keyClusterPt, new AspectList().add(Aspect.METAL, 3).add(Aspect.ORDER, 2).add(EXCHANGE, 1).add(GREED, 1), -20, -2, 1, clusterPlatinum);
+			researchClusterPt = new FluxGearResearchItem(keyClusterPt, key, new AspectList().add(Aspect.METAL, 3).add(Aspect.ORDER, 2).add(EXCHANGE, 1).add(GREED, 1), 6, -20, 1, clusterPlatinum);
 		}
-		researchClusterIrOs = new FluxGearResearchItem(keyClusterIrOs, new AspectList().add(Aspect.METAL, 3).add(Aspect.ORDER, 4).add(ARMOR, 2).add(LIGHT, 1).add(ENERGY, 1), -19, 2, 1, clusterIridosmium);*/
-
+		researchClusterIrOs = new FluxGearResearchItem(keyClusterIrOs, key, new AspectList().add(Aspect.METAL, 3).add(Aspect.ORDER, 4).add(ARMOR, 2).add(LIGHT, 1).add(ENERGY, 1), 7, -24, 1, clusterIridosmium);
 
 	}
 
@@ -1564,7 +1581,7 @@ public class ThaumRevContent {
 		}
 		researchTransmutationIr.setParents(keyTransmutationOs).setHidden().setSecondary();
 
-		/*researchClusterNi.setParents(keyClusterFe).setSecondary();
+		researchClusterNi.setParents(keyClusterFe).setSecondary();
 		if (OreDictionary.doesOreNameExist("oreAluminium")) {
 			researchClusterAl.setParents(keyClusterFe).setSecondary();
 		}
@@ -1575,11 +1592,11 @@ public class ThaumRevContent {
 		researchClusterCuSb.setParents(keyClusterSn, keyClusterCu).setSecondary();
 		researchClusterW.setParents(keyClusterPb, keyClusterAu).setSecondary();
 		if (OreDictionary.doesOreNameExist("orePlatinum")) {
-			researchClusterPt.setParents(keyClusterNi, keyClusterAu).setSecondary();
-			researchClusterIrOs.setParents(keyClusterW, keyClusterPt).setSecondary();
+			researchClusterPt.setParents(keyClusterNi).setParentsHidden(keyClusterAu).setSecondary();
+			researchClusterIrOs.setParents(keyClusterPt).setParentsHidden(keyClusterW).setSecondary();
 		} else {
-			researchClusterIrOs.setParents(keyClusterW).setSecondary();
-		}*/
+			researchClusterIrOs.setParentsHidden(keyClusterW).setSecondary();
+		}
 
 		/*if (researchLevel == 0) { //EASY-MODE
 			((FluxGearResearchItem) researchThaumRev).addSiblings(keyAniPiston);
@@ -1660,10 +1677,6 @@ public class ThaumRevContent {
 		researchArmorWardenComposite.registerResearchItem();
 		researchWardenCrystalAwakened.registerResearchItem();
 
-
-
-
-
 		researchTransmutationNi.registerResearchItem();
 		researchTransmutationAl.registerResearchItem();
 		researchTransmutationNd.registerResearchItem();
@@ -1680,7 +1693,7 @@ public class ThaumRevContent {
 		researchTransmutationOs.registerResearchItem();
 		researchTransmutationIr.registerResearchItem();
 
-		/*researchClusterNi.registerResearchItem();
+		researchClusterNi.registerResearchItem();
 		if (OreDictionary.doesOreNameExist("oreAluminium")) {
 			researchClusterAl.registerResearchItem();
 		}
@@ -1694,8 +1707,6 @@ public class ThaumRevContent {
 			researchClusterPt.registerResearchItem();
 		}
 		researchClusterIrOs.registerResearchItem();
-*/
-
 
 	}
 
@@ -1763,7 +1774,7 @@ public class ThaumRevContent {
 		researchTransmutationOs.setPages(new ResearchPage("0"), new ResearchPage(recipeTransOsmium));
 		researchTransmutationIr.setPages(new ResearchPage("0"), new ResearchPage(recipeTransIridium));
 
-		/*researchClusterNi.setPages(new ResearchPage("0"), new ResearchPage(recipeClusterNickel));
+		researchClusterNi.setPages(new ResearchPage("0"), new ResearchPage(recipeClusterNickel));
 		if (OreDictionary.doesOreNameExist("oreAluminium")) {
 			researchClusterAl.setPages(new ResearchPage("0"), new ResearchPage(recipeClusterAluminium));
 		}
@@ -1776,9 +1787,7 @@ public class ThaumRevContent {
 		if (OreDictionary.doesOreNameExist("orePlatinum")) {
 			researchClusterPt.setPages(new ResearchPage("0"), new ResearchPage(recipeClusterPlatinum));
 		}
-		researchClusterIrOs.setPages(new ResearchPage("0"), new ResearchPage(recipeClusterIridosmium));*/
-
-
+		researchClusterIrOs.setPages(new ResearchPage("0"), new ResearchPage(recipeClusterIridosmium));
 	}
 
 	public static void determineTempus() {

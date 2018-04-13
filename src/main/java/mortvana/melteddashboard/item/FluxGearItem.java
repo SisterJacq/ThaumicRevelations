@@ -113,6 +113,25 @@ public class FluxGearItem extends Item {
         return addOreDictItem(metadata, name, 0, true, oreDict);
     }
 
+	// addOreDictItemWithEffect(...) {}
+	public ItemStack addOreDictItemWithEffect(int metadata, String name, String texture, int rarity, boolean register, String... oreDict) {
+		ItemStack itemstack = addOreDictItem(metadata, name, rarity, register, oreDict);
+		itemMap.get(metadata).setTexture(texture).setEnchanted(true);
+		return itemstack;
+	}
+	public ItemStack addOreDictItemWithEffect(int metadata, String name, String texture, int rarity, String... oreDict) {
+		return addOreDictItemWithEffect(metadata, name, texture, rarity, true, oreDict);
+	}
+	public ItemStack addOreDictItemWithEffect(int metadata, String name, String texture, String... oreDict) {
+		return addOreDictItemWithEffect(metadata, name, texture, 0, true, oreDict);
+	}
+	public ItemStack addOreDictItemWithEffect(int metadata, String name, String texture) {
+		return addOreDictItemWithEffect(metadata, name, texture, 0, true, name);
+	}
+	public ItemStack addOreDictItemWithEffect(int metadata, String name) {
+		return addOreDictItemWithEffect(metadata, name, name, 0, true, name);
+	}
+
     // addColorizedOreDictItem(...) {}
     public ItemStack addColorizedOreDictItem(int metadata, String name, int rarity, boolean register, String template, String texture, int color, String... oreDict) {
         ItemStack stack = addColorizedItem(metadata, name, rarity, register, texture, template, color);
@@ -141,7 +160,6 @@ public class FluxGearItem extends Item {
     }*/
 
     @Override
-    //@SideOnly(Side.CLIENT)
     public void getSubItems(Item item, CreativeTabs tab, List list) {
         for (int meta : itemList) {
             list.add(new ItemStack(item, 1, meta));
@@ -240,11 +258,11 @@ public class FluxGearItem extends Item {
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IIconRegister iconRegister) {
-        if (!grayscaled) {
+        /*if (!grayscaled) {
             for (EnumGrayscaleItems item : EnumGrayscaleItems.values()) {
                 item.setIcon(iconRegister.registerIcon("fluxgear:grayscale/" + item.getName()));
             }
-        }
+        }*/
         if (hasTextures) {
             for (int i = 0; i < itemList.size(); i++) {
                 ItemEntry entry = itemMap.get(itemList.get(i));
@@ -298,6 +316,34 @@ public class FluxGearItem extends Item {
     public boolean hasTexture(int metadata) {
         return TextureHelper.itemTextureExists(getIconFromMeta(metadata));
     }
+
+	public void setEnchanted(int metadata, boolean bool) {
+		if (itemMap.containsKey(metadata)) {
+			itemMap.get(metadata).enchanted = bool;
+		}
+	}
+
+	public void setEnchanted(int metadata) {
+		setEnchanted(metadata, true);
+	}
+
+	public void setEnchanted(boolean bool, int... metadata) {
+		for (int i : metadata) {
+			setEnchanted(i, bool);
+		}
+	}
+
+	@Override
+	@SideOnly(Side.CLIENT)
+	public boolean hasEffect(ItemStack itemstack, int pass) {
+		if (itemstack != null) {
+			int meta = itemstack.getItemDamage();
+			if (itemMap.containsKey(meta)) {
+				return itemMap.get(meta).enchanted;
+			}
+		}
+		return false;
+	}
 
 /*    @Override
     public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean par4) {

@@ -19,4 +19,6 @@ public class BlockWoodDecor extends FluxGearBlockBase {
 
 	public static final String[] NAMES = { "greatwoodImpregnated", "greatwoodCorrupted", "silverwoodHardened" };
 
+	public static final int[] RARITY = { 1, 1, 1 };
+
 }

@@ -18,11 +18,11 @@ import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.crafting.*;
 import thaumcraft.common.lib.utils.Utils;
 
-import mortvana.melteddashboard.lib.ThermalLibrary;
 import mortvana.melteddashboard.util.IStackProvider;
 import mortvana.melteddashboard.util.helpers.ItemHelper;
 
 import static mortvana.melteddashboard.lib.ThermalLibrary.*;
+import static mortvana.melteddashboard.util.helpers.ItemHelper.cloneStack;
 
 public class RecipeHelper {
 
@@ -48,11 +48,15 @@ public class RecipeHelper {
 	}
 
 	public static ShapedOreRecipe addStickRecipe(ItemStack result, Object input) {
-		return addShapedRecipe(ItemHelper.cloneStack(result, 4), "#", "#", '#', input);
+		return addShapedRecipe(cloneStack(result, 4), "#", "#", '#', input);
 	}
 
 	public static ShapedOreRecipe addSlabRecipe(ItemStack result, Object input) {
-		return addShapedRecipe(result, "###", '#', input);
+		return addShapedRecipe(cloneStack(result, 6), "###", '#', input);
+	}
+
+	public static ShapedOreRecipe addStairRecipe(ItemStack result, Object input) {
+		return addShapedRecipe(cloneStack(result, 4), "#  ", "## ", "###", '#', input);
 	}
 
 	/** SHAPELESS CRAFTING * */
@@ -63,11 +67,11 @@ public class RecipeHelper {
 	}
 
 	public static ShapelessOreRecipe addShapelessSizedOreRecipe(ItemStack result, int modifier, String... input) {
-		return addShapelessRecipe(ItemHelper.cloneStack(result, input.length + modifier), input);
+		return addShapelessRecipe(cloneStack(result, input.length + modifier), input);
 	}
 
 	public static ShapelessOreRecipe generateShapelessSizedOreRecipe(ItemStack result, int modifier, String... input) {
-		return new ShapelessOreRecipe(ItemHelper.cloneStack(result, input.length + modifier), input);
+		return new ShapelessOreRecipe(cloneStack(result, input.length + modifier), input);
 	}
 
 	public static ShapelessOreRecipe generateShapelessRecipe(ItemStack result, int size, String... input) {
@@ -83,15 +87,19 @@ public class RecipeHelper {
 	}
 
 	public static ShapelessOreRecipe addDeblockingRecipe(ItemStack result, Object input) {
-		return addShapelessRecipe(ItemHelper.cloneStack(result, 4), input);
+		return addShapelessRecipe(cloneStack(result, 4), input);
 	}
 
 	public static ShapelessOreRecipe addReverseStorageRecipe(ItemStack result, Object input) {
-		return addShapelessRecipe(ItemHelper.cloneStack(result, 9), input);
+		return addShapelessRecipe(cloneStack(result, 9), input);
 	}
 
 	public static ShapelessOreRecipe addDeslabingRecipe(ItemStack result, Object input) {
 		return addShapelessRecipe(result, input, input);
+	}
+
+	public static ShapelessOreRecipe addDestairRecipe(ItemStack result, Object input) {
+		return addShapelessRecipe(cloneStack(result, 6), input, input, input, input);
 	}
 
 	/** SMELTING * */
@@ -239,7 +247,7 @@ public class RecipeHelper {
 	}
 
 	public static void addPulverizerRecycleRecipe(ItemStack output, ItemStack input, int amount) {
-		addPulverizerRecipe((amount * 300) + 600, input, ItemHelper.cloneStack(output, amount));
+		addPulverizerRecipe((amount * 300) + 600, input, cloneStack(output, amount));
 	}
 
 	public static void addPulverizerRecycleRecipes(ItemStack output, ItemStack[] inputs, int[] amounts) {
@@ -251,7 +259,7 @@ public class RecipeHelper {
 	}
 
 	public static void addPulverizerOreRecipe(ItemStack input, ItemStack primaryOutput, ItemStack secondaryOutput) {
-		addPulverizerRecipe(4000, input, ItemHelper.cloneStack(primaryOutput, 2), secondaryOutput, 10);
+		addPulverizerRecipe(4000, input, cloneStack(primaryOutput, 2), secondaryOutput, 10);
 	}
 
 	public static void removePulverizerRecipe(ItemStack input) {
@@ -307,14 +315,14 @@ public class RecipeHelper {
 		ArrayList<ItemStack> secondaryOreList = OreDictionary.getOres("dust" + soluteName);
 
 		if (primaryOreList.size() > 0 && secondaryOreList.size() > 0) {
-			addInductionSmelterRecipe(1600, ItemHelper.cloneStack(primaryOreList.get(0), solventAmount), ItemHelper.cloneStack(secondaryOreList.get(0), soluteAmount), ItemHelper.cloneStack(output, solventAmount + soluteAmount));
+			addInductionSmelterRecipe(1600, cloneStack(primaryOreList.get(0), solventAmount), cloneStack(secondaryOreList.get(0), soluteAmount), ItemHelper.cloneStack(output, solventAmount + soluteAmount));
 		}
 
 		primaryOreList = OreDictionary.getOres("ingot" + solventName);
 		secondaryOreList = OreDictionary.getOres("ingot" + soluteName);
 
 		if (primaryOreList.size() > 0 && secondaryOreList.size() > 0) {
-			addInductionSmelterRecipe(2400, ItemHelper.cloneStack(primaryOreList.get(0), solventAmount), ItemHelper.cloneStack(secondaryOreList.get(0), soluteAmount), ItemHelper.cloneStack(output, solventAmount + soluteAmount));
+			addInductionSmelterRecipe(2400, cloneStack(primaryOreList.get(0), solventAmount), cloneStack(secondaryOreList.get(0), soluteAmount), ItemHelper.cloneStack(output, solventAmount + soluteAmount));
 		}
 	}
 
@@ -324,10 +332,10 @@ public class RecipeHelper {
 
 		//TODO: Get quantity from TE Config
 
-		addInductionSmelterRecipe(3200, new ItemStack(Blocks.sand), ore, ItemHelper.cloneStack(ingot, 2), itemSlagRich, 5); //Zn,YPO,Bi,Cu2
-		addInductionSmelterRecipe(4000, itemSlagRich, ore, ItemHelper.cloneStack(ingot, 3), itemSlag, 75); //YPO,Cu2
-		addInductionSmelterRecipe(4000, dustPyrotheum, ore, ItemHelper.cloneStack(ingot, 2), itemSlagRich, 15); //YPO,Cu2
-		addInductionSmelterRecipe(4000, itemCinnabar, ore, ItemHelper.cloneStack(ingot, 3), bonusIngot == null ? itemSlagRich : bonusIngot, bonusIngot == null ? 75 : 100); //YPO,Cu2
+		addInductionSmelterRecipe(3200, new ItemStack(Blocks.sand), ore, cloneStack(ingot, 2), itemSlagRich, 5); //Zn,YPO,Bi,Cu2
+		addInductionSmelterRecipe(4000, itemSlagRich, ore, cloneStack(ingot, 3), itemSlag, 75); //YPO,Cu2
+		addInductionSmelterRecipe(4000, dustPyrotheum, ore, cloneStack(ingot, 2), itemSlagRich, 15); //YPO,Cu2
+		addInductionSmelterRecipe(4000, itemCinnabar, ore, cloneStack(ingot, 3), bonusIngot == null ? itemSlagRich : bonusIngot, bonusIngot == null ? 75 : 100); //YPO,Cu2
 	}
 
 	public static void addInductionOreRecipes(String name, ItemStack bonusIngot) {

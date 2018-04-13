@@ -78,7 +78,7 @@ public class ThaumRevLibrary {
 	//public static Block blockMetalDevice;
 	public static Block blockStoneSlab;
 	public static Block blockStoneSlabDouble;
-	public static Block blockQuartzStairs;
+	public static Block blockWardenicQuartzStairs;
 
 	/** ITEMS **/
 	public static FluxGearItemInteractive generalItem;
@@ -100,9 +100,9 @@ public class ThaumRevLibrary {
 
 	public static ItemStack wardenicObsidian;
 	public static ItemStack eldritchStone;
-	public static ItemStack wardenicQuartzBlock;
-	public static ItemStack wardenicQuartzChiseled;
-	public static ItemStack wardenicQuartzPillar;
+	public static ItemStack blockWardenicQuartz;
+	public static ItemStack blockWardenicQuartzChiseled;
+	public static ItemStack blockWardenicQuartzPillar;
 	public static ItemStack thaumicStone;
 	public static ItemStack infernalBlastBrick;
 	public static ItemStack shadowforgeBrick;
@@ -187,24 +187,41 @@ public class ThaumRevLibrary {
 	public static ItemStack slabEldritch;
 	public static ItemStack slabWardenicQuartz;
 
+	public static ItemStack stairsWardenicQuartz;
+
 	//GENERAL ITEM
 	//00000-00199 GENERAL ITEMS
-	public static ItemStack arcaneSingularity;				//00000
-	public static ItemStack stabilizedSingularity;			//00001
-	public static ItemStack animatedPiston;					//00002
-	public static ItemStack enchantedSilverwood;			//00003
-	public static ItemStack consecratedSilverwood;			//00004
-	public static ItemStack cotton;							//00005
-	public static ItemStack cottonFiber;					//00006
-	public static ItemStack cottonFabric;					//00007
-	public static ItemStack cottonTreated;					//00008
-	public static ItemStack cottonEnchanted;				//00009
-	public static ItemStack thaumicBronzeChain;				//00010
-	public static ItemStack eldritchCog;					//00011
-	public static ItemStack eldritchKeystone;				//00012
-	public static ItemStack thistleLeaf;					//00013
-	public static ItemStack thistleFlower;					//00014
-	public static ItemStack aspectOrbReceptor;				//00015
+	public static ItemStack cotton;							//00000
+	public static ItemStack cottonFiber;					//00001
+	public static ItemStack cottonFabric;					//00002
+	public static ItemStack cottonTreated;					//00003
+	public static ItemStack cottonEnchanted;				//00004
+	public static ItemStack thistleLeaf;					//00005
+	public static ItemStack thistleFlower;					//00006
+
+	public static ItemStack arcaneSingularity;				//00010
+	public static ItemStack stabilizedSingularity;			//00011
+	public static ItemStack animatedPiston;					//00012
+
+	public static ItemStack aspectOrbReceptor;				//00020
+
+	public static ItemStack eldritchCog;					//00030
+	public static ItemStack eldritchKeystone;				//00031
+
+	public static ItemStack greatwoodShaft;					//00040
+	public static ItemStack greatwoodEnchanted;				//00041
+	public static ItemStack greatwoodShaftEnchanted;		//00042
+
+	public static ItemStack silverwoodDensified;			//00050
+	public static ItemStack silverwoodEnchanted;			//00051
+	public static ItemStack silverwoodEnchantedDensified;	//00052
+	public static ItemStack silverwoodConsecrated;			//00053
+	public static ItemStack silverwoodShaftEnchanted;		//00054
+	public static ItemStack silverwoodShaftConsecrated;		//00055
+
+	public static ItemStack thaumicBronzeChain;				//00060
+
+
 
 	//public static ItemStack aluminiumHydroxide;				//00016
 
@@ -843,7 +860,7 @@ public class ThaumRevLibrary {
 	public static /*RunicInfuserRecipe*/ ShapelessArcaneRecipe recipeStableSingularity;
 
 	public static /*RunicInfuserRecipe*/ ShapelessArcaneRecipe recipeEnchSilverwood;
-	public static /*RunicInfuserRecipe*/ ShapelessArcaneRecipe recipeConsSilverwood;
+	public static /*RunicInfuserRecipe*/ InfusionRecipe recipeConsSilverwood;
 
 	//public static ShapedArcaneRecipe recipeDarkRunicInfuser;
 

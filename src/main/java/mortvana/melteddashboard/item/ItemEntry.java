@@ -14,6 +14,7 @@ public class ItemEntry {
     public int rarity = 0;
     public int maxDamage = 0;
 	public int color = 0xFFFFFF;
+	public boolean enchanted;
 
     public ItemEntry(String name, int rarity, int maxDamage) {
         this.name = name;
@@ -55,4 +56,8 @@ public class ItemEntry {
 		return this;
 	}
 
+	public ItemEntry setEnchanted(boolean enchanted) {
+		this.enchanted = enchanted;
+		return this;
+	}
 }

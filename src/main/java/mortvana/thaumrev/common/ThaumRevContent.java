@@ -68,6 +68,7 @@ public class ThaumRevContent {
 
 	public static void postInit() {
 		ResearchCategories.registerCategory(RESEARCH_KEY_MAIN, new ResourceLocation(RESOURCE_PREFIX, "textures/items/baubles/amuletWarden.png"), new ResourceLocation("thaumrev", "textures/gui/gui_researchbackthaumrev.png"));
+		ResearchCategories.registerCategory(RESEARCH_KEY_METAL, new ResourceLocation(RESOURCE_PREFIX, "textures/items/material/ingotThaumicBronze.png"), new ResourceLocation("thaumrev", "textures/gui/gui_researchbackthaumrev.png"));
 		aluminiumArc();
 		addLoot();
 		determineTempus();
@@ -340,7 +341,7 @@ public class ThaumRevContent {
 		nuggetElectrum = generalItem.addOreDictItem(334, "nuggetElectrum");
 		nuggetWardenicMetal = generalItem.addOreDictItem(335, "nuggetWardenicMetal");
 		nuggetDullRedsolder = generalItem.addOreDictItem(336, "nuggetDullRedsolder");
-		nuggetRedsolder = generalItem.addOreDictItem(336, "nuggetRedsolder");
+		nuggetRedsolder = generalItem.addOreDictItem(337, "nuggetRedsolder");
 
 		nuggetThaumicBronze = generalItem.addOreDictItem(350, "nuggetThaumicBronze");
 		nuggetOsLu = generalItem.addOreDictItem(351, "nuggetOsmiumLutetium", 2);
@@ -1281,7 +1282,7 @@ public class ThaumRevContent {
 		recipeThaumicBronzeRaw = addShapelessArcaneCraftingRecipe(keyThaumicBronze, rawThaumicBronze, new AspectList().add(ORDER, 5).add(EARTH, 5).add(FIRE, 5), nBronze, nBronze, nBronze, nBronze, nBronze, nBronze, "nuggetThaumium", "nuggetThaumium", "nuggetBrass");
 		recipeThaumicBronzeCoated = addShapelessArcaneCraftingRecipe(keyThaumicBronze, coatedThaumicBronze, new AspectList().add(EARTH, 5).add(WATER, 5), "ingotThaumicBronzeRaw", nHg, salisPinch, "itemClay");
 
-		recipeThaumicRBronze = addInfusionCraftingRecipe(keyThaumicTBronze, ingotThaumicRiftishBronze, 1, new AspectList().add(MAGIC, 8), ingotRiftishBronze, tinySalisMundus, tinySalisMundus, tinySalisMundus, itemQuicksilverDrop);
+		recipeThaumicRBronze = addInfusionCraftingRecipe(keyThaumicRBronze, ingotThaumicRiftishBronze, 1, new AspectList().add(MAGIC, 8), ingotRiftishBronze, tinySalisMundus, tinySalisMundus, tinySalisMundus, itemQuicksilverDrop);
 
 		recipeThaumicBronzeChain = addArcaneCraftingRecipe(keyBronzeChain, ItemHelper.cloneStack(thaumicBronzeChain, 12), new AspectList().add(ORDER, 10).add(FIRE, 5), " X ", "X X", 'X', "ingotThaumicBronze");
 
@@ -1409,43 +1410,74 @@ public class ThaumRevContent {
 	}
 
 	public static void loadResearch() {
-		researchThaumRev = new FluxGearResearchItem(keyThaumRev, new AspectList(), 0, 0, 0, potato);
-		researchMaterial = new FluxGearResearchItem(keyMaterial, new AspectList(), 0, 3, 0, oreDioptase);
-		researchAlloys = new FluxGearResearchItem(keyAlloys, new AspectList(), -2, 2, 0, ingotBrass);
+		String key = RESEARCH_KEY_MAIN;
+		researchThaumRev = new FluxGearResearchItem(keyThaumRev, key, new AspectList(), 0, 0, 0, potato);
+		researchMaterial = new FluxGearResearchItem(keyMaterial, key, new AspectList(), -1, 3, 0, oreDioptase);
+		researchAlloys = new FluxGearResearchItem(keyAlloys, key, new AspectList(), -3, 6, 0, ingotBrass);
 
-		researchCotton = new FluxGearResearchItem(keyCotton, new AspectList().add(CLOTH, 4).add(ARMOR, 3).add(MAGIC, 3), -8, 2, 1, cottonEnchanted);
-		researchPrimalRobes = new FluxGearResearchItem(keyRobesPrimal, new AspectList().add(MAGIC, 4).add(CLOTH, 4).add(ARMOR, 3).add(ENERGY, 2).add(SENSES, 2).add(ThaumcraftHelper.newPrimalAspectList(1)), -7, 6, 3, primalRobes);
-		researchAniPiston = new FluxGearResearchItem(keyAniPiston, new AspectList().add(AIR, 3).add(MECHANISM, 3).add(MOTION, 3), 1, 5, 1, animatedPiston);
-		researchThaumicBronze = new FluxGearResearchItem(keyThaumicBronze, new AspectList().add(METAL, 4).add(MAGIC, 3).add(ORDER, 1), -3, 4, 1, ingotThaumicBronze);
-		researchThaumicTBronze = new FluxGearResearchItem(keyThaumicTBronze, new AspectList().add(MAGIC, 5).add(METAL, 4).add(ORDER, 1), -4, 7, 2, ingotThaumicRiftishBronze);
-		researchBronzeChain = new FluxGearResearchItem(keyBronzeChain, new AspectList().add(METAL, 4).add(MAGIC, 2).add(CRAFT, 3), -5, 5, 1, thaumicBronzeChain);
-		researchArmorBronzeChain = new FluxGearResearchItem(keyArmorBronzeChain, new AspectList().add(METAL, 4).add(MAGIC, 3).add(ARMOR, 3), -7, 4, 1, bronzeChainmail);
-		researchRunicInfuser = new FluxGearResearchItem(keyRunicInfuser, new AspectList().add(ENERGY, 4).add(MAGIC, 4).add(AURA, 2).add(CRAFT, 3).add(MECHANISM, 4), 2, 3, 2, arcaneSingularity);
-		researchEnchSilverwood = new FluxGearResearchItem(keyEnchSilverwood, new AspectList().add(TREE, 3).add(MAGIC, 3).add(AURA, 3).add(ORDER, 3), 3, 2, 1, enchantedSilverwood);
+		researchThaumicBronze = new FluxGearResearchItem(keyThaumicBronze, key, new AspectList().add(METAL, 4).add(MAGIC, 3).add(ORDER, 1), -3, 8, 1, ingotThaumicBronze);
+		researchBronzeChain = new FluxGearResearchItem(keyBronzeChain, key, new AspectList().add(METAL, 4).add(MAGIC, 2).add(CRAFT, 3), -3, 10, 1, thaumicBronzeChain);
+		researchArmorBronzeChain = new FluxGearResearchItem(keyArmorBronzeChain, key, new AspectList().add(METAL, 4).add(MAGIC, 3).add(ARMOR, 3), -5, 11, 1, new ItemStack(bronzeChainmail));
+		researchThaumicRBronze = new FluxGearResearchItem(keyThaumicRBronze, key, new AspectList().add(MAGIC, 5).add(METAL, 4).add(ORDER, 1), -5, 7, 2, ingotThaumicRiftishBronze);
+		researchThaumicElectrum = new FluxGearResearchItem(keyThaumicElectrum, key, new AspectList().add(METAL, 4).add(MAGIC, 4).add(GREED, 2).add(ENERGY, 2).add(ORDER, 1), -5, 5, 2, ingotThaumicElectrum);
+		researchCotton = new FluxGearResearchItem(keyCotton, key, new AspectList().add(CLOTH, 4).add(ARMOR, 3).add(MAGIC, 3), -8, 4, 1, cottonEnchanted);
+		researchPrimalRobes = new FluxGearResearchItem(keyRobesPrimal, key, new AspectList().add(MAGIC, 4).add(CLOTH, 4).add(ARMOR, 3).add(ENERGY, 2).add(SENSES, 2).add(ThaumcraftHelper.newPrimalAspectList(1)), -7, 6, 3, new ItemStack(primalRobes));
 
-		researchTransmutationFe = new DummyResearchItem(keyTransmutationFe, "TRANSIRON", "ALCHEMY", -13, 6, nuggetIronTC).registerResearchItem();
-		researchTransmutationSn = new DummyResearchItem(keyTransmutationSn, "TRANSTIN", "ALCHEMY", -12, 8, nuggetTinTC).setParents(keyTransmutationFe).registerResearchItem();
-		researchTransmutationAg = new DummyResearchItem(keyTransmutationAg, "TRANSSILVER", "ALCHEMY", -14, 4, nuggetSilverTC).setParents(keyTransmutationFe).registerResearchItem();
-		researchTransmutationPb = new DummyResearchItem(keyTransmutationPb, "TRANSLEAD", "ALCHEMY", -15, 10, nuggetLeadTC).setParents(keyTransmutationFe).registerResearchItem();
-		researchTransmutationAu = new DummyResearchItem(keyTransmutationAu, "TRANSGOLD", "ALCHEMY", -15, 8, new ItemStack(Items.gold_nugget)).setParents(keyTransmutationFe).registerResearchItem();
+		researchRunicInfuser = new FluxGearResearchItem(keyRunicInfuser, key, new AspectList().add(ENERGY, 4).add(MAGIC, 4).add(AURA, 2).add(CRAFT, 3).add(MECHANISM, 4), 1, 6, 2, arcaneSingularity);
+		researchAniPiston = new FluxGearResearchItem(keyAniPiston, key, new AspectList().add(AIR, 3).add(MECHANISM, 3).add(MOTION, 3), 0, 8, 1, animatedPiston);
+		researchEnchSilverwood = new FluxGearResearchItem(keyEnchSilverwood, key, new AspectList().add(TREE, 3).add(MAGIC, 3).add(AURA, 3).add(ORDER, 3), 7, 8, 1, enchantedSilverwood);
 
-		researchTransmutationNi = new FluxGearResearchItem(keyTransmutationNi, new AspectList().add(METAL, 3).add(EXCHANGE, 2).add(VOID, 1), -15, 6, 1, nuggetNickel);
-		researchTransmutationAl = new FluxGearResearchItem(keyTransmutationAl, new AspectList().add(METAL, 3).add(EXCHANGE, 2).add(ORDER, 1), -11, 5, 1, nuggetAluminium);
-		researchTransmutationNd = new FluxGearResearchItem(keyTransmutationNd, new AspectList().add(METAL, 3).add(EXCHANGE, 2).add(ENERGY, 1), -12, 3, 1, nuggetNeodymium);
-		researchTransmutationZn = new FluxGearResearchItem(keyTransmutationZn, new AspectList().add(METAL, 3).add(EXCHANGE, 2).add(CRYSTAL, 1), -10, 7, 1, nuggetZinc);
-		researchTransmutationAs = new FluxGearResearchItem(keyTransmutationAs, new AspectList().add(METAL, 3).add(EXCHANGE, 2).add(POISON, 1), -9, 9, 1, tinyArsenic);
-		researchTransmutationSb = new FluxGearResearchItem(keyTransmutationSb, new AspectList().add(METAL, 3).add(EXCHANGE, 2).add(POISON, 1), -11, 11, 1, tinyAntimony);
-		researchTransmutationBi = new FluxGearResearchItem(keyTransmutationBi, new AspectList().add(METAL, 3).add(EXCHANGE, 2).add(ORDER, 1), -13, 10, 1, nuggetBismuth);
-		researchTransmutationW = new FluxGearResearchItem(keyTransmutationW, new AspectList().add(METAL, 4).add(EXCHANGE, 2).add(MECHANISM, 1).add(ARMOR, 1), -17, 9, 1, nuggetTungsten);
-		researchTransmutationLu = new FluxGearResearchItem(keyTransmutationLu, new AspectList().add(METAL, 3).add(EXCHANGE, 2).add(EARTH, 1), -14, 2, 1, nuggetLutetium);
-		researchTransmutationPd = new FluxGearResearchItem(keyTransmutationPd, new AspectList().add(METAL, 3).add(EXCHANGE, 3), -16, 4, 1, nuggetPalladium);
+		researchWardenry = new FluxGearResearchItem(keyWardenry, key, new AspectList().add(WARDEN, 4).add(MAGIC, 3).add(ELDRITCH, 2).add(ENERGY, 2), -2, 0, 2, new ItemStack(blockThaumicPlant));
+
+		researchExcubituraPaste = new FluxGearResearchItem(keyExcubituraPaste, key, new AspectList().add(PLANT, 4).add(MAGIC, 4).add(WARDEN, 1), -4, 2, 1, excubituraPaste);
+		researchWardencloth = new FluxGearResearchItem(keyWardencloth, key, new AspectList().add(MAGIC, 4).add(CLOTH, 4).add(ARMOR, 3).add(WARDEN, 1), -6, 3, 1, itemWardencloth);
+		researchArmorWardencloth = new FluxGearResearchItem(keyArmorWardencloth, key, new AspectList().add(ARMOR, 4).add(MAGIC, 4).add(CLOTH, 4).add(WARDEN, 4), -8, 2, 1, new ItemStack(wardenclothTunic));
+
+		researchExcubituraOil = new FluxGearResearchItem(keyExcubituraOil, key, new AspectList().add(MAGIC, 4).add(PLANT, 3).add(WARDEN, 2).add(WATER, 3), -5, -1, 1, excubituraOil);
+		researchWardenChain = new FluxGearResearchItem(keyWardenChain, key, new AspectList().add(METAL, 4).add(MAGIC, 4).add(ARMOR, 3).add(WARDEN, 2), -7, -2, 1, wardenicBronzeChain);
+		researchArmorWardenChain = new FluxGearResearchItem(keyArmorWardenChain, key, new AspectList().add(ARMOR, 4).add(METAL, 4).add(MAGIC, 4).add(WARDEN, 4), -9, -3, 1, new ItemStack(wardenicChainmail));
+
+		researchPureOil = new FluxGearResearchItem(keyPureOil, key, new AspectList().add(MAGIC, 4).add(WATER, 4).add(WARDEN, 3).add(ENERGY, 3), -6, -4, 2, excubituraOilPure);
+		researchWardenSteel = new FluxGearResearchItem(keyWardenSteel, key, new AspectList().add(METAL, 5).add(MAGIC, 4).add(TOOL, 2).add(ARMOR, 2).add(WARDEN, 3), -8, -5, 2, ingotWardenicSteel);
+		researchWardenPlate = new FluxGearResearchItem(keyWardenPlate, key, new AspectList().add(METAL, 4).add(MAGIC, 3).add(ARMOR, 3).add(WARDEN, 3), -10, -6, 2, plateWardenicSteel);
+		researchArmorWardenSteel = new FluxGearResearchItem(keyArmorWardenSteel, key, new AspectList().add(ARMOR, 4).add(METAL, 4).add(MAGIC, 4).add(WARDEN, 4), -12, -8, 2, new ItemStack(wardenicChestplate));
+		researchWardenicObsidian = new FluxGearResearchItem(keyWardenicObsidian, key, new AspectList().add(EARTH, 4).add(CRYSTAL, 4).add(FIRE, 3).add(MAGIC, 3).add(ARMOR, 4).add(WARDEN, 1), -3, -2, 2, wardenicObsidian);
+
+		researchQuartz = new FluxGearResearchItem(keyQuartz, key, new AspectList().add(CRYSTAL, 4).add(MAGIC, 4).add(WARDEN, 4).add(ENERGY, 3).add(TOOL, 2), -7, -7, 2, gemWardenicQuartz);
+		researchWardenCrystal = new FluxGearResearchItem(keyWardenCrystal, key, new AspectList().add(MAGIC, 4).add(CRYSTAL, 4).add(WARDEN, 4).add(ENERGY, 3).add(ORDER, 3), -9, -8, 2, gemWardenicCrystal);
+		researchWardenBronze = new FluxGearResearchItem(keyWardenBronze, key, new AspectList().add(METAL, 5).add(MAGIC, 4).add(WARDEN, 4).add(ARMOR, 3).add(TOOL, 3), -11, -10, 2, ingotWardenicRiftishBronze);
+		researchWardenComposite = new FluxGearResearchItem(keyWardenComposite, key, new AspectList().add(METAL, 6).add(MAGIC, 4).add(ARMOR, 4).add(TOOL, 3).add(WARDEN, 4), -12, -12, 2, plateWardenicComposite);
+		researchWardenCompositePlate = new FluxGearResearchItem(keyWardenCompositePlate, key, new AspectList().add(METAL, 3).add(MAGIC, 2).add(WARDEN, 1), -11, -14, 1, plateWardenicComposite);
+		researchWardenCompositeFitting = new FluxGearResearchItem(keyWardenCompositeFitting, key, new AspectList().add(METAL, 5).add(MAGIC, 4).add(ARMOR, 4).add(WARDEN, 4).add(ENERGY, 2), -9, -15, 3, consecratedCompositePlate);
+		researchArmorWardenComposite = new FluxGearResearchItem(keyArmorWardenComposite, key, new AspectList().add(ARMOR, 4).add(METAL, 4).add(WARDEN, 4).add(MAGIC, 4).add(ORDER, 4), -7, -16, 3, new ItemStack(wardenicCompositeChestplate));
+
+		researchWardenCrystalAwakened = new FluxGearResearchItem(keyWardenCrystalAwakened, key, ThaumcraftHelper.newPrimalAspectList(3).add(WARDEN, 6).add(MAGIC, 6).add(CRYSTAL, 4).add(ENERGY, 6), -5, -10, 3, gemWardenicCrystalAwakened);
+
+		key = RESEARCH_KEY_METAL;
+
+		researchTransmutationFe = new DummyResearchItem(keyTransmutationFe, key, "TRANSIRON", "ALCHEMY", -33, -8, nuggetIronTC).registerResearchItem();
+		researchTransmutationSn = new DummyResearchItem(keyTransmutationSn, key, "TRANSTIN", "ALCHEMY", -36, -14, nuggetTinTC).setParents(keyTransmutationFe).registerResearchItem();
+		researchTransmutationAg = new DummyResearchItem(keyTransmutationAg, key, "TRANSSILVER", "ALCHEMY", -38, -12, nuggetSilverTC).setParents(keyTransmutationFe).registerResearchItem();
+		researchTransmutationPb = new DummyResearchItem(keyTransmutationPb, key, "TRANSLEAD", "ALCHEMY", -34, -15, nuggetLeadTC).setParents(keyTransmutationFe).registerResearchItem();
+		researchTransmutationAu = new DummyResearchItem(keyTransmutationAu, key, "TRANSGOLD", "ALCHEMY", -32, -15, new ItemStack(Items.gold_nugget)).setParents(keyTransmutationFe).registerResearchItem();
+
+		researchTransmutationNi = new FluxGearResearchItem(keyTransmutationNi, key, new AspectList().add(METAL, 3).add(EXCHANGE, 2).add(VOID, 1), -39, -10, 1, nuggetNickel);
+		researchTransmutationAl = new FluxGearResearchItem(keyTransmutationAl, key, new AspectList().add(METAL, 3).add(EXCHANGE, 2).add(ORDER, 1), -27, -10, 1, nuggetAluminium);
+		researchTransmutationNd = new FluxGearResearchItem(keyTransmutationNd, key, new AspectList().add(METAL, 3).add(EXCHANGE, 2).add(ENERGY, 1), -34, -1, 1, nuggetNeodymium);
+		researchTransmutationZn = new FluxGearResearchItem(keyTransmutationZn, key, new AspectList().add(METAL, 3).add(EXCHANGE, 2).add(CRYSTAL, 1), -39, -17, 1, nuggetZinc);
+		researchTransmutationAs = new FluxGearResearchItem(keyTransmutationAs, key, new AspectList().add(METAL, 3).add(EXCHANGE, 2).add(POISON, 1), -36, -21, 1, nuggetArsenic);
+		researchTransmutationSb = new FluxGearResearchItem(keyTransmutationSb, key, new AspectList().add(METAL, 3).add(EXCHANGE, 2).add(POISON, 1), -35, -19, 1, nuggetAntimony);
+		researchTransmutationBi = new FluxGearResearchItem(keyTransmutationBi, key, new AspectList().add(METAL, 3).add(EXCHANGE, 2).add(ORDER, 1), -35, -17, 1, nuggetBismuth);
+		researchTransmutationW = new FluxGearResearchItem(keyTransmutationW, key, new AspectList().add(METAL, 4).add(EXCHANGE, 2).add(MECHANISM, 1).add(ARMOR, 1), -33, -17, 1, nuggetTungsten);
+		researchTransmutationLu = new FluxGearResearchItem(keyTransmutationLu, key, new AspectList().add(METAL, 3).add(EXCHANGE, 2).add(EARTH, 1), -33, 1, 1, nuggetLutetium);
+		researchTransmutationPd = new FluxGearResearchItem(keyTransmutationPd, key, new AspectList().add(METAL, 3).add(EXCHANGE, 3), -41, -10, 1, nuggetPalladium);
 		if (OreDictionary.doesOreNameExist("nuggetPlatinum")) {
-			researchTransmutationPt = new FluxGearResearchItem(keyTransmutationPt, new AspectList().add(METAL, 3).add(EXCHANGE, 3).add(GREED, 1), -18, 6, 1, OreDictionary.getOres("nuggetPlatinum").get(0));
+			researchTransmutationPt = new FluxGearResearchItem(keyTransmutationPt, key, new AspectList().add(METAL, 3).add(EXCHANGE, 3).add(GREED, 1), -31, -21, 1, OreDictionary.getOres("nuggetPlatinum").get(0));
 		}
-		researchTransmutationOs = new FluxGearResearchItem(keyTransmutationOs, new AspectList().add(METAL, 3).add(EXCHANGE, 2).add(ARMOR, 1).add(ORDER, 1), -19, 8, 1, nuggetPalladium);
-		researchTransmutationIr = new FluxGearResearchItem(keyTransmutationIr, new AspectList().add(METAL, 3).add(EXCHANGE, 2).add(ARMOR, 1).add(ORDER, 1).add(LIGHT, 1).add(ENERGY, 1), -18, 11, 1, nuggetPalladium);
+		researchTransmutationOs = new FluxGearResearchItem(keyTransmutationOs, key, new AspectList().add(METAL, 3).add(EXCHANGE, 2).add(ARMOR, 1).add(ORDER, 1), -31, -23, 1, nuggetPalladium);
+		researchTransmutationIr = new FluxGearResearchItem(keyTransmutationIr, key, new AspectList().add(METAL, 3).add(EXCHANGE, 2).add(ARMOR, 1).add(ORDER, 1).add(LIGHT, 1).add(ENERGY, 1), -29, -24, 1, nuggetPalladium);
 
-		researchClusterFe = new DummyResearchItem(keyClusterFe, "PUREIRON", "ALCHEMY", -16, -4, clusterIron).registerResearchItem();
+		/*researchClusterFe = new DummyResearchItem(keyClusterFe, "PUREIRON", "ALCHEMY", -16, -4, clusterIron).registerResearchItem();
 		researchClusterCu = new DummyResearchItem(keyClusterCu, "PURECOPPER", "ALCHEMY", -14, -6, clusterCopper).setParents(keyClusterFe).registerResearchItem();
 		researchClusterSn = new DummyResearchItem(keyClusterSn, "PURETIN", "ALCHEMY", -12, -2, clusterTin).setParents(keyClusterFe).registerResearchItem();
 		researchClusterPb = new DummyResearchItem(keyClusterPb, "PURELEAD", "ALCHEMY", -16, -1, clusterLead).setParents(keyClusterFe).registerResearchItem();
@@ -1464,36 +1496,8 @@ public class ThaumRevContent {
 		if (OreDictionary.doesOreNameExist("orePlatinum")) {
 			researchClusterPt = new FluxGearResearchItem(keyClusterPt, new AspectList().add(Aspect.METAL, 3).add(Aspect.ORDER, 2).add(EXCHANGE, 1).add(GREED, 1), -20, -2, 1, clusterPlatinum);
 		}
-		researchClusterIrOs = new FluxGearResearchItem(keyClusterIrOs, new AspectList().add(Aspect.METAL, 3).add(Aspect.ORDER, 4).add(ARMOR, 2).add(LIGHT, 1).add(ENERGY, 1), -19, 2, 1, clusterIridosmium);
+		researchClusterIrOs = new FluxGearResearchItem(keyClusterIrOs, new AspectList().add(Aspect.METAL, 3).add(Aspect.ORDER, 4).add(ARMOR, 2).add(LIGHT, 1).add(ENERGY, 1), -19, 2, 1, clusterIridosmium);*/
 
-		researchWardenry = new FluxGearResearchItem(keyWardenry, new AspectList().add(WARDEN, 4).add(MAGIC, 3).add(ELDRITCH, 2).add(ENERGY, 2), -2, 0, 2, new ItemStack(blockThaumicPlant));
-
-		researchWardenicObsidian = new FluxGearResearchItem(keyWardenicObsidian, new AspectList().add(EARTH, 4).add(CRYSTAL, 4).add(FIRE, 3).add(MAGIC, 3).add(ARMOR, 4).add(WARDEN, 1), -3, -2, 2, wardenicObsidian);
-
-		researchExcubituraPaste = new FluxGearResearchItem(keyExcubituraPaste, new AspectList().add(PLANT, 4).add(MAGIC, 4).add(WARDEN, 1), -4, 2, 1, excubituraPaste);
-		researchWardencloth = new FluxGearResearchItem(keyWardencloth, new AspectList().add(MAGIC, 4).add(CLOTH, 4).add(ARMOR, 3).add(WARDEN, 1), -6, 1, 1, itemWardencloth);
-		researchArmorWardencloth = new FluxGearResearchItem(keyArmorWardencloth, new AspectList().add(ARMOR, 4).add(MAGIC, 4).add(CLOTH, 4).add(WARDEN, 4), -8, 0, 1, wardenclothTunic);
-
-		researchExcubituraOil = new FluxGearResearchItem(keyExcubituraOil, new AspectList().add(MAGIC, 4).add(PLANT, 3).add(WARDEN, 2).add(WATER, 3), -5, -1, 1, excubituraOil);
-		researchWardenChain = new FluxGearResearchItem(keyWardenChain, new AspectList().add(METAL, 4).add(MAGIC, 4).add(ARMOR, 3).add(WARDEN, 2), -7, -2, 1, wardenicBronzeChain);
-		researchArmorWardenChain = new FluxGearResearchItem(keyArmorWardenChain, new AspectList().add(ARMOR, 4).add(METAL, 4).add(MAGIC, 4).add(WARDEN, 4), -9, -3, 1, wardenicChainmail);
-
-		researchPureOil = new FluxGearResearchItem(keyPureOil, new AspectList().add(MAGIC, 4).add(WATER, 4).add(WARDEN, 3).add(ENERGY, 3), -6, -4, 2, excubituraOilPure);
-		researchWardenSteel = new FluxGearResearchItem(keyWardenSteel, new AspectList().add(METAL, 5).add(MAGIC, 4).add(TOOL, 2).add(ARMOR, 2).add(WARDEN, 3), -8, -5, 2, ingotWardenicSteel);
-		researchWardenPlate = new FluxGearResearchItem(keyWardenPlate, new AspectList().add(METAL, 4).add(MAGIC, 3).add(ARMOR, 3).add(WARDEN, 3), -10, -6, 2, plateWardenicSteel);
-		researchArmorWardenSteel = new FluxGearResearchItem(keyArmorWardenSteel, new AspectList().add(ARMOR, 4).add(METAL, 4).add(MAGIC, 4).add(WARDEN, 4), -12, -8, 2, wardenicChestplate);
-
-		researchQuartz = new FluxGearResearchItem(keyQuartz, new AspectList().add(CRYSTAL, 4).add(MAGIC, 4).add(WARDEN, 4).add(ENERGY, 3).add(TOOL, 2), -7, -7, 2, gemWardenicQuartz);
-		researchWardenCrystal = new FluxGearResearchItem(keyWardenCrystal, new AspectList().add(MAGIC, 4).add(CRYSTAL, 4).add(WARDEN, 4).add(ENERGY, 3).add(ORDER, 3), -9, -8, 2, gemWardenicCrystal);
-		researchWardenBronze = new FluxGearResearchItem(keyWardenBronze, new AspectList().add(METAL, 5).add(MAGIC, 4).add(WARDEN, 4).add(ARMOR, 3).add(TOOL, 3), -8, -11, 2, ingotWardenicRiftishBronze);
-		researchWardenComposite = new FluxGearResearchItem(keyWardenComposite, new AspectList().add(METAL, 6).add(MAGIC, 4).add(ARMOR, 4).add(TOOL, 3).add(WARDEN, 4), -11, -10, 2, plateWardenicComposite);
-		researchWardenCompositePlate = new FluxGearResearchItem(keyWardenCompositePlate, new AspectList().add(METAL, 3).add(MAGIC, 2).add(WARDEN, 1), -12, -12, 1, plateWardenicComposite);
-		researchWardenCompositeFitting = new FluxGearResearchItem(keyWardenCompositeFitting, new AspectList().add(METAL, 5).add(MAGIC, 4).add(ARMOR, 4).add(WARDEN, 4).add(ENERGY, 2), -11, -14, 3, consecratedCompositePlate);
-		researchArmorWardenComposite = new FluxGearResearchItem(keyArmorWardenComposite, new AspectList().add(ARMOR, 4).add(METAL, 4).add(WARDEN, 4).add(MAGIC, 4).add(ORDER, 4), -9, -15, 3, wardenicCompositeChestplate);
-
-		researchWardenCrystalAwakened = new FluxGearResearchItem(keyWardenCrystalAwakened, ThaumcraftHelper.newPrimalAspectList(3).add(WARDEN, 6).add(MAGIC, 6).add(CRYSTAL, 4).add(ENERGY, 6), -6, -10, 3, gemWardenicCrystalAwakened);
-
-		researchThaumicElectrum = new FluxGearResearchItem(keyThaumicElectrum, new AspectList().add(METAL, 4).add(MAGIC, 4).add(GREED, 2).add(ENERGY, 2).add(ORDER, 1), 0, -2, 2, ingotThaumicElectrum);
 
 	}
 
@@ -1501,55 +1505,23 @@ public class ThaumRevContent {
 		researchThaumRev.setRound().setSpecial().setAutoUnlock().setSiblings(keyMaterial);
 		researchMaterial.setRound().setSiblings(keyAlloys).setStub();
 		researchAlloys.setRound().setStub();
-		researchWardenry.setParents(keyThaumRev).setRound().setSpecial().setLost().setItemTriggers(excubituraRose);
 
-		researchCotton.setParentsHidden(keyFabric);
-		researchPrimalRobes.setParents(keyCotton, keyThaumicTBronze).setParentsHidden(keyThaumicElectrum, keyGoggles, keyNitor, keyInfusion, "INFUSIONENCHANTMENT", "FOCUSPRIMAL", "ARMORVOIDFORTRESS");
-		researchAniPiston.setParents(keyMaterial).setSecondary();
-		researchThaumicBronze.setParents(keyMaterial).setParentsHidden(keyThaumium);
-		researchThaumicTBronze.setParents(keyThaumicBronze).setParentsHidden(keyInfusion);
+		researchThaumicBronze.setParents(keyAlloys).setParentsHidden(keyThaumium);
 		researchBronzeChain.setParents(keyThaumicBronze).setSecondary();
 		researchArmorBronzeChain.setParents(keyBronzeChain).setSecondary();
+		researchThaumicRBronze.setParents(keyThaumicBronze).setParentsHidden(keyInfusion);
+		researchThaumicElectrum.setParents(keyMaterial).setParentsHidden(keyThaumium);
+		researchCotton.setParentsHidden(keyFabric);
+		researchPrimalRobes.setParents(keyCotton, keyThaumicRBronze).setParentsHidden(keyThaumicElectrum, keyGoggles, keyNitor, keyInfusion, "INFUSIONENCHANTMENT", "FOCUSPRIMAL", "ARMORVOIDFORTRESS");
+
 		researchRunicInfuser.setParents(keyMaterial).setParentsHidden(keyThaumium, keyAlumentum, keyNitor, keyVisPower);
+		researchAniPiston.setParents(keyRunicInfuser).setSecondary();
 		researchEnchSilverwood.setParents(keyRunicInfuser).setSecondary();
 
-		researchTransmutationNi.setParents(keyTransmutationFe).setSecondary();
-		researchTransmutationAl.setParents(keyTransmutationFe).setSecondary();
-		researchTransmutationNd.setParents(keyTransmutationFe).setSecondary();
-		researchTransmutationZn.setParents(keyTransmutationSn).setSecondary();
-		researchTransmutationAs.setParents(keyTransmutationSn).setSecondary();
-		researchTransmutationSb.setParents(keyTransmutationSn).setSecondary();
-		researchTransmutationBi.setParents(keyTransmutationSn, keyTransmutationPb).setSecondary();
-		researchTransmutationW.setParents(keyTransmutationPb, keyTransmutationAu).setHidden().setSecondary();
-		researchTransmutationLu.setParents(keyTransmutationNd).setSecondary();
-		researchTransmutationPd.setParents(keyTransmutationNi, keyTransmutationAg).setSecondary();
-		if (OreDictionary.doesOreNameExist("nuggetPlatinum")) {
-			researchTransmutationPt.setParents(keyTransmutationNi, keyTransmutationAu).setHidden().setItemTriggers(ContentHelper.getPlatinumTriggers()).setSecondary();
-			researchTransmutationOs.setParents(keyTransmutationW, keyTransmutationPt).setSecondary();
-		} else {
-			researchTransmutationOs.setParents(keyTransmutationW).setSecondary();
-		}
-		researchTransmutationIr.setParents(keyTransmutationOs).setHidden().setSecondary();
-
-		researchClusterNi.setParents(keyClusterFe).setSecondary();
-		if (OreDictionary.doesOreNameExist("oreAluminium")) {
-			researchClusterAl.setParents(keyClusterFe).setSecondary();
-		}
-		researchClusterYPO.setParents(keyClusterFe).setSecondary();
-		researchClusterZn.setParents(keyClusterSn).setSecondary();
-		researchClusterBi.setParents(keyClusterSn, keyClusterPb).setSecondary();
-		researchClusterCuAs.setParents(keyClusterSn, keyClusterCu).setSecondary();
-		researchClusterCuSb.setParents(keyClusterSn, keyClusterCu).setSecondary();
-		researchClusterW.setParents(keyClusterPb, keyClusterAu).setSecondary();
-		if (OreDictionary.doesOreNameExist("orePlatinum")) {
-			researchClusterPt.setParents(keyClusterNi, keyClusterAu).setSecondary();
-			researchClusterIrOs.setParents(keyClusterW, keyClusterPt).setSecondary();
-		} else {
-			researchClusterIrOs.setParents(keyClusterW).setSecondary();
-		}
+		researchWardenry.setParents(keyThaumRev).setRound().setSpecial().setLost().setItemTriggers(excubituraRose);
 
 		researchExcubituraPaste.setConcealed().setParents(keyWardenry);
-		researchWardencloth.setParents(keyExcubituraPaste);
+		researchWardencloth.setParents(keyExcubituraPaste, keyCotton);
 		researchArmorWardencloth.setParents(keyWardencloth).setSecondary();
 
 		researchExcubituraOil.setConcealed().setParents(keyExcubituraPaste).setParentsHidden(keyAlumentum);
@@ -1566,17 +1538,50 @@ public class ThaumRevContent {
 		//WIP
 		researchQuartz.setParents(keyPureOil).setParentsHidden(keyInfusion);
 		researchWardenCrystal.setParents(keyQuartz).setSecondary();
-		researchWardenBronze.setParents(keyWardenCrystal).setParentsHidden(keyThaumicTBronze);
-		researchWardenComposite.setParents(keyWardenCrystal, keyWardenBronze).setParentsHidden(keyThaumicBronze, keyWardenSteel);
+		researchWardenBronze.setParents(keyWardenCrystal).setParentsHidden(keyThaumicRBronze);
+		researchWardenComposite.setParents(keyWardenBronze).setParentsHidden(keyThaumicBronze, keyWardenSteel);
 		researchWardenCompositePlate.setParents(keyWardenComposite).setParentsHidden(keyThaumicHammermill).setSecondary();
 		researchWardenCompositeFitting.setParents(keyWardenCompositePlate).setParentsHidden(keyWardencloth, keyEnchSilverwood);
 		researchArmorWardenComposite.setParents(keyWardenCompositeFitting).setParentsHidden(keyGoggles).setSecondary();
 
 		researchWardenCrystalAwakened.setParents(keyWardenCrystal);
 
-		researchThaumicElectrum.setParents(keyMaterial).setParentsHidden(keyThaumium);
+		researchTransmutationNi.setParents(keyTransmutationFe).setSecondary();
+		researchTransmutationAl.setParents(keyTransmutationFe).setSecondary();
+		researchTransmutationNd.setParents(keyTransmutationFe).setSecondary();
+		researchTransmutationZn.setParents(keyTransmutationSn).setSecondary();
+		researchTransmutationAs.setParents(keyTransmutationSn).setSecondary();
+		researchTransmutationSb.setParents(keyTransmutationSn).setSecondary();
+		researchTransmutationBi.setParents(keyTransmutationSn, keyTransmutationPb).setSecondary();
+		researchTransmutationW.setParents(keyTransmutationPb, keyTransmutationAu).setHidden().setSecondary();
+		researchTransmutationLu.setParents(keyTransmutationNd).setSecondary();
+		researchTransmutationPd.setParents(keyTransmutationNi, keyTransmutationAg).setSecondary();
+		if (OreDictionary.doesOreNameExist("nuggetPlatinum")) {
+			researchTransmutationPt.setParents(keyTransmutationAu).setParentsHidden(keyTransmutationPd).setHidden().setItemTriggers(ContentHelper.getPlatinumTriggers()).setSecondary();
+			researchTransmutationOs.setParents(keyTransmutationW, keyTransmutationPt).setSecondary();
+		} else {
+			researchTransmutationOs.setParents(keyTransmutationW).setParentsHidden(keyTransmutationAu, keyTransmutationPd).setSecondary();
+		}
+		researchTransmutationIr.setParents(keyTransmutationOs).setHidden().setSecondary();
 
-		if (researchLevel == 0) { //EASY-MODE
+		/*researchClusterNi.setParents(keyClusterFe).setSecondary();
+		if (OreDictionary.doesOreNameExist("oreAluminium")) {
+			researchClusterAl.setParents(keyClusterFe).setSecondary();
+		}
+		researchClusterYPO.setParents(keyClusterFe).setSecondary();
+		researchClusterZn.setParents(keyClusterSn).setSecondary();
+		researchClusterBi.setParents(keyClusterSn, keyClusterPb).setSecondary();
+		researchClusterCuAs.setParents(keyClusterSn, keyClusterCu).setSecondary();
+		researchClusterCuSb.setParents(keyClusterSn, keyClusterCu).setSecondary();
+		researchClusterW.setParents(keyClusterPb, keyClusterAu).setSecondary();
+		if (OreDictionary.doesOreNameExist("orePlatinum")) {
+			researchClusterPt.setParents(keyClusterNi, keyClusterAu).setSecondary();
+			researchClusterIrOs.setParents(keyClusterW, keyClusterPt).setSecondary();
+		} else {
+			researchClusterIrOs.setParents(keyClusterW).setSecondary();
+		}*/
+
+		/*if (researchLevel == 0) { //EASY-MODE
 			((FluxGearResearchItem) researchThaumRev).addSiblings(keyAniPiston);
 			researchAniPiston.setStub();
 			researchThaumicBronze.setSiblings(keyBronzeChain, keyArmorBronzeChain);
@@ -1594,7 +1599,7 @@ public class ThaumRevContent {
 			researchWardenSteel.setStub();
 			((FluxGearResearchItem) researchWardenPlate).addParentsHidden(keyGoggles).setSiblings(keyArmorWardenSteel);
 			researchArmorWardenSteel.setStub();
-		} else if (researchLevel == 2) { //HARD-MODE
+		} else if (researchLevel == 2) { //HARD-MODE*/
 			researchAniPiston.setParentsHidden("BELLOWS");
 			researchWardencloth.setParentsHidden(keyCotton);
 			researchArmorWardencloth.setParentsHidden(keyGoggles);
@@ -1602,7 +1607,7 @@ public class ThaumRevContent {
 			researchArmorWardenChain.setParentsHidden(keyArmorBronzeChain, keyGoggles);
 			researchWardenSteel.setParentsHidden(keyThaumicBronze, keyInfusion);
 			researchArmorWardenSteel.setParentsHidden(keyGoggles);
-		} else { //NORMAL-MODE
+		/*} else { //NORMAL-MODE
 			researchBronzeChain.setSiblings(keyArmorBronzeChain);
 			researchArmorBronzeChain.setStub();
 			researchWardencloth.setParentsHidden(keyCotton, keyGoggles).setSiblings(keyArmorWardencloth);
@@ -1612,58 +1617,29 @@ public class ThaumRevContent {
 			researchWardenSteel.setParentsHidden(keyThaumicBronze, keyInfusion);
 			((FluxGearResearchItem) researchWardenPlate).addParentsHidden(keyGoggles).setSiblings(keyArmorWardenSteel);
 			researchArmorWardenSteel.setStub();
-		}
+		}*/
 	}
 
 	public static void registerResearch() {
 		researchThaumRev.registerResearchItem();
 		researchMaterial.registerResearchItem();
-		if (ContentHelper.enableAlloys()) {
+		//if (ContentHelper.enableAlloys()) {
 			researchAlloys.registerResearchItem();
-		}
-		researchWardenry.registerResearchItem();
+		//}
 
-		researchCotton.registerResearchItem();
-		researchPrimalRobes.registerResearchItem();
-		researchAniPiston.registerResearchItem();
 		researchThaumicBronze.registerResearchItem();
-		researchThaumicTBronze.registerResearchItem();
 		researchBronzeChain.registerResearchItem();
 		researchArmorBronzeChain.registerResearchItem();
+		researchThaumicRBronze.registerResearchItem();
+		researchThaumicElectrum.registerResearchItem();
+		researchCotton.registerResearchItem();
+		researchPrimalRobes.registerResearchItem();
+
 		researchRunicInfuser.registerResearchItem();
+		researchAniPiston.registerResearchItem();
 		researchEnchSilverwood.registerResearchItem();
 
-		researchTransmutationNi.registerResearchItem();
-		researchTransmutationAl.registerResearchItem();
-		researchTransmutationNd.registerResearchItem();
-		researchTransmutationZn.registerResearchItem();
-		researchTransmutationAs.registerResearchItem();
-		researchTransmutationSb.registerResearchItem();
-		researchTransmutationBi.registerResearchItem();
-		researchTransmutationW.registerResearchItem();
-		researchTransmutationLu.registerResearchItem();
-		researchTransmutationPd.registerResearchItem();
-		if (OreDictionary.doesOreNameExist("nuggetPlatinum")) {
-			researchTransmutationPt.registerResearchItem();
-		}
-		researchTransmutationOs.registerResearchItem();
-		researchTransmutationIr.registerResearchItem();
-
-		researchClusterNi.registerResearchItem();
-		if (OreDictionary.doesOreNameExist("oreAluminium")) {
-			researchClusterAl.registerResearchItem();
-		}
-		researchClusterYPO.registerResearchItem();
-		researchClusterZn.registerResearchItem();
-		researchClusterBi.registerResearchItem();
-		researchClusterCuAs.registerResearchItem();
-		researchClusterCuSb.registerResearchItem();
-		researchClusterW.registerResearchItem();
-		if (OreDictionary.doesOreNameExist("orePlatinum")) {
-			researchClusterPt.registerResearchItem();
-		}
-		researchClusterIrOs.registerResearchItem();
-
+		researchWardenry.registerResearchItem();
 		researchExcubituraPaste.registerResearchItem();
 		researchWardencloth.registerResearchItem();
 		researchArmorWardencloth.registerResearchItem();
@@ -1685,7 +1661,41 @@ public class ThaumRevContent {
 		researchWardenCrystalAwakened.registerResearchItem();
 
 
-		researchThaumicElectrum.registerResearchItem();
+
+
+
+		researchTransmutationNi.registerResearchItem();
+		researchTransmutationAl.registerResearchItem();
+		researchTransmutationNd.registerResearchItem();
+		researchTransmutationZn.registerResearchItem();
+		researchTransmutationAs.registerResearchItem();
+		researchTransmutationSb.registerResearchItem();
+		researchTransmutationBi.registerResearchItem();
+		researchTransmutationW.registerResearchItem();
+		researchTransmutationLu.registerResearchItem();
+		researchTransmutationPd.registerResearchItem();
+		if (OreDictionary.doesOreNameExist("nuggetPlatinum")) {
+			researchTransmutationPt.registerResearchItem();
+		}
+		researchTransmutationOs.registerResearchItem();
+		researchTransmutationIr.registerResearchItem();
+
+		/*researchClusterNi.registerResearchItem();
+		if (OreDictionary.doesOreNameExist("oreAluminium")) {
+			researchClusterAl.registerResearchItem();
+		}
+		researchClusterYPO.registerResearchItem();
+		researchClusterZn.registerResearchItem();
+		researchClusterBi.registerResearchItem();
+		researchClusterCuAs.registerResearchItem();
+		researchClusterCuSb.registerResearchItem();
+		researchClusterW.registerResearchItem();
+		if (OreDictionary.doesOreNameExist("orePlatinum")) {
+			researchClusterPt.registerResearchItem();
+		}
+		researchClusterIrOs.registerResearchItem();
+*/
+
 
 	}
 
@@ -1694,15 +1704,48 @@ public class ThaumRevContent {
 		researchMaterial.setPages(ContentHelper.getMaterialPages());
 		researchAlloys.setPages(ContentHelper.getAlloyPages());
 
-		researchCotton.setPages(new ResearchPage("0"), new ResearchPage(recipeCottonFiber), new ResearchPage(recipeCottonFabric), new ResearchPage(recipeTreatedCotton), new ResearchPage(recipeEnchantedCotton));
-		researchPrimalRobes.setPages(new ResearchPage("0"), new ResearchPage(recipePrimalGoggles), new ResearchPage(recipePrimalRobes), new ResearchPage(recipePrimalPants), new ResearchPage(recipePrimalBoots));
-		researchAniPiston.setPages(new ResearchPage("0"), new ResearchPage(recipeAniPiston));
 		researchThaumicBronze.setPages(new ResearchPage("0"), new ResearchPage(recipeThaumicBronzeRaw), new ResearchPage(recipeThaumicBronzeCoated), new ResearchPage(coatedThaumicBronze), new ResearchPage("1"));
-		researchThaumicTBronze.setPages(new ResearchPage("0"), new ResearchPage(recipeThaumicRBronze));
 		researchBronzeChain.setPages(new ResearchPage("0"), new ResearchPage(recipeThaumicBronzeChain));
 		researchArmorBronzeChain.setPages(new ResearchPage("0"), new ResearchPage(recipeBronzeChainHelmet), new ResearchPage(recipeBronzeChainmail), new ResearchPage(recipeBronzeChainGreaves), new ResearchPage(recipeBronzeChainBoots));
+		researchThaumicRBronze.setPages(new ResearchPage("0"), new ResearchPage(recipeThaumicRBronze));
+		researchThaumicElectrum.setPages(new ResearchPage("0"), new ResearchPage(recipeThaumicElectrum));
+		researchCotton.setPages(new ResearchPage("0"), new ResearchPage(recipeCottonFiber), new ResearchPage(recipeCottonFabric), new ResearchPage(recipeTreatedCotton), new ResearchPage(recipeEnchantedCotton));
+		researchPrimalRobes.setPages(new ResearchPage("0"), new ResearchPage(recipePrimalGoggles), new ResearchPage(recipePrimalRobes), new ResearchPage(recipePrimalPants), new ResearchPage(recipePrimalBoots));
+
 		researchRunicInfuser.setPages(new ResearchPage("0"), new ResearchPage(recipeArcaneSingularity), new ResearchPage(recipeStableSingularity));
+		researchAniPiston.setPages(new ResearchPage("0"), new ResearchPage(recipeAniPiston));
 		researchEnchSilverwood.setPages(new ResearchPage("0"), new ResearchPage(recipeEnchSilverwood));
+
+		researchWardenry.setPages(new ResearchPage("0"), new ResearchPage("1"));
+
+		researchExcubituraPaste.setPages(new ResearchPage("0"), new ResearchPage(recipeExcubituraPaste));
+		researchWardencloth.setPages(new ResearchPage("0"), new ResearchPage(recipeExcubituraFabric), new ResearchPage("1"), new ResearchPage(recipeWardencloth));
+		researchArmorWardencloth.setPages(new ResearchPage("0"), new ResearchPage(recipeWardenclothSkullcap), new ResearchPage(recipeWardenclothTunic), new ResearchPage(recipeWardenclothPants), new ResearchPage(recipeWardenclothBoots));
+
+		researchExcubituraOil.setPages(new ResearchPage("0"), new ResearchPage(recipeExcubituraOilUnproc), new ResearchPage(recipeExcubituraOil));
+		researchWardenChain.setPages(new ResearchPage("0"), new ResearchPage(recipeWardenBronzeChain), new ResearchPage(recipePrimalBronzeChain), new ResearchPage(recipeWardenBronzePlate));
+		researchArmorWardenChain.setPages(new ResearchPage("0"), new ResearchPage(recipeWardenicChainHelmet), new ResearchPage(recipeWardenicChainmail), new ResearchPage(recipeWardenicChainGreaves), new ResearchPage(recipeWardenicChainBoots));
+
+		researchPureOil.setPages(new ResearchPage("0"), new ResearchPage(recipePureOil));
+		researchWardenSteel.setPages(new ResearchPage("0"), new ResearchPage(recipeWardenSteel));
+		researchWardenPlate.setPages(new ResearchPage("0"), new ResearchPage(recipeWardenSteelChain), new ResearchPage(recipeWardenSteelChainOiled), new ResearchPage(recipeWardenSteelPlate), new ResearchPage(recipeDetailedSteelPlate), new ResearchPage(recipeRunicSteelPlate), new ResearchPage(recipesConsecratedSteelPlate));
+		researchArmorWardenSteel.setPages(new ResearchPage("0"), new ResearchPage(recipeWardenicPlateHelmet), new ResearchPage(recipeWardenicChestplate), new ResearchPage(recipeWardenicPlateGreaves), new ResearchPage(recipeWardenicPlateBoots));
+		if (Loader.isModLoaded("ThermalFoundation")) {
+			researchWardenicObsidian.setPages(new ResearchPage("0"), new ResearchPage(recipeWardenicHardener), new ResearchPage(recipeWardenicHardenerAlt));
+		} else {
+			researchWardenicObsidian.setPages(new ResearchPage("0"), new ResearchPage(recipeWardenicHardener));
+		}
+
+		researchQuartz.setPages(new ResearchPage("0"), new ResearchPage(recipeWardenicQuartz), new ResearchPage(recipeWardenicQuartzDust), new ResearchPage(recipeWardenicQuartzReconst), new ResearchPage(recipeQuartzBlock), new ResearchPage(recipeWardenicQuartzInf), new ResearchPage(recipeQuartzChiseled), new ResearchPage(recipeQuartzPillar), new ResearchPage(recipeQuartzSlab), /*new ResearchPage(recipeQuartzStair),*/ new ResearchPage(recipeQuartzDeblock), new ResearchPage(recipeQuartzDeslab), /*new ResearchPage(recipeQuartzDestair),*/ new ResearchPage(recipeQuartzResetChiseled), new ResearchPage(recipeQuartzResetPillar));
+		researchWardenCrystal.setPages(new ResearchPage("0"), new ResearchPage(recipeWardenicCrystal), new ResearchPage(recipeWardenicCrystalDust), new ResearchPage(recipeWardenicCrystalReconst), new ResearchPage("1"), new ResearchPage(recipeWardenicBinder), new ResearchPage(recipeBinderTiny), new ResearchPage(recipeBinderCombine));
+		researchWardenBronze.setPages(new ResearchPage("0"), new ResearchPage(recipeWardenBronze));
+		researchWardenComposite.setPages(new ResearchPage("0"), new ResearchPage(recipeWardenicMetal), new ResearchPage(recipeWardenicCompositeRaw), new ResearchPage(recipeWardenicCompositeIngot));
+		researchWardenCompositePlate.setPages(new ResearchPage("0"), new ResearchPage(recipeAluDenseTemp), new ResearchPage(recipeWardenicCompositePlate));
+		researchWardenCompositeFitting.setPages(new ResearchPage("0"), new ResearchPage(recipeFittedCompositePlate), new ResearchPage(recipeDetailedCompositePlate), new ResearchPage(recipeRunicCompositePlate), new ResearchPage(recipeConsecratedCompositePlate), new ResearchPage(recipePrimalCompositePlate)/**/);
+		researchArmorWardenComposite.setPages(new ResearchPage("0"), new ResearchPage(recipeWardenicCompositeHelmet), new ResearchPage(recipeWardenicCompositeChestplate), new ResearchPage(recipeWardenicCompositeGreaves), new ResearchPage(recipeWardenicCompositeBoots));
+
+		researchWardenCrystalAwakened.setPages(new ResearchPage("0"), new ResearchPage(recipeWardenicCrystalAwakened));
+
 
 		researchTransmutationNi.setPages(new ResearchPage("0"), new ResearchPage(recipeTransNickel));
 		researchTransmutationAl.setPages(new ResearchPage("0"), new ResearchPage(recipeTransAluminium));
@@ -1720,7 +1763,7 @@ public class ThaumRevContent {
 		researchTransmutationOs.setPages(new ResearchPage("0"), new ResearchPage(recipeTransOsmium));
 		researchTransmutationIr.setPages(new ResearchPage("0"), new ResearchPage(recipeTransIridium));
 
-		researchClusterNi.setPages(new ResearchPage("0"), new ResearchPage(recipeClusterNickel));
+		/*researchClusterNi.setPages(new ResearchPage("0"), new ResearchPage(recipeClusterNickel));
 		if (OreDictionary.doesOreNameExist("oreAluminium")) {
 			researchClusterAl.setPages(new ResearchPage("0"), new ResearchPage(recipeClusterAluminium));
 		}
@@ -1733,38 +1776,8 @@ public class ThaumRevContent {
 		if (OreDictionary.doesOreNameExist("orePlatinum")) {
 			researchClusterPt.setPages(new ResearchPage("0"), new ResearchPage(recipeClusterPlatinum));
 		}
-		researchClusterIrOs.setPages(new ResearchPage("0"), new ResearchPage(recipeClusterIridosmium));
+		researchClusterIrOs.setPages(new ResearchPage("0"), new ResearchPage(recipeClusterIridosmium));*/
 
-		researchWardenry.setPages(new ResearchPage("0"), new ResearchPage("1"));
-
-		if (Loader.isModLoaded("ThermalFoundation")) {
-			researchWardenicObsidian.setPages(new ResearchPage("0"), new ResearchPage(recipeWardenicHardener), new ResearchPage(recipeWardenicHardenerAlt));
-		} else {
-			researchWardenicObsidian.setPages(new ResearchPage("0"), new ResearchPage(recipeWardenicHardener));
-		}
-
-		researchExcubituraPaste.setPages(new ResearchPage("0"), new ResearchPage(recipeExcubituraPaste));
-		researchWardencloth.setPages(new ResearchPage("0"), new ResearchPage(recipeExcubituraFabric), new ResearchPage("1"), new ResearchPage(recipeWardencloth));
-		researchArmorWardencloth.setPages(new ResearchPage("0"), new ResearchPage(recipeWardenclothSkullcap), new ResearchPage(recipeWardenclothTunic), new ResearchPage(recipeWardenclothPants), new ResearchPage(recipeWardenclothBoots));
-		researchExcubituraOil.setPages(new ResearchPage("0"), new ResearchPage(recipeExcubituraOilUnproc), new ResearchPage(recipeExcubituraOil));
-		researchWardenChain.setPages(new ResearchPage("0"), new ResearchPage(recipeWardenBronzeChain), new ResearchPage(recipePrimalBronzeChain), new ResearchPage(recipeWardenBronzePlate));
-		researchArmorWardenChain.setPages(new ResearchPage("0"), new ResearchPage(recipeWardenicChainHelmet), new ResearchPage(recipeWardenicChainmail), new ResearchPage(recipeWardenicChainGreaves), new ResearchPage(recipeWardenicChainBoots));
-		researchPureOil.setPages(new ResearchPage("0"), new ResearchPage(recipePureOil));
-		researchWardenSteel.setPages(new ResearchPage("0"), new ResearchPage(recipeWardenSteel));
-		researchWardenPlate.setPages(new ResearchPage("0"), new ResearchPage(recipeWardenSteelChain), new ResearchPage(recipeWardenSteelChainOiled), new ResearchPage(recipeWardenSteelPlate), new ResearchPage(recipeDetailedSteelPlate), new ResearchPage(recipeRunicSteelPlate), new ResearchPage(recipesConsecratedSteelPlate));
-		researchArmorWardenSteel.setPages(new ResearchPage("0"), new ResearchPage(recipeWardenicPlateHelmet), new ResearchPage(recipeWardenicChestplate), new ResearchPage(recipeWardenicPlateGreaves), new ResearchPage(recipeWardenicPlateBoots));
-
-		researchQuartz.setPages(new ResearchPage("0"), new ResearchPage(recipeWardenicQuartz), new ResearchPage(recipeWardenicQuartzDust), new ResearchPage(recipeWardenicQuartzReconst), new ResearchPage(recipeQuartzBlock), new ResearchPage(recipeWardenicQuartzInf), new ResearchPage(recipeQuartzChiseled), new ResearchPage(recipeQuartzPillar), new ResearchPage(recipeQuartzSlab), /*new ResearchPage(recipeQuartzStair),*/ new ResearchPage(recipeQuartzDeblock), new ResearchPage(recipeQuartzDeslab), /*new ResearchPage(recipeQuartzDestair),*/ new ResearchPage(recipeQuartzResetChiseled), new ResearchPage(recipeQuartzResetPillar));
-		researchWardenCrystal.setPages(new ResearchPage("0"), new ResearchPage(recipeWardenicCrystal), new ResearchPage(recipeWardenicCrystalDust), new ResearchPage(recipeWardenicCrystalReconst), new ResearchPage("1"), new ResearchPage(recipeWardenicBinder), new ResearchPage(recipeBinderTiny), new ResearchPage(recipeBinderCombine));
-		researchWardenBronze.setPages(new ResearchPage("0"), new ResearchPage(recipeWardenBronze));
-		researchWardenComposite.setPages(new ResearchPage("0"), new ResearchPage(recipeWardenicMetal), new ResearchPage(recipeWardenicCompositeRaw), new ResearchPage(recipeWardenicCompositeIngot));
-		researchWardenCompositePlate.setPages(new ResearchPage("0"), new ResearchPage(recipeAluDenseTemp), new ResearchPage(recipeWardenicCompositePlate));
-		researchWardenCompositeFitting.setPages(new ResearchPage("0"), new ResearchPage(recipeFittedCompositePlate), new ResearchPage(recipeDetailedCompositePlate), new ResearchPage(recipeRunicCompositePlate), new ResearchPage(recipeConsecratedCompositePlate), new ResearchPage(recipePrimalCompositePlate)/**/);
-		researchArmorWardenComposite.setPages(new ResearchPage("0"), new ResearchPage(recipeWardenicCompositeHelmet), new ResearchPage(recipeWardenicCompositeChestplate), new ResearchPage(recipeWardenicCompositeGreaves), new ResearchPage(recipeWardenicCompositeBoots));
-
-		researchWardenCrystalAwakened.setPages(new ResearchPage("0"), new ResearchPage(recipeWardenicCrystalAwakened));
-
-		researchThaumicElectrum.setPages(new ResearchPage("0"), new ResearchPage(recipeThaumicElectrum));
 
 	}
 

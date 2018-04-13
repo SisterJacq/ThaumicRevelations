@@ -38,22 +38,6 @@ public class DummyResearchItem extends FluxGearResearchItem {
 		setHidden();
 	}
 
-	public DummyResearchItem(String key, String origin, String originCategory, int col, int row, ResourceLocation icon) {
-		super(key, new AspectList(), col, row, 1, icon);
-		original = (ResearchCategories.researchCategories.get(originCategory)).research.get(origin);
-		bindToOriginal();
-		setStub();
-		setHidden();
-	}
-
-	public DummyResearchItem(String key, String origin, String originCategory, int col, int row, ItemStack icon) {
-		super(key, new AspectList(), col, row, 1, icon);
-		original = (ResearchCategories.researchCategories.get(originCategory)).research.get(origin);
-		bindToOriginal();
-		setStub();
-		setHidden();
-	}
-
 	private void bindToOriginal() {
 		if (original.siblings == null) {
 			original.setSiblings(key);

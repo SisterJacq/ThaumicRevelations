@@ -43,7 +43,6 @@ public class ThaumRevLibrary {
 	/** RESEARCH CATEGORIES **/
 	public static final String RESEARCH_KEY_MAIN = "TRvMAIN";
 	public static final String RESEARCH_KEY_METAL = "TRvMETAL";
-	public static final String RESEARCH_KEY_EQUIP = "TRvEQUIPMENT";
 
 	/** ASPECTS **/
 	public static final Aspect WARDEN = new Aspect("excubitor", 0x3CD4FC, new Aspect[] {ELDRITCH, DEATH}, new ResourceLocation(RESOURCE_PREFIX, "textures/aspects/exubitor.png"), 771);
@@ -991,8 +990,8 @@ public class ThaumRevLibrary {
 	public static ResearchItem researchThaumicBronze;
 	public static String keyThaumicBronze = "THAUMIC_BRONZE";
 
-	public static ResearchItem researchThaumicTBronze;
-	public static String keyThaumicTBronze = "THAUMIC_TINKERS_BRONZE";
+	public static ResearchItem researchThaumicRBronze;
+	public static String keyThaumicRBronze = "THAUMIC_TINKERS_BRONZE";
 
 	public static ResearchItem researchBronzeChain;
 	public static String keyBronzeChain = "TBRONZE_CHAIN";

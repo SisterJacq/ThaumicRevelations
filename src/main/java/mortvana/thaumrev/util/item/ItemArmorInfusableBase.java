@@ -5,19 +5,17 @@ import java.util.List;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.NBTTagList;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 import cpw.mods.fml.common.Optional;
 import net.minecraftforge.common.ISpecialArmor;
 
-import thaumcraft.api.IGoggles;
-import thaumcraft.api.IVisDiscountGear;
 import thaumcraft.api.aspects.Aspect;
-import thaumcraft.api.nodes.IRevealer;
 
 import mortvana.melteddashboard.item.ItemArmorFluxGear;
-import mortvana.melteddashboard.util.helpers.AspectInfusionHelper;
-import mortvana.melteddashboard.util.helpers.NBTHelper;
+import mortvana.melteddashboard.util.helpers.*;
 import mortvana.melteddashboard.util.helpers.mod.ThaumcraftHelper;
 
 import mortvana.thaumrev.api.item.infusion.IInfusableItem;
@@ -25,7 +23,10 @@ import mortvana.thaumrev.api.util.enums.EnumEquipmentType;
 import mortvana.thaumrev.library.ThaumRevLibrary;
 import mortvana.thaumrev.util.enums.EnumPrimalAspect;
 
-public abstract class ItemArmorInfusableBase extends ItemArmorFluxGear implements ISpecialArmor, IInfusableItem, IVisDiscountGear, IRevealer, IGoggles {
+import static mortvana.thaumrev.library.ThaumRevLibrary.INVENTORY;
+import static mortvana.thaumrev.library.ThaumRevLibrary.SLOT;
+
+public abstract class ItemArmorInfusableBase extends ItemArmorFluxGear implements ISpecialArmor, IInfusableItem {
 
 	protected EnumEquipmentType type;
 
@@ -58,7 +59,7 @@ public abstract class ItemArmorInfusableBase extends ItemArmorFluxGear implement
 
 	@Override
 	public void onArmorTick(World world, EntityPlayer player, ItemStack stack) {
-		AspectInfusionHelper.applyInfusions(world, player, stack, getType());
+		AspectInfusionHelper.applyInfusions(world, player, stack, getType(stack));
 		super.onArmorTick(world, player, stack);
 	}
 
@@ -70,6 +71,7 @@ public abstract class ItemArmorInfusableBase extends ItemArmorFluxGear implement
 		}
 	}
 
+	/** ISpecialArmor **/
 	@Override
 	public ArmorProperties getProperties(EntityLivingBase player, ItemStack armor, DamageSource source, double damage, int slot) {
 		return new ArmorProperties(0, damageReduceAmount / 25D, 20);
@@ -90,45 +92,70 @@ public abstract class ItemArmorInfusableBase extends ItemArmorFluxGear implement
 		}*/
 	}
 
+	/** IContainerItem **/
 	@Override
-	public int getSizeInventory(ItemStack container) {
-		return 0;
-		//return AspectInfusionHelper.getSlotsTotal(container);
+	public int getInternalSlots(ItemStack container) {
+		return AspectInfusionHelper.getSlotsTotal(container);
 	}
 
-	/*@Override
-	public IInfusableItem setNumberSlots(int unlocked, int locked) {
-		AspectInfusionHelper.setNumberSlots(unlocked, locked);
-		return this;
-	}*/
+	@Override
+	public ItemStack[] getInventory(ItemStack container) {
+		return InventoryHelper.getInventory(container);
+	}
 
 	@Override
-	public EnumEquipmentType getType() {
+	public void setInventory(ItemStack container, ItemStack[] inventory) {
+		InventoryHelper.setInventory(container, inventory);
+	}
+
+	@Override
+	public ItemStack getItemInSlot(ItemStack container, int slot) {
+		return InventoryHelper.getItemInSlot(container, slot);
+	}
+
+	@Override
+	public void setItemInSlot(ItemStack container, ItemStack itemstack, int slot) {
+		InventoryHelper.setItemInSlot(container, itemstack, slot);
+	}
+
+	/** IInfusableItem **/
+	@Override
+	public IInfusableItem setNumberSlots(ItemStack stack, int unlocked, int locked) {
+		AspectInfusionHelper.setNumberSlots(stack, unlocked, locked);
+		return this;
+	}
+
+	@Override
+	public EnumEquipmentType getType(ItemStack stack) {
 		return type;
 	}
 
 	@Override
-	public IInfusableItem setType(EnumEquipmentType type) {
+	public IInfusableItem setType(ItemStack stack, EnumEquipmentType type) {
 		this.type = type;
 		return this;
 	}
 
+	/** IVisDiscountGear **/
 	@Override
 	public int getVisDiscount(ItemStack stack, EntityPlayer player, Aspect aspect) {
 		return ThaumcraftHelper.getDiscountForAspect(stack, player, aspect, visDiscount[EnumPrimalAspect.getPrimal(aspect).ordinal()]);
 	}
 
+	/** IRevealer **/
 	@Override
 	public boolean showNodes(ItemStack stack, EntityLivingBase entity) {
 		return NBTHelper.isRevealingGoggles(stack, entity);
 	}
 
+	/** IGoogles **/
 	@Override
 	public boolean showIngamePopups(ItemStack stack, EntityLivingBase entity) {
 		return NBTHelper.isRevealingGoggles(stack, entity);
 	}
 
 	//TODO: RF Stuff
+	/** IEnergyContainerItem **/
 	@Override
 	@Optional.Method(modid = "CoFHAPI|energy")
 	public int receiveEnergy(ItemStack container, int maxReceive, boolean simulate) {

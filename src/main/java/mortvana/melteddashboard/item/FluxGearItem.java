@@ -4,7 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import mortvana.melteddashboard.ColorLibrary;
+
+import mortvana.thaumrev.common.ThaumRevConfig;
 import mortvana.thaumrev.common.ThaumicRevelations;
+
+import mortvana.melteddashboard.client.texture.GradientTexture;
+import mortvana.melteddashboard.util.GrayscaleEntry;
 import mortvana.melteddashboard.util.helpers.StringHelper;
 import mortvana.melteddashboard.util.helpers.TextureHelper;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -20,30 +25,81 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+import net.minecraftforge.client.event.TextureStitchEvent;
+
 import gnu.trove.map.TMap;
 import gnu.trove.map.hash.THashMap;
 
 import mortvana.melteddashboard.registry.RegistrationWrapper;
 import mortvana.melteddashboard.util.EnumGrayscaleItems;
 
-/** Slightly Modified and Augmented Version of ItemBase from CoFH Core */
+/**
+ *	Modified and Augmented version of Item, based on ItemBase from CoFH Core by King Lemming
+ *
+ *	@author Mortvana
+ */
 public class FluxGearItem extends Item {
-    public TMap<Integer, ItemEntry> itemMap = new THashMap<Integer, ItemEntry>();
-    // This is actually more memory efficient than a LinkedHashMap, according to Lemming.
-    public List<Integer> itemList = new ArrayList<Integer>();
-    public TMap<Integer, String> tooltipMap = new THashMap<Integer, String>();
 
+	/**
+	 *	A list of all instances of FluxGearItem, used for the gradient system.
+	 */
+	public static List<FluxGearItem> items = new ArrayList<FluxGearItem>();
+
+	/**
+	 * 	A list of all
+	 */
+
+	/**
+	 * 	A HashMap of all sub-items in the form of instances of ItemEntry based on metadata.
+	 */
+    public TMap<Integer, ItemEntry> itemMap = new THashMap<Integer, ItemEntry>();
+
+   /**
+	* 	A list of all metadata used, which using along with a HashMap is actually more memory efficient than using a
+	* 	LinkedHashMap, according to Lemming's comment in the code for ItemBase.
+	*/
+    public List<Integer> itemList = new ArrayList<Integer>();
+
+    //public TMap<Integer, String> tooltipMap = new THashMap<Integer, String>(); //TODO: Tooltips
+
+	/**
+	 *	Whether the item should register textures when registerIcons(...) is called. Basically leave this as true unless
+	 *	you've got a reason. You don't need to know exactly what you've doing, but have a reason.
+	 */
     public boolean hasTextures = true;
+
+	/**
+	 *	The resource directory for textures and unlocalized names. Defaults to "fluxgear", just as ItemBase defaults to
+	 *	"cofh".	I recommend using the constructor that sets the name, the FluxGearItem(String name) one, since you're
+	 *	probably not me. If you are, then either I cloned myself and made a time machine, or Krieger cloned me from a
+	 *	cup I drank soda from, either way.
+	 */
     public String modName = "fluxgear";
+
+	/**
+	 *	The directory within the resource directory that textures are gotten from, unless they are grayscaled versions.
+	 *	Defaults to an empty string for modname:whatever, but should probably be set for something like
+	 *	modname:folder/whatever, so for example setting to material for say fluxgear:material/gemDioptase.
+	 */
     public String folder = "";
+
+	/**
+	 *	Whether you are using some kind of automatic item registry, like the one provided with Melted Dashboard Core.
+	 *	Basically leave this false if you have no clue what that means, or if you're not doing that kind of thing.
+	 */
     public boolean registryItem = false;
 
-    public static boolean grayscaled = false;
+	/**
+	 *	Whether Melted Dashboard Core should register (some of) this items textures using gradients.
+	 *	Drullkus put me on to the whole gradient thing, but it's both nifty and useful, so...
+	 */
+    public boolean gradient = false; //TODO: Finish Gradients
 
     public FluxGearItem() {
         setHasSubtypes(true);
         setMaxDamage(0);
         setMaxStackSize(64);
+		items.add(this);
     }
 
     public FluxGearItem(String modName) {
@@ -57,20 +113,28 @@ public class FluxGearItem extends Item {
     }
 
     // addItem(...) {}
-    public ItemStack addItem(int metadata, String name, int rarity, boolean register) {
-        if (itemList.contains(metadata)) {
-	        ThaumicRevelations.logger.warn("Someone registered a meta-item in an item from " + modName + ", with a metadata of " + metadata + ", called " + name + "! Don't do this! Skipping Entry!");
-            return null;
-        } else {
-            itemMap.put(metadata, new ItemEntry(name, rarity).setTexture(name));
-            itemList.add(metadata);
+	public ItemStack addItem(int metadata, ItemEntry entry, boolean register) {
+		if (itemList.contains(metadata)) {
+			ThaumicRevelations.logger.warn("Someone registered a meta-item in an item from " + modName + ", with a metadata of " + metadata + ", called " + entry.name + "! Don't do this! Skipping Entry!");
+			return null;
+		} else {
+			itemMap.put(metadata, entry);
+			itemList.add(metadata);
 
-            ItemStack stack = new ItemStack(this, 1, metadata);
-            if (register) {
-                GameRegistry.registerCustomItemStack(name, stack);
-            }
-            return stack;
-        }
+			ItemStack stack = new ItemStack(this, 1, metadata);
+			if (register) {
+				GameRegistry.registerCustomItemStack(entry.name, stack);
+			}
+			return stack;
+		}
+	}
+
+	public ItemStack addItem(int metadata, ItemEntry entry) {
+		return addItem(metadata, entry, true);
+	}
+
+    public ItemStack addItem(int metadata, String name, int rarity, boolean register) {
+       return addItem(metadata, new ItemEntry(name, rarity).setTexture(name), register);
     }
 
     public ItemStack addItem(int metadata, String name, int rarity) {
@@ -82,7 +146,7 @@ public class FluxGearItem extends Item {
     }
 
     // addColorizedItem(...) {}
-    public ItemStack addColorizedItem(int metadata, String name, int rarity, boolean register, String template, String texture, int color) {
+    /*public ItemStack addColorizedItem(int metadata, String name, int rarity, boolean register, String template, String texture, int color) {
         ItemStack stack = addItem(metadata, name, rarity, register);
         if (stack != null) {
             itemMap.get(metadata).setColorData(template, texture, color);
@@ -96,7 +160,7 @@ public class FluxGearItem extends Item {
 
     public ItemStack addColorizedItem(int metadata, String name, String texture, String template, int color) {
         return addColorizedItem(metadata, name, 0, true, texture, template, color);
-    }
+    }*/
 
     // addOreDictItem(...) {}
     public ItemStack addOreDictItem(int metadata, String name, int rarity, boolean register, String... oreDict) {
@@ -133,7 +197,7 @@ public class FluxGearItem extends Item {
 	}
 
     // addColorizedOreDictItem(...) {}
-    public ItemStack addColorizedOreDictItem(int metadata, String name, int rarity, boolean register, String template, String texture, int color, String... oreDict) {
+    /*public ItemStack addColorizedOreDictItem(int metadata, String name, int rarity, boolean register, String template, String texture, int color, String... oreDict) {
         ItemStack stack = addColorizedItem(metadata, name, rarity, register, texture, template, color);
 	    if (oreDict.length == 0) {
 		    RegistrationWrapper.registerOreDict(stack, name);
@@ -153,70 +217,90 @@ public class FluxGearItem extends Item {
 
     public ItemStack addColorizedOreDictItem(int metadata, String name, String template, int color, String... oreDict) {
         return addColorizedOreDictItem(metadata, name, 0, true, template, name, color, oreDict);
-    }
+    }*/
 
     /*public ItemStack addColorizedOreDictItem(int metadata, String name, EnumGrayscaleItems template, int color, String... oreDict) {
         return addColorizedOreDictItem(metadata, name, 0, true, template, name, color, oreDict);
     }*/
 
+
+	/**
+	 * 	Just adds all non-disabled items to the creative tab that the item is set to go in.
+	 *
+	 * 	@param item - The Item supplied, should be an instance of FluxGearItem, but it doesn't matter.
+	 * 	@param tab - The creative tab that the items are in. You should have set this during construction or with
+	 * 	              setCreativeTab(...)
+	 * 	@param list - The list of items that we add to.
+	 */
     @Override
     public void getSubItems(Item item, CreativeTabs tab, List list) {
         for (int meta : itemList) {
-            list.add(new ItemStack(item, 1, meta));
+			if (itemMap.containsKey(meta) || !itemMap.get(meta).disabled) {
+				list.add(new ItemStack(item, 1, meta));
+			}
         }
     }
+
+	@Override
+	public Item setUnlocalizedName(String name) {
+		GameRegistry.registerItem(this, name);
+		return super.setUnlocalizedName(modName + "." + name);
+	}
+
+	public Item setUnlocalizedName(String textureName, String registrationName) {
+		GameRegistry.registerItem(this, registrationName);
+		return super.setUnlocalizedName(modName + "." + textureName);
+	}
+
+	@Override
+	public String getUnlocalizedName(ItemStack stack) {
+		int meta = stack.getItemDamage();
+		return "item." + modName + (folder == null ? "" : "." + folder) + (itemMap.containsKey(meta) ? "." + itemMap.get(meta).name + (itemMap.get(meta).altName ? "Alt" : "") : ".invalid");
+	}
+
+	@Override
+	public String getItemStackDisplayName (ItemStack stack) {
+		int meta = stack.getItemDamage();
+		if (itemList.contains(meta) && registryItem) {
+			String itemName = itemMap.get(meta).name;
+			if (StatCollector.canTranslate("item." + modName + "." + itemMap.get(meta).name + ".name")) { //Custom Name
+				return StatCollector.translateToLocal("item." + modName + "." + itemMap.get(meta).name + ".name");
+			} else  if (itemName.contains(".")) { //General Name
+				String[] split = itemName.replace('.', ':').split(":");
+				String form = split[0];
+				String material = split[1];
+                /*if (StatCollector.canTranslate("pfgregistry.form." + form + ".name")) {
+                    return StringHelper.localize("pfgregistry.form." + form + ".name").replace("%%material", StatCollector.canTranslate("pfgregistry.material." + material + ".name") ? StringHelper.localize("pfgregistry.material." + material + ".name") : StringHelper.titleCase(material));
+                }*/
+			}
+		}
+		return super.getItemStackDisplayName(stack);
+	}
+
+	@Override
+	public EnumRarity getRarity(ItemStack stack) {
+		int meta = stack.getItemDamage();
+		return itemMap.containsKey(meta) ? EnumRarity.values()[itemMap.get(meta).rarity] : EnumRarity.common;
+	}
+
+
+
 
     public String getInternalName(ItemStack itemstack) {
         int meta = itemstack.getItemDamage();
         return itemMap.containsKey(meta) ? itemMap.get(meta).name : "invalid";
     }
 
-    @Override
-    public Item setUnlocalizedName(String name) {
-        GameRegistry.registerItem(this, name);
-        return super.setUnlocalizedName(modName + "." + name);
-    }
 
-    public Item setUnlocalizedName(String textureName, String registrationName) {
-        GameRegistry.registerItem(this, registrationName);
-        return super.setUnlocalizedName(modName + "." + textureName);
-    }
+
+
 
     public FluxGearItem setRegistryItem(boolean isRegistryItem) {
         registryItem = isRegistryItem;
         return this;
     }
 
-    @Override
-    public String getUnlocalizedName(ItemStack stack) {
-        int meta = stack.getItemDamage();
-        return "item." + modName + (folder == null ? "" : ".") + folder + (itemMap.containsKey(meta) ? "." + itemMap.get(meta).name : ".invalid");
-    }
 
-    @Override
-    public String getItemStackDisplayName (ItemStack stack) {
-        int meta = stack.getItemDamage();
-        if (itemList.contains(meta) && registryItem) {
-            String itemName = itemMap.get(meta).name;
-            if (StatCollector.canTranslate("item." + modName + "." + itemMap.get(meta).name + ".name")) { //Custom Name
-                return StatCollector.translateToLocal("item." + modName + "." + itemMap.get(meta).name + ".name");
-            } else  if (itemName.contains(".")) { //General Name
-                String[] split = itemName.replace('.', ':').split(":");
-                String form = split[0];
-                String material = split[1];
-                /*if (StatCollector.canTranslate("pfgregistry.form." + form + ".name")) {
-                    return StringHelper.localize("pfgregistry.form." + form + ".name").replace("%%material", StatCollector.canTranslate("pfgregistry.material." + material + ".name") ? StringHelper.localize("pfgregistry.material." + material + ".name") : StringHelper.titleCase(material));
-                }*/
-            }
-        }
-        return super.getItemStackDisplayName(stack);
-    }
-
-    @Override
-    public EnumRarity getRarity(ItemStack stack) {
-        int meta = stack.getItemDamage();
-        return itemMap.containsKey(meta) ? EnumRarity.values()[itemMap.get(meta).rarity] : EnumRarity.common;
-    }
 
     /*@Override
     public boolean hasCustomEntity(ItemStack itemstack) {
@@ -224,11 +308,11 @@ public class FluxGearItem extends Item {
     }
 
     @Override
-    public Entity createEntity(World world, Entity itemEntity, ItemStack stack) {
-        if (SecurityHelper.isSecure(stack)) {
-            itemEntity.invulnerable = true;
-            itemEntity.isImmuneToFire = true;
-            ((EntityItem) itemEntity).lifespan = Integer.MAX_VALUE;
+    public Entity createEntity(World world, Entity entity, ItemStack itemstack) {
+        if (SecurityHelper.isSecure(itemstack)) {
+            entity.invulnerable = true;
+            entity.isImmuneToFire = true;
+            ((EntityItem) entity).lifespan = Integer.MAX_VALUE;
         }
         return null;
     }*/
@@ -246,71 +330,58 @@ public class FluxGearItem extends Item {
     @Override
     @SideOnly(Side.CLIENT)
     public boolean requiresMultipleRenderPasses() {
-        return false;
+        return true;
     }
 
     @Override
     @SideOnly(Side.CLIENT)
     public IIcon getIconFromDamage(int metadata) {
-        return itemList.contains(metadata) ? itemMap.get(metadata).icon : null;
+        return itemMap.containsKey(metadata) ? itemMap.get(metadata).icon : null;
     }
 
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IIconRegister iconRegister) {
-        /*if (!grayscaled) {
+		ItemEntry entry;
+        /*if (grayscaled) {
             for (EnumGrayscaleItems item : EnumGrayscaleItems.values()) {
                 item.setIcon(iconRegister.registerIcon("fluxgear:grayscale/" + item.getName()));
             }
         }*/
         if (hasTextures) {
-            for (int i = 0; i < itemList.size(); i++) {
-                ItemEntry entry = itemMap.get(itemList.get(i));
-                if (itemMap.containsKey(i)) {
-                    if (/*!MeltedDashboardConfig.minimalRegistry && */hasTexture(i)) {
-                        entry.icon = iconRegister.registerIcon(getIconFromMeta(i));
-                    } else {
-                        entry.icon = getTemplate(itemMap.get(i).template, iconRegister);
-                    }
-                } else {
-                    entry.icon = iconRegister.registerIcon(modName + ":" + getUnlocalizedName().replace("item." + modName + ".", "") + "/" + StringHelper.camelCase(entry.name));
-                }
-            }
-        }
-    }
-
-    @SideOnly(Side.CLIENT)
-    public IIcon getTemplate(String template, IIconRegister iconRegister) {
-        EnumGrayscaleItems value = EnumGrayscaleItems.getValue(template);
-        if (value != EnumGrayscaleItems.NULL) {
-            return value.getIcon();
-        } else {
-            return iconRegister.registerIcon("fluxgear:grayscale/" + template);
+			for (int meta : itemList) {
+				if (itemMap.containsKey(meta) && !itemMap.get(meta).isDisabled()) {
+					entry = itemMap.get(meta);
+					//if (entry.gradients.length == 0 /*|| (!MeltedDashboardConfig.minimalRegistry && hasTexture(meta))*/) {
+						entry.icon = iconRegister.registerIcon(getIconFromMeta(meta));
+					//} else if (entry.gradients.length == 1) {
+					//	entry.icon = GrayscaleEntry.getIcon(entry.template);
+					//}
+				} /*else {
+					entry.icon = iconRegister.registerIcon(modName + ":" + getUnlocalizedName().replace("item." + modName + ".", "") + "/" + StringHelper.camelCase(entry.name));
+                }*/
+			}
         }
     }
 
     @Override
     public IIcon getIcon(ItemStack stack, int renderPass) {
         int metadata = stack.getItemDamage();
-        if (renderPass == 1) {
+        //if (renderPass == 1) {
             return itemMap.containsKey(metadata) ? itemMap.get(metadata).icon : null;
-        } else {
-        	return itemMap.containsKey(metadata) ? itemMap.get(metadata).icon : null;
-        }
+        //} else {
+        //	return itemMap.containsKey(metadata) ? itemMap.get(metadata).icon : null;
+        //}
     }
 
     @Override
     @SideOnly(Side.CLIENT)
     public int getColorFromItemStack(ItemStack stack, int renderPass) {
-        return renderPass == 1 && itemMap.containsKey(stack.getItemDamage()) ? getColor(stack) : ColorLibrary.CLEAR;
-    }
-
-    public int getColor(ItemStack stack) {
-        return itemMap.containsKey(stack.getItemDamage()) ? itemMap.get(stack.getItemDamage()).color : /*ColorLibrary.CLEAR*/0xFFFFFF;
+        return renderPass == 1 && (itemMap.containsKey(stack.getItemDamage()) && !itemMap.get(stack.getItemDamage()).disabled && itemMap.get(stack.getItemDamage()).gradients.length == 1) ? itemMap.get(stack.getItemDamage()).gradients[0].color : ColorLibrary.CLEAR;
     }
 
     public String getIconFromMeta(int metadata) {
-        return modName + ":" + folder + (folder == null ? "" : ".") + itemMap.get(metadata).texture;
+    	return modName + ":" + folder + (folder == null ? "" : "/") + itemMap.get(metadata).texture;
     }
 
     public boolean hasTexture(int metadata) {
@@ -357,4 +428,22 @@ public class FluxGearItem extends Item {
             list.add(ThaumRevLibrary.NULL_TOOLTIP);
         }*/
     //}
+
+	@SideOnly(Side.CLIENT)
+	public static void handleGradients(TextureStitchEvent.Pre event) {
+		ItemEntry entry;
+
+		for (FluxGearItem item : items) {
+			if (item.gradient) {
+				for (int meta : item.itemList) {
+					if (item.itemMap.containsKey(meta)) {
+						entry = item.itemMap.get(meta);
+						if ((!entry.textureFound /*|| MeltedDashboradConfig.alwaysUseGradients*/) && entry.gradients.length >= 2) {
+							event.map.setTextureEntry(GrayscaleEntry.getTexture(entry.template), new GradientTexture(item.getIconFromMeta(meta), entry.template, true, entry.gradients));
+						}
+					}
+				}
+			}
+		}
+	}
 }

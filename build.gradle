@@ -53,7 +53,7 @@ targetCompatibility = JavaVersion.VERSION_1_6
 }*/
 
 // Determines the version from the many variables, uses a convoluted method, because I can't strings in Gradle...
-if (use_MC_version) {
+/*if (use_MC_version) {
 	if (use_appendix) {
 		version = "${minecraft_version}-v${mod_version_version}.${mod_version_major}.${mod_version_minor}.${mod_version_revision}${mod_version_patch}-${mod_version_appendix} ${mod_version_build}-${mod_internal_build}"
 	} else {
@@ -65,21 +65,15 @@ if (use_MC_version) {
 	} else {
 		version = "v${mod_version_version}.${mod_version_major}.${mod_version_minor}.${mod_version_revision}${mod_version_patch}-${mod_internal_build}"
 	}
-}
+}*/
+version = "v${mod_version_major}.${mod_version_minor}.${mod_version_revision}${mod_version_patch}-${mod_version_appendix}"
+
 
 // This is our group.
 group = mod_group
 
 // This is our actual project within the group.
 archivesBaseName = mod_archiveBaseName
-
-// If TeamCity is running this build, let's see the version info.
-/*if (hasProperty("teamcity")) {
-    version = teamcity["build.number"]
-
-    // Fix for main branch being built.
-    version = version.replaceAll("/", "-")
-}*/
 
 // Add Coremod Manifest and Classifier (if I wanted one)
 /*jar {

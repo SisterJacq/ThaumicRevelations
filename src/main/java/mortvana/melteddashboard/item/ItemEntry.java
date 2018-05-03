@@ -2,6 +2,8 @@ package mortvana.melteddashboard.item;
 
 import net.minecraft.util.IIcon;
 
+import mortvana.melteddashboard.client.texture.GradientNode;
+
 /**
  *  Class of an Object used for storing data relating to metadata based items.
  *
@@ -9,29 +11,29 @@ import net.minecraft.util.IIcon;
  */
 public class ItemEntry {
 
-    public String name, template, texture;
-    public IIcon icon;
-    public int rarity = 0;
-    public int maxDamage = 0;
-	public int color = 0xFFFFFF;
-	public boolean enchanted;
+    protected String name, template, texture;
+    protected IIcon icon;
+    protected int rarity = 0;
+    protected int maxDamage = 0;
+	protected GradientNode[] gradients = new GradientNode[0];
+	protected boolean altName = false;
+	protected boolean enchanted = false;
+	protected boolean textureFound;
+	protected boolean disabled;
 
     public ItemEntry(String name, int rarity, int maxDamage) {
         this.name = name;
         this.rarity = rarity;
         this.maxDamage = maxDamage;
-	    setTexture(name);
     }
 
     public ItemEntry(String name, int rarity) {
         this.name = name;
         this.rarity = rarity;
-	    setTexture(name);
     }
 
     public ItemEntry(String name) {
         this.name = name;
-	    setTexture(name);
     }
 
     public ItemEntry setIcon(IIcon icon) {
@@ -42,12 +44,12 @@ public class ItemEntry {
 	/**
 	 * @param template - Grayscale version of the texture, which is colorized if the colorized texture is not found.
 	 * @param texture - Colorized version of the texture, which is used if found, for items with custom sprites.
-	 * @param color - Hexadecimal RGB color to colorize the template with.
+	 * @param gradients - Hexadecimal RGB color to colorize the template with.
 	 */
-	public ItemEntry setColorData(String template, String texture, int color) {
+	public ItemEntry setColorData(String template, String texture, GradientNode[] gradients) {
 		this.template = template;
 		this.texture = texture;
-		this.color = color;
+		this.gradients = gradients;
 		return this;
 	}
 
@@ -59,5 +61,9 @@ public class ItemEntry {
 	public ItemEntry setEnchanted(boolean enchanted) {
 		this.enchanted = enchanted;
 		return this;
+	}
+
+	public boolean isDisabled() {
+		return disabled;
 	}
 }

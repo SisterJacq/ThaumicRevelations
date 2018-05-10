@@ -13,7 +13,7 @@ public class BlockStorageSpecial1 extends FluxGearBlockBase {
 	public BlockStorageSpecial1() {
 		super(Material.iron);
 		setStepSound(soundTypeMetal);
-		setCreativeTab(thaumicRevelationsTab);
+		setCreativeTab(generalTab);
 		setBlockName("thaumrev.storageSpecial1");
 
 		setData(TEX_LOC_DEFAULT + "storage/", NAMES);

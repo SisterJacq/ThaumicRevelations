@@ -14,7 +14,7 @@ public class BlockStorageAlloy1 extends FluxGearBlockBase {
 	public BlockStorageAlloy1() {
 		super(Material.iron);
 		setStepSound(soundTypeMetal);
-		setCreativeTab(thaumicRevelationsTab);
+		setCreativeTab(generalTab);
 		setBlockName("thaumrev.storageMain");
 		setData(TEX_LOC_DEFAULT + "storage/", NAMES);
 		setHarvestLevels();

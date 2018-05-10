@@ -15,10 +15,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 import mortvana.melteddashboard.block.FluxGearBlockBase;
-import mortvana.melteddashboard.util.helpers.ItemHelper;
 import mortvana.melteddashboard.util.helpers.StringHelper;
-
-import mortvana.thaumrev.util.RecipeHelper;
 
 import static mortvana.thaumrev.library.ThaumRevLibrary.*;
 
@@ -27,7 +24,7 @@ public class BlockStoneDecor extends FluxGearBlockBase {
 	public BlockStoneDecor() {
 		super(Material.rock);
 		setStepSound(soundTypeStone);
-		setCreativeTab(thaumicRevelationsTab);
+		setCreativeTab(generalTab);
 		setBlockName("thaumrev.stonedecor");
 
 		setHarvestLevel("pickaxe", 0);

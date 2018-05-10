@@ -34,7 +34,6 @@ public class ThaumicRevelations {
 	public void preInit(FMLPreInitializationEvent event) {
 		config = new ThaumRevConfig(event, "/Mortvana/ThaumicRevelations.cfg");
 		proxy.initRenderers();
-		MinecraftForge.EVENT_BUS.register(new ClientEventHandler());
 		//GuiHandler.init();
 		//AspectInfusionHandler.init();
 		ThaumRevContent.preInit();

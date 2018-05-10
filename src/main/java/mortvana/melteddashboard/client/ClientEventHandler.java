@@ -10,7 +10,6 @@ public class ClientEventHandler {
 
 	@SubscribeEvent
 	public void textureStitch(TextureStitchEvent.Pre event) {
-		//GrayscaleEntry.registerIcons(event.map);
-		//FluxGearItem.handleGradients(event);
+		GrayscaleEntry.registerIcons(event.map);
 	}
 }

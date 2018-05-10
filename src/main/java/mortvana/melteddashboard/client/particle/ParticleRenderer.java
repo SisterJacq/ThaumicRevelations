@@ -1,4 +1,4 @@
-package mortvana.melteddashboard.particle;
+package mortvana.melteddashboard.client.particle;
 
 import java.lang.ref.WeakReference;
 import java.util.*;

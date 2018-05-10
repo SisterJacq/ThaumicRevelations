@@ -32,6 +32,25 @@ public class FluxGearItemBauble extends FluxGearItem implements IBauble {
 		super(modName, tab);
 	}
 
+	public ItemStack addMetaBauble(int metadata, String name, int rarity, BaubleData data) {
+		baubleData.put(metadata, data);
+		return addItem(metadata, name, rarity);
+	}
+
+	public ItemStack addMetaBauble(int metadata, String name, BaubleData data) {
+		baubleData.put(metadata, data);
+		return addItem(metadata, name);
+	}
+
+	public boolean metaBaubleExists(ItemStack bauble) {
+		return metaBaubleExists(bauble.getItemDamage());
+	}
+
+	public boolean metaBaubleExists(int metadata) {
+		return baubleData.containsKey(metadata);
+	}
+
+
 	@Override
 	public ItemStack onItemRightClick(ItemStack itemstack, World world, EntityPlayer player) {
 		if (canEquip(itemstack, player)) {
@@ -66,7 +85,7 @@ public class FluxGearItemBauble extends FluxGearItem implements IBauble {
 	@Override
 	public void onWornTick(ItemStack itemstack, EntityLivingBase player) {
 		if (metaBaubleExists(itemstack)){
-				baubleData.get(itemstack.getItemDamage()).onWornTick(itemstack, player);
+			baubleData.get(itemstack.getItemDamage()).onWornTick(itemstack, player);
 		}
 	}
 
@@ -94,22 +113,6 @@ public class FluxGearItemBauble extends FluxGearItem implements IBauble {
 		return !metaBaubleExists(itemstack) || baubleData.get(itemstack.getItemDamage()).canUnequip();
 	}
 
-	public boolean metaBaubleExists(ItemStack bauble) {
-		return metaBaubleExists(bauble.getItemDamage());
-	}
 
-	public boolean metaBaubleExists(int metadata) {
-		return baubleData.containsKey(metadata);
-	}
-
-	public ItemStack addMetaBauble(int metadata, String name, BaubleData data) {
-		baubleData.put(metadata, data);
-		return addItem(metadata, name);
-	}
-
-	public ItemStack addMetaBauble(int metadata, String name, BaubleData data, int rarity) {
-		baubleData.put(metadata, data);
-		return addItem(metadata, name, rarity);
-	}
 
 }

@@ -18,19 +18,15 @@ public class FluxGearItemInteractive extends FluxGearItem {
 	public List<Integer> customEntities = new ArrayList<Integer>(16);
 
 	public FluxGearItemInteractive() {
-		setHasSubtypes(true);
-		setMaxDamage(0);
-		setMaxStackSize(64);
+		super();
 	}
 
 	public FluxGearItemInteractive(String modName) {
-		this();
-		this.modName = modName;
+		super(modName);
 	}
 
 	public FluxGearItemInteractive(String modName, CreativeTabs tab) {
-		this(modName);
-		setCreativeTab(tab);
+		super(modName, tab);
 	}
 
 	@Override
@@ -54,7 +50,7 @@ public class FluxGearItemInteractive extends FluxGearItem {
 		if (used && !player.capabilities.isCreativeMode) {
 			stack.stackSize -= 1;
 		}
-		return stack;
+		return super.onItemRightClick(stack, world, player);
 	}
 
 	public void addLoot(int metadata, ItemStack... stacks) {

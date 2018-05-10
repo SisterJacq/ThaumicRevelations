@@ -5,8 +5,6 @@ import java.util.List;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.nbt.NBTTagList;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 import cpw.mods.fml.common.Optional;
@@ -23,9 +21,6 @@ import mortvana.thaumrev.api.util.enums.EnumEquipmentType;
 import mortvana.thaumrev.library.ThaumRevLibrary;
 import mortvana.thaumrev.util.enums.EnumPrimalAspect;
 
-import static mortvana.thaumrev.library.ThaumRevLibrary.INVENTORY;
-import static mortvana.thaumrev.library.ThaumRevLibrary.SLOT;
-
 public abstract class ItemArmorInfusableBase extends ItemArmorFluxGear implements ISpecialArmor, IInfusableItem {
 
 	protected EnumEquipmentType type;
@@ -36,13 +31,13 @@ public abstract class ItemArmorInfusableBase extends ItemArmorFluxGear implement
 	public ItemArmorInfusableBase(String material, int index, int type, String name, String sheet, String icon) {
 		super(material, index, type, name, sheet, icon);
 		this.type = EnumEquipmentType.values()[type];
-		setCreativeTab(ThaumRevLibrary.thaumicRevelationsTab);
+		setCreativeTab(ThaumRevLibrary.generalTab);
 	}
 
 	public ItemArmorInfusableBase(String material, int index, int type) {
 		super(material, index, type);
 		this.type = EnumEquipmentType.values()[type];
-		setCreativeTab(ThaumRevLibrary.thaumicRevelationsTab);
+		setCreativeTab(ThaumRevLibrary.generalTab);
 	}
 
 	@Override

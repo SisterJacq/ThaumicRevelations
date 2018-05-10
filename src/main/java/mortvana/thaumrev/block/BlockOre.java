@@ -11,8 +11,6 @@ import mortvana.melteddashboard.block.FluxGearBlockBase;
 import mortvana.melteddashboard.util.helpers.ItemHelper;
 import mortvana.melteddashboard.util.helpers.science.MathHelper;
 
-import mortvana.thaumrev.util.RecipeHelper;
-
 import static mortvana.thaumrev.library.ThaumRevLibrary.*;
 
 public class BlockOre extends FluxGearBlockBase {
@@ -20,7 +18,7 @@ public class BlockOre extends FluxGearBlockBase {
 	public BlockOre() {
 		super(Material.rock);
 		setStepSound(soundTypeMetal);
-		setCreativeTab(thaumicRevelationsTab);
+		setCreativeTab(generalTab);
 		setBlockName("thaumrev.ore");
 
 		setData(TEX_LOC_DEFAULT + "ore/", NAMES);

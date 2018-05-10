@@ -9,7 +9,7 @@ public class BlockStairsWardenicQuartz extends BlockStairs {
 	public BlockStairsWardenicQuartz() {
 		super(blockStoneDecor, 2);
 		setBlockName("thaumrev.blockWardenicQuartzStair");
-		setCreativeTab(thaumicRevelationsTab);
+		setCreativeTab(generalTab);
 		setLightOpacity(0);
 	}
 }

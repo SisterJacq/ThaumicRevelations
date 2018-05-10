@@ -1,7 +1,6 @@
 package mortvana.thaumrev.block;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -9,8 +8,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraftforge.common.EnumPlantType;
 import net.minecraftforge.common.util.ForgeDirection;
 
@@ -25,7 +22,7 @@ public class BlockThaumicPlant extends FluxGearBlockPlant {
 	public BlockThaumicPlant() {
 		super(Material.plants);
 		setBlockName("blockThaumicPlant");
-		setCreativeTab(thaumicRevelationsTab);
+		setCreativeTab(generalTab);
 		setStepSound(Block.soundTypeGrass);
 		setData(TEX_LOC_DEFAULT + "plant/", NAMES);
 	}

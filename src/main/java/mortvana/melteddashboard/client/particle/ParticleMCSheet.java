@@ -1,4 +1,4 @@
-package mortvana.melteddashboard.particle;
+package mortvana.melteddashboard.client.particle;
 
 import net.minecraft.client.renderer.Tessellator;
 

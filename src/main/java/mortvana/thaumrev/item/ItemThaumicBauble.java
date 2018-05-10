@@ -11,8 +11,9 @@ import mortvana.thaumrev.library.ThaumRevLibrary;
 public class ItemThaumicBauble extends FluxGearItemBauble {
 
 	public ItemThaumicBauble() {
-		super(ThaumRevLibrary.RESOURCE_PREFIX, ThaumRevLibrary.thaumicRevelationsTab);
-		setFolder("/baubles");
+		super(ThaumRevLibrary.RESOURCE_PREFIX, ThaumRevLibrary.generalTab);
+		setFolder("baubles");
+		setUnlocalizedName("bauble");
 	}
 
 	@Override

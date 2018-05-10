@@ -32,11 +32,11 @@ public class ThaumRevLibrary {
 	/** MOD CONSTANTS **/
 	public static final String MOD_ID = "ThaumicRevelations";
 	public static final String MOD_NAME = "Thaumic Revelations";
-	public static final String MOD_VERSION = "vPO.TA.TO.RANDOM-DEV";
-	public static final String MOD_DEPENDENCIES = "required-after:Thaumcraft; after:MagicBees[2.3.0)";
+	public static final String MOD_VERSION = "v0.0.1";
+	public static final String MOD_DEPENDENCIES = "required-after:Thaumcraft; after:MagicBees[2.4.1)";
 	public static final String API_NAME = "ThaumicRevelationsAPI";
-	public static final String RESOURCE_PREFIX = "thaumrev";
-	public static final String TEX_LOC_DEFAULT = "thaumrev:";
+	public static final String RESOURCE_PREFIX = "fluxgear";
+	public static final String TEX_LOC_DEFAULT = "fluxgear:";
 
 	public static int researchLevel;
 
@@ -54,7 +54,7 @@ public class ThaumRevLibrary {
 	//public static Enchantment enchantStabilizing;
 
 	/** CREATIVE TABS **/
-	public static CreativeTabs thaumicRevelationsTab;
+	public static CreativeTabs generalTab;
 
 	/** MATERIALS **/
 	public static Material materialFalseAir = new MaterialFalseAir();

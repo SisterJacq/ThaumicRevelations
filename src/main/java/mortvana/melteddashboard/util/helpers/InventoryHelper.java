@@ -12,12 +12,12 @@ import static mortvana.thaumrev.library.ThaumRevLibrary.SLOT;
 
 public class InventoryHelper {
 
-	public static int getInternalSlots(ItemStack container) { //TODO: CoFH/IE/Forestry
+	public static int getInternalSlots(ItemStack container) { //TODO: CoFH/IE/Forestry/ExU/BetterStorage
 		Item item = container.getItem();
 		if (item instanceof IContainerItem) {
 			return ((IContainerItem) item).getInternalSlots(container);
 		} else {
-			return 0;
+			return -1;
 		}
 	}
 

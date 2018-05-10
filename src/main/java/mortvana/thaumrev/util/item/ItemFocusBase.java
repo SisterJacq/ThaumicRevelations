@@ -35,7 +35,7 @@ public abstract class ItemFocusBase extends ItemFocusBasic {
 		this.color = color;
 		this.ornament = ornament;
 		setUnlocalizedName("thaumrev.focus" + name);
-		setCreativeTab(ThaumRevLibrary.thaumicRevelationsTab);
+		setCreativeTab(ThaumRevLibrary.generalTab);
 	}
 
 	@Override

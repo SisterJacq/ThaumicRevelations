@@ -18,12 +18,13 @@ import thaumcraft.api.research.ResearchPage;
 
 import magicbees.api.MagicBeesAPI;
 
-import mortvana.melteddashboard.ColorLibrary;
+import mortvana.melteddashboard.lib.ColorLibrary;
 import mortvana.melteddashboard.intermod.baubles.util.DefaultBaubleData;
 import mortvana.melteddashboard.intermod.thaumcraft.research.DummyResearchItem;
 import mortvana.melteddashboard.intermod.thaumcraft.research.FluxGearResearchItem;
 import mortvana.melteddashboard.inventory.FluxGearCreativeTab;
 import mortvana.melteddashboard.item.ItemArmorFluxGear;
+import mortvana.melteddashboard.lib.GradientLibrary;
 import mortvana.melteddashboard.util.helpers.ItemHelper;
 import mortvana.melteddashboard.util.helpers.mod.ThaumcraftHelper;
 
@@ -37,13 +38,14 @@ import mortvana.thaumrev.world.ThaumRevWorldGenerator;
 import static thaumcraft.api.aspects.Aspect.*;
 import static mortvana.melteddashboard.lib.ThaumcraftLibrary.*;
 import static mortvana.melteddashboard.lib.ThermalLibrary.*;
+import static mortvana.melteddashboard.util.GrayscaleEntry.*;
 import static mortvana.thaumrev.library.ThaumRevLibrary.*;
 import static mortvana.thaumrev.util.RecipeHelper.*;
 
 public class ThaumRevContent {
 
 	public static void preInit() {
-		thaumicRevelationsTab = new FluxGearCreativeTab("Thaumic Revelations", "thaumicRevelations");
+		generalTab = new FluxGearCreativeTab("Thaumic Revelations", "thaumicRevelations");
 		createBlocks();
 		createItems();
 		registerBlocks();
@@ -65,7 +67,7 @@ public class ThaumRevContent {
 
 		loadInit();
 
-		((FluxGearCreativeTab) thaumicRevelationsTab).setItem(wardenAmulet);
+		((FluxGearCreativeTab) generalTab).setItem(wardenAmulet);
 	}
 
 	public static void postInit() {
@@ -266,7 +268,7 @@ public class ThaumRevContent {
 			RecipeHelper.registerOreDict(new ItemStack(blockStorageAlloy1, 1, i), BlockStorageAlloy1.NAMES[i]);
 		}
 
-		blockThaumicElectrum = new ItemStack(blockStorageSpecial1, 1, 0);
+		/*blockThaumicElectrum = new ItemStack(blockStorageSpecial1, 1, 0);
 		blockThaumicRiftishBronze = new ItemStack(blockStorageSpecial1, 1, 1);
 		blockSteel = new ItemStack(blockStorageSpecial1, 1, 2);
 		blockVoidbrass = new ItemStack(blockStorageSpecial1, 1, 3);
@@ -285,7 +287,7 @@ public class ThaumRevContent {
 
 		for (int i = 0; i < BlockStorageSpecial1.NAMES.length; i++) {
 			RecipeHelper.registerOreDict(new ItemStack(blockStorageSpecial1, 1, i), BlockStorageSpecial1.NAMES[i]);
-		}
+		}*/
 
 		//block = new ItemStack(blockStorage, 1, );
 		//RecipeHelper.registerOreDict(new ItemStack(blockStorageOre, 1, ), "block");
@@ -418,7 +420,7 @@ public class ThaumRevContent {
 	}
 
 	public static void loadMetalItems() {
-		ingotCopper = generalItem.addOreDictItem(5000, iCu);
+		ingotCopper = generalItem.addColorizedOreDictItem(5000, iCu, INGOT, iCu, GradientLibrary.GRAD_CU);
 		ingotZinc = generalItem.addOreDictItem(5001, "ingotZinc");
 		ingotTin = generalItem.addOreDictItem(5002, iSn);
 		ingotNickel = generalItem.addOreDictItem(5003, "ingotNickel");
@@ -475,7 +477,7 @@ public class ThaumRevContent {
 		//ingotCrimsonThaumium
 		//ingotOccultVoidtungsten
 
-		/*gemPyrope = generalItem.addOreDictItem(5096, "gemPyrope", 2);
+		gemPyrope = generalItem.addOreDictItem(5096, "gemPyrope", 2);
 		gemDioptase = generalItem.addOreDictItem(5097, "gemDioptase", 2);
 		gemFluonicSapphire = generalItem.addOreDictItem(5098, "gemFluonicSapphire", 2);
 		gemFluonicPyroptase = generalItem.addOreDictItem(5099, "gemFluonicPyroptase", 3);
@@ -492,7 +494,7 @@ public class ThaumRevContent {
 		ingotThaumicBronze = generalItem.addOreDictItem(5120, "ingotThaumicBronze");
 		ingotOsLu = generalItem.addOreDictItem(5121, "ingotOsmiumLutetium", 2);
 
-		nuggetCopper = metalItem.addOreDictItem(200, "nuggetCopper");
+		/*nuggetCopper = metalItem.addOreDictItem(200, "nuggetCopper");
 		nuggetZinc = metalItem.addOreDictItem(201, "nuggetZinc");
 		nuggetTin = metalItem.addOreDictItem(202, "nuggetTin");
 		nuggetNickel = metalItem.addOreDictItem(203, "nuggetNickel");
@@ -849,8 +851,8 @@ public class ThaumRevContent {
 	public static void loadTools() {}
 
 	public static void loadBaubles() {
-		wardenAmulet = thaumicBauble.addMetaBauble(0, "wardenAmulet", new DefaultBaubleData(BaubleType.AMULET), 2);
-		loveRing = thaumicBauble.addMetaBauble(1, "loveRing", new DefaultBaubleData(BaubleType.RING).setUnequip(false), 3);
+		wardenAmulet = thaumicBauble.addMetaBauble(0, "wardenAmulet", 2, new DefaultBaubleData(BaubleType.AMULET));
+		loveRing = thaumicBauble.addMetaBauble(1, "loveRing", 3, new DefaultBaubleData(BaubleType.RING).setUnequip(false));
 	}
 
 	public static void loadInit() {

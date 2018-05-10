@@ -15,9 +15,12 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.util.ResourceLocation;
 
 import cpw.mods.fml.client.FMLClientHandler;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 import mortvana.thaumrev.common.ThaumicRevelations;
 
+@SideOnly(Side.CLIENT)
 public class GradientTexture extends TextureAtlasSprite {
 
 	protected String icon;
@@ -45,7 +48,7 @@ public class GradientTexture extends TextureAtlasSprite {
 			int h, w, i, q;
 			q = icon.indexOf(':');
 			String domain = icon.substring(0, q);
-			texture = new ResourceLocation(domain, "textures/items/" + icon.substring(q + 1, icon.length()));
+			texture = new ResourceLocation(domain, "textures/items/" + icon.substring(q + 1, icon.length()) + ".png");
 			IResource resource = manager.getResource(texture);
 
 			int mipmap = settings.mipmapLevels;
@@ -84,7 +87,7 @@ public class GradientTexture extends TextureAtlasSprite {
 				for (Object obj : mips) {
 					i = (Integer) obj;
 					if ((i > 0) && (i < images.length - 1) && (images[i] == null)) {
-						ResourceLocation mip = new ResourceLocation(domain, "textures/items/mipmaps/" + location.getResourcePath() + "." + 2 + ".png");
+						ResourceLocation mip = new ResourceLocation(domain, "textures/items/mipmaps/" + location.getResourcePath() + "." + i + ".png");
 						try {
 							images[i] = ImageIO.read(manager.getResource(mip).getInputStream());
 						} catch (IOException ex) {
@@ -108,6 +111,7 @@ public class GradientTexture extends TextureAtlasSprite {
 					image.getRGB(0, 0, image.getWidth(), image.getHeight(), data[i], 0, image.getWidth());
 				}
 			}
+
 
 			if (animation == null) {
 				if (h != w) {
@@ -142,6 +146,7 @@ public class GradientTexture extends TextureAtlasSprite {
 				}
 			}
 
+			ThaumicRevelations.logger.info("Debug Start Checkpoint 0-0");
 			// Gradient Colorizer!
 			int [][] sprite;
 			int l;
@@ -167,31 +172,35 @@ public class GradientTexture extends TextureAtlasSprite {
 					max = temp / 255.0F;
 				}
 
-				for (i = 0; i < animation.getFrameIndexSet().size(); i++) {
+				for (i = 0; i < framesTextureData.size(); i++) {
 					obj = framesTextureData.get(i);
 					if (obj instanceof int[][]) {
 						sprite = (int[][]) obj;
 
-						for (l = 0; l < sprite.length; l++) {
+						/*for (*/l = 0; /*l < sprite.length; l++) {*/
 							for (i = 0; i < sprite[l].length; i++) {
 								sprite[l][i] = getGradient(sprite[l][i], gradients, min, max);
 							}
-						}
+						//}
 					} else {
 						throw new IOException("Well, actually we probably have a texture, \"framesTextureData\" just returned an object that isn't an \"int[][]\", so we can't do colorizing stuff. This is actually an upside of more modern version of Minecraft, they finally learned to type their Collections!");
 					}
 				}
 			} else {
-				for (i = 0; i < animation.getFrameIndexSet().size(); i++) {
+				for (i = 0; i < framesTextureData.size(); i++) {
+
 					obj = framesTextureData.get(i);
 					if (obj instanceof int[][]) {
 						sprite = (int[][]) obj;
 
-						for (l = 0; l < sprite.length; l++) {
-							for (i = 0; i < sprite[l].length; i++) {
-								sprite[l][i] = getGradient(sprite[l][i], gradients, 0.0F, 1.0F);
+						//for (l = 0; l < mipmap + 1; l++) {
+							for (i = 0; i < sprite[0].length; i++) {
+								ThaumicRevelations.logger.info("Checkpoint 1-" + i);
+								sprite[0][i] = getGradient(sprite[0][i], gradients, 0.0F, 1.0F);
 							}
-						}
+						//}
+						// TODO: Set? No, that gives a Runtime Exception...
+						//framesTextureData.set(i, sprite);
 					} else {
 						throw new IOException("Well, actually we probably have a texture, \"framesTextureData\" just returned an object that isn't an \"int[][]\", so we can't do colorizing stuff. This is actually an upside of more modern version of Minecraft, they finally learned to type their Collections!");
 					}
@@ -208,7 +217,7 @@ public class GradientTexture extends TextureAtlasSprite {
 	}
 
 	public static int getGradient(int color, GradientNode[] gradients, float min, float max) {
-		int a = color >> 24 & 0xFF, r = 0, g = 0, b = 0, i;
+		int a = color >> 24 & 0xFF, r, g, b , i;
 
 		if (a == 0) { //There is no alpha to the gradient, just skip it
 			return color;

@@ -21,6 +21,7 @@ import mortvana.melteddashboard.block.material.MaterialFalseAir;
 import mortvana.melteddashboard.intermod.baubles.item.FluxGearItemBauble;
 import mortvana.melteddashboard.item.FluxGearItemInteractive;
 import mortvana.melteddashboard.item.ItemArmorFluxGear;
+import mortvana.melteddashboard.lib.ColorLibrary;
 import mortvana.melteddashboard.world.*;
 
 import mortvana.thaumrev.util.item.ItemArmorInfusableBase;
@@ -32,11 +33,11 @@ public class ThaumRevLibrary {
 	/** MOD CONSTANTS **/
 	public static final String MOD_ID = "ThaumicRevelations";
 	public static final String MOD_NAME = "Thaumic Revelations";
-	public static final String MOD_VERSION = "vPO.TA.TO.RANDOM-DEV";
-	public static final String MOD_DEPENDENCIES = "required-after:Thaumcraft; after:MagicBees[2.3.0)";
+	public static final String MOD_VERSION = "v0.0.1";
+	public static final String MOD_DEPENDENCIES = "required-after:Thaumcraft; after:MagicBees[2.4.1)";
 	public static final String API_NAME = "ThaumicRevelationsAPI";
-	public static final String RESOURCE_PREFIX = "thaumrev";
-	public static final String TEX_LOC_DEFAULT = "thaumrev:";
+	public static final String RESOURCE_PREFIX = "fluxgear";
+	public static final String TEX_LOC_DEFAULT = "fluxgear:";
 
 	public static int researchLevel;
 
@@ -47,14 +48,14 @@ public class ThaumRevLibrary {
 	/** ASPECTS **/
 	public static final Aspect WARDEN = new Aspect("excubitor", 0x3CD4FC, new Aspect[] {ELDRITCH, DEATH}, new ResourceLocation(RESOURCE_PREFIX, "textures/aspects/exubitor.png"), 771);
 	public static final Aspect MAGNET = new Aspect("magnes", 0x515970, new Aspect[] {METAL, ENERGY}, new ResourceLocation(RESOURCE_PREFIX, "textures/aspects/magnes.png"), 771);
-	public static final Aspect FLUX = new Aspect("fluxus", 0xAD0200, new Aspect[] {MAGNET, MECHANISM}, new ResourceLocation(RESOURCE_PREFIX, "textures/aspects/fluxus.png"), 771);
+	public static final Aspect FLUX = new Aspect("fluxus", ColorLibrary.COLOR_FLUX, new Aspect[] {MAGNET, MECHANISM}, new ResourceLocation(RESOURCE_PREFIX, "textures/aspects/fluxus.png"), 771);
 	public static final Aspect REVELATIONS = new Aspect("patefactio", 0x3971AD, new Aspect[] {TRAVEL, MIND}, new ResourceLocation(RESOURCE_PREFIX, "textures/aspects/revelatiofez.png"), 771);
 
 	/** ENCHANTMENTS **/
 	//public static Enchantment enchantStabilizing;
 
 	/** CREATIVE TABS **/
-	public static CreativeTabs thaumicRevelationsTab;
+	public static CreativeTabs generalTab;
 
 	/** MATERIALS **/
 	public static Material materialFalseAir = new MaterialFalseAir();
@@ -82,6 +83,8 @@ public class ThaumRevLibrary {
 
 	/** ITEMS **/
 	public static FluxGearItemInteractive generalItem;
+	public static FluxGearItemInteractive metalItem;
+
 	public static FluxGearItemBauble thaumicBauble;
 
 	/** ITEMSTACKS **/
@@ -221,460 +224,17 @@ public class ThaumRevLibrary {
 
 	public static ItemStack thaumicBronzeChain;				//00060
 
-
-
 	//public static ItemStack aluminiumHydroxide;				//00016
 
-	//00200-00224 BASE METAL INGOTS/NATURAL GEMS
-	public static ItemStack ingotCopper;					//00200
-	public static ItemStack ingotZinc;						//00201
-	public static ItemStack ingotTin;						//00202
-	public static ItemStack ingotNickel;					//00203
-	public static ItemStack ingotSilver;					//00204
-	public static ItemStack ingotLead;						//00205
-	public static ItemStack ingotLanthanides;				//00206
-	public static ItemStack ingotTungsten;					//00207
-	public static ItemStack ingotIridium;					//00208
-	public static ItemStack ingotBismuth;					//00209
-	public static ItemStack ingotArsenicalBronze;			//00210
-	public static ItemStack ingotAntimonialBronze;			//00211
-	public static ItemStack gemPyrope;						//00212
-	public static ItemStack gemDioptase;					//00213
-	public static ItemStack gemFluonicSapphire;				//00214
-	public static ItemStack ingotOsmium;					//00215
-	public static ItemStack ingotNeodymium;					//00216
-	public static ItemStack ingotLutetium;					//00217
-	public static ItemStack ingotPalladium;					//00218
-	public static ItemStack ingotIridosmium;				//00219
-	public static ItemStack ingotAluminium;					//00220
-	public static ItemStack ingotXenotimeJunk;				//00221
-
-	//00225-00249 SIMPLE ALLOY INGOTS
-	public static ItemStack ingotBrass;						//00225
-	public static ItemStack ingotBronze;					//00226
-	public static ItemStack ingotBismuthBronze;				//00227
-	public static ItemStack ingotMithril;					//00228
-	public static ItemStack ingotAluminiumBronze;			//00229
-	public static ItemStack ingotCupronickel;				//00230
-	public static ItemStack ingotRiftishBronze;				//00231
-	public static ItemStack ingotConstantan;				//00232
-	public static ItemStack ingotInvar;						//00233
-	public static ItemStack ingotElectrum;					//00234
-	public static ItemStack ingotWardenicMetal;				//00235
-	public static ItemStack ingotDullRedsolder;				//00236
-	public static ItemStack ingotRedsolder;					//00237
-
-	//00250-00259 COMPLEX ALLOY INGOTS/COMPOUND GEMS/DUST METAL INGOTS
-	public static ItemStack ingotThaumicBronze;				//00250
-	public static ItemStack ingotOsLu;						//00251
-	public static ItemStack gemFluonicPyroptase;			//00252
-
-	public static ItemStack ingotArsenic;					//00255
-	public static ItemStack ingotAntimony;					//00256
-
-	//00260-00299 SPECIAL ALLOY INGOTS
-	public static ItemStack ingotThaumicElectrum;			//00260
-	public static ItemStack ingotThaumicRiftishBronze;		//00261
-	public static ItemStack ingotSteel;						//00262
-	public static ItemStack ingotVoidbrass;					//00263
-	public static ItemStack ingotVoidsteel;					//00264
-	public static ItemStack ingotVoidtungsten;				//00265
-
-	public static ItemStack ingotWardenicBronze;			//00270
-	public static ItemStack ingotWardenicSteel;				//00271
-	public static ItemStack ingotWardenicRiftishBronze;		//00272
-	public static ItemStack gemWardenicQuartz;				//00273
-	public static ItemStack gemWardenicCrystal;				//00274
-	public static ItemStack gemWardenicCrystalActivated;	//00275
-	public static ItemStack ingotWardenicComposite;			//00276
-
-	public static ItemStack ingotRedsolderArcane;			//00280
-	public static ItemStack ingotRedbronze;					//00281
-	public static ItemStack ingotRedbronzeHardened;			//00282
-	public static ItemStack ingotFluxsteel;					//00283
-	public static ItemStack gemRedquartz;					//00284
-	public static ItemStack ingotFluxedTungsten;			//00285
-	public static ItemStack ingotMagneoturgicComposite;		//00286
-	public static ItemStack ingotFluxedComposite;			//00287
-	public static ItemStack ingotResonantFluxedComposite;	//00288
-
-	//00300-00324 BASE METAL NUGGETS/NATURAL GEM SHARDS
-	public static ItemStack nuggetCopper;					//00300
-	public static ItemStack nuggetZinc;						//00301
-	public static ItemStack nuggetTin;						//00302
-	public static ItemStack nuggetNickel;					//00303
-	public static ItemStack nuggetSilver;					//00304
-	public static ItemStack nuggetLead;						//00305
-	public static ItemStack nuggetLanthanides;				//00306
-	public static ItemStack nuggetTungsten;					//00307
-	public static ItemStack nuggetIridium;					//00308
-	public static ItemStack nuggetBismuth;					//00309
-	public static ItemStack nuggetArsenicalBronze;			//00310
-	public static ItemStack nuggetAntimonialBronze;			//00311
-	public static ItemStack shardPyrope;					//00312
-	public static ItemStack shardDioptase;					//00313
-	public static ItemStack shardFluonicSapphire;			//00314
-	public static ItemStack nuggetOsmium;					//00315
-	public static ItemStack nuggetNeodymium;				//00316
-	public static ItemStack nuggetLutetium;					//00317
-	public static ItemStack nuggetPalladium;				//00318
-	public static ItemStack nuggetIridosmium;				//00319
-	public static ItemStack nuggetAluminium;				//00320
-	public static ItemStack nuggetXenotimeJunk;				//00321
-
-	//00325-00349 SIMPLE ALLOY NUGGETS
-	public static ItemStack nuggetBrass;					//00325
-	public static ItemStack nuggetBronze;					//00326
-	public static ItemStack nuggetBismuthBronze;			//00327
-	public static ItemStack nuggetMithril;					//00328
-	public static ItemStack nuggetAluminiumBronze;			//00329
-	public static ItemStack nuggetCupronickel;				//00330
-	public static ItemStack nuggetRiftishBronze;			//00331
-	public static ItemStack nuggetConstantan;				//00332
-	public static ItemStack nuggetInvar;					//00333
-	public static ItemStack nuggetElectrum;					//00334
-	public static ItemStack nuggetWardenicMetal;			//00335
-	public static ItemStack nuggetDullRedsolder;			//00336
-	public static ItemStack nuggetRedsolder;				//00337
-
-	//00350-00359 COMPLEX ALLOY NUGGETS/COMPOUND GEM SHARDS/DUST METAL NUGGETS
-	public static ItemStack nuggetThaumicBronze;			//00350
-	public static ItemStack nuggetOsLu;						//00351
-	public static ItemStack shardFluonicPyroptase;			//00352
-
-	public static ItemStack nuggetArsenic;					//00355
-	public static ItemStack nuggetAntimony;					//00356
-
-	//00360-00399 SPECIAL ALLOY NUGGETS
-	public static ItemStack nuggetThaumicElectrum;			//00360
-	public static ItemStack nuggetThaumicRiftishBronze;		//00361
-	public static ItemStack nuggetSteel;					//00362
-	public static ItemStack nuggetVoidbrass;				//00363
-	public static ItemStack nuggetVoidsteel;				//00364
-	public static ItemStack nuggetVoidtungsten;				//00365
-
-	public static ItemStack nuggetWardenicBronze;			//00370
-	public static ItemStack nuggetWardenicSteel;			//00371
-	public static ItemStack nuggetWardenicRiftishBronze;	//00372
-	public static ItemStack shardWardenicQuartz;			//00373
-	public static ItemStack shardWardenicCrystal;			//00374
-	public static ItemStack shardWardenicCrystalActivated;	//00375
-	public static ItemStack nuggetWardenicComposite;		//00376
-
-	public static ItemStack nuggetRedsolderArcane;			//00380
-	public static ItemStack nuggetRedbronze;				//00381
-	public static ItemStack nuggetRedbronzeHardened;		//00382
-	public static ItemStack nuggetFluxsteel;				//00383
-	public static ItemStack shardRedquartz;					//00384
-	public static ItemStack nuggetFluxedTungsten;			//00385
-	public static ItemStack nuggetMagneoturgicComposite;	//00386
-	public static ItemStack nuggetFluxedComposite;			//00387
-	public static ItemStack nuggetResonantFluxedComposite;	//00388
-
-	//00400-00424 BASE METAL DUSTS/NATURAL GEM DUSTS
-	public static ItemStack dustCopper;						//00400
-	public static ItemStack dustZinc;						//00401
-	public static ItemStack dustTin;						//00402
-	public static ItemStack dustNickel;						//00403
-	public static ItemStack dustSilver;						//00404
-	public static ItemStack dustLead;						//00405
-	public static ItemStack dustLanthanides;				//00406
-	public static ItemStack dustTungsten;					//00407
-	public static ItemStack dustIridium;					//00408
-	public static ItemStack dustBismuth;					//00409
-	public static ItemStack dustArsenicalBronze;			//00410
-	public static ItemStack dustAntimonialBronze;			//00411
-	public static ItemStack dustPyrope;						//00412
-	public static ItemStack dustDioptase;					//00413
-	public static ItemStack dustFluonicSapphire;			//00414
-	public static ItemStack dustOsmium;						//00415
-	public static ItemStack dustNeodymium;					//00416
-	public static ItemStack dustLutetium;					//00417
-	public static ItemStack dustPalladium;					//00418
-	public static ItemStack dustIridosmium;					//00419
-	public static ItemStack dustAluminium;					//00420
-	public static ItemStack dustXenotimeJunk;				//00421
-
-	//00425-00449 SIMPLE ALLOY DUSTS
-	public static ItemStack dustBrass;						//00425
-	public static ItemStack dustBronze;						//00426
-	public static ItemStack dustBismuthBronze;				//00427
-	public static ItemStack dustMithril;					//00428
-	public static ItemStack dustAluminiumBronze;			//00429
-	public static ItemStack dustCupronickel;				//00430
-	public static ItemStack dustRiftishBronze;				//00431
-	public static ItemStack dustConstantan;					//00432
-	public static ItemStack dustInvar;						//00433
-	public static ItemStack dustElectrum;					//00434
-	public static ItemStack dustWardenicMetal;				//00435
-	public static ItemStack dustDullRedsolder;				//00436
-	public static ItemStack dustRedsolder;					//00437
-
-	//00450-00459 COMPLEX ALLOY DUSTS/COMPOUND GEM DUSTS/DUST METAL DUSTS
-	public static ItemStack dustThaumicBronze;				//00450
-	public static ItemStack dustOsLu;						//00451
-	public static ItemStack dustFluonicPyroptase;			//00452
-
-	public static ItemStack dustArsenic;					//00455
-	public static ItemStack dustAntimony;					//00456
-
-	//00460-00499 SPECIAL ALLOY DUSTS
-	public static ItemStack dustThaumicElectrum;			//00460
-	public static ItemStack dustThaumicRiftishBronze;		//00461
-	public static ItemStack dustSteel;						//00462
-	public static ItemStack dustVoidbrass;					//00463
-	public static ItemStack dustVoidsteel;					//00464
-	public static ItemStack dustVoidtungsten;				//00465
-
-	public static ItemStack dustWardenicBronze;				//00470
-	public static ItemStack dustWardenicSteel;				//00471
-	public static ItemStack dustWardenicRiftishBronze;		//00472
-	public static ItemStack dustWardenicQuartz;				//00473
-	public static ItemStack dustWardenicCrystal;			//00474
-	public static ItemStack dustWardenicCrystalActivated;	//00475
-	public static ItemStack dustWardenicComposite;			//00476
-
-	public static ItemStack dustRedsolderArcane;			//00480
-	public static ItemStack dustRedbronze;					//00481
-	public static ItemStack dustRedbronzeHardened;			//00482
-	public static ItemStack dustFluxsteel;					//00483
-	public static ItemStack dustRedquartz;					//00484
-	public static ItemStack dustFluxedTungsten;				//00485
-	public static ItemStack dustMagneoturgicComposite;		//00486
-	public static ItemStack dustFluxedComposite;			//00487
-	public static ItemStack dustResonantFluxedComposite;	//00488
-
-	//00500-00524 BASE METAL TINY DUSTS/NATURAL GEM TINY DUSTS
-	public static ItemStack tinyCopper;						//00500
-	public static ItemStack tinyZinc;						//00501
-	public static ItemStack tinyTin;						//00502
-	public static ItemStack tinyNickel;						//00503
-	public static ItemStack tinySilver;						//00504
-	public static ItemStack tinyLead;						//00505
-	public static ItemStack tinyLanthanides;				//00506
-	public static ItemStack tinyTungsten;					//00507
-	public static ItemStack tinyIridium;					//00508
-	public static ItemStack tinyBismuth;					//00509
-	public static ItemStack tinyArsenicalBronze;			//00510
-	public static ItemStack tinyAntimonialBronze;			//00511
-	public static ItemStack tinyPyrope;						//00512
-	public static ItemStack tinyDioptase;					//00513
-	public static ItemStack tinyFluonicSapphire;			//00514
-	public static ItemStack tinyOsmium;						//00515
-	public static ItemStack tinyNeodymium;					//00516
-	public static ItemStack tinyLutetium;					//00517
-	public static ItemStack tinyPalladium;					//00518
-	public static ItemStack tinyIridosmium;					//00519
-	public static ItemStack tinyAluminium;					//00520
-	public static ItemStack tinyXenotimeJunk;				//00521
-
-	//00525-00549 SIMPLE ALLOY TINY DUSTS
-	public static ItemStack tinyBrass;						//00525
-	public static ItemStack tinyBronze;						//00526
-	public static ItemStack tinyBismuthBronze;				//00527
-	public static ItemStack tinyMithril;					//00528
-	public static ItemStack tinyAluminiumBronze;			//00529
-	public static ItemStack tinyCupronickel;				//00530
-	public static ItemStack tinyRiftishBronze;				//00531
-	public static ItemStack tinyConstantan;					//00532
-	public static ItemStack tinyInvar;						//00533
-	public static ItemStack tinyElectrum;					//00534
-	public static ItemStack tinyWardenicMetal;				//00535
-	public static ItemStack tinyDullRedsolder;				//00536
-	public static ItemStack tinyRedsolder;					//00537
-
-	//00550-00559 COMPLEX ALLOY TINY DUSTS/COMPOUND GEM TINY DUSTS/DUST METAL TINY DUSTS
-	public static ItemStack tinyThaumicBronze;				//00550
-	public static ItemStack tinyOsLu;						//00551
-	public static ItemStack tinyFluonicPyroptase;			//00552
-
-	public static ItemStack tinyArsenic;					//00555
-	public static ItemStack tinyAntimony;					//00556
-
-	//00560-00599 SPECIAL ALLOY TINY DUSTS
-	public static ItemStack tinyThaumicElectrum;			//00560
-	public static ItemStack tinyThaumicRiftishBronze;		//00561
-	public static ItemStack tinySteel;						//00562
-	public static ItemStack tinyVoidbrass;					//00563
-	public static ItemStack tinyVoidsteel;					//00564
-	public static ItemStack tinyVoidtungsten;				//00565
-
-	public static ItemStack tinyWardenicBronze;				//00570
-	public static ItemStack tinyWardenicSteel;				//00571
-	public static ItemStack tinyWardenicRiftishBronze;		//00572
-	public static ItemStack tinyWardenicQuartz;				//00573
-	public static ItemStack tinyWardenicCrystal;			//00574
-	public static ItemStack tinyWardenicCrystalActivated;	//00575
-	public static ItemStack tinyWardenicComposite;			//00576
-
-	public static ItemStack tinyRedsolderArcane;			//00580
-	public static ItemStack tinyRedbronze;					//00581
-	public static ItemStack tinyRedbronzeHardened;			//00582
-	public static ItemStack tinyFluxsteel;					//00583
-	public static ItemStack tinyRedquartz;					//00584
-	public static ItemStack tinyFluxedTungsten;				//00585
-	public static ItemStack tinyMagneoturgicComposite;		//00586
-	public static ItemStack tinyFluxedComposite;			//00587
-	public static ItemStack tinyResonantFluxedComposite;	//00588
-
-	//00600-00624 BASE METAL PLATES
-	public static ItemStack plateCopper;					//00600
-	public static ItemStack plateZinc;						//00601
-	public static ItemStack plateTin;						//00602
-	public static ItemStack plateNickel;					//00603
-	public static ItemStack plateSilver;					//00604
-	public static ItemStack plateLead;						//00605
-
-	public static ItemStack plateTungsten;					//00607
-	public static ItemStack plateIridium;					//00608
-	public static ItemStack plateBismuth;					//00609
-	public static ItemStack plateArsenicalBronze;			//00610
-	public static ItemStack plateAntimonialBronze;			//00611
-
-	public static ItemStack plateOsmium;					//00615
-	public static ItemStack plateNeodymium;					//00616
-	public static ItemStack plateLutetium;					//00617
-	public static ItemStack platePalladium;					//00618
-	public static ItemStack plateIridosmium;				//00619
-	public static ItemStack plateAluminium;					//00620
-
-	//00625-00649 SIMPLE ALLOY PLATES
-	public static ItemStack plateBrass;						//00625
-	public static ItemStack plateBronze;					//00626
-	public static ItemStack plateBismuthBronze;				//00627
-	public static ItemStack plateMithril;					//00628
-	public static ItemStack plateAluminiumBronze;			//00629
-	public static ItemStack plateCupronickel;				//00630
-	public static ItemStack plateRiftishBronze;				//00631
-	public static ItemStack plateConstantan;				//00632
-	public static ItemStack plateInvar;						//00633
-	public static ItemStack plateElectrum;					//00634
-	public static ItemStack plateWardenicMetal;				//00635
-	public static ItemStack plateDullRedsolder;				//00636
-	public static ItemStack plateRedsolder;					//00637
-
-	//00650-00659 COMPLEX ALLOY PLATES
-	public static ItemStack plateThaumicBronze;				//00650
-	public static ItemStack plateOsLu;						//00651
-
-	//00660-00699 SPECIAL ALLOY PLATES
-	public static ItemStack plateThaumicElectrum;			//00660
-	public static ItemStack plateThaumicRiftishBronze;		//00661
-	public static ItemStack plateSteel;						//00662
-	public static ItemStack plateVoidbrass;					//00663
-	public static ItemStack plateVoidsteel;					//00664
-	public static ItemStack plateVoidtungsten;				//00665
-
-	public static ItemStack plateWardenicBronze;			//00670
-	public static ItemStack plateWardenicSteel;				//00671
-	public static ItemStack plateWardenicRiftishBronze;		//00672
-	public static ItemStack plateWardenicComposite;			//00676
-
-	public static ItemStack plateRedsolderArcane;			//00680
-	public static ItemStack plateRedbronze;					//00681
-	public static ItemStack plateRedbronzeHardened;			//00682
-	public static ItemStack plateFluxsteel;					//00683
-	public static ItemStack plateFluxedTungsten;			//00685
-	public static ItemStack plateMagneoturgicComposite;		//00686
-	public static ItemStack plateFluxedComposite;			//00687
-	public static ItemStack plateResonantFluxedComposite;	//00688
-
-	//00700-00729 OTHER PLATES
-
-	//00730-00754 RAW SIMPLE ALLOY INGOTS
-	public static ItemStack rawBrass;						//00740
-	public static ItemStack rawBronze;						//00741
-	public static ItemStack rawBismuthBronze;				//00742
-	public static ItemStack rawMithril;						//00743
-	public static ItemStack rawAluminiumBronze;				//00744
-	public static ItemStack rawCupronickel;					//00745
-	public static ItemStack rawRiftishBronze;				//00746
-	public static ItemStack rawConstantan;					//00747
-	public static ItemStack rawInvar;						//00748
-	public static ItemStack rawElectrum;					//00749
-	public static ItemStack rawWardenicMetal;				//00750
-	public static ItemStack rawRedsolder;					//00751
-
-	//00755-00759 RAW COMPLEX ALLOY INGOTS/COMPOUND GEM DUSTS
-	public static ItemStack rawThaumicBronze;				//00755
-	public static ItemStack rawOsLu;						//00756
-	public static ItemStack blendFluonicPyrotase;			//00757
-
-	//00760-00769 RAW COMPOSITES
-	public static ItemStack rawWardenicComposite;			//00760
-	public static ItemStack rawMagneoturgicComposite;		//00761
-
-	//00770-00774 COATED COMPLEX ALLOY INGOTS
-	public static ItemStack coatedThaumicBronze;			//00770
-	public static ItemStack coatedOsLu;						//00771
-
-	//00775-00779 FIRED COMPLEX ALLOY INGOTS
-	public static ItemStack firedThaumicBronze;				//00775
-	public static ItemStack firedOsLu;						//00776
-
-	//00780-00799 SLAGS
-	public static ItemStack carbonSlag;						//00780
-	public static ItemStack ceramicSlag;					//00781
-	public static ItemStack thaumicSlag;					//00782
-	public static ItemStack fluonicSlag;					//00783
-
-	//00800-00839 ORE CLUSTERS
-	public static ItemStack clusterZinc;					//00801
-	public static ItemStack clusterAluminium;				//00802
-	public static ItemStack clusterNickel;					//00803
-	public static ItemStack clusterPlatinum;				//00804
-	public static ItemStack clusterXenotime;				//00806
-	public static ItemStack clusterTungsten;				//00807
-	public static ItemStack clusterIridosmium;				//00808
-	public static ItemStack clusterBismuth;					//00809
-	public static ItemStack clusterTennantite;				//00810
-	public static ItemStack clusterTetrahedrite;			//00811
-
-	//00840-00889 OTHER NUGGETS
-
-	//00890-00939 OTHER DUSTS
-	public static ItemStack dustAer;						//00890
-	public static ItemStack dustIgnis;						//00891
-	public static ItemStack dustAqua;						//00892
-	public static ItemStack dustTerra;						//00893
-	public static ItemStack dustOrdo;						//00894
-	public static ItemStack dustPerditio;					//00895
-	public static ItemStack dustIron;						//00896
-	public static ItemStack dustGold;						//00897
-	public static ItemStack dustThaumium;					//00898
-	public static ItemStack dustVoidmetal;					//00899
-	//Salis Mundus
-	public static ItemStack dustPrimalEssence;				//00901
-	public static ItemStack dustSulfur;						//00902
-
-	public static ItemStack dustWardenicBinder;				//00910
-
-	//00940-00989 OTHER TINY DUSTS
-	public static ItemStack tinyAer;						//00940
-	public static ItemStack tinyIgnis;						//00941
-	public static ItemStack tinyAqua;						//00942
-	public static ItemStack tinyTerra;						//00943
-	public static ItemStack tinyOrdo;						//00944
-	public static ItemStack tinyPerditio;					//00945
-	public static ItemStack tinyIron;						//00946
-	public static ItemStack tinyGold;						//00947
-	public static ItemStack tinyThaumium;					//00948
-	public static ItemStack tinyVoidmetal;					//00949
-	public static ItemStack tinySalisMundus;				//00950
-	public static ItemStack tinyPrimalEssence;				//00951
-	public static ItemStack tinySulfur;						//00952
-
-	public static ItemStack tinyWardenicBinder;				//00960
-
 	//00990-00999 SEEDS
-	public static ItemStack seedExcubitura;					//00990
-	public static ItemStack seedCotton;						//00991
-	public static ItemStack seedThistle;					//00992
-	public static ItemStack seedShimmerleaf;				//00993
-	public static ItemStack seedCinderpearl;				//00994
-	public static ItemStack seedShiverpearl;				//00995
-	public static ItemStack seedStormpearl;					//00996
-	public static ItemStack seedStonepearl;					//00997
+	public static ItemStack seedExcubitura;					//00950
+	public static ItemStack seedCotton;						//00951
+	public static ItemStack seedThistle;					//00952
+	public static ItemStack seedShimmerleaf;				//00953
+	public static ItemStack seedCinderpearl;				//00954
+	public static ItemStack seedShiverpearl;				//00955
+	public static ItemStack seedStormpearl;					//00956
+	public static ItemStack seedStonepearl;					//00957
 
 	//01000-01199 WARDENIC ARSENAL
 	public static ItemStack excubituraPetal;				//01000
@@ -723,21 +283,498 @@ public class ThaumRevLibrary {
 	//03300-03499 AUGMENTS
 	//03500-03599 GOLEM STUFF
 
-	//03600-03699 BACKUPS
-	public static ItemStack powderBlizz;					//03600
-	public static ItemStack powderBlitz;					//03601
-	public static ItemStack powderBasalz;					//03602
+	//04900-04999 BACKUPS
+	public static ItemStack powderBlizz;					//04900
+	public static ItemStack powderBlitz;					//04901
+	public static ItemStack powderBasalz;					//04902
 
-	//public static ItemStack wardenJournal1;				//05001 //TODO: Wardenic Backstory
+	//05000-05031 ELEMENTAL METAL INGOTS
+	public static ItemStack ingotCopper;					//05000
+	public static ItemStack ingotZinc;						//05001
+	public static ItemStack ingotTin;						//05002
+	public static ItemStack ingotNickel;					//05003
+	public static ItemStack ingotSilver;					//05004
+	public static ItemStack ingotLead;						//05005
+	public static ItemStack ingotLutetium;					//05006
+	public static ItemStack ingotTungsten;					//05007
+	public static ItemStack ingotIridium;					//05008
+	public static ItemStack ingotBismuth;					//05009
+	public static ItemStack ingotArsenic;					//05010
+	public static ItemStack ingotAntimony;					//05011
+	public static ItemStack ingotNeodymium;					//05012
+	public static ItemStack ingotOsmium;					//05013
+	public static ItemStack ingotPalladium;					//05014
+	public static ItemStack ingotAluminium;					//05015
 
-	//09500-09599 INTERMOD ITEMS
-	//10000-19999 TINKER'S CONSTRUCT TOOL PARTS
+	//05032-05063 SIMPLE ALLOY INGOTS
+	public static ItemStack ingotBrass;						//05032
+	public static ItemStack ingotBronze;					//05033
+	public static ItemStack ingotArsenicalBronze;			//05034
+	public static ItemStack ingotAntimonialBronze;			//05035
+	public static ItemStack ingotBismuthBronze;				//05036
+	public static ItemStack ingotMithril;					//05037
+	public static ItemStack ingotAluminiumBronze;			//05038
+	public static ItemStack ingotCupronickel;				//05039
+	public static ItemStack ingotRiftishBronze;				//05040
+	public static ItemStack ingotConstantan;				//05041
+	public static ItemStack ingotInvar;						//05042
+	public static ItemStack ingotElectrum;					//05043
+	public static ItemStack ingotWardenicMetal;				//05044
+	public static ItemStack ingotDullRedsolder;				//05045
+	public static ItemStack ingotRedsolder;					//05046
+
+	//05064-05079 SPECIAL ALLOY INGOTS
+	public static ItemStack ingotThaumicElectrum;			//05064
+	public static ItemStack ingotThaumicRiftishBronze;		//05065
+	public static ItemStack ingotSteel;						//05066
+	public static ItemStack ingotVoidbrass;					//05067
+	public static ItemStack ingotVoidsteel;					//05068
+	public static ItemStack ingotVoidtungsten;				//05069
+	public static ItemStack ingotVoidcupronickel;			//05070
+
+	//05080-05095 EQUIPMENT ALLOY INGOTS
+	public static ItemStack ingotWardenicBronze;			//05080
+	public static ItemStack ingotWardenicSteel;				//05081
+	public static ItemStack ingotWardenicRiftishBronze;		//05082
+	public static ItemStack ingotWardenicComposite;			//05083
+	public static ItemStack ingotRedsolderArcane;			//05084
+	public static ItemStack ingotRedbronze;					//05085
+	public static ItemStack ingotRedbronzeHardened;			//05086
+	public static ItemStack ingotFluxsteel;					//05087
+	public static ItemStack ingotFluxedTungsten;			//05088
+	public static ItemStack ingotMagneoturgicComposite;		//05089
+	public static ItemStack ingotFluxedComposite;			//05090
+	public static ItemStack ingotResonantFluxedComposite;	//05091
+	public static ItemStack ingotEmpoweredVoidbrass;		//05092
+	public static ItemStack ingotCrimsonThaumium;			//05093
+	public static ItemStack ingotOccultVoidtungsten;		//05094
+
+	//05096-05111 GEMS
+	public static ItemStack gemPyrope;						//05096
+	public static ItemStack gemDioptase;					//05097
+	public static ItemStack gemFluonicSapphire;				//05098
+	public static ItemStack gemFluonicPyroptase;			//05099
+	public static ItemStack gemWardenicCrystal;				//05100
+	public static ItemStack gemWardenicCrystalActivated;	//05101
+
+	public static ItemStack gemWardenicQuartz;				//05108
+	public static ItemStack gemRedquartz;					//05109
+	
+	//05112-05127 OTHER METAL INGOTS
+	public static ItemStack ingotLanthanides;				//05112
+	public static ItemStack ingotXenotimeJunk;				//05113
+	public static ItemStack ingotIridosmium;				//05114
+
+	public static ItemStack ingotThaumicBronze;				//05120
+	public static ItemStack ingotOsLu;						//05121
+
+	//05200-05231 ELEMENTAL METAL NUGGETS
+	public static ItemStack nuggetCopper;					//05200
+	public static ItemStack nuggetZinc;						//05201
+	public static ItemStack nuggetTin;						//05202
+	public static ItemStack nuggetNickel;					//05203
+	public static ItemStack nuggetSilver;					//05204
+	public static ItemStack nuggetLead;						//05205
+	public static ItemStack nuggetLutetium;					//05206
+	public static ItemStack nuggetTungsten;					//05207
+	public static ItemStack nuggetIridium;					//05208
+	public static ItemStack nuggetBismuth;					//05209
+	public static ItemStack nuggetArsenic;					//05210
+	public static ItemStack nuggetAntimony;					//05211
+	public static ItemStack nuggetNeodymium;				//05212
+	public static ItemStack nuggetOsmium;					//05213
+	public static ItemStack nuggetPalladium;				//05214
+	public static ItemStack nuggetAluminium;				//05215
+
+	//05232-05263 SIMPLE ALLOY NUGGETS
+	public static ItemStack nuggetBrass;					//05232
+	public static ItemStack nuggetBronze;					//05233
+	public static ItemStack nuggetArsenicalBronze;			//05234
+	public static ItemStack nuggetAntimonialBronze;			//05235
+	public static ItemStack nuggetBismuthBronze;			//05236
+	public static ItemStack nuggetMithril;					//05237
+	public static ItemStack nuggetAluminiumBronze;			//05238
+	public static ItemStack nuggetCupronickel;				//05239
+	public static ItemStack nuggetRiftishBronze;			//05240
+	public static ItemStack nuggetConstantan;				//05241
+	public static ItemStack nuggetInvar;					//05242
+	public static ItemStack nuggetElectrum;					//05243
+	public static ItemStack nuggetWardenicMetal;			//05244
+	public static ItemStack nuggetDullRedsolder;			//05245
+	public static ItemStack nuggetRedsolder;				//05246
+
+	//05264-05279 SPECIAL ALLOY NUGGETS
+	public static ItemStack nuggetThaumicElectrum;			//05264
+	public static ItemStack nuggetThaumicRiftishBronze;		//05265
+	public static ItemStack nuggetSteel;					//05266
+	public static ItemStack nuggetVoidbrass;				//05267
+	public static ItemStack nuggetVoidsteel;				//05268
+	public static ItemStack nuggetVoidtungsten;				//05269
+	public static ItemStack nuggetVoidcupronickel;			//05270
+
+	//05280-05295 EQUIPMENT ALLOY NUGGETS
+	public static ItemStack nuggetWardenicBronze;			//05280
+	public static ItemStack nuggetWardenicSteel;			//05281
+	public static ItemStack nuggetWardenicRiftishBronze;	//05282
+	public static ItemStack nuggetWardenicComposite;		//05283
+	public static ItemStack nuggetRedsolderArcane;			//05284
+	public static ItemStack nuggetRedbronze;				//05285
+	public static ItemStack nuggetRedbronzeHardened;		//05286
+	public static ItemStack nuggetFluxsteel;				//05287
+	public static ItemStack nuggetFluxedTungsten;			//05288
+	public static ItemStack nuggetMagneoturgicComposite;	//05289
+	public static ItemStack nuggetFluxedComposite;			//05290
+	public static ItemStack nuggetResonantFluxedComposite;	//05291
+	public static ItemStack nuggetEmpoweredVoidbrass;		//05292
+	public static ItemStack nuggetCrimsonThaumium;			//05293
+	public static ItemStack nuggetOccultVoidtungsten;		//05294
+
+	//05296-05311 GEM SHARDS
+	public static ItemStack shardPyrope;					//05296
+	public static ItemStack shardDioptase;					//05297
+	public static ItemStack shardFluonicSapphire;			//05298
+	public static ItemStack shardFluonicPyroptase;			//05299
+	public static ItemStack shardWardenicCrystal;			//05300
+	public static ItemStack shardWardenicCrystalActivated;	//05301
+
+	public static ItemStack shardWardenicQuartz;			//05308
+	public static ItemStack shardRedquartz;					//05309
+
+	//05312-05327 OTHER METAL NUGGETS
+	public static ItemStack nuggetLanthanides;				//05312
+	public static ItemStack nuggetXenotimeJunk;				//05313
+	public static ItemStack nuggetIridosmium;				//05314
+
+	public static ItemStack nuggetThaumicBronze;			//05320
+	public static ItemStack nuggetOsLu;						//05321
+
+	//05400-05431 ELEMENTAL METAL DUSTS
+	public static ItemStack dustCopper;						//05400
+	public static ItemStack dustZinc;						//05401
+	public static ItemStack dustTin;						//05402
+	public static ItemStack dustNickel;						//05403
+	public static ItemStack dustSilver;						//05404
+	public static ItemStack dustLead;						//05405
+	public static ItemStack dustLutetium;					//05406
+	public static ItemStack dustTungsten;					//05407
+	public static ItemStack dustIridium;					//05408
+	public static ItemStack dustBismuth;					//05409
+	public static ItemStack dustArsenic;					//05410
+	public static ItemStack dustAntimony;					//05411
+	public static ItemStack dustNeodymium;					//05412
+	public static ItemStack dustOsmium;						//05413
+	public static ItemStack dustPalladium;					//05414
+	public static ItemStack dustAluminium;					//05415
+
+	//05432-05463 SIMPLE ALLOY DUSTS
+	public static ItemStack dustBrass;						//05432
+	public static ItemStack dustBronze;						//05433
+	public static ItemStack dustArsenicalBronze;			//05434
+	public static ItemStack dustAntimonialBronze;			//05435
+	public static ItemStack dustBismuthBronze;				//05436
+	public static ItemStack dustMithril;					//05437
+	public static ItemStack dustAluminiumBronze;			//05438
+	public static ItemStack dustCupronickel;				//05439
+	public static ItemStack dustRiftishBronze;				//05440
+	public static ItemStack dustConstantan;					//05441
+	public static ItemStack dustInvar;						//05442
+	public static ItemStack dustElectrum;					//05443
+	public static ItemStack dustWardenicMetal;				//05444
+	public static ItemStack dustDullRedsolder;				//05445
+	public static ItemStack dustRedsolder;					//05446
+
+	//05464-05479 SPECIAL ALLOY DUSTS
+	public static ItemStack dustThaumicElectrum;			//05464
+	public static ItemStack dustThaumicRiftishBronze;		//05465
+	public static ItemStack dustSteel;						//05466
+	public static ItemStack dustVoidbrass;					//05467
+	public static ItemStack dustVoidsteel;					//05468
+	public static ItemStack dustVoidtungsten;				//05469
+	public static ItemStack dustVoidcupronickel;			//05470
+
+	//05480-05495 EQUIPMENT ALLOY DUSTS
+	public static ItemStack dustWardenicBronze;				//05480
+	public static ItemStack dustWardenicSteel;				//05481
+	public static ItemStack dustWardenicRiftishBronze;		//05482
+	public static ItemStack dustWardenicComposite;			//05483
+	public static ItemStack dustRedsolderArcane;			//05484
+	public static ItemStack dustRedbronze;					//05485
+	public static ItemStack dustRedbronzeHardened;			//05486
+	public static ItemStack dustFluxsteel;					//05487
+	public static ItemStack dustFluxedTungsten;				//05488
+	public static ItemStack dustMagneoturgicComposite;		//05489
+	public static ItemStack dustFluxedComposite;			//05490
+	public static ItemStack dustResonantFluxedComposite;	//05491
+	public static ItemStack dustEmpoweredVoidbrass;			//05492
+	public static ItemStack dustCrimsonThaumium;			//05493
+	public static ItemStack dustOccultVoidtungsten;			//05494
+
+	//05496-05511 GEM DUSTS
+	public static ItemStack dustPyrope;						//05496
+	public static ItemStack dustDioptase;					//05497
+	public static ItemStack dustFluonicSapphire;			//05498
+	public static ItemStack dustFluonicPyroptase;			//05499
+	public static ItemStack dustWardenicCrystal;			//05500
+	public static ItemStack dustWardenicCrystalActivated;	//05501
+
+	public static ItemStack dustWardenicQuartz;				//05508
+	public static ItemStack dustRedquartz;					//05509
+
+	//05512-05527 OTHER METAL DUSTS
+	public static ItemStack dustLanthanides;				//05512
+	public static ItemStack dustXenotimeJunk;				//05513
+	public static ItemStack dustIridosmium;					//05514
+
+	public static ItemStack dustThaumicBronze;				//05520
+	public static ItemStack dustOsLu;						//05521
+
+	//05600-05631 ELEMENTAL METAL TINY DUSTS
+	public static ItemStack tinyCopper;						//05600
+	public static ItemStack tinyZinc;						//05601
+	public static ItemStack tinyTin;						//05602
+	public static ItemStack tinyNickel;						//05603
+	public static ItemStack tinySilver;						//05604
+	public static ItemStack tinyLead;						//05605
+	public static ItemStack tinyLutetium;					//05606
+	public static ItemStack tinyTungsten;					//05607
+	public static ItemStack tinyIridium;					//05608
+	public static ItemStack tinyBismuth;					//05609
+	public static ItemStack tinyArsenic;					//05610
+	public static ItemStack tinyAntimony;					//05611
+	public static ItemStack tinyNeodymium;					//05612
+	public static ItemStack tinyOsmium;						//05613
+	public static ItemStack tinyPalladium;					//05614
+	public static ItemStack tinyAluminium;					//05615
+
+	//05632-05663 SIMPLE ALLOY TINY DUSTS
+	public static ItemStack tinyBrass;						//05632
+	public static ItemStack tinyBronze;						//05633
+	public static ItemStack tinyArsenicalBronze;			//05634
+	public static ItemStack tinyAntimonialBronze;			//05635
+	public static ItemStack tinyBismuthBronze;				//05636
+	public static ItemStack tinyMithril;					//05637
+	public static ItemStack tinyAluminiumBronze;			//05638
+	public static ItemStack tinyCupronickel;				//05639
+	public static ItemStack tinyRiftishBronze;				//05640
+	public static ItemStack tinyConstantan;					//05641
+	public static ItemStack tinyInvar;						//05642
+	public static ItemStack tinyElectrum;					//05643
+	public static ItemStack tinyWardenicMetal;				//05644
+	public static ItemStack tinyDullRedsolder;				//05645
+	public static ItemStack tinyRedsolder;					//05646
+
+	//05664-05679 SPECIAL ALLOY TINY DUSTS
+	public static ItemStack tinyThaumicElectrum;			//05664
+	public static ItemStack tinyThaumicRiftishBronze;		//05665
+	public static ItemStack tinySteel;						//05666
+	public static ItemStack tinyVoidbrass;					//05667
+	public static ItemStack tinyVoidsteel;					//05668
+	public static ItemStack tinyVoidtungsten;				//05669
+	public static ItemStack tinyVoidcupronickel;			//05670
+
+	//05680-05695 EQUIPMENT ALLOY TINY DUSTS
+	public static ItemStack tinyWardenicBronze;				//05680
+	public static ItemStack tinyWardenicSteel;				//05681
+	public static ItemStack tinyWardenicRiftishBronze;		//05682
+	public static ItemStack tinyWardenicComposite;			//05683
+	public static ItemStack tinyRedsolderArcane;			//05684
+	public static ItemStack tinyRedbronze;					//05685
+	public static ItemStack tinyRedbronzeHardened;			//05686
+	public static ItemStack tinyFluxsteel;					//05687
+	public static ItemStack tinyFluxedTungsten;				//05688
+	public static ItemStack tinyMagneoturgicComposite;		//05689
+	public static ItemStack tinyFluxedComposite;			//05690
+	public static ItemStack tinyResonantFluxedComposite;	//05691
+	public static ItemStack tinyEmpoweredVoidbrass;			//05692
+	public static ItemStack tinyCrimsonThaumium;			//05693
+	public static ItemStack tinyOccultVoidtungsten;			//05694
+
+	//05696-05711 GEM TINY DUSTS
+	public static ItemStack tinyPyrope;						//05696
+	public static ItemStack tinyDioptase;					//05697
+	public static ItemStack tinyFluonicSapphire;			//05698
+	public static ItemStack tinyFluonicPyroptase;			//05699
+	public static ItemStack tinyWardenicCrystal;			//05700
+	public static ItemStack tinyWardenicCrystalActivated;	//05701
+
+	public static ItemStack tinyWardenicQuartz;				//05708
+	public static ItemStack tinyRedquartz;					//05709
+
+	//05712-05727 OTHER METAL TINY DUSTS
+	public static ItemStack tinyLanthanides;				//05712
+	public static ItemStack tinyXenotimeJunk;				//05713
+	public static ItemStack tinyIridosmium;					//05714
+
+	public static ItemStack tinyThaumicBronze;				//05720
+	public static ItemStack tinyOsLu;						//05721
+
+	//05800-05831 ELEMENTAL METAL PLATES
+	public static ItemStack plateCopper;					//05800
+	public static ItemStack plateZinc;						//05801
+	public static ItemStack plateTin;						//05802
+	public static ItemStack plateNickel;					//05803
+	public static ItemStack plateSilver;					//05804
+	public static ItemStack plateLead;						//05805
+	public static ItemStack plateLutetium;					//05806
+	public static ItemStack plateTungsten;					//05807
+	public static ItemStack plateIridium;					//05808
+	public static ItemStack plateBismuth;					//05809
+	public static ItemStack plateArsenic;					//05810
+	public static ItemStack plateAntimony;					//05811
+	public static ItemStack plateNeodymium;					//05812
+	public static ItemStack plateOsmium;					//05813
+	public static ItemStack platePalladium;					//05814
+	public static ItemStack plateAluminium;					//05815
+
+	//05832-05863 SIMPLE ALLOY PLATES
+	public static ItemStack plateBrass;						//05832
+	public static ItemStack plateBronze;					//05833
+	public static ItemStack plateArsenicalBronze;			//05834
+	public static ItemStack plateAntimonialBronze;			//05835
+	public static ItemStack plateBismuthBronze;				//05836
+	public static ItemStack plateMithril;					//05837
+	public static ItemStack plateAluminiumBronze;			//05838
+	public static ItemStack plateCupronickel;				//05839
+	public static ItemStack plateRiftishBronze;				//05840
+	public static ItemStack plateConstantan;				//05841
+	public static ItemStack plateInvar;						//05842
+	public static ItemStack plateElectrum;					//05843
+	public static ItemStack plateWardenicMetal;				//05844
+	public static ItemStack plateDullRedsolder;				//05845
+	public static ItemStack plateRedsolder;					//05846
+
+	//05864-05879 SPECIAL ALLOY PLATES
+	public static ItemStack plateThaumicElectrum;			//05864
+	public static ItemStack plateThaumicRiftishBronze;		//05865
+	public static ItemStack plateSteel;						//05866
+	public static ItemStack plateVoidbrass;					//05867
+	public static ItemStack plateVoidsteel;					//05868
+	public static ItemStack plateVoidtungsten;				//05869
+	public static ItemStack plateVoidcupronickel;			//05870
+
+	//05880-05895 EQUIPMENT ALLOY PLATES
+	public static ItemStack plateWardenicBronze;			//05880
+	public static ItemStack plateWardenicSteel;				//05881
+	public static ItemStack plateWardenicRiftishBronze;		//05882
+	public static ItemStack plateWardenicComposite;			//05883
+	public static ItemStack plateRedsolderArcane;			//05884
+	public static ItemStack plateRedbronze;					//05885
+	public static ItemStack plateRedbronzeHardened;			//05886
+	public static ItemStack plateFluxsteel;					//05887
+	public static ItemStack plateFluxedTungsten;			//05888
+	public static ItemStack plateMagneoturgicComposite;		//05889
+	public static ItemStack plateFluxedComposite;			//05890
+	public static ItemStack plateResonantFluxedComposite;	//05891
+	public static ItemStack plateEmpoweredVoidbrass;		//05892
+	public static ItemStack plateCrimsonThaumium;			//05893
+	public static ItemStack plateOccultVoidtungsten;		//05894
+
+	//05920-05927 OTHER METAL PLATES
+	public static ItemStack plateThaumicBronze;				//05920
+	public static ItemStack plateOsLu;						//05921
+
+	//06000-06031 RAW SIMPLE ALLOY INGOTS
+	public static ItemStack rawBrass;						//06032
+	public static ItemStack rawBronze;						//06033
+	public static ItemStack rawArsenicalBronze;				//06034
+	public static ItemStack rawAntimonialBronze;			//06035
+	public static ItemStack rawBismuthBronze;				//06036
+	public static ItemStack rawMithril;						//06037
+	public static ItemStack rawAluminiumBronze;				//06038
+	public static ItemStack rawCupronickel;					//06039
+	public static ItemStack rawRiftishBronze;				//06040
+	public static ItemStack rawConstantan;					//06041
+	public static ItemStack rawInvar;						//06042
+	public static ItemStack rawElectrum;					//06043
+	public static ItemStack rawWardenicMetal;				//06044
+	public static ItemStack rawRedsolder;					//06045
+
+	//06032-06047 RAW COMPOSITES
+	public static ItemStack rawWardenicComposite;			//06035
+	public static ItemStack rawMagneoturgicComposite;		//06041
+
+	//06048-06055 RAW COMPLEX ALLOY INGOTS
+	public static ItemStack rawThaumicBronze;				//06048
+	public static ItemStack rawOsLu;						//06049
+
+	//06056-06063 COMPOUND GEM BLENDS
+	public static ItemStack blendFluonicPyrotase;			//06056
+
+	//06264-06271 COATED COMPLEX ALLOY INGOTS
+	public static ItemStack coatedThaumicBronze;			//06264
+	public static ItemStack coatedOsLu;						//06265
+
+	//06472-06479 FIRED COMPLEX ALLOY INGOTS
+	public static ItemStack firedThaumicBronze;				//06472
+	public static ItemStack firedOsLu;						//06473
+
+	//07000-07099 ORE CLUSTERS
+	public static ItemStack clusterZinc;					//07001
+	public static ItemStack clusterAluminium;				//07002
+	public static ItemStack clusterNickel;					//07003
+	public static ItemStack clusterPlatinum;				//07004
+	public static ItemStack clusterXenotime;				//07006
+	public static ItemStack clusterTungsten;				//07007
+	public static ItemStack clusterIridosmium;				//07008
+	public static ItemStack clusterBismuth;					//07009
+	public static ItemStack clusterTennantite;				//07010
+	public static ItemStack clusterTetrahedrite;			//07011
+
+
+	//071000-07199 SLAGS
+	public static ItemStack carbonSlag;						//07100
+	public static ItemStack ceramicSlag;					//07101
+	public static ItemStack thaumicSlag;					//07102
+	public static ItemStack fluonicSlag;					//07103
+
+
+	//09000-09199 OTHER INGOTS
+
+	//09200-09399 OTHER NUGGETS
+
+	//09400-09599 OTHER DUST
+	public static ItemStack dustAer;						//09400
+	public static ItemStack dustIgnis;						//09401
+	public static ItemStack dustAqua;						//09402
+	public static ItemStack dustTerra;						//09403
+	public static ItemStack dustOrdo;						//09404
+	public static ItemStack dustPerditio;					//09405
+	public static ItemStack dustIron;						//09406
+	public static ItemStack dustGold;						//09407
+	public static ItemStack dustThaumium;					//09408
+	public static ItemStack dustVoidmetal;					//09409
+	public static ItemStack dustSulfur;						//09410
+
+	//Salis Mundus
+	public static ItemStack dustPrimalEssence;				//09413
+
+	public static ItemStack dustWardenicBinder;				//09440
+
+	//09600-09799 OTHER TINY DUST
+	public static ItemStack tinyAer;						//09600
+	public static ItemStack tinyIgnis;						//09601
+	public static ItemStack tinyAqua;						//09602
+	public static ItemStack tinyTerra;						//09603
+	public static ItemStack tinyOrdo;						//09604
+	public static ItemStack tinyPerditio;					//09605
+	public static ItemStack tinyIron;						//09606
+	public static ItemStack tinyGold;						//09607
+	public static ItemStack tinyThaumium;					//09608
+	public static ItemStack tinyVoidmetal;					//09609
+	public static ItemStack tinySulfur;						//09610
+
+	public static ItemStack tinySalisMundus;				//09612
+	public static ItemStack tinyPrimalEssence;				//09613
+
+	public static ItemStack tinyWardenicBinder;				//09640
+
+	//public static ItemStack wardenJournal1;				//10001 //TODO: Wardenic Backstory
+
+	//12000-19999 INTERMOD ITEMS
+	//20000-29999 TINKER'S CONSTRUCT TOOL PARTS
 
 	//30000+ TEMPORARY ITEMS
 	public static ItemStack aluDenseTemp;					//30000
-
-
-	public static ItemStack alum;							//00015
 
 
 	public static ItemStack wardenAmulet;					//00000
@@ -1225,10 +1262,12 @@ public class ThaumRevLibrary {
 	public static final String matWardenicComposite = "WARDENIC_COMPOSITE";
 
 	/** NBT KEYS * */
-	public static final String DURABILITY = "DURABILITY";
-	public static final String REVEALING = "REVEALING";
-	public static final String BROKEN = "BROKEN";
-	public static final String VISMODIFIER = "VISDISCOUNT";
+	public static final String INVENTORY = "Items";
+	public static final String SLOT = "Slot";
+	public static final String DURABILITY = "Durability";
+	public static final String REVEALING = "Revealing";
+	public static final String BROKEN = "Broken";
+	public static final String VISMODIFIER = "VisDiscount";
 
 	/** CLIENT-SIDE * */
 	public static int renderDecorStoneID;

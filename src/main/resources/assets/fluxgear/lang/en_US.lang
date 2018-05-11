@@ -1,0 +1,461 @@
+#Misc
+itemGroup.thaumicRevelations=Thaumic Revelations
+tooltip.wardenic.charge=Charge
+tooltip.wardenic.upgrade=Upgrade
+
+#Aspects
+tc.aspect.excubitor=Warden, Vigilance, Victory, Sacrifice
+tc.aspect.citrus=Citrus, Orange, Lemon
+tc.aspect.magnes=Magnet, Magnetism
+tc.aspect.fluxus=Flux, Fluctuation, Energy
+tc.aspect.patefactio=Revelations, Uncovering, Epiphany
+
+#Research
+tc.research_category.THAUMREV=Thaumic Revelations
+
+#Blocks
+tile.fluxgear.plant.excubitura.name=Excubitura Rose
+tile.fluxgear.plant.cotton_wild.name=Wild Cotton
+tile.fluxgear.plant.thistle.name=Wild Thistle
+
+tile.fluxgear.ore.oreChalcocite.name=Chalcocite Ore
+tile.fluxgear.ore.oreSphalerite.name=Sphalerite Ore
+tile.fluxgear.ore.oreCassiterite.name=Cassiterite Ore
+tile.fluxgear.ore.oreMillerite.name=Millerite Ore
+tile.fluxgear.ore.oreNativeSilver.name=Native Silver Ore
+tile.fluxgear.ore.oreGalena.name=Galena Ore
+tile.fluxgear.ore.oreXenotime.name=Xenotime Ore
+tile.fluxgear.ore.oreWolframite.name=Wolframite Ore
+tile.fluxgear.ore.oreIridosmium.name=Iridosmium Ore
+tile.fluxgear.ore.oreBismuthinite.name=Bismuthinite Ore
+tile.fluxgear.ore.oreTennantite.name=Tennantite Ore
+tile.fluxgear.ore.oreTetrahedrite.name=Tetrahedrite Ore
+tile.fluxgear.ore.orePyrope.name=Pyrope Ore
+tile.fluxgear.ore.oreDioptase.name=Dioptase Ore
+tile.fluxgear.ore.oreFluonicSapphire.name=Fluonic Sapphire Ore
+
+tile.fluxgear.stoneDecor.obsidianWardenic.name=Wardenic Obsidian
+tile.fluxgear.stoneDecor.stoneEldritch.name=Eldritch Stone
+tile.fluxgear.stoneDecor.wardenicQuartz.name=Wardenic Quartz Block
+tile.fluxgear.stoneDecor.wardenicQuartzChiseled.name=Chiseled Wardenic Quartz Block
+tile.fluxgear.stoneDecor.wardenicQuartzPillar.name=Wardenic Quartz Pillar [WIP]
+
+tile.fluxgear.storage.blockCopper.name=Copper Block
+tile.fluxgear.storage.blockZinc.name=Zinc Block
+tile.fluxgear.storage.blockTin.name=Tin Block
+tile.fluxgear.storage.blockSilver.name=Silver Block
+tile.fluxgear.storage.blockBrass.name=Brass Block
+tile.fluxgear.storage.blockBronze.name=Bronze Block
+tile.fluxgear.storage.blockThaumicBronze.name=Thaumic Bronze Block
+tile.fluxgear.storage.blockSteel.name=Steel Block
+tile.fluxgear.storage.blockVoidbrass.name=Voidbrass Block
+tile.fluxgear.storage.blockVoidsteel.name=Voidsteel Block
+tile.fluxgear.storage.blockElectrum.name=Electrum Block
+tile.fluxgear.storage.blockWardenicSteel.name=Wardenic Steel Block
+tile.fluxgear.storage.blockThaumicElectrum.name=Thaumic Electrum Block
+tile.fluxgear.storage.blockVoid.name=Voidmetal Block
+tile.fluxgear.storage.blockWardenicMetal.name=Wardenic Metal Block
+tile.fluxgear.storage.blockWardenicComposite.name=Wardenic Composite Block
+
+tile.fluxgear.stoneSlab.obsidianWardenic.name=Wardenic Obsidian Slab
+tile.fluxgear.stoneSlab.stoneEldritch.name=Eldritch Stone Slab
+tile.fluxgear.stoneSlab.wardenicQuartz.name=Wardenic Quartz Slab
+
+#Items
+item.fluxgear.material.itemArcaneSingularity.name=Arcane Singularity
+item.fluxgear.material.itemStabilizedSingularity.name=Stabilized Singularity
+item.fluxgear.material.animatedPiston.name=Animated Piston
+item.fluxgear.material.enchantedSilverwood.name=Enchanted Silverwood
+item.fluxgear.material.consecratedSilverwood.name=Consecrated Silverwood
+item.fluxgear.material.cotton.name=Cotton
+item.fluxgear.material.cottonFiber.name=Cotton Fiber
+item.fluxgear.material.cottonFabric.name=Cotton Fabric
+item.fluxgear.material.cottonTreated.name=Treated Cotton Fabric
+item.fluxgear.material.cottonEnchanted.name=Enchanted Cotton Fabric
+item.fluxgear.material.thaumicBronzeChain.name=Thaumic Bronze Chain
+item.fluxgear.material.eldritchCog.name=Eldritch Cog
+item.fluxgear.material.eldritchKeystone.name=Eldritch Keystone
+item.fluxgear.material.thistleLeaf.name=Thistle Leaf
+item.fluxgear.material.thistleFlower.name=Thistle Flower
+
+item.fluxgear.material.seedExcubitura.name=Excubitura Seed
+item.fluxgear.material.seedCotton.name=Cotton Seed
+item.fluxgear.material.seedThistle.name=Thistle Seed
+
+item.fluxgear.material.ingotCopper.name=Copper Ingot
+item.fluxgear.material.ingotZinc.name=Zinc Ingot
+item.fluxgear.material.ingotTin.name=Tin Ingot
+item.fluxgear.material.ingotNickel.name=Nickel Ingot
+item.fluxgear.material.ingotSilver.name=Silver Ingot
+item.fluxgear.material.ingotLead.name=Lead Ingot
+item.fluxgear.material.ingotXenotime.name=Lanthanide Ingot
+item.fluxgear.material.ingotTungsten.name=Tungsten Ingot
+item.fluxgear.material.ingotIridium.name=Iridium Ingot
+item.fluxgear.material.ingotBismuth.name=Bismuth Ingot
+item.fluxgear.material.ingotArsenicalBronze.name=Arsenical Bronze Ingot
+item.fluxgear.material.ingotAntimonialBronze.name=Antimonial Bronze Ingot
+item.fluxgear.material.gemPyrope.name=Pyrope
+item.fluxgear.material.gemDioptase.name=Dioptase
+item.fluxgear.material.gemFluonicSapphire.name=Fluonic Sapphire
+item.fluxgear.material.ingotOsmium.name=Osmium Ingot
+item.fluxgear.material.ingotNeodymium.name=Neodymium Ingot
+item.fluxgear.material.ingotLutetium.name=Lutetium Ingot
+item.fluxgear.material.ingotPalladium.name=Palladium Ingot
+item.fluxgear.material.ingotIridosmium.name=Iridosmium Ingot
+item.fluxgear.material.ingotAluminium.name=Aluminium Ingot
+item.fluxgear.material.ingotLanthanides.name=Leftover Lanthanide Ingot
+
+item.fluxgear.material.ingotBrass.name=Brass Ingot
+item.fluxgear.material.ingotBronze.name=Bronze Ingot
+item.fluxgear.material.ingotBismuthBronze.name=Bismuth Bronze Ingot
+item.fluxgear.material.ingotMithril.name=Mithril Ingot
+item.fluxgear.material.ingotAluminiumBronze.name=Aluminium Bronze Ingot
+item.fluxgear.material.ingotCupronickel.name=Cupronickel Ingot
+item.fluxgear.material.ingotTinkersBronze.name=Riftish Bronze Ingot
+item.fluxgear.material.ingotConstantan.name=Constantan Ingot
+item.fluxgear.material.ingotInvar.name=Invar Ingot
+item.fluxgear.material.ingotElectrum.name=Electrum Ingot
+item.fluxgear.material.ingotWardenicMetal.name=Wardenic Metal Ingot
+
+item.fluxgear.material.ingotThaumicBronze.name=Thaumic Bronze Ingot
+item.fluxgear.material.ingotOsmiumLutetium.name=Osmium-Lutetium Alloy Ingot
+item.fluxgear.material.gemFluonicPyroptase.name=Fluonic Pyroptase
+
+item.fluxgear.material.ingotThaumicElectrum.name=Thaumic Electrum Ingot
+item.fluxgear.material.ingotThaumicTinkersBronze.name=Thaumic Riftish Bronze Ingot
+item.fluxgear.material.ingotSteel.name=Steel Ingot
+item.fluxgear.material.ingotWardenicSteel.name=Wardenic Steel Ingot
+item.fluxgear.material.ingotWardenicTinkersBronze.name=Wardenic Riftish Bronze Ingot
+item.fluxgear.material.ingotVoidbrass.name=Voidbrass Ingot
+item.fluxgear.material.ingotVoidsteel.name=Voidsteel Ingot
+item.fluxgear.material.ingotVoidtungsten.name=Voidtungsten Ingot
+
+item.fluxgear.material.nuggetCopper.name=Copper Nugget
+item.fluxgear.material.nuggetZinc.name=Zinc Nugget
+item.fluxgear.material.nuggetTin.name=Tin Nugget
+item.fluxgear.material.nuggetNickel.name=Nickel Nugget
+item.fluxgear.material.nuggetSilver.name=Silver Nugget
+item.fluxgear.material.nuggetLead.name=Lead Nugget
+item.fluxgear.material.nuggetXenotime.name=Lanthanide Nugget
+item.fluxgear.material.nuggetTungsten.name=Tungsten Nugget
+item.fluxgear.material.nuggetIridium.name=Iridium Nugget
+item.fluxgear.material.nuggetBismuth.name=Bismuth Nugget
+item.fluxgear.material.nuggetArsenicalBronze.name=Arsenical Bronze Nugget
+item.fluxgear.material.nuggetAntimonialBronze.name=Antimonial Bronze Nugget
+item.fluxgear.material.shardPyrope.name=Pyrope Shard
+item.fluxgear.material.shardDioptase.name=Dioptase Shard
+item.fluxgear.material.shardFluonicSapphire.name=Fluonic Sapphire Shard
+item.fluxgear.material.nuggetOsmium.name=Osmium Nugget
+item.fluxgear.material.nuggetNeodymium.name=Neodymium Nugget
+item.fluxgear.material.nuggetLutetium.name=Lutetium Nugget
+item.fluxgear.material.nuggetPalladium.name=Palladium Nugget
+item.fluxgear.material.nuggetIridosmium.name=Iridosmium Nugget
+item.fluxgear.material.nuggetAluminium.name=Aluminium Nugget
+item.fluxgear.material.nuggetLanthanides.name=Leftover Lanthanide Nugget
+
+item.fluxgear.material.nuggetBrass.name=Brass Nugget
+item.fluxgear.material.nuggetBronze.name=Bronze Nugget
+item.fluxgear.material.nuggetBismuthBronze.name=Bismuth Bronze Nugget
+item.fluxgear.material.nuggetMithril.name=Mithril Nugget
+item.fluxgear.material.nuggetAluminiumBronze.name=Aluminium Bronze Nugget
+item.fluxgear.material.nuggetCupronickel.name=Cupronickel Nugget
+item.fluxgear.material.nuggetTinkersBronze.name=Riftish Bronze Nugget
+item.fluxgear.material.nuggetConstantan.name=Constantan Nugget
+item.fluxgear.material.nuggetInvar.name=Invar Nugget
+item.fluxgear.material.nuggetElectrum.name=Electrum Nugget
+item.fluxgear.material.nuggetWardenicMetal.name=Wardenic Metal Nugget
+
+item.fluxgear.material.nuggetThaumicBronze.name=Thaumic Bronze Nugget
+item.fluxgear.material.nuggetOsmiumLutetium.name=Osmium-Lutetium Alloy Nugget
+item.fluxgear.material.shardFluonicPyroptase.name=Fluonic Pyroptase Shard
+
+item.fluxgear.material.nuggetThaumicElectrum.name=Thaumic Electrum Nugget
+item.fluxgear.material.nuggetThaumicTinkersBronze.name=Thaumic Riftish Bronze Nugget
+item.fluxgear.material.nuggetSteel.name=Steel Nugget
+item.fluxgear.material.nuggetWardenicSteel.name=Wardenic Steel Nugget
+item.fluxgear.material.nuggetWardenicTinkersBronze.name=Wardenic Riftish Bronze Nugget
+item.fluxgear.material.nuggetVoidbrass.name=Voidbrass Nugget
+item.fluxgear.material.nuggetVoidsteel.name=Voidsteel Nugget
+item.fluxgear.material.nuggetVoidtungsten.name=Voidtungsten Nugget
+
+item.fluxgear.material.dustCopper.name=Copper Dust
+item.fluxgear.material.dustZinc.name=Zinc Dust
+item.fluxgear.material.dustTin.name=Tin Dust
+item.fluxgear.material.dustNickel.name=Nickel Dust
+item.fluxgear.material.dustSilver.name=Silver Dust
+item.fluxgear.material.dustLead.name=Lead Dust
+item.fluxgear.material.dustXenotime.name=Lanthanide Dust
+item.fluxgear.material.dustTungsten.name=Tungsten Dust
+item.fluxgear.material.dustIridium.name=Iridium Dust
+item.fluxgear.material.dustBismuth.name=Bismuth Dust
+item.fluxgear.material.dustArsenicalBronze.name=Arsenical Bronze Dust
+item.fluxgear.material.dustAntimonialBronze.name=Antimonial Bronze Dust
+item.fluxgear.material.dustPyrope.name=Pyrope Dust
+item.fluxgear.material.dustDioptase.name=Dioptase Dust
+item.fluxgear.material.dustFluonicSapphire.name=Fluonic Sapphire Dust
+item.fluxgear.material.dustOsmium.name=Osmium Dust
+item.fluxgear.material.dustNeodymium.name=Neodymium Dust
+item.fluxgear.material.dustLutetium.name=Lutetium Dust
+item.fluxgear.material.dustPalladium.name=Palladium Dust
+item.fluxgear.material.dustIridosmium.name=Iridosmium Dust
+item.fluxgear.material.dustAluminium.name=Aluminium Dust
+item.fluxgear.material.dustLanthanides.name=Leftover Lanthanide Dust
+
+item.fluxgear.material.dustBrass.name=Brass Dust
+item.fluxgear.material.dustBronze.name=Bronze Dust
+item.fluxgear.material.dustBismuthBronze.name=Bismuth Bronze Dust
+item.fluxgear.material.dustMithril.name=Mithril Dust
+item.fluxgear.material.dustAluminiumBronze.name=Aluminium Bronze Dust
+item.fluxgear.material.dustCupronickel.name=Cupronickel Dust
+item.fluxgear.material.dustTinkersBronze.name=Riftish Bronze Dust
+item.fluxgear.material.dustConstantan.name=Constantan Dust
+item.fluxgear.material.dustInvar.name=Invar Dust
+item.fluxgear.material.dustElectrum.name=Electrum Dust
+item.fluxgear.material.dustWardenicMetal.name=Wardenic Metal Dust
+
+item.fluxgear.material.dustThaumicBronze.name=Thaumic Bronze Dust
+item.fluxgear.material.dustOsmiumLutetium.name=Osmium-Lutetium Alloy Dust
+item.fluxgear.material.dustFluonicPyroptase.name=Fluonic Pyroptase Dust
+
+item.fluxgear.material.dustThaumicElectrum.name=Thaumic Electrum Dust
+item.fluxgear.material.dustThaumicTinkersBronze.name=Thaumic Riftish Bronze Dust
+item.fluxgear.material.dustSteel.name=Steel Dust
+item.fluxgear.material.dustWardenicSteel.name=Wardenic Steel Dust
+item.fluxgear.material.dustWardenicTinkersBronze.name=Wardenic Riftish Bronze Dust
+item.fluxgear.material.dustVoidbrass.name=Voidbrass Dust
+item.fluxgear.material.dustVoidsteel.name=Voidsteel Dust
+item.fluxgear.material.dustVoidtungsten.name=Voidtungsten Dust
+
+item.fluxgear.material.ingotBrassRaw.name=Raw Brass Ingot
+item.fluxgear.material.ingotBronzeRaw.name=Raw Bronze Ingot
+item.fluxgear.material.ingotBismuthBronzeRaw.name=Raw Bismuth Bronze Ingot
+item.fluxgear.material.ingotMithrilRaw.name=Raw Mithril Ingot
+item.fluxgear.material.ingotAluminiumBronzeRaw.name=Raw Aluminium Bronze Ingot
+item.fluxgear.material.ingotCupronickelRaw.name=Raw Cupronickel Ingot
+item.fluxgear.material.ingotTinkersBronzeRaw.name=Raw Riftish Bronze Ingot
+item.fluxgear.material.ingotConstantanRaw.name=Raw Constantan Ingot
+item.fluxgear.material.ingotInvarRaw.name=Raw Invar Ingot
+item.fluxgear.material.ingotElectrumRaw.name=Raw Electrum Ingot
+item.fluxgear.material.ingotWardenicMetalRaw.name=Raw Wardenic Metal Ingot
+
+item.fluxgear.material.ingotThaumicBronzeRaw.name=Raw Thaumic Bronze Ingot
+item.fluxgear.material.ingotOsmiumLutetiumRaw.name=Raw Osmium-Lutetium Alloy Ingot
+
+item.fluxgear.material.ingotThaumicBronzeCoated.name=Coated Thaumic Bronze Ingot
+item.fluxgear.material.ingotOsmiumLutetiumCoated.name=Coated Osmium-Lutetium Alloy Ingot
+
+item.fluxgear.material.ingotThaumicBronzeFired.name=Fired Thaumic Bronze Ingot
+item.fluxgear.material.ingotOsmiumLutetiumFired.name=Fired Osmium-Lutetium Alloy Ingot
+
+item.fluxgear.material.dustAer.name=Crushed Air Shard
+item.fluxgear.material.dustIgnis.name=Crushed Fire Shard
+item.fluxgear.material.dustAqua.name=Crushed Water Shard
+item.fluxgear.material.dustTerra.name=Crushed Earth Shard
+item.fluxgear.material.dustOrdo.name=Crushed Order Shard
+item.fluxgear.material.dustPerditio.name=Crushed Entropy Shard
+item.fluxgear.material.dustIron.name=Iron Dust
+item.fluxgear.material.dustGold.name=Gold Dust
+item.fluxgear.material.dustThaumium.name=Thaumium Dust
+item.fluxgear.material.dustVoid.name=Voidmetal Dust
+
+item.fluxgear.material.dustSalisMundusTiny.name=Pinch of Salis Mundus
+
+item.fluxgear.material.clusterZinc.name=Zinc Cluster
+item.fluxgear.material.clusterAluminium.name=Aluminium Cluster
+item.fluxgear.material.clusterNickel.name=Nickel Cluster
+item.fluxgear.material.clusterPlatinum.name=Platinum Cluster
+item.fluxgear.material.clusterXenotime.name=Xenotime Cluster
+item.fluxgear.material.clusterTungsten.name=Tungsten Cluster
+item.fluxgear.material.clusterIridosmium.name=Iridosmium Cluster
+item.fluxgear.material.clusterBismuth.name=Bismuth Cluster
+item.fluxgear.material.clusterTennantite.name=Tennantite Cluster
+item.fluxgear.material.clusterTetrahedrite.name=Tetrahedrite Cluster
+
+item.fluxgear.material.itemSlagCeramic.name=Ceramic Mold Slag
+item.fluxgear.material.itemSlagThaumic.name=Thaumic Mold Slag
+
+item.fluxgear.material.excubituraPetal.name=Excubitura Petal
+
+item.fluxgear.material.excubituraPaste.name=Excubitura Paste
+item.fluxgear.material.excubituraFabric.name=Excubitura-Infused Cloth
+item.fluxgear.material.wardencloth.name=Wardencloth
+
+item.fluxgear.material.excubituraOilUnproc.name=Excubitura Petal Slurry
+item.fluxgear.material.excubituraOil.name=Excubitura Petal Oil
+item.fluxgear.material.wardenicBronzeChain.name=Wardenic Bronze Chain
+item.fluxgear.material.primalBronzeChain.name=Primal Bronze Chain
+item.fluxgear.material.wardenicBronzePlate.name=Wardenic Bronze Plate
+
+item.fluxgear.material.excubituraOilPure.name=Purified Excubitura Petal Oil
+item.fluxgear.material.wardenicSteelChain.name=Wardenic Steel Chain
+item.fluxgear.material.wardenicSteelChainOiled.name=Oiled Wardenic Steel Chain
+item.fluxgear.material.wardenicSteelPlate.name=Wardenic Steel Plate
+item.fluxgear.material.detailedSteelPlate.name=Detailed Wardenic Steel Plate
+item.fluxgear.material.runicSteelPlate.name=Runic Wardenic Steel Plate
+item.fluxgear.material.consecratedSteelPlate.name=Consecrated Wardenic Steel Plate
+
+item.fluxgear.material.wardenicQuartz.name=Wardenic Quartz
+item.fluxgear.material.wardenicCrystal.name=Wardenic Crystal
+item.fluxgear.material.wardenicQuartzInf.name=Infused Wardenic Quartz
+item.fluxgear.material.dustWardenicQuartz.name=Wardenic Quartz Dust
+item.fluxgear.material.dustWardenicCrystal.name=Crushed Wardenic Crystal
+item.fluxgear.material.binderWardenic.name=Wardenic Binding Compound
+item.fluxgear.material.ingotWardenicCompositeRaw.name=Raw Wardenic Composite Ingot
+item.fluxgear.material.ingotWardenicComposite.name=Wardenic Composite Ingot
+item.fluxgear.material.wardenicCompositePlate.name=Wardenic Composite Plate
+item.fluxgear.material.fittedCompositePlate.name=Fitted Wardenic Composite Plate
+item.fluxgear.material.detailedCompositePlate.name=Detailed Wardenic Composite Plate
+item.fluxgear.material.runicCompositePlate.name=Runic Wardenic Composite Plate
+item.fluxgear.material.consecratedCompositePlate.name=ConsecratedWardenic Composite Plate
+item.fluxgear.material.primalCompositePlate.name=Primal Wardenic Composite Plate
+
+item.fluxgear.material.wardenicCrystalAwakened.name=Awakened Wardenic Crystal
+
+item.fluxgear.material.itemWardenicHardener.name=Wardenic Hardening Compound
+
+item.fluxgear.material.tempAluDense.name=Dense Alumentum [Will be removed in v0.1.0]
+
+#Armor
+item.fluxgear.bauble.wardenAmulet=Warden's Amulet
+
+item.fluxgear.primal.goggles.name=Primal Goggles
+item.fluxgear.primal.robes.name=Primal Robe
+item.fluxgear.primal.pants.name=Primal Pants
+item.fluxgear.primal.boots.name=Primal Boots
+
+item.fluxgear.bronzeChain.helmet.name=Thaumic Bronze Chain Helmet
+item.fluxgear.bronzeChain.mail.name=Thaumic Bronze Mail
+item.fluxgear.bronzeChain.greaves.name=Thaumic Bronze Chain Greaves
+item.fluxgear.bronzeChain.boots.name=Thaumic Bronze Chain Boots
+
+item.fluxgear.wardencloth.skullcap.name=Wardencloth Skullcap
+item.fluxgear.wardencloth.tunic.name=Wardencloth Tunic
+item.fluxgear.wardencloth.pants.name=Wardencloth Pants
+item.fluxgear.wardencloth.boots.name=Wardencloth Boots
+
+item.fluxgear.wardenicChain.helmet.name=Wardenic Bronze Chain Helmet
+item.fluxgear.wardenicChain.mail.name=Wardenic Bronze Mail
+item.fluxgear.wardenicChain.greaves.name=Wardenic Bronze Chain Greaves
+item.fluxgear.wardenicChain.boots.name=Wardenic Bronze Chain Boots
+
+item.fluxgear.wardenicSteel.helmet.name=Wardenic Steel Plate Helmet
+item.fluxgear.wardenicSteel.chestplate.name=Wardenic Steel Chestplate
+item.fluxgear.wardenicSteel.greaves.name=Wardenic Steel Plate Greaves
+item.fluxgear.wardenicSteel.boots.name=Wardenic Steel Plate Boots
+
+item.fluxgear.wardenicComposite.helmet.name=Wardenic Composite Plate Helmet
+item.fluxgear.wardenicComposite.chestplate.name=Wardenic Composite Chestplate
+item.fluxgear.wardenicComposite.greaves.name=Wardenic Composite Plate Greaves
+item.fluxgear.wardenicComposite.boots.name=Wardenic Composite Plate Boots
+
+item.fluxgear.focusPurity.name=Wand Focus: Purity
+
+#Research
+fluxgear.name.THAUMIC_REVELATIONS=Thaumic Revelations
+fluxgear.text.THAUMIC_REVELATIONS=[TRv] Hey, hey, you don't know, what you're missing now!
+
+fluxgear.name.MATERIAL_TRv=Materials
+
+fluxgear.name.ALLOYS_TRv=Alloys
+fluxgear.text.ALLOYS_TRv=[TRv] Not-so-magical Metallurgy
+
+fluxgear.page.ALLOYS_TRv.0=You have realized the true lack of variety in the metals used in thaumaturgy, and have decided to experiment with various alloys.<BR>One of the alloys, Brass, is a mixture of copper, a metal only rarely used by thaumaturges, but highly used in technological fields, and zinc, a whitish metal similar to tin, which is occasionally used for coating of metal parts. The resulting alloys is malleable and may make for an decent-enough conductor of mystical energy.
+fluxgear.page.ALLOYS_TRv.1=Bronze, the more commonly used cousin of Brass, more suited to casting than machining, is made with tin, a more widely used metal, albeit one never used in thaumaturgy, instead of zinc. Unlike brass, it seems like it would be less receptive to magic, although it could make better, less corrodable, parts than iron.
+fluxgear.page.ALLOYS_TRv.2=Bismuth Bronze is a similar copper alloy, which despite technically being a brass with bismuth crystals in it behaves like a bronze. Containing copper, zinc, and the heavy metal bismuth, examination of the alloy it may lead to a usage in mystical components, however, it is primarily used in making another alloy.
+fluxgear.page.ALLOYS_TRv.3=Mithril, or Arseno-Antimonial Bronze, is what one gets when they alloy equal parts arsenical bronze, the result of smelting tennantite ore, and antimonial bronze, likewise from tetrahedrite ore. This alloy is incredibly strong, stronger than most common metals, but not terribly receptive to magic.
+fluxgear.page.ALLOYS_TRv.4=Aluminium Bronze, a gold-like copper alloy using the metal aluminium, which is extracted from clay, instead of tin, this alloy is neither terribly expensive, nor durable, but is receptive to magical infusion.
+fluxgear.page.ALLOYS_TRv.5=Cupronickel, an alloy of copper and nickel, as the name suggests, is occasionally used in heating in technical fields, this alloy is surprisingly good at conducting §cIgnis§0 vis, but not great at much else.
+fluxgear.page.ALLOYS_TRv.6=Riftish Bronze, is an alloy of eight different metals, often taking the form of alloy six different copper alloys, containing copper, tin, zinc, arsenic, antimony, nickel, bismuth, and aluminium. The alloy itself is incredibly durable, yet malleable at high temperatures. While not terrible good at transferring mystical energies, it makes tools of exquisite quality, better than even thaumium, although it does not enchant as well.
+fluxgear.page.ALLOYS_TRv.7=Constantan, is an alloy of copper and nickel in roughly equal parts, used in technical fields, which may be of use in future endeavors. Invar, an alloy of iron and nickel is in a similar boat as constantan.<LINE>Electrum, an alloy of equal parts gold and silver, however is of interest, and is likely an even better conductor than gold.
+
+fluxgear.page.ALLOYS_TRv.71=Constantan, is an alloy of copper and nickel in roughly equal parts, used in technical fields, which may be of use in future endeavors.
+fluxgear.page.ALLOYS_TRv.72=Invar, is an alloy of iron and nickel, used in technical fields, which may be of use in future endeavors.
+fluxgear.page.ALLOYS_TRv.73=Electrum, an alloy of equal parts gold and silver, however is of interest, and is likely an even better conductor than gold.
+fluxgear.page.ALLOYS_TRv.7a=Invar, is an alloy of iron and nickel, used in technical fields, which may be of use in future endeavors.<LINE>Electrum, an alloy of equal parts gold and silver, however is of interest, and is likely an even better conductor than gold.
+fluxgear.page.ALLOYS_TRv.7b=Constantan, is an alloy of copper and nickel in roughly equal parts, used in technical fields, which may be of use in future endeavors.<LINE>Electrum, an alloy of equal parts gold and silver, however is of interest, and is likely an even better conductor than gold.
+fluxgear.page.ALLOYS_TRv.7c=Constantan, is an alloy of copper and nickel in roughly equal parts, used in technical fields, which may be of use in future endeavors. Invar, an alloy of iron and nickel is in a similar boat as constantan.
+
+fluxgear.page.ALLOYS_TRv.a=You have realized the true lack of variety in the metals used in thaumaturgy, and have decided to experiment with various alloys.<BR>Bronze, the more commonly used cousin of Brass, more suited to casting than machining, is made with tin, a more widely used metal, albeit one never used in thaumaturgy, instead of zinc. Unlike brass, it seems like it would be less receptive to magic, although it could make better, less corrodable, parts than iron.
+fluxgear.page.ALLOYS_TRv.b=You have realized the true lack of variety in the metals used in thaumaturgy, and have decided to experiment with various alloys.<BR>Bismuth Bronze is a similar copper alloy, which despite technically being a brass with bismuth crystals in it behaves like a bronze. Containing copper, zinc, and the heavy metal bismuth, examination of the alloy it may lead to a usage in mystical components, however, it is primarily used in making another alloy.
+fluxgear.page.ALLOYS_TRv.c=You have realized the true lack of variety in the metals used in thaumaturgy, and have decided to experiment with various alloys.<BR>Mithril, or Arseno-Antimonial Bronze, is what one gets when they alloy equal parts arsenical bronze, the result of smelting tennantite ore, and antimonial bronze, likewise from tetrahedrite ore. This alloy is incredibly strong, stronger than most common metals, but not terribly receptive to magic.
+fluxgear.page.ALLOYS_TRv.d=You have realized the true lack of variety in the metals used in thaumaturgy, and have decided to experiment with various alloys.<BR>Aluminium Bronze, a gold-like copper alloy using the metal aluminium, which is extracted from clay, instead of tin, this alloy is neither terribly expensive, nor durable, but is receptive to magical infusion.
+fluxgear.page.ALLOYS_TRv.e=You have realized the true lack of variety in the metals used in thaumaturgy, and have decided to experiment with various alloys.<BR>Cupronickel, an alloy of copper and nickel, as the name suggests, is occasionally used in heating in technical fields, this alloy is surprisingly good at conducting §cIgnis§0 vis, but not great at much else.
+fluxgear.page.ALLOYS_TRv.f=You have realized the true lack of variety in the metals used in thaumaturgy, and have decided to experiment with various alloys.<BR>Riftish Bronze, is an alloy of eight different metals, often taking the form of alloy six different copper alloys, containing copper, tin, zinc, arsenic, antimony, nickel, bismuth, and aluminium. The alloy itself is incredibly durable, yet malleable at high temperatures. While not terrible good at transferring mystical energies, it makes tools of exquisite quality, better than even thaumium, although it does not enchant as well.
+fluxgear.page.ALLOYS_TRv.g=You have realized the true lack of variety in the metals used in thaumaturgy, and have decided to experiment with various alloys.<BR>Constantan, is an alloy of copper and nickel in roughly equal parts, used in technical fields, which may be of use in future endeavors. Invar, an alloy of iron and nickel is in a similar boat as constantan.<LINE>Electrum, an alloy of equal parts gold and silver, however is of interest, and is likely an even better conductor than gold.
+
+fluxgear.page.ALLOYS_TRv.g1=You have realized the true lack of variety in the metals used in thaumaturgy, and have decided to experiment with various alloys.<BR>Constantan, is an alloy of copper and nickel in roughly equal parts, used in technical fields, which may be of use in future endeavors.
+fluxgear.page.ALLOYS_TRv.g2=You have realized the true lack of variety in the metals used in thaumaturgy, and have decided to experiment with various alloys.<BR>Invar, is an alloy of iron and nickel, used in technical fields, which may be of use in future endeavors.
+fluxgear.page.ALLOYS_TRv.g3=You have realized the true lack of variety in the metals used in thaumaturgy, and have decided to experiment with various alloys.<BR>Electrum, an alloy of equal parts gold and silver, however is of interest, and is likely an even better conductor than gold.
+fluxgear.page.ALLOYS_TRv.ga=You have realized the true lack of variety in the metals used in thaumaturgy, and have decided to experiment with various alloys.<BR>Invar, is an alloy of iron and nickel, used in technical fields, which may be of use in future endeavors.<LINE>Electrum, an alloy of equal parts gold and silver, however is of interest, and is likely an even better conductor than gold.
+fluxgear.page.ALLOYS_TRv.gb=You have realized the true lack of variety in the metals used in thaumaturgy, and have decided to experiment with various alloys.<BR>Constantan, is an alloy of copper and nickel in roughly equal parts, used in technical fields, which may be of use in future endeavors.<LINE>Electrum, an alloy of equal parts gold and silver, however is of interest, and is likely an even better conductor than gold.
+fluxgear.page.ALLOYS_TRv.gc=You have realized the true lack of variety in the metals used in thaumaturgy, and have decided to experiment with various alloys.<BR>Constantan, is an alloy of copper and nickel in roughly equal parts, used in technical fields, which may be of use in future endeavors. Invar, an alloy of iron and nickel is in a similar boat as constantan.
+
+
+fluxgear.name.THAUMIC_BRONZE=Thaumic Bronze
+fluxgear.text.THAUMIC_BRONZE=[TRv]
+
+fluxgear.name.TBRONZE_CHAIN=Thaumic Bronze Chain
+
+fluxgear.name.ARMOR_TBRONZE=Thaumic Bronze Chainmail
+
+fluxgear.name.RUNIC_INFUSER=Runic Infuser
+
+fluxgear.name.ROBES_PRIMAL=Primal Robes
+fluxgear.text.ROBES_PRIMAL=[TRv] Mending and Stylish
+
+fluxgear.name.THAUMIC_WARDEN=Thaumic Wardenry
+fluxgear.text.THAUMIC_WARDEN=[TRv]
+fluxgear.page.THAUMIC_WARDEN.0=When studying a strange purple rose-like flower you remembered stories from your youth, stories of a mythical order of thaumaturges, descended from the legendary Abysswalkers, who fought the Eldritch and protected their homeland. The most orthodox branch of the order, the Orthodox Thaumic Wardens are said to have used the essential oils from the petals of a nearly identical flower which grew in large amounts in the highlands near their headquarters at Fort Rose to make their legendary equipment.<BR>While you cannot be completely sure yet, you believe this flower to be the mythical Excubitura used by the Thaumic Wardens. It seems that like
+fluxgear.page.THAUMIC_WARDEN.1=the Excubitura Rose of legend, it has been mutated by thaumic energies, and the stigma is undoubtedly covered by beautiful, albeit tiny, crystals. Another reason you believe it to be the Excubitura Rose is the vibrant color and unusual nature about the petals.<BR>Now, if only you could figure out a way to harness the hidden power of this flower...
+
+fluxgear.name.EXCUBITURA_PASTE=Excubitura Paste
+fluxgear.text.EXCUBITURA_PASTE=[TRv] The start of great things
+fluxgear.page.EXCUBITURA_PASTE.0=After finding what you now know to be an Excubitura Rose, you started searching for any mention on how the Thaumic Wardens created their armor of exquisite quality. References were lacking, so it took time to figure out, but in the few texts you could find, they all agreed on one thing, the first step in processing the Excubitura's petals. By simply grinding the petals, the resulting paste is said to have been used to treat the armor. However, a few of your sources mention the paste only affecting cloth, so you'll have to figure out how to get around that.
+
+fluxgear.name.WARDENCLOTH=Wardencloth
+fluxgear.text.WARDENCLOTH=[TRv] Durable and Wardenic
+fluxgear.page.WARDENCLOTH.0=You think you are on to something, by smearing Excubitura Paste all over some Enchanted Cotton Fabric, as one of the texts mentions the difficulty in using wool or silk for the process, you end up with a fabric that is a lot more durable. However, the paste washes off of the fabric easily, meaning it would be unsuitable for use as armor, but perhaps there is a way around that.
+fluxgear.page.WARDENCLOTH.1=On further examination it seem, somewhat counter-intuitively at first, but after thinking about it making perfect sense, that by boiling the cloth in water with essentia of certain aspects, the cloth not only tightens up slightly, as it is cotton, making it more negligibly more protective, but it also solves the issue with water washing off the paste, as the paste binds with the fabric itself.
+
+fluxgear.name.ARMOR_WARDENCLOTH=Wardencloth Armor
+fluxgear.text.ARMOR_WARDENCLOTH=[TRv] Like leather, but better (and thaumic)
+
+#Thaumcraft Voidmetal Capitalization Rectification
+item.ItemResource.16.name=Voidmetal Ingot
+item.ItemNugget.7.name=Voidmetal Nugget
+
+
+
+
+
+
+
+#OLD STUFF
+item.itemWardenAmulet.name=Warden's Amulet
+item.itemWardenWeapon.name=Warden's Sword
+item.itemWardenHelm.name=Warden's Helmet
+item.itemWardenChest.name=Warden's Chestplate
+item.itemWardenLegs.name=Warden's Leggings
+item.itemWardenBoots.name=Warden's Boots
+item.itemFocusPurity.name=Wand Focus: Purity
+item.itemLoveRing.name=Ring of Love
+item.itemWaslieHammer.name=Wesly's Hammer
+item.itemFocusIllumination.name=Wand Focus: Illumination
+
+#Quotes
+fluxgear.augment.Excubitor.quote=Forever a warden
+fluxgear.augment..quote=I will survive
+fluxgear.augment.Entropy.quote=I will destroy you
+fluxgear.augment.Ignis.quote=Burnt to a crisp
+fluxgear.augment.Telum.quote=Why are you hurting yourself?
+fluxgear.augment.Aqua.quote=Smells fishy
+fluxgear.augment.Aer.quote=Free like the wind
+fluxgear.augment.Terra.quote=Solid as a rock
+fluxgear.augment.tempus.quote=Gonna See you in the Dirty Future
+
+tile.blockInfusedQuartzNormal.name=Infused Quartz Block
+tile.blockInfusedQuartzSlab.name=Infused Quartz Slab
+tile.blockInfusedQuartzStair.name=Infused Quartz Stair
+tile.blockInfusedQuartzChiseled.name=Chiseled Infused Quartz Block
+tile.blockInfusedQuartzPillar.name=Infused Quartz Pillar Block
+tile.blockWitor.name=Wardenic Light

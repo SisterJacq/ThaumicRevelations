@@ -16,8 +16,7 @@ import static mortvana.thaumrev.library.ThaumRevLibrary.*;
 public class ItemThaumRev extends FluxGearItemInteractive {
 
 	public ItemThaumRev() {
-		modName = RESOURCE_PREFIX;
-		setCreativeTab(thaumicRevelationsTab);
+		super(RESOURCE_PREFIX, generalTab);
 		setFolder("material");
 		setUnlocalizedName("material");
 	}

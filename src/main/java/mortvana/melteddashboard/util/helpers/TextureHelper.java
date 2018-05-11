@@ -48,4 +48,26 @@ public final class TextureHelper {
 		}
 		return textureExists(texture + ".png");
 	}
+
+	@SideOnly(Side.CLIENT)
+	public static String getBlockTexture(String texture) {
+		return getTypedTexture(texture, "blocks");
+	}
+
+	@SideOnly(Side.CLIENT)
+	public static String getItemTexture(String texture) {
+		return getTypedTexture(texture, "items");
+	}
+
+	@SideOnly(Side.CLIENT)
+	public static String getTypedTexture(String texture, String type) {
+		int i = texture.indexOf(':');
+
+		if (i > 0) {
+			texture = texture.substring(0, i) + ":textures/" + type + "/" + texture.substring(i + 1, texture.length());
+		} else {
+			texture = "textures/" + type + "/" + texture;
+		}
+		return texture + ".png";
+	}
 }

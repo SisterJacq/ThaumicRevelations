@@ -2,6 +2,10 @@ package mortvana.thaumrev.network;
 
 import cpw.mods.fml.client.registry.RenderingRegistry;
 
+import net.minecraftforge.common.MinecraftForge;
+
+import mortvana.melteddashboard.client.ClientEventHandler;
+
 import mortvana.thaumrev.entity.EntityPurity;
 import mortvana.thaumrev.library.ThaumRevLibrary;
 import mortvana.thaumrev.render.RenderPurity;
@@ -11,6 +15,7 @@ public class ClientProxy extends CommonProxy {
 	@Override
 	public void initRenderers() {
 		ThaumRevLibrary.renderDecorStoneID = RenderingRegistry.getNextAvailableRenderId();
+		//MinecraftForge.EVENT_BUS.register(new ClientEventHandler());
 
 		RenderingRegistry.registerEntityRenderingHandler(EntityPurity.class, new RenderPurity());
 		/* LEGACY

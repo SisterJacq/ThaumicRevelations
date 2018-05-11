@@ -2,14 +2,10 @@ package mortvana.thaumrev.block;
 
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
-import net.minecraft.item.ItemStack;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 import mortvana.melteddashboard.block.FluxGearBlockBase;
-import mortvana.melteddashboard.lib.ThaumcraftLibrary;
-
-import mortvana.thaumrev.util.RecipeHelper;
 
 import static mortvana.thaumrev.library.ThaumRevLibrary.*;
 
@@ -18,7 +14,7 @@ public class BlockStorageOre extends FluxGearBlockBase {
 	public BlockStorageOre() {
 		super(Material.iron);
 		setStepSound(soundTypeMetal);
-		setCreativeTab(thaumicRevelationsTab);
+		setCreativeTab(generalTab);
 		setBlockName("thaumrev.storageMain");
 
 		setData(TEX_LOC_DEFAULT + "storage/", NAMES);

@@ -17,8 +17,6 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 import mortvana.melteddashboard.block.FluxGearBlockSlab;
 
-import mortvana.thaumrev.util.RecipeHelper;
-
 import static mortvana.thaumrev.library.ThaumRevLibrary.*;
 
 public class BlockStoneSlab extends FluxGearBlockSlab {
@@ -35,7 +33,7 @@ public class BlockStoneSlab extends FluxGearBlockSlab {
 	private BlockStoneSlab(boolean fullBlock, Material material) {
 		super(fullBlock, material);
 		setStepSound(soundTypeStone);
-		setCreativeTab(thaumicRevelationsTab);
+		setCreativeTab(generalTab);
 		setBlockName("thaumrev.stoneslab");
 
 		setHarvestLevel("pickaxe", 0);

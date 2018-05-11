@@ -27,7 +27,7 @@ public class ThaumcraftHelper {
 	public static final Aspect[] PRIMALS = new Aspect[] { AIR, FIRE, WATER, EARTH, ORDER, ENTROPY };
 
 	/** VIS DISCOUNTS **/
-	public static int getDiscountForAspect(ItemStack stack, EntityPlayer player, Aspect aspect, int baseDiscount) { //TODO: Make Aspect Sensitive
+	public static int getDiscountForAspect(ItemStack stack, EntityPlayer player, Aspect aspect, int baseDiscount) {
 		return baseDiscount + NBTHelper.getModifierInt(stack, ThaumRevLibrary.VISMODIFIER + EnumPrimalAspect.getString(aspect));
 	}
 

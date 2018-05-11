@@ -1,10 +1,15 @@
 package mortvana.thaumrev.api.item.infusion;
 
+import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.Optional;
 
-import cofh.api.energy.IEnergyContainerItem;
-import cofh.api.item.IInventoryContainerItem;
+import thaumcraft.api.IGoggles;
+import thaumcraft.api.IVisDiscountGear;
+import thaumcraft.api.nodes.IRevealer;
 
+import cofh.api.energy.IEnergyContainerItem;
+
+import mortvana.thaumrev.api.item.IContainerItem;
 import mortvana.thaumrev.api.util.enums.EnumEquipmentType;
 
 /**
@@ -15,7 +20,7 @@ import mortvana.thaumrev.api.util.enums.EnumEquipmentType;
  */
 
 @Optional.Interface(modid = "CoFHAPI|energy", iface = "cofh.api.energy.IEnergyContainerItem")
-public interface IInfusableItem extends IInventoryContainerItem, IEnergyContainerItem {
+public interface IInfusableItem extends IContainerItem, IGoggles, IRevealer, IVisDiscountGear, IEnergyContainerItem {
 
 	/**
 	 *  Sets both the number of locked slots and unlocked slots on a given item. May overwrite any already entered data.
@@ -24,14 +29,14 @@ public interface IInfusableItem extends IInventoryContainerItem, IEnergyContaine
 	 *  @param locked - Number of locked slots
 	 *  @return - An IInfusableItem. Should return the Item having it's slots set.
 	 */
-	//IInfusableItem setNumberSlots(int unlocked, int locked);
+	IInfusableItem setNumberSlots(ItemStack stack, int unlocked, int locked);
 
 	/**
 	 * Returns the EnumEquipmentType of the IInfusableItem, which determines the effect given by a given Aspect.
 	 *
 	 * @return - EnumEquipmentType of the item queried
 	 */
-	EnumEquipmentType getType();
+	EnumEquipmentType getType(ItemStack stack);
 
 	/**
 	 * Sets the EnumEquipmentType of the IInfusableItem, which determines the effect given by a given Aspect.
@@ -40,5 +45,5 @@ public interface IInfusableItem extends IInventoryContainerItem, IEnergyContaine
 	 *
 	 * @return - IInfusableItem that had its type set
 	 */
-	IInfusableItem setType(EnumEquipmentType type);
+	IInfusableItem setType(ItemStack stack, EnumEquipmentType type);
 }

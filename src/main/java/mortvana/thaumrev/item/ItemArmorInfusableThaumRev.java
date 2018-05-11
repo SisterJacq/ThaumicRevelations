@@ -30,7 +30,7 @@ public class ItemArmorInfusableThaumRev extends ItemArmorInfusableBase implement
 
 	public void register(String material, int type) {
 		this.type = EnumEquipmentType.values()[type];
-		setCreativeTab(ThaumRevLibrary.thaumicRevelationsTab);
+		setCreativeTab(ThaumRevLibrary.generalTab);
 		setModName(ThaumRevLibrary.RESOURCE_PREFIX);
 
 		ThaumRevMaterialData data;

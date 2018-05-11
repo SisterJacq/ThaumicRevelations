@@ -17,11 +17,11 @@ public class ItemBlockStoneSlab extends FluxGearItemBlockBase {
 
 	@Override
 	public String getUnlocalizedName(ItemStack stack) {
-		return "tile.thaumrev.stoneSlab." + BlockStoneSlab.NAMES[stack.getItemDamage()] + ".name";
+		return "tile.fluxgear.stoneSlab." + BlockStoneSlab.NAMES[stack.getItemDamage()] + ".name";
 	}
 
 	@Override
 	public EnumRarity getRarity(ItemStack stack) {
-		return EnumRarity.values()[BlockStoneSlab.RARITY[stack.getItemDamage()]];
+		return EnumRarity.values()[stack.getItemDamage() < BlockStoneSlab.RARITY.length ? BlockStoneSlab.RARITY[stack.getItemDamage()] : 0];
 	}
 }

@@ -6,6 +6,9 @@ import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.*;
 
+import net.minecraftforge.common.MinecraftForge;
+
+import mortvana.melteddashboard.client.ClientEventHandler;
 import mortvana.melteddashboard.lib.ThaumcraftLibrary;
 
 import mortvana.thaumrev.library.ThaumRevLibrary;

@@ -20,7 +20,7 @@ public class ItemBlockThaumicPlant extends FluxGearItemBlockBase {
 
 	@Override
 	public String getUnlocalizedName(ItemStack stack) {
-		return "tile.thaumrev.plant." + BlockThaumicPlant.NAMES[stack.getItemDamage()] + ".name";
+		return "tile.fluxgear.plant." + BlockThaumicPlant.NAMES[stack.getItemDamage()] + ".name";
 	}
 
 	@SideOnly(Side.CLIENT)

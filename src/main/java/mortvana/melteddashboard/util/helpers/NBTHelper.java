@@ -10,6 +10,12 @@ import mortvana.thaumrev.library.ThaumRevLibrary;
 
 public class NBTHelper {
 
+	public static void ensureNBT(ItemStack stack) {
+		if (!stack.hasTagCompound()) {
+			stack.setTagCompound(new NBTTagCompound());
+		}
+	}
+
 	public static boolean hasKey(ItemStack stack, String key) {
 		return stack.hasTagCompound() && stack.getTagCompound().hasKey(key);
 	}

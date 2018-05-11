@@ -11,7 +11,7 @@ public class BlockWoodDecor extends FluxGearBlockBase {
 	public BlockWoodDecor() {
 		super(Material.wood);
 		setStepSound(soundTypeWood);
-		setCreativeTab(thaumicRevelationsTab);
+		setCreativeTab(generalTab);
 		setBlockName("thaumrev.wood");
 
 		setData(TEX_LOC_DEFAULT + "wood/", NAMES);

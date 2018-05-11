@@ -17,7 +17,7 @@ public class ItemBlockStorageAlloy1 extends FluxGearItemBlockBase {
 
 	@Override
 	public String getUnlocalizedName(ItemStack stack) {
-		return "tile.thaumrev.storage." + BlockStorageAlloy1.NAMES[stack.getItemDamage()] + ".name";
+		return "tile.fluxgear.storage." + BlockStorageAlloy1.NAMES[stack.getItemDamage()] + ".name";
 	}
 
 	@Override

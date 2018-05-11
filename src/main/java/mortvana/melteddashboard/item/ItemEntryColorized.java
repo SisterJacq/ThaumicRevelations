@@ -2,6 +2,7 @@ package mortvana.melteddashboard.item;
 
 public class ItemEntryColorized extends ItemEntry {
 
+	protected String template;
 	protected int color = 0xFFFFFF;
 
 	public ItemEntryColorized(String name, int rarity, int maxDamage) {

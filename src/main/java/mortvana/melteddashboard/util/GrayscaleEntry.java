@@ -7,28 +7,23 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 import gnu.trove.map.TMap;
 import gnu.trove.map.hash.THashMap;
-import mortvana.thaumrev.common.ThaumicRevelations;
+
+import static mortvana.melteddashboard.lib.StringLibrary.*;
 
 @SideOnly(Side.CLIENT)
 public class GrayscaleEntry {
 
 	protected static TMap<String, GrayscaleEntry> entries = new THashMap<String, GrayscaleEntry>();
 
-	public static final String DEFAULT_DIRECTORY = "fluxgear:grayscale/";
-	public static final String INGOT = "ingot";
-	public static final String NUGGET = "nugget";
-	public static final String DUST = "dust";
-	public static final String DUSTTINY = "dustTiny";
-	public static final String PLATE = "plate";
-	public static final String GEAR = "gear";
-
 	static {
-		entries.put(INGOT, new GrayscaleEntry(INGOT, DEFAULT_DIRECTORY + INGOT));
-		entries.put(NUGGET, new GrayscaleEntry(NUGGET, DEFAULT_DIRECTORY + NUGGET));
-		entries.put(DUST, new GrayscaleEntry(DUST, DEFAULT_DIRECTORY + DUST));
-		entries.put(DUSTTINY, new GrayscaleEntry(DUSTTINY, DEFAULT_DIRECTORY + DUSTTINY));
-		entries.put(PLATE, new GrayscaleEntry(PLATE, DEFAULT_DIRECTORY + PLATE));
-		entries.put(GEAR, new GrayscaleEntry(GEAR, DEFAULT_DIRECTORY + GEAR));
+		entries.put(INGOT, new GrayscaleEntry(INGOT, GRAYSCALE_DIRECTORY + INGOT));
+		entries.put(NUGGET, new GrayscaleEntry(NUGGET, GRAYSCALE_DIRECTORY + NUGGET));
+		entries.put(DUST, new GrayscaleEntry(DUST, GRAYSCALE_DIRECTORY + DUST));
+		entries.put(DUSTTINY, new GrayscaleEntry(DUSTTINY, GRAYSCALE_DIRECTORY + DUSTTINY));
+		entries.put(PLATE, new GrayscaleEntry(PLATE, GRAYSCALE_DIRECTORY + PLATE));
+		entries.put(GEAR, new GrayscaleEntry(GEAR, GRAYSCALE_DIRECTORY + GEAR));
+		entries.put(MAGICDUST, new GrayscaleEntry(MAGICDUST, GRAYSCALE_DIRECTORY + MAGICDUST));
+		entries.put(QUARTZ, new GrayscaleEntry(QUARTZ, "minecraft:quartz"));
 	}
 
 	public String name;

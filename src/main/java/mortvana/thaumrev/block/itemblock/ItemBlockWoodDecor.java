@@ -16,7 +16,7 @@ public class ItemBlockWoodDecor extends FluxGearItemBlockBase {
 
 	@Override
 	public String getUnlocalizedName(ItemStack stack) {
-		return "tile.thaumrev.stoneDecor." + BlockWoodDecor.NAMES[stack.getItemDamage()] + ".name";
+		return "tile.fluxgear.stoneDecor." + BlockWoodDecor.NAMES[stack.getItemDamage()] + ".name";
 	}
 
 	@Override

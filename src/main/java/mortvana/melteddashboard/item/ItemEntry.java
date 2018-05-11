@@ -12,7 +12,6 @@ import mortvana.melteddashboard.client.texture.GradientNode;
 public class ItemEntry {
 
     protected String name;
-	protected String template;
 	protected String texture;
     protected IIcon icon;
     protected int rarity = 0;
@@ -53,5 +52,9 @@ public class ItemEntry {
 
 	public boolean isDisabled() {
 		return disabled;
+	}
+
+	public boolean isEnchanted() {
+		return enchanted;
 	}
 }

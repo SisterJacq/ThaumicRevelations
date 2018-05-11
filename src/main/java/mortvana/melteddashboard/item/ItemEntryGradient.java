@@ -4,6 +4,7 @@ import mortvana.melteddashboard.client.texture.GradientNode;
 
 public class ItemEntryGradient extends ItemEntry{
 
+	protected String template;
 	protected GradientNode[] gradients = new GradientNode[0];
 
 	public ItemEntryGradient(String name, int rarity, int maxDamage) {

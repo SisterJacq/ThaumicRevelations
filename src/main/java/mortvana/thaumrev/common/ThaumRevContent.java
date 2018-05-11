@@ -35,10 +35,11 @@ import mortvana.thaumrev.util.*;
 import mortvana.thaumrev.util.item.data.ThaumRevMaterialDataSet;
 import mortvana.thaumrev.world.ThaumRevWorldGenerator;
 
+import static mortvana.melteddashboard.lib.ColorLibrary.*;
 import static thaumcraft.api.aspects.Aspect.*;
 import static mortvana.melteddashboard.lib.ThaumcraftLibrary.*;
 import static mortvana.melteddashboard.lib.ThermalLibrary.*;
-import static mortvana.melteddashboard.util.GrayscaleEntry.*;
+import static mortvana.melteddashboard.lib.StringLibrary.*;
 import static mortvana.thaumrev.library.ThaumRevLibrary.*;
 import static mortvana.thaumrev.util.RecipeHelper.*;
 
@@ -71,8 +72,8 @@ public class ThaumRevContent {
 	}
 
 	public static void postInit() {
-		ResearchCategories.registerCategory(RESEARCH_KEY_MAIN, new ResourceLocation(RESOURCE_PREFIX, "textures/items/baubles/amuletWarden.png"), new ResourceLocation("thaumrev", "textures/gui/gui_researchbackthaumrev.png"));
-		ResearchCategories.registerCategory(RESEARCH_KEY_METAL, new ResourceLocation(RESOURCE_PREFIX, "textures/items/material/ingotThaumicBronze.png"), new ResourceLocation("thaumrev", "textures/gui/gui_researchbackthaumrev.png"));
+		ResearchCategories.registerCategory(RESEARCH_KEY_MAIN, new ResourceLocation(RESOURCE_PREFIX, "textures/items/baubles/amuletWarden.png"), new ResourceLocation("fluxgear", "textures/gui/gui_researchbackthaumrev.png"));
+		ResearchCategories.registerCategory(RESEARCH_KEY_METAL, new ResourceLocation(RESOURCE_PREFIX, "textures/items/material/ingotThaumicBronze.png"), new ResourceLocation("fluxgear", "textures/gui/gui_researchbackthaumrev.png"));
 		aluminiumArc();
 		addLoot();
 		determineTempus();
@@ -183,16 +184,16 @@ public class ThaumRevContent {
 		oreDioptase = new ItemStack(blockOre, 1, 13);
 		oreFluonicSapphire = new ItemStack(blockOre, 1, 14);
 
-		RecipeHelper.registerOreDict(oreChalcocite, "oreCopper", "oreChalcocite");
-		RecipeHelper.registerOreDict(oreSphalerite, "oreZinc", "oreSphalerite");
-		RecipeHelper.registerOreDict(oreCassiterite, "oreTin", "oreCassiterite");
-		RecipeHelper.registerOreDict(oreMillerite, "oreNickel", "oreMillerite");
-		RecipeHelper.registerOreDict(oreNativeSilver, "oreSilver", "oreNativeSilver");
-		RecipeHelper.registerOreDict(oreGalena, "oreLead", "oreGalena");
+		RecipeHelper.registerOreDict(oreChalcocite, ORE + CU, "oreChalcocite");
+		RecipeHelper.registerOreDict(oreSphalerite, ORE + ZN, "oreSphalerite");
+		RecipeHelper.registerOreDict(oreCassiterite, ORE + SN, "oreCassiterite");
+		RecipeHelper.registerOreDict(oreMillerite, ORE + NI, "oreMillerite");
+		RecipeHelper.registerOreDict(oreNativeSilver, ORE + AG, "oreNativeSilver");
+		RecipeHelper.registerOreDict(oreGalena, ORE + PB, "oreGalena");
 		RecipeHelper.registerOreDict(oreXenotime, "oreXenotime");
-		RecipeHelper.registerOreDict(oreWolframite, "oreTungsten", "oreWolframite");
+		RecipeHelper.registerOreDict(oreWolframite, ORE + W, "oreWolframite");
 		RecipeHelper.registerOreDict(oreIridosmium, "oreIridosmium");
-		RecipeHelper.registerOreDict(oreBismuthinite, "oreBismuth", "oreBismuthinite");
+		RecipeHelper.registerOreDict(oreBismuthinite, ORE + BI, "oreBismuthinite");
 		RecipeHelper.registerOreDict(oreTennantite, "oreTennantite");
 		RecipeHelper.registerOreDict(oreTetrahedrite, "oreTetrahedrite");
 		RecipeHelper.registerOreDict(orePyrope, "orePyrope");
@@ -335,25 +336,25 @@ public class ThaumRevContent {
 		thaumicSlag = generalItem.addOreDictItem(782, "itemSlagThaumic");
 		fluonicSlag = generalItem.addOreDictItem(783, "itemSlagFluonic");
 
-		clusterZinc = generalItem.addOreDictItem(801, "clusterZinc");
-		clusterAluminium = generalItem.addOreDictItem(802, "clusterAluminium");
-		clusterNickel = generalItem.addOreDictItem(803, "clusterNickel");
-		clusterPlatinum = generalItem.addOreDictItem(804, "clusterPlatinum");
+		clusterZinc = generalItem.addOreDictItem(801, CLUSTER + ZN);
+		clusterAluminium = generalItem.addOreDictItem(802, CLUSTER + AL);
+		clusterNickel = generalItem.addOreDictItem(803, CLUSTER + NI);
+		clusterPlatinum = generalItem.addOreDictItem(804, CLUSTER + PT);
 		clusterXenotime = generalItem.addOreDictItem(806, "clusterXenotime");
-		clusterTungsten = generalItem.addOreDictItem(807, "clusterTungsten");
+		clusterTungsten = generalItem.addOreDictItem(807, CLUSTER + W);
 		clusterIridosmium = generalItem.addOreDictItem(808, "clusterIridosmium");
-		clusterBismuth = generalItem.addOreDictItem(809, "clusterBismuth");
+		clusterBismuth = generalItem.addOreDictItem(809, CLUSTER + BI);
 		clusterTennantite = generalItem.addOreDictItem(810, "clusterTennantite");
 		clusterTetrahedrite = generalItem.addOreDictItem(811, "clusterTetrahedrite");
 
-		dustAer = generalItem.addOreDictItem(890, "dustAer");
-		dustIgnis = generalItem.addOreDictItem(891, "dustIgnis");
-		dustAqua = generalItem.addOreDictItem(892, "dustAqua");
-		dustTerra = generalItem.addOreDictItem(893, "dustTerra");
-		dustOrdo = generalItem.addOreDictItem(894, "dustOrdo");
-		dustPerditio = generalItem.addOreDictItem(895, "dustPerditio");
-		dustIron = generalItem.addOreDictItem(896, "dustIron");
-		dustGold = generalItem.addOreDictItem(897, "dustGold");
+		dustAer = generalItem.addColorizedOreDictItem(890, DUST + AER, MAGICDUST, COLOR_AER);
+		dustIgnis = generalItem.addColorizedOreDictItem(891, DUST + IGNIS, MAGICDUST, COLOR_IGNIS);
+		dustAqua = generalItem.addColorizedOreDictItem(892, DUST + AQUA, MAGICDUST, COLOR_AQUA);
+		dustTerra = generalItem.addColorizedOreDictItem(893, DUST + TERRA, MAGICDUST, COLOR_TERRA);
+		dustOrdo = generalItem.addColorizedOreDictItem(894, DUST + ORDO, MAGICDUST, COLOR_ORDO);
+		dustPerditio = generalItem.addColorizedOreDictItem(895, DUST + PERDITIO, MAGICDUST, COLOR_PERDITIO);
+		dustIron = generalItem.addOreDictItem(896, DUST + FE);
+		dustGold = generalItem.addOreDictItem(897, DUST + AU);
 		dustThaumium = generalItem.addOreDictItem(898, "dustThaumium");
 		dustVoidmetal = generalItem.addOreDictItem(899, "dustVoid");
 		//Salis Mundus
@@ -368,8 +369,8 @@ public class ThaumRevContent {
 		tinyTerra = generalItem.addOreDictItem(943, "dustTerraTiny");
 		tinyOrdo = generalItem.addOreDictItem(944, "dustOrdoTiny");
 		tinyPerditio = generalItem.addOreDictItem(945, "dustPerditioTiny");
-		tinyIron = generalItem.addOreDictItem(946, "dustIronTiny");
-		tinyGold = generalItem.addOreDictItem(947, "dustGoldTiny");
+		tinyIron = generalItem.addOreDictItem(946, DUST + FE + TINY);
+		tinyGold = generalItem.addOreDictItem(947, DUST + AU + TINY);
 		tinyThaumium = generalItem.addOreDictItem(948, "dustThaumiumTiny");
 		tinyVoidmetal = generalItem.addOreDictItem(949, "dustVoidTiny");
 		tinySalisMundus = generalItem.addOreDictItem(950, salisPinch);
@@ -420,31 +421,31 @@ public class ThaumRevContent {
 	}
 
 	public static void loadMetalItems() {
-		ingotCopper = generalItem.addColorizedOreDictItem(5000, iCu, INGOT, iCu, GradientLibrary.GRAD_CU);
-		ingotZinc = generalItem.addOreDictItem(5001, "ingotZinc");
-		ingotTin = generalItem.addOreDictItem(5002, iSn);
-		ingotNickel = generalItem.addOreDictItem(5003, "ingotNickel");
-		ingotSilver = generalItem.addOreDictItem(5004, "ingotSilver");
-		ingotLead = generalItem.addOreDictItem(5005, "ingotLead");
-		ingotLutetium = generalItem.addOreDictItem(5006, "ingotLutetium", 2);
-		ingotTungsten = generalItem.addOreDictItem(5007, "ingotTungsten", 1);
-		ingotIridium = generalItem.addOreDictItem(5008, "ingotIridium", 2);
-		ingotBismuth = generalItem.addOreDictItem(5009, "ingotBismuth");
-		ingotArsenic = generalItem.addOreDictItem(5010, "ingotArsenic");
-		ingotAntimony = generalItem.addOreDictItem(5011, "ingotAntimony");
-		ingotNeodymium = generalItem.addOreDictItem(5012, "ingotNeodymium", 1);
-		ingotOsmium = generalItem.addOreDictItem(5013, "ingotOsmium", 1);
-		ingotPalladium = generalItem.addOreDictItem(5014, "ingotPalladium", 1);
-		ingotAluminium = generalItem.addOreDictItem(5015, "ingotAluminium");
+		ingotCopper = generalItem.addColorizedOreDictItem(5000, INGOT + CU, INGOT, COLOR_CU);
+		ingotZinc = generalItem.addColorizedOreDictItem(5001, INGOT + ZN, INGOT, COLOR_ZN);
+		ingotTin = generalItem.addColorizedOreDictItem(5002, INGOT + SN, INGOT, COLOR_SN);
+		ingotNickel = generalItem.addColorizedOreDictItem(5003, INGOT + NI, INGOT, COLOR_NI);
+		ingotSilver = generalItem.addColorizedOreDictItem(5004, INGOT + AG, INGOT, COLOR_AG);
+		ingotLead = generalItem.addColorizedOreDictItem(5005, INGOT + PB, INGOT, COLOR_PB);
+		ingotLutetium = generalItem.addColorizedOreDictItem(5006, INGOT + LU, INGOT, COLOR_LU, 2);
+		ingotTungsten = generalItem.addColorizedOreDictItem(5007, INGOT + W, INGOT, COLOR_W, 1);
+		ingotIridium = generalItem.addColorizedOreDictItem(5008, INGOT + IR, INGOT, COLOR_IR, 2);
+		ingotBismuth = generalItem.addColorizedOreDictItem(5009, INGOT + BI, INGOT, COLOR_BI);
+		ingotArsenic = generalItem.addColorizedOreDictItem(5010, INGOT + AS, INGOT, COLOR_AS);
+		ingotAntimony = generalItem.addColorizedOreDictItem(5011, INGOT + SB, INGOT, COLOR_SB);
+		ingotNeodymium = generalItem.addColorizedOreDictItem(5012, INGOT + ND, INGOT, COLOR_ND, 1);
+		ingotOsmium = generalItem.addColorizedOreDictItem(5013, INGOT + OS, INGOT, COLOR_OS, 1);
+		ingotPalladium = generalItem.addColorizedOreDictItem(5014, INGOT + PD, INGOT, COLOR_PD, 1);
+		ingotAluminium = generalItem.addColorizedOreDictItem(5015, INGOT + AL, INGOT, COLOR_AL);
 
-		ingotBrass = generalItem.addOreDictItem(5032, "ingotBrass");
-		ingotBronze = generalItem.addOreDictItem(5033, "ingotBronze");
+		ingotBrass = generalItem.addColorizedOreDictItem(5032, INGOT + CUZN, INGOT, COLOR_CUZN);
+		ingotBronze = generalItem.addColorizedOreDictItem(5033, INGOT + CUSN, INGOT, COLOR_CUSN);
 		ingotArsenicalBronze = generalItem.addOreDictItem(5034, "ingotArsenicalBronze");
 		ingotAntimonialBronze = generalItem.addOreDictItem(5035, "ingotAntimonialBronze");
-		ingotBismuthBronze = generalItem.addOreDictItem(5036, "ingotBismuthBronze");
-		ingotMithril = generalItem.addOreDictItem(5037, "ingotMithril", 1, "ingotArsenoAntimonialBronze");
+		ingotBismuthBronze = generalItem.addColorizedOreDictItem(5036, INGOT + CUBI, INGOT, COLOR_CUBI);
+		ingotMithril = generalItem.addColorizedOreDictItem(5037, "ingotMithril", INGOT, COLOR_MTHR, 1, INGOT + MTHR);
 		ingotAluminiumBronze = generalItem.addOreDictItem(5038, "ingotAluminiumBronze");
-		ingotCupronickel = generalItem.addOreDictItem(5039, "ingotCupronickel");
+		ingotCupronickel = generalItem.addColorizedOreDictItem(5039, INGOT + CUNI, INGOT, COLOR_CUNI);
 		ingotRiftishBronze = generalItem.addOreDictItem(5040, "ingotRiftishBronze", 1);
 		ingotConstantan = generalItem.addOreDictItem(5041, "ingotConstantan");
 		ingotInvar = generalItem.addOreDictItem(5042, "ingotInvar");
@@ -485,7 +486,7 @@ public class ThaumRevContent {
 		gemWardenicCrystalActivated = generalItem.addOreDictItem(5101, "gemWardenicCrystalActivated", 2);
 
 		gemWardenicQuartz = generalItem.addOreDictItem(5108, "gemWardenicQuartz", 1);
-		gemRedquartz = generalItem.addOreDictItem(5109, "gemRedquartz", 1);
+		gemRedquartz = generalItem.addColorizedOreDictItem(5109, GEM + RQRZ, QUARTZ, COLOR_FLUX, 1);
 
 		ingotLanthanides = generalItem.addOreDictItem(5112, "ingotXenotime", 1, "ingotXenotimeLanthanides");
 		ingotXenotimeJunk = generalItem.addOreDictItem(5113, "ingotLanthanides", 1, "ingotXenotimeWaste");
@@ -494,146 +495,146 @@ public class ThaumRevContent {
 		ingotThaumicBronze = generalItem.addOreDictItem(5120, "ingotThaumicBronze");
 		ingotOsLu = generalItem.addOreDictItem(5121, "ingotOsmiumLutetium", 2);
 
-		/*nuggetCopper = metalItem.addOreDictItem(200, "nuggetCopper");
-		nuggetZinc = metalItem.addOreDictItem(201, "nuggetZinc");
-		nuggetTin = metalItem.addOreDictItem(202, "nuggetTin");
-		nuggetNickel = metalItem.addOreDictItem(203, "nuggetNickel");
-		nuggetSilver = metalItem.addOreDictItem(204, "nuggetSilver");
-		nuggetLead = metalItem.addOreDictItem(205, "nuggetLead");
-		nuggetLutetium = metalItem.addOreDictItem(206, "nuggetLutetium", 2);
-		nuggetTungsten = metalItem.addOreDictItem(207, "nuggetTungsten", 1);
-		nuggetIridium = metalItem.addOreDictItem(208, "nuggetIridium", 2);
-		nuggetBismuth = metalItem.addOreDictItem(209, "nuggetBismuth");
-		nuggetArsenic = metalItem.addOreDictItem(210, "nuggetArsenic");
-		nuggetAntimony = metalItem.addOreDictItem(211, "nuggetAntimony");
-		nuggetNeodymium = metalItem.addOreDictItem(212, "nuggetNeodymium", 1);
-		nuggetOsmium = metalItem.addOreDictItem(213, "nuggetOsmium", 1);
-		nuggetPalladium = metalItem.addOreDictItem(214, "nuggetPalladium", 1);
-		nuggetAluminium = metalItem.addOreDictItem(215, "nuggetAluminium");
+		nuggetCopper = metalItem.addOreDictItem(5200, "nuggetCopper");
+		nuggetZinc = metalItem.addOreDictItem(5201, "nuggetZinc");
+		nuggetTin = metalItem.addOreDictItem(5202, "nuggetTin");
+		nuggetNickel = metalItem.addOreDictItem(5203, "nuggetNickel");
+		nuggetSilver = metalItem.addOreDictItem(5204, "nuggetSilver");
+		nuggetLead = metalItem.addOreDictItem(5205, "nuggetLead");
+		nuggetLutetium = metalItem.addOreDictItem(5206, "nuggetLutetium", 2);
+		nuggetTungsten = metalItem.addOreDictItem(5207, "nuggetTungsten", 1);
+		nuggetIridium = metalItem.addOreDictItem(5208, "nuggetIridium", 2);
+		nuggetBismuth = metalItem.addOreDictItem(5209, "nuggetBismuth");
+		nuggetArsenic = metalItem.addOreDictItem(5210, "nuggetArsenic");
+		nuggetAntimony = metalItem.addOreDictItem(5211, "nuggetAntimony");
+		nuggetNeodymium = metalItem.addOreDictItem(5212, "nuggetNeodymium", 1);
+		nuggetOsmium = metalItem.addOreDictItem(5213, "nuggetOsmium", 1);
+		nuggetPalladium = metalItem.addOreDictItem(5214, "nuggetPalladium", 1);
+		nuggetAluminium = metalItem.addOreDictItem(5215, "nuggetAluminium");
 
-		nuggetBrass = metalItem.addOreDictItem(232, "nuggetBrass");
-		nuggetBronze = metalItem.addOreDictItem(233, nBronze);
-		nuggetArsenicalBronze = metalItem.addOreDictItem(234, "nuggetArsenicalBronze");
-		nuggetAntimonialBronze = metalItem.addOreDictItem(235, "nuggetAntimonialBronze");
-		nuggetBismuthBronze = metalItem.addOreDictItem(236, "nuggetBismuthBronze");
-		nuggetMithril = metalItem.addOreDictItem(237, "nuggetMithril", 1, "nuggetArsenoAntimonialBronze");
-		nuggetAluminiumBronze = metalItem.addOreDictItem(238, "nuggetAluminiumBronze");
-		nuggetCupronickel = metalItem.addOreDictItem(239, "nuggetCupronickel");
-		nuggetRiftishBronze = metalItem.addOreDictItem(240, "nuggetRiftishBronze", 1);
-		nuggetConstantan = metalItem.addOreDictItem(241, "nuggetConstantan");
-		nuggetInvar = metalItem.addOreDictItem(242, "nuggetInvar");
-		nuggetElectrum = metalItem.addOreDictItem(243, "nuggetElectrum");
-		nuggetWardenicMetal = metalItem.addOreDictItem(244, "nuggetWardenicMetal");
-		nuggetDullRedsolder = metalItem.addOreDictItem(245, "nuggetDullRedsolder");
-		nuggetRedsolder = metalItem.addOreDictItem(246, "nuggetRedsolder");
+		nuggetBrass = metalItem.addOreDictItem(5232, "nuggetBrass");
+		nuggetBronze = metalItem.addOreDictItem(5233, nBronze);
+		nuggetArsenicalBronze = metalItem.addOreDictItem(5234, "nuggetArsenicalBronze");
+		nuggetAntimonialBronze = metalItem.addOreDictItem(5235, "nuggetAntimonialBronze");
+		nuggetBismuthBronze = metalItem.addOreDictItem(5236, "nuggetBismuthBronze");
+		nuggetMithril = metalItem.addOreDictItem(5237, "nuggetMithril", 1, "nuggetArsenoAntimonialBronze");
+		nuggetAluminiumBronze = metalItem.addOreDictItem(5238, "nuggetAluminiumBronze");
+		nuggetCupronickel = metalItem.addOreDictItem(5239, "nuggetCupronickel");
+		nuggetRiftishBronze = metalItem.addOreDictItem(5240, "nuggetRiftishBronze", 1);
+		nuggetConstantan = metalItem.addOreDictItem(5241, "nuggetConstantan");
+		nuggetInvar = metalItem.addOreDictItem(5242, "nuggetInvar");
+		nuggetElectrum = metalItem.addOreDictItem(5243, "nuggetElectrum");
+		nuggetWardenicMetal = metalItem.addOreDictItem(5244, "nuggetWardenicMetal");
+		nuggetDullRedsolder = metalItem.addOreDictItem(5245, "nuggetDullRedsolder");
+		nuggetRedsolder = metalItem.addOreDictItem(5246, "nuggetRedsolder");
 
-		nuggetThaumicElectrum = metalItem.addOreDictItem(264, "nuggetThaumicElectrum", 1);
-		nuggetThaumicRiftishBronze = metalItem.addOreDictItem(265, "nuggetThaumicRiftishBronze", 1);
-		nuggetSteel = metalItem.addOreDictItem(266, "nuggetSteel", 1);
-		nuggetVoidbrass = metalItem.addOreDictItem(267, "nuggetVoidbrass", 1);
-		nuggetVoidsteel = metalItem.addOreDictItem(268, "nuggetVoidsteel", 1);
-		nuggetVoidtungsten = metalItem.addOreDictItem(269, "nuggetVoidtungsten", 2);
+		nuggetThaumicElectrum = metalItem.addOreDictItem(5264, "nuggetThaumicElectrum", 1);
+		nuggetThaumicRiftishBronze = metalItem.addOreDictItem(5265, "nuggetThaumicRiftishBronze", 1);
+		nuggetSteel = metalItem.addOreDictItem(5266, "nuggetSteel", 1);
+		nuggetVoidbrass = metalItem.addOreDictItem(5267, "nuggetVoidbrass", 1);
+		nuggetVoidsteel = metalItem.addOreDictItem(5268, "nuggetVoidsteel", 1);
+		nuggetVoidtungsten = metalItem.addOreDictItem(5269, "nuggetVoidtungsten", 2);
 
-		nuggetWardenicBronze = metalItem.addOreDictItem(280, "nuggetWardenicBronze");
-		nuggetWardenicSteel = metalItem.addOreDictItem(281, "nuggetWardenicSteel", 1);
-		nuggetWardenicRiftishBronze = metalItem.addOreDictItem(282, "nuggetWardenicRiftishBronze", 1);
-		nuggetWardenicComposite = metalItem.addOreDictItem(283, "nuggetWardenicComposite", 2);
-		nuggetRedsolderArcane = metalItem.addOreDictItem(284, "nuggetArcaneRedsolder");
-		nuggetRedbronze = metalItem.addOreDictItem(285, "nuggetRedbronze");
-		nuggetRedbronzeHardened = metalItem.addOreDictItem(286, "nuggetHardenedRedbronze", 1);
-		nuggetFluxsteel = metalItem.addOreDictItem(287, "nuggetFluxsteel", 1);
-		nuggetFluxedTungsten = metalItem.addOreDictItem(288, "nuggetFluxedTungsten", 2);
-		nuggetMagneoturgicComposite = metalItem.addOreDictItem(289, "nuggetMagneoturgicComposite", 2);
-		nuggetFluxedComposite = metalItem.addOreDictItem(290, "nuggetFluxedComposite", 2);
-		nuggetResonantFluxedComposite = metalItem.addOreDictItem(291, "nuggetResonantFluxedComposite", 3);
+		nuggetWardenicBronze = metalItem.addOreDictItem(5280, "nuggetWardenicBronze");
+		nuggetWardenicSteel = metalItem.addOreDictItem(5281, "nuggetWardenicSteel", 1);
+		nuggetWardenicRiftishBronze = metalItem.addOreDictItem(5282, "nuggetWardenicRiftishBronze", 1);
+		nuggetWardenicComposite = metalItem.addOreDictItem(5283, "nuggetWardenicComposite", 2);
+		nuggetRedsolderArcane = metalItem.addOreDictItem(5284, "nuggetArcaneRedsolder");
+		nuggetRedbronze = metalItem.addOreDictItem(5285, "nuggetRedbronze");
+		nuggetRedbronzeHardened = metalItem.addOreDictItem(5286, "nuggetHardenedRedbronze", 1);
+		nuggetFluxsteel = metalItem.addOreDictItem(5287, "nuggetFluxsteel", 1);
+		nuggetFluxedTungsten = metalItem.addOreDictItem(5288, "nuggetFluxedTungsten", 2);
+		nuggetMagneoturgicComposite = metalItem.addOreDictItem(5289, "nuggetMagneoturgicComposite", 2);
+		nuggetFluxedComposite = metalItem.addOreDictItem(5290, "nuggetFluxedComposite", 2);
+		nuggetResonantFluxedComposite = metalItem.addOreDictItem(5291, "nuggetResonantFluxedComposite", 3);
 
-		shardPyrope = metalItem.addOreDictItem(296, "shardPyrope", 2, "nuggetPyrope");
-		shardDioptase = metalItem.addOreDictItem(297, "shardDioptase", 2, "nuggetDioptase");
-		shardFluonicSapphire = metalItem.addOreDictItem(298, "shardFluonicSapphire", 2, "nuggetFluonicSapphire");
-		shardFluonicPyroptase = metalItem.addOreDictItem(299, "shardFluonicPyroptase", 3, "nuggetFluonicPyroptase");
-		shardWardenicCrystal = metalItem.addOreDictItem(300, "shardWardenicCrystal", 2, "nuggetWardenicCrystal");
-		shardWardenicCrystalActivated = metalItem.addOreDictItem(301, "shardWardenicCrystalActivated", 2, "nuggetWardenicCrystalActivated");
+		shardPyrope = metalItem.addOreDictItem(5296, "shardPyrope", 2, "nuggetPyrope");
+		shardDioptase = metalItem.addOreDictItem(5297, "shardDioptase", 2, "nuggetDioptase");
+		shardFluonicSapphire = metalItem.addOreDictItem(5298, "shardFluonicSapphire", 2, "nuggetFluonicSapphire");
+		shardFluonicPyroptase = metalItem.addOreDictItem(5299, "shardFluonicPyroptase", 3, "nuggetFluonicPyroptase");
+		shardWardenicCrystal = metalItem.addOreDictItem(5300, "shardWardenicCrystal", 2, "nuggetWardenicCrystal");
+		shardWardenicCrystalActivated = metalItem.addOreDictItem(5301, "shardWardenicCrystalActivated", 2, "nuggetWardenicCrystalActivated");
 
-		shardWardenicQuartz = metalItem.addOreDictItem(308, "shardWardenicQuartz", 1, "nuggetWardenicQuartz");
-		shardRedquartz = metalItem.addOreDictItem(309, "shardRedquartz", 1);
+		shardWardenicQuartz = metalItem.addOreDictItem(5308, "shardWardenicQuartz", 1, "nuggetWardenicQuartz");
+		shardRedquartz = metalItem.addOreDictItem(5309, "shardRedquartz", 1);
 
-		nuggetLanthanides = metalItem.addOreDictItem(312, "nuggetXenotime", 1, "nuggetXenotimeLanthanides");
-		nuggetXenotimeJunk = metalItem.addOreDictItem(313, "nuggetLanthanides", 1, "nuggetXenotimeWaste");
-		nuggetIridosmium = metalItem.addOreDictItem(314, "nuggetIridosmium", 2);
+		nuggetLanthanides = metalItem.addOreDictItem(5312, "nuggetXenotime", 1, "nuggetXenotimeLanthanides");
+		nuggetXenotimeJunk = metalItem.addOreDictItem(5313, "nuggetLanthanides", 1, "nuggetXenotimeWaste");
+		nuggetIridosmium = metalItem.addOreDictItem(5314, "nuggetIridosmium", 2);
 
-		nuggetThaumicBronze = metalItem.addOreDictItem(320, "nuggetThaumicBronze");
-		nuggetOsLu = metalItem.addOreDictItem(321, "nuggetOsmiumLutetium", 2);
+		nuggetThaumicBronze = metalItem.addOreDictItem(5320, "nuggetThaumicBronze");
+		nuggetOsLu = metalItem.addOreDictItem(5321, "nuggetOsmiumLutetium", 2);
 
-		dustCopper = metalItem.addOreDictItem(400, "dustCopper");
-		dustZinc = metalItem.addOreDictItem(401, "dustZinc");
-		dustTin = metalItem.addOreDictItem(402, "dustTin");
-		dustNickel = metalItem.addOreDictItem(403, "dustNickel");
-		dustSilver = metalItem.addOreDictItem(404, "dustSilver");
-		dustLead = metalItem.addOreDictItem(405, "dustLead");
-		dustLutetium = metalItem.addOreDictItem(406, "dustLutetium", 2);
-		dustTungsten = metalItem.addOreDictItem(407, "dustTungsten", 1);
-		dustIridium = metalItem.addOreDictItem(408, "dustIridium", 2);
-		dustBismuth = metalItem.addOreDictItem(409, "dustBismuth");
-		dustArsenic = metalItem.addOreDictItem(410, "dustArsenic");
-		dustAntimony = metalItem.addOreDictItem(411, "dustAntimony");
-		dustNeodymium = metalItem.addOreDictItem(412, "dustNeodymium", 1);
-		dustOsmium = metalItem.addOreDictItem(413, "dustOsmium", 1);
-		dustPalladium = metalItem.addOreDictItem(414, "dustPalladium", 1);
-		dustAluminium = metalItem.addOreDictItem(415, "dustAluminium");
+		dustCopper = metalItem.addOreDictItem(5400, "dustCopper");
+		dustZinc = metalItem.addOreDictItem(5401, "dustZinc");
+		dustTin = metalItem.addOreDictItem(5402, "dustTin");
+		dustNickel = metalItem.addOreDictItem(5403, "dustNickel");
+		dustSilver = metalItem.addOreDictItem(5404, "dustSilver");
+		dustLead = metalItem.addOreDictItem(5405, "dustLead");
+		dustLutetium = metalItem.addOreDictItem(5406, "dustLutetium", 2);
+		dustTungsten = metalItem.addOreDictItem(5407, "dustTungsten", 1);
+		dustIridium = metalItem.addOreDictItem(5408, "dustIridium", 2);
+		dustBismuth = metalItem.addOreDictItem(5409, "dustBismuth");
+		dustArsenic = metalItem.addOreDictItem(5410, "dustArsenic");
+		dustAntimony = metalItem.addOreDictItem(5411, "dustAntimony");
+		dustNeodymium = metalItem.addOreDictItem(5412, "dustNeodymium", 1);
+		dustOsmium = metalItem.addOreDictItem(5413, "dustOsmium", 1);
+		dustPalladium = metalItem.addOreDictItem(5414, "dustPalladium", 1);
+		dustAluminium = metalItem.addOreDictItem(5415, "dustAluminium");
 
-		dustBrass = metalItem.addOreDictItem(432, "dustBrass");
-		dustBronze = metalItem.addOreDictItem(433, "dustBronze");
-		dustArsenicalBronze = metalItem.addOreDictItem(434, "dustArsenicalBronze");
-		dustAntimonialBronze = metalItem.addOreDictItem(435, "dustAntimonialBronze");
-		dustBismuthBronze = metalItem.addOreDictItem(436, "dustBismuthBronze");
-		dustMithril = metalItem.addOreDictItem(437, "dustMithril", 1, "dustArsenoAntimonialBronze");
-		dustAluminiumBronze = metalItem.addOreDictItem(438, "dustAluminiumBronze");
-		dustCupronickel = metalItem.addOreDictItem(439, "dustCupronickel");
-		dustRiftishBronze = metalItem.addOreDictItem(440, "dustRiftishBronze", 1);
-		dustConstantan = metalItem.addOreDictItem(441, "dustConstantan");
-		dustInvar = metalItem.addOreDictItem(442, "dustInvar");
-		dustElectrum = metalItem.addOreDictItem(443, "dustElectrum");
-		dustWardenicMetal = metalItem.addOreDictItem(444, "dustWardenicMetal");
-		dustDullRedsolder = metalItem.addOreDictItem(445, "dustDullRedsolder");
-		dustRedsolder = metalItem.addOreDictItem(446, "dustRedsolder");
+		dustBrass = metalItem.addOreDictItem(5432, "dustBrass");
+		dustBronze = metalItem.addOreDictItem(5433, "dustBronze");
+		dustArsenicalBronze = metalItem.addOreDictItem(5434, "dustArsenicalBronze");
+		dustAntimonialBronze = metalItem.addOreDictItem(5435, "dustAntimonialBronze");
+		dustBismuthBronze = metalItem.addOreDictItem(5436, "dustBismuthBronze");
+		dustMithril = metalItem.addOreDictItem(5437, "dustMithril", 1, "dustArsenoAntimonialBronze");
+		dustAluminiumBronze = metalItem.addOreDictItem(5438, "dustAluminiumBronze");
+		dustCupronickel = metalItem.addOreDictItem(5439, "dustCupronickel");
+		dustRiftishBronze = metalItem.addOreDictItem(5440, "dustRiftishBronze", 1);
+		dustConstantan = metalItem.addOreDictItem(5441, "dustConstantan");
+		dustInvar = metalItem.addOreDictItem(5442, "dustInvar");
+		dustElectrum = metalItem.addOreDictItem(5443, "dustElectrum");
+		dustWardenicMetal = metalItem.addOreDictItem(5444, "dustWardenicMetal");
+		dustDullRedsolder = metalItem.addOreDictItem(5445, "dustDullRedsolder");
+		dustRedsolder = metalItem.addOreDictItem(5446, "dustRedsolder");
 
-		dustThaumicElectrum = metalItem.addOreDictItem(464, "dustThaumicElectrum", 1);
-		dustThaumicRiftishBronze = metalItem.addOreDictItem(465, "dustThaumicRiftishBronze", 1);
-		dustSteel = metalItem.addOreDictItem(466, "dustSteel", 1);
-		dustVoidbrass = metalItem.addOreDictItem(467, "dustVoidbrass", 1);
-		dustVoidsteel = metalItem.addOreDictItem(468, "dustVoidsteel", 1);
-		dustVoidtungsten = metalItem.addOreDictItem(469, "dustVoidtungsten", 2);
+		dustThaumicElectrum = metalItem.addOreDictItem(5464, "dustThaumicElectrum", 1);
+		dustThaumicRiftishBronze = metalItem.addOreDictItem(5465, "dustThaumicRiftishBronze", 1);
+		dustSteel = metalItem.addOreDictItem(5466, "dustSteel", 1);
+		dustVoidbrass = metalItem.addOreDictItem(5467, "dustVoidbrass", 1);
+		dustVoidsteel = metalItem.addOreDictItem(5468, "dustVoidsteel", 1);
+		dustVoidtungsten = metalItem.addOreDictItem(5469, "dustVoidtungsten", 2);
 
-		dustWardenicBronze = metalItem.addOreDictItem(480, "dustWardenicBronze");
-		dustWardenicSteel = metalItem.addOreDictItem(481, "dustWardenicSteel", 1);
-		dustWardenicRiftishBronze = metalItem.addOreDictItem(482, "dustWardenicRiftishBronze", 1);
-		dustWardenicComposite = metalItem.addOreDictItem(483, "dustWardenicComposite", 2);
+		dustWardenicBronze = metalItem.addOreDictItem(5480, "dustWardenicBronze");
+		dustWardenicSteel = metalItem.addOreDictItem(5481, "dustWardenicSteel", 1);
+		dustWardenicRiftishBronze = metalItem.addOreDictItem(5482, "dustWardenicRiftishBronze", 1);
+		dustWardenicComposite = metalItem.addOreDictItem(5483, "dustWardenicComposite", 2);
 
-		dustRedsolderArcane = metalItem.addOreDictItem(484, "dustArcaneRedsolder");
-		dustRedbronze = metalItem.addOreDictItem(485, "dustRedbronze");
-		dustRedbronzeHardened = metalItem.addOreDictItem(486, "dustHardenedRedbronze", 1);
-		dustFluxsteel = metalItem.addOreDictItem(487, "dustFluxsteel", 1);
-		dustFluxedTungsten = metalItem.addOreDictItem(488, "dustFluxedTungsten", 2);
-		dustMagneoturgicComposite = metalItem.addOreDictItem(489, "dustMagneoturgicComposite", 2);
-		dustFluxedComposite = metalItem.addOreDictItem(490, "dustFluxedComposite", 2);
-		dustResonantFluxedComposite = metalItem.addOreDictItem(491, "dustResonantFluxedComposite", 3);
+		dustRedsolderArcane = metalItem.addOreDictItem(5484, "dustArcaneRedsolder");
+		dustRedbronze = metalItem.addOreDictItem(5485, "dustRedbronze");
+		dustRedbronzeHardened = metalItem.addOreDictItem(5486, "dustHardenedRedbronze", 1);
+		dustFluxsteel = metalItem.addOreDictItem(5487, "dustFluxsteel", 1);
+		dustFluxedTungsten = metalItem.addOreDictItem(5488, "dustFluxedTungsten", 2);
+		dustMagneoturgicComposite = metalItem.addOreDictItem(5489, "dustMagneoturgicComposite", 2);
+		dustFluxedComposite = metalItem.addOreDictItem(5490, "dustFluxedComposite", 2);
+		dustResonantFluxedComposite = metalItem.addOreDictItem(5491, "dustResonantFluxedComposite", 3);
 
-		dustPyrope = metalItem.addOreDictItem(496, "dustPyrope", 2);
-		dustDioptase = metalItem.addOreDictItem(497, "dustDioptase", 2);
-		dustFluonicSapphire = metalItem.addOreDictItem(498, "dustFluonicSapphire", 2);
-		dustFluonicPyroptase = metalItem.addOreDictItem(499, "dustFluonicPyroptase", 3);
-		dustWardenicCrystal = metalItem.addOreDictItem(500, "dustWardenicCrystal", 2);
-		dustWardenicCrystalActivated = metalItem.addOreDictItem(501, "dustWardenicCrystalActivated", 2);
+		dustPyrope = metalItem.addOreDictItem(5496, "dustPyrope", 2);
+		dustDioptase = metalItem.addOreDictItem(5497, "dustDioptase", 2);
+		dustFluonicSapphire = metalItem.addOreDictItem(5498, "dustFluonicSapphire", 2);
+		dustFluonicPyroptase = metalItem.addOreDictItem(5499, "dustFluonicPyroptase", 3);
+		dustWardenicCrystal = metalItem.addOreDictItem(5500, "dustWardenicCrystal", 2);
+		dustWardenicCrystalActivated = metalItem.addOreDictItem(5501, "dustWardenicCrystalActivated", 2);
 		
-		dustWardenicQuartz = metalItem.addOreDictItem(508, "dustWardenicQuartz", 1);
-		dustRedquartz = metalItem.addOreDictItem(509, "dustRedquartz", 1);
+		dustWardenicQuartz = metalItem.addOreDictItem(5508, "dustWardenicQuartz", 1);
+		dustRedquartz = metalItem.addOreDictItem(5509, "dustRedquartz", 1);
 
-		dustLanthanides = metalItem.addOreDictItem(512, "dustXenotime", 1, "dustXenotimeLanthanides");
-		dustXenotimeJunk = metalItem.addOreDictItem(513, "dustLanthanides", 1, "dustXenotimeWaste");
-		dustIridosmium = metalItem.addOreDictItem(514, "dustIridosmium", 2);
+		dustLanthanides = metalItem.addOreDictItem(5512, "dustXenotime", 1, "dustXenotimeLanthanides");
+		dustXenotimeJunk = metalItem.addOreDictItem(5513, "dustLanthanides", 1, "dustXenotimeWaste");
+		dustIridosmium = metalItem.addOreDictItem(5514, "dustIridosmium", 2);
 
-		dustThaumicBronze = metalItem.addOreDictItem(520, "dustThaumicBronze");
-		dustOsLu = metalItem.addOreDictItem(521, "dustOsmiumLutetium", 2);
+		dustThaumicBronze = metalItem.addOreDictItem(5520, "dustThaumicBronze");
+		dustOsLu = metalItem.addOreDictItem(5521, "dustOsmiumLutetium", 2);
 		
 
 
@@ -648,7 +649,7 @@ public class ThaumRevContent {
 
 
 
-
+/*
 		tinyCopper = metalItem.addOreDictItem(500, "dustCopperTiny");
 		tinyZinc = metalItem.addOreDictItem(501, "dustZincTiny");
 		tinyTin = metalItem.addOreDictItem(502, "dustTinTiny");
@@ -772,9 +773,9 @@ public class ThaumRevContent {
 		plateFluxedTungsten = metalItem.addOreDictItem(685, "plateFluxedTungsten", 2);
 		plateMagneoturgicComposite = metalItem.addOreDictItem(686, "plateMagneoturgicComposite", 2);
 		plateFluxedComposite = metalItem.addOreDictItem(687, "plateFluxedComposite", 2);
-		plateResonantFluxedComposite = metalItem.addOreDictItem(688, "plateResonantFluxedComposite", 3);
+		plateResonantFluxedComposite = metalItem.addOreDictItem(688, "plateResonantFluxedComposite", 3);*/
 
-		rawBrass = metalItem.addOreDictItem(730, "ingotBrassRaw");
+		/*rawBrass = metalItem.addOreDictItem(730, "ingotBrassRaw");
 		rawBronze = metalItem.addOreDictItem(731, "ingotBronzeRaw");
 		rawBismuthBronze = metalItem.addOreDictItem(732, "ingotBismuthBronzeRaw");
 		rawMithril = metalItem.addOreDictItem(733, "ingotMithrilRaw", 1, "ingotArsenoAntimonialBronzeRaw");
@@ -810,7 +811,7 @@ public class ThaumRevContent {
 
 		ItemArmorInfusableThaumRev.materialData.put(matPrimal, new ThaumRevMaterialDataSet().setUnlocName(".primal.", new String[] {"goggles", "robes", "pants", "boots"}).setIcon("primal", new String[] {"Goggles", "Robes", "Pants", "Boots"}).setRepair("ingotGold", "itemEnchantedFabric", "itemEnchantedFabric", "itemEnchantedFabric").setColor(0x6A3880).setTexture("primal").setRarity(EnumRarity.rare, EnumRarity.uncommon, EnumRarity.uncommon, EnumRarity.uncommon).setRegName("Primal", new String[] {"Goggles", "Robes", "Pants", "Boots"}).setNonColorized(0));
 		ItemArmorInfusableThaumRev.materialData.put(matBronzeChain, new ThaumRevMaterialDataSet().setUnlocName(".bronzeChain.", new String[] {"helmet", "mail", "greaves", "boots"}).setIcon("bronzeChain", new String[] {"Helmet", "mail", "Greaves", "Boots"}).setRepair("itemThaumicBronzeChain").setTexture("bronzeChain").setRarity(EnumRarity.uncommon).setRegName("BronzeChain", new String[] {"Helmet", "mail", "Greaves", "Boots"}));
-		ItemArmorInfusableThaumRev.materialData.put(matWardencloth, new ThaumRevMaterialDataSet().setUnlocName(".wardencloth.", new String[] {"skullcap", "tunic", "pants", "boots"}).setIcon("wardencloth", new String[] {"Skullcap", "Tunic", "Pants", "Boots"}).setRepair("itemWardencloth").setColor(ColorLibrary.COLOR_TEAL_MAGNEQUAZAR).setTexture("wardencloth").setRarity(EnumRarity.uncommon).setRegName("Wardencloth", new String[] {"Skullcap", "Tunic", "Pants", "Boots"}));
+		ItemArmorInfusableThaumRev.materialData.put(matWardencloth, new ThaumRevMaterialDataSet().setUnlocName(".wardencloth.", new String[] {"skullcap", "tunic", "pants", "boots"}).setIcon("wardencloth", new String[] {"Skullcap", "Tunic", "Pants", "Boots"}).setRepair("itemWardencloth").setColor(COLOR_TEAL_MAGNEQUAZAR).setTexture("wardencloth").setRarity(EnumRarity.uncommon).setRegName("Wardencloth", new String[] {"Skullcap", "Tunic", "Pants", "Boots"}));
 		ItemArmorInfusableThaumRev.materialData.put(matWardenicChain, new ThaumRevMaterialDataSet().setUnlocName(".wardenicChain.", new String[] {"helmet", "mail", "greaves", "boots"}).setIcon("wardenicChain", new String[] {"Helmet", "mail", "Greaves", "Boots"}).setRepair("itemChainWardenBronze").setTexture("wardenicChain").setRarity(EnumRarity.uncommon).setRegName("WardenicChain", new String[] {"Helmet", "mail", "Greaves", "Boots"}));
 		ItemArmorInfusableThaumRev.materialData.put(matWardenicSteel, new ThaumRevMaterialDataSet().setUnlocName(".wardenicSteel.", new String[] {"helmet", "chestplate", "greaves", "boots"}).setIcon("wardenicSteel", new String[] {"Helmet", "Chestplate", "Greaves", "Boots"}).setRepair("itemPlateWardenicSteelRunic").setTexture("wardenSteel").setRarity(EnumRarity.uncommon).setRegName("WardenicSteel", new String[] {"Helmet", "Chestplate", "Greaves", "Boots"}));
 		ItemArmorInfusableThaumRev.materialData.put(matWardenicComposite, new ThaumRevMaterialDataSet().setUnlocName(".wardenicComposite.", new String[] {"helmet", "chestplate", "greaves", "boots"}).setIcon("wardenicComposite", new String[] {"Helmet", "Chestplate", "Greaves", "Boots"}).setRepair("itemPlateWardenicCompositeConsecrated").setTexture("wardenComposite").setRarity(EnumRarity.rare).setRegName("WardenicComposite", new String[] {"Helmet", "Chestplate", "Greaves", "Boots"}));
@@ -1182,7 +1183,7 @@ public class ThaumRevContent {
 		addSmelting(dustWardenicMetal, ingotWardenicMetal);
 		addSmelting(rawWardenicMetal, ingotWardenicMetal, 1.3F);
 
-		addShapelessSizedOreRecipe(rawOsLu, 0, iOs, iOs, iOs, iOs, iLu, iLu, iLu, "ingotNeodymium", "ingotTungsten");
+		addShapelessSizedOreRecipe(rawOsLu, 0, INGOT + OS, INGOT + OS, INGOT + OS, INGOT + OS, INGOT + LU, INGOT + LU, INGOT + LU, "ingotNeodymium", "ingotTungsten");
 		addShapelessRecipe(ItemHelper.cloneStack(coatedOsLu, 4), "ingotOsmiumLutetiumRaw", "ingotOsmiumLutetiumRaw", "ingotOsmiumLutetiumRaw", "ingotOsmiumLutetiumRaw", "dustFluonicSapphire", "itemClay", "itemClay", "itemClay", "itemClay");
 
 		addStorageRecipe(ingotThaumicBronze, "nuggetThaumicBronze");
@@ -1845,7 +1846,6 @@ public class ThaumRevContent {
 	public static ItemStack ingotFe = new ItemStack(Items.iron_ingot);
 
 	public static String redstone = "dustRedstone";
-	public static String nAu = "nuggetGold";
 	public static String iMth = "ingotArsenoAntimonialBronze";
 
 	public static String enchSilk = "itemEnchantedFabricSilk";
@@ -1861,8 +1861,6 @@ public class ThaumRevContent {
 	public static String iCu = "ingotCopper";
 	public static String iSn = "ingotTin";
 	public static String iBs = "ingotBrass";
-	public static String iOs = "ingotOsmium";
-	public static String iLu = "ingotLutetium";
 
 	public static String dCu = "dustCopper";
 	public static String dBs = "dustBrass";

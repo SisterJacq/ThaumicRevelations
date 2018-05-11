@@ -9,7 +9,6 @@ import mortvana.thaumrev.common.ThaumicRevelations;
 
 import mortvana.melteddashboard.client.texture.GradientNode;
 import mortvana.melteddashboard.client.texture.GradientTexture;
-import mortvana.melteddashboard.lib.StringLibrary;
 import mortvana.melteddashboard.util.GrayscaleEntry;
 import mortvana.melteddashboard.util.helpers.TextureHelper;
 
@@ -24,8 +23,6 @@ import net.minecraft.util.StatCollector;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-
-import net.minecraftforge.client.event.TextureStitchEvent;
 
 import gnu.trove.map.TMap;
 import gnu.trove.map.hash.THashMap;
@@ -50,7 +47,7 @@ public class FluxGearItem extends Item {
 	*/
     protected List<Integer> itemList = new ArrayList<Integer>();
 
-    //public TMap<Integer, String> tooltipMap = new THashMap<Integer, String>(); //TODO: Tooltips
+    //public TMap<Integer, String> tooltipMap = new THashMap<Integer, String>(); //TODO: Tooltips, although that should be in ItemEntry
 
 	/**
 	 *	Whether the item should register textures when registerIcons(...) is called. Basically leave this as true unless
@@ -61,8 +58,8 @@ public class FluxGearItem extends Item {
 	/**
 	 *	The resource directory for textures and unlocalized names. Defaults to "fluxgear", just as ItemBase defaults to
 	 *	"cofh".	I recommend using the constructor that sets the name, the FluxGearItem(String name) one, since you're
-	 *	probably not me. If you are, then either I cloned myself and made a time machine, or Krieger cloned me from a
-	 *	cup I drank soda from, either way.
+	 *	probably not me. If you are, then either I cloned myself and made a time machine, or "Doctor" Algernop Krieger
+	 *	cloned me from a cup I drank soda from, either way.
 	 */
     public String modName = "fluxgear";
 
@@ -128,34 +125,59 @@ public class FluxGearItem extends Item {
         return addItem(metadata, name, 0, true);
     }
 
-    // addColorizedItem(...) {}
-	public ItemStack addColorizedItem(int metadata, String name, String template, String texture, GradientNode[] colors, int rarity, boolean register) {
-		return addItem(metadata, new ItemEntryGradient(name, rarity).setColorData(template, texture, colors), register);
+	// addColorizedItem(...) {}
+	public ItemStack addColorizedItem(int metadata, String name, String template, String texture, int color, int rarity, boolean register) {
+		return addItem(metadata, new ItemEntryColorized(name, rarity).setColorData(template, texture, color), register);
 	}
 
-	public ItemStack addColorizedItem(int metadata, String name, String template, String texture, GradientNode[] colors, int rarity) {
-		return addColorizedOreDictItem(metadata, name, template, texture, colors, rarity, true);
-	}
-
-	public ItemStack addColorizedItem(int metadata, String name, String template, String texture, GradientNode[] colors) {
-		return addColorizedItem(metadata, name, template, texture, colors, 0, true);
-	}
-
-	public ItemStack addColorizedItem(int metadata, String name, String template, String texture, GradientNode color) {
-		return addColorizedItem(metadata, name, template, texture, new GradientNode[] {color});
+	public ItemStack addColorizedItem(int metadata, String name, String template, String texture, int color, int rarity) {
+		return addColorizedItem(metadata, name, template, texture, color, rarity, true);
 	}
 
 	public ItemStack addColorizedItem(int metadata, String name, String template, String texture, int color) {
-		return addColorizedItem(metadata, name, template, texture, new GradientNode(color, 0.5F));
+		return addColorizedItem(metadata, name, template, texture, color, 0, true);
 	}
 
 	public ItemStack addColorizedItem(int metadata, String name, String template, int color) {
-		return addColorizedItem(metadata, name, template, template, color);
+		return addColorizedItem(metadata, name, template, name, color);
 	}
 
 	public ItemStack addColorizedItem(int metadata, String name, int color) {
 		return addColorizedItem(metadata, name, name, name, color);
 	}
+
+    // addGradientItem(...) {}
+	/*public ItemStack addGradientItem(int metadata, String name, String template, String texture, GradientNode[] colors, int rarity, boolean register) {
+		return addItem(metadata, new ItemEntryGradient(name, rarity).setColorData(template, texture, colors), register);
+	}
+
+	public ItemStack addGradientItem(int metadata, String name, String template, String texture, GradientNode[] colors, int rarity) {
+		return addGradientItem(metadata, name, template, texture, colors, rarity, true);
+	}
+
+	public ItemStack addGradientItem(int metadata, String name, String template, String texture, GradientNode[] colors) {
+		return addGradientItem(metadata, name, template, texture, colors, 0, true);
+	}
+
+	public ItemStack addGradientItem(int metadata, String name, String template, String texture, GradientNode color) {
+		return addGradientItem(metadata, name, template, texture, new GradientNode[] {color});
+	}
+
+	public ItemStack addGradientItem(int metadata, String name, String template, GradientNode[] colors) {
+		return addGradientItem(metadata, name, template, name, colors);
+	}
+
+	public ItemStack addGradientItem(int metadata, String name, String template, GradientNode color) {
+		return addGradientItem(metadata, name, template, name, color);
+	}
+
+	public ItemStack addGradientItem(int metadata, String name, GradientNode[] colors) {
+		return addGradientItem(metadata, name, name, name, colors);
+	}
+
+	public ItemStack addGradientItem(int metadata, String name, GradientNode color) {
+		return addGradientItem(metadata, name, name, name, color);
+	}*/
 
     // addOreDictItem(...) {}
 	public ItemStack addOreDictItem(int metadata, ItemEntry entry, boolean register, String... oreDict) {
@@ -205,35 +227,63 @@ public class FluxGearItem extends Item {
 		return addOreDictItemWithEffect(metadata, name, name, 0, true, name);
 	}
 
-
 	// addColorizedOreDictItem(...) {}
-	public ItemStack addColorizedOreDictItem(int metadata, String name, String template, String texture, GradientNode[] colors, int rarity, boolean register, String... oreDict) {
-		return addOreDictItem(metadata, new ItemEntryGradient(name, rarity).setColorData(template, texture, colors), register, oreDict);
+	public ItemStack addColorizedOreDictItem(int metadata, String name, String template, String texture, int color, int rarity, boolean register, String... oreDict) {
+		return addOreDictItem(metadata, new ItemEntryColorized(name, rarity).setColorData(template, texture, color), register, oreDict);
 	}
 
-	public ItemStack addColorizedOreDictItem(int metadata, String name, String template, String texture, GradientNode[] colors, int rarity, String... oreDict) {
-		return addColorizedOreDictItem(metadata, name, template, texture, colors, rarity, true, oreDict);
-	}
-
-	public ItemStack addColorizedOreDictItem(int metadata, String name, String template, String texture, GradientNode[] colors, String... oreDict) {
-		return addColorizedOreDictItem(metadata, name, template, texture, colors, 0, true, oreDict);
-	}
-
-	public ItemStack addColorizedOreDictItem(int metadata, String name, String template, String texture, GradientNode color, String... oreDict) {
-		return addColorizedOreDictItem(metadata, name, template, texture, new GradientNode[] { color }, oreDict);
+	public ItemStack addColorizedOreDictItem(int metadata, String name, String template, String texture, int color, int rarity, String... oreDict) {
+		return addColorizedOreDictItem(metadata, name, template, texture, color, rarity, true, oreDict);
 	}
 
 	public ItemStack addColorizedOreDictItem(int metadata, String name, String template, String texture, int color, String... oreDict) {
-		return addColorizedOreDictItem(metadata, name, template, texture, new GradientNode(color, 0.5F), oreDict);
+		return addColorizedOreDictItem(metadata, name, template, texture, color, 0, true, oreDict);
+	}
+
+	public ItemStack addColorizedOreDictItem(int metadata, String name, String template, int color, int rarity, String... oreDict) {
+		return addColorizedOreDictItem(metadata, name, template, name, color, rarity, true, oreDict);
 	}
 
 	public ItemStack addColorizedOreDictItem(int metadata, String name, String template, int color, String... oreDict) {
-		return addColorizedOreDictItem(metadata, name, template, template, color, oreDict);
+		return addColorizedOreDictItem(metadata, name, template, name, color, oreDict);
 	}
 
-	public ItemStack addColorizedOreDictItem(int metadata, String name, int color,  String... oreDict) {
+	public ItemStack addColorizedOreDictItem(int metadata, String name, int color, String... oreDict) {
 		return addColorizedOreDictItem(metadata, name, name, name, color, oreDict);
 	}
+
+	// addGradientOreDictItem(...) {}
+	/*public ItemStack addGradientOreDictItem(int metadata, String name, String template, String texture, GradientNode[] colors, int rarity, boolean register, String... oreDict) {
+		return addOreDictItem(metadata, new ItemEntryGradient(name, rarity).setColorData(template, texture, colors), register, oreDict);
+	}
+
+	public ItemStack addGradientOreDictItem(int metadata, String name, String template, String texture, GradientNode[] colors, int rarity, String... oreDict) {
+		return addGradientOreDictItem(metadata, name, template, texture, colors, rarity, true, oreDict);
+	}
+
+	public ItemStack addGradientOreDictItem(int metadata, String name, String template, String texture, GradientNode[] colors, String... oreDict) {
+		return addGradientOreDictItem(metadata, name, template, texture, colors, 0, true, oreDict);
+	}
+
+	public ItemStack addGradientOreDictItem(int metadata, String name, String template, String texture, GradientNode color, String... oreDict) {
+		return addGradientOreDictItem(metadata, name, template, texture, new GradientNode[] {color}, oreDict);
+	}
+
+	public ItemStack addGradientOreDictItem(int metadata, String name, String template, GradientNode[] colors, String... oreDict) {
+		return addGradientOreDictItem(metadata, name, template, name, colors, 0, true, oreDict);
+	}
+
+	public ItemStack addGradientOreDictItem(int metadata, String name, String template, GradientNode color, String... oreDict) {
+		return addGradientOreDictItem(metadata, name, template, name, color, oreDict);
+	}
+
+	public ItemStack addGradientOreDictItem(int metadata, String name, GradientNode[] colors, String... oreDict) {
+		return addGradientOreDictItem(metadata, name, name, name, colors, oreDict);
+	}
+
+	public ItemStack addGradientOreDictItem(int metadata, String name, GradientNode color, String... oreDict) {
+		return addGradientOreDictItem(metadata, name, name, name, color, oreDict);
+	}*/
 
 
 	/**
@@ -366,22 +416,20 @@ public class FluxGearItem extends Item {
 			for (int meta : itemList) {
 				if (itemList.contains(meta) && !itemMap.get(meta).isDisabled()) {
 					entry = itemMap.get(meta);
-					//if (entry.gradients.length == 0 /*|| (!MeltedDashboardConfig.minimalRegistry && hasTexture(meta))*/) {
-						/*entry.icon = register.registerIcon(getIconFromMeta(meta));
-					} else*/ if (entry instanceof ItemEntryColorized) {
-						icon = GrayscaleEntry.getIcon(entry.template);
+					if (entry instanceof ItemEntryColorized) {
+						icon = GrayscaleEntry.getIcon(((ItemEntryColorized) entry).template);
 						entry.icon = icon != null ? icon : register.registerIcon(getIconFromMeta(meta));
-					} else if (entry instanceof ItemEntryGradient/*entry.gradients.length >= 2 && (!hasTexture(meta)*/ /*|| MeltedDashboardConfig.alwaysUseGradients)*/) {
+					/*} else if (entry instanceof ItemEntryGradient) { //TODO: Re-enable gradients, when I get them working. Now that I have a working colorizer, it is low priority.
 						icon = map.getTextureExtry(getIconFromMeta(meta));
 
 						if (icon == null) {
-							template = GrayscaleEntry.getTexture(entry.template);
+							template = GrayscaleEntry.getTexture(((ItemEntryGradient) entry).template);
 							if (template == null) {
 								ThaumicRevelations.logger.info("Icon null for" + entry.name);
-							}
-							template = TextureHelper.itemTextureExists(template) ? /*TextureHelper.getItemTexture(*/template/*)*/ : (getIconFromMeta(meta) + ".png");
+							}*/
+							//template = TextureHelper.itemTextureExists(template) ? /*TextureHelper.getItemTexture(*/template/*)*/ : (getIconFromMeta(meta) + ".png");
 
-							icon = new GradientTexture(getIconFromMeta(meta) + ".png", template, false, ((ItemEntryGradient) entry).gradients);
+							/*icon = new GradientTexture(getIconFromMeta(meta) + ".png", template, false, ((ItemEntryGradient) entry).gradients);
 							if (map.setTextureEntry(icon.getIconName(), (TextureAtlasSprite) icon)) {
 								entry.icon = icon;
 							} else {
@@ -390,7 +438,7 @@ public class FluxGearItem extends Item {
 							}
 						} else {
 							ThaumicRevelations.logger.error("Registration of " + getIconFromMeta(meta) + " failed! Said icon already exists!");
-						}
+						}*/
 					} else {
 						entry.icon = register.registerIcon(getIconFromMeta(meta));
 					}
@@ -427,7 +475,7 @@ public class FluxGearItem extends Item {
 
 	public void setEnchanted(int metadata, boolean bool) {
 		if (itemList.contains(metadata)) {
-			itemMap.get(metadata).enchanted = bool;
+			itemMap.get(metadata).setEnchanted(bool);
 		}
 	}
 
@@ -447,7 +495,7 @@ public class FluxGearItem extends Item {
 		if (itemstack != null) {
 			int meta = itemstack.getItemDamage();
 			if (itemList.contains(meta)) {
-				return itemMap.get(meta).enchanted;
+				return itemMap.get(meta).isEnchanted();
 			}
 		}
 		return false;

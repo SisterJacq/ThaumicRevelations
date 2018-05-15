@@ -19,8 +19,7 @@ import thaumcraft.api.wands.ItemFocusBasic;
 
 import mortvana.melteddashboard.block.material.MaterialFalseAir;
 import mortvana.melteddashboard.intermod.baubles.item.FluxGearItemBauble;
-import mortvana.melteddashboard.item.FluxGearItemInteractive;
-import mortvana.melteddashboard.item.ItemArmorFluxGear;
+import mortvana.melteddashboard.item.*;
 import mortvana.melteddashboard.lib.ColorLibrary;
 import mortvana.melteddashboard.world.*;
 
@@ -83,7 +82,6 @@ public class ThaumRevLibrary {
 
 	/** ITEMS **/
 	public static FluxGearItemInteractive generalItem;
-	public static FluxGearItemInteractive metalItem;
 
 	public static FluxGearItemBauble thaumicBauble;
 
@@ -673,7 +671,7 @@ public class ThaumRevLibrary {
 	public static ItemStack plateThaumicBronze;				//05920
 	public static ItemStack plateOsLu;						//05921
 
-	//06000-06031 RAW SIMPLE ALLOY INGOTS
+	//06032-06063 RAW SIMPLE ALLOY INGOTS
 	public static ItemStack rawBrass;						//06032
 	public static ItemStack rawBronze;						//06033
 	public static ItemStack rawArsenicalBronze;				//06034
@@ -689,24 +687,24 @@ public class ThaumRevLibrary {
 	public static ItemStack rawWardenicMetal;				//06044
 	public static ItemStack rawRedsolder;					//06045
 
-	//06032-06047 RAW COMPOSITES
-	public static ItemStack rawWardenicComposite;			//06035
-	public static ItemStack rawMagneoturgicComposite;		//06041
+	//06080-06095 RAW COMPOSITES
+	public static ItemStack rawWardenicComposite;			//06083
+	public static ItemStack rawMagneoturgicComposite;		//06089
 
-	//06048-06055 RAW COMPLEX ALLOY INGOTS
-	public static ItemStack rawThaumicBronze;				//06048
-	public static ItemStack rawOsLu;						//06049
+	//06096-06111 COMPOUND GEM BLENDS
+	public static ItemStack blendFluonicPyrotase;			//06099
 
-	//06056-06063 COMPOUND GEM BLENDS
-	public static ItemStack blendFluonicPyrotase;			//06056
+	//06112-06127 RAW COMPLEX ALLOY INGOTS
+	public static ItemStack rawThaumicBronze;				//06120
+	public static ItemStack rawOsLu;						//06121
 
-	//06264-06271 COATED COMPLEX ALLOY INGOTS
-	public static ItemStack coatedThaumicBronze;			//06264
-	public static ItemStack coatedOsLu;						//06265
+	//06312-06327 COATED COMPLEX ALLOY INGOTS
+	public static ItemStack coatedThaumicBronze;			//06320
+	public static ItemStack coatedOsLu;						//06321
 
-	//06472-06479 FIRED COMPLEX ALLOY INGOTS
-	public static ItemStack firedThaumicBronze;				//06472
-	public static ItemStack firedOsLu;						//06473
+	//06312-06327 FIRED COMPLEX ALLOY INGOTS
+	public static ItemStack firedThaumicBronze;				//06520
+	public static ItemStack firedOsLu;						//06521
 
 	//07000-07099 ORE CLUSTERS
 	public static ItemStack clusterZinc;					//07001

@@ -3,10 +3,11 @@ package mortvana.melteddashboard.util.helpers;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.util.ResourceLocation;
 
 /**
- *  Stolen from Tinker's Construct, where Boni stole it from CoFH Lib...
+ *  Stolen from Tinker's Construct, where Boni stole it from CoFH Lib... Then I added things
  */
 public final class TextureHelper {
 

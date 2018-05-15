@@ -9,7 +9,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
+import mortvana.melteddashboard.item.FluxGearItem;
 import mortvana.melteddashboard.item.FluxGearItemInteractive;
+
+import mortvana.thaumrev.entity.EntitySingularity;
 
 import static mortvana.thaumrev.library.ThaumRevLibrary.*;
 
@@ -24,13 +27,13 @@ public class ItemThaumRev extends FluxGearItemInteractive {
 	@Override
 	public boolean rightClickActions(int meta, ItemStack stack, World world, EntityPlayer player, boolean used) {
 		//TODO: Fix crashing
-		/*if (meta == arcaneSingularity.getItemDamage()) {
+		if (meta == arcaneSingularity.getItemDamage()) {
 	        world.playSoundAtEntity(player, "random.bow", 0.3F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
             if (!world.isRemote) {
-                world.spawnEntityInWorld(new EntitySingularity(world, player));
+                world.spawnEntityInWorld(new EntitySingularity(world, player)); //TODO: Make more than extra-strength Alumentum
             }
             return true;
-        }*/
+        }
 		return used;
 	}
 

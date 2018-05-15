@@ -19,11 +19,13 @@ public class GrayscaleEntry {
 		entries.put(INGOT, new GrayscaleEntry(INGOT, GRAYSCALE_DIRECTORY + INGOT));
 		entries.put(NUGGET, new GrayscaleEntry(NUGGET, GRAYSCALE_DIRECTORY + NUGGET));
 		entries.put(DUST, new GrayscaleEntry(DUST, GRAYSCALE_DIRECTORY + DUST));
-		entries.put(DUSTTINY, new GrayscaleEntry(DUSTTINY, GRAYSCALE_DIRECTORY + DUSTTINY));
+		entries.put(TINYDUST, new GrayscaleEntry(TINYDUST, GRAYSCALE_DIRECTORY + TINYDUST));
 		entries.put(PLATE, new GrayscaleEntry(PLATE, GRAYSCALE_DIRECTORY + PLATE));
 		entries.put(GEAR, new GrayscaleEntry(GEAR, GRAYSCALE_DIRECTORY + GEAR));
 		entries.put(MAGICDUST, new GrayscaleEntry(MAGICDUST, GRAYSCALE_DIRECTORY + MAGICDUST));
 		entries.put(QUARTZ, new GrayscaleEntry(QUARTZ, "minecraft:quartz"));
+		entries.put(SHARD, new GrayscaleEntry(SHARD, GRAYSCALE_DIRECTORY + SHARD));
+		entries.put(TINYMAGICDUST, new GrayscaleEntry(TINYMAGICDUST, GRAYSCALE_DIRECTORY + TINYMAGICDUST));
 	}
 
 	public String name;

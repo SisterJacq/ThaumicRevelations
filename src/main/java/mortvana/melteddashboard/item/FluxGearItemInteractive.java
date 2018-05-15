@@ -33,7 +33,7 @@ public class FluxGearItemInteractive extends FluxGearItem {
 	public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player) {
 		int meta = stack.getItemDamage();
 		boolean used = false;
-        if (stack.stackSize >= 0) {
+        if (stack.stackSize <= 0) {
             return null;
         }
 		if (lootMap.containsKey(meta)) {

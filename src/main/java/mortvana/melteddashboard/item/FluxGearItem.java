@@ -76,6 +76,11 @@ public class FluxGearItem extends Item {
 	 */
     public boolean registryItem = false;
 
+	/**
+	 *	A copy of the null Icon, since Mojang's code is unfriendly.
+	 */
+	private static IIcon nullIcon;
+
     public FluxGearItem() {
         setHasSubtypes(true);
         setMaxDamage(0);
@@ -252,6 +257,30 @@ public class FluxGearItem extends Item {
 		return addColorizedOreDictItem(metadata, name, name, name, color, oreDict);
 	}
 
+	public ItemStack addColorizedOreDictItemWithEffect(int metadata, String name, String template, String texture, int color, int rarity, boolean register, String... oreDict) {
+		return addOreDictItem(metadata, new ItemEntryColorized(name, rarity).setColorData(template, texture, color).setEnchanted(true), register, oreDict);
+	}
+
+	public ItemStack addColorizedOreDictItemWithEffect(int metadata, String name, String template, String texture, int color, int rarity, String... oreDict) {
+		return addColorizedOreDictItemWithEffect(metadata, name, template, texture, color, rarity, true, oreDict);
+	}
+
+	public ItemStack addColorizedOreDictItemWithEffect(int metadata, String name, String template, String texture, int color, String... oreDict) {
+		return addColorizedOreDictItemWithEffect(metadata, name, template, texture, color, 0, true, oreDict);
+	}
+
+	public ItemStack addColorizedOreDictItemWithEffect(int metadata, String name, String template, int color, int rarity, String... oreDict) {
+		return addColorizedOreDictItemWithEffect(metadata, name, template, name, color, rarity, true, oreDict);
+	}
+
+	public ItemStack addColorizedOreDictItemWithEffect(int metadata, String name, String template, int color, String... oreDict) {
+		return addColorizedOreDictItemWithEffect(metadata, name, template, name, color, oreDict);
+	}
+
+	public ItemStack addColorizedOreDictItemWithEffect(int metadata, String name, int color, String... oreDict) {
+		return addColorizedOreDictItemWithEffect(metadata, name, name, name, color, oreDict);
+	}
+
 	// addGradientOreDictItem(...) {}
 	/*public ItemStack addGradientOreDictItem(int metadata, String name, String template, String texture, GradientNode[] colors, int rarity, boolean register, String... oreDict) {
 		return addOreDictItem(metadata, new ItemEntryGradient(name, rarity).setColorData(template, texture, colors), register, oreDict);
@@ -409,10 +438,11 @@ public class FluxGearItem extends Item {
 		//if (!GrayscaleEntry.initialized) {
 		GrayscaleEntry.registerIcons(register); //TODO: Can't find a reliable way to only do this when needed short of splicing into FluxGearItem, and I don't want to this any more complicated.
 		//}
+		nullIcon = register.registerIcon("missingno");
         if (hasTextures) {
-			TextureMap map = (TextureMap) register;
+			//TextureMap map = (TextureMap) register;
 			IIcon icon;
-			String template;
+			//String template;
 			for (int meta : itemList) {
 				if (itemList.contains(meta) && !itemMap.get(meta).isDisabled()) {
 					entry = itemMap.get(meta);
@@ -449,8 +479,8 @@ public class FluxGearItem extends Item {
 
     @Override
     public IIcon getIcon(ItemStack stack, int renderPass) {
-        int meta = stack.getItemDamage();
-        return itemList.contains(meta) ? itemMap.get(meta).icon : null;
+		int meta = stack.getItemDamage();
+        return itemList.contains(meta) ? itemMap.get(meta).icon : nullIcon;
     }
 
     @Override

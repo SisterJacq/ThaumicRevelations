@@ -4,22 +4,28 @@ public class StringLibrary {
 
 	private StringLibrary() {}
 
-	public static final String GRAYSCALE_DIRECTORY = "fluxgear:grayscale/";
+	public static final String RESOURCE_PREFIX = "fluxgear";
+	public static final String DIR_DEFAULT = "fluxgear:";
+	public static final String DIR_GRAYSCALE = DIR_DEFAULT + "grayscale/";
+	public static final String DIR_STORAGE = DIR_DEFAULT + "storage/";
 
 	//Prefixes
 	public static final String ORE = "ore";
+	public static final String BLOCK = "block";
 	public static final String CLUSTER = "cluster";
 	public static final String INGOT = "ingot";
 	public static final String NUGGET = "nugget";
 	public static final String DUST = "dust";
-	public static final String TINYDUST = "dustTiny";
+	public static final String TINY_DUST = "dustTiny";
 	public static final String PLATE = "plate";
 	public static final String GEAR = "gear";
-	public static final String MAGICDUST = "dustMagic";
+	public static final String MAGIC_DUST = "dustMagic";
 	public static final String GEM = "gem";
 	public static final String QUARTZ = "quartz";
 	public static final String SHARD = "shard";
-	public static final String TINYMAGICDUST = "dustTinyMagic";
+	public static final String TINY_MAGIC_DUST = "dustTinyMagic";
+	public static final String SHARD_GEM = "shardGem";
+	public static final String SHARD_QUARTZ = "shardQuartz";
 
 	//ASPECTS
 	public static final String AER = "Aer";
@@ -96,6 +102,7 @@ public class StringLibrary {
 	public static final String FPRT = "FluonicPyroptase";
 	public static final String WCRS = "WardenicCrystal";
 	public static final String AWCR = "ActivatedWardenicCrystal";
+	public static final String WWCR = "AwakenedWardenicCrystal";
 
 	public static final String WQRZ = "WardenicQuartz";
 	public static final String RQRZ = "Redquartz";

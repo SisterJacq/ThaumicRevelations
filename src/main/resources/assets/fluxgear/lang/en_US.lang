@@ -40,23 +40,86 @@ tile.fluxgear.stoneDecor.wardenicQuartz.name=Wardenic Quartz Block
 tile.fluxgear.stoneDecor.wardenicQuartzChiseled.name=Chiseled Wardenic Quartz Block
 tile.fluxgear.stoneDecor.wardenicQuartzPillar.name=Wardenic Quartz Pillar [WIP]
 
+#STORAGE
 tile.fluxgear.storage.blockCopper.name=Copper Block
 tile.fluxgear.storage.blockZinc.name=Zinc Block
 tile.fluxgear.storage.blockTin.name=Tin Block
+tile.fluxgear.storage.blockNickel.name=Nickel Block
 tile.fluxgear.storage.blockSilver.name=Silver Block
+tile.fluxgear.storage.blockLead.name=Lead Block
+tile.fluxgear.storage.blockLutetium.name=Lutetium Block
+tile.fluxgear.storage.blockTungsten.name=Tungsten Block
+tile.fluxgear.storage.blockIridium.name=Iridium Block
+tile.fluxgear.storage.blockBismuth.name=Bismuth Block
+tile.fluxgear.storage.blockArsenic.name=Arsenic Block
+tile.fluxgear.storage.blockAntimony.name=Antimony Block
+tile.fluxgear.storage.blockNeodymium.name=Neodymium Block
+tile.fluxgear.storage.blockOsmium.name=Osmium Block
+tile.fluxgear.storage.blockPalladium.name=Palladium Block
+tile.fluxgear.storage.blockAluminium.name=Aluminium Block
+
 tile.fluxgear.storage.blockBrass.name=Brass Block
 tile.fluxgear.storage.blockBronze.name=Bronze Block
-tile.fluxgear.storage.blockThaumicBronze.name=Thaumic Bronze Block
+tile.fluxgear.storage.blockArsenicalBronze.name=Arsenical Bronze Block
+tile.fluxgear.storage.blockAntimonialBronze.name=Antimonial Bronze Block
+tile.fluxgear.storage.blockBismuthBronze.name=Bismuth Bronze Block
+tile.fluxgear.storage.blockMithril.name=Mithril Block
+tile.fluxgear.storage.blockAluminiumBronze.name=Aluminium Bronze Block
+tile.fluxgear.storage.blockCupronickel.name=Cupronickel Block
+tile.fluxgear.storage.blockRiftishBronze.name=Riftish Bronze Block
+tile.fluxgear.storage.blockConstantan.name=Constantan Block
+tile.fluxgear.storage.blockInvar.name=Invar Block
+tile.fluxgear.storage.blockElectrum.name=Electrum Block
+tile.fluxgear.storage.blockWardenicMetal.name=Wardenic Metal Block
+tile.fluxgear.storage.blockDullRedsolder.name=Dull Redsolder Block
+tile.fluxgear.storage.blockRedsolder.name=Redsolder Block
+
+tile.fluxgear.storage.blockThaumicElectrum.name=Thaumic Electrum Block
+tile.fluxgear.storage.blockThaumicRiftishBronze.name=Thaumic Riftish Bronze Block
 tile.fluxgear.storage.blockSteel.name=Steel Block
 tile.fluxgear.storage.blockVoidbrass.name=Voidbrass Block
 tile.fluxgear.storage.blockVoidsteel.name=Voidsteel Block
-tile.fluxgear.storage.blockElectrum.name=Electrum Block
-tile.fluxgear.storage.blockWardenicSteel.name=Wardenic Steel Block
-tile.fluxgear.storage.blockThaumicElectrum.name=Thaumic Electrum Block
-tile.fluxgear.storage.blockVoid.name=Voidmetal Block
-tile.fluxgear.storage.blockWardenicMetal.name=Wardenic Metal Block
-tile.fluxgear.storage.blockWardenicComposite.name=Wardenic Composite Block
+tile.fluxgear.storage.blockVoidtungsten.name=Voidtungsten Block
+tile.fluxgear.storage.blockVoidcupronickel.name=Voidcupronickel Block
 
+tile.fluxgear.storage.blockWardenicBronze.name=Wardenic Bronze Block
+tile.fluxgear.storage.blockWardenicSteel.name=Wardenic Steel Block
+tile.fluxgear.storage.blockWardenicRiftishBronze.name=Wardenic Riftish Bronze Block
+tile.fluxgear.storage.blockWardenicComposite.name=Wardenic Composite Block
+tile.fluxgear.storage.blockArcaneRedsolder.name=Arcane Redsolder Block
+tile.fluxgear.storage.blockRedbronze.name=Redbronze Block
+tile.fluxgear.storage.blockHardenedRedbronze.name=Hardened Redbronze Block
+tile.fluxgear.storage.blockFluxsteel.name=Fluxsteel Block
+tile.fluxgear.storage.blockFluxedTungsten.name=Fluxed Tungsten Block
+tile.fluxgear.storage.blockMagneoturgicComposite.name=Magneoturgic Composite Block
+tile.fluxgear.storage.blockFluxedComposite.name=Fluxed Composite Block
+tile.fluxgear.storage.blockResonantFluxedComposite.name=Resonant Fluxed Composite Block
+tile.fluxgear.storage.blockEmpoweredVoidbrass.name=Empowered Voidbrass Block
+tile.fluxgear.storage.blockCrimsonThaumium.name=Crimson Thaumium Block
+tile.fluxgear.storage.blockOccultVoidtungsten.name=Occult Voidtungsten Block
+
+tile.fluxgear.storage.blockPyrope.name=Pyrope Block
+tile.fluxgear.storage.blockDioptase.name=Dioptase Block
+tile.fluxgear.storage.blockFluonicSapphire.name=Fluonic Sapphire Block
+tile.fluxgear.storage.blockFluonicPyroptase.name=Fluonic Pyroptase Block
+tile.fluxgear.storage.blockWardenicCrystal.name=Wardenic Crystal Block
+tile.fluxgear.storage.blockActivatedWardenicCrystal.name=Activated Wardenic Crystal Block
+tile.fluxgear.storage.blockAwakenedWardenicCrystal.name=Awakened Wardenic Crystal Block
+
+tile.fluxgear.storage.blockWardenicQuartz.name=Wardenic Quartz Block
+tile.fluxgear.storage.blockRedquartz.name=Redquartz Block
+
+tile.fluxgear.storage.blockXenotime.name=Lanthanide Block
+tile.fluxgear.storage.blockLanthanides.name=Leftover Lanthanide Block
+tile.fluxgear.storage.blockIridosmium.name=Iridosmium Block
+
+tile.fluxgear.storage.blockThaumicBronze.name=Thaumic Bronze Block
+tile.fluxgear.storage.blockOsmiumLutetium.name=Osmium-Lutetium Alloy Block
+
+tile.fluxgear.storage.blockVoidmetal.name=Voidmetal Block
+
+
+#SLABS
 tile.fluxgear.stoneSlab.obsidianWardenic.name=Wardenic Obsidian Slab
 tile.fluxgear.stoneSlab.stoneEldritch.name=Eldritch Stone Slab
 tile.fluxgear.stoneSlab.wardenicQuartz.name=Wardenic Quartz Slab
@@ -82,150 +145,375 @@ item.fluxgear.material.seedExcubitura.name=Excubitura Seed
 item.fluxgear.material.seedCotton.name=Cotton Seed
 item.fluxgear.material.seedThistle.name=Thistle Seed
 
+
+#INGOTS
 item.fluxgear.material.ingotCopper.name=Copper Ingot
 item.fluxgear.material.ingotZinc.name=Zinc Ingot
 item.fluxgear.material.ingotTin.name=Tin Ingot
 item.fluxgear.material.ingotNickel.name=Nickel Ingot
 item.fluxgear.material.ingotSilver.name=Silver Ingot
 item.fluxgear.material.ingotLead.name=Lead Ingot
-item.fluxgear.material.ingotXenotime.name=Lanthanide Ingot
+item.fluxgear.material.ingotLutetium.name=Lutetium Ingot
 item.fluxgear.material.ingotTungsten.name=Tungsten Ingot
 item.fluxgear.material.ingotIridium.name=Iridium Ingot
 item.fluxgear.material.ingotBismuth.name=Bismuth Ingot
-item.fluxgear.material.ingotArsenicalBronze.name=Arsenical Bronze Ingot
-item.fluxgear.material.ingotAntimonialBronze.name=Antimonial Bronze Ingot
-item.fluxgear.material.gemPyrope.name=Pyrope
-item.fluxgear.material.gemDioptase.name=Dioptase
-item.fluxgear.material.gemFluonicSapphire.name=Fluonic Sapphire
-item.fluxgear.material.ingotOsmium.name=Osmium Ingot
+item.fluxgear.material.ingotArsenic.name=Arsenic Ingot
+item.fluxgear.material.ingotAntimony.name=Antimony Ingot
 item.fluxgear.material.ingotNeodymium.name=Neodymium Ingot
-item.fluxgear.material.ingotLutetium.name=Lutetium Ingot
+item.fluxgear.material.ingotOsmium.name=Osmium Ingot
 item.fluxgear.material.ingotPalladium.name=Palladium Ingot
-item.fluxgear.material.ingotIridosmium.name=Iridosmium Ingot
 item.fluxgear.material.ingotAluminium.name=Aluminium Ingot
-item.fluxgear.material.ingotLanthanides.name=Leftover Lanthanide Ingot
 
 item.fluxgear.material.ingotBrass.name=Brass Ingot
 item.fluxgear.material.ingotBronze.name=Bronze Ingot
+item.fluxgear.material.ingotArsenicalBronze.name=Arsenical Bronze Ingot
+item.fluxgear.material.ingotAntimonialBronze.name=Antimonial Bronze Ingot
 item.fluxgear.material.ingotBismuthBronze.name=Bismuth Bronze Ingot
 item.fluxgear.material.ingotMithril.name=Mithril Ingot
 item.fluxgear.material.ingotAluminiumBronze.name=Aluminium Bronze Ingot
 item.fluxgear.material.ingotCupronickel.name=Cupronickel Ingot
-item.fluxgear.material.ingotTinkersBronze.name=Riftish Bronze Ingot
+item.fluxgear.material.ingotRiftishBronze.name=Riftish Bronze Ingot
 item.fluxgear.material.ingotConstantan.name=Constantan Ingot
 item.fluxgear.material.ingotInvar.name=Invar Ingot
 item.fluxgear.material.ingotElectrum.name=Electrum Ingot
 item.fluxgear.material.ingotWardenicMetal.name=Wardenic Metal Ingot
-
-item.fluxgear.material.ingotThaumicBronze.name=Thaumic Bronze Ingot
-item.fluxgear.material.ingotOsmiumLutetium.name=Osmium-Lutetium Alloy Ingot
-item.fluxgear.material.gemFluonicPyroptase.name=Fluonic Pyroptase
+item.fluxgear.material.ingotDullRedsolder.name=Dull Redsolder Ingot
+item.fluxgear.material.ingotRedsolder.name=Redsolder Ingot
 
 item.fluxgear.material.ingotThaumicElectrum.name=Thaumic Electrum Ingot
-item.fluxgear.material.ingotThaumicTinkersBronze.name=Thaumic Riftish Bronze Ingot
+item.fluxgear.material.ingotThaumicRiftishBronze.name=Thaumic Riftish Bronze Ingot
 item.fluxgear.material.ingotSteel.name=Steel Ingot
-item.fluxgear.material.ingotWardenicSteel.name=Wardenic Steel Ingot
-item.fluxgear.material.ingotWardenicTinkersBronze.name=Wardenic Riftish Bronze Ingot
 item.fluxgear.material.ingotVoidbrass.name=Voidbrass Ingot
 item.fluxgear.material.ingotVoidsteel.name=Voidsteel Ingot
 item.fluxgear.material.ingotVoidtungsten.name=Voidtungsten Ingot
+item.fluxgear.material.ingotVoidcupronickel.name=Voidcupronickel Ingot
 
+item.fluxgear.material.ingotWardenicBronze.name=Wardenic Bronze Ingot
+item.fluxgear.material.ingotWardenicSteel.name=Wardenic Steel Ingot
+item.fluxgear.material.ingotWardenicRiftishBronze.name=Wardenic Riftish Bronze Ingot
+item.fluxgear.material.ingotWardenicComposite.name=Wardenic Composite Ingot
+item.fluxgear.material.ingotArcaneRedsolder.name=Arcane Redsolder Ingot
+item.fluxgear.material.ingotRedbronze.name=Redbronze Ingot
+item.fluxgear.material.ingotHardenedRedbronze.name=Hardened Redbronze Ingot
+item.fluxgear.material.ingotFluxsteel.name=Fluxsteel Ingot
+item.fluxgear.material.ingotFluxedTungsten.name=Fluxed Tungsten Ingot
+item.fluxgear.material.ingotMagneoturgicComposite.name=Magneoturgic Composite Ingot
+item.fluxgear.material.ingotFluxedComposite.name=Fluxed Composite Ingot
+item.fluxgear.material.ingotResonantFluxedComposite.name=Resonant Fluxed Composite Ingot
+item.fluxgear.material.ingotEmpoweredVoidbrass.name=Empowered Voidbrass Ingot
+item.fluxgear.material.ingotCrimsonThaumium.name=Crimson Thaumium Ingot
+item.fluxgear.material.ingotOccultVoidtungsten.name=Occult Voidtungsten Ingot
+
+item.fluxgear.material.gemPyrope.name=Pyrope
+item.fluxgear.material.gemDioptase.name=Dioptase
+item.fluxgear.material.gemFluonicSapphire.name=Fluonic Sapphire
+item.fluxgear.material.gemFluonicPyroptase.name=Fluonic Pyroptase
+item.fluxgear.material.gemWardenicCrystal.name=Wardenic Crystal
+item.fluxgear.material.gemActivatedWardenicCrystal.name=Activated Wardenic Crystal
+item.fluxgear.material.gemAwakenedWardenicCrystal.name=Awakened Wardenic Crystal
+
+item.fluxgear.material.gemWardenicQuartz.name=Wardenic Quartz
+item.fluxgear.material.gemRedquartz.name=Redquartz
+
+item.fluxgear.material.ingotXenotime.name=Lanthanide Ingot
+item.fluxgear.material.ingotLanthanides.name=Leftover Lanthanide Ingot
+item.fluxgear.material.ingotIridosmium.name=Iridosmium Ingot
+
+item.fluxgear.material.ingotThaumicBronze.name=Thaumic Bronze Ingot
+item.fluxgear.material.ingotOsmiumLutetium.name=Osmium-Lutetium Alloy Ingot
+
+#NUGGETS
 item.fluxgear.material.nuggetCopper.name=Copper Nugget
 item.fluxgear.material.nuggetZinc.name=Zinc Nugget
 item.fluxgear.material.nuggetTin.name=Tin Nugget
 item.fluxgear.material.nuggetNickel.name=Nickel Nugget
 item.fluxgear.material.nuggetSilver.name=Silver Nugget
 item.fluxgear.material.nuggetLead.name=Lead Nugget
-item.fluxgear.material.nuggetXenotime.name=Lanthanide Nugget
+item.fluxgear.material.nuggetLutetium.name=Lutetium Nugget
 item.fluxgear.material.nuggetTungsten.name=Tungsten Nugget
 item.fluxgear.material.nuggetIridium.name=Iridium Nugget
 item.fluxgear.material.nuggetBismuth.name=Bismuth Nugget
-item.fluxgear.material.nuggetArsenicalBronze.name=Arsenical Bronze Nugget
-item.fluxgear.material.nuggetAntimonialBronze.name=Antimonial Bronze Nugget
-item.fluxgear.material.shardPyrope.name=Pyrope Shard
-item.fluxgear.material.shardDioptase.name=Dioptase Shard
-item.fluxgear.material.shardFluonicSapphire.name=Fluonic Sapphire Shard
-item.fluxgear.material.nuggetOsmium.name=Osmium Nugget
+item.fluxgear.material.nuggetArsenic.name=Arsenic Nugget
+item.fluxgear.material.nuggetAntimony.name=Antimony Nugget
 item.fluxgear.material.nuggetNeodymium.name=Neodymium Nugget
-item.fluxgear.material.nuggetLutetium.name=Lutetium Nugget
+item.fluxgear.material.nuggetOsmium.name=Osmium Nugget
 item.fluxgear.material.nuggetPalladium.name=Palladium Nugget
-item.fluxgear.material.nuggetIridosmium.name=Iridosmium Nugget
 item.fluxgear.material.nuggetAluminium.name=Aluminium Nugget
-item.fluxgear.material.nuggetLanthanides.name=Leftover Lanthanide Nugget
 
 item.fluxgear.material.nuggetBrass.name=Brass Nugget
 item.fluxgear.material.nuggetBronze.name=Bronze Nugget
+item.fluxgear.material.nuggetArsenicalBronze.name=Arsenical Bronze Nugget
+item.fluxgear.material.nuggetAntimonialBronze.name=Antimonial Bronze Nugget
 item.fluxgear.material.nuggetBismuthBronze.name=Bismuth Bronze Nugget
 item.fluxgear.material.nuggetMithril.name=Mithril Nugget
 item.fluxgear.material.nuggetAluminiumBronze.name=Aluminium Bronze Nugget
 item.fluxgear.material.nuggetCupronickel.name=Cupronickel Nugget
-item.fluxgear.material.nuggetTinkersBronze.name=Riftish Bronze Nugget
+item.fluxgear.material.nuggetRiftishBronze.name=Riftish Bronze Nugget
 item.fluxgear.material.nuggetConstantan.name=Constantan Nugget
 item.fluxgear.material.nuggetInvar.name=Invar Nugget
 item.fluxgear.material.nuggetElectrum.name=Electrum Nugget
 item.fluxgear.material.nuggetWardenicMetal.name=Wardenic Metal Nugget
-
-item.fluxgear.material.nuggetThaumicBronze.name=Thaumic Bronze Nugget
-item.fluxgear.material.nuggetOsmiumLutetium.name=Osmium-Lutetium Alloy Nugget
-item.fluxgear.material.shardFluonicPyroptase.name=Fluonic Pyroptase Shard
+item.fluxgear.material.nuggetDullRedsolder.name=Dull Redsolder Nugget
+item.fluxgear.material.nuggetRedsolder.name=Redsolder Nugget
 
 item.fluxgear.material.nuggetThaumicElectrum.name=Thaumic Electrum Nugget
-item.fluxgear.material.nuggetThaumicTinkersBronze.name=Thaumic Riftish Bronze Nugget
+item.fluxgear.material.nuggetThaumicRiftishBronze.name=Thaumic Riftish Bronze Nugget
 item.fluxgear.material.nuggetSteel.name=Steel Nugget
-item.fluxgear.material.nuggetWardenicSteel.name=Wardenic Steel Nugget
-item.fluxgear.material.nuggetWardenicTinkersBronze.name=Wardenic Riftish Bronze Nugget
 item.fluxgear.material.nuggetVoidbrass.name=Voidbrass Nugget
 item.fluxgear.material.nuggetVoidsteel.name=Voidsteel Nugget
 item.fluxgear.material.nuggetVoidtungsten.name=Voidtungsten Nugget
+item.fluxgear.material.nuggetVoidcupronickel.name=Voidcupronickel Nugget
 
+item.fluxgear.material.nuggetWardenicBronze.name=Wardenic Bronze Nugget
+item.fluxgear.material.nuggetWardenicSteel.name=Wardenic Steel Nugget
+item.fluxgear.material.nuggetWardenicRiftishBronze.name=Wardenic Riftish Bronze Nugget
+item.fluxgear.material.nuggetWardenicComposite.name=Wardenic Composite Nugget
+item.fluxgear.material.nuggetArcaneRedsolder.name=Arcane Redsolder Nugget
+item.fluxgear.material.nuggetRedbronze.name=Redbronze Nugget
+item.fluxgear.material.nuggetHardenedRedbronze.name=Hardened Redbronze Nugget
+item.fluxgear.material.nuggetFluxsteel.name=Fluxsteel Nugget
+item.fluxgear.material.nuggetFluxedTungsten.name=Fluxed Tungsten Nugget
+item.fluxgear.material.nuggetMagneoturgicComposite.name=Magneoturgic Composite Nugget
+item.fluxgear.material.nuggetFluxedComposite.name=Fluxed Composite Nugget
+item.fluxgear.material.nuggetResonantFluxedComposite.name=Resonant Fluxed Composite Nugget
+item.fluxgear.material.nuggetEmpoweredVoidbrass.name=Empowered Voidbrass Nugget
+item.fluxgear.material.nuggetCrimsonThaumium.name=Crimson Thaumium Nugget
+item.fluxgear.material.nuggetOccultVoidtungsten.name=Occult Voidtungsten Nugget
+
+item.fluxgear.material.shardPyrope.name=Pyrope Shard
+item.fluxgear.material.shardDioptase.name=Dioptase Shard
+item.fluxgear.material.shardFluonicSapphire.name=Fluonic Sapphire Shard
+item.fluxgear.material.shardFluonicPyroptase.name=Fluonic Pyroptase Shard
+item.fluxgear.material.shardWardenicCrystal.name=Wardenic Crystal Shard
+item.fluxgear.material.shardActivatedWardenicCrystal.name=Activated Wardenic Crystal Shard
+item.fluxgear.material.shardAwakenedWardenicCrystal.name=Awakened Wardenic Crystal Shard
+
+item.fluxgear.material.shardWardenicQuartz.name=Wardenic Quartz Shard
+item.fluxgear.material.shardRedquartz.name=Redquartz Shard
+
+item.fluxgear.material.nuggetXenotime.name=Lanthanide Nugget
+item.fluxgear.material.nuggetLanthanides.name=Leftover Lanthanide Nugget
+item.fluxgear.material.nuggetIridosmium.name=Iridosmium Nugget
+
+item.fluxgear.material.nuggetThaumicBronze.name=Thaumic Bronze Nugget
+item.fluxgear.material.nuggetOsmiumLutetium.name=Osmium-Lutetium Alloy Nugget
+
+#DUSTS
 item.fluxgear.material.dustCopper.name=Copper Dust
 item.fluxgear.material.dustZinc.name=Zinc Dust
 item.fluxgear.material.dustTin.name=Tin Dust
 item.fluxgear.material.dustNickel.name=Nickel Dust
 item.fluxgear.material.dustSilver.name=Silver Dust
 item.fluxgear.material.dustLead.name=Lead Dust
-item.fluxgear.material.dustXenotime.name=Lanthanide Dust
+item.fluxgear.material.dustLutetium.name=Lutetium Dust
 item.fluxgear.material.dustTungsten.name=Tungsten Dust
 item.fluxgear.material.dustIridium.name=Iridium Dust
 item.fluxgear.material.dustBismuth.name=Bismuth Dust
-item.fluxgear.material.dustArsenicalBronze.name=Arsenical Bronze Dust
-item.fluxgear.material.dustAntimonialBronze.name=Antimonial Bronze Dust
-item.fluxgear.material.dustPyrope.name=Pyrope Dust
-item.fluxgear.material.dustDioptase.name=Dioptase Dust
-item.fluxgear.material.dustFluonicSapphire.name=Fluonic Sapphire Dust
-item.fluxgear.material.dustOsmium.name=Osmium Dust
+item.fluxgear.material.dustArsenic.name=Arsenic Dust
+item.fluxgear.material.dustAntimony.name=Antimony Dust
 item.fluxgear.material.dustNeodymium.name=Neodymium Dust
-item.fluxgear.material.dustLutetium.name=Lutetium Dust
+item.fluxgear.material.dustOsmium.name=Osmium Dust
 item.fluxgear.material.dustPalladium.name=Palladium Dust
-item.fluxgear.material.dustIridosmium.name=Iridosmium Dust
 item.fluxgear.material.dustAluminium.name=Aluminium Dust
-item.fluxgear.material.dustLanthanides.name=Leftover Lanthanide Dust
 
 item.fluxgear.material.dustBrass.name=Brass Dust
 item.fluxgear.material.dustBronze.name=Bronze Dust
+item.fluxgear.material.dustArsenicalBronze.name=Arsenical Bronze Dust
+item.fluxgear.material.dustAntimonialBronze.name=Antimonial Bronze Dust
 item.fluxgear.material.dustBismuthBronze.name=Bismuth Bronze Dust
 item.fluxgear.material.dustMithril.name=Mithril Dust
 item.fluxgear.material.dustAluminiumBronze.name=Aluminium Bronze Dust
 item.fluxgear.material.dustCupronickel.name=Cupronickel Dust
-item.fluxgear.material.dustTinkersBronze.name=Riftish Bronze Dust
+item.fluxgear.material.dustRiftishBronze.name=Riftish Bronze Dust
 item.fluxgear.material.dustConstantan.name=Constantan Dust
 item.fluxgear.material.dustInvar.name=Invar Dust
 item.fluxgear.material.dustElectrum.name=Electrum Dust
 item.fluxgear.material.dustWardenicMetal.name=Wardenic Metal Dust
-
-item.fluxgear.material.dustThaumicBronze.name=Thaumic Bronze Dust
-item.fluxgear.material.dustOsmiumLutetium.name=Osmium-Lutetium Alloy Dust
-item.fluxgear.material.dustFluonicPyroptase.name=Fluonic Pyroptase Dust
+item.fluxgear.material.dustDullRedsolder.name=Dull Redsolder Dust
+item.fluxgear.material.dustRedsolder.name=Redsolder Dust
 
 item.fluxgear.material.dustThaumicElectrum.name=Thaumic Electrum Dust
-item.fluxgear.material.dustThaumicTinkersBronze.name=Thaumic Riftish Bronze Dust
+item.fluxgear.material.dustThaumicRiftishBronze.name=Thaumic Riftish Bronze Dust
 item.fluxgear.material.dustSteel.name=Steel Dust
-item.fluxgear.material.dustWardenicSteel.name=Wardenic Steel Dust
-item.fluxgear.material.dustWardenicTinkersBronze.name=Wardenic Riftish Bronze Dust
 item.fluxgear.material.dustVoidbrass.name=Voidbrass Dust
 item.fluxgear.material.dustVoidsteel.name=Voidsteel Dust
 item.fluxgear.material.dustVoidtungsten.name=Voidtungsten Dust
+item.fluxgear.material.dustVoidcupronickel.name=Voidcupronickel Dust
 
+item.fluxgear.material.dustWardenicBronze.name=Wardenic Bronze Dust
+item.fluxgear.material.dustWardenicSteel.name=Wardenic Steel Dust
+item.fluxgear.material.dustWardenicRiftishBronze.name=Wardenic Riftish Bronze Dust
+item.fluxgear.material.dustWardenicComposite.name=Wardenic Composite Dust
+item.fluxgear.material.dustArcaneRedsolder.name=Arcane Redsolder Dust
+item.fluxgear.material.dustRedbronze.name=Redbronze Dust
+item.fluxgear.material.dustHardenedRedbronze.name=Hardened Redbronze Dust
+item.fluxgear.material.dustFluxsteel.name=Fluxsteel Dust
+item.fluxgear.material.dustFluxedTungsten.name=Fluxed Tungsten Dust
+item.fluxgear.material.dustMagneoturgicComposite.name=Magneoturgic Composite Dust
+item.fluxgear.material.dustFluxedComposite.name=Fluxed Composite Dust
+item.fluxgear.material.dustResonantFluxedComposite.name=Resonant Fluxed Composite Dust
+item.fluxgear.material.dustEmpoweredVoidbrass.name=Empowered Voidbrass Dust
+item.fluxgear.material.dustCrimsonThaumium.name=Crimson Thaumium Dust
+item.fluxgear.material.dustOccultVoidtungsten.name=Occult Voidtungsten Dust
+
+item.fluxgear.material.dustPyrope.name=Pyrope Dust
+item.fluxgear.material.dustDioptase.name=Dioptase Dust
+item.fluxgear.material.dustFluonicSapphire.name=Fluonic Sapphire Dust
+item.fluxgear.material.dustFluonicPyroptase.name=Fluonic Pyroptase Dust
+item.fluxgear.material.dustWardenicCrystal.name=Wardenic Crystal Dust
+item.fluxgear.material.dustActivatedWardenicCrystal.name=Activated Wardenic Crystal Dust
+item.fluxgear.material.dustAwakenedWardenicCrystal.name=Awakened Wardenic Crystal Dust
+
+item.fluxgear.material.dustWardenicQuartz.name=Wardenic Quartz Dust
+item.fluxgear.material.dustRedquartz.name=Redquartz Dust
+
+item.fluxgear.material.dustXenotime.name=Lanthanide Dust
+item.fluxgear.material.dustLanthanides.name=Leftover Lanthanide Dust
+item.fluxgear.material.dustIridosmium.name=Iridosmium Dust
+
+item.fluxgear.material.dustThaumicBronze.name=Thaumic Bronze Dust
+item.fluxgear.material.dustOsmiumLutetium.name=Osmium-Lutetium Alloy Dust
+
+#TINY DUST
+item.fluxgear.material.dustTinyCopper.name=Tiny Copper Dust
+item.fluxgear.material.dustTinyZinc.name=Tiny Zinc Dust
+item.fluxgear.material.dustTinyTin.name=Tiny Tin Dust
+item.fluxgear.material.dustTinyNickel.name=Tiny Nickel Dust
+item.fluxgear.material.dustTinySilver.name=Tiny Silver Dust
+item.fluxgear.material.dustTinyLead.name=Tiny Lead Dust
+item.fluxgear.material.dustTinyLutetium.name=Tiny Lutetium Dust
+item.fluxgear.material.dustTinyTungsten.name=Tiny Tungsten Dust
+item.fluxgear.material.dustTinyIridium.name=Tiny Iridium Dust
+item.fluxgear.material.dustTinyBismuth.name=Tiny Bismuth Dust
+item.fluxgear.material.dustTinyArsenic.name=Tiny Arsenic Dust
+item.fluxgear.material.dustTinyAntimony.name=Tiny Antimony Dust
+item.fluxgear.material.dustTinyNeodymium.name=Tiny Neodymium Dust
+item.fluxgear.material.dustTinyOsmium.name=Tiny Osmium Dust
+item.fluxgear.material.dustTinyPalladium.name=Tiny Palladium Dust
+item.fluxgear.material.dustTinyAluminium.name=Tiny Aluminium Dust
+
+item.fluxgear.material.dustTinyBrass.name=Tiny Brass Dust
+item.fluxgear.material.dustTinyBronze.name=Tiny Bronze Dust
+item.fluxgear.material.dustTinyArsenicalBronze.name=Tiny Arsenical Bronze Dust
+item.fluxgear.material.dustTinyAntimonialBronze.name=Tiny Antimonial Bronze Dust
+item.fluxgear.material.dustTinyBismuthBronze.name=Tiny Bismuth Bronze Dust
+item.fluxgear.material.dustTinyMithril.name=Tiny Mithril Dust
+item.fluxgear.material.dustTinyAluminiumBronze.name=Tiny Aluminium Bronze Dust
+item.fluxgear.material.dustTinyCupronickel.name=Tiny Cupronickel Dust
+item.fluxgear.material.dustTinyRiftishBronze.name=Tiny Riftish Bronze Dust
+item.fluxgear.material.dustTinyConstantan.name=Tiny Constantan Dust
+item.fluxgear.material.dustTinyInvar.name=Tiny Invar Dust
+item.fluxgear.material.dustTinyElectrum.name=Tiny Electrum Dust
+item.fluxgear.material.dustTinyWardenicMetal.name=Tiny Wardenic Metal Dust
+item.fluxgear.material.dustTinyDullRedsolder.name=Tiny Dull Redsolder Dust
+item.fluxgear.material.dustTinyRedsolder.name=Tiny Redsolder Dust
+
+item.fluxgear.material.dustTinyThaumicElectrum.name=Tiny Thaumic Electrum Dust
+item.fluxgear.material.dustTinyThaumicRiftishBronze.name=Tiny Thaumic Riftish Bronze Dust
+item.fluxgear.material.dustTinySteel.name=Tiny Steel Dust
+item.fluxgear.material.dustTinyVoidbrass.name=Tiny Voidbrass Dust
+item.fluxgear.material.dustTinyVoidsteel.name=Tiny Voidsteel Dust
+item.fluxgear.material.dustTinyVoidtungsten.name=Tiny Voidtungsten Dust
+item.fluxgear.material.dustTinyVoidcupronickel.name=Tiny Voidcupronickel Dust
+
+item.fluxgear.material.dustTinyWardenicBronze.name=Tiny Wardenic Bronze Dust
+item.fluxgear.material.dustTinyWardenicSteel.name=Tiny Wardenic Steel Dust
+item.fluxgear.material.dustTinyWardenicRiftishBronze.name=Tiny Wardenic Riftish Bronze Dust
+item.fluxgear.material.dustTinyWardenicComposite.name=Tiny Wardenic Composite Dust
+item.fluxgear.material.dustTinyArcaneRedsolder.name=Tiny Arcane Redsolder Dust
+item.fluxgear.material.dustTinyRedbronze.name=Tiny Redbronze Dust
+item.fluxgear.material.dustTinyHardenedRedbronze.name=Tiny Hardened Redbronze Dust
+item.fluxgear.material.dustTinyFluxsteel.name=Tiny Fluxsteel Dust
+item.fluxgear.material.dustTinyFluxedTungsten.name=Tiny Fluxed Tungsten Dust
+item.fluxgear.material.dustTinyMagneoturgicComposite.name=Tiny Magneoturgic Composite Dust
+item.fluxgear.material.dustTinyFluxedComposite.name=Tiny Fluxed Composite Dust
+item.fluxgear.material.dustTinyResonantFluxedComposite.name=Tiny Resonant Fluxed Composite Dust
+item.fluxgear.material.dustTinyEmpoweredVoidbrass.name=Tiny Empowered Voidbrass Dust
+item.fluxgear.material.dustTinyCrimsonThaumium.name=Tiny Crimson Thaumium Dust
+item.fluxgear.material.dustTinyOccultVoidtungsten.name=Tiny Occult Voidtungsten Dust
+
+item.fluxgear.material.dustTinyPyrope.name=Tiny Pyrope Dust
+item.fluxgear.material.dustTinyDioptase.name=Tiny Dioptase Dust
+item.fluxgear.material.dustTinyFluonicSapphire.name=Tiny Fluonic Sapphire Dust
+item.fluxgear.material.dustTinyFluonicPyroptase.name=Tiny Fluonic Pyroptase Dust
+item.fluxgear.material.dustTinyWardenicCrystal.name=Tiny Wardenic Crystal Dust
+item.fluxgear.material.dustTinyActivatedWardenicCrystal.name=Tiny Activated Wardenic Crystal Dust
+item.fluxgear.material.dustTinyAwakenedWardenicCrystal.name=Tiny Awakened Wardenic Crystal Dust
+
+item.fluxgear.material.dustTinyWardenicQuartz.name=Tiny Wardenic Quartz Dust
+item.fluxgear.material.dustTinyRedquartz.name=Tiny Redquartz Dust
+
+item.fluxgear.material.dustTinyXenotime.name=Tiny Lanthanide Dust
+item.fluxgear.material.dustTinyLanthanides.name=Tiny Leftover Lanthanide Dust
+item.fluxgear.material.dustTinyIridosmium.name=Tiny Iridosmium Dust
+
+item.fluxgear.material.dustTinyThaumicBronze.name=Tiny Thaumic Bronze Dust
+item.fluxgear.material.dustTinyOsmiumLutetium.name=Tiny Osmium-Lutetium Alloy Dust
+
+
+
+#PLATE
+item.fluxgear.material.plateCopper.name=Copper Plate
+item.fluxgear.material.plateZinc.name=Zinc Plate
+item.fluxgear.material.plateTin.name=Tin Plate
+item.fluxgear.material.plateNickel.name=Nickel Plate
+item.fluxgear.material.plateSilver.name=Silver Plate
+item.fluxgear.material.plateLead.name=Lead Plate
+item.fluxgear.material.plateLutetium.name=Lutetium Plate
+item.fluxgear.material.plateTungsten.name=Tungsten Plate
+item.fluxgear.material.plateIridium.name=Iridium Plate
+item.fluxgear.material.plateBismuth.name=Bismuth Plate
+item.fluxgear.material.plateArsenic.name=Arsenic Plate
+item.fluxgear.material.plateAntimony.name=Antimony Plate
+item.fluxgear.material.plateNeodymium.name=Neodymium Plate
+item.fluxgear.material.plateOsmium.name=Osmium Plate
+item.fluxgear.material.platePalladium.name=Palladium Plate
+item.fluxgear.material.plateAluminium.name=Aluminium Plate
+
+item.fluxgear.material.plateBrass.name=Brass Plate
+item.fluxgear.material.plateBronze.name=Bronze Plate
+item.fluxgear.material.plateArsenicalBronze.name=Arsenical Bronze Plate
+item.fluxgear.material.plateAntimonialBronze.name=Antimonial Bronze Plate
+item.fluxgear.material.plateBismuthBronze.name=Bismuth Bronze Plate
+item.fluxgear.material.plateMithril.name=Mithril Plate
+item.fluxgear.material.plateAluminiumBronze.name=Aluminium Bronze Plate
+item.fluxgear.material.plateCupronickel.name=Cupronickel Plate
+item.fluxgear.material.plateRiftishBronze.name=Riftish Bronze Plate
+item.fluxgear.material.plateConstantan.name=Constantan Plate
+item.fluxgear.material.plateInvar.name=Invar Plate
+item.fluxgear.material.plateElectrum.name=Electrum Plate
+item.fluxgear.material.plateWardenicMetal.name=Wardenic Metal Plate
+item.fluxgear.material.plateDullRedsolder.name=Dull Redsolder Plate
+item.fluxgear.material.plateRedsolder.name=Redsolder Plate
+
+item.fluxgear.material.plateThaumicElectrum.name=Thaumic Electrum Plate
+item.fluxgear.material.plateThaumicRiftishBronze.name=Thaumic Riftish Bronze Plate
+item.fluxgear.material.plateSteel.name=Steel Plate
+item.fluxgear.material.plateVoidbrass.name=Voidbrass Plate
+item.fluxgear.material.plateVoidsteel.name=Voidsteel Plate
+item.fluxgear.material.plateVoidtungsten.name=Voidtungsten Plate
+item.fluxgear.material.plateVoidcupronickel.name=Voidcupronickel Plate
+
+item.fluxgear.material.plateWardenicBronze.name=Wardenic Bronze Plate
+item.fluxgear.material.plateWardenicSteel.name=Wardenic Steel Plate
+item.fluxgear.material.plateWardenicRiftishBronze.name=Wardenic Riftish Bronze Plate
+item.fluxgear.material.plateWardenicComposite.name=Wardenic Composite Plate
+item.fluxgear.material.plateArcaneRedsolder.name=Arcane Redsolder Plate
+item.fluxgear.material.plateRedbronze.name=Redbronze Plate
+item.fluxgear.material.plateHardenedRedbronze.name=Hardened Redbronze Plate
+item.fluxgear.material.plateFluxsteel.name=Fluxsteel Plate
+item.fluxgear.material.plateFluxedTungsten.name=Fluxed Tungsten Plate
+item.fluxgear.material.plateMagneoturgicComposite.name=Magneoturgic Composite Plate
+item.fluxgear.material.plateFluxedComposite.name=Fluxed Composite Plate
+item.fluxgear.material.plateResonantFluxedComposite.name=Resonant Fluxed Composite Plate
+item.fluxgear.material.plateEmpoweredVoidbrass.name=Empowered Voidbrass Plate
+item.fluxgear.material.plateCrimsonThaumium.name=Crimson Thaumium Plate
+item.fluxgear.material.plateOccultVoidtungsten.name=Occult Voidtungsten Plate
+
+item.fluxgear.material.plateThaumicBronze.name=Thaumic Bronze Plate
+item.fluxgear.material.plateOsmiumLutetium.name=Osmium-Lutetium Alloy Plate
+
+#RAW INGOT
 item.fluxgear.material.ingotBrassRaw.name=Raw Brass Ingot
 item.fluxgear.material.ingotBronzeRaw.name=Raw Bronze Ingot
 item.fluxgear.material.ingotBismuthBronzeRaw.name=Raw Bismuth Bronze Ingot
@@ -294,14 +582,12 @@ item.fluxgear.material.detailedSteelPlate.name=Detailed Wardenic Steel Plate
 item.fluxgear.material.runicSteelPlate.name=Runic Wardenic Steel Plate
 item.fluxgear.material.consecratedSteelPlate.name=Consecrated Wardenic Steel Plate
 
-item.fluxgear.material.wardenicQuartz.name=Wardenic Quartz
-item.fluxgear.material.wardenicCrystal.name=Wardenic Crystal
 item.fluxgear.material.wardenicQuartzInf.name=Infused Wardenic Quartz
 item.fluxgear.material.dustWardenicQuartz.name=Wardenic Quartz Dust
 item.fluxgear.material.dustWardenicCrystal.name=Crushed Wardenic Crystal
 item.fluxgear.material.binderWardenic.name=Wardenic Binding Compound
 item.fluxgear.material.ingotWardenicCompositeRaw.name=Raw Wardenic Composite Ingot
-item.fluxgear.material.ingotWardenicComposite.name=Wardenic Composite Ingot
+
 item.fluxgear.material.wardenicCompositePlate.name=Wardenic Composite Plate
 item.fluxgear.material.fittedCompositePlate.name=Fitted Wardenic Composite Plate
 item.fluxgear.material.detailedCompositePlate.name=Detailed Wardenic Composite Plate
@@ -421,8 +707,8 @@ fluxgear.name.ARMOR_WARDENCLOTH=Wardencloth Armor
 fluxgear.text.ARMOR_WARDENCLOTH=[TRv] Like leather, but better (and thaumic)
 
 #Thaumcraft Voidmetal Capitalization Rectification
-item.ItemResource.16.name=Voidmetal Ingot
-item.ItemNugget.7.name=Voidmetal Nugget
+#item.thaumcraft.ItemResource.16.name=Voidmetal Ingot
+#item.thaumcraft.ItemNugget.7.name=Voidmetal Nugget
 
 
 

@@ -6,6 +6,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 import thaumcraft.api.IRunicArmor;
 
+import mortvana.melteddashboard.lib.StringLibrary;
 import mortvana.melteddashboard.util.helpers.StringHelper;
 
 import gnu.trove.map.TMap;
@@ -31,7 +32,7 @@ public class ItemArmorInfusableThaumRev extends ItemArmorInfusableBase implement
 	public void register(String material, int type) {
 		this.type = EnumEquipmentType.values()[type];
 		setCreativeTab(ThaumRevLibrary.generalTab);
-		setModName(ThaumRevLibrary.RESOURCE_PREFIX);
+		setModName(StringLibrary.RESOURCE_PREFIX);
 
 		ThaumRevMaterialData data;
 		if (materialData.containsKey(material)) {
@@ -44,7 +45,7 @@ public class ItemArmorInfusableThaumRev extends ItemArmorInfusableBase implement
 			ThaumicRevelations.logger.error("Someone either forgot to register their material data, or used the wrong string for it! Not registering this item!");
 			return;
 		}
-		setUnlocalizedName(ThaumRevLibrary.RESOURCE_PREFIX + data.getUnlocName());
+		setUnlocalizedName(StringLibrary.RESOURCE_PREFIX + data.getUnlocName());
 		setItemIcon(data.getIcon());
 		setRepairMaterial(data.getRepair());
 		setTextures(data.getTexture());

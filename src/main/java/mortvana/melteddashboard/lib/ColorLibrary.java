@@ -148,6 +148,7 @@ public final class ColorLibrary {
 
 	/*public static final int COLOR_WSTL = 0x3C3A3F;
 	public static final int COLOR_STAINLESS = 0xA3B5AF;
+	public static final int COLOR_COTTON = 0xFDFFDD;
 
 	public static final int COLOR_MATERIAL_ELECTRIPLATINUM = 0xD9DCBB;
 

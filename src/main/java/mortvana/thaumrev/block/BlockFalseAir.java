@@ -6,6 +6,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 import mortvana.melteddashboard.block.FluxGearBlockBase;
+import mortvana.melteddashboard.lib.StringLibrary;
 
 import mortvana.thaumrev.library.ThaumRevLibrary;
 
@@ -18,7 +19,7 @@ public class BlockFalseAir extends FluxGearBlockBase {
 		setStepSound(Block.soundTypeCloth);
 		setBlockName("thaumrev.falseAir");
 
-		setData(TEX_LOC_DEFAULT, NAMES);
+		setData(StringLibrary.DIR_DEFAULT , NAMES);
 	}
 
 	@Override

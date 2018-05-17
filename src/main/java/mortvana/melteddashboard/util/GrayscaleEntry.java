@@ -16,16 +16,17 @@ public class GrayscaleEntry {
 	protected static TMap<String, GrayscaleEntry> entries = new THashMap<String, GrayscaleEntry>();
 
 	static {
-		entries.put(INGOT, new GrayscaleEntry(INGOT, GRAYSCALE_DIRECTORY + INGOT));
-		entries.put(NUGGET, new GrayscaleEntry(NUGGET, GRAYSCALE_DIRECTORY + NUGGET));
-		entries.put(DUST, new GrayscaleEntry(DUST, GRAYSCALE_DIRECTORY + DUST));
-		entries.put(TINYDUST, new GrayscaleEntry(TINYDUST, GRAYSCALE_DIRECTORY + TINYDUST));
-		entries.put(PLATE, new GrayscaleEntry(PLATE, GRAYSCALE_DIRECTORY + PLATE));
-		entries.put(GEAR, new GrayscaleEntry(GEAR, GRAYSCALE_DIRECTORY + GEAR));
-		entries.put(MAGICDUST, new GrayscaleEntry(MAGICDUST, GRAYSCALE_DIRECTORY + MAGICDUST));
+		entries.put(INGOT, new GrayscaleEntry(INGOT, DIR_GRAYSCALE + INGOT));
+		entries.put(NUGGET, new GrayscaleEntry(NUGGET, DIR_GRAYSCALE + NUGGET));
+		entries.put(DUST, new GrayscaleEntry(DUST, DIR_GRAYSCALE + DUST));
+		entries.put(TINY_DUST, new GrayscaleEntry(TINY_DUST, DIR_GRAYSCALE + TINY_DUST));
+		entries.put(PLATE, new GrayscaleEntry(PLATE, DIR_GRAYSCALE + PLATE));
+		entries.put(GEAR, new GrayscaleEntry(GEAR, DIR_GRAYSCALE + GEAR));
+		entries.put(MAGIC_DUST, new GrayscaleEntry(MAGIC_DUST, DIR_GRAYSCALE + MAGIC_DUST));
 		entries.put(QUARTZ, new GrayscaleEntry(QUARTZ, "minecraft:quartz"));
-		entries.put(SHARD, new GrayscaleEntry(SHARD, GRAYSCALE_DIRECTORY + SHARD));
-		entries.put(TINYMAGICDUST, new GrayscaleEntry(TINYMAGICDUST, GRAYSCALE_DIRECTORY + TINYMAGICDUST));
+		entries.put(SHARD_GEM, new GrayscaleEntry(SHARD_GEM, DIR_GRAYSCALE + SHARD_GEM));
+		entries.put(SHARD_QUARTZ, new GrayscaleEntry(SHARD_QUARTZ, DIR_GRAYSCALE + SHARD_QUARTZ));
+		entries.put(TINY_MAGIC_DUST, new GrayscaleEntry(TINY_MAGIC_DUST, DIR_GRAYSCALE + TINY_MAGIC_DUST));
 	}
 
 	public String name;

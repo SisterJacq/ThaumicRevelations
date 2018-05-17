@@ -8,6 +8,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 import mortvana.melteddashboard.block.FluxGearBlockBase;
+import mortvana.melteddashboard.lib.StringLibrary;
 import mortvana.melteddashboard.util.helpers.ItemHelper;
 import mortvana.melteddashboard.util.helpers.science.MathHelper;
 
@@ -21,7 +22,7 @@ public class BlockOre extends FluxGearBlockBase {
 		setCreativeTab(generalTab);
 		setBlockName("thaumrev.ore");
 
-		setData(TEX_LOC_DEFAULT + "ore/", NAMES);
+		setData(StringLibrary.DIR_DEFAULT  + "ore/", NAMES);
 
 		setHardness(3.0F);
 		setResistance(5.0F);

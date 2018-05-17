@@ -13,6 +13,7 @@ import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.wands.FocusUpgradeType;
 import thaumcraft.api.wands.ItemFocusBasic;
 
+import mortvana.melteddashboard.lib.StringLibrary;
 import mortvana.melteddashboard.util.helpers.StringHelper;
 
 import mortvana.thaumrev.library.ThaumRevLibrary;
@@ -55,11 +56,11 @@ public abstract class ItemFocusBase extends ItemFocusBasic {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IIconRegister register) {
-		icons = register.registerIcon(ThaumRevLibrary.TEX_LOC_DEFAULT + "focus" + name);
-		depth = register.registerIcon(ThaumRevLibrary.TEX_LOC_DEFAULT + "depth" + name);
+		icons = register.registerIcon(StringLibrary.DIR_DEFAULT + "focus" + name);
+		depth = register.registerIcon(StringLibrary.DIR_DEFAULT + "depth" + name);
 
 		if (ornament) {
-			icons = register.registerIcon(ThaumRevLibrary.TEX_LOC_DEFAULT + "orn" + name);
+			icons = register.registerIcon(StringLibrary.DIR_DEFAULT + "orn" + name);
 		} else {
 			orn = null;
 		}

@@ -12,6 +12,7 @@ import net.minecraftforge.common.EnumPlantType;
 import net.minecraftforge.common.util.ForgeDirection;
 
 import mortvana.melteddashboard.block.FluxGearBlockPlant;
+import mortvana.melteddashboard.lib.StringLibrary;
 import mortvana.melteddashboard.util.helpers.ItemHelper;
 import mortvana.melteddashboard.util.helpers.science.MathHelper;
 
@@ -24,7 +25,7 @@ public class BlockThaumicPlant extends FluxGearBlockPlant {
 		setBlockName("blockThaumicPlant");
 		setCreativeTab(generalTab);
 		setStepSound(Block.soundTypeGrass);
-		setData(TEX_LOC_DEFAULT + "plant/", NAMES);
+		setData(StringLibrary.DIR_DEFAULT  + "plant/", NAMES);
 	}
 
 	@Override

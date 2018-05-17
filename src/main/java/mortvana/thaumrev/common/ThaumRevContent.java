@@ -18,6 +18,7 @@ import thaumcraft.api.research.ResearchPage;
 
 import magicbees.api.MagicBeesAPI;
 
+import mortvana.melteddashboard.block.BlockStorageBase;
 import mortvana.melteddashboard.intermod.baubles.util.DefaultBaubleData;
 import mortvana.melteddashboard.intermod.thaumcraft.research.DummyResearchItem;
 import mortvana.melteddashboard.intermod.thaumcraft.research.FluxGearResearchItem;
@@ -91,12 +92,16 @@ public class ThaumRevContent {
 		blockWoodDecor = new BlockWoodDecor();
 		blockStoneDecor = new BlockStoneDecor();
 
-		blockStorageOre = new BlockStorageOre();
-		blockStorageAlloy1 = new BlockStorageAlloy1();
+		blockStorageOre = new BlockStorageBase("thaumrev.storageOre1", generalTab, DIR_STORAGE, NAMES_STORAGE_ORE, MINE_LVL_STORAGE_ORE, HARDNESS_STORAGE_ORE, RESISTANCE_STORAGE_ORE, LIGHT_STORAGE_ORE, COLOR_STORAGE_ORE);
+		blockStorageAlloy1 = new BlockStorageBase("thaumrev.storageAlloy1", generalTab, DIR_STORAGE, NAMES_STORAGE_ALLOY_1, MINE_LVL_STORAGE_ALLOY_1, HARDNESS_STORAGE_ALLOY_1, RESISTANCE_STORAGE_ALLOY_1, LIGHT_STORAGE_ALLOY_1, COLOR_STORAGE_ALLOY_1).setSignal(14, 8);
+		blockStorageSpecial = new BlockStorageBase("thaumrev.storageSpecial", generalTab, DIR_STORAGE, NAMES_STORAGE_SPECIAL, MINE_LVL_STORAGE_SPECIAL, HARDNESS_STORAGE_SPECIAL, RESISTANCE_STORAGE_SPECIAL, LIGHT_STORAGE_SPECIAL, COLOR_STORAGE_SPECIAL);
+		blockStorageEquipment = new BlockStorageBase("thaumrev.storageEquipment", generalTab, DIR_STORAGE, NAMES_STORAGE_EQUIPMENT, MINE_LVL_STORAGE_EQUIPMENT, HARDNESS_STORAGE_EQUIPMENT, RESISTANCE_STORAGE_EQUIPMENT, LIGHT_STORAGE_EQUIPMENT, COLOR_STORAGE_EQUIPMENT, SIGNAL_STORAGE_EQUIPMENT);
+		blockStorageGem = new BlockStorageGem("thaumrev.storageGem", generalTab, DIR_STORAGE, NAMES_STORAGE_GEM, MINE_LVL_STORAGE_GEM, HARDNESS_STORAGE_GEM, RESISTANCE_STORAGE_GEM, LIGHT_STORAGE_GEM, COLOR_STORAGE_GEM, LINK_STORAGE_GEM_IND, LINK_STORAGE_GEM_META);
+		blockStorageMisc = new BlockStorageLinked("thaumrev.storageMisc", generalTab, DIR_STORAGE, NAMES_STORAGE_MISC_INT, MINE_LVL_STORAGE_MISC, HARDNESS_STORAGE_MISC, RESISTANCE_STORAGE_MISC, LIGHT_STORAGE_MISC, COLOR_STORAGE_MISC, LINK_STORAGE_MISC_IND, LINK_STORAGE_MISC_META);
 
-		blockStoneSlab = new BlockStoneSlab();
-		blockStoneSlabDouble = new BlockStoneSlab(blockStoneSlab);
-		blockWardenicQuartzStairs = new BlockStairsWardenicQuartz();
+		//blockStoneSlab = new BlockStoneSlab();
+		//blockStoneSlabDouble = new BlockStoneSlab(blockStoneSlab);
+		//blockWardenicQuartzStairs = new BlockStairsQuartz(blockStoneDecor, 2, "thaumrev.blockWardenicQuartzStair", generalTab, COLOR_WQRZ);
 	}
 
 	public static void createItems() {
@@ -113,12 +118,16 @@ public class ThaumRevContent {
 		GameRegistry.registerBlock(blockWoodDecor, ItemBlockWoodDecor.class, "blockWoodDecor");
 		GameRegistry.registerBlock(blockStoneDecor, ItemBlockStoneDecor.class, "blockStoneDecor");
 
-		GameRegistry.registerBlock(blockStorageOre, ItemBlockStorageOre.class, "blockStorageOre");
-		GameRegistry.registerBlock(blockStorageAlloy1, ItemBlockStorageAlloy1.class, "blockStorageAlloy1");
+		GameRegistry.registerBlock(blockStorageOre, ItemBlockStorage.class, "blockStorageOre", NAMES_STORAGE_ORE, RARITY_STORAGE_ORE);
+		GameRegistry.registerBlock(blockStorageAlloy1, ItemBlockStorage.class, "blockStorageAlloy1", NAMES_STORAGE_ALLOY_1, RARITY_STORAGE_ALLOY_1);
+		GameRegistry.registerBlock(blockStorageSpecial, ItemBlockStorage.class, "blockStorageSpecial", NAMES_STORAGE_SPECIAL, RARITY_STORAGE_SPECIAL);
+		GameRegistry.registerBlock(blockStorageEquipment, ItemBlockStorage.class, "blockStorageEquipment", NAMES_STORAGE_EQUIPMENT, RARITY_STORAGE_EQUIPMENT);
+		GameRegistry.registerBlock(blockStorageGem, ItemBlockStorageLinked.class, "blockStorageGem", NAMES_STORAGE_GEM, RARITY_STORAGE_GEM, LINK_STORAGE_GEM_IND);
+		GameRegistry.registerBlock(blockStorageMisc, ItemBlockStorageLinked.class, "blockStorageMisc", NAMES_STORAGE_MISC_LOC, RARITY_STORAGE_MISC, LINK_STORAGE_MISC_IND);
 
-		GameRegistry.registerBlock(blockStoneSlab, ItemBlockStoneSlab.class, "stoneSlab");
-		GameRegistry.registerBlock(blockStoneSlabDouble, ItemBlockStoneSlab.class, "stoneSlabDouble");
-		GameRegistry.registerBlock(blockWardenicQuartzStairs, ItemBlockStairsWardenicQuartz.class, "wardenicQuartzStairs");
+		//GameRegistry.registerBlock(blockStoneSlab, ItemBlockStoneSlab.class, "stoneSlab");
+		//GameRegistry.registerBlock(blockStoneSlabDouble, ItemBlockStoneSlab.class, "stoneSlabDouble");
+		//GameRegistry.registerBlock(blockWardenicQuartzStairs, ItemBlockStairsWardenicQuartz.class, "wardenicQuartzStairs");
 	}
 
 	public static void registerItems() {
@@ -200,31 +209,33 @@ public class ThaumRevContent {
 
 		wardenicObsidian = new ItemStack(blockStoneDecor, 1, 0);
 		eldritchStone = new ItemStack(blockStoneDecor, 1, 1);
-		blockWardenicQuartz = new ItemStack(blockStoneDecor, 1, 2);
-		blockWardenicQuartzChiseled = new ItemStack(blockStoneDecor, 1, 3);
-		blockWardenicQuartzPillar = new ItemStack(blockStoneDecor, 1, 4);
-		thaumicStone = new ItemStack(blockStoneDecor, 1, 5);
-		infernalBlastBrick = new ItemStack(blockStoneDecor, 1, 6);
-		shadowforgeBrick = new ItemStack(blockStoneDecor, 1, 7);
+		//blockWardenicQuartz = new ItemStack(blockStoneDecor, 1, 2);
+		blockWardenicQuartzChiseled = new ItemStack(blockStoneDecor, 1, 2);
+		blockWardenicQuartzPillar = new ItemStack(blockStoneDecor, 1, 3);
+		blockRedquartzChiseled = new ItemStack(blockStoneDecor, 1, 6);
+		blockRedquartzPillar = new ItemStack(blockStoneDecor, 1, 7);
+		//thaumicStone = new ItemStack(blockStoneDecor, 1, 10);
+		//infernalBlastBrick = new ItemStack(blockStoneDecor, 1, 11);
+		//shadowforgeBrick = new ItemStack(blockStoneDecor, 1, 12);
 
 		RecipeHelper.registerOreDict(wardenicObsidian, "blockWardenicObsidian");
 		RecipeHelper.registerOreDict(eldritchStone, "blockEldritchStone");
-		for (int i = 2; i < 5; i++) {
+		for (int i = 2; i < 4; i++) {
 			RecipeHelper.registerOreDict(new ItemStack(blockStoneDecor, 1, i), "blockWardenicQuartz");
 		}
-		RecipeHelper.registerOreDict(thaumicStone, "blockThaumicStone");
-		RecipeHelper.registerOreDict(infernalBlastBrick, "blockInfernalBastFurnaceBrick");
-		RecipeHelper.registerOreDict(shadowforgeBrick, "blockShadowforgeBrick");
+		//RecipeHelper.registerOreDict(thaumicStone, "blockThaumicStone");
+		//RecipeHelper.registerOreDict(infernalBlastBrick, "blockInfernalBastFurnaceBrick");
+		//RecipeHelper.registerOreDict(shadowforgeBrick, "blockShadowforgeBrick");
 
-		slabWardenicObsidian = new ItemStack(blockStoneSlab, 1, 0);
-		slabEldritch = new ItemStack(blockStoneSlab, 1, 1);
-		slabWardenicQuartz = new ItemStack(blockStoneSlab, 1, 2);
+		//slabWardenicObsidian = new ItemStack(blockStoneSlab, 1, 0);
+		//slabEldritch = new ItemStack(blockStoneSlab, 1, 1);
+		//slabWardenicQuartz = new ItemStack(blockStoneSlab, 1, 2);
 
-		RecipeHelper.registerOreDict(slabWardenicObsidian, "slabWardenicObsidian");
-		RecipeHelper.registerOreDict(slabEldritch, "slabEldritchStone");
-		RecipeHelper.registerOreDict(slabWardenicQuartz, "slabWardenicQuartz");
+		//RecipeHelper.registerOreDict(slabWardenicObsidian, "slabWardenicObsidian");
+		//RecipeHelper.registerOreDict(slabEldritch, "slabEldritchStone");
+		//RecipeHelper.registerOreDict(slabWardenicQuartz, "slabWardenicQuartz");
 
-		stairsWardenicQuartz = new ItemStack(blockWardenicQuartzStairs, 1, 0);
+		//stairsWardenicQuartz = new ItemStack(blockWardenicQuartzStairs, 1, 0);
 	}
 
 	public static void loadMetalBlocks() {
@@ -234,60 +245,101 @@ public class ThaumRevContent {
 		blockNickel = new ItemStack(blockStorageOre, 1, 3);
 		blockSilver = new ItemStack(blockStorageOre, 1, 4);
 		blockLead = new ItemStack(blockStorageOre, 1, 5);
-		blockLanthanides = new ItemStack(blockStorageOre, 1, 6);
+		blockLutetium = new ItemStack(blockStorageOre, 1, 6);
 		blockTungsten = new ItemStack(blockStorageOre, 1, 7);
 		blockIridium = new ItemStack(blockStorageOre, 1, 8);
 		blockBismuth = new ItemStack(blockStorageOre, 1, 9);
-		blockAsBronze = new ItemStack(blockStorageOre, 1, 10);
-		blockSbBronze = new ItemStack(blockStorageOre, 1, 11);
-		blockPyrope = new ItemStack(blockStorageOre, 1, 12);
-		blockDioptase = new ItemStack(blockStorageOre, 1, 13);
-		blockFluonicSapphire = new ItemStack(blockStorageOre, 1, 14);
-		blockOsmium = new ItemStack(blockStorageOre, 1, 15);
+		blockArsenic = new ItemStack(blockStorageOre, 1, 10);
+		blockAntimony = new ItemStack(blockStorageOre, 1, 11);
+		blockNeodymium = new ItemStack(blockStorageOre, 1, 12);
+		blockOsmium = new ItemStack(blockStorageOre, 1, 13);
+		blockPalladium = new ItemStack(blockStorageOre, 1, 14);
+		blockAluminium = new ItemStack(blockStorageOre, 1, 15);
 
-		for (int i = 0; i < BlockStorageOre.NAMES.length; i++) {
-			RecipeHelper.registerOreDict(new ItemStack(blockStorageOre, 1, i), BlockStorageOre.NAMES[i]);
+		for (int i = 0; i < NAMES_STORAGE_ORE.length; i++) {
+			RecipeHelper.registerOreDict(new ItemStack(blockStorageOre, 1, i), BLOCK + NAMES_STORAGE_ORE[i]);
 		}
 
 		blockBrass = new ItemStack(blockStorageAlloy1, 1, 0);
 		blockBronze = new ItemStack(blockStorageAlloy1, 1, 1);
-		blockBiBronze = new ItemStack(blockStorageAlloy1, 1, 2);
-		blockMithril = new ItemStack(blockStorageAlloy1, 1, 3);
-		blockAlBronze = new ItemStack(blockStorageAlloy1, 1, 4);
-		blockCupronickel = new ItemStack(blockStorageAlloy1, 1, 5);
-		blockRiftishBronze = new ItemStack(blockStorageAlloy1, 1, 6);
-		blockConstantan = new ItemStack(blockStorageAlloy1, 1, 7);
-		blockInvar = new ItemStack(blockStorageAlloy1, 1, 8);
-		blockElectrum = new ItemStack(blockStorageAlloy1, 1, 9);
-		blockWardenicMetal = new ItemStack(blockStorageAlloy1, 1, 10);
-		blockDullRedsolder = new ItemStack(blockStorageAlloy1, 1, 11);
-		blockRedsolder = new ItemStack(blockStorageAlloy1, 1, 12);
+		blockAsBronze = new ItemStack(blockStorageAlloy1, 1, 2);
+		blockSbBronze = new ItemStack(blockStorageAlloy1, 1, 3);
+		blockBiBronze = new ItemStack(blockStorageAlloy1, 1, 4);
+		blockMithril = new ItemStack(blockStorageAlloy1, 1, 5);
+		blockAlBronze = new ItemStack(blockStorageAlloy1, 1, 6);
+		blockCupronickel = new ItemStack(blockStorageAlloy1, 1, 7);
+		blockRiftishBronze = new ItemStack(blockStorageAlloy1, 1, 8);
+		blockConstantan = new ItemStack(blockStorageAlloy1, 1, 9);
+		blockInvar = new ItemStack(blockStorageAlloy1, 1, 10);
+		blockElectrum = new ItemStack(blockStorageAlloy1, 1, 11);
+		blockWardenicMetal = new ItemStack(blockStorageAlloy1, 1, 12);
+		blockDullRedsolder = new ItemStack(blockStorageAlloy1, 1, 13);
+		blockRedsolder = new ItemStack(blockStorageAlloy1, 1, 14);
 
-		for (int i = 0; i < BlockStorageAlloy1.NAMES.length; i++) {
-			RecipeHelper.registerOreDict(new ItemStack(blockStorageAlloy1, 1, i), BlockStorageAlloy1.NAMES[i]);
+		for (int i = 0; i < NAMES_STORAGE_ALLOY_1.length; i++) {
+			if (i != 5) {
+				RecipeHelper.registerOreDict(new ItemStack(blockStorageAlloy1, 1, i), BLOCK + NAMES_STORAGE_ALLOY_1[i]);
+			}
+		}
+		RecipeHelper.registerOreDict(blockMithril, BLOCK + MTHR);
+
+		blockThaumicElectrum = new ItemStack(blockStorageSpecial, 1, 0);
+		blockThaumicRiftishBronze = new ItemStack(blockStorageSpecial, 1, 1);
+		blockSteel = new ItemStack(blockStorageSpecial, 1, 2);
+		blockVoidbrass = new ItemStack(blockStorageSpecial, 1, 3);
+		blockVoidsteel = new ItemStack(blockStorageSpecial, 1, 4);
+		blockVoidtungsten = new ItemStack(blockStorageSpecial, 1, 5);
+		blockVoidcupronickel = new ItemStack(blockStorageSpecial, 1, 6);
+
+		for (int i = 0; i < NAMES_STORAGE_SPECIAL.length; i++) {
+			RecipeHelper.registerOreDict(new ItemStack(blockStorageSpecial, 1, i), BLOCK + NAMES_STORAGE_SPECIAL[i]);
 		}
 
-		/*blockThaumicElectrum = new ItemStack(blockStorageSpecial1, 1, 0);
-		blockThaumicRiftishBronze = new ItemStack(blockStorageSpecial1, 1, 1);
-		blockSteel = new ItemStack(blockStorageSpecial1, 1, 2);
-		blockVoidbrass = new ItemStack(blockStorageSpecial1, 1, 3);
-		blockVoidsteel = new ItemStack(blockStorageSpecial1, 1, 4);
-		blockVoidtungsten = new ItemStack(blockStorageSpecial1, 1, 5);
-		blockWardenicBronze = new ItemStack(blockStorageSpecial1, 1, 6);
-		blockWardenicSteel = new ItemStack(blockStorageSpecial1, 1, 7);
-		blockWardenicRiftishBronze = new ItemStack(blockStorageSpecial1, 1, 8);
-		blockWardenicCrystal = new ItemStack(blockStorageSpecial1, 1, 9);
-		blockWardenicCrystalActivated = new ItemStack(blockStorageSpecial1, 1, 10);
-		blockWardenicComposite = new ItemStack(blockStorageSpecial1, 1, 11);
-		blockArcaneRedsolder = new ItemStack(blockStorageSpecial1, 1, 12);
-		blockRedbronze = new ItemStack(blockStorageSpecial1, 1, 13);
-		blockHardenedRedbronze = new ItemStack(blockStorageSpecial1, 1, 14);
-		blockFluxsteel = new ItemStack(blockStorageSpecial1, 1, 15);
+		blockWardenicBronze = new ItemStack(blockStorageEquipment, 1, 0);
+		blockWardenicSteel = new ItemStack(blockStorageEquipment, 1, 1);
+		blockWardenicRiftishBronze = new ItemStack(blockStorageEquipment, 1, 2);
+		blockWardenicComposite = new ItemStack(blockStorageEquipment, 1, 3);
+		blockArcaneRedsolder = new ItemStack(blockStorageEquipment, 1, 4);
+		blockRedbronze = new ItemStack(blockStorageEquipment, 1, 5);
+		blockHardenedRedbronze = new ItemStack(blockStorageEquipment, 1, 6);
+		blockFluxsteel = new ItemStack(blockStorageEquipment, 1, 7);
+		blockFluxedTungsten = new ItemStack(blockStorageEquipment, 1, 8);
+		blockMagneoturgicComposite = new ItemStack(blockStorageEquipment, 1, 9);
+		blockFluxedComposite = new ItemStack(blockStorageEquipment, 1, 10);
+		blockResonantFluxedComposite = new ItemStack(blockStorageEquipment, 1, 11);
+		blockEmpoweredVoidbrass = new ItemStack(blockStorageEquipment, 1, 12);
+		blockCrimsonThaumium = new ItemStack(blockStorageEquipment, 1, 13);
+		blockOccultVoidtungsten = new ItemStack(blockStorageEquipment, 1, 14);
 
-		for (int i = 0; i < BlockStorageSpecial1.NAMES.length; i++) {
-			RecipeHelper.registerOreDict(new ItemStack(blockStorageSpecial1, 1, i), BlockStorageSpecial1.NAMES[i]);
-		}*/
+		for (int i = 0; i < NAMES_STORAGE_EQUIPMENT.length; i++) {
+			RecipeHelper.registerOreDict(new ItemStack(blockStorageEquipment, 1, i), BLOCK + NAMES_STORAGE_EQUIPMENT[i]);
+		}
 
+		blockPyrope = new ItemStack(blockStorageGem, 1, 0);
+		blockDioptase = new ItemStack(blockStorageGem, 1, 1);
+		blockFluonicSapphire = new ItemStack(blockStorageGem, 1, 2);
+		blockFluonicPyroptase = new ItemStack(blockStorageGem, 1, 3);
+		blockWardenicCrystal = new ItemStack(blockStorageGem, 1, 4);
+		blockActivatedWardenicCrystal = new ItemStack(blockStorageGem, 1, 5);
+		blockAwakenedWardenicCrystal = new ItemStack(blockStorageGem, 1, 6);
+
+		blockWardenicQuartz = new ItemStack(blockStorageGem, 1, 8);
+		blockRedquartz = new ItemStack(blockStorageGem, 1, 9);
+
+		for (int i = 0; i < LINK_STORAGE_GEM_META.length; i++) {
+			RecipeHelper.registerOreDict(new ItemStack(blockStorageGem, 1, LINK_STORAGE_GEM_META[i]), BLOCK + NAMES_STORAGE_GEM[i]);
+		}
+
+		blockLanthanides = new ItemStack(blockStorageMisc, 1, 0);
+		blockXenotimeJunk = new ItemStack(blockStorageMisc, 1, 1);
+		blockIridosmium = new ItemStack(blockStorageMisc, 1, 2);
+		blockThaumicBronze = new ItemStack(blockStorageMisc, 1, 8);
+		blockOsmiumLutetium = new ItemStack(blockStorageMisc, 1, 9);
+		blockVoidmetal = new ItemStack(blockStorageMisc, 1, 15);
+
+		for (int i = 0; i < LINK_STORAGE_MISC_META.length; i++) {
+			RecipeHelper.registerOreDict(new ItemStack(blockStorageMisc, 1, LINK_STORAGE_MISC_META[i]), BLOCK + NAMES_STORAGE_MISC_INT[i]);
+		}
 		//block = new ItemStack(blockStorage, 1, );
 		//RecipeHelper.registerOreDict(new ItemStack(blockStorageOre, 1, ), "block");
 	}
@@ -503,8 +555,8 @@ public class ThaumRevContent {
 		shardWardenicCrystal = generalItem.addOreDictItem(5300, SHARD + WCRS, 2, NUGGET + WCRS);
 		shardWardenicCrystalActivated = generalItem.addOreDictItem(5301, SHARD + AWCR, 2, NUGGET + AWCR);
 
-		shardWardenicQuartz = generalItem.addColorizedOreDictItem(5308, SHARD + WQRZ, SHARD, COLOR_WQRZ, 1, NUGGET + WQRZ);
-		shardRedquartz = generalItem.addColorizedOreDictItem(5309, SHARD + RQRZ, SHARD, COLOR_FLUX, 1, NUGGET + RQRZ);
+		shardWardenicQuartz = generalItem.addColorizedOreDictItem(5308, SHARD + WQRZ, SHARD_QUARTZ, COLOR_WQRZ, 1, NUGGET + WQRZ);
+		shardRedquartz = generalItem.addColorizedOreDictItem(5309, SHARD + RQRZ, SHARD_QUARTZ, COLOR_FLUX, 1, NUGGET + RQRZ);
 
 		nuggetLanthanides = generalItem.addColorizedOreDictItem(5312, INGOT + YPO, NUGGET, COLOR_LNTH, 1, NUGGET + LNTH);
 		nuggetXenotimeJunk = generalItem.addColorizedOreDictItem(5313, "nuggetLanthanides", NUGGET, COLOR_YPOJ, 1, NUGGET + YPOJ);
@@ -587,79 +639,79 @@ public class ThaumRevContent {
 		dustThaumicBronze = generalItem.addColorizedOreDictItemWithEffect(5520, DUST + TBRZ, DUST, COLOR_TBRZ);
 		dustOsLu = generalItem.addColorizedOreDictItemWithEffect(5521, DUST + OSLU, DUST, COLOR_OSLU, 2);
 
-		tinyCopper = generalItem.addColorizedOreDictItem(5600, TINYDUST + CU, TINYDUST, COLOR_CU);
-		tinyZinc = generalItem.addColorizedOreDictItem(5601, TINYDUST + ZN, TINYDUST, COLOR_ZN);
-		tinyTin = generalItem.addColorizedOreDictItem(5602, TINYDUST + SN, TINYDUST, COLOR_SN);
-		tinyNickel = generalItem.addColorizedOreDictItem(5603, TINYDUST + NI, TINYDUST, COLOR_NI);
-		tinySilver = generalItem.addColorizedOreDictItem(5604, TINYDUST + AG, TINYDUST, COLOR_AG);
-		tinyLead = generalItem.addColorizedOreDictItem(5605, TINYDUST + PB, TINYDUST, COLOR_PB);
-		tinyLutetium = generalItem.addColorizedOreDictItem(5606, TINYDUST + LU, TINYDUST, COLOR_LU, 2);
-		tinyTungsten = generalItem.addColorizedOreDictItem(5607, TINYDUST + W, TINYDUST, COLOR_W, 1);
-		tinyIridium = generalItem.addColorizedOreDictItem(5608, TINYDUST + IR, TINYDUST, COLOR_IR, 2);
-		tinyBismuth = generalItem.addColorizedOreDictItem(5609, TINYDUST + BI, TINYDUST, COLOR_BI);
-		tinyArsenic = generalItem.addColorizedOreDictItem(5610, TINYDUST + AS, TINYDUST, COLOR_AS);
-		tinyAntimony = generalItem.addColorizedOreDictItem(5611, TINYDUST + SB, TINYDUST, COLOR_SB);
-		tinyNeodymium = generalItem.addColorizedOreDictItem(5612, TINYDUST + ND, TINYDUST, COLOR_ND, 1);
-		tinyOsmium = generalItem.addColorizedOreDictItem(5613, TINYDUST + OS, TINYDUST, COLOR_OS, 1);
-		tinyPalladium = generalItem.addColorizedOreDictItem(5614, TINYDUST + PD, TINYDUST, COLOR_PD, 1);
-		tinyAluminium = generalItem.addColorizedOreDictItem(5615, TINYDUST + AL, TINYDUST, COLOR_AL);
+		tinyCopper = generalItem.addColorizedOreDictItem(5600, TINY_DUST + CU, TINY_DUST, COLOR_CU);
+		tinyZinc = generalItem.addColorizedOreDictItem(5601, TINY_DUST + ZN, TINY_DUST, COLOR_ZN);
+		tinyTin = generalItem.addColorizedOreDictItem(5602, TINY_DUST + SN, TINY_DUST, COLOR_SN);
+		tinyNickel = generalItem.addColorizedOreDictItem(5603, TINY_DUST + NI, TINY_DUST, COLOR_NI);
+		tinySilver = generalItem.addColorizedOreDictItem(5604, TINY_DUST + AG, TINY_DUST, COLOR_AG);
+		tinyLead = generalItem.addColorizedOreDictItem(5605, TINY_DUST + PB, TINY_DUST, COLOR_PB);
+		tinyLutetium = generalItem.addColorizedOreDictItem(5606, TINY_DUST + LU, TINY_DUST, COLOR_LU, 2);
+		tinyTungsten = generalItem.addColorizedOreDictItem(5607, TINY_DUST + W, TINY_DUST, COLOR_W, 1);
+		tinyIridium = generalItem.addColorizedOreDictItem(5608, TINY_DUST + IR, TINY_DUST, COLOR_IR, 2);
+		tinyBismuth = generalItem.addColorizedOreDictItem(5609, TINY_DUST + BI, TINY_DUST, COLOR_BI);
+		tinyArsenic = generalItem.addColorizedOreDictItem(5610, TINY_DUST + AS, TINY_DUST, COLOR_AS);
+		tinyAntimony = generalItem.addColorizedOreDictItem(5611, TINY_DUST + SB, TINY_DUST, COLOR_SB);
+		tinyNeodymium = generalItem.addColorizedOreDictItem(5612, TINY_DUST + ND, TINY_DUST, COLOR_ND, 1);
+		tinyOsmium = generalItem.addColorizedOreDictItem(5613, TINY_DUST + OS, TINY_DUST, COLOR_OS, 1);
+		tinyPalladium = generalItem.addColorizedOreDictItem(5614, TINY_DUST + PD, TINY_DUST, COLOR_PD, 1);
+		tinyAluminium = generalItem.addColorizedOreDictItem(5615, TINY_DUST + AL, TINY_DUST, COLOR_AL);
 
-		tinyBrass = generalItem.addColorizedOreDictItem(5632, TINYDUST + CUZN, TINYDUST, COLOR_CUZN);
-		tinyBronze = generalItem.addColorizedOreDictItem(5633, TINYDUST + CUSN, TINYDUST, COLOR_CUSN);
-		tinyArsenicalBronze = generalItem.addColorizedOreDictItem(5634, TINYDUST + CUAS, TINYDUST, COLOR_CUAS);
-		tinyAntimonialBronze = generalItem.addColorizedOreDictItem(5635, TINYDUST + CUSB, TINYDUST, COLOR_CUSB);
-		tinyBismuthBronze = generalItem.addColorizedOreDictItem(5636, TINYDUST + CUBI, TINYDUST, COLOR_CUBI);
-		tinyMithril = generalItem.addColorizedOreDictItem(5637, "dustTinyMithril", TINYDUST, COLOR_MTHR, 1, TINYDUST + MTHR);
-		tinyAluminiumBronze = generalItem.addColorizedOreDictItem(5638, TINYDUST + CUAL, TINYDUST, COLOR_CUAL);
-		tinyCupronickel = generalItem.addColorizedOreDictItem(5639, TINYDUST + CUNI, TINYDUST, COLOR_CUNI);
-		tinyRiftishBronze = generalItem.addColorizedOreDictItem(5640, TINYDUST + RBRZ, TINYDUST, COLOR_RBRZ, 1);
-		tinyConstantan = generalItem.addColorizedOreDictItem(5641, TINYDUST + CNST, TINYDUST, COLOR_CNST);
-		tinyInvar = generalItem.addColorizedOreDictItem(5642, TINYDUST + INVR, TINYDUST, COLOR_INVR);
-		tinyElectrum = generalItem.addColorizedOreDictItem(5643, TINYDUST + ELCT, TINYDUST, COLOR_ELCT);
-		tinyWardenicMetal = generalItem.addColorizedOreDictItem(5644, TINYDUST + WRDM, TINYDUST, COLOR_WRDM);
-		tinyDullRedsolder = generalItem.addColorizedOreDictItem(5645, TINYDUST + DRDS, TINYDUST, COLOR_DRDS);
-		tinyRedsolder = generalItem.addColorizedOreDictItem(5646, TINYDUST + RDSR, TINYDUST, COLOR_RDSR);
+		tinyBrass = generalItem.addColorizedOreDictItem(5632, TINY_DUST + CUZN, TINY_DUST, COLOR_CUZN);
+		tinyBronze = generalItem.addColorizedOreDictItem(5633, TINY_DUST + CUSN, TINY_DUST, COLOR_CUSN);
+		tinyArsenicalBronze = generalItem.addColorizedOreDictItem(5634, TINY_DUST + CUAS, TINY_DUST, COLOR_CUAS);
+		tinyAntimonialBronze = generalItem.addColorizedOreDictItem(5635, TINY_DUST + CUSB, TINY_DUST, COLOR_CUSB);
+		tinyBismuthBronze = generalItem.addColorizedOreDictItem(5636, TINY_DUST + CUBI, TINY_DUST, COLOR_CUBI);
+		tinyMithril = generalItem.addColorizedOreDictItem(5637, "dustTinyMithril", TINY_DUST, COLOR_MTHR, 1, TINY_DUST + MTHR);
+		tinyAluminiumBronze = generalItem.addColorizedOreDictItem(5638, TINY_DUST + CUAL, TINY_DUST, COLOR_CUAL);
+		tinyCupronickel = generalItem.addColorizedOreDictItem(5639, TINY_DUST + CUNI, TINY_DUST, COLOR_CUNI);
+		tinyRiftishBronze = generalItem.addColorizedOreDictItem(5640, TINY_DUST + RBRZ, TINY_DUST, COLOR_RBRZ, 1);
+		tinyConstantan = generalItem.addColorizedOreDictItem(5641, TINY_DUST + CNST, TINY_DUST, COLOR_CNST);
+		tinyInvar = generalItem.addColorizedOreDictItem(5642, TINY_DUST + INVR, TINY_DUST, COLOR_INVR);
+		tinyElectrum = generalItem.addColorizedOreDictItem(5643, TINY_DUST + ELCT, TINY_DUST, COLOR_ELCT);
+		tinyWardenicMetal = generalItem.addColorizedOreDictItem(5644, TINY_DUST + WRDM, TINY_DUST, COLOR_WRDM);
+		tinyDullRedsolder = generalItem.addColorizedOreDictItem(5645, TINY_DUST + DRDS, TINY_DUST, COLOR_DRDS);
+		tinyRedsolder = generalItem.addColorizedOreDictItem(5646, TINY_DUST + RDSR, TINY_DUST, COLOR_RDSR);
 
-		tinyThaumicElectrum = generalItem.addColorizedOreDictItemWithEffect(5664, TINYDUST + TELC, TINYDUST, COLOR_TELC, 1);
-		tinyThaumicRiftishBronze = generalItem.addColorizedOreDictItem(5665, TINYDUST + TBRZ, TINYDUST, COLOR_TBRZ, 1);
-		tinySteel = generalItem.addColorizedOreDictItem(5666, TINYDUST + STEL, TINYDUST, COLOR_STEL, 1);
-		tinyVoidbrass = generalItem.addColorizedOreDictItem(5667, TINYDUST + VBRS, TINYDUST, COLOR_VBRS, 1);
-		tinyVoidsteel = generalItem.addColorizedOreDictItem(5668, TINYDUST + VSTL, TINYDUST, COLOR_VSTL, 1);
-		tinyVoidtungsten = generalItem.addColorizedOreDictItemWithEffect(5669, TINYDUST + VDWT, TINYDUST, COLOR_VDWT, 2);
-		tinyVoidcupronickel = generalItem.addColorizedOreDictItem(5670, TINYDUST + VCPN, TINYDUST, COLOR_VCPN, 1);
+		tinyThaumicElectrum = generalItem.addColorizedOreDictItemWithEffect(5664, TINY_DUST + TELC, TINY_DUST, COLOR_TELC, 1);
+		tinyThaumicRiftishBronze = generalItem.addColorizedOreDictItem(5665, TINY_DUST + TBRZ, TINY_DUST, COLOR_TBRZ, 1);
+		tinySteel = generalItem.addColorizedOreDictItem(5666, TINY_DUST + STEL, TINY_DUST, COLOR_STEL, 1);
+		tinyVoidbrass = generalItem.addColorizedOreDictItem(5667, TINY_DUST + VBRS, TINY_DUST, COLOR_VBRS, 1);
+		tinyVoidsteel = generalItem.addColorizedOreDictItem(5668, TINY_DUST + VSTL, TINY_DUST, COLOR_VSTL, 1);
+		tinyVoidtungsten = generalItem.addColorizedOreDictItemWithEffect(5669, TINY_DUST + VDWT, TINY_DUST, COLOR_VDWT, 2);
+		tinyVoidcupronickel = generalItem.addColorizedOreDictItem(5670, TINY_DUST + VCPN, TINY_DUST, COLOR_VCPN, 1);
 
-		tinyWardenicBronze = generalItem.addColorizedOreDictItem(5680, TINYDUST + WBRZ, TINYDUST, COLOR_WBRZ);
-		tinyWardenicSteel = generalItem.addColorizedOreDictItem(5681, TINYDUST + WDST, TINYDUST, COLOR_WDST, 1);
-		tinyWardenicRiftishBronze = generalItem.addColorizedOreDictItem(5682, TINYDUST + WRBR, TINYDUST, COLOR_WRBR, 1);
-		tinyWardenicComposite = generalItem.addColorizedOreDictItemWithEffect(5683, TINYDUST + WCMP, TINYDUST, COLOR_WCMP, 2);
-		tinyRedsolderArcane = generalItem.addColorizedOreDictItem(5684, TINYDUST + ARDS, TINYDUST, COLOR_ARDS);
-		tinyRedbronze = generalItem.addColorizedOreDictItem(5685, TINYDUST + RDBR, TINYDUST, COLOR_RDBR);
-		tinyRedbronzeHardened = generalItem.addColorizedOreDictItem(5686, TINYDUST + HRBR, TINYDUST, COLOR_HRBR, 1);
-		tinyFluxsteel = generalItem.addColorizedOreDictItem(5687, TINYDUST + FSTL, TINYDUST, COLOR_FSTL, 1);
-		tinyFluxedTungsten = generalItem.addColorizedOreDictItem(5688, TINYDUST + FLXW, TINYDUST, COLOR_FLXW, 2);
-		tinyMagneoturgicComposite = generalItem.addColorizedOreDictItem(5689, TINYDUST + MCMP, TINYDUST, COLOR_MCMP, 2);
-		tinyFluxedComposite = generalItem.addColorizedOreDictItemWithEffect(5690, TINYDUST + FCMP, TINYDUST, COLOR_FLUX, 2);
-		tinyResonantFluxedComposite = generalItem.addColorizedOreDictItemWithEffect(5691, TINYDUST + RCMP, TINYDUST, COLOR_RCMP, 3);
-		tinyEmpoweredVoidbrass = generalItem.addColorizedOreDictItem(5692, TINYDUST + EVBS, TINYDUST, COLOR_EVBS, 1);
-		tinyCrimsonThaumium = generalItem.addColorizedOreDictItem(5693, TINYDUST + CTHM, TINYDUST, COLOR_CTHM, 1);
-		tinyOccultVoidtungsten = generalItem.addColorizedOreDictItemWithEffect(5694, TINYDUST + OCVW, TINYDUST, COLOR_OCVW, 2);
+		tinyWardenicBronze = generalItem.addColorizedOreDictItem(5680, TINY_DUST + WBRZ, TINY_DUST, COLOR_WBRZ);
+		tinyWardenicSteel = generalItem.addColorizedOreDictItem(5681, TINY_DUST + WDST, TINY_DUST, COLOR_WDST, 1);
+		tinyWardenicRiftishBronze = generalItem.addColorizedOreDictItem(5682, TINY_DUST + WRBR, TINY_DUST, COLOR_WRBR, 1);
+		tinyWardenicComposite = generalItem.addColorizedOreDictItemWithEffect(5683, TINY_DUST + WCMP, TINY_DUST, COLOR_WCMP, 2);
+		tinyRedsolderArcane = generalItem.addColorizedOreDictItem(5684, TINY_DUST + ARDS, TINY_DUST, COLOR_ARDS);
+		tinyRedbronze = generalItem.addColorizedOreDictItem(5685, TINY_DUST + RDBR, TINY_DUST, COLOR_RDBR);
+		tinyRedbronzeHardened = generalItem.addColorizedOreDictItem(5686, TINY_DUST + HRBR, TINY_DUST, COLOR_HRBR, 1);
+		tinyFluxsteel = generalItem.addColorizedOreDictItem(5687, TINY_DUST + FSTL, TINY_DUST, COLOR_FSTL, 1);
+		tinyFluxedTungsten = generalItem.addColorizedOreDictItem(5688, TINY_DUST + FLXW, TINY_DUST, COLOR_FLXW, 2);
+		tinyMagneoturgicComposite = generalItem.addColorizedOreDictItem(5689, TINY_DUST + MCMP, TINY_DUST, COLOR_MCMP, 2);
+		tinyFluxedComposite = generalItem.addColorizedOreDictItemWithEffect(5690, TINY_DUST + FCMP, TINY_DUST, COLOR_FLUX, 2);
+		tinyResonantFluxedComposite = generalItem.addColorizedOreDictItemWithEffect(5691, TINY_DUST + RCMP, TINY_DUST, COLOR_RCMP, 3);
+		tinyEmpoweredVoidbrass = generalItem.addColorizedOreDictItem(5692, TINY_DUST + EVBS, TINY_DUST, COLOR_EVBS, 1);
+		tinyCrimsonThaumium = generalItem.addColorizedOreDictItem(5693, TINY_DUST + CTHM, TINY_DUST, COLOR_CTHM, 1);
+		tinyOccultVoidtungsten = generalItem.addColorizedOreDictItemWithEffect(5694, TINY_DUST + OCVW, TINY_DUST, COLOR_OCVW, 2);
 
-		tinyPyrope = generalItem.addOreDictItem(5696, TINYDUST + PYRP, 2);
-		tinyDioptase = generalItem.addOreDictItem(5697, TINYDUST + DIOP, 2);
-		tinyFluonicSapphire = generalItem.addOreDictItem(5698, TINYDUST + FSPH, 2);
-		tinyFluonicPyroptase = generalItem.addOreDictItem(5699, TINYDUST + FPRT, 3);
-		tinyWardenicCrystal = generalItem.addOreDictItem(5700, TINYDUST + WCRS, 2);
-		tinyWardenicCrystalActivated = generalItem.addOreDictItem(5701, TINYDUST + AWCR, 2);
+		tinyPyrope = generalItem.addOreDictItem(5696, TINY_DUST + PYRP, 2);
+		tinyDioptase = generalItem.addOreDictItem(5697, TINY_DUST + DIOP, 2);
+		tinyFluonicSapphire = generalItem.addOreDictItem(5698, TINY_DUST + FSPH, 2);
+		tinyFluonicPyroptase = generalItem.addOreDictItem(5699, TINY_DUST + FPRT, 3);
+		tinyWardenicCrystal = generalItem.addOreDictItem(5700, TINY_DUST + WCRS, 2);
+		tinyWardenicCrystalActivated = generalItem.addOreDictItem(5701, TINY_DUST + AWCR, 2);
 
-		tinyWardenicQuartz = generalItem.addColorizedOreDictItem(5708, TINYDUST + WQRZ, TINYDUST, COLOR_WQRZ, 1);
-		tinyRedquartz = generalItem.addColorizedOreDictItem(5709, TINYDUST + RQRZ, TINYDUST, COLOR_FLUX, 1);
+		tinyWardenicQuartz = generalItem.addColorizedOreDictItem(5708, TINY_DUST + WQRZ, TINY_DUST, COLOR_WQRZ, 1);
+		tinyRedquartz = generalItem.addColorizedOreDictItem(5709, TINY_DUST + RQRZ, TINY_DUST, COLOR_FLUX, 1);
 
-		tinyLanthanides = generalItem.addColorizedOreDictItem(5712, TINYDUST + YPO, TINYDUST, COLOR_LNTH, 1, TINYDUST + LNTH);
-		tinyXenotimeJunk = generalItem.addColorizedOreDictItem(5713, "dustTinyLanthanides", TINYDUST, COLOR_YPOJ, 1, TINYDUST + YPOJ);
-		tinyIridosmium = generalItem.addColorizedOreDictItem(5714, TINYDUST + IROS, TINYDUST, COLOR_IROS, 2);
+		tinyLanthanides = generalItem.addColorizedOreDictItem(5712, TINY_DUST + YPO, TINY_DUST, COLOR_LNTH, 1, TINY_DUST + LNTH);
+		tinyXenotimeJunk = generalItem.addColorizedOreDictItem(5713, "dustTinyLanthanides", TINY_DUST, COLOR_YPOJ, 1, TINY_DUST + YPOJ);
+		tinyIridosmium = generalItem.addColorizedOreDictItem(5714, TINY_DUST + IROS, TINY_DUST, COLOR_IROS, 2);
 
-		tinyThaumicBronze = generalItem.addColorizedOreDictItemWithEffect(5720, TINYDUST + TBRZ, TINYDUST, COLOR_TBRZ);
-		tinyOsLu = generalItem.addColorizedOreDictItemWithEffect(5721, TINYDUST + OSLU, TINYDUST, COLOR_OSLU, 2);
+		tinyThaumicBronze = generalItem.addColorizedOreDictItemWithEffect(5720, TINY_DUST + TBRZ, TINY_DUST, COLOR_TBRZ);
+		tinyOsLu = generalItem.addColorizedOreDictItemWithEffect(5721, TINY_DUST + OSLU, TINY_DUST, COLOR_OSLU, 2);
 
 		plateCopper = generalItem.addColorizedOreDictItem(5800, PLATE + CU, PLATE, COLOR_CU);
 		plateZinc = generalItem.addColorizedOreDictItem(5801, PLATE + ZN, PLATE, COLOR_ZN);
@@ -765,12 +817,12 @@ public class ThaumRevContent {
 		thaumicSlag = generalItem.addOreDictItem(7102, "itemSlagThaumic");
 		fluonicSlag = generalItem.addOreDictItem(7103, "itemSlagFluonic");
 
-		dustAer = generalItem.addColorizedOreDictItem(9400, DUST + AER, MAGICDUST, COLOR_AER);
-		dustIgnis = generalItem.addColorizedOreDictItem(9401, DUST + IGNIS, MAGICDUST, COLOR_IGNIS);
-		dustAqua = generalItem.addColorizedOreDictItem(9402, DUST + AQUA, MAGICDUST, COLOR_AQUA);
-		dustTerra = generalItem.addColorizedOreDictItem(9403, DUST + TERRA, MAGICDUST, COLOR_TERRA);
-		dustOrdo = generalItem.addColorizedOreDictItem(9404, DUST + ORDO, MAGICDUST, COLOR_ORDO);
-		dustPerditio = generalItem.addColorizedOreDictItem(9405, DUST + PERDITIO, MAGICDUST, COLOR_PERDITIO);
+		dustAer = generalItem.addColorizedOreDictItem(9400, DUST + AER, MAGIC_DUST, COLOR_AER);
+		dustIgnis = generalItem.addColorizedOreDictItem(9401, DUST + IGNIS, MAGIC_DUST, COLOR_IGNIS);
+		dustAqua = generalItem.addColorizedOreDictItem(9402, DUST + AQUA, MAGIC_DUST, COLOR_AQUA);
+		dustTerra = generalItem.addColorizedOreDictItem(9403, DUST + TERRA, MAGIC_DUST, COLOR_TERRA);
+		dustOrdo = generalItem.addColorizedOreDictItem(9404, DUST + ORDO, MAGIC_DUST, COLOR_ORDO);
+		dustPerditio = generalItem.addColorizedOreDictItem(9405, DUST + PERDITIO, MAGIC_DUST, COLOR_PERDITIO);
 		dustIron = generalItem.addColorizedOreDictItem(9406, DUST + FE, DUST, COLOR_FE);
 		dustGold = generalItem.addColorizedOreDictItem(9407, DUST + AU, DUST, COLOR_AU);
 		dustThaumium = generalItem.addColorizedOreDictItem(9408, DUST + THMM, DUST, COLOR_THMM);
@@ -781,15 +833,15 @@ public class ThaumRevContent {
 
 		dustWardenicBinder = generalItem.addOreDictItem(9440, "dustWardenicBinder");
 
-		tinyAer = generalItem.addColorizedOreDictItem(9600, TINYDUST + AER, TINYMAGICDUST, COLOR_AER);
-		tinyIgnis = generalItem.addColorizedOreDictItem(9601, TINYDUST + IGNIS, TINYMAGICDUST, COLOR_IGNIS);
-		tinyAqua = generalItem.addColorizedOreDictItem(9602, TINYDUST + AQUA, TINYMAGICDUST, COLOR_AQUA);
-		tinyTerra = generalItem.addColorizedOreDictItem(9603, TINYDUST + TERRA, TINYMAGICDUST, COLOR_TERRA);
-		tinyOrdo = generalItem.addColorizedOreDictItem(9604, TINYDUST + ORDO, TINYMAGICDUST, COLOR_ORDO);
-		tinyPerditio = generalItem.addColorizedOreDictItem(9605, TINYDUST + PERDITIO, TINYMAGICDUST, COLOR_PERDITIO);
-		tinyIron = generalItem.addColorizedOreDictItem(9606, TINYDUST + FE, TINYDUST, COLOR_FE);
-		tinyGold = generalItem.addColorizedOreDictItem(9607, TINYDUST + AU, TINYDUST, COLOR_AU);
-		tinyThaumium = generalItem.addColorizedOreDictItem(9608, TINYDUST + THMM, TINYDUST, COLOR_THMM);
+		tinyAer = generalItem.addColorizedOreDictItem(9600, TINY_DUST + AER, TINY_MAGIC_DUST, COLOR_AER);
+		tinyIgnis = generalItem.addColorizedOreDictItem(9601, TINY_DUST + IGNIS, TINY_MAGIC_DUST, COLOR_IGNIS);
+		tinyAqua = generalItem.addColorizedOreDictItem(9602, TINY_DUST + AQUA, TINY_MAGIC_DUST, COLOR_AQUA);
+		tinyTerra = generalItem.addColorizedOreDictItem(9603, TINY_DUST + TERRA, TINY_MAGIC_DUST, COLOR_TERRA);
+		tinyOrdo = generalItem.addColorizedOreDictItem(9604, TINY_DUST + ORDO, TINY_MAGIC_DUST, COLOR_ORDO);
+		tinyPerditio = generalItem.addColorizedOreDictItem(9605, TINY_DUST + PERDITIO, TINY_MAGIC_DUST, COLOR_PERDITIO);
+		tinyIron = generalItem.addColorizedOreDictItem(9606, TINY_DUST + FE, TINY_DUST, COLOR_FE);
+		tinyGold = generalItem.addColorizedOreDictItem(9607, TINY_DUST + AU, TINY_DUST, COLOR_AU);
+		tinyThaumium = generalItem.addColorizedOreDictItem(9608, TINY_DUST + THMM, TINY_DUST, COLOR_THMM);
 		tinyVoidmetal = generalItem.addOreDictItem(9609, "dustTinyVoid");
 		tinySulfur = generalItem.addOreDictItem(9610, "dustTinySulfur");
 
@@ -919,16 +971,16 @@ public class ThaumRevContent {
 		recipeQuartzResetChiseled = RecipeHelper.addShapelessRecipe(blockWardenicQuartz, blockWardenicQuartzChiseled);
 		recipeQuartzResetPillar = RecipeHelper.addShapelessRecipe(blockWardenicQuartz, blockWardenicQuartzPillar);
 
-		recipeWardsidianSlab = RecipeHelper.addSlabRecipe(slabWardenicObsidian, "blockWardenicObsidian");
-		recipeEldritchSlab = RecipeHelper.addSlabRecipe(slabEldritch, "blockEldritchStone");
-		recipeQuartzSlab = RecipeHelper.addSlabRecipe(slabWardenicQuartz, "blockWardenicQuartz");
+		//recipeWardsidianSlab = RecipeHelper.addSlabRecipe(slabWardenicObsidian, "blockWardenicObsidian");
+		//recipeEldritchSlab = RecipeHelper.addSlabRecipe(slabEldritch, "blockEldritchStone");
+		//recipeQuartzSlab = RecipeHelper.addSlabRecipe(slabWardenicQuartz, "blockWardenicQuartz");
 
-		recipeWardsidianDeslab = RecipeHelper.addDeslabingRecipe(wardenicObsidian, "slabWardenicObsidian");
-		recipeEldritchDeslab = RecipeHelper.addDeslabingRecipe(eldritchStone, "slabEldritchStone");
-		recipeQuartzDeslab = RecipeHelper.addDeslabingRecipe(gemWardenicQuartz, "slabWardenicQuartz");
+		//recipeWardsidianDeslab = RecipeHelper.addDeslabingRecipe(wardenicObsidian, "slabWardenicObsidian");
+		//recipeEldritchDeslab = RecipeHelper.addDeslabingRecipe(eldritchStone, "slabEldritchStone");
+		//recipeQuartzDeslab = RecipeHelper.addDeslabingRecipe(gemWardenicQuartz, "slabWardenicQuartz");
 
-		recipeQuartzStair = RecipeHelper.addStairRecipe(stairsWardenicQuartz, "blockWardenicQuartz");
-		recipeQuartzDestair = RecipeHelper.addDestairRecipe(blockWardenicQuartz, stairsWardenicQuartz);
+		//recipeQuartzStair = RecipeHelper.addStairRecipe(stairsWardenicQuartz, "blockWardenicQuartz");
+		//recipeQuartzDestair = RecipeHelper.addDestairRecipe(blockWardenicQuartz, stairsWardenicQuartz);
 
 
 		recipeBismuthBronze = new ShapelessOreRecipe[2];
@@ -1283,8 +1335,8 @@ public class ThaumRevContent {
 			addPulverizerRecycleRecipe(gemWardenicQuartz, blockWardenicQuartz, 4);
 			addPulverizerRecycleRecipe(gemWardenicQuartz, blockWardenicQuartzChiseled, 4);
 			addPulverizerRecycleRecipe(gemWardenicQuartz, blockWardenicQuartzPillar, 4);
-			addPulverizerRecycleRecipe(gemWardenicQuartz, slabWardenicQuartz, 2);
-			addPulverizerRecycleRecipe(gemWardenicQuartz, stairsWardenicQuartz, 6);
+			//addPulverizerRecycleRecipe(gemWardenicQuartz, slabWardenicQuartz, 2);
+			//addPulverizerRecycleRecipe(gemWardenicQuartz, stairsWardenicQuartz, 6);
 			addPulverizerRecipe(1600, gemWardenicQuartz, dustWardenicQuartz);
 			addPulverizerRecipe(3200, gemWardenicCrystal, dustWardenicCrystal);
 
@@ -1316,7 +1368,11 @@ public class ThaumRevContent {
 	}
 
 	/*public static void loadMetalRecipes() {
-		//((BlockStorageOre) blockStorageOre).recipes();
+		ItemStack[] ingots = {ingotCopper, ingotZinc, ingotTin, ingotSilver, ingotBrass, ingotBronze, ingotThaumicBronze, ingotSteel, ingotVoidbrass, ingotVoidsteel, ingotElectrum, ingotWardenicSteel, ingotThaumicElectrum, ThaumcraftLibrary.ingotVoidmetal, ingotWardenicMetal, plateWardenicComposite};
+		for (int i = 0; i < STORAGE_ORE_NAMES.length; i++) {
+			RecipeHelper.addStorageRecipe(new ItemStack(this, 1, i), INGOT_NAMES[i]);
+			RecipeHelper.addReverseStorageRecipe(ingots[i], STORAGE_ORE_NAMES[i]);
+		}
 	}*/
 
 	public static void loadThaumicRecipes() {
@@ -1782,7 +1838,7 @@ public class ThaumRevContent {
 			researchWardenicObsidian.setPages(new ResearchPage("0"), new ResearchPage(recipeWardenicHardener));
 		}
 
-		researchQuartz.setPages(new ResearchPage("0"), new ResearchPage(recipeWardenicQuartz), new ResearchPage(recipeWardenicQuartzDust), new ResearchPage(recipeWardenicQuartzReconst), new ResearchPage(recipeQuartzBlock), new ResearchPage(recipeWardenicQuartzInf), new ResearchPage(recipeQuartzChiseled), new ResearchPage(recipeQuartzPillar), new ResearchPage(recipeQuartzSlab), /*new ResearchPage(recipeQuartzStair),*/ new ResearchPage(recipeQuartzDeblock), new ResearchPage(recipeQuartzDeslab), /*new ResearchPage(recipeQuartzDestair),*/ new ResearchPage(recipeQuartzResetChiseled), new ResearchPage(recipeQuartzResetPillar));
+		researchQuartz.setPages(new ResearchPage("0"), new ResearchPage(recipeWardenicQuartz), new ResearchPage(recipeWardenicQuartzDust), new ResearchPage(recipeWardenicQuartzReconst), new ResearchPage(recipeQuartzBlock), new ResearchPage(recipeWardenicQuartzInf), /*new ResearchPage(recipeQuartzChiseled), new ResearchPage(recipeQuartzPillar), new ResearchPage(recipeQuartzSlab), new ResearchPage(recipeQuartzStair),*/ new ResearchPage(recipeQuartzDeblock), new ResearchPage(recipeQuartzDeslab), /*new ResearchPage(recipeQuartzDestair),*/ new ResearchPage(recipeQuartzResetChiseled), new ResearchPage(recipeQuartzResetPillar));
 		researchWardenCrystal.setPages(new ResearchPage("0"), new ResearchPage(recipeWardenicCrystal), new ResearchPage(recipeWardenicCrystalDust), new ResearchPage(recipeWardenicCrystalReconst), new ResearchPage("1"), new ResearchPage(recipeWardenicBinder), new ResearchPage(recipeBinderTiny), new ResearchPage(recipeBinderCombine));
 		researchWardenBronze.setPages(new ResearchPage("0"), new ResearchPage(recipeWardenBronze));
 		researchWardenComposite.setPages(new ResearchPage("0"), new ResearchPage(recipeWardenicMetal), new ResearchPage(recipeWardenicCompositeRaw), new ResearchPage(recipeWardenicCompositeIngot));

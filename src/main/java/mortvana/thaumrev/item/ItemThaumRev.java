@@ -9,8 +9,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
-import mortvana.melteddashboard.item.FluxGearItem;
 import mortvana.melteddashboard.item.FluxGearItemInteractive;
+import mortvana.melteddashboard.lib.StringLibrary;
 
 import mortvana.thaumrev.entity.EntitySingularity;
 
@@ -19,7 +19,7 @@ import static mortvana.thaumrev.library.ThaumRevLibrary.*;
 public class ItemThaumRev extends FluxGearItemInteractive {
 
 	public ItemThaumRev() {
-		super(RESOURCE_PREFIX, generalTab);
+		super(StringLibrary.RESOURCE_PREFIX, generalTab);
 		setFolder("material");
 		setUnlocalizedName("material");
 	}

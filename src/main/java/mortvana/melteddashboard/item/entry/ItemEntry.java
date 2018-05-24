@@ -1,8 +1,6 @@
-package mortvana.melteddashboard.item;
+package mortvana.melteddashboard.item.entry;
 
 import net.minecraft.util.IIcon;
-
-import mortvana.melteddashboard.client.texture.GradientNode;
 
 /**
  *  Class of an Object used for storing data relating to metadata based items.
@@ -35,6 +33,11 @@ public class ItemEntry {
         this.name = name;
     }
 
+
+
+
+
+
     public ItemEntry setIcon(IIcon icon) {
         this.icon = icon;
 	    return this;
@@ -50,11 +53,31 @@ public class ItemEntry {
 		return this;
 	}
 
-	public boolean isDisabled() {
+	public String getName() {
+		return name;
+	}
+
+	public String getTexture() {
+		return texture;
+	}
+
+	public IIcon getIcon() {
+		return icon;
+	}
+
+	public int getRarity() {
+		return rarity;
+	}
+
+	public boolean getAltName() {
+		return altName;
+	}
+
+	public boolean getDisabled() {
 		return disabled;
 	}
 
-	public boolean isEnchanted() {
+	public boolean getEnchanted() {
 		return enchanted;
 	}
 }

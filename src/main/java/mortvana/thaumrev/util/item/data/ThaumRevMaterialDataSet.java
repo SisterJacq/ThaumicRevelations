@@ -2,12 +2,14 @@ package mortvana.thaumrev.util.item.data;
 
 import net.minecraft.item.EnumRarity;
 
+import mortvana.melteddashboard.item.entry.ArmorData;
+
 import mortvana.thaumrev.common.ThaumicRevelations;
 
 public class ThaumRevMaterialDataSet {
-	protected ThaumRevMaterialData helmData, chestData, legsData, bootData;
+	protected ArmorData helmData, chestData, legsData, bootData;
 
-	public ThaumRevMaterialDataSet(ThaumRevMaterialData helmData, ThaumRevMaterialData chestData, ThaumRevMaterialData legsData, ThaumRevMaterialData bootData) {
+	public ThaumRevMaterialDataSet(ArmorData helmData, ArmorData chestData, ArmorData legsData, ArmorData bootData) {
 		this.helmData = helmData;
 		this.chestData = chestData;
 		this.legsData = legsData;
@@ -15,13 +17,13 @@ public class ThaumRevMaterialDataSet {
 	}
 
 	public ThaumRevMaterialDataSet() {
-		helmData = new ThaumRevMaterialData();
-		chestData = new ThaumRevMaterialData();
-		legsData = new ThaumRevMaterialData();
-		bootData = new ThaumRevMaterialData();
+		helmData = new ArmorData();
+		chestData = new ArmorData();
+		legsData = new ArmorData();
+		bootData = new ArmorData();
 	}
 
-	public ThaumRevMaterialData getData(int type) {
+	public ArmorData getData(int type) {
 		switch (type) {
 			case 0:
 				return helmData;
@@ -37,19 +39,19 @@ public class ThaumRevMaterialDataSet {
 		}
 	}
 
-	public ThaumRevMaterialData getHelm() {
+	public ArmorData getHelm() {
 		return helmData;
 	}
 
-	public ThaumRevMaterialData getChest() {
+	public ArmorData getChest() {
 		return chestData;
 	}
 
-	public ThaumRevMaterialData getLegs() {
+	public ArmorData getLegs() {
 		return legsData;
 	}
 
-	public ThaumRevMaterialData getBoots() {
+	public ArmorData getBoots() {
 		return bootData;
 	}
 
@@ -70,10 +72,10 @@ public class ThaumRevMaterialDataSet {
 	}
 
 	public ThaumRevMaterialDataSet setTexture(String texture) {
-		helmData.setTexture(texture);
-		chestData.setTexture(texture);
-		legsData.setTexture(texture);
-		bootData.setTexture(texture);
+		helmData.setSheet(texture);
+		chestData.setSheet(texture);
+		legsData.setSheet(texture);
+		bootData.setSheet(texture);
 		return this;
 	}
 
@@ -118,10 +120,10 @@ public class ThaumRevMaterialDataSet {
 	}
 
 	public ThaumRevMaterialDataSet setTexture(String texture, String[] suffix) {
-		helmData.setTexture(texture + suffix[0]);
-		chestData.setTexture(texture + suffix[1]);
-		legsData.setTexture(texture + suffix[2]);
-		bootData.setTexture(texture + suffix[3]);
+		helmData.setSheet(texture + suffix[0]);
+		chestData.setSheet(texture + suffix[1]);
+		legsData.setSheet(texture + suffix[2]);
+		bootData.setSheet(texture + suffix[3]);
 		return this;
 	}
 
@@ -151,7 +153,7 @@ public class ThaumRevMaterialDataSet {
 		return this;
 	}
 
-	//setTexture
+	//setSheet
 
 	public ThaumRevMaterialDataSet setRarity(EnumRarity[] rarity) {
 		helmData.setRarity(rarity[0]);
@@ -175,7 +177,7 @@ public class ThaumRevMaterialDataSet {
 		return this;
 	}
 
-	//setTexture
+	//setSheet
 
 	public ThaumRevMaterialDataSet setRarity(EnumRarity rarityHelm, EnumRarity rarityChest, EnumRarity rarityLegs, EnumRarity rarityBoot) {
 		helmData.setRarity(rarityHelm);

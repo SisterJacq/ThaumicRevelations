@@ -3,6 +3,7 @@ package mortvana.thaumrev.block;
 import java.util.ArrayList;
 
 import net.minecraft.block.material.Material;
+import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
@@ -27,7 +28,9 @@ public class BlockOre extends FluxGearBlockBase {
 		setHardness(3.0F);
 		setResistance(5.0F);
 
-		setHarvestLevels();
+		for (int i = 0; i < HARVEST.length; i++) {
+			setHarvestLevel("pickaxe", HARVEST[i], i);
+		}
 	}
 
 	@Override
@@ -86,10 +89,14 @@ public class BlockOre extends FluxGearBlockBase {
 		}
 	}
 
-	public void setHarvestLevels() {
-		for (int i = 0; i < HARVEST.length; i++) {
-			setHarvestLevel("pickaxe", HARVEST[i], i);
-		}
+	@Override
+	public String getUnlocalizedName(ItemStack stack) {
+		return "tile.fluxgear.ore." + NAMES[stack.getItemDamage()] + ".name";
+	}
+
+	@Override
+	public int getRarity(int meta) {
+		return RARITY[meta];
 	}
 
 	public static final String[] NAMES = { "oreChalcocite", "oreSphalerite", "oreCassiterite", "oreMillerite", "oreNativeSilver", "oreGalena", "oreXenotime", "oreWolframite", "oreIridosmium", "oreBismuthinite", "oreTennantite", "oreTetrahedrite", "orePyrope", "oreDioptase", "oreFluonicSapphire" };

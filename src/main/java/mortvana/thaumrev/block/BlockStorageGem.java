@@ -15,8 +15,8 @@ import static mortvana.melteddashboard.util.helpers.TextureHelper.blockTextureEx
 
 public class BlockStorageGem extends BlockStorageLinked {
 
-	public BlockStorageGem(String name, CreativeTabs tab, String directory, String[] names, int[] mine, float[] hardness, float[] resist, int[] light, int[] color, int[] indices, int[] meta) {
-		super(name, tab, directory, names, mine, hardness, resist, light, color, indices, meta);
+	public BlockStorageGem(String name, CreativeTabs tab, String directory, String unlocName, int[] rarity, String[] names, int[] mine, float[] hardness, float[] resist, int[] light, int[] color, int[] indices, int[] meta) {
+		super(name, tab, directory, unlocName, rarity, names, mine, hardness, resist, light, color, indices, meta);
 	}
 
 	@Override

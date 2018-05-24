@@ -1,8 +1,8 @@
-package mortvana.melteddashboard.item;
+package mortvana.melteddashboard.item.entry;
 
 import mortvana.melteddashboard.client.texture.GradientNode;
 
-public class ItemEntryGradient extends ItemEntry{
+public class ItemEntryGradient extends ItemEntry {
 
 	protected String template;
 	protected GradientNode[] gradients = new GradientNode[0];

@@ -18,7 +18,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 import mortvana.melteddashboard.util.helpers.StringHelper;
 
-public class FluxGearBlockSlab extends BlockSlab {
+public class FluxGearBlockSlab extends BlockSlab implements IItemBlockProvider {
 
 	public String[] names;
 	public String[] textures;
@@ -103,5 +103,13 @@ public class FluxGearBlockSlab extends BlockSlab {
 	@Override
 	public Item getItemDropped(int par1, Random par2, int par3) {
 		return !field_150004_a ? Item.getItemFromBlock(this) : slab != null ? Item.getItemFromBlock(slab) : Items.potato;
+	}
+
+	public String getUnlocalizedName(ItemStack stack) {
+		return getUnlocalizedName();
+	}
+
+	public int getRarity(int metadata) {
+		return 0;
 	}
 }

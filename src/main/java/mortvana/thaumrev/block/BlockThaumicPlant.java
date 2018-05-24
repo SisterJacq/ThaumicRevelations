@@ -34,16 +34,16 @@ public class BlockThaumicPlant extends FluxGearBlockPlant {
 
 		switch (meta) {
 			case 0:
-				list.add(ItemHelper.cloneStack(excubituraPetal, 1 + ((int) (0.5F + (((float) MathHelper.random(1 + fortune)) / 2.0F)))));
+				list.add(ItemHelper.cloneStack(itemExcubituraPetal, 1 + ((int) (0.5F + (((float) MathHelper.random(1 + fortune)) / 2.0F)))));
 				if (((int) ((((float) (MathHelper.random(8 - fortune))) / 2.0F))) == 0) {
 					list.add(seedExcubitura);
 				}
 			case 1:
-				list.add(ItemHelper.cloneStack(cotton, 2 + MathHelper.random(1 + fortune)));
+				list.add(ItemHelper.cloneStack(itemCotton, 2 + MathHelper.random(1 + fortune)));
 				list.add(ItemHelper.cloneStack(seedCotton, 1 + ((int) (((float) MathHelper.random(2 + fortune)) / 2.0F))));
 			case 2:
-				list.add(thistleFlower);
-				list.add(ItemHelper.cloneStack(thistleLeaf, 2 + MathHelper.random(1 + fortune)));
+				list.add(itemThistleFlower);
+				list.add(ItemHelper.cloneStack(itemThistleLeaf, 2 + MathHelper.random(1 + fortune)));
 				list.add(ItemHelper.cloneStack(seedThistle, 1 + ((int) (((float) MathHelper.random(2 + fortune)) / 2.0F))));
 			default:
 				list.add(new ItemStack(blockThaumicPlant, 1, meta));
@@ -76,6 +76,13 @@ public class BlockThaumicPlant extends FluxGearBlockPlant {
 	public int getFireSpreadSpeed(IBlockAccess world, int x, int y, int z, ForgeDirection face) {
 		return 60;
 	}
+
+	@Override
+	public String getUnlocalizedName(ItemStack stack) {
+		return "tile.fluxgear.plant." + NAMES[stack.getItemDamage()] + ".name";
+	}
+
+	//TODO: Rarity
 
 	//TODO: Particles
 	/*@Override

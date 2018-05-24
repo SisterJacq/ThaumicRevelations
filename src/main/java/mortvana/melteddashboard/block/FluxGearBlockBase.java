@@ -19,7 +19,7 @@ import mortvana.melteddashboard.util.helpers.StringHelper;
  *
  *  @author Mortvana
  */
-public class FluxGearBlockBase extends Block {
+public class FluxGearBlockBase extends Block implements IItemBlockProvider {
 
 	public String[] names;
 	public String[] textures;
@@ -80,5 +80,13 @@ public class FluxGearBlockBase extends Block {
 	@Override
 	public int damageDropped(int i) {
 		return i;
+	}
+
+	public String getUnlocalizedName(ItemStack stack) {
+		return getUnlocalizedName();
+	}
+
+	public int getRarity(int metadata) {
+		return 0;
 	}
 }

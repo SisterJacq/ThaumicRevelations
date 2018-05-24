@@ -9,32 +9,28 @@ import thaumcraft.api.IRunicArmor;
 import mortvana.melteddashboard.lib.StringLibrary;
 import mortvana.melteddashboard.util.helpers.StringHelper;
 
-import gnu.trove.map.TMap;
-import gnu.trove.map.hash.THashMap;
 import mortvana.thaumrev.api.util.enums.EnumEquipmentType;
 import mortvana.thaumrev.common.ThaumicRevelations;
 import mortvana.thaumrev.library.ThaumRevLibrary;
 import mortvana.thaumrev.util.item.ItemArmorInfusableBase;
-import mortvana.thaumrev.util.item.data.ThaumRevMaterialData;
-import mortvana.thaumrev.util.item.data.ThaumRevMaterialDataSet;
+import mortvana.melteddashboard.item.entry.ArmorData;
 
 public class ItemArmorInfusableThaumRev extends ItemArmorInfusableBase implements IRunicArmor {
 
-	public static TMap<String, ThaumRevMaterialDataSet> materialData = new THashMap<String, ThaumRevMaterialDataSet>(32);
-
+	public ArmorData data;
 	public boolean isGoggles = false;
 
-	public ItemArmorInfusableThaumRev(String material, int index, int type) {
+	public ItemArmorInfusableThaumRev(ArmorMaterial material, int index, int type) {
 		super(material, index, type);
 		register(material, type);
 	}
 
-	public void register(String material, int type) {
+	public void register(ArmorMaterial material, int type) {
 		this.type = EnumEquipmentType.values()[type];
 		setCreativeTab(ThaumRevLibrary.generalTab);
 		setModName(StringLibrary.RESOURCE_PREFIX);
 
-		ThaumRevMaterialData data;
+		ArmorData data;
 		if (materialData.containsKey(material)) {
 			data = materialData.get(material).getData(type);
 			if (data == null) {
@@ -46,12 +42,12 @@ public class ItemArmorInfusableThaumRev extends ItemArmorInfusableBase implement
 			return;
 		}
 		setUnlocalizedName(StringLibrary.RESOURCE_PREFIX + data.getUnlocName());
-		setItemIcon(data.getIcon());
+		setIcon(data.getIcon());
 		setRepairMaterial(data.getRepair());
 		setTextures(data.getTexture());
 		setRarity(data.getRarity());
 		if (data.getColorized()) {
-			setDefaultColor(data.getColor());
+			setColor(data.getColor());
 		}
 		GameRegistry.registerItem(this, data.getRegName());
 	}

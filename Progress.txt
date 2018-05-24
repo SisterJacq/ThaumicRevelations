@@ -1,0 +1,228 @@
+Internal:
+	General:
+	[20-xx]	Fix Colorizer
+	[20-xx]	Fix Texture Loading
+
+	Blocks:
+	[20-xx]	Setup Storage Block Colorizer
+
+	Items:
+	Research:
+	[20-xx]	Research Splitting (8/8)
+
+Content:
+	[02]	Blocks:
+	[02-xx]		Ore Metal Storage Block
+	[02-xx]		Alloy Storage Block 1
+	[02-xx]		Special Storage Block
+	[02-xx]		Equipment Storage Block
+	[02-xx]		Misc Storage Block
+	[02-xx]		Wood
+
+	[03/04]	Items:
+	[03-xx]		All Other General Items
+	[03-xx]		All Wooden General Items
+	[03-xx]		All Slags
+
+	[05/06/07/08]	Crafting:
+	[05-xx]	All Ore Smelting except for Tungsten and Iridosmium
+	[06-xx]	Dense Alumentum Crafting
+
+	[09]	Research:
+
+	[14]	Aspects:
+
+	[10/11/12/13]	Textures:
+	[12-xx]		Tier 1 Wardenic Armor Textures
+    [13-xx]		Tier 1 Wardenic Armor Worn Textures
+
+	[01]	Localizations:
+	[01-xx]		All Storage Block Names
+	[01-xx]		All Ingot Names
+	[01-xx]		All Nugget Names
+	[01-xx]		All Dust Names
+	[01-xx]		All Tiny Dust Names
+	[01-xx]		All Plate Names
+
+	[15/16/17/18/19]	Research Text:
+
+
+
+[xx]	All Fired Ingot Cracking
+[xx]	Wardenic Quartz Stair Crafting
+[xx]	All TRv+Pt Transmutations
+[xx]	Thaumic Bronze Chain Armor Crafting
+
+
+
+
+
+
+
+[01]	Names:
+[01-01]		All Other Block Names
+[01-02]		All General Item Names
+[01-03]		All Wardenic Item Names
+[01-04]		All Other Mineral Names
+[01-05]		All Equipment Names
+
+[02]	Blocks:
+[02-01]		Cotton Crop
+[02-02]		Thistle Crop
+[02-03]		Quartz Stairs
+[02-04]		Storage Slabs
+[02-05]		Thaumic Stone Slabs
+
+[03]	Items:
+[03-01]		All Tier 3 Wardenic Items
+[03-02]		All Tier 4 Wardenic Items
+[03-03]		All Tier 5 Wardenic Items
+[03-04]		Auto-toggle Elemental Metals (Items)
+[03-05]		Auto-toggle General Alloys (Items)
+[03-06]		Auto-toggle Special Metals (Items)
+[03-07]		Auto-toggle Equipment Metals (Items)
+[03-08]		Auto-toggle Gems (Items)
+[03-09]		Auto-toggle Other Alloys (Items)
+[03-10]		TF Rod/Powder Backups
+[03-11]		All Non-Metallurgy Clusters
+
+[04]	Equipment:
+[04-01]		Tier 5 Wardenic Armor
+[04-02]		Infused Cotton Armor
+[04-03]		Flux Robes
+
+[05]	Recipes (Block):
+[05-01]		All Stone Crafting except Infernal Blast Furnace Brick and Shadowforge Brick
+[05-02]		Hardened Silverwood Crafting
+[05-03]		All TE4 Ore Processing with respect for type
+[05-04]		All Slab Crafting
+
+[06]	Recipes (Other Items):
+[06-01]		All v0.0.x Component Crafting
+[06-02]		Shard Crushing
+[06-03]		Primal Essence Crafting
+[06-04]		Shard, Salis Mundus, Primal Essence, Iron, Gold, Thaumium, and Voidmetal Dust <-> Tiny Dust conversion
+[06-05]		Wardenic Amulet and Primal Pendant Crafting
+[06-06]		Switch Cinderpearl to give Pod
+[06-07]		Infused Cotton Armor Crafting
+[06-08]		Primal Robes Crafting
+
+[07]	Recipes (Wardenic Items):
+[07-01]		Tier 1 Wardenic Base Item Crafting
+[07-02]		Tier 2 Wardenic Base Item Crafting
+[07-03]		Tier 3 Wardenic Base Item Crafting
+[07-04]		Tier 4 Wardenic Base Item Crafting
+[07-05]		Tier 5 Wardenic Base Item Crafting
+[07-06]		Tier 1 Wardenic Armor Item Crafting
+[07-07]		Tier 2 Wardenic Armor Item Crafting
+[07-08]		Tier 3 Wardenic Armor Item Crafting
+[07-09]		Tier 4 Wardenic Armor Item Crafting
+[07-10]		Tier 5 Wardenic Armor Item Crafting
+[07-11]		Crafting of All Wardenic Armor
+[07-12]		Check/Rebalance Wardenic Steel
+
+[08]	Recipes (Metals):
+[08-01]		Auto-toggle Elemental Metals (Recipes)
+[08-02]		Auto-toggle General Alloys (Recipes)
+[08-03]		Auto-toggle Special Metals (Recipes)
+[08-04]		Auto-toggle Equipment Metals (Recipes)
+[08-05]		Auto-toggle Gems (Recipes)
+[08-06]		Auto-toggle Other Metals (Recipes)
+[08-07]		All General Raw/Coated Ingot Smelting
+
+[08:01]		Ingot to Nuggets
+[08:02]		Nuggets to Ingot
+[08:03]		Ingots to Block
+[08:04]		Block to Ingots
+[08:05]		Ingot to Dust
+[08:06]		Dust to Tiny Dusts
+[08:07]		Tiny Dusts to Dust
+[08:08]		Dust to Ingot
+[08:09]		Ingot Alloying
+[08:10]		Nugget Alloying
+[08:11]		Dust Alloying
+[08:12]		Tiny Dust Alloying
+
+[09]	Research:
+[09-01]		Ensure Tier 1 Wardenic Placement/Researches
+[09-02]		Ensure Tier 2 Wardenic Placement/Researches
+[09-03]		Ensure Tier 3 Wardenic Placement/Researches
+[09-04]		Ensure Tier 4 Wardenic Placement/Researches
+[09-05]		Tier 5 Wardenic Research
+[09-06]		Tier 1 Magneoturgy
+[09-07]		Stabilized Singularity Research
+[09-08]		Aspect Orb Receptor
+[09-09]		Primal Pendant
+[09-10]		Eldritch Stone
+[09-11]		Consecrated Silverwood Planks
+
+[10]	Textures (Block): //Populate
+
+[11]	Textures (Item): //Populate
+
+[12]	Textures (Equipment): //Populate
+[13-01]		Tier 2 Wardenic Armor Textures
+[13-02]		Tier 3 Wardenic Armor Textures
+[13-03]		Tier 4 Wardenic Armor Textures
+[13-04]		Tier 5 Wardenic Armor Textures
+[13-05]		Flux Robes Textures
+[13-06]		Primal Robes Textures
+[13-07]		Enchanted Cotton Robes Textures
+[13-08]		Primal Pendant Texture
+
+[13]	Textures (Worn Armor):
+[13-01]		Tier 2 Wardenic Armor Worn Textures
+[13-02]		Tier 3 Wardenic Armor Worn Textures
+[13-03]		Tier 4 Wardenic Armor Worn Textures
+[13-04]		Tier 5 Wardenic Armor Worn Textures
+[13-05]		Flux Robes Worn Textures
+[13-06]		Primal Robes Worn Textures
+[13-07]		Enchanted Cotton Robes Worn Textures
+
+[14]	Aspects: //Populate
+[15]	Research Text (General): //Populate
+[16]	Research Text (Other): //Populate
+[17]	Research Text (Wardenic T1/T2): //Populate
+[18]	Research Text (Wardenic T3/T5): //Populate
+[19]	Research Text (Wardenic T4): //Populate
+
+[20]	Internal:
+[20-01]		Slab TE
+[20-02]		Auto-Alloy Config
+[20-03]		Setup Ore Colorizer
+[20-04]		Migrate Metal Function
+[20-05]		Split Metal Registration from General Items
+[20-06]		Cotton Farming
+[20-07]		Thistle Farming
+[20-08]		Elemental Pearl Farming
+[20-09]		Thaumonomicon Smelt Recipe Disabler
+[20-10]		Worldgen of Elemental Pearls
+[20-11]		Base of Infusion System
+[20-12]		Fix Quartz Renderer
+[20-?]		Document TRv API
+[20-?]		Excubitor Aspect Stats
+[20-?]		Fluxus Aspect Stats
+[20-?]		CoFH-Style Particles
+
+
+Other:
+Make Warden's Amulet do something
+Fix Issue with Texture Field in ItemEntry??
+Chemistry Station General Recipe Ideas
+Temporary Alternative Crushing
+Aluminium Extraction Items
+Aluminium Extraction Recipe Documentation
+Aluminium Extraction Requisite Recipe Documentation
+Aluminium Extraction Requisite Items
+
+Down the Line:
+Gradient Map Sorting (1)
+Melted Dashboard Core Independence (2)
+String Separation Method (1)
+Tooltips for FluxGearItem (1)
+Inventory Helper getInternalSlots() for CoFH/IE/Forestry/ExU/BetterSttorage (1)
+Number Scaling/Formating in StringHelper (4)
+Plant Particles (1)
+Metadata-based Plant Flammability (2)
+Wardenic Backstory (1)
+Induction Ore Getting (1)

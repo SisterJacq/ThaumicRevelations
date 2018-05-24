@@ -14,7 +14,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 import mortvana.melteddashboard.util.helpers.StringHelper;
 
-public class FluxGearBlockPlant extends BlockBush {
+public class FluxGearBlockPlant extends BlockBush implements IItemBlockProvider {
 
 	public String[] names;
 	public String[] textures;
@@ -74,5 +74,13 @@ public class FluxGearBlockPlant extends BlockBush {
 		for (int i = 0; i < names.length; i++) {
 			list.add(new ItemStack(item, 1, i));
 		}
+	}
+
+	public String getUnlocalizedName(ItemStack stack) {
+		return getUnlocalizedName();
+	}
+
+	public int getRarity(int metadata) {
+		return 0;
 	}
 }

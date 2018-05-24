@@ -1,4 +1,4 @@
-package mortvana.melteddashboard.util;
+package mortvana.melteddashboard.client.texture;
 
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.util.IIcon;
@@ -27,11 +27,12 @@ public class GrayscaleEntry {
 		entries.put(SHARD_GEM, new GrayscaleEntry(SHARD_GEM, DIR_GRAYSCALE + SHARD_GEM));
 		entries.put(SHARD_QUARTZ, new GrayscaleEntry(SHARD_QUARTZ, DIR_GRAYSCALE + SHARD_QUARTZ));
 		entries.put(TINY_MAGIC_DUST, new GrayscaleEntry(TINY_MAGIC_DUST, DIR_GRAYSCALE + TINY_MAGIC_DUST));
+		entries.put(CHAIN, new GrayscaleEntry(CHAIN, DIR_GRAYSCALE + CHAIN));
 	}
 
-	public String name;
-	public String texture;
-	public IIcon icon;
+	protected String name;
+	protected String texture;
+	protected IIcon icon;
 
 	public GrayscaleEntry(String name, String texture) {
 		this.name = name;

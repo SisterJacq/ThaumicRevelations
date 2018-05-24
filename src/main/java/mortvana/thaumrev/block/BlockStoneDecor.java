@@ -257,6 +257,16 @@ public class BlockStoneDecor extends FluxGearBlockBase {
 	}
 
 
+	@Override
+	public String getUnlocalizedName(ItemStack stack) {
+		return "tile.fluxgear.stoneDecor." + NAMES[stack.getItemDamage()] + ".name";
+	}
+
+	@Override
+	public int getRarity(int meta) {
+		return RARITY[meta];
+	}
+
 	public static final String[] NAMES = { "obsidianWardenic", "stoneEldritch", "wardenicQuartzChiseled", "wardenicQuartzPillar", "wardenicQuartzPillar", "wardenicQuartzPillar", "redquartzChiseled", "redquartzPillar", "redquartzPillar", "redquartzPillar"/*, "thaumicStone", "infernalBlastBrick", "shadowforgeBrick"*/ };
 	public static final float[] HARDNESS = {25F, 10F, 0.8F, 0.8F, 0.8F, 0.8F, 0.8F, 0.8F, 0.8F, 0.8F};
 	public static final float[] RESISTANCE = {5000F, 500F, 25F, 25F, 25F, 25F, 25F, 25F, 25F, 25F};

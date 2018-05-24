@@ -26,6 +26,7 @@ public class BlockStorageLinked extends BlockStorageBase {
 
 	public int[] indices; //An array of the index to use for a given metadata;
 	public int[] meta;
+	public String[] locNames;
 
 	public BlockStorageLinked(String name, CreativeTabs tab, int[] indices, int[] meta) {
 		super(name, tab);
@@ -34,32 +35,46 @@ public class BlockStorageLinked extends BlockStorageBase {
 	}
 
 	public BlockStorageLinked(String name, CreativeTabs tab, String directory, String[] names, int[] mine, float[] hardness, float[] resist, int[] light, int[] indices, int[] meta) {
-		super(name, tab);
-		this.indices = indices;
-		this.meta = meta;
+		this(name, tab, indices, meta);
 		setData(directory, names, mine, hardness, resist, light);
 	}
 
+	public BlockStorageLinked(String name, CreativeTabs tab, String directory, String unlocName, int[] rarity, String[] names, int[] mine, float[] hardness, float[] resist, int[] light, int[] indices, int[] meta) {
+		this(name, tab, indices, meta);
+		setData(directory, names, mine, hardness, resist, light, unlocName, rarity);
+	}
+
 	public BlockStorageLinked(String name, CreativeTabs tab, String directory, String[] names, int[] mine, float[] hardness, float[] resist, int[] light, int[] color, int[] indices, int[] meta) {
-		super(name, tab);
-		this.indices = indices;
-		this.meta = meta;
+		this(name, tab, indices, meta);
 		setData(directory, names, mine, hardness, resist, light);
 		this.color = color;
 		colorBackup = color;
 	}
 
+	public BlockStorageLinked(String name, CreativeTabs tab, String directory, String unlocName, int[] rarity, String[] names, int[] mine, float[] hardness, float[] resist, int[] light, int[] color, int[] indices, int[] meta) {
+		this(name, tab, indices, meta);
+		setData(directory, names, mine, hardness, resist, light, unlocName, rarity);
+		this.color = color;
+		colorBackup = color;
+	}
 
 	public BlockStorageLinked(String name, CreativeTabs tab, String directory, String[] names, int[] mine, float[] hardness, float[] resist, int[] light, int[] color, int[] signal, int[] indices, int[] meta) {
-		super(name, tab);
-		this.indices = indices;
-		this.meta = meta;
+		this(name, tab, indices, meta);
 		setData(directory, names, mine, hardness, resist, light);
 		this.color = color;
 		colorBackup = color;
 		this.signal = signal;
 	}
 
+	public BlockStorageLinked(String name, CreativeTabs tab, String directory, String unlocName, int[] rarity, String[] names, int[] mine, float[] hardness, float[] resist, int[] light, int[] color, int[] signal, int[] indices, int[] meta) {
+		this(name, tab, indices, meta);
+		setData(directory, names, mine, hardness, resist, light, unlocName, rarity);
+		this.color = color;
+		colorBackup = color;
+		this.signal = signal;
+	}
+
+	@Override
 	public BlockStorageBase setData(String directory, String[] names, int[] mine, float[] hardness, float[] resist, int[] light) {
 		setData(directory, names);
 		this.hardness = hardness;
@@ -73,11 +88,25 @@ public class BlockStorageLinked extends BlockStorageBase {
 		return this;
 	}
 
+	@Override
+	public BlockStorageBase setData(String directory, String[] names, int[] mine, float[] hardness, float[] resist, int[] light, String unlocName, int[] rarity) {
+		setData(directory, names, mine, hardness, resist, light);
+		this.unlocName = unlocName;
+		this.rarity = rarity;
+		return this;
+	}
+
+	@Override
 	public BlockStorageBase setSignal(int meta, int val) {
 		if (signal == null) {
 			signal = new int[names.length];
 		}
 		signal[indices[meta]] = val;
+		return this;
+	}
+
+	public BlockStorageLinked setCustomNames(String[] names) {
+		locNames = names;
 		return this;
 	}
 
@@ -137,4 +166,12 @@ public class BlockStorageLinked extends BlockStorageBase {
 		return color != null ? color[indices[meta]] & ColorLibrary.CLEAR : ColorLibrary.CLEAR;
 	}
 
+	public String getUnlocalizedName(ItemStack stack) {
+		return unlocName != null ? unlocName + StringLibrary.BLOCK + (locNames != null ? locNames[indices[stack.getItemDamage()]] : names[indices[stack.getItemDamage()]]) + ".name" : getUnlocalizedName();
+	}
+
+	@Override
+	public int getRarity(int meta) {
+		return (rarity != null && meta < rarity.length && meta >= 0) ? rarity[indices[meta]] : 0;
+	}
 }

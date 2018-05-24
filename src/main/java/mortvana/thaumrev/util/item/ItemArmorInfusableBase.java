@@ -5,6 +5,7 @@ import java.util.List;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 import cpw.mods.fml.common.Optional;
@@ -16,25 +17,28 @@ import mortvana.melteddashboard.item.ItemArmorFluxGear;
 import mortvana.melteddashboard.util.helpers.*;
 import mortvana.melteddashboard.util.helpers.mod.ThaumcraftHelper;
 
+import gnu.trove.map.TMap;
+import gnu.trove.map.hash.THashMap;
 import mortvana.thaumrev.api.item.infusion.IInfusableItem;
+import mortvana.thaumrev.api.item.infusion.IInfusionItem;
 import mortvana.thaumrev.api.util.enums.EnumEquipmentType;
 import mortvana.thaumrev.library.ThaumRevLibrary;
 import mortvana.thaumrev.util.enums.EnumPrimalAspect;
 
-public abstract class ItemArmorInfusableBase extends ItemArmorFluxGear implements ISpecialArmor, IInfusableItem {
+public /*abstract*/ class ItemArmorInfusableBase extends ItemArmorFluxGear implements /*ISpecialArmor,*/ IInfusableItem {
 
 	protected EnumEquipmentType type;
 
-	protected int visDiscount[] = {0, 0, 0, 0, 0, 0};
-	protected int maxEnergy;
+	//protected int visDiscount[] = {0, 0, 0, 0, 0, 0};
+	//protected int maxEnergy;
 
-	public ItemArmorInfusableBase(String material, int index, int type, String name, String sheet, String icon) {
+	public ItemArmorInfusableBase(ArmorMaterial material, int index, int type, String name, String sheet, String icon) {
 		super(material, index, type, name, sheet, icon);
 		this.type = EnumEquipmentType.values()[type];
 		setCreativeTab(ThaumRevLibrary.generalTab);
 	}
 
-	public ItemArmorInfusableBase(String material, int index, int type) {
+	public ItemArmorInfusableBase(ArmorMaterial material, int index, int type) {
 		super(material, index, type);
 		this.type = EnumEquipmentType.values()[type];
 		setCreativeTab(ThaumRevLibrary.generalTab);
@@ -44,6 +48,8 @@ public abstract class ItemArmorInfusableBase extends ItemArmorFluxGear implement
 	public boolean getShareTag() {
 		return true;
 	}
+
+
 
 	@Override
 	public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean par4) {
@@ -67,7 +73,7 @@ public abstract class ItemArmorInfusableBase extends ItemArmorFluxGear implement
 	}
 
 	/** ISpecialArmor **/
-	@Override
+	/*@Override
 	public ArmorProperties getProperties(EntityLivingBase player, ItemStack armor, DamageSource source, double damage, int slot) {
 		return new ArmorProperties(0, damageReduceAmount / 25D, 20);
 	}
@@ -79,12 +85,12 @@ public abstract class ItemArmorInfusableBase extends ItemArmorFluxGear implement
 
 	@Override
 	public void damageArmor(EntityLivingBase entity, ItemStack stack, DamageSource source, int damage, int slot) {
-		/*if (!NBTHelper.isBroken(stack)) {
-			if (source != DamageSource.fall) {
+		//if (!NBTHelper.isBroken(stack)) {
+			//if (source != DamageSource.fall) {
 				stack.damageItem(damage, entity);
-				AspectInfusionHelper.damageArmor(entity, stack, source, damage, slot);
-			}
-		}*/
+				//AspectInfusionHelper.damageArmor(entity, stack, source, damage, slot);
+			//}
+		//}
 	}
 
 	/** IContainerItem **/
@@ -129,6 +135,21 @@ public abstract class ItemArmorInfusableBase extends ItemArmorFluxGear implement
 	public IInfusableItem setType(ItemStack stack, EnumEquipmentType type) {
 		this.type = type;
 		return this;
+	}
+
+	@Override
+	public NBTTagCompound getInfusionTag(ItemStack stack) {
+		return NBTHelper.getSubTag(stack, "infusions");
+	}
+
+	@Override
+	public void setInfusionTag(ItemStack stack, NBTTagCompound tag) {
+		NBTHelper.setSubTag(stack, "infusions", tag);
+	}
+
+	@Override
+	public void clearInfusionTag(ItemStack stack) {
+		NBTHelper.remove(stack, "infusions");
 	}
 
 	/** IVisDiscountGear **/

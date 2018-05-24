@@ -3,13 +3,12 @@ package mortvana.melteddashboard.item;
 import java.util.ArrayList;
 import java.util.List;
 
+import mortvana.melteddashboard.item.entry.*;
 import mortvana.melteddashboard.lib.ColorLibrary;
 
 import mortvana.thaumrev.common.ThaumicRevelations;
 
-import mortvana.melteddashboard.client.texture.GradientNode;
-import mortvana.melteddashboard.client.texture.GradientTexture;
-import mortvana.melteddashboard.util.GrayscaleEntry;
+import mortvana.melteddashboard.client.texture.GrayscaleEntry;
 import mortvana.melteddashboard.util.helpers.TextureHelper;
 
 import net.minecraft.client.renderer.texture.*;
@@ -100,7 +99,7 @@ public class FluxGearItem extends Item {
     // addItem(...) {}
 	public ItemStack addItem(int metadata, ItemEntry entry, boolean register) {
 		if (itemList.contains(metadata)) {
-			ThaumicRevelations.logger.warn("Someone registered a meta-item in an item from " + modName + ", with a metadata of " + metadata + ", called " + entry.name + "! Don't do this! Skipping Entry!");
+			ThaumicRevelations.logger.warn("Someone registered a meta-item in an item from " + modName + ", with a metadata of " + metadata + ", called " + entry.getName() + "! Don't do this! Skipping Entry!");
 			return null;
 		} else {
 			itemMap.put(metadata, entry);
@@ -108,7 +107,7 @@ public class FluxGearItem extends Item {
 
 			ItemStack stack = new ItemStack(this, 1, metadata);
 			if (register) {
-				GameRegistry.registerCustomItemStack(entry.name, stack);
+				GameRegistry.registerCustomItemStack(entry.getName(), stack);
 			}
 			return stack;
 		}
@@ -187,7 +186,7 @@ public class FluxGearItem extends Item {
     // addOreDictItem(...) {}
 	public ItemStack addOreDictItem(int metadata, ItemEntry entry, boolean register, String... oreDict) {
 		ItemStack stack = addItem(metadata, entry, register);
-		RegistrationWrapper.registerOreDict(stack, (oreDict.length == 0 ? new String[] { entry.name } : oreDict));
+		RegistrationWrapper.registerOreDict(stack, (oreDict.length == 0 ? new String[] { entry.getName() } : oreDict));
 		return stack;
 	}
 
@@ -326,7 +325,7 @@ public class FluxGearItem extends Item {
     @Override
     public void getSubItems(Item item, CreativeTabs tab, List list) {
         for (int meta : itemList) {
-			if (!itemMap.get(meta).disabled) {
+			if (!itemMap.get(meta).getDisabled()) {
 				list.add(new ItemStack(item, 1, meta));
 			}
         }
@@ -346,16 +345,16 @@ public class FluxGearItem extends Item {
 	@Override
 	public String getUnlocalizedName(ItemStack stack) {
 		int meta = stack.getItemDamage();
-		return "item." + modName + (folder == null ? "" : "." + folder) + (itemList.contains(meta) ? "." + itemMap.get(meta).name + (itemMap.get(meta).altName ? "Alt" : "") : ".invalid");
+		return "item." + modName + (folder == null ? "" : "." + folder) + (itemList.contains(meta) ? "." + itemMap.get(meta).getName() + (itemMap.get(meta).getAltName() ? "Alt" : "") : ".invalid");
 	}
 
 	@Override
 	public String getItemStackDisplayName (ItemStack stack) {
 		int meta = stack.getItemDamage();
 		if (itemList.contains(meta) && registryItem) {
-			String itemName = itemMap.get(meta).name;
-			if (StatCollector.canTranslate("item." + modName + "." + itemMap.get(meta).name + ".name")) { //Custom Name
-				return StatCollector.translateToLocal("item." + modName + "." + itemMap.get(meta).name + ".name");
+			String itemName = itemMap.get(meta).getName();
+			if (StatCollector.canTranslate("item." + modName + "." + itemMap.get(meta).getName() + ".name")) { //Custom Name
+				return StatCollector.translateToLocal("item." + modName + "." + itemMap.get(meta).getName() + ".name");
 			} else  if (itemName.contains(".")) { //General Name
 				String[] split = itemName.replace('.', ':').split(":");
 				String form = split[0];
@@ -371,27 +370,18 @@ public class FluxGearItem extends Item {
 	@Override
 	public EnumRarity getRarity(ItemStack stack) {
 		int meta = stack.getItemDamage();
-		return itemList.contains(meta) ? EnumRarity.values()[itemMap.get(meta).rarity] : EnumRarity.common;
+		return itemList.contains(meta) ? EnumRarity.values()[itemMap.get(meta).getRarity()] : EnumRarity.common;
 	}
-
-
-
 
     public String getInternalName(ItemStack itemstack) {
         int meta = itemstack.getItemDamage();
-        return itemList.contains(meta) ? itemMap.get(meta).name : "invalid";
+        return itemList.contains(meta) ? itemMap.get(meta).getName() : "invalid";
     }
-
-
-
-
 
     public FluxGearItem setRegistryItem(boolean isRegistryItem) {
         registryItem = isRegistryItem;
         return this;
     }
-
-
 
     /*@Override
     public boolean hasCustomEntity(ItemStack itemstack) {
@@ -424,11 +414,29 @@ public class FluxGearItem extends Item {
         return true;
     }
 
+	@Override
+	public int getRenderPasses(int metadata) {
+		return (itemList.contains(metadata) && itemMap.get(metadata) instanceof ItemEntryColorizedOverlay) ? 3 : 2;
+	}
+
     @Override
     @SideOnly(Side.CLIENT)
     public IIcon getIconFromDamage(int metadata) {
-        return itemList.contains(metadata) ? itemMap.get(metadata).icon : null;
+        return itemList.contains(metadata) ? itemMap.get(metadata).getIcon() : null;
     }
+
+	@Override
+	@SideOnly(Side.CLIENT)
+	public IIcon getIconFromDamageForRenderPass(int metadata, int pass) {
+		if (itemList.contains(metadata)) {
+			if (pass == 0) {
+				return itemMap.get(metadata).getIcon();
+			} else if (itemMap.get(metadata) instanceof ItemEntryColorizedOverlay) {
+				return ((ItemEntryColorizedOverlay) itemMap.get(metadata)).getIconOverlay();
+			}
+		}
+		return null;
+	}
 
     @Override
     @SideOnly(Side.CLIENT)
@@ -444,11 +452,11 @@ public class FluxGearItem extends Item {
 			IIcon icon;
 			//String template;
 			for (int meta : itemList) {
-				if (itemList.contains(meta) && !itemMap.get(meta).isDisabled()) {
+				if (itemList.contains(meta) && !itemMap.get(meta).getDisabled()) {
 					entry = itemMap.get(meta);
 					if (entry instanceof ItemEntryColorized) {
-						icon = GrayscaleEntry.getIcon(((ItemEntryColorized) entry).template);
-						entry.icon = icon != null ? icon : register.registerIcon(getIconFromMeta(meta));
+						icon = GrayscaleEntry.getIcon(((ItemEntryColorized) entry).getTemplate());
+						entry.setIcon(icon != null ? icon : register.registerIcon(getIconFromMeta(meta)));
 					/*} else if (entry instanceof ItemEntryGradient) { //TODO: Re-enable gradients, when I get them working. Now that I have a working colorizer, it is low priority.
 						icon = map.getTextureExtry(getIconFromMeta(meta));
 
@@ -470,7 +478,7 @@ public class FluxGearItem extends Item {
 							ThaumicRevelations.logger.error("Registration of " + getIconFromMeta(meta) + " failed! Said icon already exists!");
 						}*/
 					} else {
-						entry.icon = register.registerIcon(getIconFromMeta(meta));
+						entry.setIcon(register.registerIcon(getIconFromMeta(meta)));
 					}
 				}
 			}
@@ -480,7 +488,7 @@ public class FluxGearItem extends Item {
     @Override
     public IIcon getIcon(ItemStack stack, int renderPass) {
 		int meta = stack.getItemDamage();
-        return itemList.contains(meta) ? itemMap.get(meta).icon : nullIcon;
+        return itemList.contains(meta) ? itemMap.get(meta).getIcon() : nullIcon;
     }
 
     @Override
@@ -488,15 +496,15 @@ public class FluxGearItem extends Item {
     public int getColorFromItemStack(ItemStack stack, int renderPass) {
 		if (renderPass == 1 && itemList.contains(stack.getItemDamage())) {
 			ItemEntry entry = itemMap.get(stack.getItemDamage());
-			if (!entry.disabled && entry instanceof ItemEntryColorized) {
-				return ((ItemEntryColorized) entry).color & ColorLibrary.CLEAR;
+			if (!entry.getDisabled() && entry instanceof ItemEntryColorized) {
+				return ((ItemEntryColorized) entry).getColor() & ColorLibrary.CLEAR;
 			}
 		}
         return ColorLibrary.CLEAR;
     }
 
     public String getIconFromMeta(int metadata) {
-    	return modName + ":" + folder + (folder == null ? "" : "/") + itemMap.get(metadata).texture;
+    	return modName + ":" + folder + (folder == null ? "" : "/") + itemMap.get(metadata).getTexture();
     }
 
     public boolean hasTexture(int metadata) {
@@ -525,7 +533,7 @@ public class FluxGearItem extends Item {
 		if (itemstack != null) {
 			int meta = itemstack.getItemDamage();
 			if (itemList.contains(meta)) {
-				return itemMap.get(meta).isEnchanted();
+				return itemMap.get(meta).getEnchanted();
 			}
 		}
 		return false;

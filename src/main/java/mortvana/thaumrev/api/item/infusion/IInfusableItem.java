@@ -1,6 +1,7 @@
 package mortvana.thaumrev.api.item.infusion;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import cpw.mods.fml.common.Optional;
 
 import thaumcraft.api.IGoggles;
@@ -19,7 +20,7 @@ import mortvana.thaumrev.api.util.enums.EnumEquipmentType;
  * @author Mortvana
  */
 
-@Optional.Interface(modid = "CoFHAPI|energy", iface = "cofh.api.energy.IEnergyContainerItem")
+@Optional.InterfaceList(@Optional.Interface(modid = "CoFHAPI|energy", iface = "cofh.api.energy.IEnergyContainerItem"))
 public interface IInfusableItem extends IContainerItem, IGoggles, IRevealer, IVisDiscountGear, IEnergyContainerItem {
 
 	/**
@@ -46,4 +47,11 @@ public interface IInfusableItem extends IContainerItem, IGoggles, IRevealer, IVi
 	 * @return - IInfusableItem that had its type set
 	 */
 	IInfusableItem setType(ItemStack stack, EnumEquipmentType type);
+
+	NBTTagCompound getInfusionTag(ItemStack stack);
+
+	void setInfusionTag(ItemStack stack, NBTTagCompound tag);
+
+	void clearInfusionTag(ItemStack stack);
+
 }

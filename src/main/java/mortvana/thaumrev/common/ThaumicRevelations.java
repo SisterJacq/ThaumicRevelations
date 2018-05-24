@@ -5,6 +5,7 @@ import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.*;
+import cpw.mods.fml.common.registry.GameRegistry;
 
 import net.minecraftforge.common.MinecraftForge;
 
@@ -13,6 +14,7 @@ import mortvana.melteddashboard.lib.ThaumcraftLibrary;
 
 import mortvana.thaumrev.library.ThaumRevLibrary;
 import mortvana.thaumrev.network.CommonProxy;
+import mortvana.thaumrev.world.ThaumRevWorldGenerator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -30,6 +32,12 @@ public class ThaumicRevelations {
 
 	public static ThaumRevConfig config;
 
+	/**
+	 *	Runs before other things, reading configs, registering handlers, creating blocks, items, and whatever, including
+	 *	registering things with GameRegistry.
+	 *
+	 *  @param event - The FMLPreInitializationEvent passed by Forge Mod Loader.
+	 */
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		config = new ThaumRevConfig(event, "/Mortvana/ThaumicRevelations.cfg");
@@ -37,16 +45,28 @@ public class ThaumicRevelations {
 		//GuiHandler.init();
 		//AspectInfusionHandler.init();
 		ThaumRevContent.preInit();
+
+		GameRegistry.registerWorldGenerator(new ThaumRevWorldGenerator(), 1);
 	}
 
+	/**
+	 *	Register recipes, OreDict stuff, send IMC messages and basically everything else that isn't in postInit.
+	 *
+	 *	@param event  - The FMLPreInitializationEvent passed by Forge Mod Loader.
+	 */
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
+		ThaumcraftLibrary.init();
 		ThaumRevContent.init();
 	}
 
+	/**
+	 *	Handle interactions with other mods, initialize research, and register aspects.
+	 *
+	 *	@param event - The FMLPreInitializationEvent passed by Forge Mod Loader.
+	 */
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event) {
-		ThaumcraftLibrary.init();
 		ThaumRevContent.postInit();
 	}
 }

@@ -136,6 +136,16 @@ public class BlockStoneSlab extends FluxGearBlockSlab {
 		icons[meta] = ((BlockStoneDecor) blockStoneDecor).icons[index];
 	}
 
+	@Override
+	public String getUnlocalizedName(ItemStack stack) {
+		return "tile.fluxgear.stoneSlab." + NAMES[stack.getItemDamage()] + ".name";
+	}
+
+	@Override
+	public int getRarity(int meta) {
+		return RARITY[meta];
+	}
+
 	public static final String[] NAMES = { "obsidianWardenic", "stoneEldritch", "wardenicQuartzChiseled", "redquartzChiseled" };
 	public static final float[] HARDNESS = { 25F, 10F, 0.8F, 0.8F };
 	public static final float[] RESISTANCE = { 5000F, 500F, 25F, 25F };

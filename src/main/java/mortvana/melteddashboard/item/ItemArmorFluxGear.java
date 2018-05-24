@@ -21,8 +21,9 @@ import net.minecraftforge.common.util.EnumHelper;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
-import gnu.trove.map.TMap;
-import gnu.trove.map.hash.THashMap;
+
+import mortvana.melteddashboard.item.entry.ArmorData;
+
 import mortvana.melteddashboard.util.IStackProvider;
 import mortvana.melteddashboard.util.helpers.OreDictHelper;
 
@@ -30,137 +31,164 @@ public abstract class ItemArmorFluxGear extends ItemArmor implements IStackProvi
 
 	public static final ArmorMaterial MATERIAL = EnumHelper.addArmorMaterial("FLUXGEARWRAPPER", 0, new int[] { 0, 0, 0, 0 }, 0);
 
-	public String material = null;
-	public String sheetName;
-	public String icon;
-	public String repairMaterial = "";
-	public String modName = "fluxgear";
-	public boolean useCustomDir = false;
-	public String[] textures = new String[2];
-	public boolean showInCreative = true;
-	public Multimap<String, AttributeModifier> properties = HashMultimap.create();
-	public boolean colorized = false;
-	public int defaultColor = 0xFFFFFF;
-	public EnumRarity rarity = EnumRarity.common;
+	//public ArmorData data;
 
-	public static TMap<String, ArmorMaterialEntry> materials = new THashMap<String, ArmorMaterialEntry>(32);
+	//public String sheetName;//
+	//public String icon;//
+	//public String repairMaterial = "";//
+	//public String modName;//
+	//public boolean useCustomDir = false;
+	//public String[] textures = new String[2];//
+	//public boolean showInCreative = true;
+	public Multimap<String, AttributeModifier> properties = HashMultimap.create();
+	//public boolean colorized = false;//
+	//public int defaultColor = 0xFFFFFF;//
+	//public EnumRarity rarity = EnumRarity.common;//
 
 	/** CONSTRUCTORS **/
 	public ItemArmorFluxGear(ArmorMaterial material, int index, int type, String name, String sheet, String icon) {
 		super(material, index, type);
 		setUnlocalizedName(name);
-		sheetName = sheet;
-		this.icon = icon;
+		setSheet(sheet);
+		setIcon(icon);
 	}
 
 	public ItemArmorFluxGear(ArmorMaterial material, int type, String name, String sheet, String icon) {
 		super(material, 2, type);
 		setUnlocalizedName(name);
-		sheetName = sheet;
-		this.icon = icon;
+		setSheet(sheet);
+		setIcon(icon);
+	}
+
+	public ItemArmorFluxGear(ArmorMaterial material, int index, int type) {
+		super(material, index, type);
 	}
 
 	public ItemArmorFluxGear(ArmorMaterial material, int type) {
 		super(material, 2, type);
 	}
 
-	public ItemArmorFluxGear(String material, int index, int type, String name, String sheet, String icon) {
-		super(MATERIAL, index, type);
-		setMaterial(material);
-		setUnlocalizedName(name);
-		sheetName = sheet;
-		this.icon = icon;
-		damageReduceAmount = getReduction(type);
-		setMaxDamage(getDurability(type));
-	}
-
-	public ItemArmorFluxGear(String material, int type, String name, String sheet, String icon) {
-		super(MATERIAL, 2, type);
-		setMaterial(material);
-		setUnlocalizedName(name);
-		sheetName = sheet;
-		this.icon = icon;
-		damageReduceAmount = getReduction(type);
-		setMaxDamage(getDurability(type));
-	}
-
-	public ItemArmorFluxGear(String material, int index, int type) {
-		super(MATERIAL, index, type);
-		setMaterial(material);
-		damageReduceAmount = getReduction(type);
-		setMaxDamage(getDurability(type));
-	}
-
-	/** SETTERS **/
-	public ItemArmorFluxGear setMaterial(String material) {
-		this.material = material;
+	/** DATA SETTERS **/
+	public ItemArmorFluxGear setModName(String modName) {
+		getData().setModName(modName);
 		return this;
 	}
 
-	public ItemArmorFluxGear setTextures(String sheet) {
-		sheetName = sheet;
+	public ItemArmorFluxGear setIcon(String icon) {
+		data.setIcon(icon);
 		return this;
 	}
 
-	public ItemArmorFluxGear setItemIcon(String icon) {
-		this.icon = icon;
+	public ItemArmorFluxGear setSheet(String sheet) {
+		data.setSheet(sheet);
 		return this;
 	}
+
+	//public ItemArmorFluxGear setCustomDir(boolean customDir) {
+	//	data.setCustomDir(customDir);
+	//	return this;
+	//}
 
 	public ItemArmorFluxGear setRepairMaterial(String oredict) {
-		repairMaterial = oredict;
-		return this;
-	}
-
-	public ItemArmorFluxGear setModName(String name) {
-		modName = name;
-		return this;
-	}
-
-	public ItemArmorFluxGear setCustomTextures(String[] textures) {
-		this.textures = textures;
-		useCustomDir = true;
-		if (textures.length > 3) {
-			setColorized(true);
-		}
-		return this;
-	}
-
-	public ItemArmorFluxGear setShowInCreative(boolean bool) {
-		showInCreative = bool;
-		return this;
-	}
-
-	public ItemArmorFluxGear setColorized(boolean bool) {
-		colorized = bool;
-		return this;
-	}
-
-	public ItemArmorFluxGear setDefaultColor(int color) {
-		defaultColor = color;
-		colorized = true;
+		data.setRepair(oredict);
 		return this;
 	}
 
 	public ItemArmorFluxGear setRarity(EnumRarity rarity) {
-		this.rarity = rarity;
+		data.setRarity(rarity);
 		return this;
 	}
 
 	public ItemArmorFluxGear setRarity(int rarity) {
-		return setRarity(EnumRarity.values()[rarity]);
+		data.setRarity(rarity);
+		return this;
+	}
+
+	public ItemArmorFluxGear setUnlocName(String unlocName) {
+		data.setUnlocName(unlocName);
+		return this;
+	}
+
+	public ItemArmorFluxGear setRegName(String regName) {
+		data.setRegName(regName);
+		return this;
+	}
+
+	public ItemArmorFluxGear setColor(int color) {
+		data.setColor(color);
+		return this;
+	}
+
+	public ItemArmorFluxGear setShowInCreative(boolean bool) {
+		data.setShowInCreative(bool);
+		return this;
+	}
+
+	/*public ItemArmorFluxGear setCustomTextures(String[] textures) {
+		this.textures = textures;
+		data.setCustomDir(true);
+		if (textures.length > 3) {
+			setColorized(true);
+		}
+		return this;
+	}*/
+
+	/** DATA GETTERS **/
+	public String getModName() {
+		return data.getModName();
+	}
+
+	public String getIcon() {
+		return data.getIcon();
+	}
+
+	public String getSheet() {
+		return data.getSheet();
+	}
+
+	//public boolean getCustomDir() {
+	//	return data.getCustomDir();
+	//}
+
+	public String getRepair() {
+		return data.getRepair();
+	}
+
+	public EnumRarity getRarity() {
+		return data.getRarity();
+	}
+
+	public String getUnlocName() {
+		return data.getUnlocName();
+	}
+
+	public String getRegName() {
+		return data.getRegName();
+	}
+
+	public int getColor() {
+		return data.getColor();
+	}
+
+	public boolean getShowInCreative() {
+		return data.getShowInCreative();
+	}
+
+	public boolean getColorized() {
+		return data.getColorized();
 	}
 
 	/** GETTERS **/
+	public abstract <T extends ArmorData> getData();
 
 	@Override
 	public boolean getIsRepairable(ItemStack armor, ItemStack material) {
-		return OreDictHelper.isOreNameEqual(material, repairMaterial);
+		return OreDictHelper.isOreNameEqual(material, data.getRepair());
 	}
 
 	@Override
 	public EnumRarity getRarity(ItemStack stack) {
-		return rarity;
+		return getRarity();
 	}
 
 	public ItemStack getStack() {
@@ -169,50 +197,8 @@ public abstract class ItemArmorFluxGear extends ItemArmor implements IStackProvi
 
 	@Override
 	public void getSubItems(Item item, CreativeTabs tab, List list) {
-		if (showInCreative) {
+		if (getShowInCreative()) {
 			list.add(new ItemStack(item, 1, 0));
-		}
-	}
-
-	/** PROXY MATERIAL FUNCTIONS **/
-	public static void addArmorMaterial(String name, int durability, int helmProt, int chestProt, int legProt, int bootProt, int enchant) {
-		addMaterial(name, durability, new int[] {helmProt, chestProt, legProt, bootProt}, enchant);
-	}
-
-	public static void addArmorMaterial(String name, int durability, int[] protection, int enchant) {
-		/*if (protection.length == 4) {*/
-		addMaterial(name, durability, protection, enchant);
-		/*} else {
-			ThaumicRevelations.logger.error("Someone registered ");
-		}*/
-	}
-
-	protected static void addMaterial(String name, int durability, int[] protection, int enchant) {
-		materials.put(name, new ArmorMaterialEntry(durability, protection, enchant));
-	}
-
-	@Override
-	public int getItemEnchantability() {
-		if (material != null && materials.containsKey(material)) {
-			return materials.get(material).getEnchantability();
-		} else {
-			return super.getItemEnchantability();
-		}
-	}
-
-	public int getReduction(int type) {
-		if (material != null && materials.containsKey(material)) {
-			return materials.get(material).getProtectionForSlot(type);
-		} else {
-			return 0;
-		}
-	}
-
-	public int getDurability(int type) {
-		if (material != null && materials.containsKey(material)) {
-			return materials.get(material).getDurability() * maxDamageArray[type];
-		} else {
-			return 0;
 		}
 	}
 
@@ -220,12 +206,12 @@ public abstract class ItemArmorFluxGear extends ItemArmor implements IStackProvi
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IIconRegister register) {
-		if (icon != null) {
-			if (colorized) {
-				itemIcon = register.registerIcon(modName + ":armor/" + icon + "Color");
-				overlayIcon = register.registerIcon(modName + ":armor/" + icon + "Overlay");
+		if (getIcon() != null) {
+			if (getColorized()) {
+				itemIcon = register.registerIcon(getModName() + ":armor/" + getIcon() + "Color");
+				overlayIcon = register.registerIcon(getModName() + ":armor/" + getIcon() + "Overlay");
 			} else {
-				itemIcon = register.registerIcon(modName + ":armor/" + icon);
+				itemIcon = register.registerIcon(getModName() + ":armor/" + getIcon());
 			}
 		} else {
 			super.registerIcons(register);
@@ -234,30 +220,30 @@ public abstract class ItemArmorFluxGear extends ItemArmor implements IStackProvi
 
 	@Override
 	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type) {
-		if (!useCustomDir) {
-			if (colorized) {
-				return modName + ":armor/" + sheetName + (slot != 2 ? "_1" : "_2") + (type == null ? "" : "_overlay") + ".png";
-			} else {
-				return modName + ":armor/" + sheetName + (slot == 2 ? "_2" : "_1") + ".png";
-			}
+		//if (!getCustomDir()) {
+		if (getColorized()) {
+			return getModName() + ":textures/models/" + getSheet() + (slot != 2 ? "_1" : "_2") + (type == null ? "" : "_overlay") + ".png";
 		} else {
-			if (colorized) {
-				return slot == 2 ? (type == null ? textures[1] : textures[3]) : (type == null ? textures[0] : textures[2]);
-			} else {
-				return slot == 2 ? textures[1] : textures[0];
-			}
+			return getModName() + ":textures/models/" + getSheet() + (slot == 2 ? "_2" : "_1") + ".png";
 		}
+		//} else {
+		//	if (getColorized()) {
+		//		return slot == 2 ? (type == null ? textures[1] : textures[3]) : (type == null ? textures[0] : textures[2]);
+		//	} else {
+		//		return slot == 2 ? textures[1] : textures[0];
+		//	}
+		//}
 	}
 
 	@Override
 	@SideOnly(Side.CLIENT)
 	public boolean requiresMultipleRenderPasses() {
-		return colorized;
+		return getColorized();
 	}
 
 	@Override
 	public boolean hasColor(ItemStack stack) {
-		return colorized;
+		return getColorized();
 	}
 
 	@Override
@@ -267,21 +253,21 @@ public abstract class ItemArmorFluxGear extends ItemArmor implements IStackProvi
 
 	@Override
 	public int getColor(ItemStack stack) {
-		if (!colorized) {
+		if (!getColorized()) {
 			return -1;
 		} else {
 			if (stack.getTagCompound() == null) {
-				return defaultColor;
+				return getColor();
 			} else {
 				NBTTagCompound nbt = stack.getTagCompound().getCompoundTag("display");
-				return nbt.hasKey("color") ? nbt.getInteger("color") : defaultColor;
+				return nbt.hasKey("color") ? nbt.getInteger("color") : getColor();
 			}
 		}
 	}
 
 	@Override
 	public void removeColor(ItemStack stack) {
-		if (colorized && stack.getTagCompound() != null) {
+		if (getColorized() && stack.getTagCompound() != null) {
 			NBTTagCompound nbt = stack.getTagCompound().getCompoundTag("display");
 			if (nbt.hasKey("color")) {
 				nbt.removeTag("color");
@@ -291,8 +277,8 @@ public abstract class ItemArmorFluxGear extends ItemArmor implements IStackProvi
 
 	@Override
 	public void func_82813_b(ItemStack stack, int color) {
-		if (!colorized) {
-			throw new UnsupportedOperationException("Can\'t dye " + material + " armor!");
+		if (!getColorized()) {
+			throw new UnsupportedOperationException("Can\'t dye " + getArmorMaterial().name() + " armor!");
 		} else {
 			NBTTagCompound tag = stack.getTagCompound();
 			if (tag == null) {

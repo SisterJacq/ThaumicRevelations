@@ -28,7 +28,7 @@ public class ThaumcraftHelper {
 
 	/** VIS DISCOUNTS **/
 	public static int getDiscountForAspect(ItemStack stack, EntityPlayer player, Aspect aspect, int baseDiscount) {
-		return baseDiscount + NBTHelper.getModifierInt(stack, ThaumRevLibrary.VISMODIFIER + EnumPrimalAspect.getString(aspect));
+		return baseDiscount + NBTHelper.getInt(stack, ThaumRevLibrary.VISMODIFIER + EnumPrimalAspect.getString(aspect));
 	}
 
 	public static AspectList newPrimalAspectList(int size) {

@@ -1,4 +1,4 @@
-package mortvana.melteddashboard.item;
+package mortvana.melteddashboard.item.entry;
 
 public class ItemEntryColorized extends ItemEntry {
 
@@ -27,5 +27,13 @@ public class ItemEntryColorized extends ItemEntry {
 		this.texture = texture;
 		this.color = color;
 		return this;
+	}
+
+	public String getTemplate() {
+		return template;
+	}
+
+	public int getColor() {
+		return color;
 	}
 }

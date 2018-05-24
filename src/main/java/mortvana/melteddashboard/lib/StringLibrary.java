@@ -9,6 +9,8 @@ public class StringLibrary {
 	public static final String DIR_GRAYSCALE = DIR_DEFAULT + "grayscale/";
 	public static final String DIR_STORAGE = DIR_DEFAULT + "storage/";
 
+	public static final String UNLOC_STORAGE = "tile.fluxgear.storage.";
+
 	//Prefixes
 	public static final String ORE = "ore";
 	public static final String BLOCK = "block";
@@ -26,6 +28,8 @@ public class StringLibrary {
 	public static final String TINY_MAGIC_DUST = "dustTinyMagic";
 	public static final String SHARD_GEM = "shardGem";
 	public static final String SHARD_QUARTZ = "shardQuartz";
+	public static final String CHAIN = "chain";
+	public static final String CHAIN_ORE = "itemChain";
 
 	//ASPECTS
 	public static final String AER = "Aer";

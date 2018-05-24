@@ -5,6 +5,7 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureType;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
@@ -12,15 +13,18 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 import mortvana.melteddashboard.lib.ColorLibrary;
+import mortvana.melteddashboard.lib.StringLibrary;
 import mortvana.melteddashboard.util.helpers.StringHelper;
 import mortvana.melteddashboard.util.helpers.TextureHelper;
 
 public class BlockStorageBase extends FluxGearBlockBase {
 
 	public IIcon grayscale;
+	public String unlocName = null;
 	public float[] hardness;
 	public float[] resist;
 	public int[] light;
+	public int[] rarity;
 	public int[] color = null;
 	public int[] colorBackup = null;
 	public int[] signal = null;
@@ -32,9 +36,19 @@ public class BlockStorageBase extends FluxGearBlockBase {
 		setBlockName(name);
 	}
 
+	public BlockStorageBase(String name, CreativeTabs tab, int[] rarity) {
+		this(name, tab);
+		this.rarity = rarity;
+	}
+
 	public BlockStorageBase(String name, CreativeTabs tab, String directory, String[] names, int[] mine, float[] hardness, float[] resist, int[] light) {
 		this(name, tab);
 		setData(directory, names, mine, hardness, resist, light);
+	}
+
+	public BlockStorageBase(String name, CreativeTabs tab, String directory, String unlocName, int[] rarity, String[] names, int[] mine, float[] hardness, float[] resist, int[] light) {
+		this(name, tab);
+		setData(directory, names, mine, hardness, resist, light, unlocName, rarity);
 	}
 
 	public BlockStorageBase(String name, CreativeTabs tab, String directory, String[] names, int[] mine, float[] hardness, float[] resist, int[] light, int[] color) {
@@ -44,12 +58,24 @@ public class BlockStorageBase extends FluxGearBlockBase {
 		colorBackup = color;
 	}
 
+	public BlockStorageBase(String name, CreativeTabs tab, String directory, String unlocName, int[] rarity, String[] names, int[] mine, float[] hardness, float[] resist, int[] light, int[] color) {
+		this(name, tab);
+		setData(directory, names, mine, hardness, resist, light, unlocName, rarity);
+		this.color = color;
+		colorBackup = color;
+	}
+
 	public BlockStorageBase(String name, CreativeTabs tab, String directory, String[] names, int[] mine, float[] hardness, float[] resist, int[] light, int[] color, int[] signal) {
-		super(Material.iron);
-		setStepSound(soundTypeMetal);
-		setCreativeTab(tab);
-		setBlockName(name);
+		this(name, tab);
 		setData(directory, names, mine, hardness, resist, light);
+		this.color = color;
+		colorBackup = color;
+		this.signal = signal;
+	}
+
+	public BlockStorageBase(String name, CreativeTabs tab, String directory, String unlocName, int[] rarity, String[] names, int[] mine, float[] hardness, float[] resist, int[] light, int[] color, int[] signal) {
+		this(name, tab);
+		setData(directory, names, mine, hardness, resist, light, unlocName, rarity);
 		this.color = color;
 		colorBackup = color;
 		this.signal = signal;
@@ -65,6 +91,13 @@ public class BlockStorageBase extends FluxGearBlockBase {
 			setHarvestLevel("pickaxe", mine[i], i);
 		}
 
+		return this;
+	}
+
+	public BlockStorageBase setData(String directory, String[] names, int[] mine, float[] hardness, float[] resist, int[] light, String unlocName, int[] rarity) {
+		setData(directory, names, mine, hardness, resist, light);
+		this.unlocName = unlocName;
+		this.rarity = rarity;
 		return this;
 	}
 
@@ -144,13 +177,25 @@ public class BlockStorageBase extends FluxGearBlockBase {
 	 * Returns a integer with hex for 0xrrggbb with this color multiplied against the blocks color. Note only called
 	 * when first determining what to render.
 	 */
+	@Override
 	@SideOnly(Side.CLIENT)
 	public int colorMultiplier(IBlockAccess world, int x, int y, int z) {
 		return getRenderColor(world.getBlockMetadata(x, y, z));
 	}
 
+	@Override
 	@SideOnly(Side.CLIENT)
 	public int getRenderColor(int meta) {
 		return color != null ? color[meta] & ColorLibrary.CLEAR : ColorLibrary.CLEAR;
+	}
+
+	@Override
+	public String getUnlocalizedName(ItemStack stack) {
+		return unlocName != null ? unlocName + StringLibrary.BLOCK + names[stack.getItemDamage()] + ".name" : getUnlocalizedName();
+	}
+
+	@Override
+	public int getRarity(int meta) {
+		return (rarity != null && meta < rarity.length && meta >= 0) ? rarity[meta] : 0;
 	}
 }

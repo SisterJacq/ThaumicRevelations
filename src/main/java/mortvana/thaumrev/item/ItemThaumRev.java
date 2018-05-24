@@ -27,7 +27,7 @@ public class ItemThaumRev extends FluxGearItemInteractive {
 	@Override
 	public boolean rightClickActions(int meta, ItemStack stack, World world, EntityPlayer player, boolean used) {
 		//TODO: Fix crashing
-		if (meta == arcaneSingularity.getItemDamage()) {
+		if (meta == itemArcaneSingularity.getItemDamage()) {
 	        world.playSoundAtEntity(player, "random.bow", 0.3F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
             if (!world.isRemote) {
                 world.spawnEntityInWorld(new EntitySingularity(world, player)); //TODO: Make more than extra-strength Alumentum

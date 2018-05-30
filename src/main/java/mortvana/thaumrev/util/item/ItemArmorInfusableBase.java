@@ -2,30 +2,25 @@ package mortvana.thaumrev.util.item;
 
 import java.util.List;
 
+import mortvana.melteddashboard.item.FluxGearItemArmor;
+import mortvana.melteddashboard.item.entry.ArmorDataAdv;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 import cpw.mods.fml.common.Optional;
-import net.minecraftforge.common.ISpecialArmor;
 
 import thaumcraft.api.aspects.Aspect;
 
-import mortvana.melteddashboard.item.ItemArmorFluxGear;
 import mortvana.melteddashboard.util.helpers.*;
 import mortvana.melteddashboard.util.helpers.mod.ThaumcraftHelper;
 
-import gnu.trove.map.TMap;
-import gnu.trove.map.hash.THashMap;
 import mortvana.thaumrev.api.item.infusion.IInfusableItem;
-import mortvana.thaumrev.api.item.infusion.IInfusionItem;
 import mortvana.thaumrev.api.util.enums.EnumEquipmentType;
 import mortvana.thaumrev.library.ThaumRevLibrary;
-import mortvana.thaumrev.util.enums.EnumPrimalAspect;
 
-public /*abstract*/ class ItemArmorInfusableBase extends ItemArmorFluxGear implements /*ISpecialArmor,*/ IInfusableItem {
+public /*abstract*/ class ItemArmorInfusableBase extends FluxGearItemArmor implements /*ISpecialArmor,*/ IInfusableItem {
 
 	protected EnumEquipmentType type;
 
@@ -37,6 +32,12 @@ public /*abstract*/ class ItemArmorInfusableBase extends ItemArmorFluxGear imple
 		this.type = EnumEquipmentType.values()[type];
 		setCreativeTab(ThaumRevLibrary.generalTab);
 	}
+
+    public ItemArmorInfusableBase(ArmorMaterial material, int index, int type, ArmorDataAdv data) {
+        super(material, index, type, data);
+        this.type = EnumEquipmentType.values()[type];
+        setCreativeTab(ThaumRevLibrary.generalTab);
+    }
 
 	public ItemArmorInfusableBase(ArmorMaterial material, int index, int type) {
 		super(material, index, type);
@@ -60,7 +61,7 @@ public /*abstract*/ class ItemArmorInfusableBase extends ItemArmorFluxGear imple
 
 	@Override
 	public void onArmorTick(World world, EntityPlayer player, ItemStack stack) {
-		AspectInfusionHelper.applyInfusions(world, player, stack, getType(stack));
+		//AspectInfusionHelper.applyInfusions(world, player, stack, getType(stack));
 		super.onArmorTick(world, player, stack);
 	}
 
@@ -69,7 +70,9 @@ public /*abstract*/ class ItemArmorInfusableBase extends ItemArmorFluxGear imple
 		if (damage > getMaxDamage()) {
 			stack.setItemDamage(getMaxDamage());
 			NBTHelper.setBroken(stack, true);
-		}
+		} else {
+            stack.setItemDamage(damage);
+        }
 	}
 
 	/** ISpecialArmor **/
@@ -155,7 +158,7 @@ public /*abstract*/ class ItemArmorInfusableBase extends ItemArmorFluxGear imple
 	/** IVisDiscountGear **/
 	@Override
 	public int getVisDiscount(ItemStack stack, EntityPlayer player, Aspect aspect) {
-		return ThaumcraftHelper.getDiscountForAspect(stack, player, aspect, visDiscount[EnumPrimalAspect.getPrimal(aspect).ordinal()]);
+		return 0;//ThaumcraftHelper.getDiscountForAspect(stack, player, aspect, visDiscount[EnumPrimalAspect.getPrimal(aspect).ordinal()]);
 	}
 
 	/** IRevealer **/
@@ -193,6 +196,6 @@ public /*abstract*/ class ItemArmorInfusableBase extends ItemArmorFluxGear imple
 	@Override
 	@Optional.Method(modid = "CoFHAPI|energy")
 	public int getMaxEnergyStored(ItemStack container) {
-		return maxEnergy;
+		return 0;
 	}
 }

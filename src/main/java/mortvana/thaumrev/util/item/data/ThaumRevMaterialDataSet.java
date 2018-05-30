@@ -17,10 +17,10 @@ public class ThaumRevMaterialDataSet {
 	}
 
 	public ThaumRevMaterialDataSet() {
-		helmData = new ArmorData();
-		chestData = new ArmorData();
-		legsData = new ArmorData();
-		bootData = new ArmorData();
+		//helmData = new ArmorData();
+		//chestData = new ArmorData();
+		//legsData = new ArmorData();
+		//bootData = new ArmorData();
 	}
 
 	public ArmorData getData(int type) {

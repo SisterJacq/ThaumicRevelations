@@ -1,18 +1,33 @@
 package mortvana.melteddashboard.item.entry;
 
+import mortvana.thaumrev.api.util.enums.EnumEquipmentType;
 import net.minecraft.item.EnumRarity;
 
 import thaumcraft.api.aspects.Aspect;
 
 import mortvana.thaumrev.util.enums.EnumPrimalAspect;
 
+import static mortvana.melteddashboard.util.helpers.StringHelper.*;
+
 public class ArmorDataAdv extends ArmorData {
 	protected int[] discount = {0, 0, 0, 0, 0, 0};
 	protected boolean goggles = false;
 	protected int maxEnergy = 0;
+    protected EnumEquipmentType type = EnumEquipmentType.NULL;
+
+    public ArmorDataAdv(String modName, String icon, String sheet, String repair, EnumRarity rarity, String unlocName, String regName, int color, boolean showInCreative, int[] discount, boolean goggles, int flux, EnumEquipmentType type) {
+        super(modName, icon, sheet, repair, rarity, unlocName, regName, color, showInCreative);
+        setDiscount(discount);
+        setGoggles(goggles);
+        setMaxEnergy(flux);
+        setEquipmentType(type);
+    }
 
 	public ArmorDataAdv(String modName, String icon, String sheet, String repair, EnumRarity rarity, String unlocName, String regName, int color, boolean showInCreative, int[] discount, boolean goggles, int flux) {
 		super(modName, icon, sheet, repair, rarity, unlocName, regName, color, showInCreative);
+        setDiscount(discount);
+        setGoggles(goggles);
+        setMaxEnergy(flux);
 	}
 
 	public ArmorDataAdv(String modName, String icon, String sheet, String repair, EnumRarity rarity, String unlocName, String regName, int color, boolean showInCreative) {
@@ -56,6 +71,63 @@ public class ArmorDataAdv extends ArmorData {
 
 	}
 
+    /** SPECIAL CONSTRUCTORS **/
+    public ArmorDataAdv(String modName, EnumEquipmentType type, String material, String piece, String orePrefix, int color, EnumRarity rarity, int[] discount, int flux, boolean goggles) {
+        this(modName, camelCase(material) + titleCase(piece), camelCase(material), camelCase(orePrefix) + titleCase(material), rarity, '.' + camelCase(material) + '.' + camelCase(piece), titleCase(material) + titleCase(piece), color, true, discount, goggles, flux, type);
+    }
+
+    public ArmorDataAdv(String modName, EnumEquipmentType type, String material, String piece, String orePrefix, int color, EnumRarity rarity, int discount, int flux, boolean goggles) {
+        this(modName, type, material, piece, orePrefix, color, rarity, new int[] {discount, discount, discount, discount, discount, discount}, flux, goggles);
+    }
+
+    public ArmorDataAdv(String modName, EnumEquipmentType type, String material, String piece, String orePrefix, EnumRarity rarity, int[] discount, int flux, boolean goggles) {
+        this(modName, type, material, piece, orePrefix, 0, rarity, discount, flux, goggles);
+    }
+
+    public ArmorDataAdv(String modName, EnumEquipmentType type, String material, String piece, String orePrefix, EnumRarity rarity, int discount, int flux, boolean goggles) {
+        this(modName, type, material, piece, orePrefix, 0, rarity, discount, flux, goggles);
+    }
+
+    public ArmorDataAdv(String modName, EnumEquipmentType type, String material, String piece, String orePrefix, int color, EnumRarity rarity, int[] discount, boolean goggles) {
+        this(modName, type, material, piece, orePrefix, color, rarity, discount, 0, goggles);
+    }
+
+    public ArmorDataAdv(String modName, EnumEquipmentType type, String material, String piece, String orePrefix, int color, EnumRarity rarity, int discount, boolean goggles) {
+        this(modName, type, material, piece, orePrefix, color, rarity, discount, 0, goggles);
+    }
+
+    public ArmorDataAdv(String modName, EnumEquipmentType type, String material, String piece, String orePrefix, EnumRarity rarity, int[] discount, boolean goggles) {
+        this(modName, type, material, piece, orePrefix, 0, rarity, discount, 0, goggles);
+    }
+
+    public ArmorDataAdv(String modName, EnumEquipmentType type, String material, String piece, String orePrefix, EnumRarity rarity, int discount, boolean goggles) {
+        this(modName, type, material, piece, orePrefix, 0, rarity, discount, 0, goggles);
+    }
+
+    public ArmorDataAdv(String modName, EnumEquipmentType type, String material, String piece, String orePrefix, int color, EnumRarity rarity, int[] discount) {
+        this(modName, type, material, piece, orePrefix, color, rarity, discount, 0, false);
+    }
+
+    public ArmorDataAdv(String modName, EnumEquipmentType type, String material, String piece, String orePrefix, int color, EnumRarity rarity, int discount) {
+        this(modName, type, material, piece, orePrefix, color, rarity, discount, 0, false);
+    }
+
+    public ArmorDataAdv(String modName, EnumEquipmentType type, String material, String piece, String orePrefix, EnumRarity rarity, int[] discount) {
+        this(modName, type, material, piece, orePrefix, 0, rarity, discount, 0, false);
+    }
+
+    public ArmorDataAdv(String modName, EnumEquipmentType type, String material, String piece, String orePrefix, EnumRarity rarity, int discount) {
+        this(modName, type, material, piece, orePrefix, 0, rarity, discount, 0, false);
+    }
+
+    public ArmorDataAdv(String modName, EnumEquipmentType type, String material, String piece, String orePrefix, int color, EnumRarity rarity) {
+        this(modName, type, material, piece, orePrefix, color, rarity, 0, 0, false);
+    }
+
+    public ArmorDataAdv(String modName, EnumEquipmentType type, String material, String piece, String orePrefix, EnumRarity rarity) {
+        this(modName, type, material, piece, orePrefix, 0, rarity, 0, 0, false);
+    }
+
 	/** SETTERS **/
 	public ArmorDataAdv setDiscount(int[] discount) {
 		if (discount.length == 6) {
@@ -76,7 +148,7 @@ public class ArmorDataAdv extends ArmorData {
 		return this;
 	}
 
-	public ArmorDataAdv setDiscount(EnumPrimalAspect aspect, int discount) {
+    public ArmorDataAdv setDiscount(EnumPrimalAspect aspect, int discount) {
 		this.discount[aspect.ordinal()] = discount;
 		return this;
 	}
@@ -97,6 +169,11 @@ public class ArmorDataAdv extends ArmorData {
 		maxEnergy = maxFlux;
 		return this;
 	}
+
+    public ArmorDataAdv setEquipmentType(EnumEquipmentType type) {
+        this.type = type;
+        return this;
+    }
 
 	/** GETTERS **/
 	public int[] getDiscount() {
@@ -122,5 +199,10 @@ public class ArmorDataAdv extends ArmorData {
 	public int getMaxEnergy() {
 		return maxEnergy;
 	}
+
+    public EnumEquipmentType getType() {
+        return type;
+    }
+
 
 }

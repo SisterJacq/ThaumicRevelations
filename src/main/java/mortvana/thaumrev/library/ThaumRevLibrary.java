@@ -1,5 +1,6 @@
 package mortvana.thaumrev.library;
 
+import mortvana.melteddashboard.item.entry.ArmorDataAdv;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -21,7 +22,6 @@ import mortvana.melteddashboard.item.*;
 import mortvana.melteddashboard.world.*;
 
 import mortvana.thaumrev.util.item.ItemArmorInfusableBase;
-import mortvana.melteddashboard.item.entry.ArmorData;
 
 import static mortvana.melteddashboard.lib.ColorLibrary.*;
 
@@ -831,15 +831,15 @@ public class ThaumRevLibrary {
 	public static ItemStack loveRing;							//00001
 
 	/** ARMORS **/
-	public static ItemArmorFluxGear bronzeChainHelmet;
-	public static ItemArmorFluxGear bronzeChainmail;
-	public static ItemArmorFluxGear bronzeChainGreaves;
-	public static ItemArmorFluxGear bronzeChainBoots;
+	public static FluxGearItemArmor bronzeChainHelmet;
+	public static FluxGearItemArmor bronzeChainmail;
+	public static FluxGearItemArmor bronzeChainGreaves;
+	public static FluxGearItemArmor bronzeChainBoots;
 
-	public static ItemArmorFluxGear primalGoggles;
-	public static ItemArmorFluxGear primalRobes;
-	public static ItemArmorFluxGear primalPants;
-	public static ItemArmorFluxGear primalBoots;
+	public static FluxGearItemArmor primalGoggles;
+	public static FluxGearItemArmor primalRobes;
+	public static FluxGearItemArmor primalPants;
+	public static FluxGearItemArmor primalBoots;
 
 	public static ItemArmorInfusableBase wardenclothSkullcap;
 	public static ItemArmorInfusableBase wardenclothTunic;
@@ -1310,7 +1310,10 @@ public class ThaumRevLibrary {
 	public static ArmorMaterial matWardenicComposite;
 
 	/** ARMOR DATA **/
-	public static ArmorData dataWardenclothSkullcap;
+	public static ArmorDataAdv dataWardenclothSkullcap;
+    public static ArmorDataAdv dataWardenclothTunic;
+    public static ArmorDataAdv dataWardenclothPants;
+    public static ArmorDataAdv dataWardenclothBoots;
 
 	/** BLOCK NAMES  **/
 	public static final String[] NAMES_STORAGE_ORE = { CU, ZN, SN, NI, AG, PB, LU, W, IR, BI, AS, SB, ND, OS, PD, AL };

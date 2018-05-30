@@ -1,5 +1,7 @@
 package mortvana.thaumrev.common;
 
+import mortvana.melteddashboard.item.entry.ArmorDataAdv;
+import mortvana.thaumrev.api.util.enums.EnumEquipmentType;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.EnumRarity;
@@ -143,19 +145,23 @@ public class ThaumRevContent {
 		matWardenicSteel = EnumHelper.addArmorMaterial("WARDENIC_STEEL", 30, new int[] {3, 7, 5, 2}, 20);
 		matWardenicComposite = EnumHelper.addArmorMaterial("WARDENIC_COMPOSITE", 45, new int[] {3, 7, 6, 3}, 25);
 
-		ItemArmorInfusableThaumRev.materialData.put(matPrimal, new ThaumRevMaterialDataSet().setUnlocName(".primal.", new String[] {"goggles", "robes", "pants", "boots"}).setIcon("primal", new String[] {"Goggles", "Robes", "Pants", "Boots"}).setRepair("ingotGold", "itemEnchantedFabric", "itemEnchantedFabric", "itemEnchantedFabric").setColor(0x6A3880).setTexture("primal").setRarity(EnumRarity.rare, EnumRarity.uncommon, EnumRarity.uncommon, EnumRarity.uncommon).setRegName("Primal", new String[] {"Goggles", "Robes", "Pants", "Boots"}).setNonColorized(0));
-		ItemArmorInfusableThaumRev.materialData.put(matBronzeChain, new ThaumRevMaterialDataSet().setUnlocName(".bronzeChain.", new String[] {"helmet", "mail", "greaves", "boots"}).setIcon("bronzeChain", new String[] {"Helmet", "mail", "Greaves", "Boots"}).setRepair("itemThaumicBronzeChain").setTexture("bronzeChain").setRarity(EnumRarity.uncommon).setRegName("BronzeChain", new String[] {"Helmet", "mail", "Greaves", "Boots"}));
+		//ItemArmorInfusableThaumRev.materialData.put(matPrimal, new ThaumRevMaterialDataSet().setUnlocName(".primal.", new String[] {"goggles", "robes", "pants", "boots"}).setIcon("primal", new String[] {"Goggles", "Robes", "Pants", "Boots"}).setRepair("ingotGold", "itemEnchantedFabric", "itemEnchantedFabric", "itemEnchantedFabric").setColor(0x6A3880).setTexture("primal").setRarity(EnumRarity.rare, EnumRarity.uncommon, EnumRarity.uncommon, EnumRarity.uncommon).setRegName("Primal", new String[]{"Goggles", "Robes", "Pants", "Boots"}).setNonColorized(0));
+		//ItemArmorInfusableThaumRev.materialData.put(matBronzeChain, new ThaumRevMaterialDataSet().setUnlocName(".bronzeChain.", new String[]{"helmet", "mail", "greaves", "boots"}).setIcon("bronzeChain", new String[]{"Helmet", "mail", "Greaves", "Boots"}).setRepair("itemThaumicBronzeChain").setTexture("bronzeChain").setRarity(EnumRarity.uncommon).setRegName("BronzeChain", new String[]{"Helmet", "mail", "Greaves", "Boots"}));
 
-		dataWardenclothSkullcap = new ArmorData();
+//		dataWardenclothSkullcap = new ArmorDataAdv(RESOURCE_PREFIX, "wardenclothSkullcap", "wardencloth", wardencloth, EnumRarity.uncommon, ".wardencloth.skullcap", "WardenclothSkullcap", COLOR_TEAL);
+        dataWardenclothSkullcap = new ArmorDataAdv(RESOURCE_PREFIX, EnumEquipmentType.HELMET, "wardencloth", "skullcap", "item", COLOR_TEAL, EnumRarity.uncommon, 2);
+        dataWardenclothTunic = new ArmorDataAdv(RESOURCE_PREFIX, EnumEquipmentType.CHESTPLATE, "wardencloth", "tunic", "item", COLOR_TEAL, EnumRarity.uncommon, 1);
+        dataWardenclothPants = new ArmorDataAdv(RESOURCE_PREFIX, EnumEquipmentType.PANTS, "wardencloth", "pants", "item", COLOR_TEAL, EnumRarity.uncommon, 1);
+        dataWardenclothBoots = new ArmorDataAdv(RESOURCE_PREFIX, EnumEquipmentType.BOOTS, "wardencloth", "boots", "item", COLOR_TEAL, EnumRarity.uncommon, 1);
 
-		ItemArmorInfusableThaumRev.materialData.put(matWardencloth, new ThaumRevMaterialDataSet().setUnlocName(".wardencloth.", new String[] {"skullcap", "tunic", "pants", "boots"}).setIcon("wardencloth", new String[] {"Skullcap", "Tunic", "Pants", "Boots"}).setRepair("itemWardencloth").setColor(COLOR_TEAL).setTexture("wardencloth").setRarity(EnumRarity.uncommon).setRegName("Wardencloth", new String[] {"Skullcap", "Tunic", "Pants", "Boots"}));
-		ItemArmorInfusableThaumRev.materialData.put(matWardenicChain, new ThaumRevMaterialDataSet().setUnlocName(".wardenicChain.", new String[] {"helmet", "mail", "greaves", "boots"}).setIcon("wardenicChain", new String[] {"Helmet", "mail", "Greaves", "Boots"}).setRepair("itemChainWardenBronze").setTexture("wardenicChain").setRarity(EnumRarity.uncommon).setRegName("WardenicChain", new String[] {"Helmet", "mail", "Greaves", "Boots"}));
-		ItemArmorInfusableThaumRev.materialData.put(matWardenicSteel, new ThaumRevMaterialDataSet().setUnlocName(".wardenicSteel.", new String[] {"helmet", "chestplate", "greaves", "boots"}).setIcon("wardenicSteel", new String[] {"Helmet", "Chestplate", "Greaves", "Boots"}).setRepair("itemPlateWardenicSteelRunic").setTexture("wardenSteel").setRarity(EnumRarity.uncommon).setRegName("WardenicSteel", new String[] {"Helmet", "Chestplate", "Greaves", "Boots"}));
-		ItemArmorInfusableThaumRev.materialData.put(matWardenicComposite, new ThaumRevMaterialDataSet().setUnlocName(".wardenicComposite.", new String[] {"helmet", "chestplate", "greaves", "boots"}).setIcon("wardenicComposite", new String[] {"Helmet", "Chestplate", "Greaves", "Boots"}).setRepair("itemPlateWardenicCompositeConsecrated").setTexture("wardenComposite").setRarity(EnumRarity.rare).setRegName("WardenicComposite", new String[] {"Helmet", "Chestplate", "Greaves", "Boots"}));
+		//ItemArmorInfusableThaumRev.materialData.put(matWardencloth, new ThaumRevMaterialDataSet().setUnlocName(".wardencloth.", new String[] {"skullcap", "tunic", "pants", "boots"}).setIcon("wardencloth", new String[] {"Skullcap", "Tunic", "Pants", "Boots"}).setRepair("itemWardencloth").setColor(COLOR_TEAL).setTexture("wardencloth").setRarity(EnumRarity.uncommon).setRegName("Wardencloth", new String[] {"Skullcap", "Tunic", "Pants", "Boots"}));
+		//ItemArmorInfusableThaumRev.materialData.put(matWardenicChain, new ThaumRevMaterialDataSet().setUnlocName(".wardenicChain.", new String[] {"helmet", "mail", "greaves", "boots"}).setIcon("wardenicChain", new String[] {"Helmet", "mail", "Greaves", "Boots"}).setRepair("itemChainWardenBronze").setTexture("wardenicChain").setRarity(EnumRarity.uncommon).setRegName("WardenicChain", new String[] {"Helmet", "mail", "Greaves", "Boots"}));
+		//ItemArmorInfusableThaumRev.materialData.put(matWardenicSteel, new ThaumRevMaterialDataSet().setUnlocName(".wardenicSteel.", new String[] {"helmet", "chestplate", "greaves", "boots"}).setIcon("wardenicSteel", new String[] {"Helmet", "Chestplate", "Greaves", "Boots"}).setRepair("itemPlateWardenicSteelRunic").setTexture("wardenSteel").setRarity(EnumRarity.uncommon).setRegName("WardenicSteel", new String[] {"Helmet", "Chestplate", "Greaves", "Boots"}));
+		//ItemArmorInfusableThaumRev.materialData.put(matWardenicComposite, new ThaumRevMaterialDataSet().setUnlocName(".wardenicComposite.", new String[] {"helmet", "chestplate", "greaves", "boots"}).setIcon("wardenicComposite", new String[] {"Helmet", "Chestplate", "Greaves", "Boots"}).setRepair("itemPlateWardenicCompositeConsecrated").setTexture("wardenComposite").setRarity(EnumRarity.rare).setRegName("WardenicComposite", new String[] {"Helmet", "Chestplate", "Greaves", "Boots"}));
 	}
 
 	public static void loadArmor() {
-		primalGoggles = new ItemArmorInfusableThaumRev(matPrimal, 4, 0).setData().setDiscount(5).setGoggles();
+		/*primalGoggles = new ItemArmorInfusableThaumRev(matPrimal, 4, 0).setData().setDiscount(5).setGoggles();
 		primalRobes = new ItemArmorInfusableThaumRev(matPrimal, 1, 1).setDiscount(2);
 		primalPants = new ItemArmorInfusableThaumRev(matPrimal, 2, 2).setDiscount(2);
 		primalBoots = new ItemArmorInfusableThaumRev(matPrimal, 1, 3).setDiscount(1);
@@ -163,14 +169,14 @@ public class ThaumRevContent {
 		bronzeChainHelmet = new ItemArmorInfusableThaumRev(matBronzeChain, 1, 0);
 		bronzeChainmail = new ItemArmorInfusableThaumRev(matBronzeChain, 1, 1);
 		bronzeChainGreaves = new ItemArmorInfusableThaumRev(matBronzeChain, 1, 2);
-		bronzeChainBoots = new ItemArmorInfusableThaumRev(matBronzeChain, 1, 3);
+		bronzeChainBoots = new ItemArmorInfusableThaumRev(matBronzeChain, 1, 3);*/
 
-		wardenclothSkullcap = new ItemArmorInfusableThaumRev(matWardencloth, 0, 0).setGoggles();
-		wardenclothTunic = new ItemArmorInfusableThaumRev(matWardencloth, 0, 1);
-		wardenclothPants = new ItemArmorInfusableThaumRev(matWardencloth, 0, 2);
-		wardenclothBoots = new ItemArmorInfusableThaumRev(matWardencloth, 0, 3);
+		wardenclothSkullcap = new ItemArmorInfusableThaumRev(matWardencloth, 0, 0, dataWardenclothSkullcap);
+		wardenclothTunic = new ItemArmorInfusableThaumRev(matWardencloth, 0, 1, dataWardenclothTunic);
+		wardenclothPants = new ItemArmorInfusableThaumRev(matWardencloth, 0, 2, dataWardenclothPants);
+		wardenclothBoots = new ItemArmorInfusableThaumRev(matWardencloth, 0, 3, dataWardenclothBoots);
 
-		wardenicChainHelmet = new ItemArmorInfusableThaumRev(matWardenicChain, 1, 0).setGoggles();
+		/*wardenicChainHelmet = new ItemArmorInfusableThaumRev(matWardenicChain, 1, 0).setGoggles();
 		wardenicChainmail = new ItemArmorInfusableThaumRev(matWardenicChain, 1, 1);
 		wardenicChainGreaves = new ItemArmorInfusableThaumRev(matWardenicChain, 1, 2);
 		wardenicChainBoots = new ItemArmorInfusableThaumRev(matWardenicChain, 1, 3);
@@ -183,7 +189,7 @@ public class ThaumRevContent {
 		wardenicCompositeHelmet = new ItemArmorInfusableThaumRev(matWardenicComposite, 2, 0).setGoggles();
 		wardenicCompositeChestplate = new ItemArmorInfusableThaumRev(matWardenicComposite, 2, 1);
 		wardenicCompositeGreaves = new ItemArmorInfusableThaumRev(matWardenicComposite, 2, 2);
-		wardenicCompositeBoots = new ItemArmorInfusableThaumRev(matWardenicComposite, 2, 3);
+		wardenicCompositeBoots = new ItemArmorInfusableThaumRev(matWardenicComposite, 2, 3);*/
 	}
 
 	public static void loadTools() {}

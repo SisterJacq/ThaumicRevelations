@@ -13,7 +13,7 @@ public final class ColorLibrary {
 	public static final int COLOR_AL = 0xD6D6D9; //Aluminium
 	//Si
 	//P
-	//S
+	public static final int COLOR_S = 0xE5D437; //Sulfur
 	//K
 	//Ca
 	//Sc
@@ -85,6 +85,8 @@ public final class ColorLibrary {
 	//U
 	//Np
 	//Pu
+
+	public static final int COLOR_KNO = 0xE8EFEF; //Saltpeter
 
 	public static final int COLOR_CUZN = 0xB2943D;
 	public static final int COLOR_CUSN = 0xBF813F;

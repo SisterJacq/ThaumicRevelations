@@ -24,29 +24,17 @@ import com.google.common.collect.Multimap;
 
 import mortvana.melteddashboard.item.entry.ArmorData;
 
+import mortvana.melteddashboard.item.entry.ArmorDataBase;
 import mortvana.melteddashboard.util.IStackProvider;
 import mortvana.melteddashboard.util.helpers.OreDictHelper;
 
-public abstract class FluxGearItemArmor extends ItemArmor implements IStackProvider {
+public abstract class FluxGearItemArmor extends ItemArmor {
 
-	public static final ArmorMaterial MATERIAL = EnumHelper.addArmorMaterial("FLUXGEARWRAPPER", 0, new int[] { 0, 0, 0, 0 }, 0);
-
-	public ArmorData data;
-
-	//public String sheetName;//
-	//public String icon;//
-	//public String repairMaterial = "";//
-	//public String modName;//
-	//public boolean useCustomDir = false;
-	//public String[] textures = new String[2];//
-	//public boolean showInCreative = true;
+	public ArmorDataBase data;
 	public Multimap<String, AttributeModifier> properties = HashMultimap.create();
-	//public boolean colorized = false;//
-	//public int defaultColor = 0xFFFFFF;//
-	//public EnumRarity rarity = EnumRarity.common;//
 
 	/** CONSTRUCTORS **/
-    public FluxGearItemArmor(ArmorMaterial material, int index, int type, ArmorData data) {
+    public FluxGearItemArmor(ArmorMaterial material, int index, int type, ArmorDataBase data) {
         super(material, index, type);
         this.data = data;
     }
@@ -59,7 +47,6 @@ public abstract class FluxGearItemArmor extends ItemArmor implements IStackProvi
 		this(material, 2, type, new ArmorData(icon, sheet, name));
 	}
 
-
     public FluxGearItemArmor(ArmorMaterial material, int index, int type) {
 		super(material, index, type);
 	}
@@ -67,71 +54,6 @@ public abstract class FluxGearItemArmor extends ItemArmor implements IStackProvi
 	public FluxGearItemArmor(ArmorMaterial material, int type) {
 		super(material, 2, type);
 	}
-
-	/** DATA SETTERS **/
-	public FluxGearItemArmor setModName(String modName) {
-		data.setModName(modName);
-		return this;
-	}
-
-	public FluxGearItemArmor setIcon(String icon) {
-		data.setIcon(icon);
-		return this;
-	}
-
-	public FluxGearItemArmor setSheet(String sheet) {
-		data.setSheet(sheet);
-		return this;
-	}
-
-	//public FluxGearItemArmor setCustomDir(boolean customDir) {
-	//	data.setCustomDir(customDir);
-	//	return this;
-	//}
-
-	public FluxGearItemArmor setRepairMaterial(String oredict) {
-		data.setRepair(oredict);
-		return this;
-	}
-
-	public FluxGearItemArmor setRarity(EnumRarity rarity) {
-		data.setRarity(rarity);
-		return this;
-	}
-
-	public FluxGearItemArmor setRarity(int rarity) {
-		data.setRarity(rarity);
-		return this;
-	}
-
-	public FluxGearItemArmor setUnlocName(String unlocName) {
-		data.setUnlocName(unlocName);
-		return this;
-	}
-
-	public FluxGearItemArmor setRegName(String regName) {
-		data.setRegName(regName);
-		return this;
-	}
-
-	public FluxGearItemArmor setColor(int color) {
-		data.setColor(color);
-		return this;
-	}
-
-	public FluxGearItemArmor setShowInCreative(boolean bool) {
-		data.setShowInCreative(bool);
-		return this;
-	}
-
-	/*public FluxGearItemArmor setCustomTextures(String[] textures) {
-		this.textures = textures;
-		data.setCustomDir(true);
-		if (textures.length > 3) {
-			setColorized(true);
-		}
-		return this;
-	}*/
 
 	/** DATA GETTERS **/
 	public String getModName() {
@@ -145,10 +67,6 @@ public abstract class FluxGearItemArmor extends ItemArmor implements IStackProvi
 	public String getSheet() {
 		return data.getSheet();
 	}
-
-	//public boolean getCustomDir() {
-	//	return data.getCustomDir();
-	//}
 
 	public String getRepair() {
 		return data.getRepair();
@@ -179,7 +97,6 @@ public abstract class FluxGearItemArmor extends ItemArmor implements IStackProvi
 	}
 
 	/** GETTERS **/
-
 	@Override
 	public boolean getIsRepairable(ItemStack armor, ItemStack material) {
 		return OreDictHelper.isOreNameEqual(material, data.getRepair());
@@ -188,10 +105,6 @@ public abstract class FluxGearItemArmor extends ItemArmor implements IStackProvi
 	@Override
 	public EnumRarity getRarity(ItemStack stack) {
 		return getRarity();
-	}
-
-	public ItemStack getStack() {
-		return new ItemStack(this);
 	}
 
 	@Override
@@ -319,6 +232,4 @@ public abstract class FluxGearItemArmor extends ItemArmor implements IStackProvi
 	public Collection<AttributeModifier> removeAttribute(String attribute) {
 		return properties.removeAll(attribute);
 	}
-
-
 }

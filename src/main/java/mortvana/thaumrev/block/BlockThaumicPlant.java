@@ -1,9 +1,12 @@
 package mortvana.thaumrev.block;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
@@ -80,6 +83,16 @@ public class BlockThaumicPlant extends FluxGearBlockPlant {
 	@Override
 	public String getUnlocalizedName(ItemStack stack) {
 		return "tile.fluxgear.plant." + NAMES[stack.getItemDamage()] + ".name";
+	}
+
+	@Override
+	public void getSubBlocks(Item item, CreativeTabs tab, List list) {
+		list.add(new ItemStack(item, 1, 0));
+		list.add(new ItemStack(item, 1, 1));
+		list.add(new ItemStack(item, 1, 2));
+		list.add(new ItemStack(item, 1, 5));
+		list.add(new ItemStack(item, 1, 6));
+		list.add(new ItemStack(item, 1, 7));
 	}
 
 	//TODO: Rarity

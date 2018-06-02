@@ -4,17 +4,7 @@ import net.minecraft.item.EnumRarity;
 
 import mortvana.melteddashboard.lib.ColorLibrary;
 
-public class ArmorData {
-
-	protected String modName;
-	protected String icon;
-	protected String sheet;
-	protected String repair;
-	protected EnumRarity rarity;
-	protected String unlocName;
-	protected String regName;
-	protected int color;
-	protected boolean showInCreative = true;
+public class ArmorData extends ArmorDataBase {
 
 	public ArmorData(String modName, String icon, String sheet, String repair, EnumRarity rarity, String unlocName, String regName, int color, boolean showInCreative) {
 		setModName(modName);
@@ -115,46 +105,7 @@ public class ArmorData {
 		return this;
 	}
 
-	/** GETTERS **/
-	public String getModName() {
-		return modName;
-	}
 
-	public String getIcon() {
-		return icon;
-	}
-
-	public String getSheet() {
-		return sheet;
-	}
-
-	public String getRepair() {
-		return repair;
-	}
-
-	public EnumRarity getRarity() {
-		return rarity;
-	}
-
-	public String getUnlocName() {
-		return unlocName;
-	}
-
-	public String getRegName() {
-		return regName;
-	}
-
-	public int getColor() {
-		return color;
-	}
-
-	public boolean getShowInCreative() {
-		return showInCreative;
-	}
-
-	public boolean getColorized() {
-		return color != 0xFFFFFF;
-	}
 
 
 }

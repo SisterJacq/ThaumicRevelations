@@ -34,6 +34,10 @@ public class WorldHelper {
         return z + side.offsetZ;
     }
 
+	public static int getSunlight(World world, int x, int y, int z) {
+		return !world.provider.hasNoSky ? (15 - world.skylightSubtracted) : 0;
+	}
+
     /* *=-=-=-=* Tile Entity Retrieval *=-=-=-=* */
     public static TileEntity getAdjacentTileEntity(World world, int x, int y, int z, ForgeDirection direction) {
         x = getXOnSide(x, direction);

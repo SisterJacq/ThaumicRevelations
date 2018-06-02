@@ -4,8 +4,8 @@ import net.minecraft.util.IIcon;
 
 public class ItemEntryColorizedOverlay extends ItemEntryColorized {
 
-	public String textureOverlay;
-	public IIcon iconOverlay;
+	private String textureOverlay;
+	private IIcon iconOverlay;
 
 	public ItemEntryColorizedOverlay(String name, int rarity, int maxDamage) {
 		super(name, rarity, maxDamage);
@@ -19,12 +19,14 @@ public class ItemEntryColorizedOverlay extends ItemEntryColorized {
 		super(name);
 	}
 
-	public void setTextureOverlay(String textureOverlay) {
+	public ItemEntryColorizedOverlay setTextureOverlay(String textureOverlay) {
 		this.textureOverlay = textureOverlay;
+		return this;
 	}
 
-	public void setIconOverlay(IIcon iconOverlay) {
+	public ItemEntryColorizedOverlay setIconOverlay(IIcon iconOverlay) {
 		this.iconOverlay = iconOverlay;
+		return this;
 	}
 
 	public String getTextureOverlay() {

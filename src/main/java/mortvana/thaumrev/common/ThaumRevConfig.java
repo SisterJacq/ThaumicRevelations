@@ -125,5 +125,5 @@ public class ThaumRevConfig extends ConfigBase {
 
 	public static boolean backwardsAlBronze;
 
-
+	public static boolean rightClickHarvest = true; //TODO: MDCore-ify
 }

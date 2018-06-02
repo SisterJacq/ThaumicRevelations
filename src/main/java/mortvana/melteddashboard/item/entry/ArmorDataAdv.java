@@ -5,70 +5,80 @@ import net.minecraft.item.EnumRarity;
 
 import thaumcraft.api.aspects.Aspect;
 
+import mortvana.melteddashboard.lib.ColorLibrary;
+
 import mortvana.thaumrev.util.enums.EnumPrimalAspect;
 
 import static mortvana.melteddashboard.util.helpers.StringHelper.*;
 
-public class ArmorDataAdv extends ArmorData {
-	protected int[] discount = {0, 0, 0, 0, 0, 0};
+public class ArmorDataAdv extends ArmorDataBase {
+
+	public static final int[] NO_DISCOUNT = new int[] { 0, 0, 0, 0, 0, 0 };
+
+	protected int[] discount;
 	protected boolean goggles = false;
 	protected int maxEnergy = 0;
     protected EnumEquipmentType type = EnumEquipmentType.NULL;
 
-    public ArmorDataAdv(String modName, String icon, String sheet, String repair, EnumRarity rarity, String unlocName, String regName, int color, boolean showInCreative, int[] discount, boolean goggles, int flux, EnumEquipmentType type) {
-        super(modName, icon, sheet, repair, rarity, unlocName, regName, color, showInCreative);
-        setDiscount(discount);
-        setGoggles(goggles);
-        setMaxEnergy(flux);
-        setEquipmentType(type);
-    }
-
-	public ArmorDataAdv(String modName, String icon, String sheet, String repair, EnumRarity rarity, String unlocName, String regName, int color, boolean showInCreative, int[] discount, boolean goggles, int flux) {
-		super(modName, icon, sheet, repair, rarity, unlocName, regName, color, showInCreative);
-        setDiscount(discount);
-        setGoggles(goggles);
-        setMaxEnergy(flux);
+	public ArmorDataAdv(String modName, String icon, String sheet, String repair, EnumRarity rarity, String unlocName, String regName, int color, boolean showInCreative, int[] discount, boolean goggles, int flux, EnumEquipmentType type) {
+		setModName(modName);
+		setIcon(icon);
+		setSheet(sheet);
+		setRepair(repair);
+		setRarity(rarity);
+		setUnlocName(unlocName);
+		setRegName(regName);
+		setColor(color);
+		setShowInCreative(showInCreative);
+		setDiscount(discount);
+		setGoggles(goggles);
+		setMaxEnergy(flux);
+		setEquipmentType(type);
 	}
 
+	public ArmorDataAdv(String modName, String icon, String sheet, String repair, EnumRarity rarity, String unlocName, String regName, int color, boolean showInCreative, int[] discount, boolean goggles, int flux) {
+		this(modName, icon, sheet, repair, rarity, unlocName, regName, color, showInCreative, discount, goggles, flux, EnumEquipmentType.NULL);
+	}
+
+	//Basically ArmorData when using this or lower
 	public ArmorDataAdv(String modName, String icon, String sheet, String repair, EnumRarity rarity, String unlocName, String regName, int color, boolean showInCreative) {
-		super(modName, icon, sheet, repair, rarity, unlocName, regName, color, showInCreative);
+		this(modName, icon, sheet, repair, rarity, unlocName, regName, color, showInCreative, NO_DISCOUNT, false, 0, EnumEquipmentType.NULL);
 	}
 
 	public ArmorDataAdv(String modName, String icon, String sheet, String repair, EnumRarity rarity, String unlocName, String regName, int color) {
-		super(modName, icon, sheet, repair, rarity, unlocName, regName, color);
+		this(modName, icon, sheet, repair, rarity, unlocName, regName, color, true);
 	}
 
 	public ArmorDataAdv(String modName, String icon, String sheet, String repair, int rarity, String unlocName, String regName, int color) {
-		super(modName, icon, sheet, repair, rarity, unlocName, regName, color);
+		this(modName, icon, sheet, repair, EnumRarity.values()[rarity], unlocName, regName, color, true);
 	}
 
 	public ArmorDataAdv(String modName, String icon, String sheet, String repair, EnumRarity rarity, String unlocName, String regName) {
-		super(modName, icon, sheet, repair, rarity, unlocName, regName);
+		this(modName, icon, sheet, repair, rarity, unlocName, regName, ColorLibrary.CLEAR, true);
 	}
 
 	public ArmorDataAdv(String modName, String icon, String sheet, String repair, int rarity, String unlocName, String regName) {
-		super(modName, icon, sheet, repair, rarity, unlocName, regName);
-	}
-
-	public ArmorDataAdv(String modName, String icon, String sheet, String repair, int rarity, String name) {
-		super(modName, icon, sheet, repair, rarity, name);
+		this(modName, icon, sheet, repair, EnumRarity.values()[rarity], unlocName, regName, ColorLibrary.CLEAR, true);
 	}
 
 	public ArmorDataAdv(String modName, String icon, String sheet, String repair, EnumRarity rarity, String name) {
-		super(modName, icon, sheet, repair, rarity, name);
+		this(modName, icon, sheet, repair, rarity, name, name, ColorLibrary.CLEAR, true);
+	}
+
+	public ArmorDataAdv(String modName, String icon, String sheet, String repair, int rarity, String name) {
+		this(modName, icon, sheet, repair, EnumRarity.values()[rarity], name, name, ColorLibrary.CLEAR, true);
 	}
 
 	public ArmorDataAdv(String modName, String icon, String sheet, String repair, String name) {
-		super(modName, icon, sheet, repair, name);
+		this(modName, icon, sheet, repair, EnumRarity.common, name, name, ColorLibrary.CLEAR, true);
 	}
 
 	public ArmorDataAdv(String modName, String icon, String sheet, String name) {
-		super(modName, icon, sheet, name);
+		this(modName, icon, sheet, "", EnumRarity.common, name, name, ColorLibrary.CLEAR, true);
 	}
 
 	public ArmorDataAdv(String icon, String sheet, String name) {
-		super(icon, sheet, name);
-
+		this("fluxgear", icon, sheet, "", EnumRarity.common, name, name, ColorLibrary.CLEAR, true);
 	}
 
     /** SPECIAL CONSTRUCTORS **/
@@ -129,6 +139,56 @@ public class ArmorDataAdv extends ArmorData {
     }
 
 	/** SETTERS **/
+	public ArmorDataAdv setModName(String modName) {
+		this.modName = modName;
+		return this;
+	}
+
+	public ArmorDataAdv setIcon(String icon) {
+		this.icon = icon;
+		return this;
+	}
+
+	public ArmorDataAdv setSheet(String texture) {
+		this.sheet = texture;
+		return this;
+	}
+
+	public ArmorDataAdv setRepair(String repair) {
+		this.repair = repair;
+		return this;
+	}
+
+	public ArmorDataAdv setRarity(EnumRarity rarity) {
+		this.rarity = rarity;
+		return this;
+	}
+
+	public ArmorDataAdv setRarity(int rarity) {
+		this.rarity = EnumRarity.values()[rarity];
+		return this;
+	}
+
+	public ArmorDataAdv setUnlocName(String unlocName) {
+		this.unlocName = unlocName;
+		return this;
+	}
+
+	public ArmorDataAdv setRegName(String regName) {
+		this.regName = regName;
+		return this;
+	}
+
+	public ArmorDataAdv setColor(int color) {
+		this.color = color;
+		return this;
+	}
+
+	public ArmorDataAdv setShowInCreative(boolean bool) {
+		showInCreative = bool;
+		return this;
+	}
+
 	public ArmorDataAdv setDiscount(int[] discount) {
 		if (discount.length == 6) {
 			this.discount = discount;
@@ -203,6 +263,5 @@ public class ArmorDataAdv extends ArmorData {
     public EnumEquipmentType getType() {
         return type;
     }
-
 
 }

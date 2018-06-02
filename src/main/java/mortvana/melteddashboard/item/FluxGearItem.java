@@ -457,6 +457,9 @@ public class FluxGearItem extends Item {
 					if (entry instanceof ItemEntryColorized) {
 						icon = GrayscaleEntry.getIcon(((ItemEntryColorized) entry).getTemplate());
 						entry.setIcon(icon != null ? icon : register.registerIcon(getIconFromMeta(meta)));
+						if (entry instanceof ItemEntryColorizedOverlay) {
+							((ItemEntryColorizedOverlay) entry).setIconOverlay(register.registerIcon(modName + ":" + folder + (folder == null ? "" : "/") + ((ItemEntryColorizedOverlay) entry).getTextureOverlay()));
+						}
 					/*} else if (entry instanceof ItemEntryGradient) { //TODO: Re-enable gradients, when I get them working. Now that I have a working colorizer, it is low priority.
 						icon = map.getTextureExtry(getIconFromMeta(meta));
 
@@ -488,7 +491,14 @@ public class FluxGearItem extends Item {
     @Override
     public IIcon getIcon(ItemStack stack, int renderPass) {
 		int meta = stack.getItemDamage();
-        return itemList.contains(meta) ? itemMap.get(meta).getIcon() : nullIcon;
+		if (itemList.contains(meta)) {
+			if (renderPass == 0 || renderPass == 1) {
+				return itemMap.get(meta).getIcon();
+			} else if (renderPass == 2 && itemMap.get(meta) instanceof ItemEntryColorizedOverlay) {
+				return ((ItemEntryColorizedOverlay) itemMap.get(meta)).getIconOverlay();
+			}
+		}
+		return nullIcon;
     }
 
     @Override

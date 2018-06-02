@@ -7,21 +7,42 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+
+import net.minecraftforge.common.EnumPlantType;
+import net.minecraftforge.common.IPlantable;
+import net.minecraftforge.common.util.ForgeDirection;
 
 import mortvana.melteddashboard.item.FluxGearItemInteractive;
 import mortvana.melteddashboard.lib.StringLibrary;
 
+import mortvana.thaumrev.common.ThaumicRevelations;
 import mortvana.thaumrev.entity.EntitySingularity;
 
 import static mortvana.thaumrev.library.ThaumRevLibrary.*;
 
-public class ItemThaumRev extends FluxGearItemInteractive {
+public class ItemThaumRev extends FluxGearItemInteractive implements IPlantable {
 
 	public ItemThaumRev() {
 		super(StringLibrary.RESOURCE_PREFIX, generalTab);
 		setFolder("material");
 		setUnlocalizedName("material");
+	}
+
+	@Override
+	public boolean onItemUse (ItemStack stack, EntityPlayer player, World world, int xPos, int yPos, int zPos, int side, float xClick, float yClick, float zClick) {
+		int meta = stack.getItemDamage();
+		if (isSeed(meta) && side == 1 && player.canPlayerEdit(xPos, yPos, zPos, side, stack) && player.canPlayerEdit(xPos, yPos + 1, zPos, side, stack)) {
+			Block soil =  world.getBlock(xPos, yPos, zPos);
+
+			if (soil != null && soil.canSustainPlant(world, xPos, yPos, zPos, ForgeDirection.UP, this) && world.isAirBlock(xPos, yPos + 1, zPos)) {
+				world.setBlock(xPos, yPos + 1, zPos, getCropBlock(meta), getCropMeta(meta), 3);
+				stack.stackSize--;
+				return true;
+			}
+		}
+		return false;
 	}
 
 	@Override
@@ -64,5 +85,35 @@ public class ItemThaumRev extends FluxGearItemInteractive {
 			}
 		}
 		return false;
+	}
+
+	public static boolean isSeed(int meta) {
+		return meta == 951 || meta == 952;//meta <= 950 && meta >= 957;
+	}
+
+	public static Block getCropBlock(int meta) {
+		return blockMundaneCrop;
+	}
+
+	public static int getCropMeta(int meta) {
+		return meta == 952 ? 8 : 0;
+	}
+
+	//TODO
+	@Override
+	public EnumPlantType getPlantType(IBlockAccess world, int x, int y, int z) {
+		return EnumPlantType.Crop;
+	}
+
+	//TODO
+	@Override
+	public Block getPlant(IBlockAccess world, int x, int y, int z) {
+		return null;
+	}
+
+	//TODO
+	@Override
+	public int getPlantMetadata(IBlockAccess world, int x, int y, int z) {
+		return 0;
 	}
 }

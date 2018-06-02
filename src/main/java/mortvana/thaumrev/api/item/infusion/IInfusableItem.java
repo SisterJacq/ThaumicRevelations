@@ -4,8 +4,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import cpw.mods.fml.common.Optional;
 
-import thaumcraft.api.IGoggles;
-import thaumcraft.api.IVisDiscountGear;
+import thaumcraft.api.*;
 import thaumcraft.api.nodes.IRevealer;
 
 import cofh.api.energy.IEnergyContainerItem;
@@ -21,7 +20,7 @@ import mortvana.thaumrev.api.util.enums.EnumEquipmentType;
  */
 
 @Optional.InterfaceList(@Optional.Interface(modid = "CoFHAPI|energy", iface = "cofh.api.energy.IEnergyContainerItem"))
-public interface IInfusableItem extends IContainerItem, IGoggles, IRevealer, IVisDiscountGear, IEnergyContainerItem {
+public interface IInfusableItem extends IContainerItem, IGoggles, IRevealer, IVisDiscountGear, IRunicArmor, IEnergyContainerItem {
 
 	/**
 	 *  Sets both the number of locked slots and unlocked slots on a given item. May overwrite any already entered data.
@@ -54,4 +53,5 @@ public interface IInfusableItem extends IContainerItem, IGoggles, IRevealer, IVi
 
 	void clearInfusionTag(ItemStack stack);
 
+	void setDefaultInfusions(ItemStack stack);
 }

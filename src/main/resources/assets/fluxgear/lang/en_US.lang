@@ -138,22 +138,23 @@ tile.fluxgear.stoneSlab.wardenicQuartz.name=Wardenic Quartz Slab
 
 #ITEMS
 #General
-item.fluxgear.material.cotton.name=Cotton
-item.fluxgear.material.cottonFiber.name=Cotton Fiber
-item.fluxgear.material.cottonFabric.name=Cotton Fabric
-item.fluxgear.material.cottonTreated.name=Treated Cotton Fabric
-item.fluxgear.material.cottonEnchanted.name=Enchanted Cotton Fabric
-item.fluxgear.material.thistleLeaf.name=Thistle Leaf
-item.fluxgear.material.thistleFlower.name=Thistle Flower
+item.fluxgear.material.itemCotton.name=Cotton
+item.fluxgear.material.itemCottonFiber.name=Cotton Fiber
+item.fluxgear.material.itemCottonFabric.name=Cotton Fabric
+item.fluxgear.material.itemCottonTreated.name=Treated Cotton Fabric
+item.fluxgear.material.itemCottonEnchanted.name=Enchanted Cotton Fabric
+item.fluxgear.material.itemThistleLeaf.name=Thistle Leaf
+item.fluxgear.material.itemThistleFlower.name=Thistle Flower
 
-item.fluxgear.material.arcaneSingularity.name=Arcane Singularity
-item.fluxgear.material.stabilizedSingularity.name=Stabilized Singularity
-item.fluxgear.material.animatedPiston.name=Animated Piston
+item.fluxgear.material.itemArcaneSingularity.name=Arcane Singularity
+item.fluxgear.material.itemStabilizedSingularity.name=Stabilized Singularity
+item.fluxgear.material.itemAnimatedPiston.name=Animated Piston
+item.fluxgear.material.itemSoulFragment.name=Soul Fragment
 
-item.fluxgear.material.aspectOrbReceptor.name=Aspect Orb Receptor
+item.fluxgear.material.itemAspectOrbReceptor.name=Aspect Orb Receptor
 
-item.fluxgear.material.eldritchCog.name=Eldritch Cog
-item.fluxgear.material.eldritchKeystone.name=Eldritch Keystone
+item.fluxgear.material.itemEldritchCog.name=Eldritch Cog
+item.fluxgear.material.itemEldritchKeystone.name=Eldritch Keystone
 
 item.fluxgear.material.shaftGreatwood.name=Greatwood Shaft
 item.fluxgear.material.plankEnchantedGreatwood.name=Enchanted Greatwood Plank
@@ -168,49 +169,51 @@ item.fluxgear.material.shaftConsecratedSilverwood.name=Consecrated Densified Sil
 
 item.fluxgear.material.chainThaumicBronze.name=Thaumic Bronze Chain
 
-item.fluxgear.material.seedExcubitura.name=Excubitura Seed
-item.fluxgear.material.seedCotton.name=Cotton Seed
-item.fluxgear.material.seedThistle.name=Thistle Seed
-item.fluxgear.material.seedShimmerleaf.name=Shimmerleaf Seed
-item.fluxgear.material.seedCinderpearl.name=Cinderpearl Seed
-item.fluxgear.material.seedShiverpearl.name=Shiverpearl Seed
-item.fluxgear.material.seedStormpearl.name=Stormpearl Seed
-item.fluxgear.material.seedStonepearl.name=Stonepearl Seed
+item.fluxgear.material.seedExcubitura.name=Excubitura Seeds
+item.fluxgear.material.seedCotton.name=Cotton Seeds
+item.fluxgear.material.seedThistle.name=Thistle Seeds
+item.fluxgear.material.seedShimmerleaf.name=Shimmerleaf Seeds
+item.fluxgear.material.seedCinderpearl.name=Cinderpearl Seeds
+item.fluxgear.material.seedShiverpearl.name=Shiverpearl Seeds
+item.fluxgear.material.seedStormpearl.name=Stormpearl Seeds
+item.fluxgear.material.seedStonepearl.name=Stonepearl Seeds
 
 #Wardenic
-item.fluxgear.material.excubituraPetal.name=Excubitura Petal
-item.fluxgear.material.excubituraPaste.name=Excubitura Paste
-item.fluxgear.material.excubituraFabric.name=Excubitura-Infused Cloth
-item.fluxgear.material.wardencloth.name=Wardencloth
+item.fluxgear.material.itemExcubituraPetal.name=Excubitura Petal
+item.fluxgear.material.itemExcubituraPaste.name=Excubitura Paste
+item.fluxgear.material.itemExcubituraFabric.name=Excubitura-Infused Cloth
+item.fluxgear.material.itemWardencloth.name=Wardencloth
 
-item.fluxgear.material.excubituraOilUnproc.name=Excubitura Petal Slurry
-item.fluxgear.material.excubituraOil.name=Excubitura Petal Oil
-item.fluxgear.material.wardenicBronzeChain.name=Wardenic Bronze Chain
-item.fluxgear.material.primalBronzeChain.name=Primal Bronze Chain
-item.fluxgear.material.wardenicBronzePlate.name=Wardenic Bronze Plate
+item.fluxgear.material.itemExcubituraOilRaw.name=Excubitura Petal Slurry
+item.fluxgear.material.itemExcubituraOil.name=Excubitura Petal Oil
+item.fluxgear.material.chainWardenicBronze.name=Wardenic Bronze Chain
+item.fluxgear.material.chainPrimalBronze.name=Primal Bronze Chain
 
-item.fluxgear.material.excubituraOilPure.name=Purified Excubitura Petal Oil
-item.fluxgear.material.wardenicSteelChain.name=Wardenic Steel Chain
-item.fluxgear.material.wardenicSteelChainOiled.name=Oiled Wardenic Steel Chain
-item.fluxgear.material.wardenicSteelPlate.name=Wardenic Steel Plate
-item.fluxgear.material.detailedSteelPlate.name=Detailed Wardenic Steel Plate
-item.fluxgear.material.runicSteelPlate.name=Runic Wardenic Steel Plate
-item.fluxgear.material.consecratedSteelPlate.name=Consecrated Wardenic Steel Plate
+item.fluxgear.material.itemExcubituraOilPure.name=Purified Excubitura Petal Oil
+item.fluxgear.material.chainWardenicSteel.name=Wardenic Steel Chain
+item.fluxgear.material.chainWardenicSteelOiled.name=Oiled Wardenic Steel Chain
+item.fluxgear.material.plateWardenicSteelDetailed.name=Detailed Wardenic Steel Plate
+item.fluxgear.material.plateWardenicSteelRunic.name=Runic Wardenic Steel Plate
+item.fluxgear.material.plateWardenicSteelConsecrated.name=Consecrated Wardenic Steel Plate
 
-item.fluxgear.material.wardenicQuartzInf.name=Infused Wardenic Quartz
-item.fluxgear.material.dustWardenicQuartz.name=Wardenic Quartz Dust
-item.fluxgear.material.dustWardenicCrystal.name=Crushed Wardenic Crystal
-item.fluxgear.material.binderWardenic.name=Wardenic Binding Compound
-item.fluxgear.material.ingotWardenicCompositeRaw.name=Raw Wardenic Composite Ingot
+item.fluxgear.material.gemWardenicQuartzInfused.name=Infused Wardenic Quartz
+item.fluxgear.material.plateWardenicCompositeInfused.name=Infused Wardenic Composite Plate
+item.fluxgear.material.plateWardenicCompositeFitted.name=Fitted Wardenic Composite Plate
+item.fluxgear.material.plateWardenicCompositeDetailed.name=Detailed Wardenic Composite Plate
+item.fluxgear.material.plateWardenicCompositeRunic.name=Runic Wardenic Composite Plate
+item.fluxgear.material.plateWardenicCompositeConsecrated.name=Consecrated Wardenic Composite Plate
+item.fluxgear.material.plateWardenicCompositePrimal.name=Primal Wardenic Composite Plate
 
-item.fluxgear.material.wardenicCompositePlate.name=Wardenic Composite Plate
-item.fluxgear.material.fittedCompositePlate.name=Fitted Wardenic Composite Plate
-item.fluxgear.material.detailedCompositePlate.name=Detailed Wardenic Composite Plate
-item.fluxgear.material.runicCompositePlate.name=Runic Wardenic Composite Plate
-item.fluxgear.material.consecratedCompositePlate.name=Consecrated Wardenic Composite Plate
-item.fluxgear.material.primalCompositePlate.name=Primal Wardenic Composite Plate
+item.fluxgear.material.itemEssenceOfAwakening.name=Essence of Awakening
 
 item.fluxgear.material.itemWardenicHardener.name=Wardenic Hardening Compound
+
+#Magneoturgic
+item.fluxgear.material.itemRedstoneFabric.name=Redstone-Infused Fabric
+item.fluxgear.material.itemRedcloth.name=Redcloth
+item.fluxgear.material.itemRedclothSocketed.name=Socketed Redcloth
+
+item.fluxgear.material.itemCapacitorCoreArcaneRedsolder.name=Arcane Redsolder Capacitor Core
 
 #Ingots
 item.fluxgear.material.ingotCopper.name=Copper Ingot
@@ -580,15 +583,23 @@ item.fluxgear.material.plateOsmiumLutetium.name=Osmium-Lutetium Alloy Plate
 #Raw Ingots
 item.fluxgear.material.ingotBrassRaw.name=Raw Brass Ingot
 item.fluxgear.material.ingotBronzeRaw.name=Raw Bronze Ingot
+item.fluxgear.material.ingotArsenicalBronzeRaw.name=Raw Arsenical Bronze Ingot
+item.fluxgear.material.ingotAntimonialBronzeRaw.name=Raw Antimonial Bronze Ingot
 item.fluxgear.material.ingotBismuthBronzeRaw.name=Raw Bismuth Bronze Ingot
 item.fluxgear.material.ingotMithrilRaw.name=Raw Mithril Ingot
 item.fluxgear.material.ingotAluminiumBronzeRaw.name=Raw Aluminium Bronze Ingot
 item.fluxgear.material.ingotCupronickelRaw.name=Raw Cupronickel Ingot
-item.fluxgear.material.ingotTinkersBronzeRaw.name=Raw Riftish Bronze Ingot
+item.fluxgear.material.ingotRiftishBronzeRaw.name=Raw Riftish Bronze Ingot
 item.fluxgear.material.ingotConstantanRaw.name=Raw Constantan Ingot
 item.fluxgear.material.ingotInvarRaw.name=Raw Invar Ingot
 item.fluxgear.material.ingotElectrumRaw.name=Raw Electrum Ingot
 item.fluxgear.material.ingotWardenicMetalRaw.name=Raw Wardenic Metal Ingot
+item.fluxgear.material.ingotDullRedsolderRaw.name=Raw Dull Redsolder
+
+item.fluxgear.material.ingotWardenicCompositeRaw.name=Raw Wardenic Composite Ingot
+item.fluxgear.material.ingotMagneoturgicCompositeRaw.name=Raw Magneoturgic Composite Ingot
+
+item.fluxgear.material.blendFluonicPyroptase.name=Fluonic Pyroptase Blend
 
 item.fluxgear.material.ingotThaumicBronzeRaw.name=Raw Thaumic Bronze Ingot
 item.fluxgear.material.ingotOsmiumLutetiumRaw.name=Raw Osmium-Lutetium Alloy Ingot
@@ -628,11 +639,50 @@ item.fluxgear.material.dustIron.name=Iron Dust
 item.fluxgear.material.dustGold.name=Gold Dust
 item.fluxgear.material.dustThaumium.name=Thaumium Dust
 item.fluxgear.material.dustVoid.name=Voidmetal Dust
+item.fluxgear.material.dustSulfur.name=Sulfur Dust
+item.fluxgear.material.dustSaltpeter.name=Saltpeter Dust
+####Salis
+item.fluxgear.material.dustPrimalEssence.name=Primal Essence
+
+item.fluxgear.material.dustWardenicBindingCompound.name=Wardenic Binding Compound
+
+item.fluxgear.material.dustRedstoneReduced.name=Reduced Redstone Dust
+item.fluxgear.material.dustRedstonePurified.name=Purified Redstone Dust
+item.fluxgear.material.dustRedstoneEnriched.name=Enriched Redstone Dust
+item.fluxgear.material.dustContainmentGlass.name=Containment Glass Dust
+item.fluxgear.material.dustMagneoturgicTreatingCompound.name=Magneoturgic Treating Compound
+item.fluxgear.material.dustPiezomagneticCompound.name=Piezomagnetic Compound
+item.fluxgear.material.dustGeomagneticCompound.name=Geomagnetic Compound
+item.fluxgear.material.dustMagneoturgicConversionCompound.name=Magneoturgic Conversion Compound
+item.fluxgear.material.dustResonanceContainmentCompound.name=Resonance Containment Compound
 
 #Other Tiny Dusts
+item.fluxgear.material.dustTinyAer.name=Pinch of Crushed Air Shard
+item.fluxgear.material.dustTinyIgnis.name=Pinch of Crushed Fire Shard
+item.fluxgear.material.dustTinyAqua.name=Pinch of Crushed Water Shard
+item.fluxgear.material.dustTinyTerra.name=Pinch of Crushed Earth Shard
+item.fluxgear.material.dustTinyOrdo.name=Pinch of Crushed Order Shard
+item.fluxgear.material.dustTinyPerditio.name=Pinch of Crushed Entropy Shard
+item.fluxgear.material.dustTinyIron.name=Tiny Iron Dust
+item.fluxgear.material.dustTinyGold.name=Tiny Gold Dust
+item.fluxgear.material.dustTinyThaumium.name=Tiny Thaumium Dust
+item.fluxgear.material.dustTinyVoid.name=Tiny Voidmetal Dust
+item.fluxgear.material.dustTinySulfur.name=Tiny Sulfur Dust
+item.fluxgear.material.dustTinySaltpeter.name=Tiny Saltpeter Dust
 item.fluxgear.material.dustTinySalisMundus.name=Pinch of Salis Mundus
+item.fluxgear.material.dustTinyPrimalEssence.name=Pinch of Primal Essence
 
+item.fluxgear.material.dustTinyWardenicBindingCompound.name=Pinch of Wardenic Binding Compound
 
+item.fluxgear.material.dustTinyRedstoneReduced.name=Tiny Reduced Redstone Dust
+item.fluxgear.material.dustTinyRedstonePurified.name=Tiny Purified Redstone Dust
+item.fluxgear.material.dustTinyRedstoneEnriched.name=Tiny Enriched Redstone Dust
+item.fluxgear.material.dustTinyContainmentGlass.name=Tiny Containment Glass Dust
+item.fluxgear.material.dustTinyMagneoturgicTreatingCompound.name=Pinch of Magneoturgic Treating Compound
+item.fluxgear.material.dustTinyPiezomagneticCompound.name=Pinch of Piezomagnetic Compound
+item.fluxgear.material.dustTinyGeomagneticCompound.name=Pinch of Geomagnetic Compound
+item.fluxgear.material.dustTinyMagneoturgicConversionCompound.name=Pinch of Magneoturgic Conversion Compound
+item.fluxgear.material.dustTinyResonanceContainmentCompound.name=Pinch of Resonance Containment Compound
 
 
 #Others
@@ -640,16 +690,21 @@ item.fluxgear.material.tempAluDense.name=Dense Alumentum [Will be removed in v0.
 
 #EQUIPMENT
 #Baubles
-item.fluxgear.baubles.amuletWarden=Warden's Amulet
-item.fluxgear.baubles.ringLove=Ring of Love
+item.fluxgear.baubles.amuletWarden.name=Warden's Amulet
+item.fluxgear.baubles.ringLove.name=Ring of Love
 
 #Armor
-item.fluxgear.primal.goggles.name=Primal Goggles
+item.fluxgear.mithril.goggles.name=Mithril Goggles of Revealing
+item.fluxgear.cotton.robes.name=Cotton Thaumaturge's Robe
+item.fluxgear.cotton.pants.name=Cotton Thaumaturge's Pants
+item.fluxgear.cotton.boots.name=Cotton Thaumaturge's Boots
+
+item.fluxgear.primal.goggles.name=Primal Goggles of Revealing
 item.fluxgear.primal.robes.name=Primal Robe
 item.fluxgear.primal.pants.name=Primal Pants
 item.fluxgear.primal.boots.name=Primal Boots
 
-item.fluxgear.bronzeChain.helmet.name=Thaumic Bronze Chain Helmet
+item.fluxgear.bronzeChain.coif.name=Thaumic Bronze Chain Coif
 item.fluxgear.bronzeChain.mail.name=Thaumic Bronze Mail
 item.fluxgear.bronzeChain.greaves.name=Thaumic Bronze Chain Greaves
 item.fluxgear.bronzeChain.boots.name=Thaumic Bronze Chain Boots
@@ -659,7 +714,7 @@ item.fluxgear.wardencloth.tunic.name=Wardencloth Tunic
 item.fluxgear.wardencloth.pants.name=Wardencloth Pants
 item.fluxgear.wardencloth.boots.name=Wardencloth Boots
 
-item.fluxgear.wardenicChain.helmet.name=Wardenic Bronze Chain Helmet
+item.fluxgear.wardenicChain.coif.name=Wardenic Bronze Chain Coif
 item.fluxgear.wardenicChain.mail.name=Wardenic Bronze Mail
 item.fluxgear.wardenicChain.greaves.name=Wardenic Bronze Chain Greaves
 item.fluxgear.wardenicChain.boots.name=Wardenic Bronze Chain Boots
@@ -673,6 +728,16 @@ item.fluxgear.wardenicComposite.helmet.name=Wardenic Composite Plate Helmet
 item.fluxgear.wardenicComposite.chestplate.name=Wardenic Composite Chestplate
 item.fluxgear.wardenicComposite.greaves.name=Wardenic Composite Plate Greaves
 item.fluxgear.wardenicComposite.boots.name=Wardenic Composite Plate Boots
+
+item.fluxgear.awakenedWardenicComposite.helmet.name=Awakened Wardenic Composite Plate Helmet
+item.fluxgear.awakenedWardenicComposite.chestplate.name=Awakened Wardenic Composite Chestplate
+item.fluxgear.awakenedWardenicComposite.greaves.name=Awakened Wardenic Composite Plate Greaves
+item.fluxgear.awakenedWardenicComposite.boots.name=Awakened Wardenic Composite Plate Boots
+
+item.fluxgear.fluxRobes.goggles.name=Thermal Goggles of Revealing
+item.fluxgear.fluxRobes.robes.name=Flux Robe Waistcoat
+item.fluxgear.fluxRobes.pants.name=Flux Robe Pants
+item.fluxgear.fluxRobes.boots.name=Flux Robe Loafers
 
 #Other
 item.fluxgear.focusPurity.name=Wand Focus: Purity
@@ -730,14 +795,14 @@ fluxgear.name.RUNIC_INFUSER=Runic Infuser
 fluxgear.name.ROBES_PRIMAL=Primal Robes
 fluxgear.text.ROBES_PRIMAL=[TRv] Mending and Stylish
 
-fluxgear.name.THAUMIC_WARDEN=Thaumic Wardenry
-fluxgear.text.THAUMIC_WARDEN=[TRv]
+fluxgear.name.THAUMIC_WARDEN=Excubiturgy
+fluxgear.text.THAUMIC_WARDEN=[TRv] Thaumic Wardenry!
 fluxgear.page.THAUMIC_WARDEN.0=When studying a strange purple rose-like flower you remembered stories from your youth, stories of a mythical order of thaumaturges, descended from the legendary Abysswalkers, who fought the Eldritch and protected their homeland. The most orthodox branch of the order, the Orthodox Thaumic Wardens are said to have used the essential oils from the petals of a nearly identical flower which grew in large amounts in the highlands near their headquarters at Fort Rose to make their legendary equipment.<BR>While you cannot be completely sure yet, you believe this flower to be the mythical Excubitura used by the Thaumic Wardens. It seems that like
 fluxgear.page.THAUMIC_WARDEN.1=the Excubitura Rose of legend, it has been mutated by thaumic energies, and the stigma is undoubtedly covered by beautiful, albeit tiny, crystals. Another reason you believe it to be the Excubitura Rose is the vibrant color and unusual nature about the petals.<BR>Now, if only you could figure out a way to harness the hidden power of this flower...
 
 fluxgear.name.EXCUBITURA_PASTE=Excubitura Paste
 fluxgear.text.EXCUBITURA_PASTE=[TRv] The start of great things
-fluxgear.page.EXCUBITURA_PASTE.0=After finding what you now know to be an Excubitura Rose, you started searching for any mention on how the Thaumic Wardens created their armor of exquisite quality. References were lacking, so it took time to figure out, but in the few texts you could find, they all agreed on one thing, the first step in processing the Excubitura's petals. By simply grinding the petals, the resulting paste is said to have been used to treat the armor. However, a few of your sources mention the paste only affecting cloth, so you'll have to figure out how to get around that.
+fluxgear.page.EXCUBITURA_PASTE.0=After finding what you now know to be an Excubitura Rose, you started searching for any mention on how the Thaumic Wardens created their armor of exquisite quality. References were lacking, so it took time to figure out, but in the few texts you could find, they all agreed on one thing, the first step in processing the Excubitura's petals. By simply grinding the petals, then adding a Pinch of Salis Mundus, a paste is created, which is said to have been used to treat the armor. However, a few of your sources mention the paste only affecting cloth, so you'll have to figure out how to get around that for anything metallic.
 
 fluxgear.name.WARDENCLOTH=Wardencloth
 fluxgear.text.WARDENCLOTH=[TRv] Durable and Wardenic

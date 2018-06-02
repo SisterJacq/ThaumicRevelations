@@ -14,7 +14,7 @@ import thaumcraft.api.research.ResearchPage;
 
 public class FluxGearResearchItem extends ResearchItem {
 
-	public String textPrefix = "thaumrev";
+	public String textPrefix = "fluxgear";
 
 	public FluxGearResearchItem(String key, String category, AspectList tags, int col, int row, int complex, ResourceLocation icon) {
 		super(key, category, tags, col, row, complex, icon);
@@ -43,7 +43,7 @@ public class FluxGearResearchItem extends ResearchItem {
 	public ResearchItem setPages(ResearchPage... pages) {
 		for (ResearchPage page : pages) {
 			if (page.type == ResearchPage.PageType.TEXT) {
-				page.text = "thaumrev.page." + key + "." + page.text;
+				page.text = textPrefix + ".page." + key + "." + page.text;
 			}
 		}
 		return super.setPages(pages);

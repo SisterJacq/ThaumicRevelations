@@ -39,7 +39,8 @@ public class StringLibrary {
 	public static final String ORDO = "Ordo";
 	public static final String PERDITIO = "Perditio";
 
-	//Elemental Metals
+	//Elemental Solids
+	public static final String S = "Sulfur"; //We use the international spelling, because we are sane. We are the Aluminati.
 	public static final String AL = "Aluminium"; //We use the international spelling, because we are sane. We are the Aluminati.
 	public static final String FE = "Iron";
 	public static final String NI = "Nickel";
@@ -59,6 +60,8 @@ public class StringLibrary {
 	public static final String AU = "Gold";
 	public static final String PB = "Lead";
 	public static final String BI = "Bismuth";
+
+	public static final String KNO = "Saltpeter";
 
 	public static final String CUZN = "Brass";
 	public static final String CUSN = "Bronze";

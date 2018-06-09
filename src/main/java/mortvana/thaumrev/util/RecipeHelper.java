@@ -21,7 +21,7 @@ import thaumcraft.common.lib.utils.Utils;
 import mortvana.melteddashboard.util.IStackProvider;
 import mortvana.melteddashboard.util.helpers.ItemHelper;
 
-import static mortvana.melteddashboard.lib.ThermalLibrary.*;
+import static mortvana.melteddashboard.util.libraries.ThermalLibrary.*;
 import static mortvana.melteddashboard.util.helpers.ItemHelper.cloneStack;
 
 public class RecipeHelper {

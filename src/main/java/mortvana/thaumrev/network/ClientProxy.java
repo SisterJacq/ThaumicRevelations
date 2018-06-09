@@ -2,10 +2,6 @@ package mortvana.thaumrev.network;
 
 import cpw.mods.fml.client.registry.RenderingRegistry;
 
-import net.minecraftforge.common.MinecraftForge;
-
-import mortvana.melteddashboard.client.ClientEventHandler;
-
 import mortvana.thaumrev.entity.EntityPurity;
 import mortvana.thaumrev.library.ThaumRevLibrary;
 import mortvana.thaumrev.render.RenderPurity;

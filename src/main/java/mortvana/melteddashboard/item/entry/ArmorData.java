@@ -2,7 +2,7 @@ package mortvana.melteddashboard.item.entry;
 
 import net.minecraft.item.EnumRarity;
 
-import mortvana.melteddashboard.lib.ColorLibrary;
+import mortvana.melteddashboard.util.libraries.ColorLibrary;
 
 public class ArmorData extends ArmorDataBase {
 

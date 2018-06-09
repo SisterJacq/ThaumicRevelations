@@ -12,8 +12,8 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-import mortvana.melteddashboard.lib.ColorLibrary;
-import mortvana.melteddashboard.lib.StringLibrary;
+import mortvana.melteddashboard.util.libraries.ColorLibrary;
+import mortvana.melteddashboard.util.libraries.StringLibrary;
 import mortvana.melteddashboard.util.helpers.StringHelper;
 import mortvana.melteddashboard.util.helpers.TextureHelper;
 

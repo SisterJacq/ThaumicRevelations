@@ -17,11 +17,11 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 import mortvana.melteddashboard.block.FluxGearBlockSlab;
-import mortvana.melteddashboard.lib.StringLibrary;
+import mortvana.melteddashboard.util.libraries.StringLibrary;
 
-import static mortvana.melteddashboard.lib.ColorLibrary.CLEAR;
-import static mortvana.melteddashboard.lib.ColorLibrary.COLOR_FLUX;
-import static mortvana.melteddashboard.lib.ColorLibrary.COLOR_WQRZ;
+import static mortvana.melteddashboard.util.libraries.ColorLibrary.CLEAR;
+import static mortvana.melteddashboard.util.libraries.ColorLibrary.COLOR_FLUX;
+import static mortvana.melteddashboard.util.libraries.ColorLibrary.COLOR_WQRZ;
 import static mortvana.thaumrev.library.ThaumRevLibrary.*;
 
 public class BlockStoneSlab extends FluxGearBlockSlab {

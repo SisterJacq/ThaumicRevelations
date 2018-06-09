@@ -5,7 +5,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
 import mortvana.melteddashboard.intermod.baubles.item.FluxGearItemBauble;
-import mortvana.melteddashboard.lib.StringLibrary;
+import mortvana.melteddashboard.util.libraries.StringLibrary;
 
 import mortvana.thaumrev.library.ThaumRevLibrary;
 

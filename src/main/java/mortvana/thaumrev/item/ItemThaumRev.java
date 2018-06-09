@@ -15,9 +15,8 @@ import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.common.util.ForgeDirection;
 
 import mortvana.melteddashboard.item.FluxGearItemInteractive;
-import mortvana.melteddashboard.lib.StringLibrary;
+import mortvana.melteddashboard.util.libraries.StringLibrary;
 
-import mortvana.thaumrev.common.ThaumicRevelations;
 import mortvana.thaumrev.entity.EntitySingularity;
 
 import static mortvana.thaumrev.library.ThaumRevLibrary.*;

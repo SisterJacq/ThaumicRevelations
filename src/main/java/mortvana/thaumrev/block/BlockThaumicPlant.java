@@ -15,7 +15,7 @@ import net.minecraftforge.common.EnumPlantType;
 import net.minecraftforge.common.util.ForgeDirection;
 
 import mortvana.melteddashboard.block.FluxGearBlockPlant;
-import mortvana.melteddashboard.lib.StringLibrary;
+import mortvana.melteddashboard.util.libraries.StringLibrary;
 import mortvana.melteddashboard.util.helpers.ItemHelper;
 import mortvana.melteddashboard.util.helpers.science.MathHelper;
 

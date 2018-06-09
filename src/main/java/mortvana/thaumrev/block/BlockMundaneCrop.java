@@ -7,7 +7,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 import mortvana.melteddashboard.block.FluxGearBlockCrop;
-import mortvana.melteddashboard.lib.StringLibrary;
+import mortvana.melteddashboard.util.libraries.StringLibrary;
 import mortvana.melteddashboard.util.helpers.ItemHelper;
 import mortvana.melteddashboard.util.helpers.science.MathHelper;
 

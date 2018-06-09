@@ -13,7 +13,7 @@ import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.wands.FocusUpgradeType;
 import thaumcraft.api.wands.ItemFocusBasic;
 
-import mortvana.melteddashboard.lib.StringLibrary;
+import mortvana.melteddashboard.util.libraries.StringLibrary;
 import mortvana.melteddashboard.util.helpers.StringHelper;
 
 import mortvana.thaumrev.library.ThaumRevLibrary;

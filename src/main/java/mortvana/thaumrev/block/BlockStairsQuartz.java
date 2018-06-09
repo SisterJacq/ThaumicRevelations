@@ -10,7 +10,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 import mortvana.melteddashboard.block.IItemBlockProvider;
-import mortvana.melteddashboard.lib.ColorLibrary;
+import mortvana.melteddashboard.util.libraries.ColorLibrary;
 
 public class BlockStairsQuartz extends BlockStairs implements IItemBlockProvider {
 

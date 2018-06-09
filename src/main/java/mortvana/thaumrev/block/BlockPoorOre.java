@@ -1,16 +1,16 @@
 package mortvana.thaumrev.block;
 
-import java.util.ArrayList;
-
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
-import net.minecraft.world.World;
+
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 import mortvana.melteddashboard.block.FluxGearBlockBase;
-import mortvana.melteddashboard.lib.StringLibrary;
-import mortvana.melteddashboard.util.helpers.ItemHelper;
-import mortvana.melteddashboard.util.helpers.science.MathHelper;
+import mortvana.melteddashboard.util.libraries.StringLibrary;
 
 import static mortvana.thaumrev.library.ThaumRevLibrary.*;
 
@@ -20,7 +20,7 @@ public class BlockPoorOre extends FluxGearBlockBase {
 		super(Material.rock);
 		setStepSound(soundTypeMetal);
 		setCreativeTab(generalTab);
-		setBlockName("thaumrev.ore");
+		setBlockName("thaumrev.orePoor");
 
 		setData(StringLibrary.DIR_DEFAULT  + "ore/", NAMES);
 
@@ -46,8 +46,14 @@ public class BlockPoorOre extends FluxGearBlockBase {
 	}
 
 	@Override
+	@SideOnly(Side.CLIENT)
+	public IIcon getIcon(int side, int meta) {
+		return icons[meta];
+	}
+
+	@Override
 	public String getUnlocalizedName(ItemStack stack) {
-		return "tile.fluxgear.orePoor." + NAMES[stack.getItemDamage()] + ".name";
+		return "tile.fluxgear.ore." + NAMES[stack.getItemDamage()] + ".name";
 	}
 
 	@Override
@@ -55,7 +61,7 @@ public class BlockPoorOre extends FluxGearBlockBase {
 		return RARITY[meta];
 	}
 
-	public static final String[] NAMES = { "oreChalcocite", "oreSphalerite", "oreCassiterite", "oreMillerite", "oreNativeSilver", "oreGalena", "oreXenotime", "oreWolframite", "oreIridosmium", "oreBismuthinite", "oreTennantite", "oreTetrahedrite" };
+	public static final String[] NAMES = { "orePoorChalcocite", "orePoorSphalerite", "orePoorCassiterite", "orePoorMillerite", "orePoorNativeSilver", "orePoorGalena", "orePoorXenotime", "orePoorWolframite", "orePoorIridosmium", "orePoorBismuthinite", "orePoorTennantite", "orePoorTetrahedrite" };
 	public static final int[] HARVEST = {1, 1, 1, 2, 2, 2, 2, 3, 3, 1, 1, 1};
 	public static final int[] RARITY = {0, 0, 0, 0, 0, 0, 1, 1, 2, 0, 0, 0};
 }

@@ -6,11 +6,9 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 import mortvana.melteddashboard.block.FluxGearBlockBase;
-import mortvana.melteddashboard.lib.StringLibrary;
+import mortvana.melteddashboard.util.libraries.StringLibrary;
 
 import mortvana.thaumrev.library.ThaumRevLibrary;
-
-import static mortvana.thaumrev.library.ThaumRevLibrary.*;
 
 public class BlockFalseAir extends FluxGearBlockBase {
 

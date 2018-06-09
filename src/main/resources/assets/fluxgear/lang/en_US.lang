@@ -41,6 +41,32 @@ tile.fluxgear.ore.orePyrope.name=Pyrope Ore
 tile.fluxgear.ore.oreDioptase.name=Dioptase Ore
 tile.fluxgear.ore.oreFluonicSapphire.name=Fluonic Sapphire Ore
 
+tile.fluxgear.ore.oreGravelChalcocite.name=Chalcocite Gravel Ore
+tile.fluxgear.ore.oreGravelSphalerite.name=Sphalerite Gravel Ore
+tile.fluxgear.ore.oreGravelCassiterite.name=Cassiterite Gravel Ore
+tile.fluxgear.ore.oreGravelMillerite.name=Millerite Gravel Ore
+tile.fluxgear.ore.oreGravelNativeSilver.name=Native Silver Gravel Ore
+tile.fluxgear.ore.oreGravelGalena.name=Galena Gravel Ore
+tile.fluxgear.ore.oreGravelXenotime.name=Xenotime Gravel Ore
+tile.fluxgear.ore.oreGravelWolframite.name=Wolframite Gravel Ore
+tile.fluxgear.ore.oreGravelIridosmium.name=Iridosmium Gravel Ore
+tile.fluxgear.ore.oreGravelBismuthinite.name=Bismuthinite Gravel Ore
+tile.fluxgear.ore.oreGravelTennantite.name=Tennantite Gravel Ore
+tile.fluxgear.ore.oreGravelTetrahedrite.name=Tetrahedrite Gravel Ore
+
+tile.fluxgear.ore.orePoorChalcocite.name=Poor Chalcocite Ore
+tile.fluxgear.ore.orePoorSphalerite.name=Poor Sphalerite Ore
+tile.fluxgear.ore.orePoorCassiterite.name=Poor Cassiterite Ore
+tile.fluxgear.ore.orePoorMillerite.name=Poor Millerite Ore
+tile.fluxgear.ore.orePoorNativeSilver.name=Poor Native Silver Ore
+tile.fluxgear.ore.orePoorGalena.name=Poor Galena Ore
+tile.fluxgear.ore.orePoorXenotime.name=Poor Xenotime Ore
+tile.fluxgear.ore.orePoorWolframite.name=Poor Wolframite Ore
+tile.fluxgear.ore.orePoorIridosmium.name=Poor Iridosmium Ore
+tile.fluxgear.ore.orePoorBismuthinite.name=Poor Bismuthinite Ore
+tile.fluxgear.ore.orePoorTennantite.name=Poor Tennantite Ore
+tile.fluxgear.ore.orePoorTetrahedrite.name=Poor Tetrahedrite Ore
+
 tile.fluxgear.woodDecor.greatwoodImpregnated.name=Impregnated Greatwood
 tile.fluxgear.woodDecor.greatwoodCorrupted.name=Corrupted Greatwood
 tile.fluxgear.woodDecor.silverwoodHardened.name=Hardened Silverwood
@@ -89,6 +115,7 @@ tile.fluxgear.storage.blockRedsolder.name=Redsolder Block
 tile.fluxgear.storage.blockThaumicElectrum.name=Thaumic Electrum Block
 tile.fluxgear.storage.blockThaumicRiftishBronze.name=Thaumic Riftish Bronze Block
 tile.fluxgear.storage.blockSteel.name=Steel Block
+tile.fluxgear.storage.blockThaumicSteel.name=Thaumic Steel Block
 tile.fluxgear.storage.blockVoidbrass.name=Voidbrass Block
 tile.fluxgear.storage.blockVoidsteel.name=Voidsteel Block
 tile.fluxgear.storage.blockVoidtungsten.name=Voidtungsten Block
@@ -119,6 +146,7 @@ tile.fluxgear.storage.blockActivatedWardenicCrystal.name=Activated Wardenic Crys
 tile.fluxgear.storage.blockAwakenedWardenicCrystal.name=Awakened Wardenic Crystal Block
 
 tile.fluxgear.storage.blockWardenicQuartz.name=Wardenic Quartz Block
+tile.fluxgear.storage.blockInfusedQuartz.name=Infused Wardenic Quartz Block
 tile.fluxgear.storage.blockRedquartz.name=Redquartz Block
 
 tile.fluxgear.storage.blockXenotime.name=Lanthanide Block
@@ -196,7 +224,6 @@ item.fluxgear.material.plateWardenicSteelDetailed.name=Detailed Wardenic Steel P
 item.fluxgear.material.plateWardenicSteelRunic.name=Runic Wardenic Steel Plate
 item.fluxgear.material.plateWardenicSteelConsecrated.name=Consecrated Wardenic Steel Plate
 
-item.fluxgear.material.gemWardenicQuartzInfused.name=Infused Wardenic Quartz
 item.fluxgear.material.plateWardenicCompositeInfused.name=Infused Wardenic Composite Plate
 item.fluxgear.material.plateWardenicCompositeFitted.name=Fitted Wardenic Composite Plate
 item.fluxgear.material.plateWardenicCompositeDetailed.name=Detailed Wardenic Composite Plate
@@ -252,6 +279,7 @@ item.fluxgear.material.ingotRedsolder.name=Redsolder Ingot
 item.fluxgear.material.ingotThaumicElectrum.name=Thaumic Electrum Ingot
 item.fluxgear.material.ingotThaumicRiftishBronze.name=Thaumic Riftish Bronze Ingot
 item.fluxgear.material.ingotSteel.name=Steel Ingot
+item.fluxgear.material.ingotThaumicSteel.name=Thaumic Steel Ingot
 item.fluxgear.material.ingotVoidbrass.name=Voidbrass Ingot
 item.fluxgear.material.ingotVoidsteel.name=Voidsteel Ingot
 item.fluxgear.material.ingotVoidtungsten.name=Voidtungsten Ingot
@@ -282,6 +310,7 @@ item.fluxgear.material.gemActivatedWardenicCrystal.name=Activated Wardenic Cryst
 item.fluxgear.material.gemAwakenedWardenicCrystal.name=Awakened Wardenic Crystal
 
 item.fluxgear.material.gemWardenicQuartz.name=Wardenic Quartz
+item.fluxgear.material.gemInfusedQuartz.name=Infused Wardenic Quartz
 item.fluxgear.material.gemRedquartz.name=Redquartz
 
 item.fluxgear.material.ingotXenotime.name=Lanthanide Ingot
@@ -328,6 +357,7 @@ item.fluxgear.material.nuggetRedsolder.name=Redsolder Nugget
 item.fluxgear.material.nuggetThaumicElectrum.name=Thaumic Electrum Nugget
 item.fluxgear.material.nuggetThaumicRiftishBronze.name=Thaumic Riftish Bronze Nugget
 item.fluxgear.material.nuggetSteel.name=Steel Nugget
+item.fluxgear.material.nuggetThaumic Steel.name=Thaumic Steel Nugget
 item.fluxgear.material.nuggetVoidbrass.name=Voidbrass Nugget
 item.fluxgear.material.nuggetVoidsteel.name=Voidsteel Nugget
 item.fluxgear.material.nuggetVoidtungsten.name=Voidtungsten Nugget
@@ -358,6 +388,7 @@ item.fluxgear.material.shardActivatedWardenicCrystal.name=Activated Wardenic Cry
 item.fluxgear.material.shardAwakenedWardenicCrystal.name=Awakened Wardenic Crystal Shard
 
 item.fluxgear.material.shardWardenicQuartz.name=Wardenic Quartz Shard
+item.fluxgear.material.shardInfusedQuartz.name=Infused Wardenic Quartz Shard
 item.fluxgear.material.shardRedquartz.name=Redquartz Shard
 
 item.fluxgear.material.nuggetXenotime.name=Lanthanide Nugget
@@ -404,6 +435,7 @@ item.fluxgear.material.dustRedsolder.name=Redsolder Dust
 item.fluxgear.material.dustThaumicElectrum.name=Thaumic Electrum Dust
 item.fluxgear.material.dustThaumicRiftishBronze.name=Thaumic Riftish Bronze Dust
 item.fluxgear.material.dustSteel.name=Steel Dust
+item.fluxgear.material.dustThaumicSteel.name=Thaumic Steel Dust
 item.fluxgear.material.dustVoidbrass.name=Voidbrass Dust
 item.fluxgear.material.dustVoidsteel.name=Voidsteel Dust
 item.fluxgear.material.dustVoidtungsten.name=Voidtungsten Dust
@@ -434,6 +466,7 @@ item.fluxgear.material.dustActivatedWardenicCrystal.name=Activated Wardenic Crys
 item.fluxgear.material.dustAwakenedWardenicCrystal.name=Awakened Wardenic Crystal Dust
 
 item.fluxgear.material.dustWardenicQuartz.name=Wardenic Quartz Dust
+item.fluxgear.material.dustInfusedQuartz.name=Infused Wardenic Quartz Dust
 item.fluxgear.material.dustRedquartz.name=Redquartz Dust
 
 item.fluxgear.material.dustXenotime.name=Lanthanide Dust
@@ -480,6 +513,7 @@ item.fluxgear.material.dustTinyRedsolder.name=Tiny Redsolder Dust
 item.fluxgear.material.dustTinyThaumicElectrum.name=Tiny Thaumic Electrum Dust
 item.fluxgear.material.dustTinyThaumicRiftishBronze.name=Tiny Thaumic Riftish Bronze Dust
 item.fluxgear.material.dustTinySteel.name=Tiny Steel Dust
+item.fluxgear.material.dustTinyThaumicSteel.name=Tiny Thaumic Steel Dust
 item.fluxgear.material.dustTinyVoidbrass.name=Tiny Voidbrass Dust
 item.fluxgear.material.dustTinyVoidsteel.name=Tiny Voidsteel Dust
 item.fluxgear.material.dustTinyVoidtungsten.name=Tiny Voidtungsten Dust
@@ -510,6 +544,7 @@ item.fluxgear.material.dustTinyActivatedWardenicCrystal.name=Tiny Activated Ward
 item.fluxgear.material.dustTinyAwakenedWardenicCrystal.name=Tiny Awakened Wardenic Crystal Dust
 
 item.fluxgear.material.dustTinyWardenicQuartz.name=Tiny Wardenic Quartz Dust
+item.fluxgear.material.dustTinyInfusedQuartz.name=Tiny Infused Wardenic Quartz Dust
 item.fluxgear.material.dustTinyRedquartz.name=Tiny Redquartz Dust
 
 item.fluxgear.material.dustTinyXenotime.name=Tiny Lanthanide Dust
@@ -556,6 +591,7 @@ item.fluxgear.material.plateRedsolder.name=Redsolder Plate
 item.fluxgear.material.plateThaumicElectrum.name=Thaumic Electrum Plate
 item.fluxgear.material.plateThaumicRiftishBronze.name=Thaumic Riftish Bronze Plate
 item.fluxgear.material.plateSteel.name=Steel Plate
+item.fluxgear.material.plateThaumicSteel.name=Thaumic Steel Plate
 item.fluxgear.material.plateVoidbrass.name=Voidbrass Plate
 item.fluxgear.material.plateVoidsteel.name=Voidsteel Plate
 item.fluxgear.material.plateVoidtungsten.name=Voidtungsten Plate
@@ -603,6 +639,11 @@ item.fluxgear.material.blendFluonicPyroptase.name=Fluonic Pyroptase Blend
 
 item.fluxgear.material.ingotThaumicBronzeRaw.name=Raw Thaumic Bronze Ingot
 item.fluxgear.material.ingotOsmiumLutetiumRaw.name=Raw Osmium-Lutetium Alloy Ingot
+
+item.fluxgear.material.ingotWardenicCompositeSmelted.name=Smelted Wardenic Composite Ingot
+item.fluxgear.material.ingotMagneoturgicCompositeSmelted.name=Smelted Magneoturgic Composite Ingot
+item.fluxgear.material.ingotFluxedCompositeSmelted.name=Smelted Fluxed Composite Ingot
+item.fluxgear.material.ingotResonantFluxedCompositeSmelted.name=Smelted Resonant Fluxed Composite Ingot
 
 item.fluxgear.material.ingotThaumicBronzeCoated.name=Coated Thaumic Bronze Ingot
 item.fluxgear.material.ingotOsmiumLutetiumCoated.name=Coated Osmium-Lutetium Alloy Ingot
@@ -752,36 +793,13 @@ fluxgear.name.ALLOYS_TRv=Alloys
 fluxgear.text.ALLOYS_TRv=[TRv] Not-so-magical Metallurgy
 
 fluxgear.page.ALLOYS_TRv.0=You have realized the true lack of variety in the metals used in thaumaturgy, and have decided to experiment with various alloys.<BR>One of the alloys, Brass, is a mixture of copper, a metal only rarely used by thaumaturges, but highly used in technological fields, and zinc, a whitish metal similar to tin, which is occasionally used for coating of metal parts. The resulting alloys is malleable and may make for an decent-enough conductor of mystical energy.
-fluxgear.page.ALLOYS_TRv.1=Bronze, the more commonly used cousin of Brass, more suited to casting than machining, is made with tin, a more widely used metal, albeit one never used in thaumaturgy, instead of zinc. Unlike brass, it seems like it would be less receptive to magic, although it could make better, less corrodable, parts than iron.
-fluxgear.page.ALLOYS_TRv.2=Bismuth Bronze is a similar copper alloy, which despite technically being a brass with bismuth crystals in it behaves like a bronze. Containing copper, zinc, and the heavy metal bismuth, examination of the alloy it may lead to a usage in mystical components, however, it is primarily used in making another alloy.
-fluxgear.page.ALLOYS_TRv.3=Mithril, or Arseno-Antimonial Bronze, is what one gets when they alloy equal parts arsenical bronze, the result of smelting tennantite ore, and antimonial bronze, likewise from tetrahedrite ore. This alloy is incredibly strong, stronger than most common metals, but not terribly receptive to magic.
+fluxgear.page.ALLOYS_TRv.1=Bronze, the more commonly used cousin of Brass, more suited to casting than machining, is made with tin, a more widely used metal, albeit one never used in thaumaturgy, instead of zinc. Unlike brass, it seems like it would be less receptive to storage of magical energies, although it could make better, less corrodable, parts than iron.
+fluxgear.page.ALLOYS_TRv.2=Bismuth Bronze, a similar copper alloy, which despite technically being a brass with bismuth crystals in it behaves like a bronze. Containing copper, zinc, and the heavy metal bismuth, examination of the alloy it may lead to a usage in mystical components, however, it is primarily used in making another alloy.
+fluxgear.page.ALLOYS_TRv.3=Mithril, or Arseno-Antimonial Bronze, is what one gets when they alloy equal parts arsenical bronze, the result of smelting tennantite ore or alloying copper with arsenic, and antimonial bronze, likewise from tetrahedrite ore or alloying copper with antimony. This alloy is incredibly strong, stronger than most common metals, but not terribly receptive to magic on it's own.
 fluxgear.page.ALLOYS_TRv.4=Aluminium Bronze, a gold-like copper alloy using the metal aluminium, which is extracted from clay, instead of tin, this alloy is neither terribly expensive, nor durable, but is receptive to magical infusion.
-fluxgear.page.ALLOYS_TRv.5=Cupronickel, an alloy of copper and nickel, as the name suggests, is occasionally used in heating in technical fields, this alloy is surprisingly good at conducting §cIgnis§0 vis, but not great at much else.
-fluxgear.page.ALLOYS_TRv.6=Riftish Bronze, is an alloy of eight different metals, often taking the form of alloy six different copper alloys, containing copper, tin, zinc, arsenic, antimony, nickel, bismuth, and aluminium. The alloy itself is incredibly durable, yet malleable at high temperatures. While not terrible good at transferring mystical energies, it makes tools of exquisite quality, better than even thaumium, although it does not enchant as well.
-fluxgear.page.ALLOYS_TRv.7=Constantan, is an alloy of copper and nickel in roughly equal parts, used in technical fields, which may be of use in future endeavors. Invar, an alloy of iron and nickel is in a similar boat as constantan.<LINE>Electrum, an alloy of equal parts gold and silver, however is of interest, and is likely an even better conductor than gold.
-
-fluxgear.page.ALLOYS_TRv.71=Constantan, is an alloy of copper and nickel in roughly equal parts, used in technical fields, which may be of use in future endeavors.
-fluxgear.page.ALLOYS_TRv.72=Invar, is an alloy of iron and nickel, used in technical fields, which may be of use in future endeavors.
-fluxgear.page.ALLOYS_TRv.73=Electrum, an alloy of equal parts gold and silver, however is of interest, and is likely an even better conductor than gold.
-fluxgear.page.ALLOYS_TRv.7a=Invar, is an alloy of iron and nickel, used in technical fields, which may be of use in future endeavors.<LINE>Electrum, an alloy of equal parts gold and silver, however is of interest, and is likely an even better conductor than gold.
-fluxgear.page.ALLOYS_TRv.7b=Constantan, is an alloy of copper and nickel in roughly equal parts, used in technical fields, which may be of use in future endeavors.<LINE>Electrum, an alloy of equal parts gold and silver, however is of interest, and is likely an even better conductor than gold.
-fluxgear.page.ALLOYS_TRv.7c=Constantan, is an alloy of copper and nickel in roughly equal parts, used in technical fields, which may be of use in future endeavors. Invar, an alloy of iron and nickel is in a similar boat as constantan.
-
-fluxgear.page.ALLOYS_TRv.a=You have realized the true lack of variety in the metals used in thaumaturgy, and have decided to experiment with various alloys.<BR>Bronze, the more commonly used cousin of Brass, more suited to casting than machining, is made with tin, a more widely used metal, albeit one never used in thaumaturgy, instead of zinc. Unlike brass, it seems like it would be less receptive to magic, although it could make better, less corrodable, parts than iron.
-fluxgear.page.ALLOYS_TRv.b=You have realized the true lack of variety in the metals used in thaumaturgy, and have decided to experiment with various alloys.<BR>Bismuth Bronze is a similar copper alloy, which despite technically being a brass with bismuth crystals in it behaves like a bronze. Containing copper, zinc, and the heavy metal bismuth, examination of the alloy it may lead to a usage in mystical components, however, it is primarily used in making another alloy.
-fluxgear.page.ALLOYS_TRv.c=You have realized the true lack of variety in the metals used in thaumaturgy, and have decided to experiment with various alloys.<BR>Mithril, or Arseno-Antimonial Bronze, is what one gets when they alloy equal parts arsenical bronze, the result of smelting tennantite ore, and antimonial bronze, likewise from tetrahedrite ore. This alloy is incredibly strong, stronger than most common metals, but not terribly receptive to magic.
-fluxgear.page.ALLOYS_TRv.d=You have realized the true lack of variety in the metals used in thaumaturgy, and have decided to experiment with various alloys.<BR>Aluminium Bronze, a gold-like copper alloy using the metal aluminium, which is extracted from clay, instead of tin, this alloy is neither terribly expensive, nor durable, but is receptive to magical infusion.
-fluxgear.page.ALLOYS_TRv.e=You have realized the true lack of variety in the metals used in thaumaturgy, and have decided to experiment with various alloys.<BR>Cupronickel, an alloy of copper and nickel, as the name suggests, is occasionally used in heating in technical fields, this alloy is surprisingly good at conducting §cIgnis§0 vis, but not great at much else.
-fluxgear.page.ALLOYS_TRv.f=You have realized the true lack of variety in the metals used in thaumaturgy, and have decided to experiment with various alloys.<BR>Riftish Bronze, is an alloy of eight different metals, often taking the form of alloy six different copper alloys, containing copper, tin, zinc, arsenic, antimony, nickel, bismuth, and aluminium. The alloy itself is incredibly durable, yet malleable at high temperatures. While not terrible good at transferring mystical energies, it makes tools of exquisite quality, better than even thaumium, although it does not enchant as well.
-fluxgear.page.ALLOYS_TRv.g=You have realized the true lack of variety in the metals used in thaumaturgy, and have decided to experiment with various alloys.<BR>Constantan, is an alloy of copper and nickel in roughly equal parts, used in technical fields, which may be of use in future endeavors. Invar, an alloy of iron and nickel is in a similar boat as constantan.<LINE>Electrum, an alloy of equal parts gold and silver, however is of interest, and is likely an even better conductor than gold.
-
-fluxgear.page.ALLOYS_TRv.g1=You have realized the true lack of variety in the metals used in thaumaturgy, and have decided to experiment with various alloys.<BR>Constantan, is an alloy of copper and nickel in roughly equal parts, used in technical fields, which may be of use in future endeavors.
-fluxgear.page.ALLOYS_TRv.g2=You have realized the true lack of variety in the metals used in thaumaturgy, and have decided to experiment with various alloys.<BR>Invar, is an alloy of iron and nickel, used in technical fields, which may be of use in future endeavors.
-fluxgear.page.ALLOYS_TRv.g3=You have realized the true lack of variety in the metals used in thaumaturgy, and have decided to experiment with various alloys.<BR>Electrum, an alloy of equal parts gold and silver, however is of interest, and is likely an even better conductor than gold.
-fluxgear.page.ALLOYS_TRv.ga=You have realized the true lack of variety in the metals used in thaumaturgy, and have decided to experiment with various alloys.<BR>Invar, is an alloy of iron and nickel, used in technical fields, which may be of use in future endeavors.<LINE>Electrum, an alloy of equal parts gold and silver, however is of interest, and is likely an even better conductor than gold.
-fluxgear.page.ALLOYS_TRv.gb=You have realized the true lack of variety in the metals used in thaumaturgy, and have decided to experiment with various alloys.<BR>Constantan, is an alloy of copper and nickel in roughly equal parts, used in technical fields, which may be of use in future endeavors.<LINE>Electrum, an alloy of equal parts gold and silver, however is of interest, and is likely an even better conductor than gold.
-fluxgear.page.ALLOYS_TRv.gc=You have realized the true lack of variety in the metals used in thaumaturgy, and have decided to experiment with various alloys.<BR>Constantan, is an alloy of copper and nickel in roughly equal parts, used in technical fields, which may be of use in future endeavors. Invar, an alloy of iron and nickel is in a similar boat as constantan.
-
+fluxgear.page.ALLOYS_TRv.5=Cupronickel, an alloy of copper and nickel, as the name suggests, is occasionally used in heat exchangers in technical fields, this alloy is surprisingly good at conducting §cIgnis§0 vis, but doesn't seem to be great at much else.
+fluxgear.page.ALLOYS_TRv.6=Riftish Bronze, an alloy of eight different metals, often taking the form of alloy six different copper alloys, containing copper, tin, zinc, arsenic, antimony, nickel, bismuth, and aluminium. The alloy itself is incredibly durable, yet malleable at high temperatures. While not terrible good at storing or transferring mystical energies, it makes tools of exquisite quality, better than even thaumium, although it does not enchant quite as well.
+fluxgear.page.ALLOYS_TRv.7=Constantan, an alloy of copper and nickel in roughly equal parts, used in technical fields for its temperature sensitivity, which may be of use in future endeavors. Invar, an alloy of iron and nickel, known for thermal stability, is in a similar boat as constantan.<LINE>Electrum, an alloy of equal parts gold and silver, however is of interest, and is likely an even better conductor for mystical energies than gold.
 
 fluxgear.name.THAUMIC_BRONZE=Thaumic Bronze
 fluxgear.text.THAUMIC_BRONZE=[TRv]
@@ -794,6 +812,10 @@ fluxgear.name.RUNIC_INFUSER=Runic Infuser
 
 fluxgear.name.ROBES_PRIMAL=Primal Robes
 fluxgear.text.ROBES_PRIMAL=[TRv] Mending and Stylish
+
+fluxgear.page.ROBES_PRIMAL.0=One day, when wearing your Cotton Thaumaturge's Robes, you caught your robes on the edge of a nail in the walls of your study. You don't know why, but that was the final straw for you. You knew you could enchant the armor with Repair, but that just wouldn't cut it for some reason. You wanted robes that wouldn't warp your mind, or drain your wand, but would repair themselves, was that too much to ask!? You didn't want a cycle of warping your mind and bathing, or having to charge you wand slight more often. You decided to do what any quasi-sane thaumaturge would do, and decided to try and infuse a Primal Charm into your robes so it wouldn't affect your wand too much!
+fluxgear.page.ROBES_PRIMAL.1=Obviously it wasn't so easy, it took some Salis Mundus and Primal Essence as well. However, the process made the robes actually tear easier, and they wouldn't even enchant after that! It took some extra cloth and some Thaumic Electrum to rectify that issue, and some of that Thaumic Riftish Bronze to fix the whole tearing issue. When you finally got that working, you were in for a treat! The robes worked beautifully, something you found out on accident. When walking over to get the materials to enchant the new robe, you snagged it on the same nail, tearing it. However, by the time you got the materials, the robe had fixed itself, without even being enchanted.
+fluxgear.page.ROBES_PRIMAL.2=It turned out that enchanting the robes with Repair was not necessary, however the robes are still affected by the enchant, draining Vis from any typical storage medium, just as regular robes are. However, an unexpected feature was that the robes actually fill up your wand, scepter, or staff, albeit at the same rate as a Primal Charm, making it unsuitable as a primary source of Vis for the active thaumaturge. Like the Primal Charm used in the construction, it cannot charge anything a Primal Charm cannot.
 
 fluxgear.name.THAUMIC_WARDEN=Excubiturgy
 fluxgear.text.THAUMIC_WARDEN=[TRv] Thaumic Wardenry!

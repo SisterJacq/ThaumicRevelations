@@ -4,7 +4,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemStack;
 
 import mortvana.melteddashboard.block.FluxGearBlockBase;
-import mortvana.melteddashboard.lib.StringLibrary;
+import mortvana.melteddashboard.util.libraries.StringLibrary;
 
 import static mortvana.thaumrev.library.ThaumRevLibrary.*;
 

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import mortvana.melteddashboard.item.entry.*;
-import mortvana.melteddashboard.lib.ColorLibrary;
+import mortvana.melteddashboard.util.libraries.ColorLibrary;
 
 import mortvana.thaumrev.common.ThaumicRevelations;
 

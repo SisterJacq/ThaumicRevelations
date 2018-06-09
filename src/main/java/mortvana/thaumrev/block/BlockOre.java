@@ -3,13 +3,12 @@ package mortvana.thaumrev.block;
 import java.util.ArrayList;
 
 import net.minecraft.block.material.Material;
-import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 import mortvana.melteddashboard.block.FluxGearBlockBase;
-import mortvana.melteddashboard.lib.StringLibrary;
+import mortvana.melteddashboard.util.libraries.StringLibrary;
 import mortvana.melteddashboard.util.helpers.ItemHelper;
 import mortvana.melteddashboard.util.helpers.science.MathHelper;
 

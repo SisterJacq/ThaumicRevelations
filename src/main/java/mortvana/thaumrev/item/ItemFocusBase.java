@@ -1,4 +1,4 @@
-package mortvana.thaumrev.util.item;
+package mortvana.thaumrev.item;
 
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
@@ -21,13 +21,9 @@ import mortvana.thaumrev.library.ThaumRevLibrary;
 public abstract class ItemFocusBase extends ItemFocusBasic {
 
 	@SideOnly(Side.CLIENT)
-	public IIcon icons;
-	@SideOnly(Side.CLIENT)
-	public IIcon depth;
-	@SideOnly(Side.CLIENT)
-	public IIcon orn;
+	public IIcon[] icons = new IIcon[3]; //0=icon, 1=depth, 2=orn
 	public String name;
-	public int color = 0x6698FF;
+	public int color = 0xFFFFFF;
 	public boolean ornament;
 
 	public ItemFocusBase(String name, int color, boolean ornament) {
@@ -35,7 +31,7 @@ public abstract class ItemFocusBase extends ItemFocusBasic {
 		this.name = name;
 		this.color = color;
 		this.ornament = ornament;
-		setUnlocalizedName("thaumrev.focus" + name);
+		setUnlocalizedName("fluxgear.focus" + StringHelper.titleCase(name));
 		setCreativeTab(ThaumRevLibrary.generalTab);
 	}
 
@@ -56,26 +52,32 @@ public abstract class ItemFocusBase extends ItemFocusBasic {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IIconRegister register) {
-		icons = register.registerIcon(StringLibrary.DIR_DEFAULT + "focus" + name);
-		depth = register.registerIcon(StringLibrary.DIR_DEFAULT + "depth" + name);
+		icons[0] = register.registerIcon(StringLibrary.DIR_DEFAULT + "focus/focus" + name);
+		icons[1] = register.registerIcon(StringLibrary.DIR_DEFAULT + "focus/focus" + name  + "_depth");
 
 		if (ornament) {
-			icons = register.registerIcon(StringLibrary.DIR_DEFAULT + "orn" + name);
+			icons[2] = register.registerIcon(StringLibrary.DIR_DEFAULT + "focus/focus" + name + "_orn");
 		} else {
-			orn = null;
+			icons[2] = null;
 		}
 	}
 
 	@Override
 	@SideOnly(Side.CLIENT)
+	public IIcon getIconFromDamage(int meta) {
+		return icons[0];
+	}
+
+	@Override
+	@SideOnly(Side.CLIENT)
 	public IIcon getFocusDepthLayerIcon(ItemStack stack) {
-		return depth;
+		return icons[1];
 	}
 
 	@Override
 	@SideOnly(Side.CLIENT)
 	public IIcon getOrnament(ItemStack stack) {
-		return orn;
+		return icons[2];
 	}
 
 	@Override

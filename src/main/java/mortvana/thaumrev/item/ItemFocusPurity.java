@@ -12,7 +12,6 @@ import thaumcraft.common.items.wands.ItemWandCasting;
 import mortvana.melteddashboard.util.helpers.mod.ThaumcraftHelper;
 
 import mortvana.thaumrev.entity.EntityPurity;
-import mortvana.thaumrev.util.item.ItemFocusBase;
 
 public class ItemFocusPurity extends ItemFocusBase {
 

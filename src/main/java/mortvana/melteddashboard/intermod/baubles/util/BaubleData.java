@@ -31,11 +31,11 @@ public abstract class BaubleData {
 		return canUnequip;
 	}
 
-	public abstract void onWornTick(ItemStack itemstack, EntityLivingBase player);
+	public abstract void onWornTick(ItemStack stack, EntityLivingBase player);
 
-	public abstract void onEquipped(ItemStack itemstack, EntityLivingBase player);
+	public abstract void onEquipped(ItemStack stack, EntityLivingBase player);
 
-	public abstract void onUnequipped(ItemStack itemstack, EntityLivingBase player);
+	public abstract void onUnequipped(ItemStack stack, EntityLivingBase player);
 
 	public BaubleData setEquip(boolean canEquip) {
 		this.canEquip = canUnequip;

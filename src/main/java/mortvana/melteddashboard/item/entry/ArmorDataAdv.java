@@ -5,11 +5,10 @@ import net.minecraft.item.EnumRarity;
 
 import thaumcraft.api.aspects.Aspect;
 
-import mortvana.melteddashboard.lib.ColorLibrary;
-
 import mortvana.thaumrev.util.enums.EnumPrimalAspect;
 
 import static mortvana.melteddashboard.util.helpers.StringHelper.*;
+import static mortvana.melteddashboard.util.libraries.ColorLibrary.CLEAR;
 
 public class ArmorDataAdv extends ArmorDataBase {
 
@@ -54,31 +53,31 @@ public class ArmorDataAdv extends ArmorDataBase {
 	}
 
 	public ArmorDataAdv(String modName, String icon, String sheet, String repair, EnumRarity rarity, String unlocName, String regName) {
-		this(modName, icon, sheet, repair, rarity, unlocName, regName, ColorLibrary.CLEAR, true);
+		this(modName, icon, sheet, repair, rarity, unlocName, regName, CLEAR, true);
 	}
 
 	public ArmorDataAdv(String modName, String icon, String sheet, String repair, int rarity, String unlocName, String regName) {
-		this(modName, icon, sheet, repair, EnumRarity.values()[rarity], unlocName, regName, ColorLibrary.CLEAR, true);
+		this(modName, icon, sheet, repair, EnumRarity.values()[rarity], unlocName, regName, CLEAR, true);
 	}
 
 	public ArmorDataAdv(String modName, String icon, String sheet, String repair, EnumRarity rarity, String name) {
-		this(modName, icon, sheet, repair, rarity, name, name, ColorLibrary.CLEAR, true);
+		this(modName, icon, sheet, repair, rarity, name, name, CLEAR, true);
 	}
 
 	public ArmorDataAdv(String modName, String icon, String sheet, String repair, int rarity, String name) {
-		this(modName, icon, sheet, repair, EnumRarity.values()[rarity], name, name, ColorLibrary.CLEAR, true);
+		this(modName, icon, sheet, repair, EnumRarity.values()[rarity], name, name, CLEAR, true);
 	}
 
 	public ArmorDataAdv(String modName, String icon, String sheet, String repair, String name) {
-		this(modName, icon, sheet, repair, EnumRarity.common, name, name, ColorLibrary.CLEAR, true);
+		this(modName, icon, sheet, repair, EnumRarity.common, name, name, CLEAR, true);
 	}
 
 	public ArmorDataAdv(String modName, String icon, String sheet, String name) {
-		this(modName, icon, sheet, "", EnumRarity.common, name, name, ColorLibrary.CLEAR, true);
+		this(modName, icon, sheet, "", EnumRarity.common, name, name, CLEAR, true);
 	}
 
 	public ArmorDataAdv(String icon, String sheet, String name) {
-		this("fluxgear", icon, sheet, "", EnumRarity.common, name, name, ColorLibrary.CLEAR, true);
+		this("fluxgear", icon, sheet, "", EnumRarity.common, name, name, CLEAR, true);
 	}
 
     /** SPECIAL CONSTRUCTORS **/
@@ -91,11 +90,11 @@ public class ArmorDataAdv extends ArmorDataBase {
     }
 
     public ArmorDataAdv(String modName, EnumEquipmentType type, String material, String piece, String orePrefix, EnumRarity rarity, int[] discount, int flux, boolean goggles) {
-        this(modName, type, material, piece, orePrefix, 0, rarity, discount, flux, goggles);
+        this(modName, type, material, piece, orePrefix, CLEAR, rarity, discount, flux, goggles);
     }
 
     public ArmorDataAdv(String modName, EnumEquipmentType type, String material, String piece, String orePrefix, EnumRarity rarity, int discount, int flux, boolean goggles) {
-        this(modName, type, material, piece, orePrefix, 0, rarity, discount, flux, goggles);
+        this(modName, type, material, piece, orePrefix, CLEAR, rarity, discount, flux, goggles);
     }
 
     public ArmorDataAdv(String modName, EnumEquipmentType type, String material, String piece, String orePrefix, int color, EnumRarity rarity, int[] discount, boolean goggles) {
@@ -107,11 +106,11 @@ public class ArmorDataAdv extends ArmorDataBase {
     }
 
     public ArmorDataAdv(String modName, EnumEquipmentType type, String material, String piece, String orePrefix, EnumRarity rarity, int[] discount, boolean goggles) {
-        this(modName, type, material, piece, orePrefix, 0, rarity, discount, 0, goggles);
+        this(modName, type, material, piece, orePrefix, CLEAR, rarity, discount, 0, goggles);
     }
 
     public ArmorDataAdv(String modName, EnumEquipmentType type, String material, String piece, String orePrefix, EnumRarity rarity, int discount, boolean goggles) {
-        this(modName, type, material, piece, orePrefix, 0, rarity, discount, 0, goggles);
+        this(modName, type, material, piece, orePrefix, CLEAR, rarity, discount, 0, goggles);
     }
 
     public ArmorDataAdv(String modName, EnumEquipmentType type, String material, String piece, String orePrefix, int color, EnumRarity rarity, int[] discount) {
@@ -123,11 +122,11 @@ public class ArmorDataAdv extends ArmorDataBase {
     }
 
     public ArmorDataAdv(String modName, EnumEquipmentType type, String material, String piece, String orePrefix, EnumRarity rarity, int[] discount) {
-        this(modName, type, material, piece, orePrefix, 0, rarity, discount, 0, false);
+        this(modName, type, material, piece, orePrefix, CLEAR, rarity, discount, 0, false);
     }
 
     public ArmorDataAdv(String modName, EnumEquipmentType type, String material, String piece, String orePrefix, EnumRarity rarity, int discount) {
-        this(modName, type, material, piece, orePrefix, 0, rarity, discount, 0, false);
+        this(modName, type, material, piece, orePrefix, CLEAR, rarity, discount, 0, false);
     }
 
     public ArmorDataAdv(String modName, EnumEquipmentType type, String material, String piece, String orePrefix, int color, EnumRarity rarity) {
@@ -135,7 +134,7 @@ public class ArmorDataAdv extends ArmorDataBase {
     }
 
     public ArmorDataAdv(String modName, EnumEquipmentType type, String material, String piece, String orePrefix, EnumRarity rarity) {
-        this(modName, type, material, piece, orePrefix, 0, rarity, 0, 0, false);
+        this(modName, type, material, piece, orePrefix, CLEAR, rarity, 0, 0, false);
     }
 
 	/** SETTERS **/

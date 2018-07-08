@@ -179,7 +179,9 @@ item.fluxgear.material.itemStabilizedSingularity.name=Stabilized Singularity
 item.fluxgear.material.itemAnimatedPiston.name=Animated Piston
 item.fluxgear.material.itemSoulFragment.name=Soul Fragment
 
-item.fluxgear.material.itemAspectOrbReceptor.name=Aspect Orb Receptor
+item.fluxgear.material.itemAspectOrbReceptorMakeshift.name=Makeshift Aspect Orb Receptor
+item.fluxgear.material.itemAspectOrbReceptorAdvanced.name=Aspect Orb Receptor
+#item.fluxgear.material.itemVisChargeStoneReceptor.name=Vis Charge Stone Receptor
 
 item.fluxgear.material.itemEldritchCog.name=Eldritch Cog
 item.fluxgear.material.itemEldritchKeystone.name=Eldritch Keystone
@@ -216,20 +218,21 @@ item.fluxgear.material.itemExcubituraOilRaw.name=Excubitura Petal Slurry
 item.fluxgear.material.itemExcubituraOil.name=Excubitura Petal Oil
 item.fluxgear.material.chainWardenicBronze.name=Wardenic Bronze Chain
 item.fluxgear.material.chainPrimalBronze.name=Primal Bronze Chain
+item.fluxgear.material.itemPlateWardenicBronzeMirror.name=Wardenic Bronze Mirror Plate
 
 item.fluxgear.material.itemExcubituraOilPure.name=Purified Excubitura Petal Oil
 item.fluxgear.material.chainWardenicSteel.name=Wardenic Steel Chain
 item.fluxgear.material.chainWardenicSteelOiled.name=Oiled Wardenic Steel Chain
-item.fluxgear.material.plateWardenicSteelDetailed.name=Detailed Wardenic Steel Plate
-item.fluxgear.material.plateWardenicSteelRunic.name=Runic Wardenic Steel Plate
-item.fluxgear.material.plateWardenicSteelConsecrated.name=Consecrated Wardenic Steel Plate
+item.fluxgear.material.itemPlateWardenicSteelDetailed.name=Detailed Wardenic Steel Plate
+item.fluxgear.material.itemPlateWardenicSteelRunic.name=Runic Wardenic Steel Plate
+item.fluxgear.material.itemPlateWardenicSteelConsecrated.name=Consecrated Wardenic Steel Plate
 
-item.fluxgear.material.plateWardenicCompositeInfused.name=Infused Wardenic Composite Plate
-item.fluxgear.material.plateWardenicCompositeFitted.name=Fitted Wardenic Composite Plate
-item.fluxgear.material.plateWardenicCompositeDetailed.name=Detailed Wardenic Composite Plate
-item.fluxgear.material.plateWardenicCompositeRunic.name=Runic Wardenic Composite Plate
-item.fluxgear.material.plateWardenicCompositeConsecrated.name=Consecrated Wardenic Composite Plate
-item.fluxgear.material.plateWardenicCompositePrimal.name=Primal Wardenic Composite Plate
+item.fluxgear.material.itemPlateWardenicCompositeInfused.name=Infused Wardenic Composite Plate
+item.fluxgear.material.itemPlateWardenicCompositeFitted.name=Fitted Wardenic Composite Plate
+item.fluxgear.material.itemPlateWardenicCompositeDetailed.name=Detailed Wardenic Composite Plate
+item.fluxgear.material.itemPlateWardenicCompositeRunic.name=Runic Wardenic Composite Plate
+item.fluxgear.material.itemPlateWardenicCompositeConsecrated.name=Consecrated Wardenic Composite Plate
+item.fluxgear.material.itemPlateWardenicCompositePrimal.name=Primal Wardenic Composite Plate
 
 item.fluxgear.material.itemEssenceOfAwakening.name=Essence of Awakening
 
@@ -313,8 +316,8 @@ item.fluxgear.material.gemWardenicQuartz.name=Wardenic Quartz
 item.fluxgear.material.gemInfusedQuartz.name=Infused Wardenic Quartz
 item.fluxgear.material.gemRedquartz.name=Redquartz
 
-item.fluxgear.material.ingotXenotime.name=Lanthanide Ingot
-item.fluxgear.material.ingotLanthanides.name=Leftover Lanthanide Ingot
+item.fluxgear.material.ingotXenotime.name=Xenotime Mischmetal Ingot
+item.fluxgear.material.ingotLanthanides.name=Leftover Mischmetal Ingot
 item.fluxgear.material.ingotIridosmium.name=Iridosmium Ingot
 
 item.fluxgear.material.ingotThaumicBronze.name=Thaumic Bronze Ingot
@@ -391,8 +394,8 @@ item.fluxgear.material.shardWardenicQuartz.name=Wardenic Quartz Shard
 item.fluxgear.material.shardInfusedQuartz.name=Infused Wardenic Quartz Shard
 item.fluxgear.material.shardRedquartz.name=Redquartz Shard
 
-item.fluxgear.material.nuggetXenotime.name=Lanthanide Nugget
-item.fluxgear.material.nuggetLanthanides.name=Leftover Lanthanide Nugget
+item.fluxgear.material.nuggetXenotime.name=Xenotime Mischmetal Nugget
+item.fluxgear.material.nuggetLanthanides.name=Leftover Mischmetal Nugget
 item.fluxgear.material.nuggetIridosmium.name=Iridosmium Nugget
 
 item.fluxgear.material.nuggetThaumicBronze.name=Thaumic Bronze Nugget
@@ -469,8 +472,8 @@ item.fluxgear.material.dustWardenicQuartz.name=Wardenic Quartz Dust
 item.fluxgear.material.dustInfusedQuartz.name=Infused Wardenic Quartz Dust
 item.fluxgear.material.dustRedquartz.name=Redquartz Dust
 
-item.fluxgear.material.dustXenotime.name=Lanthanide Dust
-item.fluxgear.material.dustLanthanides.name=Leftover Lanthanide Dust
+item.fluxgear.material.dustXenotime.name=Xenotime Mischmetal Dust
+item.fluxgear.material.dustLanthanides.name=Leftover Mischmetal Dust
 item.fluxgear.material.dustIridosmium.name=Iridosmium Dust
 
 item.fluxgear.material.dustThaumicBronze.name=Thaumic Bronze Dust
@@ -547,8 +550,8 @@ item.fluxgear.material.dustTinyWardenicQuartz.name=Tiny Wardenic Quartz Dust
 item.fluxgear.material.dustTinyInfusedQuartz.name=Tiny Infused Wardenic Quartz Dust
 item.fluxgear.material.dustTinyRedquartz.name=Tiny Redquartz Dust
 
-item.fluxgear.material.dustTinyXenotime.name=Tiny Lanthanide Dust
-item.fluxgear.material.dustTinyLanthanides.name=Tiny Leftover Lanthanide Dust
+item.fluxgear.material.dustTinyXenotime.name=Tiny Xenotime Mischmetal Dust
+item.fluxgear.material.dustTinyLanthanides.name=Tiny Leftover Mischmetal Dust
 item.fluxgear.material.dustTinyIridosmium.name=Tiny Iridosmium Dust
 
 item.fluxgear.material.dustTinyThaumicBronze.name=Tiny Thaumic Bronze Dust
@@ -733,6 +736,25 @@ item.fluxgear.material.tempAluDense.name=Dense Alumentum [Will be removed in v0.
 #Baubles
 item.fluxgear.baubles.amuletWarden.name=Warden's Amulet
 item.fluxgear.baubles.ringLove.name=Ring of Love
+item.fluxgear.baubles.pendantPrimal.name=Primal Pendant
+
+#Apect Orb Equipment
+item.fluxgear.orb.visStoneCrude.name=Crude Vis Charge Stone
+item.fluxgear.orb.visStoneSimple.name=Simple Vis Charge Stone
+item.fluxgear.orb.visStoneBasic.name=Basic Vis Charge Stone
+item.fluxgear.orb.visStoneAer.name=Vaporous Vis Charge Stone
+item.fluxgear.orb.visStoneIgnis.name=Fiery Vis Charge Stone
+item.fluxgear.orb.visStoneAqua.name=Aqueous Vis Charge Stone
+item.fluxgear.orb.visStoneTerra.name=Earthen Vis Charge Stone
+item.fluxgear.orb.visStoneOrdo.name=Crystalline Vis Charge Stone
+item.fluxgear.orb.visStonePerditio.name=Entropic Vis Charge Stone
+item.fluxgear.orb.visStoneRunic.name=Runic Vis Charge Stone
+item.fluxgear.orb.visStonePrimal.name=Primal Vis Charge Stone
+item.fluxgear.orb.visStoneStabilized.name=Stabilized Vis Charge Stone
+item.fluxgear.orb.visStoneHighCapacity.name=High Capacity Vis Charge Stone
+item.fluxgear.orb.visStoneExtraHighCapacity.name=Extra-High Capacity Vis Charge Stone
+
+#Flux Capacitors
 
 #Armor
 item.fluxgear.mithril.goggles.name=Mithril Goggles of Revealing
@@ -833,6 +855,11 @@ fluxgear.page.WARDENCLOTH.1=On further examination it seem, somewhat counter-int
 
 fluxgear.name.ARMOR_WARDENCLOTH=Wardencloth Armor
 fluxgear.text.ARMOR_WARDENCLOTH=[TRv] Like leather, but better (and thaumic)
+
+fluxgear.tooltip.visRegenAll=Slowly recharges all items that store vis
+
+
+
 
 #Thaumcraft Voidmetal Capitalization Rectification
 #item.thaumcraft.ItemResource.16.name=Voidmetal Ingot

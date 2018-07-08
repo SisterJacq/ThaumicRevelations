@@ -1,0 +1,421 @@
+package mortvana.thaumrev.library;
+
+import net.minecraft.item.EnumRarity;
+
+import mortvana.melteddashboard.util.EnumMineralType;
+
+import static mortvana.melteddashboard.util.libraries.ColorLibrary.*;
+import static mortvana.melteddashboard.util.libraries.StringLibrary.*;
+import static mortvana.melteddashboard.util.EnumMineralType.*;
+
+@Deprecated //Will finish in v0.0.2
+public enum EnumMetalData {
+
+	COPPER(0, CU, COLOR_CU, 5, 6, 1, 0, 0, ELEMENTAL),
+	ZINC(1, ZN, COLOR_ZN, 5, 6, 1, 0, 0, ELEMENTAL),
+	TIN(2, SN, COLOR_SN, 5, 6, 1, 0, 0, ELEMENTAL),
+	NICKEL(3, NI, COLOR_NI, 7, 6, 2, 0, 0, ELEMENTAL),
+	SILVER(4, AG, COLOR_AG, 5, 6, 2, 4, 0, ELEMENTAL),
+	LEAD(5, PB, COLOR_PB, 4, 12, 2, 0, 0, ELEMENTAL),
+	LUTETIUM(6, LU, COLOR_LU, 8, 10, 2, 1, 2, ELEMENTAL),
+	TUNGSTEN(7, W, COLOR_W, 10, 25, 3, 0, 1, ELEMENTAL),
+	IRIDIUM(8, IR, COLOR_IR, 13, 24, 3, 4, 2, ELEMENTAL),
+	BISMUTH(9, BI, COLOR_BI, 5, 8, 1, 2, 0, ELEMENTAL),
+	ARSENIC(10, AS, COLOR_AS, 4, 5, 1, 0, 0, ELEMENTAL),
+	ANTIMONY(11, SB, COLOR_SB, 4, 5, 1, 0, 0, ELEMENTAL),
+	NEODYMIUM(12, ND, COLOR_ND, 6, 8, 2, 1, 1, ELEMENTAL),
+	OSMIUM(13, OS, COLOR_OS, 12, 30, 2, 1, 1, ELEMENTAL),
+	PALLADIUM(14, PD, COLOR_PD, 5, 6, 2, 2, 1, ELEMENTAL),
+	ALUMINIUM(15, AL, COLOR_AL, 5, 8, 1, 2, 0, ELEMENTAL),
+
+	//Reserved
+	NULL_16(16),
+	NULL_17(17),
+	NULL_18(18),
+	NULL_19(19),
+	NULL_20(20),
+	NULL_21(21),
+	NULL_22(22),
+	NULL_23(23),
+	NULL_24(24),
+	NULL_25(25),
+	NULL_26(26),
+	NULL_27(27),
+	NULL_28(28),
+	NULL_29(29),
+	NULL_30(30),
+	NULL_31(31),
+
+	BRASS(32, CUZN, COLOR_CUZN, 5, 6, 1, 0, 0, SIMPLE_ALLOY),
+	BRONZE(33, CUSN, COLOR_CUSN, 5, 7, 1, 0, 0, SIMPLE_ALLOY),
+	ARSENICAL_BRONZE(34, CUAS, COLOR_CUAS, 6, 8, 1, 0, 0, SIMPLE_ALLOY),
+	ANTIMONIAL_BRONZE(35, CUSB, COLOR_CUSB, 6, 8, 1, 0, 0, SIMPLE_ALLOY),
+	BISMUTH_BRONZE(36, CUBI, COLOR_CUBI, 5, 8, 1, 1, 0, SIMPLE_ALLOY),
+	MITHRIL(37, "Mithril", MTHR, COLOR_MTHR, 5, 10, 2, 0, 1, SIMPLE_ALLOY),
+	ALUMINIUM_BRONZE(38, CUAL, COLOR_CUAL, 5, 6, 1, 0, 0, SIMPLE_ALLOY),
+	CUPRONICKEL(39, CUNI, COLOR_CUNI, 5, 6, 1, 0, 0, SIMPLE_ALLOY),
+	RIFTISH_BRONZE(40, RBRZ, COLOR_RBRZ, 6, 12, 2, 1, 1, SIMPLE_ALLOY),
+	CONSTANTAN(41, CNST, COLOR_CNST, 5, 6, 1, 0, 0, SIMPLE_ALLOY),
+	INVAR(42, INVR, COLOR_INVR, 6, 8, 2, 0, 0, SIMPLE_ALLOY),
+	ELECTRUM(43, ELCT, COLOR_ELCT, 5, 6, 2, 2, 0, SIMPLE_ALLOY),
+	WARDENIC_BASE(44, WRDM, COLOR_WRDM, 5, 6, 2, 0, 0, SIMPLE_ALLOY),
+	DULL_REDSOLDER(45, DRDS, COLOR_DRDS, 5, 6, 2, 0, 0, SIMPLE_ALLOY),
+	REDSOLDER(46, RDSR, COLOR_RDSR, 5, 6, 2, 2, 0, SIMPLE_ALLOY),
+	NULL_47(47),
+
+	//Reserved
+	NULL_48(48),
+	NULL_49(49),
+	NULL_50(50),
+	NULL_51(51),
+	NULL_52(52),
+	NULL_53(53),
+	NULL_54(54),
+	NULL_55(55),
+	NULL_56(56),
+	NULL_57(57),
+	NULL_58(58),
+	NULL_59(59),
+	NULL_60(60),
+	NULL_61(61),
+	NULL_62(62),
+	NULL_63(63),
+
+	THAUMIC_ELEMTRUM(64, TELC, COLOR_TELC, 6, 8, 2, 6, 1, SPECIAL_ALLOY),
+	THAUMIC_RIFTISH_BRONZE(65, TRBR, COLOR_TRBR, 7, 16, 2, 1, 1, SPECIAL_ALLOY),
+	STEEL(66, STEL, COLOR_STEL, 8, 15, 2, 0, 1, SPECIAL_ALLOY),
+	THAUMIC_STEEL(67, TSTL, COLOR_TSTL, 9, 20, 2, 0, 1, SPECIAL_ALLOY),
+	VOIDBRASS(68, VBRS, COLOR_VBRS, 6, 12, 1, 0, 1, SPECIAL_ALLOY),
+	VOIDSTEEL(69, VSTL, COLOR_VSTL, 10, 25, 2, 0, 1, SPECIAL_ALLOY),
+	VOIDTUNGSTEN(70, VDWT, COLOR_VDWT, 20, 50, 3, 0, 2, SPECIAL_ALLOY),
+	VOIDCUPRONICKEL(71, VCPN, COLOR_VCPN, 7, 10, 2, 0, 1, SPECIAL_ALLOY),
+	NULL_72(72),
+	NULL_73(73),
+	NULL_74(74),
+	NULL_75(75),
+	NULL_76(76),
+	NULL_77(77),
+	NULL_78(78),
+	NULL_79(79),
+
+	WARDENIC_BRONZE(80, WBRZ, COLOR_WBRZ, 8, 12, 2, 0, 0, EQUIPMENT_ALLOY),
+	WARDENIC_STEEL(81, WDST, COLOR_WDST, 11, 35, 2, 1, 1, EQUIPMENT_ALLOY),
+	WARDENIC_RIFTISH_BRONZE(82, WRBR, COLOR_WRBR, 10, 25, 2, 1, 1, EQUIPMENT_ALLOY),
+	WARDENIC_COMPOSITE(83, WCMP, COLOR_WCMP, 25, 100, 3, 2, 2, COMPOSITE_ALLOY),
+
+	ARCANE_REDSOLDER(84, ARDS, COLOR_ARDS, 5, 6, 2, 2, 0, EQUIPMENT_ALLOY),
+	REDBRONZE(85, RDBR, COLOR_RDBR, 8, 25, 2, 1, 0, EQUIPMENT_ALLOY),
+	HARDENED_REDBRONZE(86, HRBR, COLOR_HRBR, 10, 30, 2, 0, 1, EQUIPMENT_ALLOY),
+	FLUXSTEEL(87, FSTL, COLOR_FSTL, 12, 40, 2, 2, 1, EQUIPMENT_ALLOY),
+
+	FLUXED_TUNGSTEN(88, FLXW, COLOR_FLXW, 20, 50, 3, 4, 2, COMPOSITE_ALLOY),
+	MAGNEOTURGIC_COMPOSITE(89, MCMP, COLOR_MCMP, 25, 80, 3, 3, 2, COMPOSITE_ALLOY),
+	FLUXED_COMPOSITE(90, FCMP, COLOR_FLUX, 30, 120, 3, 6, 2, COMPOSITE_ALLOY),
+	RESONANT_COMPOSITE(91, RCMP, COLOR_RCMP, 35, 160, 3, 12, 3, COMPOSITE_ALLOY),
+
+	EMPOWERED_VOIDBRASS(92, EVBS, COLOR_EVBS, 7, 15, 1, 1, 1, EQUIPMENT_ALLOY),
+	CRIMSOM_THAUMIUM(93, CTHM, COLOR_CTHM, 8, 35, 2, 0, 1, EQUIPMENT_ALLOY),
+	OCCULT_VOIDTUNGSTEN(94, OCVW, COLOR_OCVW, 25, 100, 3, 4, 2, EQUIPMENT_ALLOY),
+	NULL_95(95),
+
+	PYROPE(96, PYRP, CLEAR, 7, 13, 3, 4, 2, GEM_TYPE),
+	DIOPTASE(97, DIOP, CLEAR, 7, 13, 3, 4, 2, GEM_TYPE),
+	FLUONIC_SAPPHIRE(98, FSPH, CLEAR, 7, 13, 3, 8, 2, GEM_TYPE),
+	FLUONIC_PYROPTASE(99, FPRT, CLEAR, 10, 20, 3, 15, 3, GEM_TYPE),
+	WARDENIC_CRYSTAL(100, WCRS, CLEAR, 12, 20, 2, 4, 2, GEM_TYPE),
+	ACTIVATED_WARDENIC_CRYSTAL(101, AWCR, CLEAR, 16, 30, 3, 8, 2, GEM_TYPE),
+	AWAKENED_WARDENIC_CRYSTAL(102, WWCR, CLEAR, 20, 40, 3, 12, 3, GEM_TYPE),
+	NULL_103(103),
+
+	WARDENIC_QUARTZ(104, WQRZ, COLOR_WQRZ, 0.8F, 25, 1, 0, 1, QUARTZ_TYPE),
+	INFUSED_QUARTZ(105, IQRZ, CLEAR, 1.2F, 30, 1, 2, 1, QUARTZ_TYPE),
+	REDQUARTZ(106, RQRZ, COLOR_FLUX, 0.8F, 25, 1, 0, 1, QUARTZ_TYPE),
+	NULL_107(107),
+	NULL_108(108),
+	NULL_109(109),
+	NULL_110(110),
+	NULL_111(111),
+
+	XENOTIME(112, YPO, LNTH, COLOR_LNTH, 5, 6, 2, 0, 1, ORE_METAL),
+	LANTHANIDES(113, "Lanthanides", YPOJ, COLOR_YPOJ, 5, 6, 2, 0, 1, ORE_METAL),
+	IRIDOSMIUM(114, IROS, COLOR_IROS, 12, 20, 3, 1, 2, ORE_METAL),
+	NULL_115(115),
+	NULL_116(116),
+	NULL_117(117),
+	NULL_118(118),
+	NULL_119(119),
+	THAUMIC_BRONZE(120, TBRZ, COLOR_TBRZ, 6, 10, 2, 0, 0, COATED_ALLOY),
+	OSMIUM_LUTETIUM(121, OSLU, COLOR_OSLU, 12, 35, 3, 1, 2, COATED_ALLOY),
+	NULL_122(122),
+	NULL_123(123),
+	NULL_124(124),
+	NULL_125(125),
+	NULL_126(126),
+	VOIDMETAL(127, "Voidmetal", "Void", CLEAR, 6, 10, 1, 0, 0, SPECIAL_ALLOY),
+
+	NULL_128(128),
+	NULL_129(129),
+	NULL_130(130),
+	NULL_131(131),
+	NULL_132(132),
+	NULL_133(133),
+	NULL_134(134),
+	NULL_135(135),
+	NULL_136(136),
+	NULL_137(137),
+	NULL_138(138),
+	NULL_139(139),
+	NULL_140(140),
+	NULL_141(141),
+	NULL_142(142),
+	NULL_143(143),
+	NULL_144(144),
+	NULL_145(145),
+	NULL_146(146),
+	NULL_147(147),
+	NULL_148(148),
+	NULL_149(149),
+	NULL_150(150),
+	NULL_151(151),
+	NULL_152(152),
+	NULL_153(153),
+	NULL_154(154),
+	NULL_155(155),
+	NULL_156(156),
+	NULL_157(157),
+	NULL_158(158),
+	NULL_159(159),
+	NULL_160(160),
+	NULL_161(161),
+	NULL_162(162),
+	NULL_163(163),
+	NULL_164(164),
+	NULL_165(165),
+	NULL_166(166),
+	NULL_167(167),
+	NULL_168(168),
+	NULL_169(169),
+	NULL_170(170),
+	NULL_171(171),
+	NULL_172(172),
+	NULL_173(173),
+	NULL_174(174),
+	NULL_175(175),
+	NULL_176(176),
+	NULL_177(177),
+	NULL_178(178),
+	NULL_179(179),
+	NULL_180(180),
+	NULL_181(181),
+	NULL_182(182),
+	NULL_183(183),
+	NULL_184(184),
+	NULL_185(185),
+	NULL_186(186),
+	NULL_187(187),
+	NULL_188(188),
+	NULL_189(189),
+	NULL_190(190),
+	NULL_191(191),
+	NULL_192(192),
+	NULL_193(193),
+	NULL_194(194),
+	NULL_195(195),
+	NULL_196(196),
+	NULL_197(197),
+	NULL_198(198),
+	NULL_199(199),
+
+	SHARD_AER(200, AER, COLOR_AER, 0, SHARD_DUST),
+	SHARD_IGNIS(201, IGNIS, COLOR_IGNIS, 0, SHARD_DUST),
+	SHARD_AQUA(202, AQUA, COLOR_AQUA, 0, SHARD_DUST),
+	SHARD_TERRA(203, TERRA, COLOR_TERRA, 0, SHARD_DUST),
+	SHARD_ORDO(204, ORDO, COLOR_ORDO, 0, SHARD_DUST),
+	SHARD_PERDITIO(205, PERDITIO, COLOR_PERDITIO, 0, SHARD_DUST),
+	IRON(206, FE, COLOR_FE, 0, COMPAT_DUST),
+	GOLD(207, AU, COLOR_AU, 0, COMPAT_DUST),
+	THAUMIUM(208, THMM, COLOR_THMM, 0, COMPAT_DUST),
+	DUMMY_VOIDMETAL(209),
+	SULFUR(210, S, COLOR_S, 0, MINERAL_DUST),
+	SALTPETER(211, KNO, COLOR_KNO, 0, MINERAL_DUST),
+	DUMMY_SALIS_MUNDUS(212),
+	PRIMAL_ESSENCE(213, PRES, CLEAR, 0, SHARD_DUST),
+	NULL_214(214),
+	NULL_215(215),
+	NULL_216(216),
+	NULL_217(217),
+	NULL_218(218),
+	NULL_219(219),
+	NULL_220(220),
+	NULL_221(221),
+	NULL_222(222),
+	NULL_223(223),
+	NULL_224(224),
+	NULL_225(225),
+	NULL_226(226),
+	NULL_227(227),
+	NULL_228(228),
+	NULL_229(229),
+	NULL_230(230),
+	NULL_231(231),
+	NULL_232(232),
+	NULL_233(233),
+	NULL_234(234),
+	NULL_235(235),
+	NULL_236(236),
+	NULL_237(237),
+	NULL_238(238),
+	NULL_239(239),
+	WARDENIC_COMPOUND(240),
+	NULL_241(241),
+	NULL_242(242),
+	NULL_243(243),
+	NULL_244(244),
+	NULL_245(245),
+	NULL_246(246),
+	NULL_247(247),
+	NULL_248(248),
+	NULL_249(249),
+	NULL_250(250),
+	NULL_251(251),
+	NULL_252(252),
+	NULL_253(253),
+	NULL_254(254),
+	NULL_255(255),
+	NULL_256(256),
+	NULL_257(257),
+	NULL_258(258),
+	NULL_259(259),
+	REDUCED_REDSTONE(260),
+	PURIFIED_REDSTONE(261),
+	ENRICHED_REDSTONE(262),
+	CONTAINMENT_GLASS_ITEM(263),
+	TREATING_COMPOUND(264),
+	PIEZOMAGNETIC_COMPOUND(265),
+	GEOMAGNETIC_COMPOUND(266),
+	CONVERSION_COMPOUND(267),
+	CONTAINMET_COMPOUND(268),
+	NULL_269(269),
+	NULL_270(270),
+	NULL_271(271),
+	NULL_272(272),
+	NULL_273(273),
+	NULL_274(274),
+	NULL_275(275),
+	NULL_276(276),
+	NULL_277(277),
+	NULL_278(278),
+	NULL_279(279),
+	NULL_280(280),
+	NULL_281(281),
+	NULL_282(282),
+	NULL_283(283),
+	NULL_284(284),
+	NULL_285(285),
+	NULL_286(286),
+	NULL_287(287),
+	NULL_288(288),
+	NULL_289(289),
+	NULL_290(290),
+	NULL_291(291),
+	NULL_292(292),
+	NULL_293(293),
+	NULL_294(294),
+	NULL_295(295),
+	NULL_296(296),
+	NULL_297(297),
+	NULL_298(298),
+	NULL_299(299);
+
+	int id;
+	String name;
+	String oreDict;
+	int color;
+	float hardness;
+	float resistance;
+	int miningLevel;
+	int light;
+	EnumRarity rarity;
+	boolean hasBlock;
+	boolean hasItem;
+	EnumMineralType type;
+
+	private EnumMetalData(int id, String name, String oreDict, int color, float hardness, float resistance, int miningLevel, int light, int rarity, boolean hasBlock, boolean hasItem, EnumMineralType type) {
+		this.id = id;
+		this.name = name;
+		this.oreDict = oreDict;
+		this.color = color;
+		this.hardness = hardness;
+		this.resistance = resistance;
+		this.miningLevel = miningLevel;
+		this.light = light;
+		this.rarity = EnumRarity.values()[rarity];
+		this.hasBlock = hasBlock;
+		this.hasItem = hasItem;
+		this.type = type;
+	}
+
+	private EnumMetalData(int id, String name, String oreDict, int color, float hardness, float resistance, int miningLevel, int light, int rarity, EnumMineralType type) {
+		this(id, name, oreDict, color, hardness, resistance, miningLevel, light, rarity, true, true, type);
+	}
+
+	private EnumMetalData(int id, String name, int color, float hardness, float resistance, int miningLevel, int light, int rarity, EnumMineralType type) {
+		this(id, name, name, color, hardness, resistance, miningLevel, light, rarity, true, true, type);
+	}
+
+	private EnumMetalData(int id, String name, int color, int rarity, EnumMineralType type) {
+		this(id, name, name, color, 0, 0, 0, 0, rarity, true, true, type);
+	}
+
+	private EnumMetalData(int id) {
+		this(id, "", "", CLEAR, 3, 5, 0, 0, 0, false, false, UNUSED);
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public String getOreDict() {
+		return oreDict;
+	}
+
+	public int getColor() {
+		return color;
+	}
+
+	public float getHardness() {
+		return hardness;
+	}
+
+	public float getResistance() {
+		return resistance;
+	}
+
+	public int getMiningLevel() {
+		return miningLevel;
+	}
+
+	public int getLight() {
+		return light;
+	}
+
+	public EnumRarity getRarity() {
+		return rarity;
+	}
+
+	public boolean hasBlock() {
+		return hasBlock;
+	}
+
+	public boolean hasItem() {
+		return hasItem;
+	}
+
+	public EnumMineralType getType() {
+		return type;
+	}
+}

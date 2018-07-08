@@ -1,0 +1,18 @@
+package mortvana.melteddashboard.util;
+
+public enum EnumMineralType {
+	ELEMENTAL,
+	SIMPLE_ALLOY,
+	SPECIAL_ALLOY,
+	EQUIPMENT_ALLOY,
+	COMPOSITE_ALLOY,
+	GEM_TYPE,
+	QUARTZ_TYPE,
+	ORE_METAL,
+	COATED_ALLOY,
+	SHARD_DUST,
+	COMPAT_DUST,
+	MINERAL_DUST,
+	COMPOUND_DUST,
+	UNUSED
+}

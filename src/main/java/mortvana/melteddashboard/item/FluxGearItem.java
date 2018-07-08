@@ -78,7 +78,7 @@ public class FluxGearItem extends Item {
 	/**
 	 *	A copy of the null Icon, since Mojang's code is unfriendly.
 	 */
-	private static IIcon nullIcon;
+	public static IIcon nullIcon;
 
     public FluxGearItem() {
         setHasSubtypes(true);
@@ -422,7 +422,7 @@ public class FluxGearItem extends Item {
     @Override
     @SideOnly(Side.CLIENT)
     public IIcon getIconFromDamage(int metadata) {
-        return itemList.contains(metadata) ? itemMap.get(metadata).getIcon() : null;
+        return itemList.contains(metadata) ? itemMap.get(metadata).getIcon() : nullIcon;
     }
 
 	@Override

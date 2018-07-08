@@ -31,6 +31,8 @@ public class StringLibrary {
 	public static final String CHAIN = "chain";
 	public static final String CHAIN_ORE = "itemChain";
 
+	public static final String POOR = "Poor";
+
 	//ASPECTS
 	public static final String AER = "Aer";
 	public static final String IGNIS = "Ignis";
@@ -114,7 +116,7 @@ public class StringLibrary {
 
 	public static final String WQRZ = "WardenicQuartz";
 	public static final String IQRZ = "InfusedQuartz";
-	public static final String RQRZ = "Redquartz";
+	public static final String RQRZ = "RedquartzThaumic";
 
 	public static final String LNTH = "XenotimeLanthanides";
 	public static final String YPOJ = "XenotimeExtras";
@@ -125,4 +127,6 @@ public class StringLibrary {
 	public static final String YPO = "Xenotime";
 
 	public static final String THMM = "Thaumium";
+
+	public static final String PRES = "PrimalEssence";
 }

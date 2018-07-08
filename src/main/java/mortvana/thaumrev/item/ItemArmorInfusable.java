@@ -1,4 +1,4 @@
-package mortvana.thaumrev.util.item;
+package mortvana.thaumrev.item;
 
 import java.util.Collection;
 import java.util.List;
@@ -28,9 +28,9 @@ import net.minecraftforge.common.ISpecialArmor;
 import thaumcraft.api.aspects.Aspect;
 
 import mortvana.melteddashboard.item.entry.ArmorDataAdv;
-import mortvana.melteddashboard.util.IStackProvider;
 import mortvana.melteddashboard.util.helpers.*;
 import mortvana.melteddashboard.util.helpers.mod.ThaumcraftHelper;
+import mortvana.melteddashboard.util.libraries.ColorLibrary;
 
 import mortvana.thaumrev.api.item.infusion.IInfusableItem;
 import mortvana.thaumrev.api.util.enums.EnumEquipmentType;
@@ -228,7 +228,7 @@ public /*abstract*/ class ItemArmorInfusable extends ItemArmor implements ISpeci
 	@Override
 	public int getColor(ItemStack stack) {
 		if (!getColorized()) {
-			return -1;
+			return ColorLibrary.CLEAR;
 		} else {
 			if (stack.getTagCompound() == null) {
 				return getColor();

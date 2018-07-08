@@ -1,6 +1,7 @@
 package mortvana.thaumrev.util;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
@@ -20,6 +21,10 @@ import thaumcraft.common.lib.utils.Utils;
 
 import mortvana.melteddashboard.util.IStackProvider;
 import mortvana.melteddashboard.util.helpers.ItemHelper;
+import mortvana.melteddashboard.util.helpers.mod.ThaumcraftHelper;
+import mortvana.melteddashboard.util.helpers.science.MathHelper;
+import mortvana.melteddashboard.util.libraries.StringLibrary;
+import mortvana.melteddashboard.util.libraries.ThaumcraftLibrary;
 
 import static mortvana.melteddashboard.util.libraries.ThermalLibrary.*;
 import static mortvana.melteddashboard.util.helpers.ItemHelper.cloneStack;
@@ -57,6 +62,10 @@ public class RecipeHelper {
 
 	public static ShapedOreRecipe addStairRecipe(ItemStack result, Object input) {
 		return addShapedRecipe(cloneStack(result, 4), "#  ", "## ", "###", '#', input);
+	}
+
+	public static ShapedOreRecipe addSurroundRecipe(ItemStack result, Object center, Object surround) {
+		return addShapedRecipe(result, "###", "#x#", "###", '#', surround, 'x', center);
 	}
 
 	/** SHAPELESS CRAFTING * */
@@ -100,6 +109,14 @@ public class RecipeHelper {
 
 	public static ShapelessOreRecipe addDestairRecipe(ItemStack result, Object input) {
 		return addShapelessRecipe(cloneStack(result, 6), input, input, input, input);
+	}
+
+	public static ShapelessOreRecipe addAlloyRecipe(ItemStack output, int quantity, String type, String... input) {
+		String[] components = new String[input.length];
+		for (int i = 0; i < input.length; i++) {
+			components[i] = type + input[i];
+		}
+		return addShapelessRecipe(cloneStack(output, quantity), components);
 	}
 
 	/** SMELTING * */
@@ -185,6 +202,17 @@ public class RecipeHelper {
 	public static void addCluster(int oreID, int oreMeta, int clusterID, int clusterMeta, float modifier) {
 		String val = oreID + "," + oreMeta + "," + clusterID + "," + clusterMeta + "," + modifier;
 		FMLInterModComms.sendMessage("Thaumcraft", "nativeCluster", val);
+	}
+
+	/** THAUMIC REVELATIONS - THAUMIC HAMMERMILL CRAFTING **/
+	public static ShapelessOreRecipe addHammermillRecipe(ItemStack result, String input, int alumentum) { //Temporary
+		List<String> items = new ArrayList<String>();
+		items.add(input);
+		//int cost = (int) Math.ceil((double) alumentum / 1000D);
+		for (int i = 0; i < alumentum; i++) {
+			items.add("itemAlumentum");
+		}
+		return addShapelessRecipe(result, items);
 	}
 
 	/** THERMAL EXPANSION - FURNACE CRAFTING * */
@@ -441,6 +469,18 @@ public class RecipeHelper {
 	public static void addRefractorySmelting(ItemStack input, ItemStack output, float mult) {
 		if (Loader.isModLoaded("ThermalExpansion")) {
 			addInductionSmelterRecipe((int) (8000 * mult), input, dustPyrotheum, output);
+			//TODO: TRv, IE, RC, RoC (Blast), RoC (Pulse Jet), IC2
+		}
+	}
+
+	public static void addGrindingRecipes(ItemStack input, ItemStack output) {
+		addGrindingRecipes(input, output, 6);
+	}
+
+	public static void addGrindingRecipes(ItemStack input, ItemStack output, int powerFactor) {
+		if (Loader.isModLoaded("ThermalExpansion")) {
+			addPulverizerRecipe(powerFactor * 400, input, output);
+			//TODO: EIO, IE, RC, RoC, IC2
 		}
 	}
 }

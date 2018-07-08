@@ -2,6 +2,8 @@ package mortvana.melteddashboard.item.entry;
 
 import net.minecraft.item.EnumRarity;
 
+import mortvana.melteddashboard.util.libraries.ColorLibrary;
+
 public abstract class ArmorDataBase {
 
 	protected String modName;
@@ -52,6 +54,6 @@ public abstract class ArmorDataBase {
 	}
 
 	public boolean getColorized() {
-		return color != 0xFFFFFF;
+		return color != ColorLibrary.CLEAR;
 	}
 }

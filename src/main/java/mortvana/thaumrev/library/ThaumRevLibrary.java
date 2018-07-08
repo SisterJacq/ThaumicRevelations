@@ -7,7 +7,6 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
@@ -17,15 +16,13 @@ import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.wands.ItemFocusBasic;
 
 import mortvana.melteddashboard.block.material.MaterialFalseAir;
-import mortvana.melteddashboard.intermod.baubles.item.FluxGearItemBauble;
 import mortvana.melteddashboard.item.*;
 import mortvana.melteddashboard.world.*;
 
-import mortvana.thaumrev.util.item.ItemArmorInfusable;
+import mortvana.thaumrev.item.ItemThaumicBauble;
+import mortvana.thaumrev.item.ItemArmorInfusable;
 
 import static mortvana.melteddashboard.util.libraries.ColorLibrary.*;
-
-import static thaumcraft.api.aspects.Aspect.*;
 import static mortvana.melteddashboard.util.libraries.StringLibrary.*;
 
 public class ThaumRevLibrary {
@@ -87,7 +84,7 @@ public class ThaumRevLibrary {
 	/** ITEMS **/
 	public static FluxGearItemInteractive generalItem;
 
-	public static FluxGearItemBauble thaumicBauble;
+	public static ItemThaumicBauble thaumicBauble;
 
 	/** ITEMSTACKS **/
 	public static ItemStack potato = new ItemStack(Items.potato); //Used for debugging, placeholding, and such
@@ -133,6 +130,32 @@ public class ThaumRevLibrary {
 	public static ItemStack oreDioptase;
 	public static ItemStack oreFluonicSapphire;
 
+	public static ItemStack orePoorChalcocite;
+	public static ItemStack orePoorSphalerite;
+	public static ItemStack orePoorCassiterite;
+	public static ItemStack orePoorMillerite;
+	public static ItemStack orePoorNativeSilver;
+	public static ItemStack orePoorGalena;
+	public static ItemStack orePoorXenotime;
+	public static ItemStack orePoorWolframite;
+	public static ItemStack orePoorIridosmium;
+	public static ItemStack orePoorBismuthinite;
+	public static ItemStack orePoorTennantite;
+	public static ItemStack orePoorTetrahedrite;
+
+	public static ItemStack oreGravelChalcocite;
+	public static ItemStack oreGravelSphalerite;
+	public static ItemStack oreGravelCassiterite;
+	public static ItemStack oreGravelMillerite;
+	public static ItemStack oreGravelNativeSilver;
+	public static ItemStack oreGravelGalena;
+	public static ItemStack oreGravelXenotime;
+	public static ItemStack oreGravelWolframite;
+	public static ItemStack oreGravelIridosmium;
+	public static ItemStack oreGravelBismuthinite;
+	public static ItemStack oreGravelTennantite;
+	public static ItemStack oreGravelTetrahedrite;
+
 	public static ItemStack blockCopper;
 	public static ItemStack blockZinc;
 	public static ItemStack blockTin;
@@ -152,11 +175,11 @@ public class ThaumRevLibrary {
 
 	public static ItemStack blockBrass;
 	public static ItemStack blockBronze;
-	public static ItemStack blockAsBronze;
-	public static ItemStack blockSbBronze;
-	public static ItemStack blockBiBronze;
+	public static ItemStack blockArsenicalBronze;
+	public static ItemStack blockAntimonialBronze;
+	public static ItemStack blockBismuthBronze;
 	public static ItemStack blockMithril;
-	public static ItemStack blockAlBronze;
+	public static ItemStack blockAlumiuiumBronze;
 	public static ItemStack blockCupronickel;
 	public static ItemStack blockRiftishBronze;
 	public static ItemStack blockConstantan;
@@ -233,7 +256,7 @@ public class ThaumRevLibrary {
 	public static ItemStack itemStabilizedSingularity;			//00011 //v0.0.1
 	public static ItemStack itemAnimatedPiston;					//00012 //v0.0.1
 
-	public static ItemStack itemAspectOrbReceptor;				//00020 //v0.0.1
+	public static ItemStack itemAspectOrbReceptorMakeshift;		//00020 //v0.0.1
 
 	public static ItemStack itemEldritchCog;					//00030 //v0.0.1
 	public static ItemStack itemEldritchKeystone;				//00031 //v0.0.1
@@ -274,7 +297,8 @@ public class ThaumRevLibrary {
 	public static ItemStack excubituraOil;						//01036 //v0.0.1
 	public static ItemStack chainWardenicBronze;				//01037 //v0.0.1
 	public static ItemStack chainPrimalBronze;					//01038 //v0.0.1
-	//public static ItemStack bindingWardenicBronzeSocketed;		//01039 //v0.0.3
+	public static ItemStack plateWardenicBronzeMirror;			//01039 //v0.0.1
+	//public static ItemStack bindingWardenicBronzeSocketed;		//01040 //v0.0.3
 
 	public static ItemStack excubituraOilPure;					//01070 //v0.0.1
 	public static ItemStack chainWardenicSteel;					//01071 //v0.0.1
@@ -392,15 +416,14 @@ public class ThaumRevLibrary {
 	public static ItemStack ingotVoidtungsten;					//05070
 	public static ItemStack ingotVoidcupronickel;				//05071
 
-
 	//05080-05095 EQUIPMENT ALLOY INGOTS
 	public static ItemStack ingotWardenicBronze;				//05080
 	public static ItemStack ingotWardenicSteel;					//05081
 	public static ItemStack ingotWardenicRiftishBronze;			//05082
 	public static ItemStack ingotWardenicComposite;				//05083
-	public static ItemStack ingotRedsolderArcane;				//05084
+	public static ItemStack ingotArcaneRedsolder;				//05084
 	public static ItemStack ingotRedbronze;						//05085
-	public static ItemStack ingotRedbronzeHardened;				//05086
+	public static ItemStack ingotHardenedRedbronze;				//05086
 	public static ItemStack ingotFluxsteel;						//05087
 	public static ItemStack ingotFluxedTungsten;				//05088
 	public static ItemStack ingotMagneoturgicComposite;			//05089
@@ -416,8 +439,8 @@ public class ThaumRevLibrary {
 	public static ItemStack gemFluonicSapphire;					//05098
 	public static ItemStack gemFluonicPyroptase;				//05099
 	public static ItemStack gemWardenicCrystal;					//05100
-	public static ItemStack gemWardenicCrystalActivated;		//05101
-	public static ItemStack gemWardenicCrystalAwakened;			//05102
+	public static ItemStack gemActivatedWardenicCrystal;		//05101
+	public static ItemStack gemAwakenedWardenicCrystal;			//05102
 
 	public static ItemStack gemWardenicQuartz;					//05104
 	public static ItemStack gemInfusedQuartz;					//05105
@@ -429,7 +452,7 @@ public class ThaumRevLibrary {
 	public static ItemStack ingotIridosmium;					//05114
 
 	public static ItemStack ingotThaumicBronze;					//05120
-	public static ItemStack ingotOsLu;							//05121
+	public static ItemStack ingotOsmiumLutetium;				//05121
 
 	//05200-05231 ELEMENTAL METAL NUGGETS
 	public static ItemStack nuggetCopper;						//05200
@@ -481,9 +504,9 @@ public class ThaumRevLibrary {
 	public static ItemStack nuggetWardenicSteel;				//05281
 	public static ItemStack nuggetWardenicRiftishBronze;		//05282
 	public static ItemStack nuggetWardenicComposite;			//05283
-	public static ItemStack nuggetRedsolderArcane;				//05284
+	public static ItemStack nuggetArcaneRedsolder;				//05284
 	public static ItemStack nuggetRedbronze;					//05285
-	public static ItemStack nuggetRedbronzeHardened;			//05286
+	public static ItemStack nuggetHardenedRedbronze;			//05286
 	public static ItemStack nuggetFluxsteel;					//05287
 	public static ItemStack nuggetFluxedTungsten;				//05288
 	public static ItemStack nuggetMagneoturgicComposite;		//05289
@@ -499,8 +522,8 @@ public class ThaumRevLibrary {
 	public static ItemStack shardFluonicSapphire;				//05298
 	public static ItemStack shardFluonicPyroptase;				//05299
 	public static ItemStack shardWardenicCrystal;				//05300
-	public static ItemStack shardWardenicCrystalActivated;		//05301
-	public static ItemStack shardWardenicCrystalAwakened;		//05302
+	public static ItemStack shardActivatedWardenicCrystal;		//05301
+	public static ItemStack shardAwakenedWardenicCrystal;		//05302
 
 	public static ItemStack shardWardenicQuartz;				//05304
 	public static ItemStack shardInfusedQuartz;					//05305
@@ -512,7 +535,7 @@ public class ThaumRevLibrary {
 	public static ItemStack nuggetIridosmium;					//05314
 
 	public static ItemStack nuggetThaumicBronze;				//05320
-	public static ItemStack nuggetOsLu;							//05321
+	public static ItemStack nuggetOsmiumLutetium;				//05321
 
 	//05400-05431 ELEMENTAL METAL DUSTS
 	public static ItemStack dustCopper;							//05400
@@ -559,15 +582,14 @@ public class ThaumRevLibrary {
 	public static ItemStack dustVoidtungsten;					//05470
 	public static ItemStack dustVoidcupronickel;				//05471
 
-
 	//05480-05495 EQUIPMENT ALLOY DUSTS
 	public static ItemStack dustWardenicBronze;					//05480
 	public static ItemStack dustWardenicSteel;					//05481
 	public static ItemStack dustWardenicRiftishBronze;			//05482
 	public static ItemStack dustWardenicComposite;				//05483
-	public static ItemStack dustRedsolderArcane;				//05484
+	public static ItemStack dustArcaneRedsolder;				//05484
 	public static ItemStack dustRedbronze;						//05485
-	public static ItemStack dustRedbronzeHardened;				//05486
+	public static ItemStack dustHardenedRedbronze;				//05486
 	public static ItemStack dustFluxsteel;						//05487
 	public static ItemStack dustFluxedTungsten;					//05488
 	public static ItemStack dustMagneoturgicComposite;			//05489
@@ -583,8 +605,8 @@ public class ThaumRevLibrary {
 	public static ItemStack dustFluonicSapphire;				//05498
 	public static ItemStack dustFluonicPyroptase;				//05499
 	public static ItemStack dustWardenicCrystal;				//05500
-	public static ItemStack dustWardenicCrystalActivated;		//05501
-	public static ItemStack dustWardenicCrystalAwakened;		//05502
+	public static ItemStack dustActivatedWardenicCrystal;		//05501
+	public static ItemStack dustAwakenedWardenicCrystal;		//05502
 
 	public static ItemStack dustWardenicQuartz;					//05504
 	public static ItemStack dustInfusedQuartz;					//05505
@@ -596,7 +618,7 @@ public class ThaumRevLibrary {
 	public static ItemStack dustIridosmium;						//05514
 
 	public static ItemStack dustThaumicBronze;					//05520
-	public static ItemStack dustOsLu;							//05521
+	public static ItemStack dustOsmiumLutetium;					//05521
 
 	//05600-05631 ELEMENTAL METAL TINY DUSTS
 	public static ItemStack tinyCopper;							//05600
@@ -648,9 +670,9 @@ public class ThaumRevLibrary {
 	public static ItemStack tinyWardenicSteel;					//05681
 	public static ItemStack tinyWardenicRiftishBronze;			//05682
 	public static ItemStack tinyWardenicComposite;				//05683
-	public static ItemStack tinyRedsolderArcane;				//05684
+	public static ItemStack tinyArcaneRedsolder;				//05684
 	public static ItemStack tinyRedbronze;						//05685
-	public static ItemStack tinyRedbronzeHardened;				//05686
+	public static ItemStack tinyHardenedRedbronze;				//05686
 	public static ItemStack tinyFluxsteel;						//05687
 	public static ItemStack tinyFluxedTungsten;					//05688
 	public static ItemStack tinyMagneoturgicComposite;			//05689
@@ -666,8 +688,8 @@ public class ThaumRevLibrary {
 	public static ItemStack tinyFluonicSapphire;				//05698
 	public static ItemStack tinyFluonicPyroptase;				//05699
 	public static ItemStack tinyWardenicCrystal;				//05700
-	public static ItemStack tinyWardenicCrystalActivated;		//05701
-	public static ItemStack tinyWardenicCrystalAwakened;		//05702
+	public static ItemStack tinyActivatedWardenicCrystal;		//05701
+	public static ItemStack tinyAwakenedWardenicCrystal;		//05702
 
 	public static ItemStack tinyWardenicQuartz;					//05704
 	public static ItemStack tinyInfusedQuartz;					//05705
@@ -679,7 +701,7 @@ public class ThaumRevLibrary {
 	public static ItemStack tinyIridosmium;						//05714
 
 	public static ItemStack tinyThaumicBronze;					//05720
-	public static ItemStack tinyOsLu;							//05721
+	public static ItemStack tinyOsmiumLutetium;					//05721
 
 	//05800-05831 ELEMENTAL METAL PLATES
 	public static ItemStack plateCopper;						//05800
@@ -731,9 +753,9 @@ public class ThaumRevLibrary {
 	public static ItemStack plateWardenicSteel;					//05881
 	public static ItemStack plateWardenicRiftishBronze;			//05882
 	public static ItemStack plateWardenicComposite;				//05883
-	public static ItemStack plateRedsolderArcane;				//05884
+	public static ItemStack plateArcaneRedsolder;				//05884
 	public static ItemStack plateRedbronze;						//05885
-	public static ItemStack plateRedbronzeHardened;				//05886
+	public static ItemStack plateHardenedRedbronze;				//05886
 	public static ItemStack plateFluxsteel;						//05887
 	public static ItemStack plateFluxedTungsten;				//05888
 	public static ItemStack plateMagneoturgicComposite;			//05889
@@ -745,7 +767,7 @@ public class ThaumRevLibrary {
 
 	//05920-05927 OTHER METAL PLATES
 	public static ItemStack plateThaumicBronze;					//05920
-	public static ItemStack plateOsLu;							//05921
+	public static ItemStack plateOsmiumLutetium;				//05921
 
 	//06032-06063 RAW SIMPLE ALLOY INGOTS
 	public static ItemStack rawBrass;							//06032
@@ -916,27 +938,31 @@ public class ThaumRevLibrary {
 	public static ItemFocusBasic itemFocusPurity;
 
 	/** RECIPES **/
-	public static ShapelessOreRecipe recipeBrass;
-	public static ShapelessOreRecipe recipeBronze;
-	public static ShapelessOreRecipe[] recipeBismuthBronze;
-	public static ShapelessOreRecipe recipeMithril;
-	public static ShapelessOreRecipe recipeAlBronze;
-	public static ShapelessOreRecipe recipeCupronickel;
-	public static ShapelessOreRecipe recipeRiftishBronze;
-	public static ShapelessOreRecipe recipeConstantan;
-	public static ShapelessOreRecipe recipeInvar;
-	public static ShapelessOreRecipe recipeElectrum;
+	public static ShapelessOreRecipe recipeCuZn;
+	public static ShapelessOreRecipe recipeCuSn;
+	public static ShapelessOreRecipe recipeCuAs;
+	public static ShapelessOreRecipe recipeCuSb;
+	public static ShapelessOreRecipe[] recipeCuZnBi;
+	public static ShapelessOreRecipe recipeCuAsSb;
+	public static ShapelessOreRecipe recipeCuAl;
+	public static ShapelessOreRecipe recipeCuNi;
+	public static ShapelessOreRecipe recipeRBrz;
+	public static ShapelessOreRecipe recipeCnst;
+	public static ShapelessOreRecipe recipeFeNi;
+	public static ShapelessOreRecipe recipeAuAg;
 
-	public static ShapelessOreRecipe recDustBrass;
-	public static ShapelessOreRecipe recDustBronze;
-	public static ShapelessOreRecipe[] recDustBismuthBronze;
-	public static ShapelessOreRecipe recDustMithril;
-	public static ShapelessOreRecipe recDustAlBronze;
-	public static ShapelessOreRecipe recDustCupronickel;
-	public static ShapelessOreRecipe recDustRiftishBronze;
-	public static ShapelessOreRecipe recDustConstantan;
-	public static ShapelessOreRecipe recDustInvar;
-	public static ShapelessOreRecipe recDustElectrum;
+	public static ShapelessOreRecipe recDustCuZn;
+	public static ShapelessOreRecipe recDustCuSn;
+	public static ShapelessOreRecipe recDustCuAs;
+	public static ShapelessOreRecipe recDustCuSb;
+	public static ShapelessOreRecipe[] recDustCuZnBi;
+	public static ShapelessOreRecipe recDustCuAsSb;
+	public static ShapelessOreRecipe recDustCuAl;
+	public static ShapelessOreRecipe recDustCuNi;
+	public static ShapelessOreRecipe recDustRBrz;
+	public static ShapelessOreRecipe recDustCnst;
+	public static ShapelessOreRecipe recDustFeNi;
+	public static ShapelessOreRecipe recDustAuAg;
 
 	//public static ShapelessOreRecipe recipeOsLu;
 	//public static ShapelessOreRecipe recCoatOsLu;
@@ -972,10 +998,14 @@ public class ThaumRevLibrary {
 	public static ShapedArcaneRecipe recipeTreatedCotton;
 	public static CrucibleRecipe recipeEnchantedCotton;
 
+	public static ShapedArcaneRecipe recipeOrbReceptorBasic;
+
 	public static InfusionRecipe recipePrimalGoggles;
 	public static InfusionRecipe recipePrimalRobes;
 	public static InfusionRecipe recipePrimalPants;
 	public static InfusionRecipe recipePrimalBoots;
+
+	public static InfusionRecipe recipePrimalPendant;
 
 	public static ShapedArcaneRecipe recipeAniPiston;
 
@@ -1049,6 +1079,7 @@ public class ThaumRevLibrary {
 
 	public static ShapedArcaneRecipe recipeWardenBronzeChain;
 	public static ShapedArcaneRecipe recipePrimalBronzeChain;
+	public static ShapedArcaneRecipe recipeWardenBronze;
 	public static ShapedArcaneRecipe recipeWardenBronzePlate;
 
 	public static ShapedArcaneRecipe recipeWardenicChainHelmet;
@@ -1062,7 +1093,7 @@ public class ThaumRevLibrary {
 
 	public static ShapedArcaneRecipe recipeWardenSteelChain;
 	public static ShapedArcaneRecipe recipeWardenSteelChainOiled;
-	public static /*ThaumicCompressorRecipe*/ ShapedArcaneRecipe recipeWardenSteelPlate;
+	public static /*ThaumicHammermillRecipe*/ ShapedArcaneRecipe recipeWardenSteelPlate;
 	public static ShapedArcaneRecipe recipeDetailedSteelPlate;
 	public static /*AlchemicalInfuserRecipe*/ InfusionRecipe recipeRunicSteelPlate;
 	public static /*RunicInfuserRecipe*/ InfusionRecipe recipesConsecratedSteelPlate;
@@ -1083,10 +1114,11 @@ public class ThaumRevLibrary {
 	public static InfusionRecipe recipeWardenicBinder;
 	public static ShapelessOreRecipe recipeBinderTiny;
 	public static ShapelessOreRecipe recipeBinderCombine;
+	public static InfusionRecipe recipeActivatedWardenicCrystal;
 
-	public static InfusionRecipe recipeWardenBronze;
+	public static InfusionRecipe recipeWardenRBronze;
 
-	public static ShapelessOreRecipe recipeWardenicMetal;
+	public static ShapelessOreRecipe[] recipeWardenMetal;
 	public static ShapedArcaneRecipe recipeWardenicCompositeRaw;
 	public static InfusionRecipe recipeWardenicCompositeIngot;
 
@@ -1151,10 +1183,16 @@ public class ThaumRevLibrary {
 	public static String keyCottonRobes = "COTTON_ROBES";
 
 	public static ResearchItem researchPrimalRobes;
-	public static String keyRobesPrimal = "ROBES_PRIMAL";
+	public static String keyPrimalRobes = "ROBES_PRIMAL";
 
-	public static ResearchItem researchAspectOrb;
-	public static String keyAspectOrb = "ASPECT_ORB";
+	public static ResearchItem researchPrimalPendant;
+	public static String keyPrimalPendant = "PENDANT_PRIMAL";
+
+	public static ResearchItem researchAspectOrbBasic;
+	public static String keyAspectOrbBasic = "ASPECT_ORB_BASIC";
+
+	public static ResearchItem researchAspectOrbAdv;
+	public static String keyAspectOrbAdv = "ASPECT_ORB_ADV";
 
 
 	public static ResearchItem researchRunicInfuser;
@@ -1406,6 +1444,7 @@ public class ThaumRevLibrary {
 	/** BLOCK NAMES  **/
 	public static final String[] NAMES_CROP_MUNDANE = { "cotton", "thistle" };
 
+	//Will remove in favor of EnumMetal(Mineral?)Data in v0.0.2
 	public static final String[] NAMES_STORAGE_ORE = { CU, ZN, SN, NI, AG, PB, LU, W, IR, BI, AS, SB, ND, OS, PD, AL };
 	public static final String[] NAMES_STORAGE_ALLOY_1 = { CUZN, CUSN, CUAS, CUSB, CUBI, "Mithril", CUAL, CUNI, RBRZ, CNST, INVR, ELCT, WRDM, DRDS, RDSR };
 	public static final String[] NAMES_STORAGE_SPECIAL = { TELC, TRBR, STEL, TSTL, VBRS, VSTL, VDWT, VCPN };
@@ -1414,12 +1453,12 @@ public class ThaumRevLibrary {
 	public static final String[] NAMES_STORAGE_MISC_INT = { LNTH, YPOJ, IROS, TBRZ, OSLU, "Void" };
 	public static final String[] NAMES_STORAGE_MISC_LOC = { YPO, "Lanthanides", IROS, TBRZ, OSLU, "Voidmetal" };
 
-	public static final int[] MINE_LVL_STORAGE_ORE = { 1, 1, 1, 2, 2, 2, 2, 3, 3, 1, 1, 1, 0, 2, 2, 1 };
-	public static final int[] MINE_LVL_STORAGE_ALLOY_1 = { 1, 1, 1, 1, 1, 2, 1, 1, 2, 1, 2, 2, 2, 2, 2 };
-	public static final int[] MINE_LVL_STORAGE_SPECIAL = { 2, 2, 2, 2, 1, 2, 3, 2 };
-	public static final int[] MINE_LVL_STORAGE_EQUIPMENT = { 2, 2, 2, 3, 2, 2, 2, 2, 3, 3, 3, 3, 1, 2, 3 };
-	public static final int[] MINE_LVL_STORAGE_GEM = { 3, 3, 3, 3, 2, 3, 3, 1, 1, 1 };
-	public static final int[] MINE_LVL_STORAGE_MISC = { 2, 2, 3, 2, 3, 1 };
+	public static final int[] COLOR_STORAGE_ORE = { COLOR_CU, COLOR_ZN, COLOR_SN, COLOR_NI, COLOR_AG, COLOR_PB, COLOR_LU, COLOR_W, COLOR_IR, COLOR_BI, COLOR_AS, COLOR_SB, COLOR_ND, COLOR_OS, COLOR_PD, COLOR_AL };
+	public static final int[] COLOR_STORAGE_ALLOY_1 = { COLOR_CUZN, COLOR_CUSN, COLOR_CUAS, COLOR_CUSB, COLOR_CUBI, COLOR_MTHR, COLOR_CUAL, COLOR_CUNI, COLOR_RBRZ, COLOR_CNST, COLOR_INVR, COLOR_ELCT, COLOR_WRDM, COLOR_DRDS, COLOR_RDSR };
+	public static final int[] COLOR_STORAGE_SPECIAL = { COLOR_TELC, COLOR_TRBR, COLOR_STEL, COLOR_TSTL, COLOR_VBRS, COLOR_VSTL, COLOR_VDWT, COLOR_VCPN };
+	public static final int[] COLOR_STORAGE_EQUIPMENT = { COLOR_WBRZ, COLOR_WDST, COLOR_WRBR, COLOR_WCMP, COLOR_ARDS, COLOR_RDBR, COLOR_HRBR, COLOR_FSTL, COLOR_FLXW, COLOR_MCMP, COLOR_FLUX, COLOR_RCMP, COLOR_EVBS, COLOR_CTHM, COLOR_OCVW };
+	public static final int[] COLOR_STORAGE_GEM = { CLEAR, CLEAR, CLEAR, CLEAR, CLEAR, CLEAR, CLEAR, COLOR_WQRZ, CLEAR, COLOR_FLUX };
+	public static final int[] COLOR_STORAGE_MISC = { COLOR_LNTH, COLOR_YPOJ, COLOR_IROS, COLOR_TBRZ, COLOR_OSLU, CLEAR };
 
 	public static final float[] HARDNESS_STORAGE_ORE = 	{ 5, 5, 5, 7, 5, 4, 8, 10, 13, 5, 4, 4, 6, 12, 5, 5 };
 	public static final float[] HARDNESS_STORAGE_ALLOY_1 = { 5, 5, 6, 6, 5, 5, 5, 5, 6, 5, 6, 5, 5, 5, 5 };
@@ -1428,18 +1467,25 @@ public class ThaumRevLibrary {
 	public static final float[] HARDNESS_STORAGE_GEM = { 7, 7, 7, 10, 12, 16, 20, 0.8F, 1.2F, 0.8F };
 	public static final float[] HARDNESS_STORAGE_MISC = { 5, 5, 12, 6, 12, 6 };
 
-	public static final float[] RESISTANCE_STORAGE_ORE = { 6, 6, 6, 6, 6, 12, 10, 25, 16, 8, 5, 5, 8, 20, 6, 8 };
+	public static final float[] RESISTANCE_STORAGE_ORE = { 6, 6, 6, 6, 6, 12, 10, 25, 24, 8, 5, 5, 8, 30, 6, 8 };
 	public static final float[] RESISTANCE_STORAGE_ALLOY_1 = { 6, 7, 8, 8, 8, 10, 6, 6, 12, 6, 8, 6, 6, 6, 6 };
-	public static final float[] RESISTANCE_STORAGE_SPECIAL = { 8, 16, 13, 15, 12, 25, 40, 10 };
-	public static final float[] RESISTANCE_STORAGE_EQUIPMENT = { 12, 25, 24, 50, 6, 20, 25, 30, 40, 50, 60, 100, 15, 25, 50 };
+	public static final float[] RESISTANCE_STORAGE_SPECIAL = { 8, 16, 15, 20, 12, 25, 50, 10 };
+	public static final float[] RESISTANCE_STORAGE_EQUIPMENT = { 12, 35, 25, 100, 6, 25, 40, 40, 50, 80, 120, 160, 15, 35, 100 };
 	public static final float[] RESISTANCE_STORAGE_GEM = { 13, 13, 13, 20, 20, 30, 40, 25, 30, 25 };
-	public static final float[] RESISTANCE_STORAGE_MISC = { 6, 6, 20, 10, 25, 10 };
+	public static final float[] RESISTANCE_STORAGE_MISC = { 6, 6, 35, 10, 25, 10 };
+
+	public static final int[] MINE_LVL_STORAGE_ORE = { 1, 1, 1, 2, 2, 2, 2, 3, 3, 1, 1, 1, 2, 2, 2, 1 };
+	public static final int[] MINE_LVL_STORAGE_ALLOY_1 = { 1, 1, 1, 1, 1, 2, 1, 1, 2, 1, 2, 2, 2, 2, 2 };
+	public static final int[] MINE_LVL_STORAGE_SPECIAL = { 2, 2, 2, 2, 1, 2, 3, 2 };
+	public static final int[] MINE_LVL_STORAGE_EQUIPMENT = { 2, 2, 2, 3, 2, 2, 2, 2, 3, 3, 3, 3, 1, 2, 3 };
+	public static final int[] MINE_LVL_STORAGE_GEM = { 3, 3, 3, 3, 2, 3, 3, 1, 1, 1 };
+	public static final int[] MINE_LVL_STORAGE_MISC = { 2, 2, 3, 2, 3, 1 };
 
 	public static final int[] LIGHT_STORAGE_ORE = { 0, 0, 0, 0, 4, 0, 1, 0, 4, 2, 0, 0, 1, 1, 2, 2};
-	public static final int[] LIGHT_STORAGE_ALLOY_1 = { 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2, 0, 2, 2 };
+	public static final int[] LIGHT_STORAGE_ALLOY_1 = { 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2, 0, 0, 2 };
 	public static final int[] LIGHT_STORAGE_SPECIAL = { 6, 1, 0, 0, 0, 0, 0, 0 };
 	public static final int[] LIGHT_STORAGE_EQUIPMENT = { 0, 1, 1, 2, 2, 1, 0, 2, 4, 3, 6, 12, 1, 0, 4 };
-	public static final int[] LIGHT_STORAGE_GEM = { 4, 4, 8, 15, 4, 8, 12, 0, 2,  0 };
+	public static final int[] LIGHT_STORAGE_GEM = { 4, 4, 8, 15, 4, 8, 12, 0, 2, 0 };
 	public static final int[] LIGHT_STORAGE_MISC = { 0, 0, 1, 0, 1, 0 };
 
 	public static final int[] RARITY_STORAGE_ORE = 	{ 0, 0, 0, 0, 0, 0, 2, 1, 2, 0, 0, 0, 1, 1,	1, 0 };
@@ -1448,13 +1494,6 @@ public class ThaumRevLibrary {
 	public static final int[] RARITY_STORAGE_EQUIPMENT = { 0, 1, 1, 2, 0, 0, 1, 1, 2, 2, 2, 3, 1, 1, 2};
 	public static final int[] RARITY_STORAGE_GEM = { 2, 2, 2, 3, 2, 2, 3, 1, 1, 1 };
 	public static final int[] RARITY_STORAGE_MISC = { 1, 1, 2, 0, 2, 0 };
-
-	public static final int[] COLOR_STORAGE_ORE = { COLOR_CU, COLOR_ZN, COLOR_SN, COLOR_NI, COLOR_AG, COLOR_PB, COLOR_LU, COLOR_W, COLOR_IR, COLOR_BI, COLOR_AS, COLOR_SB, COLOR_ND, COLOR_OS, COLOR_PD, COLOR_AL };
-	public static final int[] COLOR_STORAGE_ALLOY_1 = { COLOR_CUZN, COLOR_CUSN, COLOR_CUAS, COLOR_CUSB, COLOR_CUBI, COLOR_MTHR, COLOR_CUAL, COLOR_CUNI, COLOR_RBRZ, COLOR_CNST, COLOR_INVR, COLOR_ELCT, COLOR_WRDM, COLOR_DRDS, COLOR_RDSR };
-	public static final int[] COLOR_STORAGE_SPECIAL = { COLOR_TELC, COLOR_TRBR, COLOR_STEL, COLOR_TSTL, COLOR_VBRS, COLOR_VSTL, COLOR_VDWT, COLOR_VCPN };
-	public static final int[] COLOR_STORAGE_EQUIPMENT = { COLOR_WBRZ, COLOR_WDST, COLOR_WRBR, COLOR_WCMP, COLOR_ARDS, COLOR_RDBR, COLOR_HRBR, COLOR_FSTL, COLOR_FLXW, COLOR_MCMP, COLOR_FLUX, COLOR_RCMP, COLOR_EVBS, COLOR_CTHM, COLOR_OCVW };
-	public static final int[] COLOR_STORAGE_GEM = { CLEAR, CLEAR, CLEAR, CLEAR, CLEAR, CLEAR, CLEAR, COLOR_WQRZ, CLEAR, COLOR_FLUX };
-	public static final int[] COLOR_STORAGE_MISC = { COLOR_LNTH, COLOR_YPOJ, COLOR_IROS, COLOR_TBRZ, COLOR_OSLU, CLEAR };
 
 	public static final int[] SIGNAL_STORAGE_EQUIPMENT = { 0, 0, 0, 0, 8, 4, 3, 6, 12, 8, 15, 0, 0, 0 };
 

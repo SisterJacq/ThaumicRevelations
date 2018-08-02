@@ -987,7 +987,7 @@ public class ContentHelper {
 		list.add(new ResearchPage("0"));
 
 		List<ItemStack> ores = new ArrayList<ItemStack>(9);
-		//if (ThaumRevConfig.enableSphalerite) {
+		//if (ThaumRevConfig.generateSphalerite) {
 		//list.add(new ResearchPage(oreSphalerite));
 		//}
 

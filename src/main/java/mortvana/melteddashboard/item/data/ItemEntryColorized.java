@@ -1,4 +1,4 @@
-package mortvana.melteddashboard.item.entry;
+package mortvana.melteddashboard.item.data;
 
 public class ItemEntryColorized extends ItemEntry {
 

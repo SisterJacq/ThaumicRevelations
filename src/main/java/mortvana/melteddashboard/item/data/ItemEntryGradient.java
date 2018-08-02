@@ -1,4 +1,4 @@
-package mortvana.melteddashboard.item.entry;
+package mortvana.melteddashboard.item.data;
 
 import mortvana.melteddashboard.client.texture.GradientNode;
 

@@ -1,4 +1,4 @@
-package mortvana.melteddashboard.item.entry;
+package mortvana.melteddashboard.item.data;
 
 import mortvana.thaumrev.api.util.enums.EnumEquipmentType;
 import net.minecraft.item.EnumRarity;
@@ -18,6 +18,7 @@ public class ArmorDataAdv extends ArmorDataBase {
 	protected boolean goggles = false;
 	protected int maxEnergy = 0;
     protected EnumEquipmentType type = EnumEquipmentType.NULL;
+	protected ArmorBehavior behavior = ArmorBehaviorBase.instance;
 
 	public ArmorDataAdv(String modName, String icon, String sheet, String repair, EnumRarity rarity, String unlocName, String regName, int color, boolean showInCreative, int[] discount, boolean goggles, int flux, EnumEquipmentType type) {
 		setModName(modName);
@@ -234,6 +235,11 @@ public class ArmorDataAdv extends ArmorDataBase {
         return this;
     }
 
+	public ArmorDataAdv setBehavior(ArmorBehavior behavior) {
+		this.behavior = behavior;
+		return this;
+	}
+
 	/** GETTERS **/
 	public int[] getDiscount() {
 		return discount;
@@ -262,5 +268,9 @@ public class ArmorDataAdv extends ArmorDataBase {
     public EnumEquipmentType getType() {
         return type;
     }
+
+	public ArmorBehavior getBehavior() {
+		return behavior;
+	}
 
 }

@@ -1,5 +1,3 @@
-package mortvana.melteddashboard.world;
-
 /*
  * Copyright (c) CovertJaguar, 2014 http://railcraft.info
  *
@@ -8,6 +6,8 @@ package mortvana.melteddashboard.world;
  * permission unless otherwise specified on the
  * license page at http://railcraft.info/wiki/info:license.
  */
+package mortvana.melteddashboard.world.poorore;
+
 import java.util.Random;
 
 import net.minecraft.block.Block;

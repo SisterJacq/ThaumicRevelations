@@ -1,12 +1,13 @@
 package mortvana.thaumrev.library;
 
-import mortvana.melteddashboard.item.entry.ArmorDataAdv;
+import mortvana.melteddashboard.item.data.ArmorDataAdv;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.event.terraingen.OreGenEvent;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
@@ -18,12 +19,14 @@ import thaumcraft.api.wands.ItemFocusBasic;
 import mortvana.melteddashboard.block.material.MaterialFalseAir;
 import mortvana.melteddashboard.item.*;
 import mortvana.melteddashboard.world.*;
+import mortvana.melteddashboard.world.poorore.PoorOreGenerator;
 
 import mortvana.thaumrev.item.ItemThaumicBauble;
 import mortvana.thaumrev.item.ItemArmorInfusable;
 
 import static mortvana.melteddashboard.util.libraries.ColorLibrary.*;
 import static mortvana.melteddashboard.util.libraries.StringLibrary.*;
+import static net.minecraftforge.event.terraingen.OreGenEvent.GenerateMinable.EventType;
 
 public class ThaumRevLibrary {
 
@@ -1400,6 +1403,43 @@ public class ThaumRevLibrary {
 	public static WorldGenMixedOreVein genAgPb;
 	public static WorldGenMixedOreVein genWSn;
 	public static WorldGenMixedOreVein genAgPbBi;
+	public static PoorOreGenerator genPoorChalcocite;
+	public static PoorOreGenerator genPoorSphalerite;
+	public static PoorOreGenerator genPoorCassiterite;
+	public static PoorOreGenerator genPoorMillerite;
+	public static PoorOreGenerator genPoorNativeSilver;
+	public static PoorOreGenerator genPoorGalena;
+	public static PoorOreGenerator genPoorXenotime;
+	public static PoorOreGenerator genPoorWolframite;
+	public static PoorOreGenerator genPoorIridosmium;
+	public static PoorOreGenerator genPoorBismuthinite;
+	public static PoorOreGenerator genPoorTennantite;
+	public static PoorOreGenerator genPoorTetrahedite;
+	public static SurfaceOreGen genGravelChalcocite;
+	public static SurfaceOreGen genGravelSphalerite;
+	public static SurfaceOreGen genGravelCassiterite;
+	public static SurfaceOreGen genGravelMillerite;
+	public static SurfaceOreGen genGravelNativeSilver;
+	public static SurfaceOreGen genGravelGalena;
+	public static SurfaceOreGen genGravelXenotime;
+	public static SurfaceOreGen genGravelWolframite;
+	public static SurfaceOreGen genGravelIridosmium;
+	public static SurfaceOreGen genGravelBismuthinite;
+	public static SurfaceOreGen genGravelTennantite;
+	public static SurfaceOreGen genGravelTetrahedite;
+
+	public static EventType eventPoorChalcocite;
+	public static EventType eventPoorSphalerite;
+	public static EventType eventPoorCassiterite;
+	public static EventType eventPoorMillerite;
+	public static EventType eventPoorNativeSilver;
+	public static EventType eventPoorGalena;
+	public static EventType eventPoorXenotime;
+	public static EventType eventPoorWolframite;
+	public static EventType eventPoorIridosmium;
+	public static EventType eventPoorBismuthinite;
+	public static EventType eventPoorTennantite;
+	public static EventType eventPoorTetrahedite;
 
 	/** ARMOR MATERIALS **/
 	public static ArmorMaterial matPrimal;
@@ -1503,12 +1543,16 @@ public class ThaumRevLibrary {
 	public static final int[] LINK_STORAGE_MISC_IND = { 0, 1, 2, 0, 0, 0, 0, 0, 3, 4, 0, 0, 0, 0, 0, 5 };
 
 
-	/** NBT KEYS * */
+	/** NBT KEYS **/
+	@Deprecated
 	public static final String INVENTORY = "Items";
+	@Deprecated
 	public static final String SLOT = "Slot";
-	public static final String DURABILITY = "Durability";
+	@Deprecated
 	public static final String REVEALING = "Revealing";
+	@Deprecated
 	public static final String BROKEN = "Broken";
+	@Deprecated
 	public static final String VISMODIFIER = "VisDiscount";
 
 	/** CLIENT-SIDE * */

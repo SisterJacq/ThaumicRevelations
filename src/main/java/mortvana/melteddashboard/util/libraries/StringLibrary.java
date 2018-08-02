@@ -129,4 +129,13 @@ public class StringLibrary {
 	public static final String THMM = "Thaumium";
 
 	public static final String PRES = "PrimalEssence";
+
+	/** NBT KEYS * */
+	public static final String INVENTORY = "Items";
+	public static final String SLOT = "Slot";
+	public static final String DURABILITY = "Durability";
+	public static final String REVEALING = "Revealing";
+	public static final String BROKEN = "Broken";
+	public static final String VISMODIFIER = "VisDiscount";
+	public static final String CHARGE = "Charge";
 }

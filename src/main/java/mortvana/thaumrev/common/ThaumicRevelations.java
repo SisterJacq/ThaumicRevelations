@@ -28,6 +28,7 @@ public class ThaumicRevelations {
 	public static final Logger logger = LogManager.getLogger("Flux Gear");
 
 	public static ThaumRevConfig config;
+	public static ThaumRevConfigWorld configWorld;
 
 	/**
 	 *	Runs before other things, reading configs, registering handlers, creating blocks, items, and whatever, including
@@ -38,6 +39,7 @@ public class ThaumicRevelations {
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		config = new ThaumRevConfig(event, "/Mortvana/ThaumicRevelations.cfg");
+		configWorld = new ThaumRevConfigWorld(event, "/Mortvana/ThaumicRevelationsWorld.cfg");
 		proxy.initRenderers();
 		//GuiHandler.init();
 		//AspectInfusionHandler.init();

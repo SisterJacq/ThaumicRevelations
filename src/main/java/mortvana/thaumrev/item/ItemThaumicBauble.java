@@ -20,6 +20,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
+import thaumcraft.common.entities.EntityAspectOrb;
 import thaumcraft.common.items.baubles.ItemAmuletVis;
 import thaumcraft.common.items.wands.ItemWandCasting;
 import thaumcraft.common.lib.research.ResearchManager;
@@ -28,6 +29,7 @@ import thaumcraft.common.tiles.TileVisRelay;
 import mortvana.melteddashboard.intermod.baubles.item.FluxGearItemBauble;
 import mortvana.melteddashboard.item.FluxGearItem;
 import mortvana.melteddashboard.util.helpers.StringHelper;
+import mortvana.melteddashboard.util.helpers.mod.ThaumcraftHelper;
 import mortvana.melteddashboard.util.libraries.StringLibrary;
 
 import baubles.api.BaubleType;
@@ -136,45 +138,69 @@ public class ItemThaumicBauble extends ItemAmuletVis {
 
 	@Override
 	public void onWornTick(ItemStack stack, EntityLivingBase player) {
-		if (stack.getItemDamage() == 2 && !player.worldObj.isRemote && player.ticksExisted % 5 == 0) {
-			if (player.getHeldItem() != null && isChargeable(player.getHeldItem(), player)) {
-				chargeItem(player.getHeldItem(), player, stack);
-			} else if (player instanceof EntityPlayer){
-				InventoryPlayer inv = ((EntityPlayer) player).inventory;
-				boolean charged = false;
-				for (ItemStack toCharge : inv.armorInventory) {
+		if (stack.getItemDamage() == 2 && !player.worldObj.isRemote) {
+			if (player.ticksExisted % 5 == 0){
+				chargeItems(stack, player);
+				chargeBauble(stack, player);
+			}
+			generateVis(stack, player);
+		}
+	}
+
+	public void chargeItems(ItemStack stack, EntityLivingBase player) {
+		if (player.getHeldItem() != null && isChargeable(player.getHeldItem(), player)) {
+			chargeItem(player.getHeldItem(), player, stack);
+		} else if (player instanceof EntityPlayer) {
+			InventoryPlayer inv = ((EntityPlayer) player).inventory;
+			boolean charged = false;
+			for (ItemStack toCharge : inv.armorInventory) {
+				if (toCharge != null && isChargeable(toCharge, player)) {
+					chargeItem(toCharge, player, stack);
+					charged = true;
+					break;
+				}
+			}
+			if (!charged) {
+				for (ItemStack toCharge : inv.mainInventory) {
 					if (toCharge != null && isChargeable(toCharge, player)) {
 						chargeItem(toCharge, player, stack);
-						charged = true;
 						break;
 					}
 				}
-				if (!charged) {
-					for (ItemStack toCharge : inv.mainInventory) {
-						if (toCharge != null && isChargeable(toCharge, player)) {
-							chargeItem(toCharge, player, stack);
-							break;
+			}
+			//TODO: Baubles? TiC Knapsack? TiC Belt? Just Ask!
+		}
+	}
+
+	public void chargeBauble(ItemStack stack, EntityLivingBase player) {
+		if (TileVisRelay.nearbyPlayers.containsKey(player.getEntityId())) {
+			if (((WeakReference) TileVisRelay.nearbyPlayers.get(player.getEntityId())).get() != null && ((TileVisRelay) ((WeakReference) TileVisRelay.nearbyPlayers.get(player.getEntityId())).get()).getDistanceFrom(player.posX, player.posY, player.posZ) < 26.0D) {
+				AspectList list = getAspectsWithRoom(stack);
+				for (Aspect aspect : list.getAspects()) {
+					if (aspect != null) {
+						int amount = ((TileVisRelay) ((WeakReference) TileVisRelay.nearbyPlayers.get(player.getEntityId())).get()).consumeVis(aspect, Math.min(10, getMaxVis(stack) - getVis(stack, aspect)));
+						if (amount > 0) {
+							addRealVis(stack, aspect, amount, true);
+							((TileVisRelay) ((WeakReference) TileVisRelay.nearbyPlayers.get(player.getEntityId())).get()).triggerConsumeEffect(aspect);
 						}
 					}
 				}
+			} else {
+				TileVisRelay.nearbyPlayers.remove(player.getEntityId());
 			}
-			if (TileVisRelay.nearbyPlayers.containsKey(player.getEntityId())) {
-				if (((WeakReference) TileVisRelay.nearbyPlayers.get(player.getEntityId())).get() != null && ((TileVisRelay)((WeakReference) TileVisRelay.nearbyPlayers.get(player.getEntityId())).get()).getDistanceFrom(player.posX, player.posY, player.posZ) < 26.0D) {
-					AspectList list = getAspectsWithRoom(stack);
-					for (Aspect aspect : list.getAspects()) {
-						if (aspect != null) {
-							int amount = ((TileVisRelay)((WeakReference) TileVisRelay.nearbyPlayers.get(player.getEntityId())).get()).consumeVis(aspect, Math.min(10, getMaxVis(stack) - getVis(stack, aspect)));
-							if (amount > 0) {
-								addRealVis(stack, aspect, amount, true);
-								((TileVisRelay)((WeakReference) TileVisRelay.nearbyPlayers.get(player.getEntityId())).get()).triggerConsumeEffect(aspect);
-							}
-						}
-					}
-				} else {
-					TileVisRelay.nearbyPlayers.remove(player.getEntityId());
-				}
+		}
+	}
+
+	public void generateVis(ItemStack stack, EntityLivingBase player) {
+		int r = itemRand.nextInt(20000);
+		if (r < 80) {
+			Aspect aspect = ThaumcraftHelper.getRandomPrimal();
+			if (getVis(stack, aspect) < getMaxVis(stack)) {
+				storeVis(stack, aspect, Math.min(100, getMaxVis(stack) - getVis(stack, aspect)));
+			} else {
+				EntityAspectOrb orb = new EntityAspectOrb(player.worldObj, player.posX, player.posY, player.posZ, aspect, 1);
+				player.worldObj.spawnEntityInWorld(orb);
 			}
-			//Generation
 		}
 	}
 
@@ -197,6 +223,9 @@ public class ItemThaumicBauble extends ItemAmuletVis {
 					amount = Math.min(amount, getVis(pendant, aspect));
 					storeVis(pendant, aspect, getVis(pendant, aspect) - amount);
 					wand.storeVis(stack, aspect, getVis(stack, aspect) + amount);
+					if (getVis(pendant, aspect) == 0) {
+						pendant.getTagCompound().removeTag(aspect.getTag());
+					}
 				}
 			}
 		}

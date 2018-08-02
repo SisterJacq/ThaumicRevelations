@@ -13,6 +13,8 @@ import net.minecraft.world.World;
 
 import mortvana.thaumrev.library.ThaumRevLibrary;
 import mortvana.melteddashboard.util.helpers.*;
+import mortvana.melteddashboard.util.helpers.science.MathHelper;
+
 import mortvana.thaumrev.util.enums.EnumPrimalAspect;
 import thaumcraft.api.IVisDiscountGear;
 import thaumcraft.api.aspects.Aspect;
@@ -25,6 +27,24 @@ import static thaumcraft.api.aspects.Aspect.*;
 public class ThaumcraftHelper {
 
 	public static final Aspect[] PRIMALS = new Aspect[] { AIR, FIRE, WATER, EARTH, ORDER, ENTROPY };
+
+	public static Aspect getRandomPrimal() {
+		switch (MathHelper.random(6)) {
+			case 0:
+				return AIR;
+			case 1:
+				return FIRE;
+			case 2:
+				return WATER;
+			case 3:
+				return EARTH;
+			case 4:
+				return ORDER;
+			case 5:
+				return ENTROPY;
+		}
+		return getRandomPrimal(); //Shouldn't ever happen, but just in case.
+	}
 
 	/** VIS DISCOUNTS **/
 	public static int getDiscountForAspect(ItemStack stack, EntityPlayer player, Aspect aspect, int baseDiscount) {
@@ -70,18 +90,42 @@ public class ThaumcraftHelper {
 				if (discounts[0] != 0) {
 					list.add(visDiscount(discounts[0]));
 				}
-				return;
+			/*	return;
 			}
 			int spec = ArrayHelper.getOddValue(discounts);
 			if (spec != -1) {
 				list.add(visDiscount(spec == 0 ? discounts[1] : discounts[0]));
-				list.add(visDiscount(discounts[spec], PRIMALS[spec]));
+				list.add(visDiscount(discounts[spec], PRIMALS[spec]));*/
 			} else {
 				for (int i = 0; i < 6; i++) {
 					list.add(visDiscount(discounts[i], PRIMALS[i]));
 				}
 			}
 		}
+	}
+
+	public static String[] getDiscountInformation(ItemStack stack, EntityPlayer player) {
+		if (stack.getItem() instanceof IVisDiscountGear) {
+			int[] discounts = new int[6];
+			String[] strings;
+			IVisDiscountGear gear = (IVisDiscountGear) stack.getItem();
+			for (int i = 0; i < 6; i++) {
+				discounts[i] = gear.getVisDiscount(stack, player, PRIMALS[i]);
+			}
+			if (ArrayHelper.areAllValuesEqual(discounts)) {
+				strings = new String[1];
+				if (discounts[0] != 0) {
+					strings[0] = (visDiscount(discounts[0]));
+				}
+			} else {
+				strings = new String[6];
+				for (int i = 0; i < 6; i++) {
+					strings[i] = (visDiscount(discounts[i], PRIMALS[i]));
+				}
+			}
+			return strings;
+		}
+		return new String[0];
 	}
 
 	public static String visDiscount(int discount) {

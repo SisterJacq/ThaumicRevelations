@@ -113,25 +113,25 @@ public class WorldGenOreVein extends WorldGenerator {
 			double valZ = baseZ + addZ * mult;
 			double mod = (MathHelper.sin((float) i * (float) Math.PI / (float) size + 1.0F) * (random.nextDouble() * size / 16.0D) + 1.0D) / 2.0D;
 
-			int x1 = (int) Math.floor(valX - mod);
-			int y1 = (int) Math.floor(valY - mod);
-			int z1 = (int) Math.floor(valZ - mod);
-			int x2 = (int) Math.floor(valX + mod);
-			int y2 = (int) Math.floor(valY + mod);
-			int z2 = (int) Math.floor(valZ + mod);
+			int x0 = (int) Math.floor(valX - mod);
+			int y0 = (int) Math.floor(valY - mod);
+			int z0 = (int) Math.floor(valZ - mod);
+			int x1 = (int) Math.floor(valX + mod);
+			int y1 = (int) Math.floor(valY + mod);
+			int z1 = (int) Math.floor(valZ + mod);
 
-			for (int a = x1; a <= x2; a++) {
-				double x3 = ((double) a + 0.5D - valX) / mod;
+			for (int a = x0; a <= x1; a++) {
+				double x2 = ((double) a + 0.5D - valX) / mod;
 
-				if (x3 * x3 < 1.0D) {
-					for (int b = y1; b <= y2; b++) {
-						double y3 = ((double) b + 0.5D - valY)/ mod;
+				if (x2 * x2 < 1.0D) {
+					for (int b = y0; b <= y1; b++) {
+						double y2 = ((double) b + 0.5D - valY)/ mod;
 
-						if (x3 * x3 + y3 * y3 < 1.0D) {
-							for (int c = z1; c <= z2; c++) {
-								double z3 = ((double) c + 0.5D - valZ) / mod;
+						if (x2 * x2 + y2 * y2 < 1.0D) {
+							for (int c = z0; c <= z1; c++) {
+								double z2 = ((double) c + 0.5D - valZ) / mod;
 
-								if (x3 * x3 + y3 * y3 + z3 * z3 < 1.0D && world.getBlock(a, b, c).isReplaceableOreGen(world, a, b, c, stone)) {
+								if (x2 * x2 + y2 * y2 + z2 * z2 < 1.0D && world.getBlock(a, b, c).isReplaceableOreGen(world, a, b, c, stone)) {
 									world.setBlock(a, b, c, ore, meta, 2);
 								}
 							}

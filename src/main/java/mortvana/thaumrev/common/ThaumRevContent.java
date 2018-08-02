@@ -1,6 +1,6 @@
 package mortvana.thaumrev.common;
 
-import mortvana.melteddashboard.item.entry.*;
+import mortvana.melteddashboard.item.data.*;
 
 import mortvana.thaumrev.api.util.enums.EnumEquipmentType;
 import net.minecraft.init.Blocks;
@@ -30,9 +30,11 @@ import mortvana.melteddashboard.util.helpers.mod.ThaumcraftHelper;
 
 import mortvana.thaumrev.block.*;
 import mortvana.thaumrev.item.*;
+import mortvana.thaumrev.item.data.ArmorBehaviorPrimalRobes;
 import mortvana.thaumrev.util.*;
 
 import mortvana.thaumrev.item.ItemArmorInfusable;
+import mortvana.thaumrev.world.ThaumRevWorldGenerator;
 
 import static mortvana.melteddashboard.util.libraries.ColorLibrary.*;
 import static thaumcraft.api.aspects.Aspect.*;
@@ -69,7 +71,7 @@ public class ThaumRevContent {
 		loadThaumicRecipes();
 		loadClusters();
 		addLoot();
-
+		ThaumRevWorldGenerator.registerPoorOres();
 	}
 
 	public static void postInit() {
@@ -157,13 +159,13 @@ public class ThaumRevContent {
 		dataBronzeChainGreaves = new ArmorDataAdv(RESOURCE_PREFIX, EnumEquipmentType.PANTS, "bronzeChain", "greaves", "", EnumRarity.uncommon).setRepair(CHAIN_ORE + TBRZ);
 		dataBronzeChainBoots = new ArmorDataAdv(RESOURCE_PREFIX, EnumEquipmentType.BOOTS, "bronzeChain", "boots", "", EnumRarity.uncommon).setRepair(CHAIN_ORE + TBRZ);
 
-		dataPrimalGoggles = new ArmorDataAdv(RESOURCE_PREFIX, EnumEquipmentType.HELMET, "primal", "goggles", "", COLOR_THAUM, EnumRarity.uncommon).setDiscount(5).setRepair("itemEnchantedFabricCotton").setGoggles(true);
-		dataPrimalRobes = new ArmorDataAdv(RESOURCE_PREFIX, EnumEquipmentType.CHESTPLATE, "primal", "robes", "", COLOR_THAUM, EnumRarity.uncommon).setDiscount(2).setRepair("itemEnchantedFabricCotton");
-		dataPrimalPants = new ArmorDataAdv(RESOURCE_PREFIX, EnumEquipmentType.PANTS, "primal", "pants", "", COLOR_THAUM, EnumRarity.uncommon).setDiscount(2).setRepair("itemEnchantedFabricCotton");
-		dataPrimalBoots = new ArmorDataAdv(RESOURCE_PREFIX, EnumEquipmentType.BOOTS, "primal", "boots", "", COLOR_THAUM, EnumRarity.uncommon).setDiscount(1).setRepair("itemEnchantedFabricCotton");
+		dataPrimalGoggles = new ArmorDataAdv(RESOURCE_PREFIX, EnumEquipmentType.HELMET, "primal", "goggles", "", COLOR_THAUM, EnumRarity.uncommon).setDiscount(5).setRepair("itemEnchantedFabricCotton").setBehavior(ArmorBehaviorPrimalRobes.instance).setGoggles(true);
+		dataPrimalRobes = new ArmorDataAdv(RESOURCE_PREFIX, EnumEquipmentType.CHESTPLATE, "primal", "robes", "", COLOR_THAUM, EnumRarity.uncommon).setDiscount(2).setRepair("itemEnchantedFabricCotton").setBehavior(ArmorBehaviorPrimalRobes.instance);
+		dataPrimalPants = new ArmorDataAdv(RESOURCE_PREFIX, EnumEquipmentType.PANTS, "primal", "pants", "", COLOR_THAUM, EnumRarity.uncommon).setDiscount(2).setRepair("itemEnchantedFabricCotton").setBehavior(ArmorBehaviorPrimalRobes.instance);
+		dataPrimalBoots = new ArmorDataAdv(RESOURCE_PREFIX, EnumEquipmentType.BOOTS, "primal", "boots", "", COLOR_THAUM, EnumRarity.uncommon).setDiscount(1).setRepair("itemEnchantedFabricCotton").setBehavior(ArmorBehaviorPrimalRobes.instance);
 
-		dataWardenclothSkullcap = new ArmorDataAdv(RESOURCE_PREFIX, EnumEquipmentType.HELMET, "wardencloth", "skullcap", "item", COLOR_TEAL, EnumRarity.uncommon, 2);
-        dataWardenclothTunic = new ArmorDataAdv(RESOURCE_PREFIX, EnumEquipmentType.CHESTPLATE, "wardencloth", "tunic", "item", COLOR_TEAL, EnumRarity.uncommon, 1);
+		dataWardenclothSkullcap = new ArmorDataAdv(RESOURCE_PREFIX, EnumEquipmentType.HELMET, "wardencloth", "skullcap", "item", COLOR_TEAL, EnumRarity.uncommon, 1);
+        dataWardenclothTunic = new ArmorDataAdv(RESOURCE_PREFIX, EnumEquipmentType.CHESTPLATE, "wardencloth", "tunic", "item", COLOR_TEAL, EnumRarity.uncommon, 2);
         dataWardenclothPants = new ArmorDataAdv(RESOURCE_PREFIX, EnumEquipmentType.PANTS, "wardencloth", "pants", "item", COLOR_TEAL, EnumRarity.uncommon, 1);
         dataWardenclothBoots = new ArmorDataAdv(RESOURCE_PREFIX, EnumEquipmentType.BOOTS, "wardencloth", "boots", "item", COLOR_TEAL, EnumRarity.uncommon, 1);
 

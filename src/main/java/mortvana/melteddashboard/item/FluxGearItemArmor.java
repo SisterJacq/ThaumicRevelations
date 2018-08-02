@@ -17,15 +17,12 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-import net.minecraftforge.common.util.EnumHelper;
-
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 
-import mortvana.melteddashboard.item.entry.ArmorData;
+import mortvana.melteddashboard.item.data.ArmorData;
 
-import mortvana.melteddashboard.item.entry.ArmorDataBase;
-import mortvana.melteddashboard.util.IStackProvider;
+import mortvana.melteddashboard.item.data.ArmorDataBase;
 import mortvana.melteddashboard.util.helpers.OreDictHelper;
 
 public abstract class FluxGearItemArmor extends ItemArmor {

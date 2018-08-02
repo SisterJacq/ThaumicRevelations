@@ -3,7 +3,7 @@ Internal [20] |-> Items/Blocks [02/03/04] |-> Recipes [05/06/07/08] |-> Research
 										  |-> Texture [10/11/12/13]
 										  |-> Item Aspects [14]
 
-15 - 5 - 12/0/76/67 - 10 - 72 > 106/381
+7 - 5 - 12/0/76/67 - 10 - 72 > 128/377
 Internal:
 	General:
 	[20-xx]		Fix Colorizer
@@ -15,8 +15,15 @@ Internal:
 	[20-xx]		Setup Storage Block Colorizer
 
 	Items:
+	[20-xx]		Primal Pendant Mechanics
+	[20-xx]		Primal Robe Mechanics
+
 	Research:
-	[20-xx]		Research Splitting (8/8)
+	[20-xx]		Research Splitting
+
+	World Gen:
+	[20-xx]		Gravel Ore Generation
+	[20-xx]		Poor Ore Generation
 
 Content:
 	[02]	Blocks:
@@ -126,6 +133,7 @@ Content:
     [11-xx]		Excubitura Petal Slurry
     [11-xx]		Wardenic Bronze Mirror Plate
     [12-xx]		Tier 1 Wardenic Armor Textures
+    [12-xx]		Tier 2 Wardenic Armor Textures
     [12-xx]		Bronze Chain Armor
     [13-xx]		Tier 1 Wardenic Armor Worn Textures
 
@@ -165,7 +173,6 @@ Content:
 [04-03]		Flux Robes
 [03-04]		TF Rod/Powder Backups
 [03-05]		All Non-Metallurgy Clusters
-
 
 [05]	Recipes (Block):
 [06]	Recipes (Other Items):
@@ -289,14 +296,14 @@ TO COLORIZE (MOSTLY):
 <items/material/dustTinyContainmentGlass.png>]
 
 [12]	Textures (Equipment):
-[12-01]		Tier 2 Wardenic Armor Textures [<items/armor/wardenicChainCoif.png>,<items/armor/wardenicChainMail.png>]
-[12-02]		Tier 3 Wardenic Armor Textures [<items/armor/wardenicSteelHelmet.png>,<items/armor/wardenicSteelChestplate.png>,<items/armor/wardenicSteelGreaves.png>,<items/armor/wardenicSteelBoots.png>]
-[12-03]		Tier 4 Wardenic Armor Textures [<items/armor/wardenicCompositeHelmet.png>,<items/armor/wardenicCompositeChestplate.png>,<items/armor/wardenicCompositeGreaves.png>,<items/armor/wardenicCompositeBoots.png>]
-[12-04]		Tier 5 Wardenic Armor Textures []
-[12-05]		Flux Robes Textures [[<>,<>],[<>,<>],[<>,<>],[<>,<>]]
-[12-06]		Primal Robes Textures [<items/armor/primalGoggles.png>,[<>,<>],[<>,<>],[<>,<>]]
-[12-07]		Enchanted Cotton Robes Textures [<>,[<>,<>],[<>,<>],[<>,<>]]
-[12-08]		Primal Pendant Texture <items/baubles/pendantPrimal.png>
+
+[12-01]		Tier 3 Wardenic Armor Textures [<items/armor/wardenicSteelHelmet.png>,<items/armor/wardenicSteelChestplate.png>,<items/armor/wardenicSteelGreaves.png>,<items/armor/wardenicSteelBoots.png>]
+[12-02]		Tier 4 Wardenic Armor Textures [<items/armor/wardenicCompositeHelmet.png>,<items/armor/wardenicCompositeChestplate.png>,<items/armor/wardenicCompositeGreaves.png>,<items/armor/wardenicCompositeBoots.png>]
+[12-03]		Tier 5 Wardenic Armor Textures []
+[12-04]		Flux Robes Textures [[<>,<>],[<>,<>],[<>,<>],[<>,<>]]
+[12-05]		Primal Robes Textures [<items/armor/primalGoggles.png>,[<>,<>],[<>,<>],[<>,<>]]
+[12-06]		Enchanted Cotton Robes Textures [<>,[<>,<>],[<>,<>],[<>,<>]]
+[12-07]		Primal Pendant Texture <items/baubles/pendantPrimal.png>
 
 [13]	Textures (Worn Armor):
 [13-01]		Tier 2 Wardenic Armor Worn Textures []
@@ -460,23 +467,13 @@ TO COLORIZE (MOSTLY):
 [19-??]		Platinum Transmutation
 
 [20]	Internal:
-[20-01]		Primal Pendant Mechanics
+[20-01]		Worldgen of Elemental Pearls
 [20-02]		Setup Most Minerals with Colorizer
 [20-03]		Add All OreDict Strings to StringLibrary and Use Those
-[20-04]		Poor Ore Generation
-[20-05]		Gravel Ore Generation
-[20-06]		Cotton Farming
-[20-07]		Thistle Farming
-[20-08]		Elemental Pearl Farming
-[20-09]		Thaumonomicon Smelt Recipe Disabler
-[20-10]		Worldgen of Elemental Pearls
-[20-11]		Base of Infusion System
-[20-12]		Excubitor Aspect Stats
-[20-??]		Fluxus Aspect Stats
-[20-??]		Primal Robe Mechanics
-
-
-
+[20-04]		Cotton Farming
+[20-05]		Thistle Farming
+[20-06]		Elemental Pearl Farming
+[20-07]		Thaumonomicon Smelt Recipe Disabler
 
 
 
@@ -513,7 +510,17 @@ TO COLORIZE (MOSTLY):
 [220-04]	Slab TE
 [220-05]	Auto-Alloy Config
 [220-06]	Document TRv API
-[220-07]		Fix Quartz Renderer
+[220-07]	Fix Quartz Renderer
+[220-08]	Primal Pendant Robe Charging
+[220-09]	Primal Pendant TiC Belt Charging
+[220-10]	Primal Pendant Bauble Charging
+[220-11]	Primal Pendant TiC Knapsack Charging
+[220-12]	Primal Pendant TiC Tab Charging
+[220-xx]	Primal Pendant Direct Runic Charging
+[220-xx]	IVisChargedItem
+[220-xx]	Base of Infusion System
+[220-xx]	Excubitor Aspect Stats
+[220-xx]	Fluxus Aspect Stats
 
 Other:
 Make Warden's Amulet do something

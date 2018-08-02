@@ -3,7 +3,7 @@ package mortvana.melteddashboard.item;
 import java.util.ArrayList;
 import java.util.List;
 
-import mortvana.melteddashboard.item.entry.*;
+import mortvana.melteddashboard.item.data.*;
 import mortvana.melteddashboard.util.libraries.ColorLibrary;
 
 import mortvana.thaumrev.common.ThaumicRevelations;

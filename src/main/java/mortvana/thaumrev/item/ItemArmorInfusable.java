@@ -1,7 +1,6 @@
 package mortvana.thaumrev.item;
 
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
@@ -15,8 +14,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.*;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.IIcon;
+import net.minecraft.util.*;
 import net.minecraft.world.World;
 import cpw.mods.fml.common.Optional;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -27,7 +25,7 @@ import net.minecraftforge.common.ISpecialArmor;
 
 import thaumcraft.api.aspects.Aspect;
 
-import mortvana.melteddashboard.item.entry.ArmorDataAdv;
+import mortvana.melteddashboard.item.data.ArmorDataAdv;
 import mortvana.melteddashboard.util.helpers.*;
 import mortvana.melteddashboard.util.helpers.mod.ThaumcraftHelper;
 import mortvana.melteddashboard.util.libraries.ColorLibrary;
@@ -60,15 +58,15 @@ public /*abstract*/ class ItemArmorInfusable extends ItemArmor implements ISpeci
 
 	@Override
 	public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean par4) {
+		super.addInformation(stack, player, list, par4);
 		ThaumcraftHelper.addDiscountInformation(stack, player, list, par4);
 		AspectInfusionHelper.addInformation(stack, player, list, par4);
-		super.addInformation(stack, player, list, par4);
 	}
 
 	@Override
-	public void onArmorTick(World world, EntityPlayer player, ItemStack stack) {
+	public void onArmorTick(World world, EntityPlayer player, ItemStack armor) {
+		data.getBehavior().onArmorTick(world, player, armor);
 		//AspectInfusionHelper.applyInfusions(world, player, stack, getType(stack));
-		super.onArmorTick(world, player, stack);
 	}
 
 	@Override
@@ -387,7 +385,7 @@ public /*abstract*/ class ItemArmorInfusable extends ItemArmor implements ISpeci
 	/** IVisDiscountGear **/
 	@Override
 	public int getVisDiscount(ItemStack stack, EntityPlayer player, Aspect aspect) {
-		return 0;//ThaumcraftHelper.getDiscountForAspect(stack, player, aspect, visDiscount[EnumPrimalAspect.getPrimal(aspect).ordinal()]);
+		return ThaumcraftHelper.getDiscountForAspect(stack, player, aspect, getDiscount(aspect));
 	}
 
 

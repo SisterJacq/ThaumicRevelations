@@ -23,52 +23,52 @@ public class ThaumRevConfigWorld extends ConfigBase {
 		config = new Configuration(file);
 		config.load();
 
-		generateChalcocite = config.get(enblC, getEnable(cu), true, getEnableText("Chalcocite (Copper Sulfide)", CU)).getBoolean(true);
-		generateSphalerite = config.get(enblC, getEnable(zn), true, getEnableText("Sphalerite (Zinc Sulfide)", ZN)).getBoolean(true);
-		generateCassiterite = config.get(enblC, getEnable(sn), true, getEnableText("Sphalerite (Tin Oxide)", SN)).getBoolean(true);
-		generateMillerite = config.get(enblC, getEnable(ni), true, getEnableText("Millerite (Nickel Sulfide)", "Nickel (and Palladium)")).getBoolean(true);
-		generateNativeSilver = config.get(enblC, getEnable(ag), true, getEnableText("Native Silver Ore", AG)).getBoolean(true);
-		generateGalena = config.get(enblC, getEnable(pb), true, getEnableText("Galena (Lead Sulfide)", PB)).getBoolean(true);
-		generateXenotime = config.get(enblC, getEnable(YPO), true, getEnableText("Xenotime (Rare Earth Phosphate)", "Neodymium and Lutetium")).getBoolean(true);
-		generateWolframite = config.get(enblC, getEnable(wfe), true, getEnableText("Wolframite (Iron-Tungsten Oxide)", W)).getBoolean(true);
-		generateIridosmium = config.get(enblC, getEnable(IROS), true, getEnableText("Iridosmium (Natural Iridium-Osmium Alloy)", "Nether", OS + " and " + IR)).getBoolean(true);
-		generateBismuthinite = config.get(enblC, getEnable(bi), true, getEnableText("Bismuthinite (Bismuth Sulfide)", BI)).getBoolean(true);
-		generateTennantite = config.get(enblC, getEnable(cuas), true, getEnableText("Tennantite (Copper Arsenic Sulfide)", AS)).getBoolean(true);
-		generateTetrahedrite = config.get(enblC, getEnable(cusb), true, getEnableText("Tetrahedrite (Copper Antimony Sulfide)", SB)).getBoolean(true);
+		generateChalcocite = config.get(enblC, getEnable(CUS), true, getEnableText(CUS + " (Copper Sulfide)", CU)).getBoolean(true);
+		generateSphalerite = config.get(enblC, getEnable(ZNS), true, getEnableText(ZNS + " (Zinc Sulfide)", ZN)).getBoolean(true);
+		generateCassiterite = config.get(enblC, getEnable(SNO), true, getEnableText(SNO + " (Tin Oxide)", SN)).getBoolean(true);
+		generateMillerite = config.get(enblC, getEnable(NIS), true, getEnableText(NIS + " (Nickel Sulfide)", NI + " (and " + PD + ')')).getBoolean(true);
+		generateNativeSilver = config.get(enblC, getEnable(NAG), true, getEnableText(NAG, AG)).getBoolean(true);
+		generateGalena = config.get(enblC, getEnable(PBS), true, getEnableText(PBS + " (Lead Sulfide)", PB)).getBoolean(true);
+		generateXenotime = config.get(enblC, getEnable(YPO), true, getEnableText(YPO + " (Rare Earth Phosphate)", ND + " and " + LU)).getBoolean(true);
+		generateWolframite = config.get(enblC, getEnable(WFE), true, getEnableText(WFE + " (Iron-Tungsten Oxide)", W)).getBoolean(true);
+		generateIridosmium = config.get(enblC, getEnable(IROS), true, getEnableText(IROS + " (Natural Iridium-Osmium Alloy)", "Nether", OS + " and " + IR)).getBoolean(true);
+		generateBismuthinite = config.get(enblC, getEnable(BIS), true, getEnableText(BIS + " (Bismuth Sulfide)", BI)).getBoolean(true);
+		generateTennantite = config.get(enblC, getEnable(CAS), true, getEnableText(CAS + " (Copper Arsenic Sulfide)", AS)).getBoolean(true);
+		generateTetrahedrite = config.get(enblC, getEnable(CSB), true, getEnableText(CSB + " (Copper Antimony Sulfide)", SB)).getBoolean(true);
 		generatePyrope = config.get(enblC, getEnable(PYRP), true, getEnableText(PYRP, "Nether", PYRP)).getBoolean(true);
 		generateDioptase = config.get(enblC, getEnable(DIOP), true, getEnableText(DIOP, DIOP)).getBoolean(true);
 		generateFluonicSapphire = config.get(enblC, getEnable(FSPH), true, getEnableText(FSPH, FSPH)).getBoolean(true);
 
-		generateCopperMix = config.get(enblC, "Enable Mixed Copper Veins", true, "Adds mixed veins of " + cu + ", " + cuas + ", and " + cusb + " to the Overworld. These veins are in addition to non-mixed ones.").getBoolean(true);
-		generateAgPb = config.get(enblC, "Enable Native Silver-Galena Veins", true, "Adds mixed veins of " + ag + " and " + pb + " to the Overworld. These veins are in addition to non-mixed ones.").getBoolean(true);
-		generateAgPbBi = config.get(enblC, "Enable Native Silver-Galena-Bismuthinite Veins", true, "Adds mixed veins of " + ag + ", " + pb + ", and " + bi + " to the Overworld. These veins are in addition to non-mixed ones.").getBoolean(true);
-		generateWSn = config.get(enblC, "Enable Cassiterite-Wolframite Veins", true, "Adds mixed veins of " + wfe + ", " + sn + ", and Iron to the Overworld. These veins are in addition to non-mixed ones.").getBoolean(true);
+		generateCopperMix = config.get(enblC, "Enable Mixed Copper Veins", true, "Adds mixed veins of " + CUS + ", " + CAS + ", and " + CSB + " to the Overworld. These veins are in addition to non-mixed ones.").getBoolean(true);
+		generateAgPb = config.get(enblC, "Enable Native Silver-Galena Veins", true, "Adds mixed veins of " + NAG + " and " + PBS + " to the Overworld. These veins are in addition to non-mixed ones.").getBoolean(true);
+		generateAgPbBi = config.get(enblC, "Enable Native Silver-Galena-Bismuthinite Veins", true, "Adds mixed veins of " + NAG + ", " + PBS + ", and " + BIS + " to the Overworld. These veins are in addition to non-mixed ones.").getBoolean(true);
+		generateWSn = config.get(enblC, "Enable Cassiterite-Wolframite Veins", true, "Adds mixed veins of " + WFE + ", " + SNO + ", and Iron to the Overworld. These veins are in addition to non-mixed ones.").getBoolean(true);
 
-		generatePoorChalcocite = config.get(enblC, getEnable(cu , poor), 2, getEnablePoor(cu)).getInt(2);
-		generatePoorSphalerite = config.get(enblC, getEnable(zn , poor), 2, getEnablePoor(zn)).getInt(2);
-		generatePoorCassiterite = config.get(enblC, getEnable(sn , poor), 2, getEnablePoor(sn)).getInt(2);
-		generatePoorMillerite = config.get(enblC, getEnable(ni , poor), 2, getEnablePoor(ni)).getInt(2);
-		generatePoorNativeSilver = config.get(enblC, getEnable(ag , poor), 2, getEnablePoor(ag)).getInt(2);
-		generatePoorGalena = config.get(enblC, getEnable(pb , poor), 2, getEnablePoor(pb)).getInt(2);
-		generatePoorXenotime = config.get(enblC, getEnable(YPO , poor), 2, getEnablePoor(YPO)).getInt(2);
-		generatePoorWolframite = config.get(enblC, getEnable(wfe , poor), 2, getEnablePoor(wfe)).getInt(2);
-		generatePoorIridosmium = config.get(enblC, getEnable(IROS , poor), 2, getEnablePoor(IROS)).getInt(2);
-		generatePoorBismuthinite = config.get(enblC, getEnable(bi , poor), 2, getEnablePoor(bi)).getInt(2);
-		generatePoorTennantite = config.get(enblC, getEnable(cuas , poor), 2, getEnablePoor(cuas)).getInt(2);
-		generatePoorTetrahedrite = config.get(enblC, getEnable(cusb , poor), 2, getEnablePoor(cusb)).getInt(2);
+		generatePoorChalcocite = config.get(enblC, getEnable(CUS , POOR), 2, getEnablePoor(CUS)).getInt(2);
+		generatePoorSphalerite = config.get(enblC, getEnable(ZNS , POOR), 2, getEnablePoor(ZNS)).getInt(2);
+		generatePoorCassiterite = config.get(enblC, getEnable(SNO , POOR), 2, getEnablePoor(SNO)).getInt(2);
+		generatePoorMillerite = config.get(enblC, getEnable(NIS , POOR), 2, getEnablePoor(NIS)).getInt(2);
+		generatePoorNativeSilver = config.get(enblC, getEnable(NAG , POOR), 2, getEnablePoor(NAG)).getInt(2);
+		generatePoorGalena = config.get(enblC, getEnable(PBS , POOR), 2, getEnablePoor(PBS)).getInt(2);
+		generatePoorXenotime = config.get(enblC, getEnable(YPO , POOR), 2, getEnablePoor(YPO)).getInt(2);
+		generatePoorWolframite = config.get(enblC, getEnable(WFE , POOR), 2, getEnablePoor(WFE)).getInt(2);
+		generatePoorIridosmium = config.get(enblC, getEnable(IROS , POOR), 2, getEnablePoor(IROS)).getInt(2);
+		generatePoorBismuthinite = config.get(enblC, getEnable(BIS , POOR), 2, getEnablePoor(BIS)).getInt(2);
+		generatePoorTennantite = config.get(enblC, getEnable(CAS , POOR), 2, getEnablePoor(CAS)).getInt(2);
+		generatePoorTetrahedrite = config.get(enblC, getEnable(CSB , POOR), 2, getEnablePoor(CSB)).getInt(2);
 
-		generateGravelChalcocite = config.get(enblC, getEnable(cu , gravel), 2, getEnableGravel(cu)).getInt(2);
-		generateGravelSphalerite = config.get(enblC, getEnable(zn , gravel), 2, getEnableGravel(zn)).getInt(2);
-		generateGravelCassiterite = config.get(enblC, getEnable(sn , gravel), 2, getEnableGravel(sn)).getInt(2);
-		generateGravelMillerite = config.get(enblC, getEnable(ni , gravel), 2, getEnableGravel(ni)).getInt(2);
-		generateGravelNativeSilver = config.get(enblC, getEnable(ag , gravel), 2, getEnableGravel(ag)).getInt(2);
-		generateGravelGalena = config.get(enblC, getEnable(pb , gravel), 2, getEnableGravel(pb)).getInt(2);
-		generateGravelXenotime = config.get(enblC, getEnable(YPO , gravel), 2, getEnableGravel(YPO)).getInt(2);
-		generateGravelWolframite = config.get(enblC, getEnable(wfe , gravel), 2, getEnableGravel(wfe)).getInt(2);
-		generateGravelIridosmium = config.get(enblC, getEnable(IROS , gravel), 2, getEnableGravel(IROS)).getInt(2);
-		generateGravelBismuthinite = config.get(enblC, getEnable(bi , gravel), 2, getEnableGravel(bi)).getInt(2);
-		generateGravelTennantite = config.get(enblC, getEnable(cuas , gravel), 2, getEnableGravel(cuas)).getInt(2);
-		generateGravelTetrahedrite = config.get(enblC, getEnable(cusb , gravel), 2, getEnableGravel(cusb)).getInt(2);
+		generateGravelChalcocite = config.get(enblC, getEnable(CUS , GRAVEL), 2, getEnableGravel(CUS)).getInt(2);
+		generateGravelSphalerite = config.get(enblC, getEnable(ZNS , GRAVEL), 2, getEnableGravel(ZNS)).getInt(2);
+		generateGravelCassiterite = config.get(enblC, getEnable(SNO , GRAVEL), 2, getEnableGravel(SNO)).getInt(2);
+		generateGravelMillerite = config.get(enblC, getEnable(NIS , GRAVEL), 2, getEnableGravel(NIS)).getInt(2);
+		generateGravelNativeSilver = config.get(enblC, getEnable(NAG , GRAVEL), 2, getEnableGravel(NAG)).getInt(2);
+		generateGravelGalena = config.get(enblC, getEnable(PBS , GRAVEL), 2, getEnableGravel(PBS)).getInt(2);
+		generateGravelXenotime = config.get(enblC, getEnable(YPO , GRAVEL), 2, getEnableGravel(YPO)).getInt(2);
+		generateGravelWolframite = config.get(enblC, getEnable(WFE , GRAVEL), 2, getEnableGravel(WFE)).getInt(2);
+		generateGravelIridosmium = config.get(enblC, getEnable(IROS , GRAVEL), 2, getEnableGravel(IROS)).getInt(2);
+		generateGravelBismuthinite = config.get(enblC, getEnable(BIS , GRAVEL), 2, getEnableGravel(BIS)).getInt(2);
+		generateGravelTennantite = config.get(enblC, getEnable(CAS , GRAVEL), 2, getEnableGravel(CAS)).getInt(2);
+		generateGravelTetrahedrite = config.get(enblC, getEnable(CSB , GRAVEL), 2, getEnableGravel(CSB)).getInt(2);
 
 		if (config.hasChanged()) {
 			config.save();
@@ -101,21 +101,6 @@ public class ThaumRevConfigWorld extends ConfigBase {
 	}
 
 	public static String enblC = "World Gen Enablers";
-
-	public static String poor = "Poor";
-	public static String gravel = "Gravel";
-	
-	public static String cu = "Chalcocite";
-	public static String zn = "Sphalerite";
-	public static String sn = "Cassiterite";
-	public static String ni = "Millerite";
-	public static String ag = "Native Silver";
-	public static String pb = "Galena";
-	public static String wfe = "Wolframite";
-	public static String bi = "Bismuthinite";
-	public static String cuas = "Tennantite";
-	public static String cusb = "Tetrahedrite";
-
 
 	public static boolean generateChalcocite;
 	public static boolean generateSphalerite;

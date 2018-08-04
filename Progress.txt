@@ -3,7 +3,7 @@ Internal [20] |-> Items/Blocks [02/03/04] |-> Recipes [05/06/07/08] |-> Research
 										  |-> Texture [10/11/12/13]
 										  |-> Item Aspects [14]
 
-7 - 5 - 12/0/76/67 - 10 - 72 > 128/377
+6 - 5 - 12/0/77/67 - 10 - 72 > 134/383
 Internal:
 	General:
 	[20-xx]		Fix Colorizer
@@ -17,6 +17,7 @@ Internal:
 	Items:
 	[20-xx]		Primal Pendant Mechanics
 	[20-xx]		Primal Robe Mechanics
+	[20-02]		Setup Most Minerals with Colorizer
 
 	Research:
 	[20-xx]		Research Splitting
@@ -132,6 +133,11 @@ Content:
     [11-xx]		Enchanted Cotton Fabric
     [11-xx]		Excubitura Petal Slurry
     [11-xx]		Wardenic Bronze Mirror Plate
+    [11-xx]		Resonance Containment Compound Overlay
+    [11-xx]		Pinch of Resonance Containment Compound Overlay
+    [11-xx]		Redcloth
+    [11-xx]		Wardenic Binding Compound
+    [11-xx]		Pinch of Wardenic Binding Compound
     [12-xx]		Tier 1 Wardenic Armor Textures
     [12-xx]		Tier 2 Wardenic Armor Textures
     [12-xx]		Bronze Chain Armor
@@ -213,7 +219,6 @@ Content:
 [10-09]		Shiverpearl Texture <blocks/plant/shiverpearl.png>
 [10-10]		Stormpearl Texture <blocks/plant/stormpearl.png>
 [10-11]		Stonepearl Texture <blocks/plant/stonepearl.png>
-[210-x]		Elemental Reed Textures [<blocks/plant/blazereed.png>,<blocks/plant/blizzreed.png>,<blocks/plant/blitzreed.png>,<blocks/plant/basalzreed.png>]
 
 [11]	Textures (Item):
 [11-1-01]	Makeshift Aspect Orb Receptor <items/material/itemAspectOrbReceptorMakeshift.png>
@@ -227,7 +232,7 @@ Content:
 [11-1-09]	Thistle Seeds <items/material/seedThistle.png>
 [11-1-10]	Shimmerleaf Seeds <items/material/seedShimmerleaf.png>
 [11-1-11]	Elemental Pearl Seeds [<items/material/seedCinderpearl.png>,<items/material/seedShiverpearl.png>,<items/material/seedStormpearl.png>,<items/material/seedStonepearl.png>]
-
+[11-1-12]	Dense Alumentum <items/material/tempAluDense.png>
 [11-2-01]	Detailed Wardenic Steel Plate <items/material/itemPlateWardenicSteelDetailed.png>
 [11-2-02]	Runic Wardenic Steel Plate <items/material/itemPlateWardenicSteelRunic.png>
 [11-2-03]	Consecrated Wardenic Steel Plate <items/material/itemPlateWardenicSteelConsecrated.png>
@@ -240,7 +245,7 @@ Content:
 [11-2-10]	Essence of Awakening <items/material/itemEssenceOfAwakening.png>
 [11-2-11]	Wardenic Hardening Compound <items/material/itemWardenicHardener.png>
 [11-2-12]	Redstone-Infused Cloth <items/material/itemRedstoneFabric.png>
-[11-3-01]	Redcloth <items/material/itemRedcloth.png>
+
 [11-3-02]	Socketed Redcloth <items/material/itemRedclothSocketed.png>
 [11-3-03]	Arcane Redsolder Capacitor Core <items/material/itemCapacitorCoreArcaneRedsolder.png>
 [11-3-04]	Cluster Grayscale [<items/material/clusterZinc.png>,<items/material/clusterAluminium.png>,<items/material/clusterNickel.png>,<items/material/clusterPlatinum.png>,<items/material/clusterXenotime.png>,<items/material/clusterTungsten.png>,<items/material/clusterIridosmium.png>,<items/material/clusterBismuth.png>,<items/material/clusterTennantite.png>,<items/material/clusterTetrahedrite.png>]
@@ -266,37 +271,10 @@ Content:
 [11-4-12]	Coated Osmium-Lutetium Alloy Ingot <items/material/ingotOsmiumLutetiumCoated.png>
 [11-5-01]	Fired Thaumic Bronze Ingot <items/material/ingotThaumicBronzeFired.png>
 [11-5-02]	Fired Osmium-Lutetium Ingot <items/material/ingotOsmiumLutetiumFired.png>
-
-[11-00]		Dense Alumentum <items/material/tempAluDense.png>
-
-TO COLORIZE (MOSTLY):
-[<items/material/dustTinyVoid.png>,
-<items/material/dustTinyMagneoturgicConversionCompound.png>,
-<items/material/dustTinyMagneoturgicTreatingCompound.png>,
-<items/material/dustWardenicBindingCompound.png>,
-<items/material/dustVoid.png>,
-<items/material/dustGeomagneticCompound.png>,
-<items/material/dustTinyGeomagneticCompound.png>,
-<items/material/dustRedstonePurified.png>,
-<items/material/dustPrimalEssence.png>,
-<items/material/dustTinyRedstonePurified.png>,
-<items/material/dustTinyRedstoneEnriched.png>,
-<items/material/dustMagneoturgicConversionCompound.png>,
-<items/material/dustResonanceContainmentCompound.png>,
-<items/material/dustTinyRedstoneReduced.png>,
-<items/material/dustTinyPrimalEssence.png>,
-<items/material/dustRedstoneReduced.png>,
-<items/material/dustTinyPiezomagneticCompound.png>,
-<items/material/dustRedstoneEnriched.png>,
-<items/material/dustPiezomagneticCompound.png>,
-<items/material/dustMagneoturgicTreatingCompound.png>,
-<items/material/dustTinyWardenicBindingCompound.png>,
-<items/material/dustTinyResonanceContainmentCompound.png>,
-<items/material/dustContainmentGlass.png>,
-<items/material/dustTinyContainmentGlass.png>]
+[11-5-07]	Primal Essence <items/material/dustPrimalEssence.png>
+[11-5-08]	Pinch of Primal Essence <items/material/dustTinyPrimalEssence.png>
 
 [12]	Textures (Equipment):
-
 [12-01]		Tier 3 Wardenic Armor Textures [<items/armor/wardenicSteelHelmet.png>,<items/armor/wardenicSteelChestplate.png>,<items/armor/wardenicSteelGreaves.png>,<items/armor/wardenicSteelBoots.png>]
 [12-02]		Tier 4 Wardenic Armor Textures [<items/armor/wardenicCompositeHelmet.png>,<items/armor/wardenicCompositeChestplate.png>,<items/armor/wardenicCompositeGreaves.png>,<items/armor/wardenicCompositeBoots.png>]
 [12-03]		Tier 5 Wardenic Armor Textures []
@@ -467,14 +445,12 @@ TO COLORIZE (MOSTLY):
 [19-??]		Platinum Transmutation
 
 [20]	Internal:
-[20-01]		Worldgen of Elemental Pearls
-[20-02]		Setup Most Minerals with Colorizer
-[20-03]		Add All OreDict Strings to StringLibrary and Use Those
-[20-04]		Cotton Farming
-[20-05]		Thistle Farming
-[20-06]		Elemental Pearl Farming
-[20-07]		Thaumonomicon Smelt Recipe Disabler
-
+[20-01]		Worldgen of Elemental Pearls (r02)
+[20-02]		Thaumonomicon Smelt Recipe Disabler (r15)
+[20-03]		Add All OreDict Strings to StringLibrary and Use Those (c4)
+[20-04]		Cotton Farming (r02)
+[20-05]		Thistle Farming (r02)
+[20-06]		Elemental Pearl Farming (r02)
 
 
 [201]	Names:
@@ -482,6 +458,7 @@ TO COLORIZE (MOSTLY):
 [202-01]	Quartz Stairs
 [202-02]	Storage Slabs
 [202-03]	Thaumic Stone Slabs
+[202-04]	Containment Glass
 
 [203]	Items:
 [203-01]	Auto-toggle Elemental Metals (Items)
@@ -490,6 +467,8 @@ TO COLORIZE (MOSTLY):
 [203-04]	Auto-toggle Equipment Metals (Items)
 [203-05]	Auto-toggle Gems (Items)
 [203-06]	Auto-toggle Other Alloys (Items)
+
+[204]
 
 [205]	Recipes (Block):
 [205-04]	All Slab Crafting
@@ -502,6 +481,9 @@ TO COLORIZE (MOSTLY):
 [208-04]	Auto-toggle Equipment Metals (Recipes)
 [208-05]	Auto-toggle Gems (Recipes)
 [208-06]	Auto-toggle Other Metals (Recipes)
+
+[210]	Textures (Block):
+[210-xx]		Elemental Reed Textures [<blocks/plant/blazereed.png>,<blocks/plant/blizzreed.png>,<blocks/plant/blitzreed.png>,<blocks/plant/basalzreed.png>]
 
 [220]	Internal:
 [220-01]	CoFH-Style Particles
@@ -521,6 +503,7 @@ TO COLORIZE (MOSTLY):
 [220-xx]	Base of Infusion System
 [220-xx]	Excubitor Aspect Stats
 [220-xx]	Fluxus Aspect Stats
+[220-xx]	Combined Strings in String Library
 
 Other:
 Make Warden's Amulet do something

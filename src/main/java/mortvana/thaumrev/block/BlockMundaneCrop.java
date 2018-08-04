@@ -25,7 +25,8 @@ public class BlockMundaneCrop extends FluxGearBlockCrop {
 
 	@Override
 	public float getBlockHardness(World world, int x, int y, int z) {
-		return (world.getBlockMetadata(x, y, z) <= 4 && world.getBlockMetadata(x, y, z) > 8) ? 0.5F : 0.0F;
+		int i = world.getBlockMetadata(x, y, z);
+		return (i > 3 && i < 8) || i < 11 ? 0.5F : 0.0F;
 	}
 
 	@Override
@@ -43,11 +44,16 @@ public class BlockMundaneCrop extends FluxGearBlockCrop {
 
 	@Override //TODO
 	public ItemStack getSeed(IBlockAccess world, int x, int y, int z, int fortune) {
-		return ItemHelper.cloneStack(world.getBlockMetadata(x, y, z) < 8 ? seedCotton : seedThistle, 1 + ((int) (((float) MathHelper.random(2 + fortune)) / 2.0F)));
+		return ItemHelper.cloneStack(getSeedItem(world, x, y, z), 1 + ((int) (((float) MathHelper.random(4 + fortune)) / 2.0F)));
+	}
+
+	@Override
+	public ItemStack getSeedItem(IBlockAccess world, int x, int y, int z) {
+		return world.getBlockMetadata(x, y, z) < 7 ? seedCotton : seedThistle;
 	}
 
 	@Override
 	public int getHarvestMeta(int meta) {
-		return meta < 8 ? 0 : 12;
+		return meta < 7 ? 0 : 12;
 	}
 }

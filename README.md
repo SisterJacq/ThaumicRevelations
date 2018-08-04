@@ -24,7 +24,7 @@ Please include the following:
 	* ForgeModLoader-client-0.log (the FML log) from the root folder of the client
 
 ## Licensing
-####Thaumic Revelations CODE is copyfree under the What is Mortvana Even Saying License:
+####Thaumic Revelations CODE is copyright under the What is Mortvana Even Saying License:
 
 The code of Thaumic Revelations in source and/or binary is the intellectual property of Mortvana and MasterAbdoTGM50 (Drullkus get a mention too, as he previously made textures). The end user (From here on know as "You") may not reproduce or modify Thaumic Revelations for public distribution without prior permission. You can however redistribute official Thaumic Revelations compiled binaries in modpacks with adequate permissions for other mods to be included. Any modpack using Thaumic Revelations takes **full** responsibility for user support queries, and the **MODPACK TEAM** should report bugs to us (if you can **properly report** a bug, go ahead :P). For anyone else, we only support official builds from CurseForge, not custom built jars. We also do not take bug reports for outdated versions of Minecraft, but since we're going to be in 1.7.10 forever, as I (Mortvana) am a big RotaryCraft fan, that's not really an issue, now is it. You are allowed to fork and modify Thaumic Revelations, and submit Pull Requests, and even port it if the whole team happens to spontaneously implode and/or drop the project without notice, if you really feel like helping, you could decide to maintain a branch for TC6. You can copy portions of code for use in other projects, or even use our code as a dependency for other mods. Any contributions to this repository are automatically licensed under this license, as to circumvent bureaucratic bullshit, so if you don't agree with it, you probably shouldn't contribute. Any code copied from, derived from, or building on our non-API code must be publicly visible; You keep ALL rights to your OWN code, but you still must make your source visible (Honestly, you should do that either way :P). You are forbidden from claiming any code, which you did not write as your own. If you copy a large portion of the code, say 35%, you must at least state that you learned from and used our code, in your repository's README.md. Also, just use common sense and follow Wheaton's Law
 
@@ -51,4 +51,5 @@ If you have queries about any license or the above support restrictions, hop on 
 
 ## Legal Bullshit
 
+-As per terms of the Railcraft licence, I must state that I have used Railcraft code in creating the Poor Ores, all code from Railcraft is marked as such (and all utilities for Poor Ores are under mortvana.melteddashboard.world.poorore).
 - So no-one gets their kilt stuck in a jet engine about any license change or whatever, all code submitted is automagically licensed under my random licensing stuff, which shall always follow Wheaton's Law :P

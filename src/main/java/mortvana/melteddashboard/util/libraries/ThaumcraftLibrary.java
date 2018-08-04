@@ -371,6 +371,20 @@ public class ThaumcraftLibrary {
 
 
 	/** RESEARCH KEYS **/
+	public static String catAlch = "ALCHEMY";
+
+	public static String transFe = "TRANSIRON";
+	public static String transSn = "TRANSTIN";
+	public static String transAg = "TRANSSILVER";
+	public static String transPb = "TRANSLEAD";
+	public static String transAu = "TRANSGOLD";
+
+	public static String pureFe = "PUREIRON";
+	public static String pureCu = "PURECOPPER";
+	public static String pureSn = "PURETIN";
+	public static String purePb = "PURELEAD";
+	public static String pureAu = "PUREGOLD";
+
 	public static String keyThaumium = "THAUMIUM";
 	public static String keyFabric = "ENCHFABRIC";
 	public static String keyGoggles = "GOGGLES";
@@ -378,4 +392,8 @@ public class ThaumcraftLibrary {
 	public static String keyAlumentum = "ALEMENTUM";
 	public static String keyInfusion = "INFUSION";
 	public static String keyVisPower = "VISPOWER";
+	public static String keyBellows = "BELLOWS";
+	public static String keyEnchant = "INFUSIONENCHANTMENT";
+	public static String keyFocusPrimal = "FOCUSPRIMAL";
+	public static String keyVoidRobes = "ARMORVOIDFORTRESS";
 }

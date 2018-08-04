@@ -38,5 +38,7 @@ public interface ICrop extends IPlantable, IGrowable {
 
 	ItemStack getSeed(IBlockAccess world, int x, int y, int z, int fortune);
 
+	ItemStack getSeedItem(IBlockAccess world, int x, int y, int z);
+
 	int getHarvestMeta(int meta);
 }

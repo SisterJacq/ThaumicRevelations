@@ -690,9 +690,9 @@ item.fluxgear.material.dustPrimalEssence.name=Primal Essence
 
 item.fluxgear.material.dustWardenicBindingCompound.name=Wardenic Binding Compound
 
-item.fluxgear.material.dustRedstoneReduced.name=Reduced Redstone Dust
-item.fluxgear.material.dustRedstonePurified.name=Purified Redstone Dust
-item.fluxgear.material.dustRedstoneEnriched.name=Enriched Redstone Dust
+item.fluxgear.material.dustReducedRedstone.name=Reduced Redstone Dust
+item.fluxgear.material.dustPurifiedRedstone.name=Purified Redstone Dust
+item.fluxgear.material.dustEnrichedRedstone.name=Enriched Redstone Dust
 item.fluxgear.material.dustContainmentGlass.name=Containment Glass Dust
 item.fluxgear.material.dustMagneoturgicTreatingCompound.name=Magneoturgic Treating Compound
 item.fluxgear.material.dustPiezomagneticCompound.name=Piezomagnetic Compound
@@ -718,9 +718,9 @@ item.fluxgear.material.dustTinyPrimalEssence.name=Pinch of Primal Essence
 
 item.fluxgear.material.dustTinyWardenicBindingCompound.name=Pinch of Wardenic Binding Compound
 
-item.fluxgear.material.dustTinyRedstoneReduced.name=Tiny Reduced Redstone Dust
-item.fluxgear.material.dustTinyRedstonePurified.name=Tiny Purified Redstone Dust
-item.fluxgear.material.dustTinyRedstoneEnriched.name=Tiny Enriched Redstone Dust
+item.fluxgear.material.dustTinyReducedRedstone.name=Tiny Reduced Redstone Dust
+item.fluxgear.material.dustTinyPurifiedRedstone.name=Tiny Purified Redstone Dust
+item.fluxgear.material.dustTinyEnrichedRedstone.name=Tiny Enriched Redstone Dust
 item.fluxgear.material.dustTinyContainmentGlass.name=Tiny Containment Glass Dust
 item.fluxgear.material.dustTinyMagneoturgicTreatingCompound.name=Pinch of Magneoturgic Treating Compound
 item.fluxgear.material.dustTinyPiezomagneticCompound.name=Pinch of Piezomagnetic Compound

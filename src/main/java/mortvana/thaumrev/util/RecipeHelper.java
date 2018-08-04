@@ -208,7 +208,7 @@ public class RecipeHelper {
 	public static ShapelessOreRecipe addHammermillRecipe(ItemStack result, String input, int alumentum) { //Temporary
 		List<String> items = new ArrayList<String>();
 		items.add(input);
-		//int cost = (int) Math.ceil((double) alumentum / 1000D);
+		//int cost = (int) Math.ceil((double) ALMNT / 1000D);
 		for (int i = 0; i < alumentum; i++) {
 			items.add("itemAlumentum");
 		}

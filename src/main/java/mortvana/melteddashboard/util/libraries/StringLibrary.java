@@ -4,6 +4,8 @@ public class StringLibrary {
 
 	private StringLibrary() {}
 
+	public static final String NULL = "";
+
 	public static final String RESOURCE_PREFIX = "fluxgear";
 	public static final String DIR_DEFAULT = "fluxgear:";
 	public static final String DIR_GRAYSCALE = DIR_DEFAULT + "grayscale/";
@@ -11,7 +13,8 @@ public class StringLibrary {
 
 	public static final String UNLOC_STORAGE = "tile.fluxgear.storage.";
 
-	//Prefixes
+	//ORE PREFIXES
+	public static final String ITEM = "item";
 	public static final String ORE = "ore";
 	public static final String BLOCK = "block";
 	public static final String CLUSTER = "cluster";
@@ -30,8 +33,23 @@ public class StringLibrary {
 	public static final String SHARD_QUARTZ = "shardQuartz";
 	public static final String CHAIN = "chain";
 	public static final String CHAIN_ORE = "itemChain";
+	public static final String PLATE_ALT = "itemPlate";
+	public static final String SLAG = "itemSlag";
+	public static final String BLEND = "blend";
+	public static final String BLEND_ORE = "itemBlend";
+	public static final String PLANK = "plank";
 
+	//MODIFIERS
 	public static final String POOR = "Poor";
+	public static final String GRAVEL = "Gravel";
+	public static final String OVER = "Overlay";
+
+
+	//ORE SUFFIXES
+	public static final String RAW = "Raw";
+	public static final String SMELTED = "Smelted";
+	public static final String COATED = "Coated";
+	public static final String FIRED = "Fired";
 
 	//ASPECTS
 	public static final String AER = "Aer";
@@ -41,9 +59,11 @@ public class StringLibrary {
 	public static final String ORDO = "Ordo";
 	public static final String PERDITIO = "Perditio";
 
-	//Elemental Solids
+	//ELEMENTAL SOLIDS
+	public static final String C = "Carbon";
 	public static final String S = "Sulfur"; //We use the international spelling, because we are sane. We are the Aluminati.
 	public static final String AL = "Aluminium"; //We use the international spelling, because we are sane. We are the Aluminati.
+	public static final String AL_ = "Aluminum"; //Because America is where terminology goes to die. I know, I live there.
 	public static final String FE = "Iron";
 	public static final String NI = "Nickel";
 	public static final String CU = "Copper";
@@ -63,24 +83,43 @@ public class StringLibrary {
 	public static final String PB = "Lead";
 	public static final String BI = "Bismuth";
 
+	//COMMON MINERALS
 	public static final String KNO = "Saltpeter";
+	public static final String QRTZ = "Quartz";
+	public static final String CLAY = "Clay";
 
+	//ORES
+	public static final String CUS = "Chalcocite";
+	public static final String ZNS = "Sphalerite";
+	public static final String SNO = "Cassiterite";
+	public static final String NIS = "Millerite";
+	public static final String NAG = "Native Silver";
+	public static final String PBS = "Galena";
+	public static final String YPO = "Xenotime";
+	public static final String WFE = "Wolframite";
+	public static final String BIS = "Bismuthinite";
+	public static final String CAS = "Tennantite";
+	public static final String CSB = "Tetrahedrite";
+
+	//SIMPLE ALLOYS
 	public static final String CUZN = "Brass";
 	public static final String CUSN = "Bronze";
 	public static final String CUAS = "ArsenicalBronze";
 	public static final String CUSB = "AntimonialBronze";
 	public static final String CUBI = "BismuthBronze";
-	public static final String MTHR = "ArsenoAntimonialBronze";
+	public static final String MTHL = "Mithril";
+	public static final String MTHR = "ArsenoAntimonialBronze"; //OreDict
 	public static final String CUAL = "AluminiumBronze";
 	public static final String CUNI = "Cupronickel";
 	public static final String RBRZ = "RiftishBronze";
 	public static final String CNST = "Constantan";
-	public static final String INVR = "Invar";
-	public static final String ELCT	= "Electrum";
+	public static final String FENI = "Invar";
+	public static final String AUAG = "Electrum";
 	public static final String WRDM = "WardenicMetal";
 	public static final String DRDS = "DullRedsolder";
 	public static final String RDSR = "Redsolder";
 
+	//SPECIAL ALLOYS
 	public static final String TELC = "ThaumicElectrum";
 	public static final String TRBR = "ThaumicRiftishBronze";
 	public static final String STEL = "Steel";
@@ -90,6 +129,7 @@ public class StringLibrary {
 	public static final String VDWT = "Voidtungsten";
 	public static final String VCPN = "Voidcupronickel";
 
+	//EQUIPMENT ALLOYS
 	public static final String WBRZ = "WardenicBronze";
 	public static final String WDST = "WardenicSteel";
 	public static final String WRBR = "WardenicRiftishBronze";
@@ -106,6 +146,7 @@ public class StringLibrary {
 	public static final String CTHM = "CrimsonThaumium";
 	public static final String OCVW = "OccultVoidtungsten";
 
+	//GEMS
 	public static final String PYRP = "Pyrope";
 	public static final String DIOP = "Dioptase";
 	public static final String FSPH = "FluonicSapphire";
@@ -116,21 +157,55 @@ public class StringLibrary {
 
 	public static final String WQRZ = "WardenicQuartz";
 	public static final String IQRZ = "InfusedQuartz";
-	public static final String RQRZ = "RedquartzThaumic";
+	public static final String RQRZ = "Redquartz";
+	public static final String RQZT = "RedquartzThaumic"; //OreDict
 
-	public static final String LNTH = "XenotimeLanthanides";
-	public static final String YPOJ = "XenotimeExtras";
+	//OTHER METALS
+	public static final String LNTH = "XenotimeMischmetal";
+	public static final String LAMM = "Lanthanides";
+	public static final String YPOJ = "XenotimeLeftoverMischmetal";
 	public static final String IROS = "Iridosmium";
 	public static final String TBRZ = "ThaumicBronze";
 	public static final String OSLU = "OsmiumLutetium";
 
-	public static final String YPO = "Xenotime";
-
+	//THAUMCRAFT METALS
 	public static final String THMM = "Thaumium";
+	public static final String VMTL = "Void";
 
+	//OTHER GENERAL MINERALS
 	public static final String PRES = "PrimalEssence";
 
-	/** NBT KEYS * */
+	//OTHER WARDENIC MINERALS
+	public static final String WDBC = "WardenicBindingCompound";
+
+	//OTHER MAGNEOTURGIC MINERALS
+	public static final String RSRD = "ReducedRedstone";
+	public static final String RSPR = "PurifiedRedstone";
+	public static final String RSNR = "EnrichedRedstone";
+	public static final String CNTG = "ContainmentGlass";
+	public static final String MGTC = "MagneoturgicTreatingCompound";
+	public static final String PMGC = "PiezomagneticCompound";
+	public static final String GMGC = "GeomagneticCompound";
+	public static final String MGCC = "MagneoturgicConversionCompound";
+	public static final String RSCC = "ResonanceContainmentCompound";
+
+	//SLAG TYPES
+	public static final String CRMC = "Ceramic";
+	public static final String THMC = "Thaumic";
+	public static final String FLNC = "Fluonic";
+
+	//VANILLA OREDICT
+	public static final String BOTLE = "itemBottle";
+
+	//THAUMCRAFT OREDICT
+	public static final String HG_TC = "quicksilver";
+	public static final String ALMNT = "itemAlumentum";
+	public static final String NITOR = "itemNitor";
+
+	//TEMPORARY
+	public static final String _ALUD = "tempAluDense";
+
+	// NBT KEYS
 	public static final String INVENTORY = "Items";
 	public static final String SLOT = "Slot";
 	public static final String DURABILITY = "Durability";

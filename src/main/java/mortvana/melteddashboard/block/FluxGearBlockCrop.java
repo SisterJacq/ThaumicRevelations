@@ -7,23 +7,26 @@ import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraftforge.common.EnumPlantType;
 import net.minecraftforge.common.util.ForgeDirection;
 
 import mortvana.melteddashboard.util.helpers.ItemHelper;
 import mortvana.melteddashboard.util.helpers.WorldHelper;
+import mortvana.melteddashboard.util.helpers.science.MathHelper;
 
 import mortvana.thaumrev.common.ThaumRevConfig;
 
 public abstract class FluxGearBlockCrop extends FluxGearBlockPlant implements ICrop {
 
 	public FluxGearBlockCrop() {
-		super(Material.plants);
+		super();
 		setTickRandomly(true);
 		setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.25F, 1.0F);
 		setCreativeTab(null);
@@ -54,11 +57,12 @@ public abstract class FluxGearBlockCrop extends FluxGearBlockPlant implements IC
 	@Override
 	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int side, float posX, float posY, float posZ) {
 		if (ThaumRevConfig.rightClickHarvest) {
-			if (world.isRemote) {
-				return true;
-			}
 			int meta = world.getBlockMetadata(x, y, z);
 			if (getMaxGrowth(meta) == meta) {
+				if (world.isRemote) {
+					return true;
+				}
+
 				world.setBlock(x, y, z, this, getHarvestMeta(meta), 3);
 				EntityItem item;
 				for (ItemStack produce : getProduce(world, x, y, z, 0)) {
@@ -68,9 +72,11 @@ public abstract class FluxGearBlockCrop extends FluxGearBlockPlant implements IC
 				}
 				ItemStack seed = getSeed(world, x, y, z, 0);
 				seed = ItemHelper.cloneStack(seed, seed.stackSize - 1);
-				item = new EntityItem(world, player.posX, player.posY - 1.0D, player.posZ, seed);
-				world.spawnEntityInWorld(item);
-				item.onCollideWithPlayer(player);
+				if (seed.stackSize > 0) {
+					item = new EntityItem(world, player.posX, player.posY - 1.0D, player.posZ, seed);
+					world.spawnEntityInWorld(item);
+					item.onCollideWithPlayer(player);
+				}
 				return true;
 			}
 		}
@@ -80,12 +86,12 @@ public abstract class FluxGearBlockCrop extends FluxGearBlockPlant implements IC
 	@Override
 	@SideOnly(Side.CLIENT)
 	public Item getItem(World world, int x, int y, int z) {
-		return getSeed(world, x, y, z, 0).getItem();
+		return getSeedItem(world, x, y, z).getItem();
 	}
 
 	@Override
 	public int getDamageValue (World world, int x, int y, int z) {
-		return getSeed(world, x, y, z, 0).getItemDamage();
+		return getSeedItem(world, x, y, z).getItemDamage();
 	}
 
 	@Override
@@ -102,6 +108,11 @@ public abstract class FluxGearBlockCrop extends FluxGearBlockPlant implements IC
 
 	@Override
 	public void getSubBlocks(Item item, CreativeTabs tab, List list) { /* Don't add to a creative tab */ }
+
+	@Override
+	public EnumPlantType getPlantType (IBlockAccess world, int x, int y, int z) {
+		return EnumPlantType.Crop;
+	}
 
 	/** IGrowable **/
 	@Override //isNotFullyGrown
@@ -129,12 +140,12 @@ public abstract class FluxGearBlockCrop extends FluxGearBlockPlant implements IC
 	/** ICrop **/
 	@Override
 	public int getStartGrowth(int meta) {
-		return meta < 8 ? 0 : 8;
+		return meta <= 8 ? 0 : 8;
 	}
 
 	@Override
 	public int getMaxGrowth(int meta) {
-		return meta < 8 ? 7 : 15;
+		return meta <= 8 ? 7 : 15;
 	}
 
 	@Override
@@ -178,7 +189,7 @@ public abstract class FluxGearBlockCrop extends FluxGearBlockPlant implements IC
 	@Override
 	public boolean isSameCrop(IBlockAccess world, int x, int y, int z, int meta) {
 		int comp = world.getBlockMetadata(x, y, z);
-		return (meta < 8 && comp < 8) || (meta >= 8 && comp >= 8);
+		return (meta <= 8 && comp <= 8) || (meta > 8 && comp > 8);
 	}
 
 	@Override

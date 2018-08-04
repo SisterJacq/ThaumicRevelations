@@ -7,7 +7,6 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.event.terraingen.OreGenEvent;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
@@ -1486,15 +1485,15 @@ public class ThaumRevLibrary {
 
 	//Will remove in favor of EnumMetal(Mineral?)Data in v0.0.2
 	public static final String[] NAMES_STORAGE_ORE = { CU, ZN, SN, NI, AG, PB, LU, W, IR, BI, AS, SB, ND, OS, PD, AL };
-	public static final String[] NAMES_STORAGE_ALLOY_1 = { CUZN, CUSN, CUAS, CUSB, CUBI, "Mithril", CUAL, CUNI, RBRZ, CNST, INVR, ELCT, WRDM, DRDS, RDSR };
+	public static final String[] NAMES_STORAGE_ALLOY_1 = { CUZN, CUSN, CUAS, CUSB, CUBI, "Mithril", CUAL, CUNI, RBRZ, CNST, FENI, AUAG, WRDM, DRDS, RDSR };
 	public static final String[] NAMES_STORAGE_SPECIAL = { TELC, TRBR, STEL, TSTL, VBRS, VSTL, VDWT, VCPN };
 	public static final String[] NAMES_STORAGE_EQUIPMENT = { WBRZ, WDST, WRBR, WCMP, ARDS, RDBR, HRBR, FSTL, FLXW, MCMP, FCMP, RCMP, EVBS, CTHM, OCVW };
-	public static final String[] NAMES_STORAGE_GEM = { PYRP, DIOP, FSPH, FPRT, WCRS, AWCR, WWCR, WQRZ, IQRZ, RQRZ };
+	public static final String[] NAMES_STORAGE_GEM = { PYRP, DIOP, FSPH, FPRT, WCRS, AWCR, WWCR, WQRZ, IQRZ, RQZT};
 	public static final String[] NAMES_STORAGE_MISC_INT = { LNTH, YPOJ, IROS, TBRZ, OSLU, "Void" };
 	public static final String[] NAMES_STORAGE_MISC_LOC = { YPO, "Lanthanides", IROS, TBRZ, OSLU, "Voidmetal" };
 
 	public static final int[] COLOR_STORAGE_ORE = { COLOR_CU, COLOR_ZN, COLOR_SN, COLOR_NI, COLOR_AG, COLOR_PB, COLOR_LU, COLOR_W, COLOR_IR, COLOR_BI, COLOR_AS, COLOR_SB, COLOR_ND, COLOR_OS, COLOR_PD, COLOR_AL };
-	public static final int[] COLOR_STORAGE_ALLOY_1 = { COLOR_CUZN, COLOR_CUSN, COLOR_CUAS, COLOR_CUSB, COLOR_CUBI, COLOR_MTHR, COLOR_CUAL, COLOR_CUNI, COLOR_RBRZ, COLOR_CNST, COLOR_INVR, COLOR_ELCT, COLOR_WRDM, COLOR_DRDS, COLOR_RDSR };
+	public static final int[] COLOR_STORAGE_ALLOY_1 = { COLOR_CUZN, COLOR_CUSN, COLOR_CUAS, COLOR_CUSB, COLOR_CUBI, COLOR_MTHR, COLOR_CUAL, COLOR_CUNI, COLOR_RBRZ, COLOR_CNST, COLOR_FENI, COLOR_AUAG, COLOR_WRDM, COLOR_DRDS, COLOR_RDSR };
 	public static final int[] COLOR_STORAGE_SPECIAL = { COLOR_TELC, COLOR_TRBR, COLOR_STEL, COLOR_TSTL, COLOR_VBRS, COLOR_VSTL, COLOR_VDWT, COLOR_VCPN };
 	public static final int[] COLOR_STORAGE_EQUIPMENT = { COLOR_WBRZ, COLOR_WDST, COLOR_WRBR, COLOR_WCMP, COLOR_ARDS, COLOR_RDBR, COLOR_HRBR, COLOR_FSTL, COLOR_FLXW, COLOR_MCMP, COLOR_FLUX, COLOR_RCMP, COLOR_EVBS, COLOR_CTHM, COLOR_OCVW };
 	public static final int[] COLOR_STORAGE_GEM = { CLEAR, CLEAR, CLEAR, CLEAR, CLEAR, CLEAR, CLEAR, COLOR_WQRZ, CLEAR, COLOR_FLUX };

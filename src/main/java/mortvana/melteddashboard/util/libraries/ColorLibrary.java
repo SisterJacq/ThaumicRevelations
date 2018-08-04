@@ -98,8 +98,8 @@ public final class ColorLibrary {
 	public static final int COLOR_CUNI = 0xC4B6AC;
 	public static final int COLOR_RBRZ = 0xAF6600;
 	public static final int COLOR_CNST = 0xAF7841;
-	public static final int COLOR_INVR = 0x97A89F;
-	public static final int COLOR_ELCT = 0xE5C33B;
+	public static final int COLOR_FENI = 0x97A89F;
+	public static final int COLOR_AUAG = 0xE5C33B;
 	public static final int COLOR_WRDM = 0x9F85C6;
 	public static final int COLOR_DRDS = 0x825567;
 	public static final int COLOR_RDSR = 0xAA4444;
@@ -148,6 +148,17 @@ public final class ColorLibrary {
 	public static final int COLOR_TEAL = 0x005942;
 
 	public static final int COLOR_THMM = 0x625197;
+	public static final int COLOR_VMTL = 0x24103E;
+
+	public static final int COLOR_RSRD = 0x990F0F;
+	public static final int COLOR_RSPR = 0xA80000;
+	public static final int COLOR_RSNR = 0xBF0000;
+	public static final int COLOR_CNTG = 0xBAB5BF;
+	public static final int COLOR_MGTC = 0xBF2F2F;
+	public static final int COLOR_PMGC = 0x8FBFBF;
+	public static final int COLOR_GMGC = 0x99995B;
+	public static final int COLOR_MGCC = 0xBF7C7C;
+	public static final int COLOR_RSCC = 0x137F7F;
 
 	/*public static final int COLOR_WSTL = 0x3C3A3F;
 	public static final int COLOR_STAINLESS = 0xA3B5AF;

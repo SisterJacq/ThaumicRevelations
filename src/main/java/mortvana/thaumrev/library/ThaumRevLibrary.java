@@ -95,8 +95,8 @@ public class ThaumRevLibrary {
 	public static ItemStack wildCotton;
 	public static ItemStack wildThistle;
 	public static ItemStack shiverpearl;
-	public static ItemStack stormpearl;
-	public static ItemStack stonepearl;
+	public static ItemStack stormypearl;
+	public static ItemStack stonypearl;
 	//public static ItemStack blazereed;
 	//public static ItemStack blizzreed;
 	//public static ItemStack blitzreed;
@@ -285,8 +285,8 @@ public class ThaumRevLibrary {
 	public static ItemStack seedShimmerleaf;					//00953 //v0.0.1
 	public static ItemStack seedCinderpearl;					//00954 //v0.0.1
 	public static ItemStack seedShiverpearl;					//00955 //v0.0.1
-	public static ItemStack seedStormpearl;						//00956 //v0.0.1
-	public static ItemStack seedStonepearl;						//00957 //v0.0.1
+	public static ItemStack seedStormypearl;						//00956 //v0.0.1
+	public static ItemStack seedStonypearl;						//00957 //v0.0.1
 
 	//01000-01199 WARDENIC ARSENAL
 	public static ItemStack itemExcubituraPetal;				//01000 //v0.0.1
@@ -1383,6 +1383,9 @@ public class ThaumRevLibrary {
 	public static WorldGenPlant genExcubitura;
 	public static WorldGenPlant genCotton;
 	public static WorldGenPlant genThistle;
+	public static WorldGenPlant genShiverpearl;
+	public static WorldGenPlant genStormypearl;
+	public static WorldGenPlant genStonypearl;
 	public static WorldGenOreVein genChalcocite;
 	public static WorldGenOreVein genSphalerite;
 	public static WorldGenOreVein genCassiterite;
@@ -1488,7 +1491,8 @@ public class ThaumRevLibrary {
 	public static final String[] NAMES_STORAGE_ALLOY_1 = { CUZN, CUSN, CUAS, CUSB, CUBI, "Mithril", CUAL, CUNI, RBRZ, CNST, FENI, AUAG, WRDM, DRDS, RDSR };
 	public static final String[] NAMES_STORAGE_SPECIAL = { TELC, TRBR, STEL, TSTL, VBRS, VSTL, VDWT, VCPN };
 	public static final String[] NAMES_STORAGE_EQUIPMENT = { WBRZ, WDST, WRBR, WCMP, ARDS, RDBR, HRBR, FSTL, FLXW, MCMP, FCMP, RCMP, EVBS, CTHM, OCVW };
-	public static final String[] NAMES_STORAGE_GEM = { PYRP, DIOP, FSPH, FPRT, WCRS, AWCR, WWCR, WQRZ, IQRZ, RQZT};
+	public static final String[] NAMES_STORAGE_GEM_NAME = { PYRP, DIOP, FSPH, FPRT, WCRS, AWCR, WWCR, WQRZ, IQRZ, RQRZ};
+	public static final String[] NAMES_STORAGE_GEM_ORE = { PYRP, DIOP, FSPH, FPRT, WCRS, AWCR, WWCR, WQRZ, IQRZ, RQZT};
 	public static final String[] NAMES_STORAGE_MISC_INT = { LNTH, YPOJ, IROS, TBRZ, OSLU, "Void" };
 	public static final String[] NAMES_STORAGE_MISC_LOC = { YPO, "Lanthanides", IROS, TBRZ, OSLU, "Voidmetal" };
 

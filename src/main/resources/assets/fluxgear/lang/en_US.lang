@@ -18,8 +18,8 @@ tile.fluxgear.plant.excubitura.name=Excubitura Rose
 tile.fluxgear.plant.cotton_wild.name=Wild Cotton
 tile.fluxgear.plant.thistle_wild.name=Wild Thistle
 tile.fluxgear.plant.shiverpearl.name=Shiverpearl
-tile.fluxgear.plant.stormpearl.name=Stormpearl
-tile.fluxgear.plant.stonepearl.name=Stonepearl
+tile.fluxgear.plant.stormypearl.name=Stormypearl
+tile.fluxgear.plant.stonypearl.name=Stonypearl
 tile.fluxgear.plant.blazereed.name=Blazereed
 tile.fluxgear.plant.blizzreed.name=Blizzreed
 tile.fluxgear.plant.blitzreed.name=Blitzreed
@@ -167,10 +167,10 @@ tile.fluxgear.stoneSlab.wardenicQuartz.name=Wardenic Quartz Slab
 #ITEMS
 #General
 item.fluxgear.material.itemCotton.name=Cotton
-item.fluxgear.material.itemCottonFiber.name=Cotton Fiber
-item.fluxgear.material.itemCottonFabric.name=Cotton Fabric
-item.fluxgear.material.itemCottonTreated.name=Treated Cotton Fabric
-item.fluxgear.material.itemCottonEnchanted.name=Enchanted Cotton Fabric
+item.fluxgear.material.itemFiberCotton.name=Cotton Fiber
+item.fluxgear.material.itemFabricCotton.name=Cotton Fabric
+item.fluxgear.material.itemTreatedFabricCotton.name=Treated Cotton Fabric
+item.fluxgear.material.itemEnchantedFabricCotton.name=Enchanted Cotton Fabric
 item.fluxgear.material.itemThistleLeaf.name=Thistle Leaf
 item.fluxgear.material.itemThistleFlower.name=Thistle Flower
 
@@ -205,8 +205,8 @@ item.fluxgear.material.seedThistle.name=Thistle Seeds
 item.fluxgear.material.seedShimmerleaf.name=Shimmerleaf Seeds
 item.fluxgear.material.seedCinderpearl.name=Cinderpearl Seeds
 item.fluxgear.material.seedShiverpearl.name=Shiverpearl Seeds
-item.fluxgear.material.seedStormpearl.name=Stormpearl Seeds
-item.fluxgear.material.seedStonepearl.name=Stonepearl Seeds
+item.fluxgear.material.seedStormypearl.name=Stormypearl Seeds
+item.fluxgear.material.seedStonypearl.name=Stonypearl Seeds
 
 #Wardenic
 item.fluxgear.material.itemExcubituraPetal.name=Excubitura Petal
@@ -244,6 +244,15 @@ item.fluxgear.material.itemRedcloth.name=Redcloth
 item.fluxgear.material.itemRedclothSocketed.name=Socketed Redcloth
 
 item.fluxgear.material.itemCapacitorCoreArcaneRedsolder.name=Arcane Redsolder Capacitor Core
+
+#Backups
+item.fluxgear.material.powderBlizz.name=Blizz Powder
+item.fluxgear.material.powderBlitz.name=Blitz Powder
+item.fluxgear.material.powderBasalz.name=Basalz Powder
+
+item.fluxgear.material.rodBlizz.name=Blizz Rod
+item.fluxgear.material.rodBlitz.name=Blitz Rod
+item.fluxgear.material.rodBasalz.name=Basalz Rod
 
 #Ingots
 item.fluxgear.material.ingotCopper.name=Copper Ingot

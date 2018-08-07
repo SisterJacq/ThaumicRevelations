@@ -34,6 +34,8 @@ public class WorldHelper {
         return z + side.offsetZ;
     }
 
+	//TODO: Make work good strong! Now work bad weak, not good strong!
+	@Deprecated
 	public static int getSunlight(World world, int x, int y, int z) {
 		return !world.provider.hasNoSky ? (15 - world.skylightSubtracted) : 0;
 	}

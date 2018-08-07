@@ -6,6 +6,7 @@ import java.util.List;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.IBlockAccess;
@@ -63,10 +64,22 @@ public class BlockThaumicPlant extends FluxGearBlockPlant {
 	@Override
 	public EnumPlantType getPlantType(IBlockAccess world, int x, int y, int z) {
 		switch (world.getBlockMetadata(x, y, z)) {
+			case 7:
+				return EnumPlantType.Cave;
 			case 8:
 				return EnumPlantType.Desert;
 			default:
 				return EnumPlantType.Plains;
+		}
+	}
+
+	@Override
+	public boolean canBlockStay(World world, int x, int y, int z) {
+		int meta = world.getBlockMetadata(x, y, z);
+		if (meta == 7) {
+			return isStonypearlBlock(world, x, y, z);
+		} else {
+			return super.canBlockStay(world, x, y, z);
 		}
 	}
 
@@ -102,7 +115,12 @@ public class BlockThaumicPlant extends FluxGearBlockPlant {
 	@SideOnly(Side.CLIENT)
 	public void randomDisplayTick(World world, int i, int j, int k, Random random) {}*/
 
-	public static final String[] NAMES = { "excubitura", "cotton_wild", "thistle_wild", "", "", "shiverpearl", "stormpearl", "stonepearl", "blazereed", "blizzreed", "blitzreed", "basalzreed" };
+	public static boolean isStonypearlBlock(World world, int x, int y, int z) {
+		Block block = world.getBlock(x, y, z);
+		return block == Blocks.stone || block == Blocks.gravel;
+	}
+
+	public static final String[] NAMES = { "excubitura", "cotton_wild", "thistle_wild", "", "", "shiverpearl", "stormypearl", "stonypearl", "blazereed", "blizzreed", "blitzreed", "basalzreed" };
 	public static final int[] LIGHT = { 4, 0, 0, 0, 0, 8, 8, 8, 8, 8, 8, 8 };
 
 }

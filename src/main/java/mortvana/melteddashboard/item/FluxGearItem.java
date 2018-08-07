@@ -325,7 +325,7 @@ public class FluxGearItem extends Item {
     @Override
     public void getSubItems(Item item, CreativeTabs tab, List list) {
         for (int meta : itemList) {
-			if (!itemMap.get(meta).getDisabled()) {
+			if (!itemMap.get(meta).getDisabled() && !itemMap.get(meta).getHidden()) {
 				list.add(new ItemStack(item, 1, meta));
 			}
         }
@@ -534,6 +534,38 @@ public class FluxGearItem extends Item {
 	public void setEnchanted(boolean bool, int... metadata) {
 		for (int i : metadata) {
 			setEnchanted(i, bool);
+		}
+	}
+
+	public void setDisabled(int metadata, boolean bool) {
+		if (itemList.contains(metadata)) {
+			itemMap.get(metadata).setDisabled(bool);
+		}
+	}
+
+	public void setDisabled(int metadata) {
+		setDisabled(metadata, true);
+	}
+
+	public void setDisabled(boolean bool, int... metadata) {
+		for (int i : metadata) {
+			setDisabled(i, bool);
+		}
+	}
+
+	public void setHidden(int metadata, boolean bool) {
+		if (itemList.contains(metadata)) {
+			itemMap.get(metadata).setHidden(bool);
+		}
+	}
+
+	public void setHidden(int metadata) {
+		setHidden(metadata, true);
+	}
+
+	public void setHidden(boolean bool, int... metadata) {
+		for (int i : metadata) {
+			setHidden(i, bool);
 		}
 	}
 

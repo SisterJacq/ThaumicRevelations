@@ -34,7 +34,7 @@ public class WorldGenPlant extends WorldGenerator {
 			int tryZ = z + MathHelper.getOffsetInt(range);
 
 			if (world.isAirBlock(tryX, tryY, tryZ) && (!world.provider.hasNoSky || tryY < 255) && block.canBlockStay(world, tryX, tryY, tryZ)) {
-				world.setBlock(tryX, tryY, tryZ, block, meta, 2);
+				world.setBlock(tryX, tryY, tryZ, block, meta, 3);
 			}
 		}
 

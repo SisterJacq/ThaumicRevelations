@@ -49,7 +49,7 @@ public class ThaumRevConfig extends ConfigBase {
 
 		backwardsAlBronze = config.get("Compatiblity", "Backwards Aluminium Bronze", false, "When enabled, Aluminium Bronze requires 3 Aluminium and 1 Copper, like in TiC, instead of the pseudo-realistic 3 Copper and 1 Aluminium (Typically only has 6-11% Al IRL). Also OreDicts the two as the same").getBoolean(false);
 
-		thaumonomiconAlloySmelt = config.get("Clientside", "Enable Thaumonomicon Smelting", true, "Enables showing of obvious smelting recipes in the Thaumonomicon.").getBoolean();
+		//obviousSmelting = config.get("Clientside", "Obvious Thaumonomicon Smelting", false, "Shows obvious smelting recipes.").getBoolean(false);
 
 		debug = config.get("Melted Dashboard - Debug", "Enable Debug", false).getBoolean(false);
 
@@ -71,7 +71,7 @@ public class ThaumRevConfig extends ConfigBase {
 
 	public static int researchLevel;
 
-	public static boolean thaumonomiconAlloySmelt;
+	public static boolean obviousSmelting = true;
 
 	public static boolean enableBrass;
 	public static boolean enableBronze;

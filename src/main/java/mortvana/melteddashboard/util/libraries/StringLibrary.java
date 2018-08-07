@@ -33,11 +33,15 @@ public class StringLibrary {
 	public static final String SHARD_QUARTZ = "shardQuartz";
 	public static final String CHAIN = "chain";
 	public static final String CHAIN_ORE = "itemChain";
+	public static final String POWDER = "powder";
+	public static final String ROD = "rod";
 	public static final String PLATE_ALT = "itemPlate";
 	public static final String SLAG = "itemSlag";
+	public static final String SEED = "seed";
 	public static final String BLEND = "blend";
 	public static final String BLEND_ORE = "itemBlend";
 	public static final String PLANK = "plank";
+	public static final String CAP_CORE = "itemCapacitorCore";
 
 	//MODIFIERS
 	public static final String POOR = "Poor";
@@ -50,6 +54,30 @@ public class StringLibrary {
 	public static final String SMELTED = "Smelted";
 	public static final String COATED = "Coated";
 	public static final String FIRED = "Fired";
+
+	public static final String LEAF = "Leaf";
+	public static final String FLOWER = "Flower";
+	public static final String PETAL = "Petal";
+	public static final String POD = "Pod";
+
+	public static final String FIBER = "Fiber";
+	public static final String FABRIC = "Fabric";
+	public static final String TREATED = "Treated";
+	public static final String ENCHANTED = "Enchanted";
+
+	public static final String OIL = "Oil";
+	public static final String PURE = "Pure";
+
+	public static final String OILED = "Oiled";
+	public static final String MIRROR = "Mirror";
+	public static final String INFUSED = "Infused";
+	public static final String FITTED = "Fitted";
+	public static final String DETAILED = "Detailed";
+	public static final String RUNIC = "Runic";
+	public static final String CONSECRATED = "Consecrated";
+	public static final String PRIMAL = "Primal";
+
+	public static final String SOCKETED = "Socketed";
 
 	//ASPECTS
 	public static final String AER = "Aer";
@@ -84,6 +112,7 @@ public class StringLibrary {
 	public static final String BI = "Bismuth";
 
 	//COMMON MINERALS
+	public static final String RS = "Redstone";
 	public static final String KNO = "Saltpeter";
 	public static final String QRTZ = "Quartz";
 	public static final String CLAY = "Clay";
@@ -194,6 +223,24 @@ public class StringLibrary {
 	public static final String THMC = "Thaumic";
 	public static final String FLNC = "Fluonic";
 
+	//ELEMENTAL
+	public static final String BLAZE = "Blaze";
+	public static final String BLIZZ = "Blizz";
+	public static final String BLITZ = "Blitz";
+	public static final String BASALZ = "Basalz";
+
+	//PLANT MATERIALS
+	public static final String EXCU = "Excubitura";
+	public static final String CTTN = "Cotton";
+	public static final String THSL = "Thistle";
+	public static final String SHML = "Shimmerleaf";
+	public static final String CNDP = "Cinderpearl";
+	public static final String SHVP = "Shiverpearl";
+	public static final String STMP = "Stormypearl";
+	public static final String STNP = "Stonypearl";
+
+	//MANUFACTURED MATERIAL
+
 	//VANILLA OREDICT
 	public static final String BOTLE = "itemBottle";
 
@@ -204,6 +251,28 @@ public class StringLibrary {
 
 	//TEMPORARY
 	public static final String _ALUD = "tempAluDense";
+
+	//PRECOMPOSED
+	public static final String M0000 = ITEM + CTTN;
+	public static final String M0001 = ITEM + FIBER + CTTN;
+	public static final String M0002 = ITEM + FABRIC + CTTN;
+	public static final String M0003 = ITEM + TREATED + FABRIC + CTTN;
+	public static final String M0004 = ITEM + ENCHANTED + FABRIC + CTTN;
+	public static final String M0005 = ITEM + THSL + LEAF;
+	public static final String M0006 = ITEM + THSL + FLOWER;
+
+	public static final String M1105 = PLATE_ALT + WCMP + INFUSED;
+	public static final String M1106 = PLATE_ALT + WCMP + FITTED;
+	public static final String M1107 = PLATE_ALT + WCMP + DETAILED;
+	public static final String M1108 = PLATE_ALT + WCMP + RUNIC;
+	public static final String M1109 = PLATE_ALT + WCMP + CONSECRATED;
+	public static final String M1110 = PLATE_ALT + WCMP + PRIMAL;
+
+	public static final String M1200 = ITEM + RS + FABRIC;
+	//public static final String M1201 =
+	//public static final String M1202 =
+
+	public static final String M1600 = CAP_CORE + ARDS;
 
 	// NBT KEYS
 	public static final String INVENTORY = "Items";

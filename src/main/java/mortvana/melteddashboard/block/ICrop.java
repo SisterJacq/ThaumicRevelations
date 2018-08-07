@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.IGrowable;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
@@ -34,11 +35,13 @@ public interface ICrop extends IPlantable, IGrowable {
 
 	boolean isValidSoil(IBlockAccess world, int x, int y, int z);
 
-	ArrayList<ItemStack> getProduce(IBlockAccess world, int x, int y, int z, int fortune);
+	ArrayList<ItemStack> getProduce(IBlockAccess world, int x, int y, int z, int meta, int fortune);
 
-	ItemStack getSeed(IBlockAccess world, int x, int y, int z, int fortune);
+	ItemStack getSeed(IBlockAccess world, int x, int y, int z, int meta, int fortune);
 
-	ItemStack getSeedItem(IBlockAccess world, int x, int y, int z);
+	ItemStack getSeedItem(int meta);
+
+	void spawnProduce(World world, int x, int y, int z, EntityPlayer player, int meta);
 
 	int getHarvestMeta(int meta);
 }

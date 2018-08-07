@@ -81,7 +81,7 @@ public class ThaumRevContent {
 		ResearchCategories.registerCategory(RESEARCH_KEY_METAL, new ResourceLocation(RESOURCE_PREFIX, "textures/items/material/ingotThaumicBronze.png"), new ResourceLocation("fluxgear", "textures/gui/gui_researchbackthaumrev.png"));
 
 		setResearchLevel();
-		determineTempus();
+		//determineTempus();
 
 		loadResearch();
 		initResearch();
@@ -102,7 +102,7 @@ public class ThaumRevContent {
 		blockStorageAlloy1 = new BlockStorageBase("thaumrev.storageAlloy1", generalTab, DIR_STORAGE, UNLOC_STORAGE, RARITY_STORAGE_ALLOY_1, NAMES_STORAGE_ALLOY_1, MINE_LVL_STORAGE_ALLOY_1, HARDNESS_STORAGE_ALLOY_1, RESISTANCE_STORAGE_ALLOY_1, LIGHT_STORAGE_ALLOY_1, COLOR_STORAGE_ALLOY_1).setSignal(14, 8);
 		blockStorageSpecial = new BlockStorageBase("thaumrev.storageSpecial", generalTab, DIR_STORAGE, UNLOC_STORAGE, RARITY_STORAGE_SPECIAL, NAMES_STORAGE_SPECIAL, MINE_LVL_STORAGE_SPECIAL, HARDNESS_STORAGE_SPECIAL, RESISTANCE_STORAGE_SPECIAL, LIGHT_STORAGE_SPECIAL, COLOR_STORAGE_SPECIAL);
 		blockStorageEquipment = new BlockStorageBase("thaumrev.storageEquipment", generalTab, DIR_STORAGE, UNLOC_STORAGE, RARITY_STORAGE_EQUIPMENT, NAMES_STORAGE_EQUIPMENT, MINE_LVL_STORAGE_EQUIPMENT, HARDNESS_STORAGE_EQUIPMENT, RESISTANCE_STORAGE_EQUIPMENT, LIGHT_STORAGE_EQUIPMENT, COLOR_STORAGE_EQUIPMENT, SIGNAL_STORAGE_EQUIPMENT);
-		blockStorageGem = new BlockStorageGem("thaumrev.storageGem", generalTab, DIR_STORAGE, UNLOC_STORAGE, RARITY_STORAGE_GEM, NAMES_STORAGE_GEM, MINE_LVL_STORAGE_GEM, HARDNESS_STORAGE_GEM, RESISTANCE_STORAGE_GEM, LIGHT_STORAGE_GEM, COLOR_STORAGE_GEM, LINK_STORAGE_GEM_IND, LINK_STORAGE_GEM_META);
+		blockStorageGem = new BlockStorageGem("thaumrev.storageGem", generalTab, DIR_STORAGE, UNLOC_STORAGE, RARITY_STORAGE_GEM, NAMES_STORAGE_GEM_NAME, MINE_LVL_STORAGE_GEM, HARDNESS_STORAGE_GEM, RESISTANCE_STORAGE_GEM, LIGHT_STORAGE_GEM, COLOR_STORAGE_GEM, LINK_STORAGE_GEM_IND, LINK_STORAGE_GEM_META);
 		blockStorageMisc = new BlockStorageLinked("thaumrev.storageMisc", generalTab, DIR_STORAGE, UNLOC_STORAGE, RARITY_STORAGE_MISC, NAMES_STORAGE_MISC_INT, MINE_LVL_STORAGE_MISC, HARDNESS_STORAGE_MISC, RESISTANCE_STORAGE_MISC, LIGHT_STORAGE_MISC, COLOR_STORAGE_MISC, LINK_STORAGE_MISC_IND, LINK_STORAGE_MISC_META).setCustomNames(NAMES_STORAGE_MISC_LOC);
 
 		//blockStoneSlab = new BlockStoneSlab();
@@ -230,8 +230,8 @@ public class ThaumRevContent {
 		wildThistle = new ItemStack(blockThaumicPlant, 1, 2);
 
 		shiverpearl = new ItemStack(blockThaumicPlant, 1, 5);
-		stormpearl = new ItemStack(blockThaumicPlant, 1, 6);
-		stonepearl = new ItemStack(blockThaumicPlant, 1, 7);
+		stormypearl = new ItemStack(blockThaumicPlant, 1, 6);
+		stonypearl = new ItemStack(blockThaumicPlant, 1, 7);
 
 		oreChalcocite = new ItemStack(blockOre, 1, 0);
 		oreSphalerite = new ItemStack(blockOre, 1, 1);
@@ -449,7 +449,7 @@ public class ThaumRevContent {
 		blockRedquartz = new ItemStack(blockStorageGem, 1, 10);
 
 		for (int i = 0; i < LINK_STORAGE_GEM_META.length; i++) {
-			RecipeHelper.registerOreDict(new ItemStack(blockStorageGem, 1, LINK_STORAGE_GEM_META[i]), BLOCK + NAMES_STORAGE_GEM[i]);
+			RecipeHelper.registerOreDict(new ItemStack(blockStorageGem, 1, LINK_STORAGE_GEM_META[i]), BLOCK + NAMES_STORAGE_GEM_ORE[i]);
 		}
 
 		blockLanthanides = new ItemStack(blockStorageMisc, 1, 0);
@@ -467,13 +467,13 @@ public class ThaumRevContent {
 	}
 
 	public static void loadItems() {
-		itemCotton = generalItem.addOreDictItem(0, "itemCotton");
-		itemCottonFiber = generalItem.addOreDictItem(1, "itemCottonFiber");
-		itemCottonFabric = generalItem.addOreDictItem(2, "itemCottonFabric");
-		itemCottonTreated = generalItem.addOreDictItem(3, "itemCottonTreated", "itemCottonFabricTreated");
-		itemCottonEnchanted = generalItem.addOreDictItem(4, "itemCottonEnchanted", enchCotton);
-		itemThistleLeaf = generalItem.addOreDictItem(5, "itemThistleLeaf");
-		itemThistleFlower = generalItem.addOreDictItem(6, "itemThistleFlower");
+		itemCotton = generalItem.addOreDictItem(0, M0000);
+		itemCottonFiber = generalItem.addOreDictItem(1, M0001);
+		itemCottonFabric = generalItem.addOreDictItem(2, M0002);
+		itemCottonTreated = generalItem.addOreDictItem(3, M0003);
+		itemCottonEnchanted = generalItem.addOreDictItem(4, M0004);
+		itemThistleLeaf = generalItem.addOreDictItem(5, M0005);
+		itemThistleFlower = generalItem.addOreDictItem(6, M0006);
 
 		itemArcaneSingularity = generalItem.addOreDictItem(10, "itemArcaneSingularity");
 		itemStabilizedSingularity = generalItem.addOreDictItem(11, "itemStabilizedSingularity");
@@ -497,14 +497,16 @@ public class ThaumRevContent {
 
 		chainThaumicBronze = generalItem.addColorizedOreDictItem(60, CHAIN + TBRZ, CHAIN, COLOR_TBRZ, CHAIN_ORE + TBRZ);
 
-		seedExcubitura = generalItem.addOreDictItem(950, "seedExcubitura");
-		seedCotton = generalItem.addOreDictItem(951, "seedCotton");
-		seedThistle = generalItem.addOreDictItem(952, "seedThistle");
-		seedShimmerleaf = generalItem.addOreDictItem(953, "seedShimmerleaf");
-		seedCinderpearl = generalItem.addOreDictItem(954, "seedCinderpearl");
-		seedShiverpearl = generalItem.addOreDictItem(955, "seedShiverpearl");
-		seedStormpearl = generalItem.addOreDictItem(956, "seedStormpearl");
-		seedStonepearl = generalItem.addOreDictItem(957, "seedStonepearl");
+
+
+		seedExcubitura = generalItem.addOreDictItem(950, SEED + EXCU);
+		seedCotton = generalItem.addOreDictItem(951, SEED + CTTN);
+		seedThistle = generalItem.addOreDictItem(952, SEED + THSL);
+		seedShimmerleaf = generalItem.addOreDictItem(953, SEED + SHML);
+		seedCinderpearl = generalItem.addOreDictItem(954, SEED + CNDP);
+		seedShiverpearl = generalItem.addOreDictItem(955, SEED + SHVP);
+		seedStormypearl = generalItem.addOreDictItem(956, SEED + STMP);
+		seedStonypearl = generalItem.addOreDictItem(957, SEED + STNP);
 
 		//WARDENIC ARSENAL
 		itemExcubituraPetal = generalItem.addOreDictItem(1000, "itemExcubituraPetal");
@@ -516,31 +518,43 @@ public class ThaumRevContent {
 		excubituraOil = generalItem.addOreDictItem(1036, oilExcu);
 		chainWardenicBronze = generalItem.addColorizedOreDictItem(1037, CHAIN + WBRZ, CHAIN, COLOR_WBRZ, CHAIN_ORE + WBRZ);
 		chainPrimalBronze = generalItem.addOreDictItem(1038, new ItemEntryColorizedOverlay(chainPBronze, 1).setTextureOverlay("overlayCharmChain").setColorData(CHAIN, chainPBronze, COLOR_WBRZ), chainPBronze);
-		plateWardenicBronzeMirror = generalItem.addOreDictItem(1039, "itemPlateWardenicBronzeMirror");
+		plateWardenicBronzeMirror = generalItem.addOreDictItem(1039, PLATE_ALT + WBRZ + MIRROR);
 
-		excubituraOilPure = generalItem.addOreDictItem(1070, "itemExcubituraOilPure");
+		excubituraOilPure = generalItem.addOreDictItem(1070, ITEM + EXCU + OIL + PURE);
 		chainWardenicSteel = generalItem.addColorizedOreDictItem(1071, CHAIN + WDST, CHAIN, COLOR_WDST, CHAIN_ORE + WDST);
-		chainWardenicSteelOiled = generalItem.addColorizedOreDictItemWithEffect(1072, CHAIN + WDST + "Oiled", CHAIN, COLOR_WDST, CHAIN_ORE + WDST + "Oiled");
-		plateWardenicSteelDetailed = generalItem.addOreDictItem(1073, "itemPlateWardenicSteelDetailed");
-		plateWardenicSteelRunic = generalItem.addOreDictItem(1074, "itemPlateWardenicSteelRunic");
-		plateWardenicSteelConsecrated = generalItem.addOreDictItem(1075, "itemPlateWardenicSteelConsecrated");
+		chainWardenicSteelOiled = generalItem.addColorizedOreDictItemWithEffect(1072, CHAIN + WDST + OILED, CHAIN, COLOR_WDST, CHAIN_ORE + WDST + OILED);
+		plateWardenicSteelDetailed = generalItem.addOreDictItem(1073, PLATE_ALT + WDST + DETAILED);
+		plateWardenicSteelRunic = generalItem.addOreDictItem(1074, PLATE_ALT + WDST + RUNIC);
+		plateWardenicSteelConsecrated = generalItem.addOreDictItem(1075, PLATE_ALT + WDST + CONSECRATED);
 
-		plateWardenicCompositeInfused = generalItem.addOreDictItem(1105, "itemPlateWardenicCompositeInfused");
-		plateWardenicCompositeFitted = generalItem.addOreDictItem(1106, "itemPlateWardenicCompositeFitted");
-		plateWardenicCompositeDetailed = generalItem.addOreDictItem(1107, "itemPlateWardenicCompositeDetailed");
-		plateWardenicCompositeRunic = generalItem.addOreDictItem(1108, "itemPlateWardenicCompositeRunic");
-		plateWardenicCompositeConsecrated = generalItem.addOreDictItem(1109, "itemPlateWardenicCompositeConsecrated");
-		plateWardenicCompositePrimal = generalItem.addOreDictItem(1110, "itemPlateWardenicCompositePrimal");
+		plateWardenicCompositeInfused = generalItem.addOreDictItem(1105, M1105);
+		plateWardenicCompositeFitted = generalItem.addOreDictItem(1106, M1106);
+		plateWardenicCompositeDetailed = generalItem.addOreDictItem(1107, M1107);
+		plateWardenicCompositeRunic = generalItem.addOreDictItem(1108, M1108);
+		plateWardenicCompositeConsecrated = generalItem.addOreDictItem(1109, M1109);
+		plateWardenicCompositePrimal = generalItem.addOreDictItem(1110, M1110);
 
 		itemEssenceOfAwakening = generalItem.addOreDictItem(1140, "itemEssenceOfAwakening");
 
 		wardenicHardener = generalItem.addOreDictItem(1175, "itemWardenicHardener");
 
-		itemFabricRedstone = generalItem.addOreDictItem(1200, "itemRedstoneFabric");
+		itemFabricRedstone = generalItem.addOreDictItem(1200, M1200);
 		itemRedcloth = generalItem.addOreDictItem(1201, "itemRedcloth");
 		itemRedclothSocketed = generalItem.addOreDictItem(1202, "itemRedclothSocketed");
 
-		itemCapacitorCoreArcaneRedsolder = generalItem.addOreDictItem(1600, "itemCapacitorCoreArcaneRedsolder");
+		itemCapacitorCoreArcaneRedsolder = generalItem.addOreDictItem(1600, M1600);
+
+		powderBlizz = generalItem.addColorizedOreDictItem(4900, POWDER + BLIZZ, POWDER, COLOR_BLIZZ, DUST + BLIZZ);
+		powderBlitz = generalItem.addColorizedOreDictItem(4901, POWDER + BLITZ, POWDER, COLOR_BLITZ, DUST + BLITZ);
+		powderBasalz = generalItem.addColorizedOreDictItem(4902, POWDER + BASALZ, POWDER, COLOR_BASALZ, DUST + BASALZ);
+
+		rodBlizz = generalItem.addColorizedOreDictItem(4905, ROD + BLIZZ, ROD, COLOR_BLIZZ);
+		rodBlitz = generalItem.addColorizedOreDictItem(4906, ROD + BLITZ, ROD, COLOR_BLITZ);
+		rodBasalz = generalItem.addColorizedOreDictItem(4907, ROD + BASALZ, ROD, COLOR_BASALZ);
+
+		if (LoadedHelper.isThermalFoundationLoaded) {
+			generalItem.setHidden(true, 4900, 4901, 4902, 4905, 4906, 4907);
+		}
 	}
 
 	public static void loadMetalItems() {
@@ -1141,8 +1155,8 @@ public class ThaumRevContent {
 		recipeTransAluminium = addCrucibleRecipe(keyTransmutationAl, ItemHelper.cloneStack(nuggetAluminium, 3), NUGGET + AL, new AspectList().add(METAL, 2).add(ORDER, 1));
 		recipeTransNeodymium = addCrucibleRecipe(keyTransmutationNd, ItemHelper.cloneStack(nuggetNeodymium, 3), NUGGET + ND, new AspectList().add(METAL, 2).add(ENERGY, 1));
 		recipeTransZinc = addCrucibleRecipe(keyTransmutationZn, ItemHelper.cloneStack(nuggetZinc, 3), NUGGET + ZN, new AspectList().add(METAL, 2).add(CRYSTAL, 1));
-		recipeTransArsenic = addCrucibleRecipe(keyTransmutationAs, ItemHelper.cloneStack(tinyArsenic, 3), "dustArsenicTiny", new AspectList().add(METAL, 2).add(POISON, 1));
-		recipeTransAntimony = addCrucibleRecipe(keyTransmutationSb, ItemHelper.cloneStack(tinyAntimony, 3), "dustAntimonyTiny", new AspectList().add(METAL, 2).add(POISON, 1));
+		recipeTransArsenic = addCrucibleRecipe(keyTransmutationAs, ItemHelper.cloneStack(tinyArsenic, 3), NUGGET + AS, new AspectList().add(METAL, 2).add(POISON, 1));
+		recipeTransAntimony = addCrucibleRecipe(keyTransmutationSb, ItemHelper.cloneStack(tinyAntimony, 3), NUGGET + SB, new AspectList().add(METAL, 2).add(POISON, 1));
 		recipeTransBismuth = addCrucibleRecipe(keyTransmutationBi, ItemHelper.cloneStack(nuggetBismuth, 3), NUGGET + BI, new AspectList().add(METAL, 2).add(ORDER, 1));
 		recipeTransTungsten = addCrucibleRecipe(keyTransmutationW, ItemHelper.cloneStack(nuggetTungsten, 3), NUGGET + W, new AspectList().add(METAL, 2).add(MECHANISM, 1).add(ARMOR, 1));
 		recipeTransLutetium = addCrucibleRecipe(keyTransmutationLu, ItemHelper.cloneStack(nuggetLutetium, 3), NUGGET + LU, new AspectList().add(METAL, 2).add(EARTH, 1));
@@ -1154,15 +1168,15 @@ public class ThaumRevContent {
 		recipeTransOsmium = addCrucibleRecipe(keyTransmutationOs, ItemHelper.cloneStack(nuggetOsmium, 3), NUGGET + OS, new AspectList().add(METAL, 2).add(ARMOR, 1).add(ORDER, 1));
 		recipeTransIridium = addCrucibleRecipe(keyTransmutationIr, ItemHelper.cloneStack(nuggetIridium, 3), NUGGET + IR, new AspectList().add(METAL, 2).add(ARMOR, 1).add(ORDER, 1).add(LIGHT, 1).add(ENERGY, 1));
 
-		recipeClusterNickel = addCrucibleRecipe(keyClusterNi, clusterNickel, "oreNickel", new AspectList().add(METAL, 1).add(ORDER, 1));
-		if (OreDictionary.doesOreNameExist("oreAluminium")) {
-			recipeClusterAluminium = addCrucibleRecipe(keyClusterAl, clusterXenotime, "oreAluminium", new AspectList().add(METAL, 1).add(ORDER, 1));
+		recipeClusterNickel = addCrucibleRecipe(keyClusterNi, clusterNickel, ORE + NI, new AspectList().add(METAL, 1).add(ORDER, 1));
+		if (OreDictionary.doesOreNameExist(ORE + AL)) {
+			recipeClusterAluminium = addCrucibleRecipe(keyClusterAl, clusterXenotime, ORE +AL, new AspectList().add(METAL, 1).add(ORDER, 1));
 		}
-		recipeClusterXenotime = addCrucibleRecipe(keyClusterYPO, clusterXenotime, "oreXenotime", new AspectList().add(METAL, 1).add(ORDER, 1));
-		recipeClusterZinc = addCrucibleRecipe(keyClusterZn, clusterZinc, "oreZinc", new AspectList().add(METAL, 1).add(ORDER, 1));
-		recipeClusterBismuth = addCrucibleRecipe(keyClusterBi, clusterBismuth, "oreBismuth", new AspectList().add(METAL, 1).add(ORDER, 1));
-		recipeClusterTennantite = addCrucibleRecipe(keyClusterCuAs, clusterTennantite, "oreTennantite", new AspectList().add(METAL, 1).add(ORDER, 1));
-		recipeClusterTertahedrite = addCrucibleRecipe(keyClusterCuSb, clusterTetrahedrite, "oreTetrahedrite", new AspectList().add(METAL, 1).add(ORDER, 1));
+		recipeClusterXenotime = addCrucibleRecipe(keyClusterYPO, clusterXenotime, ORE + YPO, new AspectList().add(METAL, 1).add(ORDER, 1));
+		recipeClusterZinc = addCrucibleRecipe(keyClusterZn, clusterZinc, ORE + ZN, new AspectList().add(METAL, 1).add(ORDER, 1));
+		recipeClusterBismuth = addCrucibleRecipe(keyClusterBi, clusterBismuth, ORE + BI, new AspectList().add(METAL, 1).add(ORDER, 1));
+		recipeClusterTennantite = addCrucibleRecipe(keyClusterCuAs, clusterTennantite, ORE + CAS, new AspectList().add(METAL, 1).add(ORDER, 1));
+		recipeClusterTertahedrite = addCrucibleRecipe(keyClusterCuSb, clusterTetrahedrite, ORE + CSB, new AspectList().add(METAL, 1).add(ORDER, 1));
 		recipeClusterTungsten = addCrucibleRecipe(keyClusterW, clusterTungsten, ORE + W, new AspectList().add(METAL, 1).add(ORDER, 1));
 		if (OreDictionary.doesOreNameExist(ORE + PT)) {
 			recipeClusterPlatinum = addCrucibleRecipe(keyClusterPt, clusterPlatinum, ORE + PT, new AspectList().add(METAL, 1).add(ORDER, 1));
@@ -1171,13 +1185,13 @@ public class ThaumRevContent {
 
 		recipeExcubituraPaste = addShapelessArcaneCraftingRecipe(keyExcubituraPaste, itemExcubituraPaste, new AspectList().add(EARTH, 5).add(ENTROPY, 3), "itemExcubituraPetal", "itemExcubituraPetal", salisPinch, new ItemStack(Items.bowl));
 
-		recipeExcubituraFabric = addArcaneCraftingRecipe(keyWardencloth, ItemHelper.cloneStack(itemFabricExcubitura, 8), new AspectList().add(ORDER, 5), "FFF", "FPF", "FFF", 'F', enchCotton, 'P', paste);
+		recipeExcubituraFabric = addArcaneCraftingRecipe(keyWardencloth, ItemHelper.cloneStack(itemFabricExcubitura, 8), new AspectList().add(ORDER, 5), "FFF", "FPF", "FFF", 'F', M0004, 'P', paste);
 		recipeWardencloth = addCrucibleRecipe(keyWardencloth, itemWardencloth, "itemExcubituraFabric", new AspectList().add(CLOTH, 2).add(ARMOR, 2).add(aspectExcubitor, 2));
 
-		recipeWardenclothSkullcap = addArcaneCraftingRecipe(keyArmorWardencloth, new ItemStack(wardenclothSkullcap), ThaumcraftHelper.newPrimalAspectList(10), "WEW", "E E", 'E', enchCotton, 'W', wardencloth);
-		recipeWardenclothTunic = addArcaneCraftingRecipe(keyArmorWardencloth, new ItemStack(wardenclothTunic), ThaumcraftHelper.newPrimalAspectList(20), "W W", "WEW", "EWE", 'E', enchCotton, 'W', wardencloth);
-		recipeWardenclothPants = addArcaneCraftingRecipe(keyArmorWardencloth, new ItemStack(wardenclothPants), ThaumcraftHelper.newPrimalAspectList(15), "EWE", "E E", "W W", 'E', enchCotton, 'W', wardencloth);
-		recipeWardenclothBoots = addArcaneCraftingRecipe(keyArmorWardencloth, new ItemStack(wardenclothBoots), ThaumcraftHelper.newPrimalAspectList(10), "W W", "E E", 'E', enchCotton, 'W', wardencloth);
+		recipeWardenclothSkullcap = addArcaneCraftingRecipe(keyArmorWardencloth, new ItemStack(wardenclothSkullcap), ThaumcraftHelper.newPrimalAspectList(10), "WEW", "E E", 'E', M0004, 'W', wardencloth);
+		recipeWardenclothTunic = addArcaneCraftingRecipe(keyArmorWardencloth, new ItemStack(wardenclothTunic), ThaumcraftHelper.newPrimalAspectList(20), "W W", "WEW", "EWE", 'E', M0004, 'W', wardencloth);
+		recipeWardenclothPants = addArcaneCraftingRecipe(keyArmorWardencloth, new ItemStack(wardenclothPants), ThaumcraftHelper.newPrimalAspectList(15), "EWE", "E E", "W W", 'E', M0004, 'W', wardencloth);
+		recipeWardenclothBoots = addArcaneCraftingRecipe(keyArmorWardencloth, new ItemStack(wardenclothBoots), ThaumcraftHelper.newPrimalAspectList(10), "W W", "E E", 'E', M0004, 'W', wardencloth);
 
 		recipeExcubituraOilUnproc = addShapelessArcaneCraftingRecipe(keyExcubituraOil, excubituraOilRaw, new AspectList().add(EARTH, 1).add(ORDER, 1), itemPhial, paste, paste, paste, paste);
 		recipeExcubituraOil = addShapelessArcaneCraftingRecipe(keyExcubituraOil, excubituraOil, ThaumcraftHelper.newPrimalAspectList(0, 10, 5, 5, 25, 5), "itemExcubituraOilUnprocessed", nHg, salisPinch, itemAlumentum); //TODO: v0.0.8: Runic Infuser
@@ -1701,32 +1715,44 @@ public class ThaumRevContent {
 
 	public static ItemStack ingotFe = new ItemStack(Items.iron_ingot);
 
-
+	@Deprecated
 	public static String redstone = "dustRedstone";
-	public static String iMth = "ingotArsenoAntimonialBronze";
 
+	@Deprecated
 	public static String enchSilk = "itemEnchantedFabricSilk";
-	public static String enchCotton = "itemEnchantedFabricCotton";
+	@Deprecated
 	public static String mirror = "itemMirroredGlass";
+	@Deprecated
 	public static String salisMundus = "dustSalisMundus";
+	@Deprecated
 	public static String voidSeed = "itemVoidSeed";
 
+	@Deprecated
 	public static String shardBalanced = "shardBalanced";
 
+	@Deprecated
 	public static String nHg = "itemDropQuicksilver";
 
+	@Deprecated
 	public static String iBs = "ingotBrass";
 
+	@Deprecated
 	public static String nBronze = "nuggetBronze";
 
+	@Deprecated
 	public static String salisPinch = "dustTinySalisMundus";
 
+	@Deprecated
 	public static String paste = "itemExcubituraPaste";
 
+	@Deprecated
 	public static String wardencloth = "itemWardencloth";
 
+	@Deprecated
 	public static String oilExcu = "itemExcubituraOil";
+	@Deprecated
 	public static String chainPBronze = "chainPrimalBronze";
 
+	@Deprecated
 	public static String quartz = "gemWardenicQuartz";
 }

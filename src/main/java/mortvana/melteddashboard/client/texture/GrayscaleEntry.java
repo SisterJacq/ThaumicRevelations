@@ -28,6 +28,8 @@ public class GrayscaleEntry {
 		entries.put(SHARD_QUARTZ, new GrayscaleEntry(SHARD_QUARTZ, DIR_GRAYSCALE + SHARD_QUARTZ));
 		entries.put(TINY_MAGIC_DUST, new GrayscaleEntry(TINY_MAGIC_DUST, DIR_GRAYSCALE + TINY_MAGIC_DUST));
 		entries.put(CHAIN, new GrayscaleEntry(CHAIN, DIR_GRAYSCALE + CHAIN));
+		entries.put(POWDER, new GrayscaleEntry(POWDER, DIR_GRAYSCALE + POWDER));
+		entries.put(ROD, new GrayscaleEntry(ROD, DIR_GRAYSCALE + ROD));
 	}
 
 	protected String name;

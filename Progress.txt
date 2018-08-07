@@ -3,7 +3,7 @@ Internal [20] |-> Items/Blocks [02/03/04] |-> Recipes [05/06/07/08] |-> Research
 										  |-> Texture [10/11/12/13]
 										  |-> Item Aspects [14]
 
-6 - 5 - 12/0/77/67 - 10 - 72 > 134/383
+1 - 3 - 12/0/77/67 - 10 - 72 > 139/382
 Internal:
 	General:
 	[20-xx]		Fix Colorizer
@@ -13,14 +13,18 @@ Internal:
 
 	Blocks:
 	[20-xx]		Setup Storage Block Colorizer
+	[20-xx]		Cotton Farming
+	[20-xx]		Thistle Farming
 
 	Items:
 	[20-xx]		Primal Pendant Mechanics
 	[20-xx]		Primal Robe Mechanics
-	[20-02]		Setup Most Minerals with Colorizer
+	[20-xx]		Setup Most Minerals with Colorizer
+	[20-xx]		Disabled setter in FluxGearItem
 
 	Research:
 	[20-xx]		Research Splitting
+	[20-xx]		Thaumonomicon Smelt Recipe Disabler
 
 	World Gen:
 	[20-xx]		Gravel Ore Generation
@@ -50,6 +54,7 @@ Content:
     [03-xx]		All Tier 5 Wardenic Items
 	[03-xx]		All Tier 1 Magneoturgic Items
 	[03-xx]		All Other Mineral Dusts/Tiny Dusts
+	[03-xx]		TF Rod/Powder Backups
 
 	[05/06/07/08]	Crafting:
 	[05-xx]		All Ore Smelting except for Tungsten and Iridosmium
@@ -177,8 +182,6 @@ Content:
 [04-01]		Tier 5 Wardenic Armor
 [04-02]		Infused Cotton Armor
 [04-03]		Flux Robes
-[03-04]		TF Rod/Powder Backups
-[03-05]		All Non-Metallurgy Clusters
 
 [05]	Recipes (Block):
 [06]	Recipes (Other Items):
@@ -402,7 +405,7 @@ Content:
 [17-12]		Essence of Awakening
 [17-??]		Awakened Wardenic Composite Plate Armor //Do not Implement
 
-[18]	Research Text (Wardenic T4 & Magneoturgic TT1):
+[18]	Research Text (Wardenic T4 & Magneoturgic T1):
 [18-01]		Magneoturgy
 [18-02]		Wardenic Quartz
 [18-03]		Wardenic Crystal
@@ -445,12 +448,7 @@ Content:
 [19-??]		Platinum Transmutation
 
 [20]	Internal:
-[20-01]		Worldgen of Elemental Pearls (r02)
-[20-02]		Thaumonomicon Smelt Recipe Disabler (r15)
-[20-03]		Add All OreDict Strings to StringLibrary and Use Those (c4)
-[20-04]		Cotton Farming (r02)
-[20-05]		Thistle Farming (r02)
-[20-06]		Elemental Pearl Farming (r02)
+[20-01]		Worldgen of Elemental Pearls (1/3)
 
 
 [201]	Names:
@@ -467,6 +465,7 @@ Content:
 [203-04]	Auto-toggle Equipment Metals (Items)
 [203-05]	Auto-toggle Gems (Items)
 [203-06]	Auto-toggle Other Alloys (Items)
+[203-07]	All Non-Metallurgy Clusters
 
 [204]
 
@@ -504,6 +503,8 @@ Content:
 [220-xx]	Excubitor Aspect Stats
 [220-xx]	Fluxus Aspect Stats
 [220-xx]	Combined Strings in String Library
+[220-xx]	Add All OreDict Strings to StringLibrary and Use Those
+[220-xx]	Elemental Pearl Farming
 
 Other:
 Make Warden's Amulet do something

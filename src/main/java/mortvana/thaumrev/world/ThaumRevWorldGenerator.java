@@ -7,22 +7,24 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.chunk.IChunkProvider;
 import cpw.mods.fml.common.IWorldGenerator;
-import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
-import net.minecraftforge.event.terraingen.OreGenEvent;
+
+import thaumcraft.common.config.Config;
+import thaumcraft.common.lib.world.ThaumcraftWorldGenerator;
 
 import mortvana.melteddashboard.util.WeightedRandomBlock;
 import mortvana.melteddashboard.util.helpers.LoadedHelper;
 import mortvana.melteddashboard.world.*;
 import mortvana.melteddashboard.world.poorore.PoorOreGenerator;
 
+import mortvana.thaumrev.block.BlockThaumicPlant;
 import mortvana.thaumrev.common.ThaumRevConfig;
-import mortvana.thaumrev.common.ThaumRevConfigWorld;
+import mortvana.thaumrev.common.ThaumicRevelations;
 import mortvana.thaumrev.util.ContentHelper;
 
 import static mortvana.thaumrev.common.ThaumRevConfigWorld.*;
@@ -41,6 +43,9 @@ public class ThaumRevWorldGenerator implements IWorldGenerator {
 		genExcubitura = new WorldGenPlant(blockThaumicPlant, 0, 16, 8);
 		genCotton = new WorldGenPlant(blockThaumicPlant, 1, 96, 8);
 		genThistle = new WorldGenPlant(blockThaumicPlant, 2);
+		genShiverpearl = new WorldGenPlant(blockThaumicPlant, 5, 18, 8);
+		genStormypearl = new WorldGenPlant(blockThaumicPlant, 6, 18, 8);
+		genStonypearl = new WorldGenPlant(blockThaumicPlant, 7, 18, 8);
 
 		genChalcocite = new WorldGenOreVein(blockOre, 0, stone, 0, 10, 4, 35, 80);
 		genSphalerite = new WorldGenOreVein(blockOre, 1, stone, 0, 9, 8, 20, 65);
@@ -161,8 +166,6 @@ public class ThaumRevWorldGenerator implements IWorldGenerator {
 		}
 	}
 
-
-
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {
 		if (world.provider.isHellWorld) {
@@ -245,6 +248,9 @@ public class ThaumRevWorldGenerator implements IWorldGenerator {
 		int z = chunkZ * 16 + random.nextInt(16);
 		int y = world.getHeightValue(x, z);
 		BiomeGenBase biome = world.getBiomeGenForCoords(x, z);
+		if (y > world.getActualHeight()) {
+			return;
+		}
 
 		if (random.nextInt(1000) <= Math.ceil(ContentHelper.getExcubituraModifier(world, x, y, z))) {
 			genExcubitura.generate(world, random, x, y, z);
@@ -256,6 +262,21 @@ public class ThaumRevWorldGenerator implements IWorldGenerator {
 
 		if (random.nextInt(75) == 0 && ContentHelper.isGoodClimate(biome, 0.10F, 1.0F, 0.10F, 2.0F)) {
 			genThistle.generate(world, random, x, y, z);
+		}
+
+		if (ThaumcraftWorldGenerator.getDimBlacklist(world.provider.dimensionId) == -1 && Config.genTrees && !world.getWorldInfo().getTerrainType().getWorldTypeName().startsWith("flat")) {
+			if (biome.topBlock == Blocks.grass && world.getBlock(x, y - 1, z) == Blocks.grass && biome.temperature < 0.0F && random.nextInt(30) == 0) {
+				genShiverpearl.generate(world, random, x, y, z);
+				ThaumicRevelations.logger.warn("Generating Shiverpearl at " + x + ", " + y + ", " + z);
+			}
+			if (y >= 96 && world.getBlock(x, y - 1, z) == Blocks.grass && random.nextInt(30) == 0) {
+				genStormypearl.generate(world, random, x, y, z);
+				ThaumicRevelations.logger.warn("Generating Stormypearl at " + x + ", " + y + ", " + z);
+			}
+			if (biome.temperature >= 0.0F && biome.temperature <= 0.5F && world.canBlockSeeTheSky(x, y, z) && random.nextInt(60) == 0) {
+				genStonypearl.generate(world, random, x, y, z);
+				ThaumicRevelations.logger.warn("Generating Stonypearl at " + x + ", " + y + ", " + z);
+			}
 		}
 	}
 

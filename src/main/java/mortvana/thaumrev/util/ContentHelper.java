@@ -8,7 +8,6 @@ import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 
-import cpw.mods.fml.common.Loader;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeDictionary.Type;
 import net.minecraftforge.oredict.OreDictionary;
@@ -985,15 +984,62 @@ public class ContentHelper {
 	public static ResearchPage[] getMaterialPages() {
 		List<ResearchPage> list = new ArrayList<ResearchPage>(8);
 		list.add(new ResearchPage("0"));
+		list.add(new ResearchPage("1"));
+		list.add(new ResearchPage("cu"));
+		if (obviousSmelting) {
+			list.add(new ResearchPage(oreChalcocite));
+		}
+		list.add(new ResearchPage("zn"));
+		if (obviousSmelting) {
+			list.add(new ResearchPage(oreSphalerite));
+		}
+		list.add(new ResearchPage("sn"));
+		if (obviousSmelting) {
+			list.add(new ResearchPage(oreCassiterite));
+		}
+		list.add(new ResearchPage("ni"));
+		if (obviousSmelting) {
+			list.add(new ResearchPage(oreMillerite));
+		}
+		list.add(new ResearchPage("ag"));
+		if (obviousSmelting) {
+			list.add(new ResearchPage(oreNativeSilver));
+		}
+		list.add(new ResearchPage("pb"));
+		if (obviousSmelting) {
+			list.add(new ResearchPage(oreGalena));
+		}
+		list.add(new ResearchPage("ypo"));
+		if (obviousSmelting) {
+			list.add(new ResearchPage(oreXenotime));
+		}
+		list.add(new ResearchPage("w"));
+		list.add(new ResearchPage("iros"));
+		list.add(new ResearchPage("bi"));
+		if (obviousSmelting) {
+			list.add(new ResearchPage(oreBismuthinite));
+		}
+		list.add(new ResearchPage("cuas"));
+		if (obviousSmelting) {
+			list.add(new ResearchPage(oreTennantite));
+		}
+		list.add(new ResearchPage("cusb"));
+		if (obviousSmelting) {
+			list.add(new ResearchPage(oreTetrahedrite));
+		}
+		list.add(new ResearchPage("pyrope"));
+		list.add(new ResearchPage("dioptase"));
+		list.add(new ResearchPage("fluonic"));
+		list.add(new ResearchPage("pdal"));
+		list.add(new ResearchPage("s1"));
+		list.add(new ResearchPage("s2"));
+		list.add(new ResearchPage("salis"));
 
-		List<ItemStack> ores = new ArrayList<ItemStack>(9);
-		//if (ThaumRevConfig.generateSphalerite) {
-		//list.add(new ResearchPage(oreSphalerite));
-		//}
+		list.add(new ResearchPage(new IRecipe[] {recipeSalisTiny, recipeSalis}));
 
-		//.addPages(, )
-		list.add(new ResearchPage(recipeSalisTiny));
-		list.add(new ResearchPage(recipeSalis));
+		list.add(new ResearchPage("primal"));
+		//list.add(new ResearchPage());
+
 
 		ResearchPage[] pages = new ResearchPage[list.size()];
 		list.toArray(pages);
@@ -1131,7 +1177,7 @@ public class ContentHelper {
             list.add(new ResearchPage(tiny));
         }*/
 
-		if (ThaumRevConfig.thaumonomiconAlloySmelt) {
+		if (ThaumRevConfig.obviousSmelting) {
 			list.add(new ResearchPage("smelt"));
 			list.addAll(smelting);
 		}

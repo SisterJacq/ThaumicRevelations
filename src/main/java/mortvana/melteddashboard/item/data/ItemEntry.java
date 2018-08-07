@@ -17,6 +17,7 @@ public class ItemEntry {
 	protected boolean altName = false;
 	protected boolean enchanted = false;
 	protected boolean disabled = false;
+	protected boolean hidden = false;
 
     public ItemEntry(String name, int rarity, int maxDamage) {
         this.name = name;
@@ -48,8 +49,18 @@ public class ItemEntry {
 		return this;
 	}
 
+	public ItemEntry setDisabled(boolean disabled) {
+		this.disabled = disabled;
+		return this;
+	}
+
 	public ItemEntry setEnchanted(boolean enchanted) {
 		this.enchanted = enchanted;
+		return this;
+	}
+
+	public ItemEntry setHidden(boolean hidden) {
+		this.hidden = hidden;
 		return this;
 	}
 
@@ -79,5 +90,9 @@ public class ItemEntry {
 
 	public boolean getEnchanted() {
 		return enchanted;
+	}
+
+	public boolean getHidden() {
+		return hidden;
 	}
 }

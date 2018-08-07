@@ -160,6 +160,10 @@ public final class ColorLibrary {
 	public static final int COLOR_MGCC = 0xBF7C7C;
 	public static final int COLOR_RSCC = 0x137F7F;
 
+	public static final int COLOR_BLIZZ = 0x0EDFFD;
+	public static final int COLOR_BLITZ = 0xDBB300;
+	public static final int COLOR_BASALZ = 0x564444;
+
 	/*public static final int COLOR_WSTL = 0x3C3A3F;
 	public static final int COLOR_STAINLESS = 0xA3B5AF;
 	public static final int COLOR_COTTON = 0xFDFFDD;

@@ -47,8 +47,7 @@ public abstract class FluxGearBlockCrop extends FluxGearBlockPlant implements IC
 				float rate = getGrowthRate(world, x, y, z, meta, light);
 
 				if (rate > 0.0F && random.nextInt((int) (25.0F / rate) + 1) == 0) {
-					meta++;
-					world.setBlockMetadataWithNotify(x, y, z, meta, 2);
+					world.setBlockMetadataWithNotify(x, y, z, meta + 1, 2);
 				}
 			}
 		}
@@ -59,23 +58,9 @@ public abstract class FluxGearBlockCrop extends FluxGearBlockPlant implements IC
 		if (ThaumRevConfig.rightClickHarvest) {
 			int meta = world.getBlockMetadata(x, y, z);
 			if (getMaxGrowth(meta) == meta) {
-				if (world.isRemote) {
-					return true;
-				}
-
-				world.setBlock(x, y, z, this, getHarvestMeta(meta), 3);
-				EntityItem item;
-				for (ItemStack produce : getProduce(world, x, y, z, 0)) {
-					item = new EntityItem(world, player.posX, player.posY - 1.0D, player.posZ, produce);
-					world.spawnEntityInWorld(item);
-					item.onCollideWithPlayer(player);
-				}
-				ItemStack seed = getSeed(world, x, y, z, 0);
-				seed = ItemHelper.cloneStack(seed, seed.stackSize - 1);
-				if (seed.stackSize > 0) {
-					item = new EntityItem(world, player.posX, player.posY - 1.0D, player.posZ, seed);
-					world.spawnEntityInWorld(item);
-					item.onCollideWithPlayer(player);
+				if (!world.isRemote) {
+					world.setBlock(x, y, z, this, getHarvestMeta(meta), 3);
+					spawnProduce(world, x, y, z, player, meta);
 				}
 				return true;
 			}
@@ -84,25 +69,41 @@ public abstract class FluxGearBlockCrop extends FluxGearBlockPlant implements IC
 	}
 
 	@Override
+	public void spawnProduce(World world, int x, int y, int z, EntityPlayer player, int meta) {
+		for (ItemStack produce : getProduce(world, x, y, z, meta, 0)) {
+			EntityItem item = new EntityItem(world, player.posX, player.posY - 1.0D, player.posZ, produce);
+			world.spawnEntityInWorld(item);
+			item.onCollideWithPlayer(player);
+		}
+		ItemStack seed = getSeed(world, x, y, z, meta, 0);
+		seed = ItemHelper.cloneStack(seed, seed.stackSize - 1);
+		if (seed.stackSize > 0) {
+			EntityItem item = new EntityItem(world, player.posX, player.posY - 1.0D, player.posZ, seed);
+			world.spawnEntityInWorld(item);
+			item.onCollideWithPlayer(player);
+		}
+	}
+
+	@Override
 	@SideOnly(Side.CLIENT)
 	public Item getItem(World world, int x, int y, int z) {
-		return getSeedItem(world, x, y, z).getItem();
+		return getSeedItem(world.getBlockMetadata(x, y, z)).getItem();
 	}
 
 	@Override
 	public int getDamageValue (World world, int x, int y, int z) {
-		return getSeedItem(world, x, y, z).getItemDamage();
+		return getSeedItem(world.getBlockMetadata(x, y, z)).getItemDamage();
 	}
 
-	@Override
+	/*@Override
 	public int getPlantMetadata (IBlockAccess world, int x, int y, int z) {
 		return world.getBlockMetadata(x, y, z) < 8 ? 0 : 8;
-	}
+	}*/
 
 	@Override
 	public ArrayList<ItemStack> getDrops(World world, int x, int y, int z, int metadata, int fortune) {
-		ArrayList<ItemStack> ret = getProduce(world, x, y, z, 0);
-		ret.add(getSeed(world, x, y, z, fortune));
+		ArrayList<ItemStack> ret = getProduce(world, x, y, z, metadata, 0);
+		ret.add(getSeed(world, x, y, z, metadata, fortune));
 		return ret;
 	}
 
@@ -131,46 +132,44 @@ public abstract class FluxGearBlockCrop extends FluxGearBlockPlant implements IC
 	public void func_149853_b(World world, Random random, int x, int y, int z) {
 		int meta = world.getBlockMetadata(x, y, z);
 		if (getMaxGrowth(meta) != meta) {
-			int growth = world.rand.nextInt(4) + 2;
-			meta = meta + growth > getMaxGrowth(meta) ? getMaxGrowth(meta) : meta + growth;
-			world.setBlockMetadataWithNotify(x, y, z, meta, 3);
+			world.setBlockMetadataWithNotify(x, y, z, MathHelper.clampUpperInt(meta + world.rand.nextInt(4) + 2, getMaxGrowth(meta)), 3);
 		}
 	}
 
 	/** ICrop **/
 	@Override
 	public int getStartGrowth(int meta) {
-		return meta <= 8 ? 0 : 8;
+		return meta < 8 ? 0 : 8;
 	}
 
 	@Override
 	public int getMaxGrowth(int meta) {
-		return meta <= 8 ? 7 : 15;
+		return meta < 8 ? 7 : 15;
 	}
 
+	//TODO: Make getSunlight work.
 	@Override
 	public float getGrowthRate(World world, int x, int y, int z, int meta, int light) {
-		float growth = 0.25F * (light - 7);
+		//if (isValidSoil(world, x, y, z) && light >= requiredSun(meta)) {
+			float growth = 0.25F * (light - requiredSun(meta) /*7*/);
 
-		if (isValidSoil(world, x, y, z) && light >= requiredSun(meta)) {
-			growth += ((WorldHelper.getSunlight(world, x, y, z) - requiredSun(meta)) * .125F);
+			//growth += ((WorldHelper.getSunlight(world, x, y, z) - requiredSun(meta)) * .125F);
 			if (isCrowded(world, x, y, z)) {
 				growth /= 2.0F;
 			}
 
-			if (world.canBlockSeeTheSky(x, y, z) || WorldHelper.getSunlight(world, x, y, z) <= requiredSun(meta)) {
-				growth += .50F;
+			if (world.canBlockSeeTheSky(x, y, z) /*|| WorldHelper.getSunlight(world, x, y, z) <= requiredSun(meta)*/) {
+				growth += 2.0F;//.50F;
 			}
 
 			Block soil = world.getBlock(x, y - 1, z);
 			if (soil != null && soil.isFertile(world, x, y - 1, z)) {
 				growth *= 2F;
 			}
-			growth += 1.0F;
-		} else {
-			growth = 0.0F;
-		}
-		return growth;
+			return growth + 1.0F;
+		/*} else {
+			return 0.0F;
+		}*/
 	}
 
 	@Override
@@ -194,6 +193,8 @@ public abstract class FluxGearBlockCrop extends FluxGearBlockPlant implements IC
 
 	@Override
 	public boolean isValidSoil(IBlockAccess world, int x, int y, int z) {
-		return world.getBlock(x, y, z).canSustainPlant(world, x, y, z, ForgeDirection.UP, this);
+		return world.getBlock(x, y, z).canSustainPlant(world, x, y, z, ForgeDirection.UP, this) || world.getBlock(x, y, z) == Blocks.farmland;
 	}
+
+
 }

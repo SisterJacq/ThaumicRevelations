@@ -3,6 +3,7 @@ package mortvana.melteddashboard.world;
 import java.util.Random;
 
 import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
@@ -33,7 +34,7 @@ public class WorldGenPlant extends WorldGenerator {
 			int tryY = y + MathHelper.getOffsetInt(range / 2);
 			int tryZ = z + MathHelper.getOffsetInt(range);
 
-			if (world.isAirBlock(tryX, tryY, tryZ) && (!world.provider.hasNoSky || tryY < 255) && block.canBlockStay(world, tryX, tryY, tryZ)) {
+			if ((world.isAirBlock(tryX, tryY, tryZ) || world.getBlock(tryX, tryY, tryZ) == Blocks.snow_layer) && (!world.provider.hasNoSky || tryY < 255) && (block.canBlockStay(world, tryX, tryY, tryZ))) {
 				world.setBlock(tryX, tryY, tryZ, block, meta, 3);
 			}
 		}

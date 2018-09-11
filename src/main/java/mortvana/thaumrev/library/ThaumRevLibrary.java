@@ -1552,8 +1552,6 @@ public class ThaumRevLibrary {
 	@Deprecated
 	public static final String SLOT = "Slot";
 	@Deprecated
-	public static final String REVEALING = "Revealing";
-	@Deprecated
 	public static final String BROKEN = "Broken";
 	@Deprecated
 	public static final String VISMODIFIER = "VisDiscount";

@@ -12,7 +12,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraftforge.common.EnumPlantType;
+import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.common.util.ForgeDirection;
 
 import mortvana.melteddashboard.block.FluxGearBlockPlant;
@@ -73,14 +76,26 @@ public class BlockThaumicPlant extends FluxGearBlockPlant {
 		}
 	}
 
-	@Override
+	/*@Override
 	public boolean canBlockStay(World world, int x, int y, int z) {
 		int meta = world.getBlockMetadata(x, y, z);
 		if (meta == 7) {
-			return isStonypearlBlock(world, x, y, z);
+			return isStonypearlBlock(world, x, y - 1, z);
 		} else {
 			return super.canBlockStay(world, x, y, z);
 		}
+	}
+
+	@Override
+	public boolean canSustainPlant(IBlockAccess world, int x, int y, int z, ForgeDirection direction, IPlantable plantable) {
+		int metadata = plantable.getPlantMetadata(world, x, y + 1, z);
+
+		if
+	}*/
+
+	@Override
+	public int getDamageValue (World world, int x, int y, int z) {
+		return world.getBlockMetadata(x, y, z);
 	}
 
 	@Override //TODO: Make Metadata Specific
@@ -115,10 +130,10 @@ public class BlockThaumicPlant extends FluxGearBlockPlant {
 	@SideOnly(Side.CLIENT)
 	public void randomDisplayTick(World world, int i, int j, int k, Random random) {}*/
 
-	public static boolean isStonypearlBlock(World world, int x, int y, int z) {
+	/*public static boolean isStonypearlBlock(World world, int x, int y, int z) {
 		Block block = world.getBlock(x, y, z);
 		return block == Blocks.stone || block == Blocks.gravel;
-	}
+	}*/
 
 	public static final String[] NAMES = { "excubitura", "cotton_wild", "thistle_wild", "", "", "shiverpearl", "stormypearl", "stonypearl", "blazereed", "blizzreed", "blitzreed", "basalzreed" };
 	public static final int[] LIGHT = { 4, 0, 0, 0, 0, 8, 8, 8, 8, 8, 8, 8 };

@@ -9,7 +9,7 @@ import net.minecraft.nbt.*;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
-import mortvana.thaumrev.library.ThaumRevLibrary;
+import static mortvana.melteddashboard.util.libraries.StringLibrary.*;
 
 public class NBTHelper {
 
@@ -293,22 +293,57 @@ public class NBTHelper {
 		}
 	}
 
-	//public static
-	//
+	public static void ensureNBTFlux(ItemStack stack) {
+		if (!hasTag(stack)) {
+			stack.setTagCompound(new NBTTagCompound());
+			setFlux(stack, 0);
+		}
+	}
+
+	public static int getFlux(NBTTagCompound tag) {
+		return tag.getInteger(FLUX_TAG);
+	}
+
+	public static int getFlux(ItemStack stack) {
+		return hasKey(stack, FLUX_TAG) ? getFlux(getTag(stack)) : 0;
+	}
+
+	public static int getFluxBypass(ItemStack stack) {
+		return getFlux(getTag(stack));
+	}
 
 
+	public static void setFlux(NBTTagCompound tag, int flux) {
+		setInt(tag, FLUX_TAG, flux);
+	}
+
+	public static void setFlux(ItemStack stack, int flux) {
+		if (hasKey(stack, FLUX_TAG)) {
+			setFlux(getTag(stack), flux);
+		}
+	}
+
+	public static void setFluxBypass(ItemStack stack, int flux) {
+		setFlux(getTag(stack), flux);
+	}
+
+	public static ItemStack setStackFlux(ItemStack stack, int flux) {
+		ensureNBT(stack);
+		setFlux(getTag(stack), flux);
+		return stack;
+	}
 
 	public static boolean isRevealingGoggles(ItemStack stack, EntityLivingBase entity) {
-		return (entity instanceof EntityPlayer && stack.getItem() instanceof ItemArmor && ((ItemArmor) stack.getItem()).armorType == 0 && getBoolean(stack, ThaumRevLibrary.REVEALING));
+		return (entity instanceof EntityPlayer && stack.getItem() instanceof ItemArmor && ((ItemArmor) stack.getItem()).armorType == 0 && getBoolean(stack, REVEALING));
 	}
 
 	public static boolean isBroken(ItemStack stack) {
-		return getBoolean(stack, ThaumRevLibrary.BROKEN);
+		return getBoolean(stack, BROKEN);
 	}
 
 	public static ItemStack setBroken(ItemStack stack, boolean bool) {
 		ensureNBT(stack);
-		setBoolean(stack, ThaumRevLibrary.BROKEN, bool);
+		setBoolean(stack, BROKEN, bool);
 		return stack;
 	}
 

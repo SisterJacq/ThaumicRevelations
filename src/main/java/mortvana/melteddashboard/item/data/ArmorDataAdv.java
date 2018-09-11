@@ -14,13 +14,19 @@ public class ArmorDataAdv extends ArmorDataBase {
 
 	public static final int[] NO_DISCOUNT = new int[] { 0, 0, 0, 0, 0, 0 };
 
+	protected int absorbtion;
 	protected int[] discount;
-	protected boolean goggles = false;
-	protected int maxEnergy = 0;
-    protected EnumEquipmentType type = EnumEquipmentType.NULL;
+	protected boolean goggles;
+	protected boolean fluxArmor; //Use RF instead of durability?
+	protected int maxEnergy; //How much RF
+	protected int transfer; //RF/t charge rate
+	protected double absorbRatio; //0.9 in RSA
+	protected boolean charge; //True to charge armor via flux damage, like RSA
+	protected int chargeDamage; //160 is that of RSA Armor
+    protected EnumEquipmentType type;
 	protected ArmorBehavior behavior = ArmorBehaviorBase.instance;
 
-	public ArmorDataAdv(String modName, String icon, String sheet, String repair, EnumRarity rarity, String unlocName, String regName, int color, boolean showInCreative, int[] discount, boolean goggles, int flux, EnumEquipmentType type) {
+	public ArmorDataAdv(String modName, String icon, String sheet, String repair, EnumRarity rarity, String unlocName, String regName, int color, boolean showInCreative, int absorbtion, int[] discount, boolean goggles, boolean fluxArmor, int flux, int transfer, double absorb, boolean charge, int factor, EnumEquipmentType type) {
 		setModName(modName);
 		setIcon(icon);
 		setSheet(sheet);
@@ -30,19 +36,34 @@ public class ArmorDataAdv extends ArmorDataBase {
 		setRegName(regName);
 		setColor(color);
 		setShowInCreative(showInCreative);
+		setAbsorbtion(absorbtion);
 		setDiscount(discount);
 		setGoggles(goggles);
+		setFluxArmor(fluxArmor);
 		setMaxEnergy(flux);
+		setMaxTransfer(transfer);
+		setAbsorbRatio(absorb);
+		setFluxCharge(charge);
+		setChargeDamage(factor);
 		setEquipmentType(type);
 	}
 
-	public ArmorDataAdv(String modName, String icon, String sheet, String repair, EnumRarity rarity, String unlocName, String regName, int color, boolean showInCreative, int[] discount, boolean goggles, int flux) {
-		this(modName, icon, sheet, repair, rarity, unlocName, regName, color, showInCreative, discount, goggles, flux, EnumEquipmentType.NULL);
+	public ArmorDataAdv(String modName, String icon, String sheet, String repair, EnumRarity rarity, String unlocName, String regName, int color, boolean showInCreative, int absorbtion, int[] discount, boolean goggles, EnumEquipmentType type) {
+		this(modName, icon, sheet, repair, rarity, unlocName, regName, color, showInCreative, absorbtion, discount, goggles, false, 0, 0 , 0.0D, false, 0, type);
 	}
+
+	public ArmorDataAdv(String modName, String icon, String sheet, String repair, EnumRarity rarity, String unlocName, String regName, int color, boolean showInCreative, int absorbtion, int[] discount, boolean goggles) {
+		this(modName, icon, sheet, repair, rarity, unlocName, regName, color, showInCreative, absorbtion, discount, goggles, EnumEquipmentType.NULL);
+	}
+
+	public ArmorDataAdv(String modName, String icon, String sheet, String repair, EnumRarity rarity, String unlocName, String regName, int color, boolean showInCreative, int[] discount, boolean goggles) {
+		this(modName, icon, sheet, repair, rarity, unlocName, regName, color, showInCreative, -1, discount, goggles, false, 0, 0 , 0.0D, false, 0, EnumEquipmentType.NULL);
+	}
+
 
 	//Basically ArmorData when using this or lower
 	public ArmorDataAdv(String modName, String icon, String sheet, String repair, EnumRarity rarity, String unlocName, String regName, int color, boolean showInCreative) {
-		this(modName, icon, sheet, repair, rarity, unlocName, regName, color, showInCreative, NO_DISCOUNT, false, 0, EnumEquipmentType.NULL);
+		this(modName, icon, sheet, repair, rarity, unlocName, regName, color, showInCreative, NO_DISCOUNT, false);
 	}
 
 	public ArmorDataAdv(String modName, String icon, String sheet, String repair, EnumRarity rarity, String unlocName, String regName, int color) {
@@ -82,60 +103,48 @@ public class ArmorDataAdv extends ArmorDataBase {
 	}
 
     /** SPECIAL CONSTRUCTORS **/
-    public ArmorDataAdv(String modName, EnumEquipmentType type, String material, String piece, String orePrefix, int color, EnumRarity rarity, int[] discount, int flux, boolean goggles) {
-        this(modName, camelCase(material) + titleCase(piece), camelCase(material), camelCase(orePrefix) + titleCase(material), rarity, '.' + camelCase(material) + '.' + camelCase(piece), titleCase(material) + titleCase(piece), color, true, discount, goggles, flux, type);
-    }
+	public ArmorDataAdv(String modName, EnumEquipmentType type, String material, String piece, String orePrefix, int color, EnumRarity rarity, int[] discount, boolean goggles, int absorbtion) {
+		this(modName, camelCase(material) + titleCase(piece), camelCase(material), camelCase(orePrefix) + titleCase(material), rarity, '.' + camelCase(material) + '.' + camelCase(piece), titleCase(material) + titleCase(piece), color, true, absorbtion, discount, goggles, type);
+	}
 
-    public ArmorDataAdv(String modName, EnumEquipmentType type, String material, String piece, String orePrefix, int color, EnumRarity rarity, int discount, int flux, boolean goggles) {
-        this(modName, type, material, piece, orePrefix, color, rarity, new int[] {discount, discount, discount, discount, discount, discount}, flux, goggles);
-    }
-
-    public ArmorDataAdv(String modName, EnumEquipmentType type, String material, String piece, String orePrefix, EnumRarity rarity, int[] discount, int flux, boolean goggles) {
-        this(modName, type, material, piece, orePrefix, CLEAR, rarity, discount, flux, goggles);
-    }
-
-    public ArmorDataAdv(String modName, EnumEquipmentType type, String material, String piece, String orePrefix, EnumRarity rarity, int discount, int flux, boolean goggles) {
-        this(modName, type, material, piece, orePrefix, CLEAR, rarity, discount, flux, goggles);
-    }
-
-    public ArmorDataAdv(String modName, EnumEquipmentType type, String material, String piece, String orePrefix, int color, EnumRarity rarity, int[] discount, boolean goggles) {
-        this(modName, type, material, piece, orePrefix, color, rarity, discount, 0, goggles);
-    }
+	public ArmorDataAdv(String modName, EnumEquipmentType type, String material, String piece, String orePrefix, int color, EnumRarity rarity, int[] discount, boolean goggles) {
+		this(modName, type, material, piece, orePrefix, color, rarity, discount, goggles, -1);
+	}
 
     public ArmorDataAdv(String modName, EnumEquipmentType type, String material, String piece, String orePrefix, int color, EnumRarity rarity, int discount, boolean goggles) {
-        this(modName, type, material, piece, orePrefix, color, rarity, discount, 0, goggles);
+        this(modName, type, material, piece, orePrefix, color, rarity, new int[] {discount, discount, discount, discount, discount, discount}, goggles);
     }
 
     public ArmorDataAdv(String modName, EnumEquipmentType type, String material, String piece, String orePrefix, EnumRarity rarity, int[] discount, boolean goggles) {
-        this(modName, type, material, piece, orePrefix, CLEAR, rarity, discount, 0, goggles);
+        this(modName, type, material, piece, orePrefix, CLEAR, rarity, discount, goggles);
     }
 
     public ArmorDataAdv(String modName, EnumEquipmentType type, String material, String piece, String orePrefix, EnumRarity rarity, int discount, boolean goggles) {
-        this(modName, type, material, piece, orePrefix, CLEAR, rarity, discount, 0, goggles);
+        this(modName, type, material, piece, orePrefix, CLEAR, rarity, discount, goggles);
     }
 
     public ArmorDataAdv(String modName, EnumEquipmentType type, String material, String piece, String orePrefix, int color, EnumRarity rarity, int[] discount) {
-        this(modName, type, material, piece, orePrefix, color, rarity, discount, 0, false);
+        this(modName, type, material, piece, orePrefix, color, rarity, discount, false);
     }
 
     public ArmorDataAdv(String modName, EnumEquipmentType type, String material, String piece, String orePrefix, int color, EnumRarity rarity, int discount) {
-        this(modName, type, material, piece, orePrefix, color, rarity, discount, 0, false);
+        this(modName, type, material, piece, orePrefix, color, rarity, discount, false);
     }
 
     public ArmorDataAdv(String modName, EnumEquipmentType type, String material, String piece, String orePrefix, EnumRarity rarity, int[] discount) {
-        this(modName, type, material, piece, orePrefix, CLEAR, rarity, discount, 0, false);
+        this(modName, type, material, piece, orePrefix, CLEAR, rarity, discount, false);
     }
 
     public ArmorDataAdv(String modName, EnumEquipmentType type, String material, String piece, String orePrefix, EnumRarity rarity, int discount) {
-        this(modName, type, material, piece, orePrefix, CLEAR, rarity, discount, 0, false);
+        this(modName, type, material, piece, orePrefix, CLEAR, rarity, discount, false);
     }
 
     public ArmorDataAdv(String modName, EnumEquipmentType type, String material, String piece, String orePrefix, int color, EnumRarity rarity) {
-        this(modName, type, material, piece, orePrefix, color, rarity, 0, 0, false);
+        this(modName, type, material, piece, orePrefix, color, rarity, 0, false);
     }
 
     public ArmorDataAdv(String modName, EnumEquipmentType type, String material, String piece, String orePrefix, EnumRarity rarity) {
-        this(modName, type, material, piece, orePrefix, CLEAR, rarity, 0, 0, false);
+        this(modName, type, material, piece, orePrefix, CLEAR, rarity, 0, false);
     }
 
 	/** SETTERS **/
@@ -189,6 +198,11 @@ public class ArmorDataAdv extends ArmorDataBase {
 		return this;
 	}
 
+	public ArmorDataAdv setAbsorbtion(int absorbtion) {
+		this.absorbtion = absorbtion;
+		return this;
+	}
+
 	public ArmorDataAdv setDiscount(int[] discount) {
 		if (discount.length == 6) {
 			this.discount = discount;
@@ -225,8 +239,33 @@ public class ArmorDataAdv extends ArmorDataBase {
 		return this;
 	}
 
+	public ArmorDataAdv setFluxArmor(boolean fluxArmor) {
+		this.fluxArmor = fluxArmor;
+		return this;
+	}
+
 	public ArmorDataAdv setMaxEnergy(int maxFlux) {
 		maxEnergy = maxFlux;
+		return this;
+	}
+
+	public ArmorDataAdv setMaxTransfer(int transfer) {
+		this.transfer = transfer;
+		return this;
+	}
+
+	public ArmorDataAdv setAbsorbRatio(double absorb) {
+		absorbRatio = absorb;
+		return this;
+	}
+
+	public ArmorDataAdv setFluxCharge(boolean charge) {
+		this.charge = charge;
+		return this;
+	}
+
+	public ArmorDataAdv setChargeDamage(int factor) {
+		chargeDamage = factor;
 		return this;
 	}
 
@@ -240,7 +279,21 @@ public class ArmorDataAdv extends ArmorDataBase {
 		return this;
 	}
 
+	public ArmorDataAdv setFluxData(int maxFlux, int transfer, double absorb, boolean charge, int chargeFactor) {
+		setFluxArmor(true);
+		setMaxEnergy(maxFlux);
+		setMaxTransfer(transfer);
+		setAbsorbRatio(absorb);
+		setFluxCharge(charge);
+		setChargeDamage(chargeFactor);
+		return this;
+	}
+
 	/** GETTERS **/
+	public int getAbsorbtion() {
+		return absorbtion;
+	}
+
 	public int[] getDiscount() {
 		return discount;
 	}
@@ -261,8 +314,28 @@ public class ArmorDataAdv extends ArmorDataBase {
 		return goggles;
 	}
 
+	public boolean getFluxArmor() {
+		return fluxArmor;
+	}
+
 	public int getMaxEnergy() {
 		return maxEnergy;
+	}
+
+	public int getMaxTransfer() {
+		return transfer;
+	}
+
+	public double getAbsorbRatio() {
+		return absorbRatio;
+	}
+
+	public boolean getFluxCharge() {
+		return charge;
+	}
+
+	public int getChargeDamage() {
+		return chargeDamage;
 	}
 
     public EnumEquipmentType getType() {

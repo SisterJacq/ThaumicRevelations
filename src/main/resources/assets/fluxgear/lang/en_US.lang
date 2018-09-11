@@ -866,7 +866,7 @@ fluxgear.name.ARMOR_WARDENCLOTH=Wardencloth Armor
 fluxgear.text.ARMOR_WARDENCLOTH=[TRv] Like leather, but better (and thaumic)
 
 fluxgear.tooltip.visRegenAll=Slowly recharges all items that store vis
-
+fluxgear.tooltip.charge=Charge
 
 
 

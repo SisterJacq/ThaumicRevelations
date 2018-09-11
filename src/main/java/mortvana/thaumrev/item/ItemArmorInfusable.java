@@ -7,6 +7,8 @@ import com.google.common.collect.Multimap;
 
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
@@ -21,8 +23,6 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-import net.minecraftforge.common.ISpecialArmor;
-
 import thaumcraft.api.aspects.Aspect;
 
 import mortvana.melteddashboard.item.data.ArmorDataAdv;
@@ -30,12 +30,13 @@ import mortvana.melteddashboard.util.helpers.*;
 import mortvana.melteddashboard.util.helpers.mod.ThaumcraftHelper;
 import mortvana.melteddashboard.util.libraries.ColorLibrary;
 
+import mortvana.thaumrev.api.item.infusion.IInfusableArmor;
 import mortvana.thaumrev.api.item.infusion.IInfusableItem;
 import mortvana.thaumrev.api.util.enums.EnumEquipmentType;
 import mortvana.thaumrev.library.ThaumRevLibrary;
 import mortvana.thaumrev.util.enums.EnumPrimalAspect;
 
-public /*abstract*/ class ItemArmorInfusable extends ItemArmor implements ISpecialArmor, IInfusableItem {
+public class ItemArmorInfusable extends ItemArmor implements IInfusableArmor {
 
 	public ArmorDataAdv data;
 	public Multimap<String, AttributeModifier> properties = HashMultimap.create();
@@ -59,6 +60,9 @@ public /*abstract*/ class ItemArmorInfusable extends ItemArmor implements ISpeci
 	@Override
 	public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean par4) {
 		super.addInformation(stack, player, list, par4);
+		if (getMaxEnergy() > 0) {
+			list.add(StringHelper.localize("fluxgear.tooltip.charge") + ":" + NBTHelper.getFlux(stack) + " / " + getMaxEnergy() + " RF");
+		}
 		ThaumcraftHelper.addDiscountInformation(stack, player, list, par4);
 		AspectInfusionHelper.addInformation(stack, player, list, par4);
 	}
@@ -71,17 +75,38 @@ public /*abstract*/ class ItemArmorInfusable extends ItemArmor implements ISpeci
 
 	@Override
 	public void setDamage(ItemStack stack, int damage) {
-		if (damage > getMaxDamage()) {
-			setItemDamage(stack, getMaxDamage());
-			NBTHelper.setBroken(stack, true);
+		if (!getFluxArmor()) {
+			if (damage > getMaxDamage()) {
+				setItemDamage(stack, getMaxDamage());
+				NBTHelper.setBroken(stack, true);
+			} else {
+				setItemDamage(stack, damage);
+			}
 		} else {
-			setItemDamage(stack, damage);
+			super.setDamage(stack, 0);
 		}
+	}
+
+	@Override
+	public double getDurabilityForDisplay(ItemStack stack) {
+		NBTHelper.ensureNBTFlux(stack);
+		return (double) (getMaxEnergy() - NBTHelper.getFluxBypass(stack)) / getMaxEnergy();
+	}
+
+	@Override
+	public boolean isDamaged(ItemStack stack) {
+		return super.isDamaged(stack) || getFluxArmor();
+	}
+
+	@Override
+	public boolean showDurabilityBar(ItemStack stack) {
+		return stack.stackTagCompound == null || !stack.stackTagCompound.getBoolean("CreativeTab");
 	}
 
 	public void setItemDamage(ItemStack stack, int damage) {
 		stack.itemDamage = damage;
 	}
+
 
 	/** DATA SETTERS **/
 
@@ -127,6 +152,10 @@ public /*abstract*/ class ItemArmorInfusable extends ItemArmor implements ISpeci
 		return data.getColorized();
 	}
 
+	public int getAbsorbtion() {
+		return data.getAbsorbtion();
+	}
+
 	public int[] getDiscount() {
 		return data.getDiscount();
 	}
@@ -147,8 +176,28 @@ public /*abstract*/ class ItemArmorInfusable extends ItemArmor implements ISpeci
 		return data.getGoggles();
 	}
 
+	public boolean getFluxArmor() {
+		return data.getFluxArmor();
+	}
+
 	public int getMaxEnergy() {
 		return data.getMaxEnergy();
+	}
+
+	public int getMaxTransfer() {
+		return data.getMaxTransfer();
+	}
+
+	public double getAbsorbRatio() {
+		return data.getAbsorbRatio();
+	}
+
+	public boolean getFluxCharge() {
+		return data.getFluxCharge();
+	}
+
+	public int getChargeDamage() {
+		return data.getChargeDamage();
 	}
 
 	public EnumEquipmentType getType() {
@@ -159,7 +208,7 @@ public /*abstract*/ class ItemArmorInfusable extends ItemArmor implements ISpeci
 	/** GETTERS **/
 	@Override
 	public boolean getIsRepairable(ItemStack armor, ItemStack material) {
-		return OreDictHelper.isOreNameEqual(material, data.getRepair());
+		return !getFluxArmor() && OreDictHelper.isOreNameEqual(material, data.getRepair());
 	}
 
 	@Override
@@ -170,7 +219,13 @@ public /*abstract*/ class ItemArmorInfusable extends ItemArmor implements ISpeci
 	@Override
 	public void getSubItems(Item item, CreativeTabs tab, List list) {
 		if (getShowInCreative()) {
-			list.add(new ItemStack(item, 1, 0));
+			ItemStack stack = new ItemStack(item, 1, 0);
+			if (!getFluxArmor()) {
+				list.add(stack);
+			} else {
+				list.add(NBTHelper.setStackFlux(stack, 0));
+				list.add(NBTHelper.setStackFlux(stack, getMaxEnergy()));
+			}
 		}
 	}
 
@@ -294,26 +349,51 @@ public /*abstract*/ class ItemArmorInfusable extends ItemArmor implements ISpeci
 		return properties.removeAll(attribute);
 	}
 
+	/** IInfusableArmor **/
+	public int getEnergyPerDamage(ItemStack stack) {
+		int unbreaking = MathHelper.clamp_int(EnchantmentHelper.getEnchantmentLevel(Enchantment.unbreaking.effectId, stack), 0, 4);
+		return getChargeDamage() * (5 - unbreaking) / 5;
+	}
+
+	@Override
+	public ArmorDataAdv getData() {
+		return data;
+	}
+
+	public int getArmorValue() {
+		return getAbsorbtion() >= 0 ? ((20 * getAbsorbtion()) / 100) : damageReduceAmount;
+	}
+
 
 	/** ISpecialArmor **/
 	@Override
 	public ArmorProperties getProperties(EntityLivingBase player, ItemStack armor, DamageSource source, double damage, int slot) {
-		return new ArmorProperties(0, damageReduceAmount / 25D, 20);
+		return data.getBehavior().getProperties(player, armor, source, damage, slot);
 	}
 
 	@Override
 	public int getArmorDisplay(EntityPlayer player, ItemStack armor, int slot) {
-		return NBTHelper.isBroken(armor) ? 0 : damageReduceAmount;
+		if (getFluxArmor()) {
+			return getEnergyStored(armor) >= getEnergyPerDamage(armor) ? getArmorValue() : 0;
+		} else {
+			return NBTHelper.isBroken(armor) ? 0 : getArmorValue();
+		}
 	}
 
 	@Override
-	public void damageArmor(EntityLivingBase entity, ItemStack stack, DamageSource source, int damage, int slot) {
-		if (!NBTHelper.isBroken(stack)) {
+	public void damageArmor(EntityLivingBase entity, ItemStack armor, DamageSource source, int damage, int slot) {
+		if (getFluxArmor()) {
+			if (source.damageType.equals("flux") && getFluxCharge()) {
+				receiveEnergy(armor, damage * (source.getEntity() == null ? getChargeDamage() / 2 : getEnergyPerDamage(armor)), false);
+			} else if (source != DamageSource.fall) {
+				extractEnergy(armor, damage * getEnergyPerDamage(armor), false);
+			}
+		} else if (!NBTHelper.isBroken(armor)) {
 			if (source != DamageSource.fall) {
-				stack.damageItem(damage, entity);
-				AspectInfusionHelper.damageArmor(entity, stack, source, damage, slot);
+				armor.damageItem(damage, entity);
 			}
 		}
+		AspectInfusionHelper.damageArmor(entity, armor, source, damage, slot);
 	}
 
 
@@ -410,31 +490,60 @@ public /*abstract*/ class ItemArmorInfusable extends ItemArmor implements ISpeci
 	}
 
 
-	//TODO: RF Stuff
 	/** IEnergyContainerItem **/
 	@Override
 	@Optional.Method(modid = "CoFHAPI|energy")
 	public int receiveEnergy(ItemStack container, int maxReceive, boolean simulate) {
-		return 0;
+		if (getMaxEnergy() > 0) {
+			NBTHelper.ensureNBTFlux(container);
+
+			int stored = NBTHelper.getFluxBypass(container);
+			int receive = Math.min(maxReceive, Math.min(getMaxEnergy() - stored, getMaxTransfer()));
+
+			if (!simulate) {
+				NBTHelper.setFluxBypass(container, stored + receive);
+			}
+			return receive;
+		} else {
+			return 0;
+		}
 	}
 
 	@Override
 	@Optional.Method(modid = "CoFHAPI|energy")
 	public int extractEnergy(ItemStack container, int maxExtract, boolean simulate) {
-		return 0;
+		if (getMaxEnergy() > 0) {
+			NBTHelper.ensureNBTFlux(container);
+
+			int stored = NBTHelper.getFluxBypass(container);
+			int extract = Math.min(maxExtract, stored);
+
+			if (!simulate) {
+				NBTHelper.setFluxBypass(container, stored - extract);
+			}
+			return extract;
+		} else {
+			return 0;
+		}
 	}
 
 	@Override
 	@Optional.Method(modid = "CoFHAPI|energy")
 	public int getEnergyStored(ItemStack container) {
-		return 0;
+		if (getMaxEnergy() > 0) {
+			NBTHelper.ensureNBTFlux(container);
+			return NBTHelper.getFluxBypass(container);
+		} else {
+			return 0;
+		}
 	}
 
 	@Override
 	@Optional.Method(modid = "CoFHAPI|energy")
 	public int getMaxEnergyStored(ItemStack container) {
-		return 0;
+		return getMaxEnergy();
 	}
+
 
 	/** UTILITY **/
 	public static boolean isGoggles(ItemStack stack, EntityLivingBase entity) {

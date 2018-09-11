@@ -282,4 +282,5 @@ public class StringLibrary {
 	public static final String BROKEN = "Broken";
 	public static final String VISMODIFIER = "VisDiscount";
 	public static final String CHARGE = "Charge";
+	public static final String FLUX_TAG = "Energy"; //Used for RF stored
 }

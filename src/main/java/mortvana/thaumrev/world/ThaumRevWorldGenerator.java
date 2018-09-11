@@ -44,8 +44,8 @@ public class ThaumRevWorldGenerator implements IWorldGenerator {
 		genCotton = new WorldGenPlant(blockThaumicPlant, 1, 96, 8);
 		genThistle = new WorldGenPlant(blockThaumicPlant, 2);
 		genShiverpearl = new WorldGenPlant(blockThaumicPlant, 5, 18, 8);
-		genStormypearl = new WorldGenPlant(blockThaumicPlant, 6, 18, 8);
-		genStonypearl = new WorldGenPlant(blockThaumicPlant, 7, 18, 8);
+		genStormypearl = new WorldGenPlant(blockThaumicPlant, 6, 36, 8);
+		genStonypearl = new WorldGenPlant(blockThaumicPlant, 7, 27, 8);
 
 		genChalcocite = new WorldGenOreVein(blockOre, 0, stone, 0, 10, 4, 35, 80);
 		genSphalerite = new WorldGenOreVein(blockOre, 1, stone, 0, 9, 8, 20, 65);
@@ -265,15 +265,15 @@ public class ThaumRevWorldGenerator implements IWorldGenerator {
 		}
 
 		if (ThaumcraftWorldGenerator.getDimBlacklist(world.provider.dimensionId) == -1 && Config.genTrees && !world.getWorldInfo().getTerrainType().getWorldTypeName().startsWith("flat")) {
-			if (biome.topBlock == Blocks.grass && world.getBlock(x, y - 1, z) == Blocks.grass && biome.temperature < 0.0F && random.nextInt(30) == 0) {
+			if (biome.getEnableSnow() && biome.topBlock == Blocks.grass /*&& world.getBlock(x, y - 1, z) == Blocks.grass*/ && biome.temperature <= 0.0F && random.nextInt(30) == 0) {
 				genShiverpearl.generate(world, random, x, y, z);
 				ThaumicRevelations.logger.warn("Generating Shiverpearl at " + x + ", " + y + ", " + z);
 			}
-			if (y >= 96 && world.getBlock(x, y - 1, z) == Blocks.grass && random.nextInt(30) == 0) {
+			if (y >= 96 && world.getBlock(x, y - 1, z) == Blocks.grass && random.nextInt(3) == 0) {
 				genStormypearl.generate(world, random, x, y, z);
 				ThaumicRevelations.logger.warn("Generating Stormypearl at " + x + ", " + y + ", " + z);
 			}
-			if (biome.temperature >= 0.0F && biome.temperature <= 0.5F && world.canBlockSeeTheSky(x, y, z) && random.nextInt(60) == 0) {
+			if (biome.temperature >= 0.0F && biome.temperature <= 0.5F && (BiomeDictionary.isBiomeOfType(biome, BiomeDictionary.Type.MOUNTAIN) || BiomeDictionary.isBiomeOfType(biome, BiomeDictionary.Type.HILLS)) && world.canBlockSeeTheSky(x, y, z) && random.nextInt(10) == 0) {
 				genStonypearl.generate(world, random, x, y, z);
 				ThaumicRevelations.logger.warn("Generating Stonypearl at " + x + ", " + y + ", " + z);
 			}

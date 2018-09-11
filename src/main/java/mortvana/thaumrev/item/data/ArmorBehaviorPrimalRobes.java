@@ -1,8 +1,11 @@
 package mortvana.thaumrev.item.data;
 
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
+import net.minecraftforge.common.ISpecialArmor.ArmorProperties;
 
 import thaumcraft.common.entities.EntityAspectOrb;
 
@@ -12,7 +15,7 @@ import mortvana.melteddashboard.util.helpers.mod.ThaumcraftHelper;
 import mortvana.melteddashboard.util.helpers.science.MathHelper;
 import mortvana.melteddashboard.util.libraries.StringLibrary;
 
-import mortvana.thaumrev.common.ThaumicRevelations;
+import mortvana.thaumrev.api.item.infusion.IInfusableArmor;
 
 public class ArmorBehaviorPrimalRobes extends ArmorBehavior {
 
@@ -44,6 +47,11 @@ public class ArmorBehaviorPrimalRobes extends ArmorBehavior {
 				NBTHelper.setInt(armor, StringLibrary.CHARGE, charge);
 			}
 		}
+	}
+
+	@Override
+	public ArmorProperties getProperties(EntityLivingBase player, ItemStack armor, DamageSource source, double damage, int slot) {
+		return new ArmorProperties(0, ((IInfusableArmor) armor.getItem()).getArmorValue() / 25D, 20);
 	}
 
 	public void ensureNBT(ItemStack armor) {

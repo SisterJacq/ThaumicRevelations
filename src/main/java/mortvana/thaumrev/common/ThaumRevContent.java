@@ -1126,7 +1126,7 @@ public class ThaumRevContent {
 		recipePrimalPants = addInfusionCraftingRecipe(keyPrimalRobes, new ItemStack(primalPants), 5, ThaumcraftHelper.newPrimalAspectList(8).add(MAGIC, 16).add(ENERGY, 16).add(CRAFT, 16).add(ORDER, 16), stackLegsRobe, ingotThaumicElectrum, ingotThaumicRiftishBronze, ingotThaumicRiftishBronze, itemCottonEnchanted, dustSalisMundus, dustSalisMundus, dustSalisMundus, itemPrimalCharm);
 		recipePrimalBoots = addInfusionCraftingRecipe(keyPrimalRobes, new ItemStack(primalBoots), 5, ThaumcraftHelper.newPrimalAspectList(8).add(MAGIC, 16).add(ENERGY, 16).add(CRAFT, 16).add(ORDER, 16), stackBootsRobe, ingotThaumicElectrum, ingotThaumicRiftishBronze, ingotThaumicRiftishBronze, itemCottonEnchanted, dustSalisMundus, dustSalisMundus, dustSalisMundus, itemPrimalCharm);
 
-		//recipePrimalPendant = addInfusionCraftingRecipe(keyPendantPrimal, primalPendant, 8, ThaumcraftHelper.newPrimalAspectList(64).add(MAGIC, 128).add(ENERGY, 128).add(AURA, 64).add(VOID, 48).add(CRAFT, 32), , )
+		//recipePrimalPendant = addInfusionCraftingRecipe(keyPendantPrimal, primalPendant, 8, ThaumcraftHelper.newPrimalAspectList(64).add(MAGIC, 128).add(FLUX_TAG, 128).add(AURA, 64).add(VOID, 48).add(CRAFT, 32), , )
 
 		recipeAniPiston = addArcaneCraftingRecipe(keyMaterial, itemAnimatedPiston, new AspectList().add(AIR, 5), "IGI", "TAT", "BRB", 'I', "nuggetIron", 'G', greatwoodSlab, 'T', "nuggetThaumium", 'A', "shardAir", 'B', "nuggetBrass", 'R', "dustRedstone"); //TODO: v0.0.8: Runic Infuser
 

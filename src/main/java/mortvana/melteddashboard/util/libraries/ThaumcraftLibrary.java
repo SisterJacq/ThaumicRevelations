@@ -54,6 +54,7 @@ public class ThaumcraftLibrary {
 		dustSalisMundus = new ItemStack(itemResource, 1, 14);
 		itemPrimalCharm = new ItemStack(itemResource, 1, 15);
 		ingotVoidmetal = new ItemStack(itemResource, 1, 16);
+		itemVoidSeed = new ItemStack(itemResource, 1, 17);
 
 		itemShardAir = new ItemStack(itemShard, 1, 0);
 		itemShardFire = new ItemStack(itemShard, 1, 1);
@@ -343,6 +344,7 @@ public class ThaumcraftLibrary {
 	public static ItemStack dustSalisMundus;
 	public static ItemStack itemPrimalCharm;
 	public static ItemStack ingotVoidmetal;
+	public static ItemStack itemVoidSeed;
 
 	public static ItemStack itemShardAir;
 	public static ItemStack itemShardFire;
@@ -395,5 +397,7 @@ public class ThaumcraftLibrary {
 	public static String keyBellows = "BELLOWS";
 	public static String keyEnchant = "INFUSIONENCHANTMENT";
 	public static String keyFocusPrimal = "FOCUSPRIMAL";
+	public static String keyVoidSeed = "ELDRITCHMINOR";
+	public static String keyVoidmetal = "VOIDMETAL";
 	public static String keyVoidRobes = "ARMORVOIDFORTRESS";
 }

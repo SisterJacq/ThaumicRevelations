@@ -3,7 +3,7 @@ Internal [20] |-> Items/Blocks [02/03/04] |-> Recipes [05/06/07/08] |-> Research
 										  |-> Texture [10/11/12/13]
 										  |-> Item Aspects [14]
 
-0 - 3 - 12/0/77/67 - 10 - 72 > 139/382
+0 - 0 - 8/0/74/67 - 7 - 72 > 151/380
 Internal:
 	General:
 	[20-xx]		Fix Colorizer
@@ -56,9 +56,15 @@ Content:
 	[03-xx]		All Tier 1 Magneoturgic Items
 	[03-xx]		All Other Mineral Dusts/Tiny Dusts
 	[03-xx]		TF Rod/Powder Backups
+	[04-xx]		Infused Cotton Armor
+	[04-xx]		Flux Robes
+	[04-xx]		Tier 5 Wardenic Armor
 
 	[05/06/07/08]	Crafting:
 	[05-xx]		All Ore Smelting except for Tungsten and Iridosmium
+    [05-xx]		Hardened Silverwood Crafting
+    [05-xx]		Eldritch Stone
+    [06-xx]		Primal Robes Crafting
 	[06-xx]		Dense Alumentum Crafting
 	[07-xx]		Tier 1 Wardenic Base Item Crafting
 	[07-xx]		Tier 2 Wardenic Base Item Crafting
@@ -95,6 +101,8 @@ Content:
     [09-xx]		Ensure Ench. Cotton and Primal Robes Research
 	[09-xx]		Ensure Native Transmutation Placement/Researches
 	[09-xx]		Ensure Native Purification Placement/Researches
+	[09-xx]		Eldritch Stone
+	[09-xx]		Voidmetal Working Research
 
 	[14]	Aspects:
 
@@ -102,6 +110,9 @@ Content:
 	[10-xx]		Ores
 	[10-xx]		Fluonic Sapphire Ore
 	[10-xx]		Eldritch Stone
+	[10-xx]		Shiverpearl Texture
+    [10-xx]		Stormpearl Texture
+    [10-xx]		Stonepearl Texture
 	[11-xx]		Grayscale Elemental Rod/Powder
 	[11-xx]		Low-Magic Dust
 	[11-xx]		Cotton Fiber
@@ -177,39 +188,27 @@ Content:
 
 
 
-
-
-[04]	Equipment:
-[04-01]		Tier 5 Wardenic Armor
-[04-02]		Infused Cotton Armor
-[04-03]		Flux Robes
+Done:
 
 [05]	Recipes (Block):
 [06]	Recipes (Other Items):
-[06-01]		All v0.0.x Component Crafting
-[06-02]		Shard Crushing
-[06-03]		Primal Essence Crafting
-[06-04]		Mineral Dust <-> Tiny Dust conversion
-[06-05]		Wardenic Amulet and Primal Pendant Crafting
-[06-06]		Switch Cinderpearl to give Pod
-[06-07]		Infused Cotton Armor Crafting
-[06-08]		Primal Robes Crafting
-[08-09]		All General Raw/Coated Ingot Smelting
-[05-10]		All Stone Crafting except Infernal Blast Furnace Brick and Shadowforge Brick
-[05-11]		Hardened Silverwood Crafting
-[05-12]		All TE4 Ore Processing with respect for type
+[06-01]		All v0.0.x Component Crafting <14>
+[06-02]		Shard Crushing <14>
+[06-03]		Primal Essence Crafting <1>
+[06-04]		Mineral Dust <-> Tiny Dust conversion <23*2>
+[06-05]		Switch Cinderpearl to give Pod <5>
+[06-06]	-	Infused Cotton Armor Crafting <4>
+[08-07]		All General Raw/Coated Ingot Smelting <14+2+1i+2p>
+[05-08]		All TE4 Ore Processing with respect for type <n <= 12<3<6>>>
 
 [09]	Research:
-[09-01]		Tier 5 Wardenic Research
-[09-02]		Tier 1 Magneoturgy
-[09-03]		Advanced Aspect Orb Receptor Research
-[09-04]		Primal Pendant Research
-[09-05]		Eldritch Stone
-[09-06]		Consecrated Silverwood Research
-[09-07]		Enchanted Greatwood Research
-[09-08]		Voidbrass Research
-[09-09]		Cotton Robes Research
-[09-10]		Voidmetal Working Research
+[09-01]	1	Tier 5 Wardenic Research <2>
+[09-02]	1	Tier 1 Magneoturgy <6>
+[09-03]	x	Advanced Aspect Orb Receptor Research <1>
+[09-04]		Consecrated Silverwood Research <1>
+[09-05]	x	Enchanted Greatwood Research <1>
+[09-06]		Voidbrass Research <1>
+[09-07]	x-	Cotton Robes Research <1>
 
 [10]	Textures (Block):
 [10-01]		(Activated) Wardenic Crystal Block [<blocks/storage/blockWardenicCrystal.png>,<blocks/storage/blockActivatedWardenicCrystal.png>]
@@ -220,9 +219,6 @@ Content:
 [10-06]		Corrupted Greatwood <blocks/wood/greatwoodCorrupted.png>
 [10-07]		Hardened Silverwood <blocks/wood/silverwoodHardened.png>
 [10-08]		Wardenic Obsidian <blocks/stoneDecor/obsidianWardenic.png>
-[10-09]		Shiverpearl Texture <blocks/plant/shiverpearl.png>
-[10-10]		Stormpearl Texture <blocks/plant/stormpearl.png>
-[10-11]		Stonepearl Texture <blocks/plant/stonepearl.png>
 
 [11]	Textures (Item):
 [11-1-01]	Makeshift Aspect Orb Receptor <items/material/itemAspectOrbReceptorMakeshift.png>
@@ -465,11 +461,14 @@ Content:
 [203-06]	Auto-toggle Other Alloys (Items)
 [203-07]	All Non-Metallurgy Clusters
 
-[204]
+[204]	Equipment:
 
 [205]	Recipes (Block):
 [205-04]	All Slab Crafting
 [205-05]	Wardenic Quartz/Redquartz Stair Crafting
+
+[205]	Recipes (Equipment):
+[206-05]	Wardenic Amulet Crafting
 
 [208]	Recipes (Metals):
 [208-01]	Auto-toggle Elemental Metals (Recipes)
@@ -478,6 +477,9 @@ Content:
 [208-04]	Auto-toggle Equipment Metals (Recipes)
 [208-05]	Auto-toggle Gems (Recipes)
 [208-06]	Auto-toggle Other Metals (Recipes)
+
+[209]	Research:
+[209-xx]	Primal Pendant Research
 
 [210]	Textures (Block):
 [210-xx]		Elemental Reed Textures [<blocks/plant/blazereed.png>,<blocks/plant/blizzreed.png>,<blocks/plant/blitzreed.png>,<blocks/plant/basalzreed.png>]

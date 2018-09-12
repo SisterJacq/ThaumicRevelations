@@ -185,6 +185,11 @@ item.fluxgear.material.itemAspectOrbReceptorAdvanced.name=Aspect Orb Receptor
 
 item.fluxgear.material.itemEldritchCog.name=Eldritch Cog
 item.fluxgear.material.itemEldritchKeystone.name=Eldritch Keystone
+item.fluxgear.material.itemSoulFragment.name=Soul Fragment
+item.fluxgear.material.itemPodCinderpearl.name=Cinderpearl Pod
+item.fluxgear.material.itemPodShiverpearl.name=Shiverpearl Pod
+item.fluxgear.material.itemPodStormypearl.name=Stormypearl Pod
+item.fluxgear.material.itemPodStonypearl.name=Stonypearl Pod
 
 item.fluxgear.material.shaftGreatwood.name=Greatwood Shaft
 item.fluxgear.material.plankEnchantedGreatwood.name=Enchanted Greatwood Plank
@@ -745,7 +750,7 @@ item.fluxgear.material.tempAluDense.name=Dense Alumentum [Will be removed in v0.
 #Baubles
 item.fluxgear.baubles.amuletWarden.name=Warden's Amulet
 item.fluxgear.baubles.ringLove.name=Ring of Love
-item.fluxgear.baubles.pendantPrimal.name=Primal Pendant
+item.fluxgear.baubles.pendantPrimal.name=Primal Pendant [WIP]
 
 #Apect Orb Equipment
 item.fluxgear.orb.visStoneCrude.name=Crude Vis Charge Stone
@@ -767,9 +772,9 @@ item.fluxgear.orb.visStoneExtraHighCapacity.name=Extra-High Capacity Vis Charge 
 
 #Armor
 item.fluxgear.mithril.goggles.name=Mithril Goggles of Revealing
-item.fluxgear.cotton.robes.name=Cotton Thaumaturge's Robe
-item.fluxgear.cotton.pants.name=Cotton Thaumaturge's Pants
-item.fluxgear.cotton.boots.name=Cotton Thaumaturge's Boots
+item.fluxgear.enchCotton.robes.name=Cotton Thaumaturge's Robe
+item.fluxgear.enchCotton.pants.name=Cotton Thaumaturge's Pants
+item.fluxgear.enchCotton.boots.name=Cotton Thaumaturge's Boots
 
 item.fluxgear.primal.goggles.name=Primal Goggles of Revealing
 item.fluxgear.primal.robes.name=Primal Robe
@@ -801,10 +806,10 @@ item.fluxgear.wardenicComposite.chestplate.name=Wardenic Composite Chestplate
 item.fluxgear.wardenicComposite.greaves.name=Wardenic Composite Plate Greaves
 item.fluxgear.wardenicComposite.boots.name=Wardenic Composite Plate Boots
 
-item.fluxgear.awakenedWardenicComposite.helmet.name=Awakened Wardenic Composite Plate Helmet
-item.fluxgear.awakenedWardenicComposite.chestplate.name=Awakened Wardenic Composite Chestplate
-item.fluxgear.awakenedWardenicComposite.greaves.name=Awakened Wardenic Composite Plate Greaves
-item.fluxgear.awakenedWardenicComposite.boots.name=Awakened Wardenic Composite Plate Boots
+item.fluxgear.wardenicAwakened.helmet.name=Awakened Wardenic Composite Plate Helmet [WIP]
+item.fluxgear.wardenicAwakened.chestplate.name=Awakened Wardenic Composite Chestplate [WIP]
+item.fluxgear.wardenicAwakened.greaves.name=Awakened Wardenic Composite Plate Greaves [WIP]
+item.fluxgear.wardenicAwakened.boots.name=Awakened Wardenic Composite Plate Boots [WIP]
 
 item.fluxgear.fluxRobes.goggles.name=Thermal Goggles of Revealing
 item.fluxgear.fluxRobes.robes.name=Flux Robe Waistcoat
@@ -812,7 +817,7 @@ item.fluxgear.fluxRobes.pants.name=Flux Robe Pants
 item.fluxgear.fluxRobes.boots.name=Flux Robe Loafers
 
 #Other
-item.fluxgear.focusPurity.name=Wand Focus: Purity
+item.fluxgear.focusPurity.name=Wand Focus: Purity [WIP]
 
 #RESEARCH
 fluxgear.name.THAUMIC_REVELATIONS=Thaumic Revelations

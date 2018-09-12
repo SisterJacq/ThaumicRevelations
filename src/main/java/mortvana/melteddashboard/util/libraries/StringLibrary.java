@@ -248,6 +248,7 @@ public class StringLibrary {
 	public static final String HG_TC = "quicksilver";
 	public static final String ALMNT = "itemAlumentum";
 	public static final String NITOR = "itemNitor";
+	public static final String VSEED = "itemVoidSeed";
 
 	//TEMPORARY
 	public static final String _ALUD = "tempAluDense";

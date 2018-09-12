@@ -20,7 +20,7 @@ public class NBTHelper {
 
 	/** NBT TAG COMPOUND GETTERS/SETTERS **/
 	public static boolean hasTag(ItemStack stack) {
-		return stack.hasTagCompound();
+		return stack.stackTagCompound != null;
 	}
 
 	public static NBTTagCompound getTag(ItemStack stack) {
@@ -294,9 +294,9 @@ public class NBTHelper {
 	}
 
 	public static void ensureNBTFlux(ItemStack stack) {
-		if (!hasTag(stack)) {
-			stack.setTagCompound(new NBTTagCompound());
-			setFlux(stack, 0);
+		ensureNBT(stack);
+		if (!hasKey(stack, FLUX_TAG)) {
+			setFlux(getTag(stack), 0);
 		}
 	}
 
@@ -311,7 +311,6 @@ public class NBTHelper {
 	public static int getFluxBypass(ItemStack stack) {
 		return getFlux(getTag(stack));
 	}
-
 
 	public static void setFlux(NBTTagCompound tag, int flux) {
 		setInt(tag, FLUX_TAG, flux);
@@ -328,7 +327,7 @@ public class NBTHelper {
 	}
 
 	public static ItemStack setStackFlux(ItemStack stack, int flux) {
-		ensureNBT(stack);
+		ensureNBTFlux(stack);
 		setFlux(getTag(stack), flux);
 		return stack;
 	}

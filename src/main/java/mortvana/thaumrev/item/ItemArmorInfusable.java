@@ -25,6 +25,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 import thaumcraft.api.aspects.Aspect;
 
+import mortvana.melteddashboard.item.data.ArmorBehavior;
 import mortvana.melteddashboard.item.data.ArmorDataAdv;
 import mortvana.melteddashboard.util.helpers.*;
 import mortvana.melteddashboard.util.helpers.mod.ThaumcraftHelper;
@@ -45,10 +46,13 @@ public class ItemArmorInfusable extends ItemArmor implements IInfusableArmor {
         super(material, index, type);
 		this.data = data;
         setCreativeTab(ThaumRevLibrary.generalTab);
-		setUnlocalizedName(data.getModName() + data.getUnlocName());
+		setUnlocalizedName(getModName() + getUnlocName());
 		GameRegistry.registerItem(this, data.getRegName());
-		if (data.getType() == EnumEquipmentType.NULL) {
+		if (getType() == EnumEquipmentType.NULL) {
 			this.data.setEquipmentType(EnumEquipmentType.values()[type]);
+		}
+		if (getUnbreakable()) {
+			setMaxDamage(0);
 		}
     }
 
@@ -61,7 +65,7 @@ public class ItemArmorInfusable extends ItemArmor implements IInfusableArmor {
 	public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean par4) {
 		super.addInformation(stack, player, list, par4);
 		if (getMaxEnergy() > 0) {
-			list.add(StringHelper.localize("fluxgear.tooltip.charge") + ":" + NBTHelper.getFlux(stack) + " / " + getMaxEnergy() + " RF");
+			list.add(StringHelper.localize("fluxgear.tooltip.charge") + ": " + NBTHelper.getFlux(stack) + " / " + getMaxEnergy() + " RF");
 		}
 		ThaumcraftHelper.addDiscountInformation(stack, player, list, par4);
 		AspectInfusionHelper.addInformation(stack, player, list, par4);
@@ -69,12 +73,15 @@ public class ItemArmorInfusable extends ItemArmor implements IInfusableArmor {
 
 	@Override
 	public void onArmorTick(World world, EntityPlayer player, ItemStack armor) {
-		data.getBehavior().onArmorTick(world, player, armor);
+		getBehavior().onArmorTick(world, player, armor);
 		//AspectInfusionHelper.applyInfusions(world, player, stack, getType(stack));
 	}
 
 	@Override
 	public void setDamage(ItemStack stack, int damage) {
+		if (getUnbreakable()) {
+			return;
+		}
 		if (!getFluxArmor()) {
 			if (damage > getMaxDamage()) {
 				setItemDamage(stack, getMaxDamage());
@@ -89,8 +96,12 @@ public class ItemArmorInfusable extends ItemArmor implements IInfusableArmor {
 
 	@Override
 	public double getDurabilityForDisplay(ItemStack stack) {
-		NBTHelper.ensureNBTFlux(stack);
-		return (double) (getMaxEnergy() - NBTHelper.getFluxBypass(stack)) / getMaxEnergy();
+		if (getFluxArmor()) {
+			NBTHelper.ensureNBTFlux(stack);
+			return (double) (getMaxEnergy() - NBTHelper.getFluxBypass(stack)) / getMaxEnergy();
+		} else {
+			return super.getDurabilityForDisplay(stack);
+		}
 	}
 
 	@Override
@@ -100,7 +111,7 @@ public class ItemArmorInfusable extends ItemArmor implements IInfusableArmor {
 
 	@Override
 	public boolean showDurabilityBar(ItemStack stack) {
-		return stack.stackTagCompound == null || !stack.stackTagCompound.getBoolean("CreativeTab");
+		return (super.showDurabilityBar(stack) && !getUnbreakable()) || (getFluxArmor() && (stack.stackTagCompound == null || !stack.stackTagCompound.getBoolean("CreativeTab")));
 	}
 
 	public void setItemDamage(ItemStack stack, int damage) {
@@ -200,8 +211,16 @@ public class ItemArmorInfusable extends ItemArmor implements IInfusableArmor {
 		return data.getChargeDamage();
 	}
 
+	public boolean getUnbreakable() {
+		return data.getUnbreakable();
+	}
+
 	public EnumEquipmentType getType() {
 		return data.getType();
+	}
+
+	public ArmorBehavior getBehavior() {
+		return data.getBehavior();
 	}
 
 
@@ -223,7 +242,7 @@ public class ItemArmorInfusable extends ItemArmor implements IInfusableArmor {
 			if (!getFluxArmor()) {
 				list.add(stack);
 			} else {
-				list.add(NBTHelper.setStackFlux(stack, 0));
+				list.add(NBTHelper.setStackFlux(stack.copy(), 0));
 				list.add(NBTHelper.setStackFlux(stack, getMaxEnergy()));
 			}
 		}
@@ -368,7 +387,7 @@ public class ItemArmorInfusable extends ItemArmor implements IInfusableArmor {
 	/** ISpecialArmor **/
 	@Override
 	public ArmorProperties getProperties(EntityLivingBase player, ItemStack armor, DamageSource source, double damage, int slot) {
-		return data.getBehavior().getProperties(player, armor, source, damage, slot);
+		return getBehavior().getProperties(player, armor, source, damage, slot);
 	}
 
 	@Override

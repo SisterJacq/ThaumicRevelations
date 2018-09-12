@@ -23,6 +23,7 @@ public class ArmorDataAdv extends ArmorDataBase {
 	protected double absorbRatio; //0.9 in RSA
 	protected boolean charge; //True to charge armor via flux damage, like RSA
 	protected int chargeDamage; //160 is that of RSA Armor
+	protected boolean unbreakable = false;
     protected EnumEquipmentType type;
 	protected ArmorBehavior behavior = ArmorBehaviorBase.instance;
 
@@ -269,6 +270,11 @@ public class ArmorDataAdv extends ArmorDataBase {
 		return this;
 	}
 
+	public ArmorDataAdv setUnbreakable(boolean bool) {
+		unbreakable = bool;
+		return this;
+	}
+
     public ArmorDataAdv setEquipmentType(EnumEquipmentType type) {
         this.type = type;
         return this;
@@ -336,6 +342,10 @@ public class ArmorDataAdv extends ArmorDataBase {
 
 	public int getChargeDamage() {
 		return chargeDamage;
+	}
+
+	public boolean getUnbreakable() {
+		return unbreakable;
 	}
 
     public EnumEquipmentType getType() {

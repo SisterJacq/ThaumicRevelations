@@ -262,6 +262,11 @@ public class ThaumRevLibrary {
 
 	public static ItemStack itemEldritchCog;					//00030 //v0.0.1
 	public static ItemStack itemEldritchKeystone;				//00031 //v0.0.1
+	public static ItemStack itemSoulFragment;					//00032 //v0.0.1
+	public static ItemStack itemPodCinderpearl;					//00033 //v0.0.1
+	public static ItemStack itemPodShiverpearl;					//00034 //v0.0.1
+	public static ItemStack itemPodStormypearl;					//00035 //v0.0.1
+	public static ItemStack itemPodStonypearl;					//00036 //v0.0.1
 
 	public static ItemStack shaftGreatwood;						//00040 //v0.0.1
 	public static ItemStack plankGreatwoodEnchanted;			//00041 //v0.0.1
@@ -904,13 +909,18 @@ public class ThaumRevLibrary {
 	public static ItemStack loveRing;							//00001
 
 	/** ARMORS **/
+	public static ItemArmorInfusable enchCottonGoggles;
+	public static ItemArmorInfusable enchCottonRobe;
+	public static ItemArmorInfusable enchCottonPants;
+	public static ItemArmorInfusable enchCottonBoots;
+
 	public static ItemArmorInfusable bronzeChainHelmet;
 	public static ItemArmorInfusable bronzeChainmail;
 	public static ItemArmorInfusable bronzeChainGreaves;
 	public static ItemArmorInfusable bronzeChainBoots;
 
 	public static ItemArmorInfusable primalGoggles;
-	public static ItemArmorInfusable primalRobes;
+	public static ItemArmorInfusable primalRobe;
 	public static ItemArmorInfusable primalPants;
 	public static ItemArmorInfusable primalBoots;
 
@@ -934,6 +944,15 @@ public class ThaumRevLibrary {
 	public static ItemArmorInfusable wardenicCompositeGreaves;
 	public static ItemArmorInfusable wardenicCompositeBoots;
 
+	public static ItemArmorInfusable wardenicAwakenedHelmet;
+	public static ItemArmorInfusable wardenicAwakenedChestplate;
+	public static ItemArmorInfusable wardenicAwakenedGreaves;
+	public static ItemArmorInfusable wardenicAwakenedBoots;
+
+	public static ItemArmorInfusable fluxRobeGoggles;
+	public static ItemArmorInfusable fluxRobeRobe;
+	public static ItemArmorInfusable fluxRobePants;
+	public static ItemArmorInfusable fluxRobeBoots;
 	/** TOOLS **/
 
 	/** OTHER EQUIPMENT **/
@@ -1029,6 +1048,11 @@ public class ThaumRevLibrary {
 
 	public static /*RunicInfuserRecipe*/ ShapelessArcaneRecipe recipeEnchSilverwood;
 	public static /*RunicInfuserRecipe*/ InfusionRecipe recipeConsSilverwood;
+
+	public static ShapedArcaneRecipe recipeEldritchStone;
+
+	public static ShapedArcaneRecipe recipeEldritchCog;
+	public static ShapedArcaneRecipe recipeEldritchKeystone;
 
 	//public static ShapedArcaneRecipe recipeDarkRunicInfuser;
 
@@ -1211,6 +1235,13 @@ public class ThaumRevLibrary {
 
 	public static ResearchItem researchEnchSilverwood;
 	public static String keyEnchSilverwood = "ENCH_SILVERWOOD";
+
+
+	public static ResearchItem researchEldritchStone;
+	public static String keyEldritchStone = "ELDRITCH_STONE";
+
+	public static ResearchItem researchVoidmetalWorking;
+	public static String keyVoidmetalWorking = "VOIDMETAL_WORKING";
 
 
 	public static ResearchItem researchThaumicHammermill;
@@ -1450,15 +1481,22 @@ public class ThaumRevLibrary {
 	public static ArmorMaterial matWardenicChain;
 	public static ArmorMaterial matWardenicSteel;
 	public static ArmorMaterial matWardenicComposite;
+	public static ArmorMaterial matWardenicAwakened;
+	public static ArmorMaterial matFluxRobes;
 
 	/** ARMOR DATA **/
+	public static ArmorDataAdv dataEnchCottonGoggles;
+	public static ArmorDataAdv dataEnchCottonRobe;
+	public static ArmorDataAdv dataEnchCottonPants;
+	public static ArmorDataAdv dataEnchCottonBoots;
+
 	public static ArmorDataAdv dataBronzeChainCoif;
 	public static ArmorDataAdv dataBronzeChainmail;
 	public static ArmorDataAdv dataBronzeChainGreaves;
 	public static ArmorDataAdv dataBronzeChainBoots;
 
 	public static ArmorDataAdv dataPrimalGoggles;
-	public static ArmorDataAdv dataPrimalRobes;
+	public static ArmorDataAdv dataPrimalRobe;
 	public static ArmorDataAdv dataPrimalPants;
 	public static ArmorDataAdv dataPrimalBoots;
 
@@ -1481,6 +1519,16 @@ public class ThaumRevLibrary {
 	public static ArmorDataAdv dataWardenicCompositeChestplate;
 	public static ArmorDataAdv dataWardenicCompositeGreaves;
 	public static ArmorDataAdv dataWardenicCompositeBoots;
+
+	public static ArmorDataAdv dataWardenicAwakenedHelmet;
+	public static ArmorDataAdv dataWardenicAwakenedChestplate;
+	public static ArmorDataAdv dataWardenicAwakenedGreaves;
+	public static ArmorDataAdv dataWardenicAwakenedBoots;
+
+	public static ArmorDataAdv dataFluxRobeGoggles;
+	public static ArmorDataAdv dataFluxRobeRobe;
+	public static ArmorDataAdv dataFluxRobePants;
+	public static ArmorDataAdv dataFluxRobeBoots;
 	
 
 	/** BLOCK NAMES  **/

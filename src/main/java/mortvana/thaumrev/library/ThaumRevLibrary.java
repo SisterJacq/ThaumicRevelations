@@ -259,6 +259,7 @@ public class ThaumRevLibrary {
 	public static ItemStack itemAnimatedPiston;					//00012 //v0.0.1
 
 	public static ItemStack itemAspectOrbReceptorMakeshift;		//00020 //v0.0.1
+	public static ItemStack itemAspectOrbReceptorAdvanced;		//00021 //v0.0.1
 
 	public static ItemStack itemEldritchCog;					//00030 //v0.0.1
 	public static ItemStack itemEldritchKeystone;				//00031 //v0.0.1
@@ -995,6 +996,7 @@ public class ThaumRevLibrary {
 	public static ShapelessOreRecipe recTinyElectrum;
 	public static ShapelessOreRecipe recTinyOsLu;*/
 
+	public static ShapedOreRecipe recipeGreatwoodShaft;
 	public static ShapelessOreRecipe recipeSalisTiny;
 	public static ShapelessOreRecipe recipeSalis;
 
@@ -1004,20 +1006,25 @@ public class ThaumRevLibrary {
 	public static ShapelessOreRecipe recipeEldritchDeslab;
 
 	public static ShapedOreRecipe recipeQuartzBlock;
-	public static ShapedOreRecipe recipeQuartzChiseled;
+	/*public static ShapedOreRecipe recipeQuartzChiseled;
 	public static ShapedOreRecipe recipeQuartzPillar;
 	public static ShapedOreRecipe recipeQuartzSlab;
-	public static ShapedOreRecipe recipeQuartzStair;
+	public static ShapedOreRecipe recipeQuartzStair;*/
 	public static ShapelessOreRecipe recipeQuartzDeblock;
-	public static ShapelessOreRecipe recipeQuartzDeslab;
+	/*public static ShapelessOreRecipe recipeQuartzDeslab;
 	public static ShapelessOreRecipe recipeQuartzDestair;
 	public static ShapelessOreRecipe recipeQuartzResetChiseled;
-	public static ShapelessOreRecipe recipeQuartzResetPillar;
+	public static ShapelessOreRecipe recipeQuartzResetPillar;*/
 
 	public static ShapelessOreRecipe recipeCottonFiber;
 	public static ShapelessOreRecipe recipeCottonFabric;
 	public static ShapedArcaneRecipe recipeTreatedCotton;
 	public static CrucibleRecipe recipeEnchantedCotton;
+
+	public static ShapedArcaneRecipe recipeEnchCottonGoggles;
+	public static ShapedArcaneRecipe recipeEnchCottonRobes;
+	public static ShapedArcaneRecipe recipeEnchCottonPants;
+	public static ShapedArcaneRecipe recipeEnchCottonBoots;
 
 	public static ShapedArcaneRecipe recipeOrbReceptorBasic;
 
@@ -1044,10 +1051,19 @@ public class ThaumRevLibrary {
 
 	//public static ShapedArcaneRecipe recipeRunicInfuser;
 	public static /*RunicInfuserRecipe*/ ShapelessArcaneRecipe recipeArcaneSingularity;
+
 	public static /*RunicInfuserRecipe*/ ShapelessArcaneRecipe recipeStableSingularity;
 
+	public static InfusionRecipe recipePrimalEssence;
+
+	public static /*RunicInfuserRecipe*/ ShapelessArcaneRecipe recipeEnchGreatwood;
+	public static ShapedArcaneRecipe recipeEnchGreatwoodShaft;
+
 	public static /*RunicInfuserRecipe*/ ShapelessArcaneRecipe recipeEnchSilverwood;
+	public static ShapedArcaneRecipe recipeEnchSilverwoodShaft;
+
 	public static /*RunicInfuserRecipe*/ InfusionRecipe recipeConsSilverwood;
+	public static ShapedArcaneRecipe recipeConsSilverwoodShaft;
 
 	public static ShapedArcaneRecipe recipeEldritchStone;
 
@@ -1183,6 +1199,9 @@ public class ThaumRevLibrary {
 	public static ResearchItem researchMaterial;
 	public static String keyMaterial = "MATERIAL_TRv";
 
+	public static ResearchItem researchMinerals;
+	public static String keyMinerals = "MINERALS_TRv";
+
 	public static ResearchItem researchAlloys;
 	public static String keyAlloys = "ALLOYS_TRv";
 
@@ -1227,6 +1246,9 @@ public class ThaumRevLibrary {
 	public static ResearchItem researchStabilizedSingularity;
 	public static String keyStabilizedSingularity = "STABLE_SINGULARITY";
 
+	public static ResearchItem researchPrimalEssence;
+	public static String keyPrimalEssence = "PRIMAL_ESSENCE";
+
 	public static ResearchItem researchEnchGreatwood;
 	public static String keyEnchGreatwood = "ENCH_GREATWOOD";
 
@@ -1235,6 +1257,12 @@ public class ThaumRevLibrary {
 
 	public static ResearchItem researchEnchSilverwood;
 	public static String keyEnchSilverwood = "ENCH_SILVERWOOD";
+
+	public static ResearchItem researchConsSilverwood;
+	public static String keyConsSilverwood = "CONS_SILVERWOOD";
+
+	public static ResearchItem researchVoidbrass;
+	public static String keyVoidbrass = "VOIDBRASS";
 
 
 	public static ResearchItem researchEldritchStone;
@@ -1308,6 +1336,25 @@ public class ThaumRevLibrary {
 
 	public static ResearchItem researchWardenCrystalAwakened;
 	public static String keyWardenCrystalAwakened = "WARDEN_CRYSTAL_AWAKENED";
+
+	public static ResearchItem researchWardenEssenceAwakened;
+	public static String keyWardenEssenceAwakened = "WARDEN_ESSENCE_AWAKENED";
+
+
+	public static ResearchItem researchRedstoneReduced;
+	public static String keyRedstoneReduced = "REDSTONE_REDUCED";
+
+	public static ResearchItem researchArcaneRedsolder;
+	public static String keyArcaneRedsolder = "ARCANE_REDSOLDER";
+
+	public static ResearchItem researchCapCoreRedsolder;
+	public static String keyCapCoreRedsolder = "CAPCORE_REDSOLDER";
+
+	public static ResearchItem researchRedcloth;
+	public static String keyRedcloth = "REDCLOTH";
+
+	public static ResearchItem researchArmorFluxRobes;
+	public static String keyArmorFluxRobes = "ARMOR_FLUXROBES";
 
 
 	public static ResearchItem researchTransmutationFe;

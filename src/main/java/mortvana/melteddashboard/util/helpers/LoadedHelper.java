@@ -8,6 +8,7 @@ public class LoadedHelper {
 	/* Loaded Mod Checker */
 	public static boolean isArsMagicaLoaded = Loader.isModLoaded("arsmagica2");
 	public static boolean isDartcraftLoaded = Loader.isModLoaded("Dartcraft");
+	public static boolean isEnderIOLoaded = Loader.isModLoaded("EnderIO");
 	public static boolean isExtraTiCLoaded = Loader.isModLoaded("ExtraTiC");
 	public static boolean isForestryLoaded = Loader.isModLoaded("Forestry");
 	public static boolean isGrowthcraftLoaded = Loader.isModLoaded("Growthcraft");

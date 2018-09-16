@@ -202,6 +202,7 @@ public class StringLibrary {
 	public static final String VMTL = "Void";
 
 	//OTHER GENERAL MINERALS
+	public static final String SALIS = "SalisMundus";
 	public static final String PRES = "PrimalEssence";
 
 	//OTHER WARDENIC MINERALS

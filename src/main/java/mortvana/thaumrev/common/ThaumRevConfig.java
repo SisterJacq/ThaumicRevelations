@@ -6,6 +6,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.common.config.Configuration;
 
 import mortvana.melteddashboard.util.ConfigBase;
+import mortvana.melteddashboard.util.helpers.LoadedHelper;
 
 public class ThaumRevConfig extends ConfigBase {
 
@@ -33,7 +34,9 @@ public class ThaumRevConfig extends ConfigBase {
 		//enableReliquary = getModule("Xeno's (Thaumic) Reliquary", "Xeno's Reliquary done thaumicly!", false);
 		//enableStandardist = getModule("Ichabodian Standardist System", "Total Aspect and Research Tree Overhaul.", false);
 
-		researchLevel = config.get("Miscellaneous", "Research Difficulty", -1, "Independent from Thaumcraft's Research Difficulty. Determines which researches auto-unlock. -1 for using Thaumcraft's difficulty, 0 for easy, 1 for normal (default Thaumcraft setting), 2 for hard.").getInt(-1);
+		getFluxed = config.get("Modules", "Enable Magneoturgy", tryFluxed(), "GET FLUXED! Thaumaturgy meets Redstone Flux!").getBoolean(tryFluxed());
+
+		researchLevelRaw = config.get("Miscellaneous", "Research Difficulty", -1, "Independent from Thaumcraft's Research Difficulty. Determines which researches auto-unlock. -1 for using Thaumcraft's difficulty, 0 for easy, 1 for normal (default Thaumcraft setting), 2 for hard.").getInt(-1);
 
 		enableBrass = config.get("Resources", "Enable Brass", true, "Determines whether or not our Brass is craftable. Disabling without other mods adding Brass will break stuff.").getBoolean(true);
 		enableBronze = config.get("Resources", "Enable Bronze", true, "Determines whether or not our Bronze is craftable. Disabling without other mods adding Bronze will break stuff.").getBoolean(true);
@@ -69,7 +72,13 @@ public class ThaumRevConfig extends ConfigBase {
 		return config.get("Modules", "Enable " + name, bool, description).getBoolean();
 	}
 
-	public static int researchLevel;
+	public boolean tryFluxed() {
+		return LoadedHelper.isThermalExpansionLoaded || LoadedHelper.isEnderIOLoaded || LoadedHelper.isMekanismLoaded;
+	}
+
+	public static boolean getFluxed;
+
+	public static int researchLevelRaw;
 
 	public static boolean obviousSmelting = true;
 

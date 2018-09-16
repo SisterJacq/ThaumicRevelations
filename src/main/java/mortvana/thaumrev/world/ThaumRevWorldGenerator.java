@@ -22,10 +22,7 @@ import mortvana.melteddashboard.util.helpers.LoadedHelper;
 import mortvana.melteddashboard.world.*;
 import mortvana.melteddashboard.world.poorore.PoorOreGenerator;
 
-import mortvana.thaumrev.block.BlockThaumicPlant;
-import mortvana.thaumrev.common.ThaumRevConfig;
-import mortvana.thaumrev.common.ThaumicRevelations;
-import mortvana.thaumrev.util.ContentHelper;
+import mortvana.thaumrev.common.*;
 
 import static mortvana.thaumrev.common.ThaumRevConfigWorld.*;
 import static net.minecraft.init.Blocks.*;
@@ -252,15 +249,15 @@ public class ThaumRevWorldGenerator implements IWorldGenerator {
 			return;
 		}
 
-		if (random.nextInt(1000) <= Math.ceil(ContentHelper.getExcubituraModifier(world, x, y, z))) {
+		if (random.nextInt(1000) <= Math.ceil(ThaumRevContent.getExcubituraModifier(world, x, y, z))) {
 			genExcubitura.generate(world, random, x, y, z);
 		}
 
-		if (random.nextInt(40) == 0 && ContentHelper.isGoodClimate(biome, 0.15F, 1.0F, 0.25F, 2.0F)) {
+		if (random.nextInt(40) == 0 && ThaumRevContent.isGoodClimate(biome, 0.15F, 1.0F, 0.25F, 2.0F)) {
 			genCotton.generate(world, random, x, y, z);
 		}
 
-		if (random.nextInt(75) == 0 && ContentHelper.isGoodClimate(biome, 0.10F, 1.0F, 0.10F, 2.0F)) {
+		if (random.nextInt(75) == 0 && ThaumRevContent.isGoodClimate(biome, 0.10F, 1.0F, 0.10F, 2.0F)) {
 			genThistle.generate(world, random, x, y, z);
 		}
 

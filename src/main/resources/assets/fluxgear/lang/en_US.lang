@@ -772,12 +772,12 @@ item.fluxgear.orb.visStoneExtraHighCapacity.name=Extra-High Capacity Vis Charge 
 
 #Armor
 item.fluxgear.mithril.goggles.name=Mithril Goggles of Revealing
-item.fluxgear.enchCotton.robes.name=Cotton Thaumaturge's Robe
+item.fluxgear.enchCotton.robe.name=Cotton Thaumaturge's Robe
 item.fluxgear.enchCotton.pants.name=Cotton Thaumaturge's Pants
 item.fluxgear.enchCotton.boots.name=Cotton Thaumaturge's Boots
 
 item.fluxgear.primal.goggles.name=Primal Goggles of Revealing
-item.fluxgear.primal.robes.name=Primal Robe
+item.fluxgear.primal.robe.name=Primal Robe
 item.fluxgear.primal.pants.name=Primal Pants
 item.fluxgear.primal.boots.name=Primal Boots
 
@@ -812,7 +812,7 @@ item.fluxgear.wardenicAwakened.greaves.name=Awakened Wardenic Composite Plate Gr
 item.fluxgear.wardenicAwakened.boots.name=Awakened Wardenic Composite Plate Boots [WIP]
 
 item.fluxgear.fluxRobes.goggles.name=Thermal Goggles of Revealing
-item.fluxgear.fluxRobes.robes.name=Flux Robe Waistcoat
+item.fluxgear.fluxRobes.robe.name=Flux Robe Waistcoat
 item.fluxgear.fluxRobes.pants.name=Flux Robe Pants
 item.fluxgear.fluxRobes.boots.name=Flux Robe Loafers
 

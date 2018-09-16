@@ -3,7 +3,7 @@ Internal [20] |-> Items/Blocks [02/03/04] |-> Recipes [05/06/07/08] |-> Research
 										  |-> Texture [10/11/12/13]
 										  |-> Item Aspects [14]
 
-0 - 0 - 8/0/74/67 - 7 - 72 > 151/380
+0 - 0 - 2/0/74/67 - 3 - 72 > 159/380
 Internal:
 	General:
 	[20-xx]		Fix Colorizer
@@ -66,6 +66,11 @@ Content:
     [05-xx]		Eldritch Stone
     [06-xx]		Primal Robes Crafting
 	[06-xx]		Dense Alumentum Crafting
+	[06-xx]		Shard Cooking
+	[06-xx]		Mineral Dust <-> Tiny Dust conversion
+	[06-xx]		All v0.0.1 Component Crafting
+	[06-xx]		Primal Essence Crafting
+    [06-xx]		Infused Cotton Armor Crafting
 	[07-xx]		Tier 1 Wardenic Base Item Crafting
 	[07-xx]		Tier 2 Wardenic Base Item Crafting
 	[07-xx]		Tier 3 Wardenic Base Item Crafting
@@ -103,6 +108,9 @@ Content:
 	[09-xx]		Ensure Native Purification Placement/Researches
 	[09-xx]		Eldritch Stone
 	[09-xx]		Voidmetal Working Research
+	[09-xx]		Consecrated Silverwood Research
+    [09-xx]		Enchanted Greatwood Research
+    [09-xx]		Cotton Robes Research
 
 	[14]	Aspects:
 
@@ -192,23 +200,15 @@ Done:
 
 [05]	Recipes (Block):
 [06]	Recipes (Other Items):
-[06-01]		All v0.0.x Component Crafting <14>
-[06-02]		Shard Crushing <14>
-[06-03]		Primal Essence Crafting <1>
-[06-04]		Mineral Dust <-> Tiny Dust conversion <23*2>
-[06-05]		Switch Cinderpearl to give Pod <5>
-[06-06]	-	Infused Cotton Armor Crafting <4>
-[08-07]		All General Raw/Coated Ingot Smelting <14+2+1i+2p>
-[05-08]		All TE4 Ore Processing with respect for type <n <= 12<3<6>>>
+[05-01]		All TE4 Ore Processing with respect for type <2[R/G]<5[YPO,WFE,IROS,CUAS,CUSB]<4[IS]>+3[YPO,CUAS,CUSB]<1[HP]>+2[ZN,BI]<2[SND,HG]>>+12[PO]<1[HP]+1[PLV]+4[IS]>> (126)
+[06-02]		Switch Cinderpearl to give Pod <5>
+[08-03]		All General Raw/Coated Ingot Smelting <13[X]+2[D/R]<>+2+1i+2p>
 
 [09]	Research:
-[09-01]	1	Tier 5 Wardenic Research <2>
-[09-02]	1	Tier 1 Magneoturgy <6>
-[09-03]	x	Advanced Aspect Orb Receptor Research <1>
-[09-04]		Consecrated Silverwood Research <1>
-[09-05]	x	Enchanted Greatwood Research <1>
-[09-06]		Voidbrass Research <1>
-[09-07]	x-	Cotton Robes Research <1>
+[09-01]		Tier 5 Wardenic Research <2>
+[09-02]		Tier 1 Magneoturgy <6>
+[09-03]		Advanced Aspect Orb Receptor Research <1>
+[09-04]		Voidbrass Research <1>
 
 [10]	Textures (Block):
 [10-01]		(Activated) Wardenic Crystal Block [<blocks/storage/blockWardenicCrystal.png>,<blocks/storage/blockActivatedWardenicCrystal.png>]

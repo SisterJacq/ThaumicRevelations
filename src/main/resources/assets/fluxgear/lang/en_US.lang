@@ -246,7 +246,7 @@ item.fluxgear.material.itemWardenicHardener.name=Wardenic Hardening Compound
 #Magneoturgic
 item.fluxgear.material.itemRedstoneFabric.name=Redstone-Infused Fabric
 item.fluxgear.material.itemRedcloth.name=Redcloth
-item.fluxgear.material.itemRedclothSocketed.name=Socketed Redcloth
+item.fluxgear.material.itemRedclothCapacitive.name=Capacitive Redcloth
 
 item.fluxgear.material.itemCapacitorCoreArcaneRedsolder.name=Arcane Redsolder Capacitor Core
 
@@ -648,8 +648,11 @@ item.fluxgear.material.ingotInvarRaw.name=Raw Invar Ingot
 item.fluxgear.material.ingotElectrumRaw.name=Raw Electrum Ingot
 item.fluxgear.material.ingotWardenicMetalRaw.name=Raw Wardenic Metal Ingot
 item.fluxgear.material.ingotDullRedsolderRaw.name=Raw Dull Redsolder
+item.fluxgear.material.ingotRedsolderRaw.name=Raw Redsolder
 
 item.fluxgear.material.ingotWardenicCompositeRaw.name=Raw Wardenic Composite Ingot
+item.fluxgear.material.ingotArcaneRedsolderRaw.name=Raw Arcane Redsolder
+
 item.fluxgear.material.ingotMagneoturgicCompositeRaw.name=Raw Magneoturgic Composite Ingot
 
 item.fluxgear.material.blendFluonicPyroptase.name=Fluonic Pyroptase Blend
@@ -729,6 +732,7 @@ item.fluxgear.material.dustTinySulfur.name=Tiny Sulfur Dust
 item.fluxgear.material.dustTinySaltpeter.name=Tiny Saltpeter Dust
 item.fluxgear.material.dustTinySalisMundus.name=Pinch of Salis Mundus
 item.fluxgear.material.dustTinyPrimalEssence.name=Pinch of Primal Essence
+item.fluxgear.material.dustTinyRedstone.name=Pinch of Redstone
 
 item.fluxgear.material.dustTinyWardenicBindingCompound.name=Pinch of Wardenic Binding Compound
 
@@ -812,7 +816,7 @@ item.fluxgear.wardenicAwakened.greaves.name=Awakened Wardenic Composite Plate Gr
 item.fluxgear.wardenicAwakened.boots.name=Awakened Wardenic Composite Plate Boots [WIP]
 
 item.fluxgear.fluxRobes.goggles.name=Thermal Goggles of Revealing
-item.fluxgear.fluxRobes.robe.name=Flux Robe Waistcoat
+item.fluxgear.fluxRobes.vest.name=Flux Robe Waistcoat
 item.fluxgear.fluxRobes.pants.name=Flux Robe Pants
 item.fluxgear.fluxRobes.boots.name=Flux Robe Loafers
 

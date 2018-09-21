@@ -49,6 +49,6 @@ task javadocJar(type: Jar, dependsOn: javadocs) {
 artifacts {
     archives deobfJar
     archives sourceJar
-    archives javadocJar
-    archives apiJar
+    //archives javadocJar
+    //archives apiJar
 }

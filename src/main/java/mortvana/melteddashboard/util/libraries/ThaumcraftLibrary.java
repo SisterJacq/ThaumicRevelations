@@ -30,6 +30,8 @@ public class ThaumcraftLibrary {
 
 		table = new ItemStack(blockTable, 1, 0);
 
+		cinderpearl = new ItemStack(blockCustomPlant, 1, 3);
+
 		obsTotem = new ItemStack(blockCosmeticSolid, 1, 0);
 
 		greatwoodSlab = new ItemStack(blockSlabWood, 1, 0);
@@ -43,6 +45,8 @@ public class ThaumcraftLibrary {
 
 		stackThaumonomicon = new ItemStack(itemThaumonomicon);
 		stackThaumometer = new ItemStack(itemThaumometer);
+
+		focusPrimal = new ItemStack(itemFocusPrimal, 1, 0);
 
 		itemAlumentum = new ItemStack(itemResource, 1, 0);
 		itemNitor = new ItemStack(itemResource, 1, 1);
@@ -79,6 +83,8 @@ public class ThaumcraftLibrary {
 		clusterGold = new ItemStack(itemNugget, 1, 31);
 
 		itemPhial = new ItemStack(itemEssence, 1, 0);
+
+		amuletVisStorage = new ItemStack(itemAmuletVis, 1, 1);
 	}
 
 	private static void loadReflection() {
@@ -114,6 +120,8 @@ public class ThaumcraftLibrary {
 
 		blockTable = ConfigBlocks.blockTable;
 
+		blockCustomPlant = ConfigBlocks.blockCustomPlant;
+
 		blockCosmeticSolid = ConfigBlocks.blockCosmeticSolid;
 
 		blockSlabWood = ConfigBlocks.blockSlabWood;
@@ -128,11 +136,15 @@ public class ThaumcraftLibrary {
 		itemThaumonomicon = ConfigItems.itemThaumonomicon;
 		itemThaumometer = ConfigItems.itemThaumometer;
 
+		itemFocusPrimal = ConfigItems.itemFocusPrimal;
+
 		itemResource = ConfigItems.itemResource;
 		itemShard = ConfigItems.itemShard;
 		itemNugget = ConfigItems.itemNugget;
 
 		itemEssence = ConfigItems.itemEssence;
+
+		itemAmuletVis = ConfigItems.itemAmuletVis;
 	}
 
 	public static Block getBlock(String field) {
@@ -158,9 +170,9 @@ public class ThaumcraftLibrary {
 	//public static Block blockMagicalLeaves;
 	public static Block blockTable;
 	/**public static Block blockChestHungry;
-	 public static Block blockCustomOre;
+	 public static Block blockCustomOre;*/
 	 public static Block blockCustomPlant;
-	 public static Block blockCandle;
+	 /*public static Block blockCandle;
 	 public static Block blockJar;
 	 public static Block blockArcaneDoor;
 	 public static Block blockWarded;
@@ -254,8 +266,8 @@ public class ThaumcraftLibrary {
 	public static Item itemFocusTrade;
 	public static Item itemFocusExcavation;
 	public static Item itemFocusHellbat;
-	public static Item itemFocusWarding;
-	public static Item itemFocusPrimal;*/
+	public static Item itemFocusWarding;*/
+	public static Item itemFocusPrimal;
 
 	/** ITEMS **/
 	public static Item itemResource;
@@ -304,9 +316,9 @@ public class ThaumcraftLibrary {
 	public static Item itemAmuletRunic;
 	public static Item itemRingRunic;
 	public static Item itemGirdleRunic;
-	public static Item itemGirdleHover;
+	public static Item itemGirdleHover;*/
 	public static Item itemAmuletVis;
-	public static Item itemPrimalArrow;
+	/*public static Item itemPrimalArrow;
 	public static Item itemCompassStone;*/
 
 	/** ITEMSTACKS (BLOCK) **/
@@ -318,6 +330,8 @@ public class ThaumcraftLibrary {
 	public static ItemStack planksSilverwood;
 
 	public static ItemStack table;
+
+	public static ItemStack cinderpearl;
 
 	public static ItemStack obsTotem;
 
@@ -334,6 +348,9 @@ public class ThaumcraftLibrary {
 	public static ItemStack stackThaumonomicon;
 	public static ItemStack stackThaumometer;
 
+	public static ItemStack focusPrimal;
+
+	public static ItemStack amuletVisStorage;
 
 	/** ITEMSTACKS (ITEM) **/
 	public static ItemStack itemAlumentum;
@@ -400,4 +417,6 @@ public class ThaumcraftLibrary {
 	public static String keyVoidSeed = "ELDRITCHMINOR";
 	public static String keyVoidmetal = "VOIDMETAL";
 	public static String keyVoidRobes = "ARMORVOIDFORTRESS";
+	public static String keyVisAmulet = "VISAMULET";
+	public static String keyAlchManufacture = "ALCHEMICALMANUFACTURE";
 }

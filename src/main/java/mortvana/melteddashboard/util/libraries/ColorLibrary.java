@@ -10,48 +10,48 @@ public final class ColorLibrary {
 	//C
 	//Na
 	//Mg
-	public static final int COLOR_AL = 0xD6D6D9; //Aluminium
+	public static final int COLOR_AL = 0xD6D6D9;	//Aluminium
 	//Si
 	//P
-	public static final int COLOR_S = 0xE5D437; //Sulfur
+	public static final int COLOR_S = 0xE5D437;		//Sulfur
 	//K
 	//Ca
 	//Sc
-	public static final int COLOR_TI = 0x82808F; //Titanium
+	public static final int COLOR_TI = 0x82808F;	//Titanium
 	//V
-	public static final int COLOR_CR = 0xDBCBCC; //Chromium
-	public static final int COLOR_MN = 0xA88F91; //Manganese
-	public static final int COLOR_FE = 0xD8D8D8; //Iron (Ferrum)
-	public static final int COLOR_CO = 0x5E7984; //Cobalt <NaturalCobalt>
-	public static final int COLOR_NI = 0xCEC59A; //Nickel
-	public static final int COLOR_CU = 0xE0612A; //Copper (Cuprum)
-	public static final int COLOR_ZN = 0xE2E2C3; //Zinc
+	public static final int COLOR_CR = 0xDBCBCC;	//Chromium
+	public static final int COLOR_MN = 0xA88F91;	//Manganese
+	public static final int COLOR_FE = 0xD8D8D8;	//Iron (Ferrum)
+	public static final int COLOR_CO = 0x5E7984;	//Cobalt <NaturalCobalt>
+	public static final int COLOR_NI = 0xCEC59A;	//Nickel
+	public static final int COLOR_CU = 0xE0612A;	//Copper (Cuprum)
+	public static final int COLOR_ZN = 0xE2E2C3;	//Zinc
 	//Ga
 	//Ge
-	public static final int COLOR_AS = 0x938B76; //Arsenic
+	public static final int COLOR_AS = 0x938B76;	//Arsenic
 	//Se
 	//Rb
 	//Sr
 	//Y
 	//Zr
 	//Nb
-	public static final int COLOR_MO = 0x808080; //Molybdenum
+	public static final int COLOR_MO = 0x808080;	//Molybdenum
 	//Tc
 	//Ru
 	//Rh
-	public static final int COLOR_PD = 0xA1C6CA; //Palladium
-	public static final int COLOR_AG = 0xB1D3D3; //Silver (Argentum)
-	public static final int COLOR_CD = 0x9BCCCC; //Cadmium
+	public static final int COLOR_PD = 0xA1C6CA;	//Palladium
+	public static final int COLOR_AG = 0xB1D3D3;	//Silver (Argentum)
+	public static final int COLOR_CD = 0x9BCCCC;	//Cadmium
 	//In
-	public static final int COLOR_SN = 0xACC4C4; //Tin (Stannum)
-	public static final int COLOR_SB = 0x87877A; //Antimony (Stibnum)
+	public static final int COLOR_SN = 0xACC4C4;	//Tin (Stannum)
+	public static final int COLOR_SB = 0x87877A;	//Antimony (Stibnum)
 	//Te
 	//Cs
 	//Ba
 	//La
 	//Ce
 	//Pr
-	public static final int COLOR_ND = 0xA08B99; //Neodymium
+	public static final int COLOR_ND = 0xA08B99;	//Neodymium
 	//Pm
 	//Sm
 	//Eu
@@ -62,19 +62,19 @@ public final class ColorLibrary {
 	//Er
 	//Tm
 	//Yb
-	public static final int COLOR_LU = 0x839E97; //Lutetium
+	public static final int COLOR_LU = 0x839E97;	//Lutetium
 	//Hf
 	//Ta
-	public static final int COLOR_W = 0x373737; //Tungsten (Wolfram, but not Wolfram & Hart)
+	public static final int COLOR_W = 0x373737;		//Tungsten (Wolfram, but not Wolfram & Hart)
 	//Re
-	public static final int COLOR_OS = 0x6C7B89; //Osmium
-	public static final int COLOR_IR = 0xF1F1F1; //Iridium
-	public static final int COLOR_PT = 0x72D7D8; //Platinum
-	public static final int COLOR_AU = 0xFFFF0B; //Gold (Aurum)
+	public static final int COLOR_OS = 0x6C7B89;	//Osmium
+	public static final int COLOR_IR = 0xF1F1F1;	//Iridium
+	public static final int COLOR_PT = 0x72D7D8;	//Platinum
+	public static final int COLOR_AU = 0xFFFF0B;	//Gold (Aurum)
 	//Hg (I know Mercury is liquid at room temperature)
 	//Tl
-	public static final int COLOR_PB = 0x59545E; //Lead (Plumbum)
-	public static final int COLOR_BI = 0x91ADAD; //Bismuth
+	public static final int COLOR_PB = 0x59545E;	//Lead (Plumbum)
+	public static final int COLOR_BI = 0x91ADAD;	//Bismuth
 	//Po
 	//At
 	//Fr
@@ -86,7 +86,8 @@ public final class ColorLibrary {
 	//Np
 	//Pu
 
-	public static final int COLOR_KNO = 0xE8EFEF; //Saltpeter
+	public static final int COLOR_RS = 0x7F0000;	//Redstone
+	public static final int COLOR_KNO = 0xE8EFEF;	//Saltpeter
 
 	public static final int COLOR_CUZN = 0xB2943D;
 	public static final int COLOR_CUSN = 0xBF813F;
@@ -177,18 +178,18 @@ public final class ColorLibrary {
 	public static final int COLOR_MATERIAL_DRULLOY = 0xC7743F;
 	public static final int COLOR_MATERIAL_TESSERACTIUM = 0x097261;*/
 
-	/*public static final int COLOR_ORE_CHALCOCITE = 0x333333;
-	public static final int COLOR_ORE_SPHALERITE = 0x332A19;
-	public static final int COLOR_ORE_CASSITERITE = 0x192233;
-	public static final int COLOR_ORE_MILLERITE = 0x594116;
-	public static final int COLOR_ORE_GALENA = 0x3F2C2C;
-	public static final int COLOR_ORE_XENOTIME = 0x3F2A0F;
-	public static final int COLOR_ORE_WOLFRAMITE = 0x262B33;
-	public static final int COLOR_ORE_BISMUTHINITE = 0x677272;
-	public static final int COLOR_ORE_TENNANTITE = 0x3C3F29;
-	public static final int COLOR_ORE_TETRAHEDITE = 0x565947;
+	public static final int COLOR_ORE_CUS = 0x333333; //Chalcocite
+	public static final int COLOR_ORE_ZNS = 0x332A19; //Spalerite
+	public static final int COLOR_ORE_SNO = 0x192233; //Cassiterite
+	public static final int COLOR_ORE_NIS = 0x594116; //Millerite
+	public static final int COLOR_ORE_PBS = 0x3F2C2C; ///Galena
+	public static final int COLOR_ORE_YPO = 0x3F2A0F; //Xenotime
+	public static final int COLOR_ORE_WFE = 0x262B33; //Wolframite
+	public static final int COLOR_ORE_BIS = 0x677272; //Bismuthinite
+	public static final int COLOR_ORE_CAS = 0x3C3F29; //Tennantite
+	public static final int COLOR_ORE_CSB = 0x565947; //Tetrahedrite
 
-	public static final int COLOR_ORE_ACANTHITE = 0x000000;
+	/*public static final int COLOR_ORE_ACANTHITE = 0x000000;
 	public static final int COLOR_ORE_GARNIERITE = 0x000000;
 	public static final int COLOR_ORE_PYROLUSITE = 0x000000;
 	public static final int COLOR_ORE_BAUXITE = 0x000000;

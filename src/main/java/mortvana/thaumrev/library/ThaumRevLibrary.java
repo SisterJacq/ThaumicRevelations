@@ -32,8 +32,8 @@ public class ThaumRevLibrary {
 	/** MOD CONSTANTS **/
 	public static final String MOD_ID = "ThaumicRevelations";
 	public static final String MOD_NAME = "Thaumic Revelations";
-	public static final String MOD_VERSION = "v0.0.1";
-	public static final String MOD_DEPENDENCIES = "required-after:Thaumcraft; after:MagicBees[2.4.1)";
+	public static final String MOD_VERSION = "v0.0.1-PREALPHA-9-21a";
+	public static final String MOD_DEPENDENCIES = "required-after:Thaumcraft; after:MagicBees[2.4.1); after:ThermalFoundation";
 	public static final String API_NAME = "ThaumicRevelationsAPI";
 
 	public static int researchLevel;
@@ -348,7 +348,7 @@ public class ThaumRevLibrary {
 	//01200-01399 MAGNEOTURGY - EQUIPMENT
 	public static ItemStack itemFabricRedstone;					//01200 //v0.0.1
 	public static ItemStack itemRedcloth;						//01201 //v0.0.1
-	public static ItemStack itemRedclothSocketed;				//01202 //v0.0.1
+	public static ItemStack itemRedclothCapacitive;				//01202 //v0.0.1
 	//public static ItemStack bindingArcaneRedsolderSocketed;		//01203 //v0.0.3
 
 
@@ -371,13 +371,13 @@ public class ThaumRevLibrary {
 	//03500-03599 GOLEM STUFF
 
 	//04900-04999 BACKUPS
-	public static ItemStack powderBlizz;						//04900
-	public static ItemStack powderBlitz;						//04901
-	public static ItemStack powderBasalz;						//04902
+	public static ItemStack powderBlizzBackup;					//04900
+	public static ItemStack powderBlitzBackup;					//04901
+	public static ItemStack powderBasalzBackup;					//04902
 
-	public static ItemStack rodBlizz;							//04905
-	public static ItemStack rodBlitz;							//04906
-	public static ItemStack rodBasalz;							//04907
+	public static ItemStack rodBlizzBackup;						//04905
+	public static ItemStack rodBlitzBackup;						//04906
+	public static ItemStack rodBasalzBackup;					//04907
 
 	//05000-05031 ELEMENTAL METAL INGOTS
 	public static ItemStack ingotCopper;						//05000
@@ -792,9 +792,11 @@ public class ThaumRevLibrary {
 	public static ItemStack rawElectrum;						//06043
 	public static ItemStack rawWardenicMetal;					//06044
 	public static ItemStack rawDullRedsolder;					//06045
+	public static ItemStack rawRedsolder;						//06046
 
 	//06080-06095 RAW COMPOSITES
 	public static ItemStack rawWardenicComposite;				//06083
+	public static ItemStack rawArcaneRedsolder;					//06084
 	public static ItemStack rawMagneoturgicComposite;			//06089
 
 	//06096-06111 COMPOUND GEM BLENDS
@@ -884,6 +886,7 @@ public class ThaumRevLibrary {
 	public static ItemStack tinySaltpeter;						//09611
 	public static ItemStack tinySalisMundus;					//09612
 	public static ItemStack tinyPrimalEssence;					//09613
+	public static ItemStack tinyRedstone;						//09614
 
 	public static ItemStack tinyWardenicCompound;				//09640
 
@@ -906,8 +909,9 @@ public class ThaumRevLibrary {
 	public static ItemStack aluDenseTemp;						//30000
 
 
-	public static ItemStack wardenAmulet;						//00000
-	public static ItemStack loveRing;							//00001
+	public static ItemStack amuletWarden;						//00000
+	public static ItemStack ringLove;							//00001
+	public static ItemStack pendantPrimal;						//00002
 
 	/** ARMORS **/
 	public static ItemArmorInfusable enchCottonGoggles;
@@ -951,7 +955,7 @@ public class ThaumRevLibrary {
 	public static ItemArmorInfusable wardenicAwakenedBoots;
 
 	public static ItemArmorInfusable fluxRobeGoggles;
-	public static ItemArmorInfusable fluxRobeRobe;
+	public static ItemArmorInfusable fluxRobeVest;
 	public static ItemArmorInfusable fluxRobePants;
 	public static ItemArmorInfusable fluxRobeBoots;
 	/** TOOLS **/
@@ -972,6 +976,8 @@ public class ThaumRevLibrary {
 	public static ShapelessOreRecipe recipeCnst;
 	public static ShapelessOreRecipe recipeFeNi;
 	public static ShapelessOreRecipe recipeAuAg;
+	public static ShapelessOreRecipe[] recipeDullRedsolder;
+	public static ShapelessOreRecipe recipeRedsolder;
 
 	public static ShapelessOreRecipe recDustCuZn;
 	public static ShapelessOreRecipe recDustCuSn;
@@ -985,6 +991,7 @@ public class ThaumRevLibrary {
 	public static ShapelessOreRecipe recDustCnst;
 	public static ShapelessOreRecipe recDustFeNi;
 	public static ShapelessOreRecipe recDustAuAg;
+	public static ShapelessOreRecipe recDustRedsolder;
 
 	//public static ShapelessOreRecipe recipeOsLu;
 	//public static ShapelessOreRecipe recCoatOsLu;
@@ -1062,6 +1069,8 @@ public class ThaumRevLibrary {
 	public static /*RunicInfuserRecipe*/ ShapelessArcaneRecipe recipeEnchSilverwood;
 	public static ShapedArcaneRecipe recipeEnchSilverwoodShaft;
 
+	public static /*DarkRunicInfuserRecipe*/ ShapelessArcaneRecipe recipeVoidbrass;
+
 	public static /*RunicInfuserRecipe*/ InfusionRecipe recipeConsSilverwood;
 	public static ShapedArcaneRecipe recipeConsSilverwoodShaft;
 
@@ -1075,6 +1084,12 @@ public class ThaumRevLibrary {
 	//public static InfusionRecipe recipeAlchemicalInfuser;
 
 	//public static InfusionRecipe recipeDarkAlchemicalInfuser;
+
+	public static ShapelessOreRecipe[] recipesPods;
+	public static CrucibleRecipe recipePowderCinderpearl;
+	public static CrucibleRecipe recipePowderShiverpearl;
+	public static CrucibleRecipe recipePowderStormypearl;
+	public static CrucibleRecipe recipePowderStonypearl;
 
 	public static CrucibleRecipe recipeTransNickel;
 	public static CrucibleRecipe recipeTransAluminium;
@@ -1179,6 +1194,19 @@ public class ThaumRevLibrary {
 	public static ShapedArcaneRecipe recipeWardenicCompositeBoots;
 
 	public static InfusionRecipe recipeWardenicCrystalAwakened;
+	public static InfusionRecipe recipeWardenicEssenceAwakened;
+
+	public static CrucibleRecipe recipeRedstoneReduced;
+	public static ShapelessArcaneRecipe[] recipeArcaneRedsolder;
+	public static ShapedArcaneRecipe recipeCapCoreRedsolder;
+	public static ShapelessArcaneRecipe recipeRedstoneFabric;
+	public static CrucibleRecipe recipeRedcloth;
+	public static ShapelessArcaneRecipe recipeRedclothCapacitive;
+
+	public static ShapedArcaneRecipe recipeFluxRobesGoggles;
+	public static ShapedArcaneRecipe recipeFluxRobesVest;
+	public static ShapedArcaneRecipe recipeFluxRobesPants;
+	public static ShapedArcaneRecipe recipeFluxRobesShoes;
 
 	public static CrucibleRecipe recipeThaumicElectrum;
 
@@ -1192,8 +1220,8 @@ public class ThaumRevLibrary {
 	public static ResearchItem researchMagneoturgy;
 	public static String keyMagneoturgy = "MAGNEOTURGY";
 
-	public static ResearchItem researchEldritch;
-	public static String keyEldritch = "ELDRITCH_WORKINGS";
+	//public static ResearchItem researchEldritch;
+	//public static String keyEldritch = "ELDRITCH_WORKINGS";
 
 
 	public static ResearchItem researchMaterial;
@@ -1236,8 +1264,8 @@ public class ThaumRevLibrary {
 	public static ResearchItem researchAspectOrbBasic;
 	public static String keyAspectOrbBasic = "ASPECT_ORB_BASIC";
 
-	public static ResearchItem researchAspectOrbAdv;
-	public static String keyAspectOrbAdv = "ASPECT_ORB_ADV";
+	//public static ResearchItem researchAspectOrbAdv;
+	//public static String keyAspectOrbAdv = "ASPECT_ORB_ADV";
 
 
 	public static ResearchItem researchRunicInfuser;
@@ -1272,7 +1300,11 @@ public class ThaumRevLibrary {
 	public static String keyVoidmetalWorking = "VOIDMETAL_WORKING";
 
 
-	public static ResearchItem researchThaumicHammermill;
+	public static ResearchItem researchElementalPowders;
+	public static String keyElementalPowders = "ELEMENTAL_POWDERS";
+
+
+	//public static ResearchItem researchThaumicHammermill;
 	public static String keyThaumicHammermill = "WARDENIC_OBSIDIAN"; //"THAUMIC_HAMMERMILL";
 
 

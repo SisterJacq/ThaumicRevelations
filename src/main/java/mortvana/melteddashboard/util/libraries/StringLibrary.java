@@ -18,6 +18,7 @@ public class StringLibrary {
 	public static final String ORE = "ore";
 	public static final String BLOCK = "block";
 	public static final String CLUSTER = "cluster";
+	public static final String CLUSTER_OVER = "clusterOverlay";
 	public static final String INGOT = "ingot";
 	public static final String NUGGET = "nugget";
 	public static final String DUST = "dust";

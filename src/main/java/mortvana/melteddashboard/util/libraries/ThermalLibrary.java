@@ -27,6 +27,10 @@ public class ThermalLibrary {
 		dustPyrotheum = new ItemStack(itemMaterialTF, 1, 512);
 		dustCryotheum = new ItemStack(itemMaterialTF, 1, 513);
 
+		powderBlizz = new ItemStack(itemMaterialTF, 1, 1025);
+		powderBlitz = new ItemStack(itemMaterialTF, 1, 1027);
+		powderBasalz = new ItemStack(itemMaterialTF, 1, 1029);
+
 		itemSlag = new ItemStack(itemMaterialTE, 1, 514);
 		itemSlagRich = new ItemStack(itemMaterialTE, 1, 515);
 	}
@@ -44,6 +48,10 @@ public class ThermalLibrary {
 
 	public static ItemStack dustPyrotheum;
 	public static ItemStack dustCryotheum;
+
+	public static ItemStack powderBlizz;
+	public static ItemStack powderBlitz;
+	public static ItemStack powderBasalz;
 
 	/** ITEMSTACKS (TE) **/
 	public static ItemStack itemSlag;

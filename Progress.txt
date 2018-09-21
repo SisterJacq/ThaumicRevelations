@@ -3,7 +3,7 @@ Internal [20] |-> Items/Blocks [02/03/04] |-> Recipes [05/06/07/08] |-> Research
 										  |-> Texture [10/11/12/13]
 										  |-> Item Aspects [14]
 
-0 - 0 - 2/0/74/67 - 3 - 72 > 159/380
+0 - 0 - 1/0/62/67 - 0 - 72 > 178/381
 Internal:
 	General:
 	[20-xx]		Fix Colorizer
@@ -71,6 +71,7 @@ Content:
 	[06-xx]		All v0.0.1 Component Crafting
 	[06-xx]		Primal Essence Crafting
     [06-xx]		Infused Cotton Armor Crafting
+    [06-xx]		Switch Cinderpearl to give Pod
 	[07-xx]		Tier 1 Wardenic Base Item Crafting
 	[07-xx]		Tier 2 Wardenic Base Item Crafting
 	[07-xx]		Tier 3 Wardenic Base Item Crafting
@@ -92,12 +93,15 @@ Content:
 	[08-xx]		Dust Alloying
 	[08-xx]		Nugget Alloying
 	[08-xx]		Tiny Dust Alloying
+	[08-xx]		All General Raw/Coated Ingot Smelting
 
 	[09]	Research:
 	[09-xx]		Ensure Tier 1 Wardenic Placement/Researches
 	[09-xx]		Ensure Tier 2 Wardenic Placement/Researches
 	[09-xx]		Ensure Tier 3 Wardenic Placement/Researches
 	[09-xx]		Ensure Tier 4 Wardenic Placement/Researches
+	[09-xx]		Tier 5 Wardenic Research
+	[09-xx]		Tier 1 Magneoturgy
 	[09-xx]		Ensure Runic Researches(ASing, AniPiston, EnchSW)
 	[09-xx]		Stabilized Singularity Research
 	[09-xx]		Basic Aspect Orb Receptor Research
@@ -111,6 +115,9 @@ Content:
 	[09-xx]		Consecrated Silverwood Research
     [09-xx]		Enchanted Greatwood Research
     [09-xx]		Cotton Robes Research
+    [09-xx]		Primal Pendant Research
+    [09-xx]		Voidbrass Research
+    [09-xx]		Elemental Pearl to Dust Research
 
 	[14]	Aspects:
 
@@ -121,10 +128,18 @@ Content:
 	[10-xx]		Shiverpearl Texture
     [10-xx]		Stormpearl Texture
     [10-xx]		Stonepearl Texture
+    [10-xx]		Impregnated Greatwood
+    [10-xx]		Corrupted Greatwood
+    [10-xx]		(Activated) Wardenic Crystal Block
+    [10-xx]		Awakened Wardenic Crystal Block
+    [10-xx]		Fluonic Sapphire Block
 	[11-xx]		Grayscale Elemental Rod/Powder
 	[11-xx]		Low-Magic Dust
 	[11-xx]		Cotton Fiber
+	[11-xx]		Makeshift Aspect Orb Receptor
+	[11-xx]		Greatwood Shaft
 	[11-xx]		Purified Excubitura Oil
+	[11-xx]		Arcane Redsolder Capacitor Core
 	[11-xx]		Infused Wardenic Quartz
 	[11-xx]		Awakened Wardenic Crystal
 	[11-xx]		Wardenic Crystal Shard
@@ -136,6 +151,8 @@ Content:
     [11-xx]		Wardenic Crystal Tiny Dust
     [11-xx]		Activated Wardenic Crystal Tiny Dust
     [11-xx]		Awakened Wardenic Crystal Tiny Dust
+	[11-xx]		Dioptase Tiny Dust
+	[11-xx]		Pyrope Tiny Dust
 	[11-xx]		Fluonic Sapphire
 	[11-xx]		Fluonic Sapphire Shard
 	[11-xx]		Fluonic Sapphire Dust
@@ -163,6 +180,8 @@ Content:
     [11-xx]		Redcloth
     [11-xx]		Wardenic Binding Compound
     [11-xx]		Pinch of Wardenic Binding Compound
+    [11-xx]		Dense Alumentum
+    [11-xx]		Cluster Grayscale
     [12-xx]		Tier 1 Wardenic Armor Textures
     [12-xx]		Tier 2 Wardenic Armor Textures
     [12-xx]		Bronze Chain Armor
@@ -201,78 +220,59 @@ Done:
 [05]	Recipes (Block):
 [06]	Recipes (Other Items):
 [05-01]		All TE4 Ore Processing with respect for type <2[R/G]<5[YPO,WFE,IROS,CUAS,CUSB]<4[IS]>+3[YPO,CUAS,CUSB]<1[HP]>+2[ZN,BI]<2[SND,HG]>>+12[PO]<1[HP]+1[PLV]+4[IS]>> (126)
-[06-02]		Switch Cinderpearl to give Pod <5>
-[08-03]		All General Raw/Coated Ingot Smelting <13[X]+2[D/R]<>+2+1i+2p>
-
-[09]	Research:
-[09-01]		Tier 5 Wardenic Research <2>
-[09-02]		Tier 1 Magneoturgy <6>
-[09-03]		Advanced Aspect Orb Receptor Research <1>
-[09-04]		Voidbrass Research <1>
 
 [10]	Textures (Block):
-[10-01]		(Activated) Wardenic Crystal Block [<blocks/storage/blockWardenicCrystal.png>,<blocks/storage/blockActivatedWardenicCrystal.png>]
-[10-02]		Awakened Wardenic Crystal Block <blocks/storage/blockAwakenedWardenicCrystal.png>
-[10-03]		Fluonic Sapphire Block <blocks/storage/blockFluonicSapphire.png>
-[10-04]		Fluonic Pyroptase Block <blocks/storage/blockFluonicPyroptase.png>
-[10-05]		Impregnated Greatwood <blocks/wood/greatwoodImpregnated.png>
-[10-06]		Corrupted Greatwood <blocks/wood/greatwoodCorrupted.png>
-[10-07]		Hardened Silverwood <blocks/wood/silverwoodHardened.png>
-[10-08]		Wardenic Obsidian <blocks/stoneDecor/obsidianWardenic.png>
+[10-01]		Fluonic Pyroptase Block <blocks/storage/blockFluonicPyroptase.png>
+[10-02]		Hardened Silverwood <blocks/wood/silverwoodHardened.png>
+[10-03]		Wardenic Obsidian <blocks/stoneDecor/obsidianWardenic.png>
 
 [11]	Textures (Item):
-[11-1-01]	Makeshift Aspect Orb Receptor <items/material/itemAspectOrbReceptorMakeshift.png>
-[11-1-02]	Greatwood Shaft <items/material/shaftGreatwood.png> {items/material/itemShaftEnchantedGreatwood.png}
-[11-1-03]	Densified Silverwood <items/material/densifiedSilverwood.png>
-[11-1-04]	Enchanted Densified Silverwood Plank <items/material/itemPlankEnchantedDensifiedSilverwood.png>
-[11-1-05]	Consecrated Densified Silverwood Plank <items/material/itemPlankConsecratedSilverwood.png>
-[11-1-06]	Enchanted Silverwood Shaft <items/material/shaftSilverwood.png>
-[11-1-07]	Consecrated Densified Silverwood Shaft <items/material/itemShaftConsecratedSilverwood.png>
-[11-1-08]	Excubitura Seeds <items/material/seedExcubitura.png>
-[11-1-09]	Thistle Seeds <items/material/seedThistle.png>
-[11-1-10]	Shimmerleaf Seeds <items/material/seedShimmerleaf.png>
-[11-1-11]	Elemental Pearl Seeds [<items/material/seedCinderpearl.png>,<items/material/seedShiverpearl.png>,<items/material/seedStormpearl.png>,<items/material/seedStonepearl.png>]
-[11-1-12]	Dense Alumentum <items/material/tempAluDense.png>
-[11-2-01]	Detailed Wardenic Steel Plate <items/material/itemPlateWardenicSteelDetailed.png>
-[11-2-02]	Runic Wardenic Steel Plate <items/material/itemPlateWardenicSteelRunic.png>
-[11-2-03]	Consecrated Wardenic Steel Plate <items/material/itemPlateWardenicSteelConsecrated.png>
-[11-2-04]	Infused Wardenic Composite Plate <items/material/itemPlateWardenicCompositeInfused.png>
-[11-2-05]	Fitted Wardenic Composite Plate <items/material/itemPlateWardenicCompositeFitted.png>
-[11-2-06]	Detailed Wardenic Composite Plate <items/material/itemPlateWardenicCompositeDetailed.png>
-[11-2-07]	Runic Wardenic Composite Plate <items/material/itemPlateWardenicCompositeRunic.png>
-[11-2-08]	Consecrated Wardenic Composite Plate <items/material/itemPlateWardenicCompositeConsecrated.png>
-[11-2-09]	Primal Wardenic Composite Plate <items/material/itemPlateWardenicCompositePrimal.png>
-[11-2-10]	Essence of Awakening <items/material/itemEssenceOfAwakening.png>
-[11-2-11]	Wardenic Hardening Compound <items/material/itemWardenicHardener.png>
-[11-2-12]	Redstone-Infused Cloth <items/material/itemRedstoneFabric.png>
+[11-1-02]	Densified Silverwood <items/material/densifiedSilverwood.png>
+[11-1-03]	Enchanted Densified Silverwood Plank <items/material/itemPlankEnchantedDensifiedSilverwood.png>
+[11-1-04]	Consecrated Densified Silverwood Plank <items/material/itemPlankConsecratedSilverwood.png>
+[11-1-05]	Enchanted Silverwood Shaft <items/material/shaftSilverwood.png>
+[11-1-06]	Consecrated Densified Silverwood Shaft <items/material/itemShaftConsecratedSilverwood.png>
+[11-1-07]	Excubitura Seeds <items/material/seedExcubitura.png>
+[11-1-08]	Thistle Seeds <items/material/seedThistle.png>
+[11-1-09]	Shimmerleaf Seeds <items/material/seedShimmerleaf.png>
+[11-1-10]	Elemental Pearl Seeds [<items/material/seedCinderpearl.png>,<items/material/seedShiverpearl.png>,<items/material/seedStormpearl.png>,<items/material/seedStonepearl.png>]
+[11-1-11]	Detailed Wardenic Steel Plate <items/material/itemPlateWardenicSteelDetailed.png>
+[11-1-12]	Runic Wardenic Steel Plate <items/material/itemPlateWardenicSteelRunic.png>
+[11-2-01]	Consecrated Wardenic Steel Plate <items/material/itemPlateWardenicSteelConsecrated.png>
+[11-2-02]	Infused Wardenic Composite Plate <items/material/itemPlateWardenicCompositeInfused.png>
+[11-2-03]	Fitted Wardenic Composite Plate <items/material/itemPlateWardenicCompositeFitted.png>
+[11-2-04]	Detailed Wardenic Composite Plate <items/material/itemPlateWardenicCompositeDetailed.png>
+[11-2-05]	Runic Wardenic Composite Plate <items/material/itemPlateWardenicCompositeRunic.png>
+[11-2-06]	Consecrated Wardenic Composite Plate <items/material/itemPlateWardenicCompositeConsecrated.png>
+[11-2-07]	Primal Wardenic Composite Plate <items/material/itemPlateWardenicCompositePrimal.png>
+[11-2-08]	Essence of Awakening <items/material/itemEssenceOfAwakening.png>
+[11-2-09]	Wardenic Hardening Compound <items/material/itemWardenicHardener.png>
+[11-2-10]	Redstone-Infused Cloth <items/material/itemRedstoneFabric.png>
+[11-2-11]	Socketed Redcloth <items/material/itemRedclothSocketed.png>
 
-[11-3-02]	Socketed Redcloth <items/material/itemRedclothSocketed.png>
-[11-3-03]	Arcane Redsolder Capacitor Core <items/material/itemCapacitorCoreArcaneRedsolder.png>
-[11-3-04]	Cluster Grayscale [<items/material/clusterZinc.png>,<items/material/clusterAluminium.png>,<items/material/clusterNickel.png>,<items/material/clusterPlatinum.png>,<items/material/clusterXenotime.png>,<items/material/clusterTungsten.png>,<items/material/clusterIridosmium.png>,<items/material/clusterBismuth.png>,<items/material/clusterTennantite.png>,<items/material/clusterTetrahedrite.png>]
-[11-3-05]	Slag Grayscale [<items/material/itemSlagCarbon.png>,<items/material/itemSlagCeramic.png>,<items/material/itemSlagThaumic.png>,<items/material/itemSlagFluonic.png>]
-[11-3-06]	Fluonic Pyroptase <items/material/gemFluonicPyroptase.png>
-[11-3-07]	Dioptase Shard <items/material/shardDioptase.png>
-[11-3-08]	Pyrope Shard <items/material/shardPyrope.png>
-[11-3-09]	Fluonic Pyroptase Shard <items/material/shardFluonicPyroptase.png>
-[11-3-10]	Fluonic Pyroptase Dust <items/material/dustFluonicPyroptase.png>
-[11-3-11]	Dioptase Tiny Dust <items/material/dustTinyDioptase.png>
-[11-3-12]	Pyrope Tiny Dust <items/material/dustTinyPyrope.png>
-[11-4-01]	Fluonic Pyroptase Tiny Dust <items/material/dustTinyFluonicPyroptase.png>
-[11-4-02]	Raw Wardenic Metal Ingot <items/material/ingotWardenicMetalRaw.png>
-[11-4-03]	Raw Redsolder Ingot <items/material/ingotDullRedsolderRaw.png>
-[11-4-04]	Raw Wardenic Composite Ingot <items/material/ingotWardenicCompositeRaw.png>
-[11-4-05]	Raw Magneoturgic Composite Ingot <items/material/ingotMagneoturgicCompositeRaw.png>
-[11-4-06]	Fluonic Pyroptase Blend <items/material/blendFluonicPyroptase.png>
-[11-4-07]	Raw Thaumic Bronze Ingot <items/materials/ingotThaumicBronzeRaw.png>
-[11-4-08]	Raw Osmium-Lutetium Alloy Ingot <items/material/ingotOsmiumLutetiumRaw.png>
-[11-4-09]	(Smelted) Fluxed Composite Ingot <items/materials/ingotFluxedComposite.png>
-[11-4-10]	(Smelted) Resonant Fluxed Composite Ingot <items/materials/ingotResonantFluxedComposite.png>
-[11-4-11]	Coated Thaumic Bronze Ingot <items/material/ingotThaumicBronzeCoated.png>
-[11-4-12]	Coated Osmium-Lutetium Alloy Ingot <items/material/ingotOsmiumLutetiumCoated.png>
-[11-5-01]	Fired Thaumic Bronze Ingot <items/material/ingotThaumicBronzeFired.png>
-[11-5-02]	Fired Osmium-Lutetium Ingot <items/material/ingotOsmiumLutetiumFired.png>
-[11-5-07]	Primal Essence <items/material/dustPrimalEssence.png>
-[11-5-08]	Pinch of Primal Essence <items/material/dustTinyPrimalEssence.png>
+[11-3-01]	Slag Grayscale [<items/material/itemSlagCarbon.png>,<items/material/itemSlagCeramic.png>,<items/material/itemSlagThaumic.png>,<items/material/itemSlagFluonic.png>]
+[11-3-02]	Fluonic Pyroptase <items/material/gemFluonicPyroptase.png>
+[11-3-03]	Dioptase Shard <items/material/shardDioptase.png>
+[11-3-04]	Pyrope Shard <items/material/shardPyrope.png>
+[11-3-05]	Fluonic Pyroptase Shard <items/material/shardFluonicPyroptase.png>
+[11-3-06]	Fluonic Pyroptase Dust <items/material/dustFluonicPyroptase.png>
+
+[11-3-09]	Fluonic Pyroptase Tiny Dust <items/material/dustTinyFluonicPyroptase.png>
+[11-3-10]	Raw Wardenic Metal Ingot <items/material/ingotWardenicMetalRaw.png>
+[11-3-11]	Raw Redsolder Ingot <items/material/ingotDullRedsolderRaw.png>
+[11-3-12]	Raw Wardenic Composite Ingot <items/material/ingotWardenicCompositeRaw.png>
+[11-4-01]	Raw Magneoturgic Composite Ingot <items/material/ingotMagneoturgicCompositeRaw.png>
+[11-4-02]	Fluonic Pyroptase Blend <items/material/blendFluonicPyroptase.png>
+[11-4-03]	Raw Thaumic Bronze Ingot <items/materials/ingotThaumicBronzeRaw.png>
+[11-4-04]	Raw Osmium-Lutetium Alloy Ingot <items/material/ingotOsmiumLutetiumRaw.png>
+[11-4-05]	(Smelted) Fluxed Composite Ingot <items/materials/ingotFluxedComposite.png>
+[11-4-06]	(Smelted) Resonant Fluxed Composite Ingot <items/materials/ingotResonantFluxedComposite.png>
+[11-4-07]	Coated Thaumic Bronze Ingot <items/material/ingotThaumicBronzeCoated.png>
+[11-4-08]	Coated Osmium-Lutetium Alloy Ingot <items/material/ingotOsmiumLutetiumCoated.png>
+[11-4-09]	Fired Thaumic Bronze Ingot <items/material/ingotThaumicBronzeFired.png>
+[11-4-10]	Fired Osmium-Lutetium Ingot <items/material/ingotOsmiumLutetiumFired.png>
+[11-4-11]	Primal Essence <items/material/dustPrimalEssence.png>
+[11-4-12]	Pinch of Primal Essence <items/material/dustTinyPrimalEssence.png>
 
 [12]	Textures (Equipment):
 [12-01]		Tier 3 Wardenic Armor Textures [<items/armor/wardenicSteelHelmet.png>,<items/armor/wardenicSteelChestplate.png>,<items/armor/wardenicSteelGreaves.png>,<items/armor/wardenicSteelBoots.png>]
@@ -467,7 +467,7 @@ Done:
 [205-04]	All Slab Crafting
 [205-05]	Wardenic Quartz/Redquartz Stair Crafting
 
-[205]	Recipes (Equipment):
+[206]	Recipes (Equipment):
 [206-05]	Wardenic Amulet Crafting
 
 [208]	Recipes (Metals):
@@ -479,7 +479,7 @@ Done:
 [208-06]	Auto-toggle Other Metals (Recipes)
 
 [209]	Research:
-[209-xx]	Primal Pendant Research
+[209-01]	Advanced Aspect Orb Receptor Research <1>
 
 [210]	Textures (Block):
 [210-xx]		Elemental Reed Textures [<blocks/plant/blazereed.png>,<blocks/plant/blizzreed.png>,<blocks/plant/blitzreed.png>,<blocks/plant/basalzreed.png>]

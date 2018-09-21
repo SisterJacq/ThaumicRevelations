@@ -30,6 +30,8 @@ public class GrayscaleEntry {
 		entries.put(CHAIN, new GrayscaleEntry(CHAIN, DIR_GRAYSCALE + CHAIN));
 		entries.put(POWDER, new GrayscaleEntry(POWDER, DIR_GRAYSCALE + POWDER));
 		entries.put(ROD, new GrayscaleEntry(ROD, DIR_GRAYSCALE + ROD));
+		entries.put(CLUSTER, new GrayscaleEntry(CLUSTER, DIR_GRAYSCALE + CLUSTER));
+		entries.put(CLUSTER_OVER, new GrayscaleEntry(CLUSTER_OVER, DIR_GRAYSCALE + CLUSTER_OVER));
 	}
 
 	protected String name;

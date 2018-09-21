@@ -1,13 +1,12 @@
 package mortvana.thaumrev.util;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.FurnaceRecipes;
-import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.item.crafting.*;
 import net.minecraft.nbt.NBTTagCompound;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.event.FMLInterModComms;
@@ -39,6 +38,61 @@ public class RecipeHelper {
 		for (IRecipe recipe : recipes) {
 			GameRegistry.addRecipe(recipe);
 		}
+	}
+
+	public static ShapedRecipes generateDummyShapedRecipe(ItemStack output, Object... components) {
+		String s = "";
+		int i = 0;
+		int j = 0;
+		int k = 0;
+
+		if (components[i] instanceof String[]) {
+			String[] astring = (String[])components[i++];
+
+			for (String s1 : astring) {
+				++k;
+				j = s1.length();
+				s = s + s1;
+			}
+		} else {
+			while (components[i] instanceof String) {
+				String s2 = (String)components[i++];
+				++k;
+				j = s2.length();
+				s = s + s2;
+			}
+		}
+
+		HashMap hashmap;
+
+		for (hashmap = new HashMap(); i < components.length; i += 2) {
+			Character character = (Character)components[i];
+			ItemStack itemstack1 = null;
+
+			if (components[i + 1] instanceof Item) {
+				itemstack1 = new ItemStack((Item)components[i + 1]);
+			} else if (components[i + 1] instanceof Block) {
+				itemstack1 = new ItemStack((Block)components[i + 1], 1, 32767);
+			} else if (components[i + 1] instanceof ItemStack) {
+				itemstack1 = (ItemStack)components[i + 1];
+			}
+
+			hashmap.put(character, itemstack1);
+		}
+
+		ItemStack[] aitemstack = new ItemStack[j * k];
+
+		for (int i1 = 0; i1 < j * k; ++i1) {
+			char c0 = s.charAt(i1);
+
+			if (hashmap.containsKey(Character.valueOf(c0))) {
+				aitemstack[i1] = ((ItemStack)hashmap.get(Character.valueOf(c0))).copy();
+			} else {
+				aitemstack[i1] = null;
+			}
+		}
+
+		return new ShapedRecipes(j, k, aitemstack, output);
 	}
 
 	/** SHAPED CRAFTING * */

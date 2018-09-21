@@ -24,12 +24,12 @@ buildscript {
             name = "forge"
             url = "http://files.minecraftforge.net/maven"
         }
-		maven {
+        maven {
             name = "sonatype"
             url = "https://oss.sonatype.org/content/repositories/snapshots/"
         }
 
-	}
+    }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
     }
@@ -82,7 +82,6 @@ archivesBaseName = mod_archiveBaseName
         attributes 'FMLCorePluginContainsFMLMod': 'true'
     }
     //classifier = 'universal'
-
     // Specify which files are really included, can control which APIs should be included.
     include "fluxgear/**"
     include "assets/**"
@@ -178,7 +177,6 @@ processResources {
         ext.buildNum = "${project.buildInfo.revision}"
     }
 }
-
 ext.artifact_version = 'NFG'
 if (System.getenv().ARTIFACT_VERSION == null) {
     artifact_version = "${config.mod_version}-${project.buildInfo.buildNum}"
@@ -186,12 +184,10 @@ if (System.getenv().ARTIFACT_VERSION == null) {
 if(System.getenv().ARTIFACT_VERSION != null) {
     artifact_version = "${system.getenv().ARTIFACT_VERSION}"
 }
-
 // I don't always upload, but when I Dos Equis...
 /*task("uploadJars", dependsOn:"reobf""signJar") {
     
     description = "uploads JARs"
-
     if (project.hasProperty("local_maven") || project.hasProperty("sftp_maven")) {
 	    apply plugin: 'maven'
         uploadArchives {

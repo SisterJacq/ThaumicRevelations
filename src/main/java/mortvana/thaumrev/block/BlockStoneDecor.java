@@ -39,7 +39,7 @@ public class BlockStoneDecor extends FluxGearBlockBase {
 		setHarvestLevel("pickaxe", 3, 0);
 		setHarvestLevel("pickaxe", 2, 1);
 
-		setData(StringLibrary.DIR_DEFAULT + "stoneDecor/", NAMES);
+		setData(StringLibrary.DIR_DEFAULT + "stone/", NAMES);
 		icons = new IIcon[16];
 	}
 

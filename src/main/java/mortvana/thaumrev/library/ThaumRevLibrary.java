@@ -1047,7 +1047,9 @@ public class ThaumRevLibrary {
 	public static ShapelessArcaneRecipe recipeThaumicBronzeRaw;
 	public static ShapelessArcaneRecipe recipeThaumicBronzeCoated;
 
+	public static InfusionRecipe recipeThaumicSteel;
 	public static InfusionRecipe recipeThaumicRBronze;
+	public static CrucibleRecipe recipeThaumicElectrum;
 
 	public static ShapedArcaneRecipe recipeThaumicBronzeChain;
 
@@ -1208,8 +1210,6 @@ public class ThaumRevLibrary {
 	public static ShapedArcaneRecipe recipeFluxRobesPants;
 	public static ShapedArcaneRecipe recipeFluxRobesShoes;
 
-	public static CrucibleRecipe recipeThaumicElectrum;
-
 	/** RESEARCH **/
 	public static ResearchItem researchThaumRev;
 	public static String keyThaumRev = "THAUMIC_REVELATIONS";
@@ -1245,6 +1245,9 @@ public class ThaumRevLibrary {
 
 	public static ResearchItem researchThaumicRBronze;
 	public static String keyThaumicRBronze = "THAUMIC_TINKERS_BRONZE";
+
+	public static ResearchItem researchThaumicSteel;
+	public static String keyThaumicSteel = "THAUMIC_STEEL";
 
 	public static ResearchItem researchThaumicElectrum;
 	public static String keyThaumicElectrum = "THAUMIC_ELECTRUM";

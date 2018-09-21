@@ -258,6 +258,10 @@ public class RecipeHelper {
 		FMLInterModComms.sendMessage("Thaumcraft", "nativeCluster", val);
 	}
 
+	public static void addSmeltingBonus(String in, ItemStack out) {
+		ThaumcraftApi.addSmeltingBonus(in, out);
+	}
+
 	/** THAUMIC REVELATIONS - THAUMIC HAMMERMILL CRAFTING **/
 	public static ShapelessOreRecipe addHammermillRecipe(ItemStack result, String input, int alumentum) { //Temporary
 		List<String> items = new ArrayList<String>();

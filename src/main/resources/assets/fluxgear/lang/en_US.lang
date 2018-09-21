@@ -754,7 +754,7 @@ item.fluxgear.material.tempAluDense.name=Dense Alumentum [Will be removed in v0.
 #Baubles
 item.fluxgear.baubles.amuletWarden.name=Warden's Amulet
 item.fluxgear.baubles.ringLove.name=Ring of Love
-item.fluxgear.baubles.pendantPrimal.name=Primal Pendant [WIP]
+item.fluxgear.baubles.pendantPrimal.name=Primal Pendant
 
 #Apect Orb Equipment
 item.fluxgear.orb.visStoneCrude.name=Crude Vis Charge Stone

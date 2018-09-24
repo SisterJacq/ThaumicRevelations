@@ -76,18 +76,19 @@ group = mod_group
 archivesBaseName = mod_archiveBaseName
 
 // Add Coremod Manifest and Classifier (if I wanted one)
-/*jar {
+jar {
     manifest {
-        attributes 'FMLCorePlugin': 'tconstruct.preloader.TConstructLoaderContainer'
-        attributes 'FMLCorePluginContainsFMLMod': 'true'
+		attributes 'FMLAT': 'FluxGear_at.cfg'
+		//attributes 'FMLCorePlugin': 'tconstruct.preloader.TConstructLoaderContainer'
+        //attributes 'FMLCorePluginContainsFMLMod': 'true'
     }
     //classifier = 'universal'
     // Specify which files are really included, can control which APIs should be included.
-    include "fluxgear/**"
+    /*include "fluxgear/**"
     include "assets/**"
     include "mcmod.info"
-    include "pack.mcmeta"
-}*/
+    include "pack.mcmeta"*/
+}
 
 // Setup the forge minecraft plugin data.
 minecraft {

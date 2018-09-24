@@ -8,10 +8,11 @@ task deobfJar(type: Jar) {
     classifier = 'deobf'
 
 	// Coremod Stuff
-	/*manifest {
-        attributes 'FMLCorePlugin': 'tconstruct.preloader.TConstructLoaderContainer'
-        attributes 'FMLCorePluginContainsFMLMod': 'true'
-    }*/
+	manifest {
+		attributes 'FMLAT': 'FluxGear_at.cfg'
+        //attributes 'FMLCorePlugin': 'tconstruct.preloader.TConstructLoaderContainer'
+        //attributes 'FMLCorePluginContainsFMLMod': 'true'
+    }
 }
 
 // Add in a source jar for people, should they desire to download such a thing

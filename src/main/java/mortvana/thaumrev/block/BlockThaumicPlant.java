@@ -43,17 +43,17 @@ public class BlockThaumicPlant extends FluxGearBlockPlant {
 			case 0:
 				list.add(ItemHelper.cloneStack(itemExcubituraPetal, 1 + ((int) (0.5F + (((float) MathHelper.random(2 + fortune)) / 2.0F)))));
 				if (((int) ((((float) (MathHelper.random(8 - fortune))) / 2.0F))) == 0) {
-					list.add(seedExcubitura);
+					list.add(seedExcubitura.copy());
 				}
                 break;
 			case 1:
-				list.add(ItemHelper.cloneStack(itemCotton, 2 + MathHelper.random(1 + fortune)));
-				list.add(ItemHelper.cloneStack(seedCotton, 1 + ((int) (((float) MathHelper.random(2 + fortune)) / 2.0F))));
+				list.add(ItemHelper.cloneStack(itemCotton, 2 + MathHelper.random(2 + fortune)));
+				list.add(ItemHelper.cloneStack(seedCotton, 1 + ((int) (0.5F + (((float) MathHelper.random(2 + fortune)) / 2.0F)))));
                 break;
 			case 2:
-				list.add(itemThistleFlower);
-				list.add(ItemHelper.cloneStack(itemThistleLeaf, 2 + MathHelper.random(1 + fortune)));
-				list.add(ItemHelper.cloneStack(seedThistle, 1 + ((int) (((float) MathHelper.random(2 + fortune)) / 2.0F))));
+				list.add(ItemHelper.cloneStack(itemThistleFlower, 1 + ((int) (0.5F + (((float) MathHelper.random(3 + fortune)) / 2.0F)))));
+				list.add(ItemHelper.cloneStack(itemThistleLeaf, 2 + MathHelper.random(2 + fortune)));
+				list.add(ItemHelper.cloneStack(seedThistle, 1 + ((int) (0.5F + (((float) MathHelper.random(2 + fortune)) / 2.0F)))));
                 break;
 			default:
 				list.add(new ItemStack(blockThaumicPlant, 1, meta));

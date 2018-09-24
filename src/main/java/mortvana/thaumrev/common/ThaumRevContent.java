@@ -2246,7 +2246,7 @@ public class ThaumRevContent {
 		recipeTreatedCotton = addArcaneCraftingRecipe(keyCotton, itemCottonTreated, ThaumcraftHelper.newPrimalAspectList(2), " S ", "FCF", " F ", 'S', salisPinch, 'F', M0001, 'C', M0002);
 		recipeEnchantedCotton = addCrucibleRecipe(keyCotton, itemCottonEnchanted, M0003, new AspectList().add(CLOTH, 2).add(MAGIC, 1));
 
-		recipeEnchCottonGoggles = addArcaneCraftingRecipe(keyCottonRobes, new ItemStack(enchCottonRobe), ThaumcraftHelper.newPrimalAspectList(5, 10, 5, 6, 4, 4), "CMC", "C C", "TMT", 'C', M0004, 'M', INGOT + MTHR, 'T', stackThaumometer);
+		recipeEnchCottonGoggles = addArcaneCraftingRecipe(keyCottonRobes, new ItemStack(enchCottonGoggles), ThaumcraftHelper.newPrimalAspectList(5, 10, 5, 6, 4, 4), "CMC", "C C", "TMT", 'C', M0004, 'M', INGOT + MTHR, 'T', stackThaumometer);
 		recipeEnchCottonRobes = addArcaneCraftingRecipe(keyCottonRobes, new ItemStack(enchCottonRobe), new AspectList().add(AIR, 5).add(ORDER, 2).add(ENTROPY, 2), "C C", "CCC", "CCC", 'C', M0004);
 		recipeEnchCottonPants = addArcaneCraftingRecipe(keyCottonRobes, new ItemStack(enchCottonPants), new AspectList().add(WATER, 5).add(ORDER, 2).add(ENTROPY, 2), "CCC", "C C", "C C", 'C', M0004);
 		recipeEnchCottonBoots = addArcaneCraftingRecipe(keyCottonRobes, new ItemStack(enchCottonBoots), new AspectList().add(EARTH, 4).add(ORDER, 2).add(ENTROPY, 2), "C C", "C C", 'C', M0004);

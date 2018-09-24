@@ -32,7 +32,7 @@ public class ThaumRevLibrary {
 	/** MOD CONSTANTS **/
 	public static final String MOD_ID = "ThaumicRevelations";
 	public static final String MOD_NAME = "Thaumic Revelations";
-	public static final String MOD_VERSION = "v0.0.1-PREALPHA-9-23a";
+	public static final String MOD_VERSION = "v0.0.1-PREALPHA-9-23b";
 	public static final String MOD_DEPENDENCIES = "required-after:Thaumcraft; after:MagicBees[2.4.1); after:ThermalFoundation";
 	public static final String API_NAME = "ThaumicRevelationsAPI";
 

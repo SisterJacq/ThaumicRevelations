@@ -220,6 +220,8 @@ Done:
 [05]	Recipes (Block):
 [06]	Recipes (Other Items):
 [05-01]		All TE4 Ore Processing with respect for type <2[R/G]<5[YPO,WFE,IROS,CUAS,CUSB]<4[IS]>+3[YPO,CUAS,CUSB]<1[HP]>+2[ZN,BI]<2[SND,HG]>>+12[PO]<1[HP]+1[PLV]+4[IS]>> (126)
+//Make Tenantite try TF Silver, Bismuthinite & Spalerite TF Lead, Wolframite & Iridosmium TF Iron
+//Fix Induction smelting to UNSMELTED Composites
 
 [10]	Textures (Block):
 [10-01]		Fluonic Pyroptase Block <blocks/storage/blockFluonicPyroptase.png>
@@ -530,3 +532,28 @@ Induction Ore Getting (1)
 
 Maybe:
 Setup Ore Colorizer - Requires lots of silly stuff, best use static textures
+
+Classes to Reimplement:
+v0.0.1
+* ../item/ItemWardenArmor (Replace with T5 armor)
+v0.0.2
+* ../item/ItemWardenWeapon (Replace with T5 sword)
+* ../util/DamageSourceWarden (Not sure how/if I'll redo damage)
+v0.0.6
+* ../block/BlockWitor (Reimplement in BlockFakeAir)
+* ../block/tile/TileWitor (Reimplement as non-TE rendering in BlockFakeAir)
+* ../client/ModelFleshGolem (Reimplement alongside Flesh Golems [WIP])
+* ../client/gui/GuiHandler (Reimplement when first TE or Wesly's Hammer is added)
+* ../client/gui/GuiWaslieHammer (Reimplement alongside Wesly's Hammer)
+* ../client/render/RenderFleshGolem (Reimplement alongside Flesh Golems [WIP])
+* ../entity/EntityFleshProjectile (Reimplement alongside Flesh Golems [WIP])
+* ../entity/FleshGolem (Reimplement alongside Flesh Golems [WIP] as EntityFleshGolem)
+* ../inventory/ContainerHammer (Reimplement alongside Wesly's Hammer)
+* ../item/ItemFocusIllumination (Reimplement with Witor)
+* ../item/ItemWaslieHammer (Reimplement after Tier 5 Wardenic)
+* ../research/ModResearch (Reimplement some parts alongside Wesly's Hammer)
+v0.1.0
+* ../util/wardenic/WardenicChargeEvents (Reimplement as AspectInfusionHandler and modify for new system)
+* ../util/wardenic/WardenicChargeHelper (Move contents into AspectInfusionHelper and modify for new system)
+* ../util/wardenic/WardenicUpgrades (Move to ThaumRevLibrary and ThaumRevContent)
+* ../util/wardenic/upgrade/* (Reimplement along Aspect Infusion)

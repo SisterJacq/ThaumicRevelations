@@ -115,6 +115,12 @@ public class ThaumRevContent {
 		setPages();
 	}
 
+	public static void loadComplete() {
+		loadGeneralAspects();
+		loadMetalAspects();
+		loadEquipmentAspects();
+	}
+
 	public static void createBlocks() {
 		blockThaumicPlant = new BlockThaumicPlant();
 		blockOre = new BlockOre();
@@ -1258,8 +1264,8 @@ public class ThaumRevContent {
 		addSmelting(dustCopper, ingotCopper);
 		addSmelting(plateCopper, ingotCopper);
 		addArcaneCraftingRecipe(keyAlumentum, plateCopper, monorder, "A", "I", 'I', INGOT + CU, 'A', ALMNT);
-		addGrindingRecipes(ingotCopper, dustCopper);
-		addGrindingRecipes(plateCopper, dustCopper);
+		addGrindingRecipes(ingotCopper, dustCopper, false);
+		addGrindingRecipes(plateCopper, dustCopper, true);
 
 		addStorageRecipe(blockZinc, INGOT + ZN);
 		addStorageRecipe(ingotZinc, NUGGET + ZN);
@@ -1270,8 +1276,8 @@ public class ThaumRevContent {
 		addSmelting(dustZinc, ingotZinc);
 		addSmelting(plateZinc, ingotZinc);
 		addArcaneCraftingRecipe(keyAlumentum, plateZinc, monorder, "A", "I", 'I', INGOT + ZN, 'A', ALMNT);
-		addGrindingRecipes(ingotZinc, dustZinc);
-		addGrindingRecipes(plateZinc, dustZinc);
+		addGrindingRecipes(ingotZinc, dustZinc, false);
+		addGrindingRecipes(plateZinc, dustZinc, true);
 
 		addStorageRecipe(blockTin, INGOT + SN);
 		addStorageRecipe(ingotTin, NUGGET + SN);
@@ -1282,8 +1288,8 @@ public class ThaumRevContent {
 		addSmelting(dustTin, ingotTin);
 		addSmelting(plateTin, ingotTin);
 		addArcaneCraftingRecipe(keyAlumentum, plateTin, monorder, "A", "I", 'I', INGOT + SN, 'A', ALMNT);
-		addGrindingRecipes(ingotTin, dustTin);
-		addGrindingRecipes(plateTin, dustTin);
+		addGrindingRecipes(ingotTin, dustTin, false);
+		addGrindingRecipes(plateTin, dustTin, true);
 
 		addStorageRecipe(blockNickel, INGOT + NI);
 		addStorageRecipe(ingotNickel, NUGGET + NI);
@@ -1294,8 +1300,8 @@ public class ThaumRevContent {
 		addSmelting(dustNickel, ingotNickel);
 		addSmelting(plateNickel, ingotNickel);
 		addArcaneCraftingRecipe(keyAlumentum, plateNickel, monorder, "A", "I", 'I', INGOT + NI, 'A', ALMNT);
-		addGrindingRecipes(ingotNickel, dustNickel);
-		addGrindingRecipes(plateNickel, dustNickel);
+		addGrindingRecipes(ingotNickel, dustNickel, false);
+		addGrindingRecipes(plateNickel, dustNickel, true);
 
 		addStorageRecipe(blockSilver, INGOT + AG);
 		addStorageRecipe(ingotSilver, NUGGET + AG);
@@ -1306,8 +1312,8 @@ public class ThaumRevContent {
 		addSmelting(dustSilver, ingotSilver);
 		addSmelting(plateSilver, ingotSilver);
 		addArcaneCraftingRecipe(keyAlumentum, plateSilver, monorder, "A", "I", 'I', INGOT + AG, 'A', ALMNT);
-		addGrindingRecipes(ingotSilver, dustSilver);
-		addGrindingRecipes(plateSilver, dustSilver);
+		addGrindingRecipes(ingotSilver, dustSilver, false);
+		addGrindingRecipes(plateSilver, dustSilver, true);
 
 		addStorageRecipe(blockLead, INGOT + PB);
 		addStorageRecipe(ingotLead, NUGGET + PB);
@@ -1318,8 +1324,8 @@ public class ThaumRevContent {
 		addSmelting(dustLead, ingotLead);
 		addSmelting(plateLead, ingotLead);
 		addArcaneCraftingRecipe(keyAlumentum, plateLead, monorder, "A", "I", 'I', INGOT + PB, 'A', ALMNT);
-		addGrindingRecipes(ingotLead, dustLead);
-		addGrindingRecipes(plateLead, dustLead);
+		addGrindingRecipes(ingotLead, dustLead, false);
+		addGrindingRecipes(plateLead, dustLead, true);
 
 		addStorageRecipe(blockLutetium, INGOT + LU);
 		addStorageRecipe(ingotLutetium, NUGGET + LU);
@@ -1330,8 +1336,8 @@ public class ThaumRevContent {
 		addSmelting(dustLutetium, ingotLutetium);
 		addSmelting(plateLutetium, ingotLutetium);
 		addArcaneCraftingRecipe(keyAlumentum, plateLutetium, monorder, "A", "I", 'I', INGOT + LU, 'A', ALMNT);
-		addGrindingRecipes(ingotLutetium, dustLutetium);
-		addGrindingRecipes(plateLutetium, dustLutetium);
+		addGrindingRecipes(ingotLutetium, dustLutetium, false);
+		addGrindingRecipes(plateLutetium, dustLutetium, true);
 
 		addStorageRecipe(blockTungsten, INGOT + W);
 		addStorageRecipe(ingotTungsten, NUGGET + W);
@@ -1341,8 +1347,8 @@ public class ThaumRevContent {
 		addReverseStorageRecipe(tinyTungsten, DUST + W);
 		//Too high melting point for regular furnace
 		addArcaneCraftingRecipe(keyAlumentum, plateTungsten, monorder, "A", "I", "A", 'I', INGOT + W, 'A', ALMNT);
-		addGrindingRecipes(ingotTungsten, dustTungsten);
-		addGrindingRecipes(plateTungsten, dustTungsten);
+		addGrindingRecipes(ingotTungsten, dustTungsten, false);
+		addGrindingRecipes(plateTungsten, dustTungsten, true);
 
 		addStorageRecipe(blockIridium, INGOT + IR);
 		addStorageRecipe(ingotIridium, NUGGET + IR);
@@ -1352,8 +1358,8 @@ public class ThaumRevContent {
 		addReverseStorageRecipe(tinyIridium, DUST + IR);
 		//Too high melting point for regular furnace
 		addArcaneCraftingRecipe(keyAlumentum, plateIridium, monorder, "A", "I", "A", 'I', INGOT + IR, 'A', ALMNT);
-		addGrindingRecipes(ingotIridium, dustIridium);
-		addGrindingRecipes(plateIridium, dustIridium);
+		addGrindingRecipes(ingotIridium, dustIridium, false);
+		addGrindingRecipes(plateIridium, dustIridium, true);
 
 		addStorageRecipe(blockBismuth, INGOT + BI);
 		addStorageRecipe(ingotBismuth, NUGGET + BI);
@@ -1364,8 +1370,8 @@ public class ThaumRevContent {
 		addSmelting(dustBismuth, ingotBismuth);
 		addSmelting(plateBismuth, ingotBismuth);
 		addArcaneCraftingRecipe(keyAlumentum, plateBismuth, monorder, "A", "I", 'I', INGOT + BI, 'A', ALMNT);
-		addGrindingRecipes(ingotBismuth, dustBismuth);
-		addGrindingRecipes(plateBismuth, dustBismuth);
+		addGrindingRecipes(ingotBismuth, dustBismuth, false);
+		addGrindingRecipes(plateBismuth, dustBismuth, true);
 
 		addStorageRecipe(blockArsenic, INGOT + AS);
 		addStorageRecipe(ingotArsenic, NUGGET + AS);
@@ -1376,8 +1382,8 @@ public class ThaumRevContent {
 		addSmelting(dustArsenic, ingotArsenic);
 		addSmelting(plateArsenic, ingotArsenic);
 		addArcaneCraftingRecipe(keyAlumentum, plateArsenic, monorder, "A", "I", 'I', INGOT + AS, 'A', ALMNT);
-		addGrindingRecipes(ingotArsenic, dustArsenic);
-		addGrindingRecipes(plateArsenic, dustArsenic);
+		addGrindingRecipes(ingotArsenic, dustArsenic, false);
+		addGrindingRecipes(plateArsenic, dustArsenic, true);
 
 		addStorageRecipe(blockAntimony, INGOT + SB);
 		addStorageRecipe(ingotAntimony, NUGGET + SB);
@@ -1388,8 +1394,8 @@ public class ThaumRevContent {
 		addSmelting(dustAntimony, ingotAntimony);
 		addSmelting(plateAntimony, ingotAntimony);
 		addArcaneCraftingRecipe(keyAlumentum, plateAntimony, monorder, "A", "I", 'I', INGOT + SB, 'A', ALMNT);
-		addGrindingRecipes(ingotAntimony, dustAntimony);
-		addGrindingRecipes(plateAntimony, dustAntimony);
+		addGrindingRecipes(ingotAntimony, dustAntimony, false);
+		addGrindingRecipes(plateAntimony, dustAntimony, true);
 
 		addStorageRecipe(blockNeodymium, INGOT + ND);
 		addStorageRecipe(ingotNeodymium, NUGGET + ND);
@@ -1400,8 +1406,8 @@ public class ThaumRevContent {
 		addSmelting(dustNeodymium, ingotNeodymium);
 		addSmelting(plateNeodymium, ingotNeodymium);
 		addArcaneCraftingRecipe(keyAlumentum, plateNeodymium, monorder, "A", "I", 'I', INGOT + ND, 'A', ALMNT);
-		addGrindingRecipes(ingotNeodymium, dustNeodymium);
-		addGrindingRecipes(plateNeodymium, dustNeodymium);
+		addGrindingRecipes(ingotNeodymium, dustNeodymium, false);
+		addGrindingRecipes(plateNeodymium, dustNeodymium, true);
 
 		addStorageRecipe(blockOsmium, INGOT + OS);
 		addStorageRecipe(ingotOsmium, NUGGET + OS);
@@ -1411,8 +1417,8 @@ public class ThaumRevContent {
 		addReverseStorageRecipe(tinyOsmium, DUST + OS);
 		//Too high melting point for regular furnace
 		addArcaneCraftingRecipe(keyAlumentum, plateOsmium, monorder, " A ", " I ", "A A", 'I', INGOT + OS, 'A', ALMNT);
-		addGrindingRecipes(ingotOsmium, dustOsmium);
-		addGrindingRecipes(plateOsmium, dustOsmium);
+		addGrindingRecipes(ingotOsmium, dustOsmium, false);
+		addGrindingRecipes(plateOsmium, dustOsmium, true);
 
 		addStorageRecipe(blockPalladium, INGOT + PD);
 		addStorageRecipe(ingotPalladium, NUGGET + PD);
@@ -1423,8 +1429,8 @@ public class ThaumRevContent {
 		addSmelting(dustPalladium, ingotPalladium);
 		addSmelting(platePalladium, ingotPalladium);
 		addArcaneCraftingRecipe(keyAlumentum, platePalladium, monorder, "A", "I", 'I', INGOT + PD, 'A', ALMNT);
-		addGrindingRecipes(ingotPalladium, dustPalladium);
-		addGrindingRecipes(platePalladium, dustPalladium);
+		addGrindingRecipes(ingotPalladium, dustPalladium, false);
+		addGrindingRecipes(platePalladium, dustPalladium, true);
 
 		addStorageRecipe(blockAluminium, INGOT + AL);
 		addStorageRecipe(ingotAluminium, NUGGET + AL);
@@ -1435,8 +1441,8 @@ public class ThaumRevContent {
 		addSmelting(dustAluminium, ingotAluminium);
 		addSmelting(plateAluminium, ingotAluminium);
 		addArcaneCraftingRecipe(keyAlumentum, plateAluminium, monorder, "A", "I", 'I', INGOT + AL, 'A', ALMNT);
-		addGrindingRecipes(ingotAluminium, dustAluminium);
-		addGrindingRecipes(plateAluminium, dustAluminium);
+		addGrindingRecipes(ingotAluminium, dustAluminium, false);
+		addGrindingRecipes(plateAluminium, dustAluminium, true);
 	}
 
 	public static void loadSimpleAlloyMetalRecipes() {
@@ -1449,8 +1455,8 @@ public class ThaumRevContent {
 		addSmelting(dustBrass, ingotBrass);
 		addSmelting(plateBrass, ingotBrass);
 		addArcaneCraftingRecipe(keyAlumentum, plateBrass, monorder, "A", "I", 'I', INGOT + CUZN, 'A', ALMNT);
-		addGrindingRecipes(ingotBrass, dustBrass);
-		addGrindingRecipes(plateBrass, dustBrass);
+		addGrindingRecipes(ingotBrass, dustBrass, false);
+		addGrindingRecipes(plateBrass, dustBrass, true);
 
 		addStorageRecipe(blockBronze, INGOT + CUSN);
 		addStorageRecipe(ingotBronze, NUGGET + CUSN);
@@ -1461,8 +1467,8 @@ public class ThaumRevContent {
 		addSmelting(dustBronze, ingotBronze);
 		addSmelting(plateBronze, ingotBronze);
 		addArcaneCraftingRecipe(keyAlumentum, plateBronze, monorder, "A", "I", 'I', INGOT + CUSN, 'A', ALMNT);
-		addGrindingRecipes(ingotBronze, dustBronze);
-		addGrindingRecipes(plateBronze, dustBronze);
+		addGrindingRecipes(ingotBronze, dustBronze, false);
+		addGrindingRecipes(plateBronze, dustBronze, true);
 
 		addStorageRecipe(blockArsenicalBronze, INGOT + CUAS);
 		addStorageRecipe(ingotArsenicalBronze, NUGGET + CUAS);
@@ -1473,8 +1479,8 @@ public class ThaumRevContent {
 		addSmelting(dustArsenicalBronze, ingotArsenicalBronze);
 		addSmelting(plateArsenicalBronze, ingotArsenicalBronze);
 		addArcaneCraftingRecipe(keyAlumentum, plateArsenicalBronze, monorder, "A", "I", 'I', INGOT + CUAS, 'A', ALMNT);
-		addGrindingRecipes(ingotArsenicalBronze, dustArsenicalBronze);
-		addGrindingRecipes(plateArsenicalBronze, dustArsenicalBronze);
+		addGrindingRecipes(ingotArsenicalBronze, dustArsenicalBronze, false);
+		addGrindingRecipes(plateArsenicalBronze, dustArsenicalBronze, true);
 
 		addStorageRecipe(blockAntimonialBronze, INGOT + CUSB);
 		addStorageRecipe(ingotAntimonialBronze, NUGGET + CUSB);
@@ -1485,8 +1491,8 @@ public class ThaumRevContent {
 		addSmelting(dustAntimonialBronze, ingotAntimonialBronze);
 		addSmelting(plateAntimonialBronze, ingotAntimonialBronze);
 		addArcaneCraftingRecipe(keyAlumentum, plateAntimonialBronze, monorder, "A", "I", 'I', INGOT + CUSB, 'A', ALMNT);
-		addGrindingRecipes(ingotAntimonialBronze, dustAntimonialBronze);
-		addGrindingRecipes(plateAntimonialBronze, dustAntimonialBronze);
+		addGrindingRecipes(ingotAntimonialBronze, dustAntimonialBronze, false);
+		addGrindingRecipes(plateAntimonialBronze, dustAntimonialBronze, true);
 
 		addStorageRecipe(blockBismuthBronze, INGOT + CUBI);
 		addStorageRecipe(ingotBismuthBronze, NUGGET + CUBI);
@@ -1497,8 +1503,8 @@ public class ThaumRevContent {
 		addSmelting(dustBismuthBronze, ingotBismuthBronze);
 		addSmelting(plateBismuthBronze, ingotBismuthBronze);
 		addArcaneCraftingRecipe(keyAlumentum, plateBismuthBronze, monorder, "A", "I", 'I', INGOT + CUBI, 'A', ALMNT);
-		addGrindingRecipes(ingotBismuthBronze, dustBismuthBronze);
-		addGrindingRecipes(plateBismuthBronze, dustBismuthBronze);
+		addGrindingRecipes(ingotBismuthBronze, dustBismuthBronze, false);
+		addGrindingRecipes(plateBismuthBronze, dustBismuthBronze, true);
 
 		addStorageRecipe(blockMithril, INGOT + MTHR);
 		addStorageRecipe(ingotMithril, NUGGET + MTHR);
@@ -1509,8 +1515,8 @@ public class ThaumRevContent {
 		addSmelting(dustMithril, ingotMithril);
 		addSmelting(plateMithril, ingotMithril);
 		addArcaneCraftingRecipe(keyAlumentum, plateMithril, monorder, "A", "I", 'I', INGOT + MTHR, 'A', ALMNT);
-		addGrindingRecipes(ingotMithril, dustMithril);
-		addGrindingRecipes(plateMithril, dustMithril);
+		addGrindingRecipes(ingotMithril, dustMithril, false);
+		addGrindingRecipes(plateMithril, dustMithril, true);
 
 		addStorageRecipe(blockAlumiuiumBronze, INGOT + CUAL);
 		addStorageRecipe(ingotAluminiumBronze, NUGGET + CUAL);
@@ -1521,8 +1527,8 @@ public class ThaumRevContent {
 		addSmelting(dustAluminiumBronze, ingotAluminiumBronze);
 		addSmelting(plateAluminiumBronze, ingotAluminiumBronze);
 		addArcaneCraftingRecipe(keyAlumentum, plateAluminiumBronze, monorder, "A", "I", 'I', INGOT + CUAL, 'A', ALMNT);
-		addGrindingRecipes(ingotAluminiumBronze, dustAluminiumBronze);
-		addGrindingRecipes(plateAluminiumBronze, dustAluminiumBronze);
+		addGrindingRecipes(ingotAluminiumBronze, dustAluminiumBronze, false);
+		addGrindingRecipes(plateAluminiumBronze, dustAluminiumBronze, true);
 
 		addStorageRecipe(blockCupronickel, INGOT + CUNI);
 		addStorageRecipe(ingotCupronickel, NUGGET + CUNI);
@@ -1533,8 +1539,8 @@ public class ThaumRevContent {
 		addSmelting(dustCupronickel, ingotCupronickel);
 		addSmelting(plateCupronickel, ingotCupronickel);
 		addArcaneCraftingRecipe(keyAlumentum, plateCupronickel, monorder, "A", "I", 'I', INGOT + CUNI, 'A', ALMNT);
-		addGrindingRecipes(ingotCupronickel, dustCupronickel);
-		addGrindingRecipes(plateCupronickel, dustCupronickel);
+		addGrindingRecipes(ingotCupronickel, dustCupronickel, false);
+		addGrindingRecipes(plateCupronickel, dustCupronickel, true);
 
 		addStorageRecipe(blockRiftishBronze, INGOT + RBRZ);
 		addStorageRecipe(ingotRiftishBronze, NUGGET + RBRZ);
@@ -1545,8 +1551,8 @@ public class ThaumRevContent {
 		addSmelting(dustRiftishBronze, ingotRiftishBronze);
 		addSmelting(plateRiftishBronze, ingotRiftishBronze);
 		addArcaneCraftingRecipe(keyAlumentum, plateRiftishBronze, monorder, "A", "I", 'I', INGOT + RBRZ, 'A', ALMNT);
-		addGrindingRecipes(ingotRiftishBronze, dustRiftishBronze);
-		addGrindingRecipes(plateRiftishBronze, dustRiftishBronze);
+		addGrindingRecipes(ingotRiftishBronze, dustRiftishBronze, false);
+		addGrindingRecipes(plateRiftishBronze, dustRiftishBronze, true);
 
 		addStorageRecipe(blockConstantan, INGOT + CNST);
 		addStorageRecipe(ingotConstantan, NUGGET + CNST);
@@ -1557,8 +1563,8 @@ public class ThaumRevContent {
 		addSmelting(dustConstantan, ingotConstantan);
 		addSmelting(plateConstantan, ingotConstantan);
 		addArcaneCraftingRecipe(keyAlumentum, plateConstantan, monorder, "A", "I", 'I', INGOT + CNST, 'A', ALMNT);
-		addGrindingRecipes(ingotConstantan, dustConstantan);
-		addGrindingRecipes(plateConstantan, dustConstantan);
+		addGrindingRecipes(ingotConstantan, dustConstantan, false);
+		addGrindingRecipes(plateConstantan, dustConstantan, true);
 
 		addStorageRecipe(blockInvar, INGOT + FENI);
 		addStorageRecipe(ingotInvar, NUGGET + FENI);
@@ -1569,8 +1575,8 @@ public class ThaumRevContent {
 		addSmelting(dustInvar, ingotInvar);
 		addSmelting(plateInvar, ingotInvar);
 		addArcaneCraftingRecipe(keyAlumentum, plateInvar, monorder, "A", "I", 'I', INGOT + FENI, 'A', ALMNT);
-		addGrindingRecipes(ingotInvar, dustInvar);
-		addGrindingRecipes(plateInvar, dustInvar);
+		addGrindingRecipes(ingotInvar, dustInvar, false);
+		addGrindingRecipes(plateInvar, dustInvar, true);
 
 		addStorageRecipe(blockElectrum, INGOT + AUAG);
 		addStorageRecipe(ingotElectrum, NUGGET + AUAG);
@@ -1581,8 +1587,8 @@ public class ThaumRevContent {
 		addSmelting(dustElectrum, ingotElectrum);
 		addSmelting(plateElectrum, ingotElectrum);
 		addArcaneCraftingRecipe(keyAlumentum, plateElectrum, monorder, "A", "I", 'I', INGOT + AUAG, 'A', ALMNT);
-		addGrindingRecipes(ingotElectrum, dustElectrum);
-		addGrindingRecipes(plateElectrum, dustElectrum);
+		addGrindingRecipes(ingotElectrum, dustElectrum, false);
+		addGrindingRecipes(plateElectrum, dustElectrum, true);
 
 		addStorageRecipe(blockWardenicMetal, INGOT + WRDM);
 		addStorageRecipe(ingotWardenicMetal, NUGGET + WRDM);
@@ -1593,8 +1599,8 @@ public class ThaumRevContent {
 		addSmelting(dustWardenicMetal, ingotWardenicMetal);
 		addSmelting(plateWardenicMetal, ingotWardenicMetal);
 		addArcaneCraftingRecipe(keyAlumentum, plateWardenicMetal, monorder, "A", "I", 'I', INGOT + WRDM, 'A', ALMNT);
-		addGrindingRecipes(ingotWardenicMetal, dustWardenicMetal);
-		addGrindingRecipes(plateWardenicMetal, dustWardenicMetal);
+		addGrindingRecipes(ingotWardenicMetal, dustWardenicMetal, false);
+		addGrindingRecipes(plateWardenicMetal, dustWardenicMetal, true);
 
 		addStorageRecipe(blockDullRedsolder, INGOT + DRDS);
 		addStorageRecipe(ingotDullRedsolder, NUGGET + DRDS);
@@ -1605,8 +1611,8 @@ public class ThaumRevContent {
 		addSmelting(dustDullRedsolder, ingotDullRedsolder);
 		addSmelting(plateDullRedsolder, ingotDullRedsolder);
 		addArcaneCraftingRecipe(keyAlumentum, plateDullRedsolder, monorder, "A", "I", 'I', INGOT + DRDS, 'A', ALMNT);
-		addGrindingRecipes(ingotDullRedsolder, dustDullRedsolder);
-		addGrindingRecipes(plateDullRedsolder, dustDullRedsolder);
+		addGrindingRecipes(ingotDullRedsolder, dustDullRedsolder, false);
+		addGrindingRecipes(plateDullRedsolder, dustDullRedsolder, true);
 
 		addStorageRecipe(blockRedsolder, INGOT + RDSR);
 		addStorageRecipe(ingotRedsolder, NUGGET + RDSR);
@@ -1617,8 +1623,8 @@ public class ThaumRevContent {
 		addSmelting(dustRedsolder, ingotRedsolder);
 		addSmelting(plateRedsolder, ingotRedsolder);
 		addArcaneCraftingRecipe(keyAlumentum, plateRedsolder, monorder, "A", "I", 'I', INGOT + RDSR, 'A', ALMNT);
-		addGrindingRecipes(ingotRedsolder, dustRedsolder);
-		addGrindingRecipes(plateRedsolder, dustRedsolder);
+		addGrindingRecipes(ingotRedsolder, dustRedsolder, false);
+		addGrindingRecipes(plateRedsolder, dustRedsolder, true);
 	}
 
 	public static void loadSpecialAlloyMetalRecipes() {
@@ -1631,8 +1637,8 @@ public class ThaumRevContent {
 		addSmelting(dustThaumicElectrum, ingotThaumicElectrum);
 		addSmelting(plateThaumicElectrum, ingotThaumicElectrum);
 		addArcaneCraftingRecipe(keyAlumentum, plateThaumicElectrum, monorder, "A", "I", 'I', INGOT + TELC, 'A', ALMNT);
-		addGrindingRecipes(ingotThaumicElectrum, dustThaumicElectrum);
-		addGrindingRecipes(plateThaumicElectrum, dustThaumicElectrum);
+		addGrindingRecipes(ingotThaumicElectrum, dustThaumicElectrum, false);
+		addGrindingRecipes(plateThaumicElectrum, dustThaumicElectrum, true);
 
 		addStorageRecipe(blockThaumicRiftishBronze, INGOT + TRBR);
 		addStorageRecipe(ingotThaumicRiftishBronze, NUGGET + TRBR);
@@ -1643,8 +1649,8 @@ public class ThaumRevContent {
 		addSmelting(dustThaumicRiftishBronze, ingotThaumicRiftishBronze);
 		addSmelting(plateThaumicRiftishBronze, ingotThaumicRiftishBronze);
 		addArcaneCraftingRecipe(keyAlumentum, plateThaumicRiftishBronze, monorder, "A", "I", "A", 'I', INGOT + TRBR, 'A', ALMNT);
-		addGrindingRecipes(ingotThaumicRiftishBronze, dustThaumicRiftishBronze);
-		addGrindingRecipes(plateThaumicRiftishBronze, dustThaumicRiftishBronze);
+		addGrindingRecipes(ingotThaumicRiftishBronze, dustThaumicRiftishBronze, false);
+		addGrindingRecipes(plateThaumicRiftishBronze, dustThaumicRiftishBronze, true);
 
 		addStorageRecipe(blockSteel, INGOT + STEL);
 		addStorageRecipe(ingotSteel, NUGGET + STEL);
@@ -1655,8 +1661,8 @@ public class ThaumRevContent {
 		addSmelting(dustSteel, ingotSteel);
 		addSmelting(plateSteel, ingotSteel);
 		addArcaneCraftingRecipe(keyAlumentum, plateSteel, monorder, "A", "I", "A", 'I', INGOT + STEL, 'A', ALMNT);
-		addGrindingRecipes(ingotSteel, dustSteel);
-		addGrindingRecipes(plateSteel, dustSteel);
+		addGrindingRecipes(ingotSteel, dustSteel, false);
+		addGrindingRecipes(plateSteel, dustSteel, true);
 
 		addStorageRecipe(blockThaumicSteel, INGOT + TSTL);
 		addStorageRecipe(ingotThaumicSteel, NUGGET + TSTL);
@@ -1667,8 +1673,8 @@ public class ThaumRevContent {
 		addSmelting(dustThaumicSteel, ingotThaumicSteel);
 		addSmelting(plateThaumicSteel, ingotThaumicSteel);
 		addArcaneCraftingRecipe(keyAlumentum, plateThaumicSteel, monorder, "A", "I", "A", 'I', INGOT + TSTL, 'A', ALMNT);
-		addGrindingRecipes(ingotThaumicSteel, dustThaumicSteel);
-		addGrindingRecipes(plateThaumicSteel, dustThaumicSteel);
+		addGrindingRecipes(ingotThaumicSteel, dustThaumicSteel, false);
+		addGrindingRecipes(plateThaumicSteel, dustThaumicSteel, true);
 
 		addStorageRecipe(blockVoidbrass, INGOT + VBRS);
 		addStorageRecipe(ingotVoidbrass, NUGGET + VBRS);
@@ -1679,8 +1685,8 @@ public class ThaumRevContent {
 		addSmelting(dustVoidbrass, ingotVoidbrass);
 		addSmelting(plateVoidbrass, ingotVoidbrass);
 		addArcaneCraftingRecipe(keyAlumentum, plateVoidbrass, monorder, "A", "I", "A", 'I', INGOT + VBRS, 'A', ALMNT);
-		addGrindingRecipes(ingotVoidbrass, dustVoidbrass);
-		addGrindingRecipes(plateVoidbrass, dustVoidbrass);
+		addGrindingRecipes(ingotVoidbrass, dustVoidbrass, false);
+		addGrindingRecipes(plateVoidbrass, dustVoidbrass, true);
 
 		addStorageRecipe(blockVoidsteel, INGOT + VSTL);
 		addStorageRecipe(ingotVoidsteel, NUGGET + VSTL);
@@ -1691,8 +1697,8 @@ public class ThaumRevContent {
 		addSmelting(dustVoidsteel, ingotVoidsteel);
 		addSmelting(plateVoidsteel, ingotVoidsteel);
 		addArcaneCraftingRecipe(keyAlumentum, plateVoidsteel, monorder, " A ", " I ", "A A", 'I', INGOT + VSTL, 'A', ALMNT);
-		addGrindingRecipes(ingotVoidsteel, dustVoidsteel);
-		addGrindingRecipes(plateVoidsteel, dustVoidsteel);
+		addGrindingRecipes(ingotVoidsteel, dustVoidsteel, false);
+		addGrindingRecipes(plateVoidsteel, dustVoidsteel, true);
 
 		addStorageRecipe(blockVoidtungsten, INGOT + VDWT);
 		addStorageRecipe(ingotVoidtungsten, NUGGET + VDWT);
@@ -1702,8 +1708,8 @@ public class ThaumRevContent {
 		addReverseStorageRecipe(tinyVoidtungsten, DUST + VDWT);
 		//Too high melting point for regular furnace
 		addArcaneCraftingRecipe(keyAlumentum, plateVoidtungsten, monorder, "AAA", "AIA", "AAA", 'I', INGOT + VDWT, 'A', ALMNT);
-		addGrindingRecipes(ingotVoidtungsten, dustVoidtungsten);
-		addGrindingRecipes(plateVoidtungsten, dustVoidtungsten);
+		addGrindingRecipes(ingotVoidtungsten, dustVoidtungsten, false);
+		addGrindingRecipes(plateVoidtungsten, dustVoidtungsten, true);
 
 		addStorageRecipe(blockVoidcupronickel, INGOT + VCPN);
 		addStorageRecipe(ingotVoidcupronickel, NUGGET + VCPN);
@@ -1714,8 +1720,8 @@ public class ThaumRevContent {
 		addSmelting(dustVoidcupronickel, ingotVoidcupronickel);
 		addSmelting(plateVoidcupronickel, ingotVoidcupronickel);
 		addArcaneCraftingRecipe(keyAlumentum, plateVoidcupronickel, monorder, "A", "I", 'I', INGOT + VCPN, 'A', ALMNT);
-		addGrindingRecipes(ingotVoidcupronickel, dustVoidcupronickel);
-		addGrindingRecipes(plateVoidcupronickel, dustVoidcupronickel);
+		addGrindingRecipes(ingotVoidcupronickel, dustVoidcupronickel, false);
+		addGrindingRecipes(plateVoidcupronickel, dustVoidcupronickel, true);
 	}
 
 	public static void loadEquipmentAlloyMetalRecipes() {
@@ -1728,8 +1734,8 @@ public class ThaumRevContent {
 		addSmelting(dustWardenicBronze, ingotWardenicBronze);
 		addSmelting(plateWardenicBronze, ingotWardenicBronze);
 		addArcaneCraftingRecipe(keyAlumentum, plateWardenicBronze, monorder, "A", "I", 'I', INGOT + WBRZ, 'A', ALMNT);
-		addGrindingRecipes(ingotWardenicBronze, dustWardenicBronze);
-		addGrindingRecipes(plateWardenicBronze, dustWardenicBronze);
+		addGrindingRecipes(ingotWardenicBronze, dustWardenicBronze, false);
+		addGrindingRecipes(plateWardenicBronze, dustWardenicBronze, true);
 
 		addStorageRecipe(blockWardenicSteel, INGOT + WDST);
 		addStorageRecipe(ingotWardenicSteel, NUGGET + WDST);
@@ -1740,8 +1746,8 @@ public class ThaumRevContent {
 		addSmelting(dustWardenicSteel, ingotWardenicSteel);
 		addSmelting(plateWardenicSteel, ingotWardenicSteel);
 		recipeWardenSteelPlate = addArcaneCraftingRecipe(keyWardenPlate, plateWardenicSteel, monorder, " A ", "AIA", " A ", 'A', itemAlumentum, 'I', INGOT + WDST); //Special
-		addGrindingRecipes(ingotWardenicSteel, dustWardenicSteel);
-		addGrindingRecipes(plateWardenicSteel, dustWardenicSteel);
+		addGrindingRecipes(ingotWardenicSteel, dustWardenicSteel, false);
+		addGrindingRecipes(plateWardenicSteel, dustWardenicSteel, true);
 
 		addStorageRecipe(blockWardenicRiftishBronze, INGOT + WRBR);
 		addStorageRecipe(ingotWardenicRiftishBronze, NUGGET + WRBR);
@@ -1752,8 +1758,8 @@ public class ThaumRevContent {
 		addSmelting(dustWardenicRiftishBronze, ingotWardenicRiftishBronze);
 		addSmelting(plateWardenicRiftishBronze, ingotWardenicRiftishBronze);
 		addArcaneCraftingRecipe(keyAlumentum, plateWardenicRiftishBronze, monorder, " A ", " I ", "A A", 'A', itemAlumentum, 'I', INGOT + WRBR);
-		addGrindingRecipes(ingotWardenicRiftishBronze, dustWardenicRiftishBronze);
-		addGrindingRecipes(plateWardenicRiftishBronze, dustWardenicRiftishBronze);
+		addGrindingRecipes(ingotWardenicRiftishBronze, dustWardenicRiftishBronze, false);
+		addGrindingRecipes(plateWardenicRiftishBronze, dustWardenicRiftishBronze, true);
 
 		addStorageRecipe(blockWardenicComposite, INGOT + WCMP);
 		addStorageRecipe(ingotWardenicComposite, NUGGET + WCMP);
@@ -1764,8 +1770,8 @@ public class ThaumRevContent {
 		addSmelting(dustWardenicComposite, smeltedWardenicComposite);
 		addSmelting(plateWardenicComposite, smeltedWardenicComposite);
 		recipeWardenicCompositePlate = addArcaneCraftingRecipe(keyWardenCompositePlate, plateWardenicComposite, new AspectList().add(ORDER, 1), " A ", "AIA", " A ", 'A', aluDenseTemp, 'I', INGOT + WCMP); //Special
-		addGrindingRecipes(ingotWardenicComposite, dustWardenicComposite);
-		addGrindingRecipes(plateWardenicComposite, dustWardenicComposite);
+		addGrindingRecipes(ingotWardenicComposite, dustWardenicComposite, false);
+		addGrindingRecipes(plateWardenicComposite, dustWardenicComposite, true);
 
 		addStorageRecipe(blockArcaneRedsolder, INGOT + ARDS);
 		addStorageRecipe(ingotArcaneRedsolder, NUGGET + ARDS);
@@ -1776,8 +1782,8 @@ public class ThaumRevContent {
 		addSmelting(dustArcaneRedsolder, ingotArcaneRedsolder);
 		addSmelting(plateArcaneRedsolder, ingotArcaneRedsolder);
 		addArcaneCraftingRecipe(keyAlumentum, plateArcaneRedsolder, monorder, "A", "I", 'I', INGOT + ARDS, 'A', ALMNT); //TODO
-		addGrindingRecipes(ingotArcaneRedsolder, dustArcaneRedsolder);
-		addGrindingRecipes(plateArcaneRedsolder, dustArcaneRedsolder);
+		addGrindingRecipes(ingotArcaneRedsolder, dustArcaneRedsolder, false);
+		addGrindingRecipes(plateArcaneRedsolder, dustArcaneRedsolder, true);
 
 		addStorageRecipe(blockRedbronze, INGOT + RDBR);
 		addStorageRecipe(ingotRedbronze, NUGGET + RDBR);
@@ -1788,8 +1794,8 @@ public class ThaumRevContent {
 		addSmelting(dustRedbronze, ingotRedbronze);
 		addSmelting(plateRedbronze, ingotRedbronze);
 		addArcaneCraftingRecipe(keyAlumentum, plateRedbronze, monorder, "A", "I", "A", 'I', INGOT + RDBR, 'A', ALMNT);
-		addGrindingRecipes(ingotRedbronze, dustRedbronze);
-		addGrindingRecipes(plateRedbronze, dustRedbronze);
+		addGrindingRecipes(ingotRedbronze, dustRedbronze, false);
+		addGrindingRecipes(plateRedbronze, dustRedbronze, true);
 
 		addStorageRecipe(blockHardenedRedbronze, INGOT + HRBR);
 		addStorageRecipe(ingotHardenedRedbronze, NUGGET + HRBR);
@@ -1800,8 +1806,8 @@ public class ThaumRevContent {
 		addSmelting(dustHardenedRedbronze, ingotHardenedRedbronze);
 		addSmelting(plateHardenedRedbronze, ingotHardenedRedbronze);
 		addArcaneCraftingRecipe(keyAlumentum, plateHardenedRedbronze, monorder, " A ", "AIA", " A ", 'I', INGOT + HRBR, 'A', ALMNT);
-		addGrindingRecipes(ingotHardenedRedbronze, dustHardenedRedbronze);
-		addGrindingRecipes(plateHardenedRedbronze, dustHardenedRedbronze);
+		addGrindingRecipes(ingotHardenedRedbronze, dustHardenedRedbronze, false);
+		addGrindingRecipes(plateHardenedRedbronze, dustHardenedRedbronze, true);
 
 		addStorageRecipe(blockFluxsteel, INGOT + FSTL);
 		addStorageRecipe(ingotFluxsteel, NUGGET + FSTL);
@@ -1812,8 +1818,8 @@ public class ThaumRevContent {
 		addSmelting(dustFluxsteel, ingotFluxsteel);
 		addSmelting(plateFluxsteel, ingotFluxsteel);
 		addArcaneCraftingRecipe(keyAlumentum, plateFluxsteel, monorder, "A A", "AIA", " A ", 'I', INGOT + FSTL, 'A', ALMNT);
-		addGrindingRecipes(ingotFluxsteel, dustFluxsteel);
-		addGrindingRecipes(plateFluxsteel, dustFluxsteel);
+		addGrindingRecipes(ingotFluxsteel, dustFluxsteel, false);
+		addGrindingRecipes(plateFluxsteel, dustFluxsteel, true);
 
 		addStorageRecipe(blockFluxedTungsten, INGOT + FLXW);
 		addStorageRecipe(ingotFluxedTungsten, NUGGET + FLXW);
@@ -1823,8 +1829,8 @@ public class ThaumRevContent {
 		addReverseStorageRecipe(tinyFluxedTungsten, DUST + FLXW);
 		//Too high melting point for regular furnace
 		addArcaneCraftingRecipe(keyAlumentum, plateFluxedTungsten, monorder, "AAA", "AIA", "AAA", 'I', INGOT + FLXW, 'A', ALMNT);
-		addGrindingRecipes(ingotFluxedTungsten, dustFluxedTungsten);
-		addGrindingRecipes(plateFluxedTungsten, dustFluxedTungsten);
+		addGrindingRecipes(ingotFluxedTungsten, dustFluxedTungsten, false);
+		addGrindingRecipes(plateFluxedTungsten, dustFluxedTungsten, true);
 
 		addStorageRecipe(blockMagneoturgicComposite, INGOT + MCMP);
 		addStorageRecipe(ingotMagneoturgicComposite, NUGGET + MCMP);
@@ -1834,8 +1840,8 @@ public class ThaumRevContent {
 		addReverseStorageRecipe(tinyMagneoturgicComposite, DUST + MCMP);
 		//Too high melting point for regular furnace
 		addArcaneCraftingRecipe(keyAlumentum, plateMagneoturgicComposite, monorder, " A ", " I ", "A A", 'I', INGOT + MCMP, 'A', aluDenseTemp);
-		addGrindingRecipes(ingotMagneoturgicComposite, dustMagneoturgicComposite);
-		addGrindingRecipes(plateMagneoturgicComposite, dustMagneoturgicComposite);
+		addGrindingRecipes(ingotMagneoturgicComposite, dustMagneoturgicComposite, false);
+		addGrindingRecipes(plateMagneoturgicComposite, dustMagneoturgicComposite, true);
 
 		addStorageRecipe(blockFluxedComposite, INGOT + FCMP);
 		addStorageRecipe(ingotFluxedComposite, NUGGET + FCMP);
@@ -1845,8 +1851,8 @@ public class ThaumRevContent {
 		addReverseStorageRecipe(tinyFluxedComposite, DUST + FCMP);
 		//Too high melting point for regular furnace
 		addArcaneCraftingRecipe(keyAlumentum, plateFluxedComposite, monorder, "A A", "AIA", " A ", 'I', INGOT + FCMP, 'A', aluDenseTemp);
-		addGrindingRecipes(ingotFluxedComposite, dustFluxedComposite);
-		addGrindingRecipes(plateFluxedComposite, dustFluxedComposite);
+		addGrindingRecipes(ingotFluxedComposite, dustFluxedComposite, false);
+		addGrindingRecipes(plateFluxedComposite, dustFluxedComposite, true);
 
 		addStorageRecipe(blockResonantFluxedComposite, INGOT + RCMP);
 		addStorageRecipe(ingotResonantFluxedComposite, NUGGET + RCMP);
@@ -1856,8 +1862,8 @@ public class ThaumRevContent {
 		addReverseStorageRecipe(tinyResonantFluxedComposite, DUST + RCMP);
 		//Too high melting point for regular furnace;
 		addArcaneCraftingRecipe(keyAlumentum, plateResonantFluxedComposite, monorder, "AAA", "AIA", "AAA", 'I', INGOT + RCMP, 'A', aluDenseTemp);
-		addGrindingRecipes(ingotResonantFluxedComposite, dustResonantFluxedComposite);
-		addGrindingRecipes(plateResonantFluxedComposite, dustResonantFluxedComposite);
+		addGrindingRecipes(ingotResonantFluxedComposite, dustResonantFluxedComposite, false);
+		addGrindingRecipes(plateResonantFluxedComposite, dustResonantFluxedComposite, true);
 
 		addStorageRecipe(blockEmpoweredVoidbrass, INGOT + EVBS);
 		addStorageRecipe(ingotEmpoweredVoidbrass, NUGGET + EVBS);
@@ -1868,8 +1874,8 @@ public class ThaumRevContent {
 		addSmelting(dustEmpoweredVoidbrass, ingotEmpoweredVoidbrass);
 		addSmelting(plateEmpoweredVoidbrass, ingotEmpoweredVoidbrass);
 		addArcaneCraftingRecipe(keyAlumentum, plateEmpoweredVoidbrass, monorder, "A", "I", "A", 'I', INGOT + EVBS, 'A', ALMNT);
-		addGrindingRecipes(ingotEmpoweredVoidbrass, dustEmpoweredVoidbrass);
-		addGrindingRecipes(plateEmpoweredVoidbrass, dustEmpoweredVoidbrass);
+		addGrindingRecipes(ingotEmpoweredVoidbrass, dustEmpoweredVoidbrass, false);
+		addGrindingRecipes(plateEmpoweredVoidbrass, dustEmpoweredVoidbrass, true);
 
 		addStorageRecipe(blockCrimsonThaumium, INGOT + CTHM);
 		addStorageRecipe(ingotCrimsonThaumium, NUGGET + CTHM);
@@ -1880,8 +1886,8 @@ public class ThaumRevContent {
 		addSmelting(dustCrimsonThaumium, ingotCrimsonThaumium);
 		addSmelting(plateCrimsonThaumium, ingotCrimsonThaumium);
 		addArcaneCraftingRecipe(keyAlumentum, plateCrimsonThaumium, monorder, " A ", "AIA", " A ", 'I', INGOT + CTHM, 'A', ALMNT);
-		addGrindingRecipes(ingotCrimsonThaumium, dustCrimsonThaumium);
-		addGrindingRecipes(plateCrimsonThaumium, dustCrimsonThaumium);
+		addGrindingRecipes(ingotCrimsonThaumium, dustCrimsonThaumium, false);
+		addGrindingRecipes(plateCrimsonThaumium, dustCrimsonThaumium, true);
 
 		addStorageRecipe(blockOccultVoidtungsten, INGOT + OCVW);
 		addStorageRecipe(ingotOccultVoidtungsten, NUGGET + OCVW);
@@ -1891,8 +1897,8 @@ public class ThaumRevContent {
 		addReverseStorageRecipe(tinyOccultVoidtungsten, DUST + OCVW);
 		//Too high melting point for regular furnace
 		addArcaneCraftingRecipe(keyAlumentum, plateOccultVoidtungsten, monorder, " A ", "AIA", " A ", 'I', INGOT + OCVW, 'A', aluDenseTemp);
-		addGrindingRecipes(ingotOccultVoidtungsten, dustOccultVoidtungsten);
-		addGrindingRecipes(plateOccultVoidtungsten, dustOccultVoidtungsten);
+		addGrindingRecipes(ingotOccultVoidtungsten, dustOccultVoidtungsten, false);
+		addGrindingRecipes(plateOccultVoidtungsten, dustOccultVoidtungsten, true);
 	}
 
 	public static void loadGemRecipes() {
@@ -1903,7 +1909,7 @@ public class ThaumRevContent {
 		addStorageRecipe(dustPyrope, TINY_DUST + PYRP);
 		addReverseStorageRecipe(tinyPyrope, DUST + PYRP);
 		addSmelting(dustPyrope, gemPyrope);
-		addGrindingRecipes(gemPyrope, dustPyrope);
+		addGrindingRecipes(gemPyrope, dustPyrope, true);
 
 		addStorageRecipe(blockDioptase, GEM + DIOP);
 		addStorageRecipe(gemDioptase, NUGGET + DIOP);
@@ -1912,7 +1918,7 @@ public class ThaumRevContent {
 		addStorageRecipe(dustDioptase, TINY_DUST + DIOP);
 		addReverseStorageRecipe(tinyDioptase, DUST + DIOP);
 		addSmelting(dustDioptase, gemDioptase);
-		addGrindingRecipes(gemDioptase, dustDioptase);
+		addGrindingRecipes(gemDioptase, dustDioptase, true);
 
 		addStorageRecipe(blockFluonicSapphire, GEM + FSPH);
 		addStorageRecipe(gemFluonicSapphire, NUGGET + FSPH);
@@ -1921,7 +1927,7 @@ public class ThaumRevContent {
 		addStorageRecipe(dustFluonicSapphire, TINY_DUST + FSPH);
 		addReverseStorageRecipe(tinyFluonicSapphire, DUST + FSPH);
 		addSmelting(dustFluonicSapphire, gemFluonicSapphire);
-		addGrindingRecipes(gemFluonicSapphire, dustFluonicSapphire);
+		addGrindingRecipes(gemFluonicSapphire, dustFluonicSapphire, true);
 
 		addStorageRecipe(blockFluonicPyroptase, GEM + FPRT);
 		addStorageRecipe(gemFluonicPyroptase, NUGGET + FPRT);
@@ -1930,7 +1936,7 @@ public class ThaumRevContent {
 		addStorageRecipe(dustFluonicPyroptase, TINY_DUST + FPRT);
 		addReverseStorageRecipe(tinyFluonicPyroptase, DUST + FPRT);
 		addSmelting(dustFluonicPyroptase, gemFluonicPyroptase);
-		addGrindingRecipes(gemFluonicPyroptase, dustFluonicPyroptase, 8);
+		addGrindingRecipes(gemFluonicPyroptase, dustFluonicPyroptase, true, 8);
 
 		addStorageRecipe(blockWardenicCrystal, GEM + WCRS);
 		addStorageRecipe(gemWardenicCrystal, NUGGET + WCRS);
@@ -1939,7 +1945,7 @@ public class ThaumRevContent {
 		addStorageRecipe(dustWardenicCrystal, TINY_DUST + WCRS);
 		addReverseStorageRecipe(tinyWardenicCrystal, DUST + WCRS);
 		addSmelting(dustWardenicCrystal, gemWardenicCrystal);
-		addGrindingRecipes(gemWardenicCrystal, dustWardenicCrystal, 8);
+		addGrindingRecipes(gemWardenicCrystal, dustWardenicCrystal, true, 8);
 
 		addStorageRecipe(blockActivatedWardenicCrystal, GEM + AWCR);
 		addStorageRecipe(gemActivatedWardenicCrystal, NUGGET + AWCR);
@@ -1948,7 +1954,7 @@ public class ThaumRevContent {
 		addStorageRecipe(dustActivatedWardenicCrystal, TINY_DUST + AWCR);
 		addReverseStorageRecipe(tinyActivatedWardenicCrystal, DUST + AWCR);
 		addSmelting(dustActivatedWardenicCrystal, gemActivatedWardenicCrystal);
-		addGrindingRecipes(gemActivatedWardenicCrystal, dustActivatedWardenicCrystal, 8);
+		addGrindingRecipes(gemActivatedWardenicCrystal, dustActivatedWardenicCrystal, true, 8);
 
 		addStorageRecipe(blockAwakenedWardenicCrystal, GEM + WWCR);
 		addStorageRecipe(gemAwakenedWardenicCrystal, NUGGET + WWCR);
@@ -1957,7 +1963,7 @@ public class ThaumRevContent {
 		addStorageRecipe(dustAwakenedWardenicCrystal, TINY_DUST + WWCR);
 		addReverseStorageRecipe(tinyAwakenedWardenicCrystal, DUST + WWCR);
 		addSmelting(dustAwakenedWardenicCrystal, gemAwakenedWardenicCrystal);
-		addGrindingRecipes(gemAwakenedWardenicCrystal, dustAwakenedWardenicCrystal, 10);
+		addGrindingRecipes(gemAwakenedWardenicCrystal, dustAwakenedWardenicCrystal, true, 10);
 
 		recipeQuartzBlock = addSquareRecipe(blockWardenicQuartz, GEM + WQRZ);
 		addStorageRecipe(gemWardenicQuartz, NUGGET + WQRZ);
@@ -1966,7 +1972,7 @@ public class ThaumRevContent {
 		addStorageRecipe(dustWardenicQuartz, TINY_DUST + WQRZ);
 		addReverseStorageRecipe(tinyWardenicQuartz, DUST + WQRZ);
 		addSmelting(dustWardenicQuartz, gemWardenicQuartz);
-		addGrindingRecipes(gemWardenicQuartz, dustWardenicQuartz, 4);
+		addGrindingRecipes(gemWardenicQuartz, dustWardenicQuartz, true, 4);
 
 		addSquareRecipe(blockInfusedQuartz, GEM + IQRZ);
 		addStorageRecipe(gemInfusedQuartz, NUGGET + IQRZ);
@@ -1975,7 +1981,7 @@ public class ThaumRevContent {
 		addStorageRecipe(dustInfusedQuartz, TINY_DUST + IQRZ);
 		addReverseStorageRecipe(tinyInfusedQuartz, DUST + IQRZ);
 		addSmelting(dustInfusedQuartz, gemInfusedQuartz);
-		addGrindingRecipes(gemInfusedQuartz, dustInfusedQuartz, 5);
+		addGrindingRecipes(gemInfusedQuartz, dustInfusedQuartz, true, 5);
 
 		addSquareRecipe(blockRedquartz, GEM + RQZT);
 		addStorageRecipe(gemRedquartz, NUGGET + RQZT);
@@ -1984,7 +1990,7 @@ public class ThaumRevContent {
 		addStorageRecipe(dustRedquartz, TINY_DUST + RQZT);
 		addReverseStorageRecipe(tinyRedquartz, DUST + RQZT);
 		addSmelting(dustRedquartz, gemRedquartz);
-		addGrindingRecipes(gemRedquartz, dustRedquartz, 4);
+		addGrindingRecipes(gemRedquartz, dustRedquartz, true, 4);
 	}
 
 	public static void loadMiscMetalRecipes() {
@@ -1995,7 +2001,7 @@ public class ThaumRevContent {
 		addStorageRecipe(dustLanthanides, TINY_DUST + LNTH);
 		addReverseStorageRecipe(tinyLanthanides, DUST + LNTH);
 		addSmelting(dustLanthanides, ingotLanthanides);
-		addGrindingRecipes(ingotLanthanides, dustLanthanides);
+		addGrindingRecipes(ingotLanthanides, dustLanthanides, false);
 
 		addStorageRecipe(blockXenotimeJunk, INGOT + YPOJ);
 		addStorageRecipe(ingotXenotimeJunk, NUGGET + YPOJ);
@@ -2004,7 +2010,7 @@ public class ThaumRevContent {
 		addStorageRecipe(dustXenotimeJunk, TINY_DUST + YPOJ);
 		addReverseStorageRecipe(tinyXenotimeJunk, DUST + YPOJ);
 		addSmelting(dustXenotimeJunk, ingotXenotimeJunk);
-		addGrindingRecipes(ingotXenotimeJunk, dustXenotimeJunk);
+		addGrindingRecipes(ingotXenotimeJunk, dustXenotimeJunk, false);
 
 		addStorageRecipe(blockIridosmium, INGOT + IROS);
 		addStorageRecipe(ingotIridosmium, NUGGET + IROS);
@@ -2013,7 +2019,7 @@ public class ThaumRevContent {
 		addStorageRecipe(dustIridosmium, TINY_DUST + IROS);
 		addReverseStorageRecipe(tinyIridosmium, DUST + IROS);
 		//Too high melting point for regular furnace
-		addGrindingRecipes(ingotIridosmium, dustIridosmium);
+		addGrindingRecipes(ingotIridosmium, dustIridosmium, false);
 
 		addStorageRecipe(blockThaumicBronze, INGOT + TBRZ);
 		addStorageRecipe(ingotThaumicBronze, NUGGET + TBRZ);
@@ -2024,8 +2030,8 @@ public class ThaumRevContent {
 		addSmelting(dustThaumicBronze, ingotThaumicBronze);
 		addSmelting(plateThaumicBronze, ingotThaumicBronze);
 		addArcaneCraftingRecipe(keyAlumentum, plateThaumicBronze, monorder, "A", "I", 'I', INGOT + TBRZ, 'A', ALMNT);
-		addGrindingRecipes(ingotThaumicBronze, dustThaumicBronze);
-		addGrindingRecipes(plateThaumicBronze, dustThaumicBronze);
+		addGrindingRecipes(ingotThaumicBronze, dustThaumicBronze, false);
+		addGrindingRecipes(plateThaumicBronze, dustThaumicBronze, true);
 
 		addStorageRecipe(blockOsmiumLutetium, INGOT + OSLU);
 		addStorageRecipe(ingotOsmiumLutetium, NUGGET + OSLU);
@@ -2035,8 +2041,8 @@ public class ThaumRevContent {
 		addReverseStorageRecipe(tinyOsmiumLutetium, DUST + OSLU);
 		//Too high melting point for regular furnace
 		addArcaneCraftingRecipe(keyAlumentum, plateOsmiumLutetium, monorder, "A A", "AIA", " A ", 'I', INGOT + OSLU, 'A', ALMNT);
-		addGrindingRecipes(ingotOsmiumLutetium, dustOsmiumLutetium);
-		addGrindingRecipes(plateOsmiumLutetium, dustOsmiumLutetium);
+		addGrindingRecipes(ingotOsmiumLutetium, dustOsmiumLutetium, false);
+		addGrindingRecipes(plateOsmiumLutetium, dustOsmiumLutetium, true);
 
 				/*RecipeHelper.addStorageRecipe(block$Mineral, "ingot$MineralOre");
 		RecipeHelper.addStorageRecipe(ingot$Mineral, "nugget$MineralOre");
@@ -3037,8 +3043,44 @@ public class ThaumRevContent {
 
 	public static void timeyWimey() {
 		//FRESH COPY-PASTA FROM MAGIC BEES FOR THOSE CRAZY PEOPLE WHO DON'T USE MAGIC BEES!!!!
-		RecipeHelper.addAspects(new ItemStack(Items.clock), new AspectStack(tempus, 4));
-		RecipeHelper.addAspects(new ItemStack(Items.repeater), new AspectStack(tempus, 2));
+		addAspects(new ItemStack(Items.clock), new AspectStack(tempus, 4));
+		addAspects(new ItemStack(Items.repeater), new AspectStack(tempus, 2));
+	}
+
+	public static void loadGeneralAspects() {
+		addAspects(excubituraRose, new AspectStack(PLANT, 2), new AspectStack(MAGIC, 2), new AspectStack(aspectExcubitor, 3));
+		addAspects(wildCotton, new AspectStack(PLANT, 3), new AspectStack(CLOTH, 3));
+		addAspects(wildThistle, new AspectStack(PLANT, 3), new AspectStack(WEAPON, 2), new AspectStack(SENSES, 1));
+		addAspects(shiverpearl, new AspectStack(PLANT, 2), new AspectStack(COLD, 2), new AspectStack(MAGIC, 1), new AspectStack(WATER, 1));
+		addAspects(stormypearl, new AspectStack(PLANT, 2), new AspectStack(WEATHER, 2), new AspectStack(MAGIC, 1), new AspectStack(AIR, 1));
+		addAspects(stonypearl, new AspectStack(PLANT, 2), new AspectStack(ENTROPY, 2), new AspectStack(MAGIC, 1), new AspectStack(EARTH, 1));
+
+		addAspects(itemCotton, new AspectStack(CLOTH, 1), new AspectStack(PLANT, 1));
+		addAspects(itemCottonFiber, new AspectStack(CLOTH, 1));
+		addAspects(itemCottonFabric, new AspectStack(CLOTH, 2), new AspectStack(PLANT, 1));
+		addAspects(itemCottonTreated, new AspectStack(CLOTH, 1), new AspectStack(PLANT, 1), new AspectStack(MAGIC, 2));
+		addAspects(itemCottonEnchanted, new AspectStack(ARMOR, 1));
+
+		addAspects(itemThistleLeaf, new AspectStack(PLANT, 2), new AspectStack(WEAPON, 1));
+		addAspects(itemThistleFlower, new AspectStack(PLANT, 2), new AspectStack(WEAPON, 1), new AspectStack(SENSES, 1));
+
+		addAspects(itemArcaneSingularity, new AspectStack(MAGIC, 4), new AspectStack(ENERGY, 5), new AspectStack(AIR, 1));
+		addAspects(itemStabilizedSingularity, new AspectStack(MAGIC, 3), new AspectStack(ENERGY, 5), new AspectStack(ORDER, 5));
+		addAspects(itemAnimatedPiston, new AspectStack(MOTION, 5));
+
+		addAspects(itemPodCinderpearl, new AspectStack(PLANT, 2), new AspectStack(FIRE, 2), new AspectStack(MAGIC, 2));
+		addAspects(itemPodShiverpearl, new AspectStack(PLANT, 1), new AspectStack(COLD, 1), new AspectStack(MAGIC, 1), new AspectStack(WATER, 1));
+		addAspects(itemPodStormypearl, new AspectStack(PLANT, 1), new AspectStack(WEATHER, 1), new AspectStack(MAGIC, 1), new AspectStack(AIR, 1));
+		addAspects(itemPodStonypearl, new AspectStack(PLANT, 1), new AspectStack(ENTROPY, 1), new AspectStack(MAGIC, 1), new AspectStack(EARTH, 1));
+
+	}
+
+	public static void loadMetalAspects() {
+
+	}
+
+	public static void loadEquipmentAspects() {
+
 	}
 
 	public static ResearchPage[] getMaterialPages() {

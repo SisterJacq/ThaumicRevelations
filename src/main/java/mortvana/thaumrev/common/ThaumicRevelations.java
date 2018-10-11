@@ -68,4 +68,9 @@ public class ThaumicRevelations {
 	public void postInit(FMLPostInitializationEvent event) {
 		ThaumRevContent.postInit();
 	}
+
+	@EventHandler
+	public void loadComplete(FMLLoadCompleteEvent event) {
+		ThaumRevContent.loadComplete();
+	}
 }

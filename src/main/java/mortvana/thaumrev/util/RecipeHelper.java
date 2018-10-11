@@ -531,12 +531,16 @@ public class RecipeHelper {
 		}
 	}
 
-	public static void addGrindingRecipes(ItemStack input, ItemStack output) {
-		addGrindingRecipes(input, output, 6);
+	//public static void addGrindingRecipes(ItemStack input, ItemStack output) {
+	//	addGrindingRecipes(input, output, true, 6);
+	//}
+
+	public static void addGrindingRecipes(ItemStack input, ItemStack output, boolean full) {
+		addGrindingRecipes(input, output, full, 6);
 	}
 
-	public static void addGrindingRecipes(ItemStack input, ItemStack output, int powerFactor) {
-		if (Loader.isModLoaded("ThermalExpansion")) {
+	public static void addGrindingRecipes(ItemStack input, ItemStack output, boolean full, int powerFactor) {
+		if (Loader.isModLoaded("ThermalExpansion") && full) {
 			addPulverizerRecipe(powerFactor * 400, input, output);
 			//TODO: EIO, IE, RC, RoC, IC2
 		}

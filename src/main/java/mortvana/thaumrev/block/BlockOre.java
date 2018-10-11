@@ -18,7 +18,7 @@ public class BlockOre extends FluxGearBlockBase {
 
 	public BlockOre() {
 		super(Material.rock);
-		setStepSound(soundTypeMetal);
+		setStepSound(soundTypeGravel);
 		setCreativeTab(generalTab);
 		setBlockName("thaumrev.ore");
 
@@ -56,13 +56,13 @@ public class BlockOre extends FluxGearBlockBase {
 		switch (meta) {
 			case 12:
 				list.add(ItemHelper.cloneStack(gemPyrope, getStackSize(fortune)));
-
+				break;
 			case 13:
 				list.add(ItemHelper.cloneStack(gemDioptase, getStackSize(fortune)));
-
+				break;
 			case 14:
 				list.add(ItemHelper.cloneStack(gemFluonicSapphire, getStackSize(fortune)));
-
+				break;
 			default:
 				list.add(new ItemStack(this, 1, meta));
 		}

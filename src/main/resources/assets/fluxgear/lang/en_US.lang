@@ -5,13 +5,12 @@ tooltip.wardenic.upgrade=Upgrade
 
 #Aspects
 tc.aspect.excubitor=Warden, Vigilance, Victory, Sacrifice
-tc.aspect.citrus=Citrus, Orange, Lemon
 tc.aspect.magnes=Magnet, Magnetism
 tc.aspect.fluxus=Flux, Fluctuation, Energy
 tc.aspect.patefactio=Revelations, Uncovering, Epiphany
 
 #Research
-tc.research_category.THAUMREV=Thaumic Revelations
+tc.research_category.TRvMAIN=Thaumic Revelations
 
 #Blocks
 tile.fluxgear.plant.excubitura.name=Excubitura Rose
@@ -149,8 +148,8 @@ tile.fluxgear.storage.blockWardenicQuartz.name=Wardenic Quartz Block
 tile.fluxgear.storage.blockInfusedQuartz.name=Infused Wardenic Quartz Block
 tile.fluxgear.storage.blockRedquartz.name=Redquartz Block
 
-tile.fluxgear.storage.blockXenotime.name=Lanthanide Block
-tile.fluxgear.storage.blockLanthanides.name=Leftover Lanthanide Block
+tile.fluxgear.storage.blockXenotime.name=Xenotime Mischmetal Block
+tile.fluxgear.storage.blockLanthanides.name=Leftover Mischmetal Block
 tile.fluxgear.storage.blockIridosmium.name=Iridosmium Block
 
 tile.fluxgear.storage.blockThaumicBronze.name=Thaumic Bronze Block
@@ -828,6 +827,7 @@ fluxgear.name.THAUMIC_REVELATIONS=Thaumic Revelations
 fluxgear.text.THAUMIC_REVELATIONS=[TRv] Hey, hey, you don't know, what you're missing now!
 
 fluxgear.name.MATERIAL_TRv=Materials
+#fluxgear.text.MATERIAL_TRv=[TRv]
 
 fluxgear.name.ALLOYS_TRv=Alloys
 fluxgear.text.ALLOYS_TRv=[TRv] Not-so-magical Metallurgy
@@ -842,13 +842,21 @@ fluxgear.page.ALLOYS_TRv.6=Riftish Bronze, an alloy of eight different metals, o
 fluxgear.page.ALLOYS_TRv.7=Constantan, an alloy of copper and nickel in roughly equal parts, used in technical fields for its temperature sensitivity, which may be of use in future endeavors. Invar, an alloy of iron and nickel, known for thermal stability, is in a similar boat as constantan.<LINE>Electrum, an alloy of equal parts gold and silver, however is of interest, and is likely an even better conductor for mystical energies than gold.
 
 fluxgear.name.THAUMIC_BRONZE=Thaumic Bronze
-fluxgear.text.THAUMIC_BRONZE=[TRv]
+#fluxgear.text.THAUMIC_BRONZE=[TRv]
 
 fluxgear.name.TBRONZE_CHAIN=Thaumic Bronze Chain
 
 fluxgear.name.ARMOR_TBRONZE=Thaumic Bronze Chainmail
 
-fluxgear.name.RUNIC_INFUSER=Runic Infuser
+fluxgear.name.THAUMIC_TINKERS_BRONZE=Thaumic Tinker's Bronze
+
+fluxgear.name.THAUMIC_STEEL=Thaumic Steel
+
+fluxgear.name.THAUMIC_ELECTRUM=Thaumic Electrum
+
+fluxgear.name.ENCHCOTTON=Enchanted Cotton Fabric
+
+fluxgear.name.COTTON_ROBES=Enchanted Cotton Robes
 
 fluxgear.name.ROBES_PRIMAL=Primal Robes
 fluxgear.text.ROBES_PRIMAL=[TRv] Mending and Stylish
@@ -856,6 +864,36 @@ fluxgear.text.ROBES_PRIMAL=[TRv] Mending and Stylish
 fluxgear.page.ROBES_PRIMAL.0=One day, when wearing your Cotton Thaumaturge's Robes, you caught your robes on the edge of a nail in the walls of your study. You don't know why, but that was the final straw for you. You knew you could enchant the armor with Repair, but that just wouldn't cut it for some reason. You wanted robes that wouldn't warp your mind, or drain your wand, but would repair themselves, was that too much to ask!? You didn't want a cycle of warping your mind and bathing, or having to charge you wand slight more often. You decided to do what any quasi-sane thaumaturge would do, and decided to try and infuse a Primal Charm into your robes so it wouldn't affect your wand too much!
 fluxgear.page.ROBES_PRIMAL.1=Obviously it wasn't so easy, it took some Salis Mundus and Primal Essence as well. However, the process made the robes actually tear easier, and they wouldn't even enchant after that! It took some extra cloth and some Thaumic Electrum to rectify that issue, and some of that Thaumic Riftish Bronze to fix the whole tearing issue. When you finally got that working, you were in for a treat! The robes worked beautifully, something you found out on accident. When walking over to get the materials to enchant the new robe, you snagged it on the same nail, tearing it. However, by the time you got the materials, the robe had fixed itself, without even being enchanted.
 fluxgear.page.ROBES_PRIMAL.2=It turned out that enchanting the robes with Repair was not necessary, however the robes are still affected by the enchant, draining Vis from any typical storage medium, just as regular robes are. However, an unexpected feature was that the robes actually fill up your wand, scepter, or staff, albeit at the same rate as a Primal Charm, making it unsuitable as a primary source of Vis for the active thaumaturge. Like the Primal Charm used in the construction, it cannot charge anything a Primal Charm cannot.
+
+fluxgear.name.PENDANT_PRIMAL=Primal Pendant
+fluxgear.text.PENDANT_PRIMAL=[TRv] Ultimate Vis Storage
+
+fluxgear.name.ASPECT_ORB_BASIC=Basic Aspect Orbs
+fluxgear.name.ASPECT_ORB_BASIC=[TRv] Socketing for Philestines
+
+fluxgear.name.RUNIC_INFUSER=Runic Infuser
+
+fluxgear.name.STABLE_SINGULARITY=Stabilized Singularity
+
+fluxgear.name.PRIMAL_ESSENCE=Primal Essence
+
+fluxgear.name.ENCH_GREATWOOD=Enchanted Greatwood
+
+fluxgear.name.ANIMATED_PISTON=Animated Piston
+
+fluxgear.name.ENCH_SILVERWOOD=Enchanted Silverwood
+
+fluxgear.name.DENSE_SILVERWOOD=Densified Silverwood
+
+fluxgear.name.CONS_SILVERWOOD=Consecrated Silverwood
+
+fluxgear.name.VOIDBRASS=Voidbrass
+
+fluxgear.name.ELDRITCH_STONE=Eldritch Stonework
+
+fluxgear.name.VOIDMETAL_WORKING=Voidmetal Working
+
+fluxgear.name.ELEMENTAL_POWDERS=Elemental Powders
 
 fluxgear.name.THAUMIC_WARDEN=Excubiturgy
 fluxgear.text.THAUMIC_WARDEN=[TRv] Thaumic Wardenry!
@@ -873,6 +911,168 @@ fluxgear.page.WARDENCLOTH.1=On further examination it seem, somewhat counter-int
 
 fluxgear.name.ARMOR_WARDENCLOTH=Wardencloth Armor
 fluxgear.text.ARMOR_WARDENCLOTH=[TRv] Like leather, but better (and thaumic)
+
+fluxgear.name.EXCUBITURA_OIL=Excubitura Oil Extraction
+
+fluxgear.name.WARDENCHAIN=Wardenic Bronze
+
+fluxgear.name.ARMOR_WARDENCHAIN=Wardenic Bronze Chainmail
+
+fluxgear.name.PURE_OIL=Excubitura Oil Purification
+
+fluxgear.name.WARDEN_STEEL=Wardenic Steel
+
+fluxgear.name.WARDEN_PLATE=Wardenic Steel Plating
+
+fluxgear.name.ARMOR_WARDEN_STEEL=Wardenic Steel Plate Armor
+
+fluxgear.name.WARDENIC_OBSIDIAN=Wardenic Obsidian
+
+fluxgear.name.WARDEN_QUARTZ=Wardenic Quartz
+
+fluxgear.name.WARDEN_CRYSTAL=Wardenic Crystal
+
+fluxgear.name.WARDEN_BRONZE=Wardenic Tinker's Bronze
+
+fluxgear.name.WARDEN_COMPOSITE=Wardenic Composite
+
+fluxgear.name.WARDEN_COMPOSITE_PLATE=Wardenic Composite Plating
+
+fluxgear.name.WARDEN_COMPOSITE_FITTING=Wardenic Composite Plate Fitting
+
+fluxgear.name.ARMOR_WARDEN_COMPOSITE=Wardenic Composite Plate Armor
+
+fluxgear.name.WARDEN_CRYSTAL_AWAKENED=Awakened Wardenic Crystal
+
+fluxgear.name.WARDEN_ESSENCE_AWAKENED=Essence of Awakening
+fluxgear.text.WARDEN_ESSENCE_AWAKENED=[TRv] The true power of Excubiturgy
+
+fluxgear.name.MAGNEOTURGY=Magneoturgy
+fluxgear.text.MAGNEOTURGY=[TRv] Get Fluxed!
+
+fluxgear.name.REDSTONE_REDUCED=Redstone Reduction
+
+fluxgear.name.ARCANE_REDSOLDER=Arcane Redsolder
+
+fluxgear.name.CAPCORE_REDSOLDER=Arcane Redsolder Capacitor Core
+
+fluxgear.name.REDCLOTH=Redcloth
+
+fluxgear.name.ARMOR_FLUXROBES=Flux Robes
+
+fluxgear.name.TRv_TRANSMUTATION_FE=Iron Transmutaion
+fluxgear.text.TRv_TRANSMUTATION_FE=Tranformation of metals into iron
+
+##fluxgear.name.TRv_TRANSMUTATION_CU=Copper Transmutaion
+##fluxgear.text.TRv_TRANSMUTATION_CU=Tranformation of metals into copper
+
+fluxgear.name.TRv_TRANSMUTATION_SN=Tin Transmutaion
+fluxgear.text.TRv_TRANSMUTATION_SN=Tranformation of metals into tin
+
+fluxgear.name.TRv_TRANSMUTATION_AG=Silver Transmutaion
+fluxgear.text.TRv_TRANSMUTATION_AG=Tranformation of metals into silver
+
+fluxgear.name.TRv_TRANSMUTATION_PB=Lead Transmutaion
+fluxgear.text.TRv_TRANSMUTATION_PB=Tranformation of metals into lead
+
+fluxgear.name.TRv_TRANSMUTATION_AU=Gold Transmutaion
+fluxgear.text.TRv_TRANSMUTATION_AU=Tranformation of metals into gold
+
+fluxgear.name.TRv_TRANSMUTATION_NI=Nickel Transmutaion
+fluxgear.text.TRv_TRANSMUTATION_NI=Tranformation of metals into nickel
+
+fluxgear.name.TRv_TRANSMUTATION_AL=Aluminium Transmutaion
+fluxgear.text.TRv_TRANSMUTATION_AL=Tranformation of metals into aluminium
+
+fluxgear.name.TRv_TRANSMUTATION_ND=Neodymium Transmutaion
+fluxgear.text.TRv_TRANSMUTATION_ND=Tranformation of metals into neodymium
+
+fluxgear.name.TRv_TRANSMUTATION_ZN=Zinc Transmutaion
+fluxgear.text.TRv_TRANSMUTATION_ZN=Tranformation of metals into zinc
+
+fluxgear.name.TRv_TRANSMUTATION_AS=Arsenic Transmutaion
+fluxgear.text.TRv_TRANSMUTATION_AS=Tranformation of metals into arsenic
+
+fluxgear.name.TRv_TRANSMUTATION_SB=Antimony Transmutaion
+fluxgear.text.TRv_TRANSMUTATION_SB=Tranformation of metals into antimony
+
+fluxgear.name.TRv_TRANSMUTATION_BI=Bismuth Transmutaion
+fluxgear.text.TRv_TRANSMUTATION_BI=Tranformation of metals into bismuth
+
+fluxgear.name.TRv_TRANSMUTATION_W=Tungsten Transmutaion
+fluxgear.text.TRv_TRANSMUTATION_W=Tranformation of metals into tungsten
+
+fluxgear.name.TRv_TRANSMUTATION_LU=Lutetium Transmutaion
+fluxgear.text.TRv_TRANSMUTATION_LU=Tranformation of metals into lutetium
+
+fluxgear.name.TRv_TRANSMUTATION_PD=Palladium Transmutaion
+fluxgear.text.TRv_TRANSMUTATION_PD=Tranformation of metals into palladium
+
+fluxgear.name.TRv_TRANSMUTATION_PT=Platinum Transmutaion
+fluxgear.text.TRv_TRANSMUTATION_PT=Tranformation of metals into platinum
+
+fluxgear.name.TRv_TRANSMUTATION_OS=Osmium Transmutaion
+fluxgear.text.TRv_TRANSMUTATION_OS=Tranformation of metals into osmium
+
+fluxgear.name.TRv_TRANSMUTATION_IR=Iridium Transmutaion
+fluxgear.text.TRv_TRANSMUTATION_IR=Tranformation of metals into iridium
+
+####fluxgear.name.TRv_TRANSMUTATION_= Transmutaion
+####fluxgear.text.TRv_TRANSMUTATION_=Tranformation of metals into
+
+fluxgear.name.TRv_CLUSTER_FE=Iron Purification
+fluxgear.text.TRv_CLUSTER_FE=Purification of iron into native clusters
+
+fluxgear.name.TRv_CLUSTER_CU=Copper Purification
+fluxgear.text.TRv_CLUSTER_CU=Purification of copper into native clusters
+
+fluxgear.name.TRv_CLUSTER_SN=Tin Purification
+fluxgear.text.TRv_CLUSTER_SN=Purification of tin into native clusters
+
+fluxgear.name.TRv_CLUSTER_PB=Lead Purification
+fluxgear.text.TRv_CLUSTER_PB=Purification of lead into native clusters
+
+fluxgear.name.TRv_CLUSTER_AU=Gold Purification
+fluxgear.text.TRv_CLUSTER_AU=Purification of gold into native clusters
+
+fluxgear.name.TRv_CLUSTER_NI=Nickel Purification
+fluxgear.text.TRv_CLUSTER_NI=Purification of nickel into native clusters
+
+fluxgear.name.TRv_CLUSTER_AL=Aluminium Purification
+fluxgear.text.TRv_CLUSTER_AL=Purification of aluminium into native clusters
+
+fluxgear.name.TRv_CLUSTER_YPO=Xenotime Purification
+fluxgear.text.TRv_CLUSTER_YPO=Purification of xenotime into native clusters
+
+fluxgear.name.TRv_CLUSTER_ZN=Zinc Purification
+fluxgear.text.TRv_CLUSTER_ZN=Purification of zinc into native clusters
+
+fluxgear.name.TRv_CLUSTER_BI=Bismuth Purification
+fluxgear.text.TRv_CLUSTER_BI=Purification of bismuth into native clusters
+
+fluxgear.name.TRv_CLUSTER_CUAS=Tennantite Purification
+fluxgear.text.TRv_CLUSTER_CUAS=Purification of tennantite into native clusters
+
+fluxgear.name.TRv_CLUSTER_CUSB=Tetrahedrite Purification
+fluxgear.text.TRv_CLUSTER_CUSB=Purification of tetrahedrite into native clusters
+
+fluxgear.name.TRv_CLUSTER_PT=Platinum Purification
+fluxgear.text.TRv_CLUSTER_PT=Purification of platinum into native clusters
+
+fluxgear.name.TRv_CLUSTER_W=Tungsten Purification
+fluxgear.text.TRv_CLUSTER_W=Purification of tungsten into native clusters
+
+fluxgear.name.TRv_CLUSTER_IROS=Iridosmium Purification
+fluxgear.text.TRv_CLUSTER_IROS=Purification of iridosmium into native clusters
+
+####fluxgear.name.TRv_CLUSTER_= Purification
+####fluxgear.text.TRv_CLUSTER_=Purification of  into native clusters
+
+
+
+
+
+
 
 fluxgear.tooltip.visRegenAll=Slowly recharges all items that store vis
 fluxgear.tooltip.charge=Charge
@@ -911,5 +1111,6 @@ fluxgear.augment.Telum.quote=Why are you hurting yourself?
 fluxgear.augment.Aqua.quote=Smells fishy
 fluxgear.augment.Aer.quote=Free like the wind
 fluxgear.augment.Terra.quote=Solid as a rock
-fluxgear.augment.tempus.quote=Gonna See you in the Dirty Future
+fluxgear.augment.tempus.quote=Gonna see you in the dirty future
+fluxgear.augment.Sano.quote=I don't want to go
 

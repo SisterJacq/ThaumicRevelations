@@ -7,7 +7,9 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.*;
 import cpw.mods.fml.common.registry.GameRegistry;
 
+import mortvana.melteddashboard.util.helpers.LoadedHelper;
 import mortvana.melteddashboard.util.libraries.ThaumcraftLibrary;
+import mortvana.melteddashboard.util.libraries.ThermalLibrary;
 
 import mortvana.thaumrev.library.ThaumRevLibrary;
 import mortvana.thaumrev.network.CommonProxy;
@@ -56,6 +58,9 @@ public class ThaumicRevelations {
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
 		ThaumcraftLibrary.init();
+		if (LoadedHelper.isThermalFoundationLoaded) {
+			ThermalLibrary.init();
+		}
 		ThaumRevContent.init();
 	}
 

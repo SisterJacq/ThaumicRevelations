@@ -365,7 +365,7 @@ Done:
 [14-6-07]	Other Blocks <9>
 
 [15]	Research Text (General/Runic):
-[15-01]		Thaumic Revelations
+[15-xx]		Thaumic Revelations
 [15-02]		Materials
 [15-03]		Alloys
 [15-04]		Eldritch Stone

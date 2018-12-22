@@ -1,16 +1,15 @@
 #Misc
 itemGroup.thaumicRevelations=Thaumic Revelations
-tooltip.wardenic.charge=Charge
-tooltip.wardenic.upgrade=Upgrade
 
 #Aspects
 tc.aspect.excubitor=Warden, Vigilance, Victory, Sacrifice
 tc.aspect.magnes=Magnet, Magnetism
-tc.aspect.fluxus=Flux, Fluctuation, Energy
+tc.aspect.fluxus=Electromagnetic Flux, Redstone Flux, Energy
 tc.aspect.patefactio=Revelations, Uncovering, Epiphany
 
 #Research
 tc.research_category.TRvMAIN=Thaumic Revelations
+tc.research_category.TRvMETAL=Thaumic Revelations - Metallurgy
 
 #Blocks
 tile.fluxgear.plant.excubitura.name=Excubitura Rose
@@ -751,7 +750,7 @@ item.fluxgear.material.tempAluDense.name=Dense Alumentum [Will be removed in v0.
 
 #EQUIPMENT
 #Baubles
-item.fluxgear.baubles.amuletWarden.name=Warden's Amulet
+item.fluxgear.baubles.amuletWarden.name=Warden's Amulet [NYI]
 item.fluxgear.baubles.ringLove.name=Ring of Love
 item.fluxgear.baubles.pendantPrimal.name=Primal Pendant
 
@@ -825,12 +824,17 @@ item.fluxgear.focusPurity.name=Wand Focus: Purity [WIP]
 #RESEARCH
 fluxgear.name.THAUMIC_REVELATIONS=Thaumic Revelations
 fluxgear.text.THAUMIC_REVELATIONS=[TRv] Hey, hey, you don't know, what you're missing now!
+fluxgear.page.THAUMIC_REVELATIONS.0=You have stumbled upon obscure texts which speak of thaumic innovations which seem like the ramblings of a madman, or madwoman. Except the Excubiturgy, although it is offset by all the talk of Magneoturgy, I mean mixing redstone flux and thaumaturgy! Not to mention some of the ramblings on the Crimson Cult, or Runic Mechanics, or metallurgy, or this person's insistence on there being seven fundamental fields, whatever that means. Either way, you've decided to explore these new pathways of learning what you can, and possibly coming up with some new things of your own.
 
 fluxgear.name.MATERIAL_TRv=Materials
 #fluxgear.text.MATERIAL_TRv=[TRv]
+fluxgear.page.MATERIAL_TRv.shaft=
+
+fluxgear.name.MINERALS_TRv=Minerals
+#fluxgear.text.MINERALS_TRv=[TRv]
 
 fluxgear.name.ALLOYS_TRv=Alloys
-fluxgear.text.ALLOYS_TRv=[TRv] Not-so-magical Metallurgy
+fluxgear.text.ALLOYS_TRv=[TRv] Not-so-magical metallurgy
 
 fluxgear.page.ALLOYS_TRv.0=You have realized the true lack of variety in the metals used in thaumaturgy, and have decided to experiment with various alloys.<BR>One of the alloys, Brass, is a mixture of copper, a metal only rarely used by thaumaturges, but highly used in technological fields, and zinc, a whitish metal similar to tin, which is occasionally used for coating of metal parts. The resulting alloys is malleable and may make for an decent-enough conductor of mystical energy.
 fluxgear.page.ALLOYS_TRv.1=Bronze, the more commonly used cousin of Brass, more suited to casting than machining, is made with tin, a more widely used metal, albeit one never used in thaumaturgy, instead of zinc. Unlike brass, it seems like it would be less receptive to storage of magical energies, although it could make better, less corrodable, parts than iron.
@@ -853,23 +857,24 @@ fluxgear.name.THAUMIC_TINKERS_BRONZE=Thaumic Tinker's Bronze
 fluxgear.name.THAUMIC_STEEL=Thaumic Steel
 
 fluxgear.name.THAUMIC_ELECTRUM=Thaumic Electrum
+fluxgear.text.THAUMIC_ELECTRUM=[TRv] Magically conductive (and electrically conductive)
 
 fluxgear.name.ENCHCOTTON=Enchanted Cotton Fabric
 
 fluxgear.name.COTTON_ROBES=Enchanted Cotton Robes
 
 fluxgear.name.ROBES_PRIMAL=Primal Robes
-fluxgear.text.ROBES_PRIMAL=[TRv] Mending and Stylish
+fluxgear.text.ROBES_PRIMAL=[TRv] Mending and stylish
 
 fluxgear.page.ROBES_PRIMAL.0=One day, when wearing your Cotton Thaumaturge's Robes, you caught your robes on the edge of a nail in the walls of your study. You don't know why, but that was the final straw for you. You knew you could enchant the armor with Repair, but that just wouldn't cut it for some reason. You wanted robes that wouldn't warp your mind, or drain your wand, but would repair themselves, was that too much to ask!? You didn't want a cycle of warping your mind and bathing, or having to charge you wand slight more often. You decided to do what any quasi-sane thaumaturge would do, and decided to try and infuse a Primal Charm into your robes so it wouldn't affect your wand too much!
 fluxgear.page.ROBES_PRIMAL.1=Obviously it wasn't so easy, it took some Salis Mundus and Primal Essence as well. However, the process made the robes actually tear easier, and they wouldn't even enchant after that! It took some extra cloth and some Thaumic Electrum to rectify that issue, and some of that Thaumic Riftish Bronze to fix the whole tearing issue. When you finally got that working, you were in for a treat! The robes worked beautifully, something you found out on accident. When walking over to get the materials to enchant the new robe, you snagged it on the same nail, tearing it. However, by the time you got the materials, the robe had fixed itself, without even being enchanted.
 fluxgear.page.ROBES_PRIMAL.2=It turned out that enchanting the robes with Repair was not necessary, however the robes are still affected by the enchant, draining Vis from any typical storage medium, just as regular robes are. However, an unexpected feature was that the robes actually fill up your wand, scepter, or staff, albeit at the same rate as a Primal Charm, making it unsuitable as a primary source of Vis for the active thaumaturge. Like the Primal Charm used in the construction, it cannot charge anything a Primal Charm cannot.
 
 fluxgear.name.PENDANT_PRIMAL=Primal Pendant
-fluxgear.text.PENDANT_PRIMAL=[TRv] Ultimate Vis Storage
+fluxgear.text.PENDANT_PRIMAL=[TRv] Ultimate vis storage
 
 fluxgear.name.ASPECT_ORB_BASIC=Basic Aspect Orbs
-fluxgear.name.ASPECT_ORB_BASIC=[TRv] Socketing for Philestines
+fluxgear.text.ASPECT_ORB_BASIC=[TRv] Socketing for philistines
 
 fluxgear.name.RUNIC_INFUSER=Runic Infuser
 
@@ -905,7 +910,7 @@ fluxgear.text.EXCUBITURA_PASTE=[TRv] The start of great things
 fluxgear.page.EXCUBITURA_PASTE.0=After finding what you now know to be an Excubitura Rose, you started searching for any mention on how the Thaumic Wardens created their armor of exquisite quality. References were lacking, so it took time to figure out, but in the few texts you could find, they all agreed on one thing, the first step in processing the Excubitura's petals. By simply grinding the petals, then adding a Pinch of Salis Mundus, a paste is created, which is said to have been used to treat the armor. However, a few of your sources mention the paste only affecting cloth, so you'll have to figure out how to get around that for anything metallic.
 
 fluxgear.name.WARDENCLOTH=Wardencloth
-fluxgear.text.WARDENCLOTH=[TRv] Durable and Wardenic
+fluxgear.text.WARDENCLOTH=[TRv] Excubiturgic fabric
 fluxgear.page.WARDENCLOTH.0=You think you are on to something, by smearing Excubitura Paste all over some Enchanted Cotton Fabric, as one of the texts mentions the difficulty in using wool or silk for the process, you end up with a fabric that is a lot more durable. However, the paste washes off of the fabric easily, meaning it would be unsuitable for use as armor, but perhaps there is a way around that.
 fluxgear.page.WARDENCLOTH.1=On further examination it seem, somewhat counter-intuitively at first, but after thinking about it making perfect sense, that by boiling the cloth in water with essentia of certain aspects, the cloth not only tightens up slightly, as it is cotton, making it more negligibly more protective, but it also solves the issue with water washing off the paste, as the paste binds with the fabric itself.
 
@@ -929,6 +934,9 @@ fluxgear.name.ARMOR_WARDEN_STEEL=Wardenic Steel Plate Armor
 fluxgear.name.WARDENIC_OBSIDIAN=Wardenic Obsidian
 
 fluxgear.name.WARDEN_QUARTZ=Wardenic Quartz
+fluxgear.text.WARDEN_QUARTZ=[TRv] Quartzing destiny! (Whatever that means...)
+fluxgear.page.WARDEN_QUARTZ.0=For a long time now you have been perplexed at your findings, namely how the Thaumic Wardens made their nigh-unbreakable armor. You think you've stumbled across something though. It is said that they used crystals to craft their surprisingly light suits of full plate armor, and you think you have figured out the start of the process by which the crystals are formed, and it was even in front of your face the whole time.<LINE>By simply submerging an impure crystal of silica, specifically milky quartz, such as naturally occurring Nether Quartz, into a crucible with certain aspects, the crystal absorbs
+fluxgear.page.WARDEN_QUARTZ.1=the aspects, focusing them into its minute fluid inclusions, which not only changes the color, but makes the crystal far better at holding, receiving, and transferring mystical energies. It has little effect on the hardness of the quartz itself, nor does it imbue it with an other special properties.
 
 fluxgear.name.WARDEN_CRYSTAL=Wardenic Crystal
 
@@ -943,6 +951,7 @@ fluxgear.name.WARDEN_COMPOSITE_FITTING=Wardenic Composite Plate Fitting
 fluxgear.name.ARMOR_WARDEN_COMPOSITE=Wardenic Composite Plate Armor
 
 fluxgear.name.WARDEN_CRYSTAL_AWAKENED=Awakened Wardenic Crystal
+fluxgear.text.WARDEN_CRYSTAL_AWAKENED=[TRv] Oddly similar to aspect orbs
 
 fluxgear.name.WARDEN_ESSENCE_AWAKENED=Essence of Awakening
 fluxgear.text.WARDEN_ESSENCE_AWAKENED=[TRv] The true power of Excubiturgy
@@ -960,65 +969,65 @@ fluxgear.name.REDCLOTH=Redcloth
 
 fluxgear.name.ARMOR_FLUXROBES=Flux Robes
 
-fluxgear.name.TRv_TRANSMUTATION_FE=Iron Transmutaion
-fluxgear.text.TRv_TRANSMUTATION_FE=Tranformation of metals into iron
+fluxgear.name.TRv_TRANSMUTATION_FE=Iron Transmutation
+fluxgear.text.TRv_TRANSMUTATION_FE=Transformation of metals into iron
 
-##fluxgear.name.TRv_TRANSMUTATION_CU=Copper Transmutaion
-##fluxgear.text.TRv_TRANSMUTATION_CU=Tranformation of metals into copper
+##fluxgear.name.TRv_TRANSMUTATION_CU=Copper Transmutation
+##fluxgear.text.TRv_TRANSMUTATION_CU=Transformation of metals into copper
 
-fluxgear.name.TRv_TRANSMUTATION_SN=Tin Transmutaion
-fluxgear.text.TRv_TRANSMUTATION_SN=Tranformation of metals into tin
+fluxgear.name.TRv_TRANSMUTATION_SN=Tin Transmutation
+fluxgear.text.TRv_TRANSMUTATION_SN=Transformation of metals into tin
 
-fluxgear.name.TRv_TRANSMUTATION_AG=Silver Transmutaion
-fluxgear.text.TRv_TRANSMUTATION_AG=Tranformation of metals into silver
+fluxgear.name.TRv_TRANSMUTATION_AG=Silver Transmutation
+fluxgear.text.TRv_TRANSMUTATION_AG=Transformation of metals into silver
 
-fluxgear.name.TRv_TRANSMUTATION_PB=Lead Transmutaion
-fluxgear.text.TRv_TRANSMUTATION_PB=Tranformation of metals into lead
+fluxgear.name.TRv_TRANSMUTATION_PB=Lead Transmutation
+fluxgear.text.TRv_TRANSMUTATION_PB=Transformation of metals into lead
 
-fluxgear.name.TRv_TRANSMUTATION_AU=Gold Transmutaion
-fluxgear.text.TRv_TRANSMUTATION_AU=Tranformation of metals into gold
+fluxgear.name.TRv_TRANSMUTATION_AU=Gold Transmutation
+fluxgear.text.TRv_TRANSMUTATION_AU=Transformation of metals into gold
 
-fluxgear.name.TRv_TRANSMUTATION_NI=Nickel Transmutaion
-fluxgear.text.TRv_TRANSMUTATION_NI=Tranformation of metals into nickel
+fluxgear.name.TRv_TRANSMUTATION_NI=Nickel Transmutation
+fluxgear.text.TRv_TRANSMUTATION_NI=Transformation of metals into nickel
 
-fluxgear.name.TRv_TRANSMUTATION_AL=Aluminium Transmutaion
-fluxgear.text.TRv_TRANSMUTATION_AL=Tranformation of metals into aluminium
+fluxgear.name.TRv_TRANSMUTATION_AL=Aluminium Transmutation
+fluxgear.text.TRv_TRANSMUTATION_AL=Transformation of metals into aluminium
 
-fluxgear.name.TRv_TRANSMUTATION_ND=Neodymium Transmutaion
-fluxgear.text.TRv_TRANSMUTATION_ND=Tranformation of metals into neodymium
+fluxgear.name.TRv_TRANSMUTATION_ND=Neodymium Transmutation
+fluxgear.text.TRv_TRANSMUTATION_ND=Transformation of metals into neodymium
 
-fluxgear.name.TRv_TRANSMUTATION_ZN=Zinc Transmutaion
-fluxgear.text.TRv_TRANSMUTATION_ZN=Tranformation of metals into zinc
+fluxgear.name.TRv_TRANSMUTATION_ZN=Zinc Transmutation
+fluxgear.text.TRv_TRANSMUTATION_ZN=Transformation of metals into zinc
 
-fluxgear.name.TRv_TRANSMUTATION_AS=Arsenic Transmutaion
-fluxgear.text.TRv_TRANSMUTATION_AS=Tranformation of metals into arsenic
+fluxgear.name.TRv_TRANSMUTATION_AS=Arsenic Transmutation
+fluxgear.text.TRv_TRANSMUTATION_AS=Transformation of metals into arsenic
 
-fluxgear.name.TRv_TRANSMUTATION_SB=Antimony Transmutaion
-fluxgear.text.TRv_TRANSMUTATION_SB=Tranformation of metals into antimony
+fluxgear.name.TRv_TRANSMUTATION_SB=Antimony Transmutation
+fluxgear.text.TRv_TRANSMUTATION_SB=Transformation of metals into antimony
 
-fluxgear.name.TRv_TRANSMUTATION_BI=Bismuth Transmutaion
-fluxgear.text.TRv_TRANSMUTATION_BI=Tranformation of metals into bismuth
+fluxgear.name.TRv_TRANSMUTATION_BI=Bismuth Transmutation
+fluxgear.text.TRv_TRANSMUTATION_BI=Transformation of metals into bismuth
 
-fluxgear.name.TRv_TRANSMUTATION_W=Tungsten Transmutaion
-fluxgear.text.TRv_TRANSMUTATION_W=Tranformation of metals into tungsten
+fluxgear.name.TRv_TRANSMUTATION_W=Tungsten Transmutation
+fluxgear.text.TRv_TRANSMUTATION_W=Transformation of metals into tungsten
 
-fluxgear.name.TRv_TRANSMUTATION_LU=Lutetium Transmutaion
-fluxgear.text.TRv_TRANSMUTATION_LU=Tranformation of metals into lutetium
+fluxgear.name.TRv_TRANSMUTATION_LU=Lutetium Transmutation
+fluxgear.text.TRv_TRANSMUTATION_LU=Transformation of metals into lutetium
 
-fluxgear.name.TRv_TRANSMUTATION_PD=Palladium Transmutaion
-fluxgear.text.TRv_TRANSMUTATION_PD=Tranformation of metals into palladium
+fluxgear.name.TRv_TRANSMUTATION_PD=Palladium Transmutation
+fluxgear.text.TRv_TRANSMUTATION_PD=Transformation of metals into palladium
 
-fluxgear.name.TRv_TRANSMUTATION_PT=Platinum Transmutaion
-fluxgear.text.TRv_TRANSMUTATION_PT=Tranformation of metals into platinum
+fluxgear.name.TRv_TRANSMUTATION_PT=Platinum Transmutation
+fluxgear.text.TRv_TRANSMUTATION_PT=Transformation of metals into platinum
 
-fluxgear.name.TRv_TRANSMUTATION_OS=Osmium Transmutaion
-fluxgear.text.TRv_TRANSMUTATION_OS=Tranformation of metals into osmium
+fluxgear.name.TRv_TRANSMUTATION_OS=Osmium Transmutation
+fluxgear.text.TRv_TRANSMUTATION_OS=Transformation of metals into osmium
 
-fluxgear.name.TRv_TRANSMUTATION_IR=Iridium Transmutaion
-fluxgear.text.TRv_TRANSMUTATION_IR=Tranformation of metals into iridium
+fluxgear.name.TRv_TRANSMUTATION_IR=Iridium Transmutation
+fluxgear.text.TRv_TRANSMUTATION_IR=Transformation of metals into iridium
 
-####fluxgear.name.TRv_TRANSMUTATION_= Transmutaion
-####fluxgear.text.TRv_TRANSMUTATION_=Tranformation of metals into
+####fluxgear.name.TRv_TRANSMUTATION_= Transmutation
+####fluxgear.text.TRv_TRANSMUTATION_=Transformation of metals into
 
 fluxgear.name.TRv_CLUSTER_FE=Iron Purification
 fluxgear.text.TRv_CLUSTER_FE=Purification of iron into native clusters
@@ -1076,7 +1085,9 @@ fluxgear.text.TRv_CLUSTER_IROS=Purification of iridosmium into native clusters
 
 fluxgear.tooltip.visRegenAll=Slowly recharges all items that store vis
 fluxgear.tooltip.charge=Charge
-
+fluxgear.tooltip.unobtainable=Currently unobtainable through normal means
+fluxgear.tooltip.unobtainableMod=Currently unobtainable without other mods, such as Thermal Expansion
+fluxgear.tooltip.noUse=Currently not used for anything (yet)
 
 
 #Thaumcraft Voidmetal Capitalization Rectification
@@ -1090,6 +1101,9 @@ fluxgear.tooltip.charge=Charge
 
 
 #OLD STUFF
+tooltip.wardenic.charge=Charge
+tooltip.wardenic.upgrade=Upgrade
+
 tile.blockInfusedQuartzSlab.name=Infused Quartz Slab
 tile.blockInfusedQuartzStair.name=Infused Quartz Stair
 tile.blockWitor.name=Wardenic Light
@@ -1103,14 +1117,80 @@ item.itemWaslieHammer.name=Wesly's Hammer
 item.itemFocusIllumination.name=Wand Focus: Illumination
 
 #Quotes
-fluxgear.augment.Excubitor.quote=Forever a warden
+fluxgear.augment.excubitor.quote=Forever a warden
 fluxgear.augment..quote=I will survive
-fluxgear.augment.Entropy.quote=I will destroy you
-fluxgear.augment.Ignis.quote=Burnt to a crisp
-fluxgear.augment.Telum.quote=Why are you hurting yourself?
-fluxgear.augment.Aqua.quote=Smells fishy
-fluxgear.augment.Aer.quote=Free like the wind
-fluxgear.augment.Terra.quote=Solid as a rock
-fluxgear.augment.tempus.quote=Gonna see you in the dirty future
-fluxgear.augment.Sano.quote=I don't want to go
+fluxgear.augment.perditio.quote=I will destroy you
+fluxgear.augment.ignis.quote=Burnt to a crisp
+fluxgear.augment.telum.quote=Why are you hurting yourself?
+fluxgear.augment.aqua.quote=Smells fishy
+fluxgear.augment.aer.quote=Free like the wind
+fluxgear.augment.terra.quote=Solid as a rock
+#fluxgear.augment.tempus.quote=Gonna see you in the dirty future
+#fluxgear.augment.sano.quote=I don't want to go
+
+#Research
+trresearch.name.TREVELATIONS=Thaumic Wardens
+trresearch.text.TREVELATIONS=Long forgotten to our ears
+trresearch.page.TREVELATIONS.0=You have read of an ancient order of former thaumaturge who dedicated themselves to fighting the Eldritch and protecting the land.<BR>They were once a branch of the Abysswalkers who became divided after the siege on their headquarters Fort Rose.<BR>Thanks to Master Lizbeth some of the remnants are now what we call the Thaumic Wardens.
+
+trresearch.name.EXCUBITURA=Excubitura
+trresearch.text.EXCUBITURA=A rose by any other name...
+trresearch.page.EXCUBITURA.0=Mutated by Thaumic energies, this odd little rose has formed a beautiful crystal where its stigma should be.<BR>Despite it's small size, the petals are vibrant and have an unusual energy about them.
+
+trresearch.name.QUARTZ=Wardenic Quartz
+trresearch.text.QUARTZ=Quartzing destiny!
+trresearch.page.QUARTZ.0=You discovered one of the ancient manuscripts that describe the strange quartz used by the Thaumic Wardens. It also tells that it was used for all of their armaments.<BR>Due to the concentrated and highly aligned energies contained within its crystals, weapons made from this stuff seem to phase through most metals and other mundane forms of protection.
+
+trresearch.name.CRYSTAL=Wardenic Crystal
+trresearch.text.CRYSTAL=First step...
+trresearch.page.CRYSTAL.0=You knew these petals were unique somehow. By crystallizing the petals you were able to create the Wardenic Crystals.<BR>This crystal is unique and seems to react strangely to essentia and aspects.
+
+trresearch.name.WARDENARMOR=The Armor
+trresearch.text.WARDENARMOR=Feels like I'm wearing nothin' at all!
+trresearch.page.WARDENARMOR.0=More than once have you found mention of the legendary quality of Wardenic Armor, their ability to absorb staggering blows while remaining surprisingly breathable.<LINE>Through painstaking research you have learned how to create these pieces using the Warden's Crystal.<BR>The quartz used seems to make it absorb more hits and rebuild itself and the crystal gives it the ability to be imbued with aspects for unique effects.
+
+trresearch.name.WARDENWEAPON=The Sword
+trresearch.text.WARDENWEAPON=The remnants remain
+trresearch.page.WARDENWEAPON.0=When the Nameless one helped Lizbeth found the Thaumic Wardens, he entrusted her with the remnants of the Light Blade.<BR>She repaired the sword to manipulate the power of aspects to create different effects depending on the imbued aspect and to rebuild itself so that it never gets broken again.
+
+trresearch.name.LOVERING=Ring of Love
+trresearch.text.LOVERING=I <3 U
+trresearch.page.LOVERING.0=Before leaving Lizbeth, Wesly gave her this ring.<BR>"Only use it when you feel lost"<BR>Nothing more is known about it. Only that it's power is unimaginable.
+
+trresearch.name.WASLIEHAMMER=Wesly's Hammer
+trresearch.text.WASLIEHAMMER=OP as flux
+trresearch.page.WASLIEHAMMER.0=This hammer was created by the Master Wanderer Wesly to help Lizbeth and the Thaumic Wardens<LINE>Using the hammer is easy since it doesn't require a kit.<BR>The hammer can also be used to infuse various aspects into the Wardenic Armaments.
+
+trresearch.name.ILLUMINATION=Wand Focus: Illumination
+trresearch.text.ILLUMINATION=They know...
+trresearch.page.ILLUMINATION.0=We know all about your plans<BR>You know you should join us<BR>Our thaumic focus that creates illumination on right click will illuminate you to the right path
+
+trresearch.name.LORE1=The Prologue
+trresearch.text.LORE1=Everything has a beginning
+trresearch.page.LORE1.0=When Lizbeth was young there was always an old man that used to visit her and her family. His name was Wesly and he was the leader of the Wanderer's Order at his time.<BR>By the time Young Master Lizbeth turned 16 she had an affection to the thaumic arts and wanted to learn them.<BR>"Wesly, Can you take me to the college of thaumturges so that I learn the thaumic arts?" Lizbeth asked<BR>"What's that gibberish you're talking about Liz?" Wesly replied
+trresearch.page.LORE1.1="The ancient arts are much powerful" he added. "I think that choice should be left to me, don't you think?" Lizbeth said. "Alright alright, don't get all angry on me" he said<BR>"Have you even asked your parents lizzy?" Wesly asked<BR>"Oh they already agreed and told me to ask you to accompany me" Lizbeth said<BR>"So you've already made up your mind huh" "Prepare yourself. We leave tomorrow morning" he said <BR>Lizbeth was happy to hear these new but she felt Wesly didn't agree because she asked and that he had other reasons. In the monring Wesly picked up Lizbeth and began talking to her.<BR>
+trresearch.page.LORE1.2="Look at you all grown up and going on a journey" he said "before we reach that college take this and only open it when you feel lost"<BR>"should I expect a powerful spell that you harnessed the last years in this box" lizbeth said sarcastically<BR>"No but, it will guide you in a moment of despair" he said<BR>And so they reached the college with Lizbeth one step away from here dream<BR>
+
+trresearch.name.LORE2=Learning The Ropes
+trresearch.text.LORE2=And so it begins
+trresearch.page.LORE2.0=In the front of the college yet another old man was waiting. That old man was Master Azanor, the man behind the thaumic arts.<BR>"I see that time has been rather kind to you old friend" Wesly said to Azanor.<BR>"Well I couldn't sit behind doing nothing after his death" Azanor replied<BR>"Wait a minute you know eachother!!!" Lizbeth said in surprise "Well Lizzy there's a legend that says all old men know eachother" Wesly said<BR>
+trresearch.page.LORE2.1="Speak for yourself I'm still in the middle of my youth" Azanor replied "So is this little girl the student you told me about?" "Well Little liz since you are this old chap's daughter I'm gonna appoint you to aspecial thaumturge" Azanor said<BR>"I'm not his daughter" "She's not my daughter" Wesly and Lizbeth said in sync<BR>"Sure you're not" old annoying Azanor teased<BR>And so Wesly took his leave and Azanor took her to her teacher and frankly he wasn't what she imagined.<BR>"Lizbeth meet your teacher Vana and his cat.... Vana" Azanor said<BR>
+trresearch.page.LORE2.2="You must be Lizbeth, I heard a ton o' good things bout ya" Vana said in his tacky pirate accent<BR>"You must be kidding me.. that's my teacher. He doesn't even know how to talk properly" Lizbeth said<BR>"OOOH you've got a temper, I think we're gonna get along just fiiine" Vana said<BR>Lizbeth really was quite the thaumturge. It was as if she was born with the talent and not to mention that she has grown to like Vana and not the way you're thinking
+trresearch.page.LORE2.3=you Twilight lover. He was crazy and warped but he wasn't strict as the other teachers and gave Lizbeth the freedom she needed to practice.<BR>After a couple of weeks Lizbeth has become a fully fledged thaumturge and maybe ready to become a teacher after a couple of days.<BR>Vana was requested to meet Azanor the next morning<BR>
+
+trresearch.name.LORE3=Not Making Sense
+trresearch.text.LORE3=At All
+trresearch.page.LORE3.0=The meeting with Azanor and Vana wasn't the pleasant kind. They knew something dangerous was coming but, what could it be?<BR>"Master, I have trained her as you and Master Wesly ordered but time is growing short. She must be told the truth before it's too late" Vana said with fear on his voice<BR>"Yes but, I fear that it's already too late" Azanor replied then aloud sundering sound was heard from outside the college.<BR>
+trresearch.page.LORE3.1=Meanwhile the students were being attacked by mysterious creatures. Their attacks weren't affecting them so Lizbeth drew their atention inorder to allow the other students to escape.<BR>Sadly Lizbeth made her run to a deadend in the main hallway. Why is there a deadend in the "main" hallway? who knows? only the dead architect knows.<BR>When Lizbeth got surrounded she remembered the box Wesly gave her. She opened the box only to find a ring within it. She tried to put it on but the moment she touched it a blinding aura came out of it burning all the creatures surrounding the area.
+trresearch.page.LORE3.2=Then out of a sudden a spirit of a white armored man appeared and confronted her.<BR>"Who are you and where did you come from?" Lizbeth asked<BR>"Who I am doesn't matter. What matters is what I'm going to say" The spirit said<BR>"We're surrounded by weird monsters and you want to TALK!!!" Lizbeth said<BR>"You need not worry, the ring may be carrying a very small amount of me but even that should be enough to put them at bay. Now allow me to start" The spirit replied<BR>
+trresearch.page.LORE3.3="As you might have noticed these creatures were trying to kill all of you and especially you. They are called the Eldritch and they are spawns of the void that was sealed many centuries ago"<BR>"The seal is growing weaker and weaker each year. It's far from broken but what managed to escape became those abominations and we had to seal them off 42 years ago"<BR>"Your role in this is far greater than you can imagine. You are to be their slayer. I and those who were with me are not the heroes of this story we never was. Each master acknowledged this very fact as I passed it to the masters after me"
+trresearch.page.LORE3.4="We Master Wanderers are not meant to be heroes but to guide them when the time comes with one. I know this doesn't make much sense Lizbeth but you'll have to believe me" The spirit said<BR>Vana entered the room and didn't seem surprised that a weird spirit is talking to his student and so he said "It's an honour to meet you sir"<BR>"Oh I'm glad to know you survived young one" The Spirit said<BR>"My energy is becoming weaker and I must save what's remaining for this ring to stay functional" "Seek Wesly he'll lead you to the right path" The Spirit said<BR>The spirit faded away leaving Lizbeth in a wonder<BR>
+trresearch.page.LORE3.5="Where were you when I was being attacked" Lizbeth said to Vana<BR>"Oh I was drinking tea with our guests and trading war stories... WHAT IN THE NAME OF THAUMTURGY DO YOU THINK I WAS DOING?" Vana replied<BR>"Probably patting your cat" Lizbeth said<BR>"How did she know?" Vana whispered to himself<BR>
+
+trresearch.name.LORE4=The Journey Begins
+trresearch.text.LORE4=Memories Lost?
+trresearch.page.LORE4.0=After a couple of days Lizbeth and Vana reached Fort Rose and sought Wesly for help.<BR>"Vana is with you..... that doesn't mean well" Wesly said "He's crazy but he's good" Lizbeth said sarcastically<BR>"I opened that box you gave me and the old spirit told me about the Eldritch and that I must seek you to stop them" Lizbeth said<BR>"That easy!!! you're not gonna ask for details" Vana interrupted<BR>
+trresearch.page.LORE4.1="They tried killing me and my friends and that's not something I take lightly" Lizbeth said<BR>"Wesly can you create something to help defeat them. When I fought them I wasn't even able to pass through their runes" Lizbeth said<BR>"Yes they will prove difficult to fight. I will need your help. Create that magical metal of yours and come see me in the reliquary room" Wesly replied<BR>
+trresearch.page.LORE4.2=*The text changes into weird runes as if you are not supposed to learn what they say*
+trresearch.page.LORE4.3="Now we're ready. Prepare yourself dear we leave at dawn" Wesly said<BR>The morning came and Vana and Wesly went to check on Lizbeth before leaving. They didn't find her. She had already left alone before everyone woke up. How did she pass through the guards though? probably used an invisibility Focus or something<BR>"We have to reach her before she does something rash" Vana said<BR>"I only hope we make it in time" Wesly replied to him
 

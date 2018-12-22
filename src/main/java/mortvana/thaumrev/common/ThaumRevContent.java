@@ -75,6 +75,7 @@ public class ThaumRevContent {
 		loadMetalItems();
 		loadOtherItems();
 		loadBaubles();
+		addTooltips();
 
 		((FluxGearCreativeTab) generalTab).setItem(amuletWarden);
 		aluminiumArc();
@@ -147,7 +148,7 @@ public class ThaumRevContent {
 		generalItem = new ItemThaumRev();
 		thaumicBauble = new ItemThaumicBauble();
 
-		itemFocusPurity = new ItemFocusPurity();
+		focusPurity = new ItemFocusPurity();
 	}
 
 	public static void registerBlocks() {
@@ -173,7 +174,7 @@ public class ThaumRevContent {
 	}
 
 	public static void registerItems() {
-		GameRegistry.registerItem(itemFocusPurity, "itemFocusPurity");
+		GameRegistry.registerItem(focusPurity, "focusPurity");
 	}
 
 	public static void loadMaterials() {
@@ -1125,6 +1126,12 @@ public class ThaumRevContent {
 		amuletWarden = new ItemStack(thaumicBauble, 1, 0);
 		ringLove = new ItemStack(thaumicBauble, 1, 1);
 		pendantPrimal = new ItemStack(thaumicBauble, 1, 2);
+	}
+
+	public static void addTooltips() {
+		((ItemThaumRev) generalItem).unobtainable = Arrays.asList(21, 32, 50, 52, 953, 954, 955, 956, 957, 1140, 5006, 5008, 5010, 5011, 5012, 5069, 5070, 5071, 5085, 5086, 5087, 5088, 5089, 5090, 5091, 5092, 5093, 5094, 5099, 5102, 5113, 5121, 5206, 5208, 5210, 5211, 5212, 5269, 5270, 5271, 5285, 5286, 5287, 5288, 5289, 5290, 5291, 5292, 5293, 5294, 5299, 5302, 5313, 5321, 5406, 5408, 5410, 5411, 5412, 5469, 5470, 5471, 5485, 5486, 5487, 5488, 5489, 5490, 5491, 5492, 5493, 5494, 5499, 5502, 5513, 5521, 5606, 5608, 5610, 5611, 5612, 5669, 5670, 5671, 5685, 5686, 5687, 5688, 5689, 5690, 5691, 5692, 5693, 5694, 5699, 5702, 5713, 5721, 5806, 5808, 5810, 5811, 5812, 5869, 5870, 5871, 5885, 5886, 5887, 5888, 5889, 5890, 5891, 5892, 5893, 5894, 5921, 6083, 6089, 6099, 6121, 6321, 6521, 7100, 7101, 7102, 7103, 9461, 9462, 9463, 9464, 9465, 9466, 9467, 9468, 9661, 9662, 9663, 9664, 9665, 9666, 9667, 9668);
+		((ItemThaumRev) generalItem).unobtainableMod = Arrays.asList(5007, 5013, 5015, 5038, 5040, 5066, 5067, 5081, 5082, 5083, 5114, 5207, 5213, 5215, 5238, 5240, 5266, 5267, 5281, 5282, 5283, 5314, 5407, 5413, 5415, 5438, 5440, 5466, 5467, 5481, 5482, 5483, 5514, 5607, 5613, 5615, 5638, 5640, 5666, 5667, 5681, 5682, 5683, 5714, 5807, 5813, 5815, 5838, 5840, 5866, 5867, 5881, 5882, 5883, 6038, 6040, 9410, 9411, 9610, 9611);
+		((ItemThaumRev) generalItem).noUses = Arrays.asList(5, 6, 12, 30, 31, 40, 41, 42, 54, 55, 950, 6283, 6289, 6290, 6291);
 	}
 
 	public static void aluminiumArc() {
@@ -2291,15 +2298,15 @@ public class ThaumRevContent {
 		recipesPods[2] = addShapelessRecipe(itemPodStormypearl, stormypearl);
 		recipesPods[3] = addShapelessRecipe(itemPodStonypearl, stonypearl);
 		recipePowderCinderpearl = addCrucibleRecipe(keyElementalPowders, new ItemStack(Items.blaze_powder, 3, 0), itemPodCinderpearl, new AspectList().add(FIRE, 2).add(MAGIC, 1));
-		/*if (LoadedHelper.isThermalFoundationLoaded) {
+		if (LoadedHelper.isThermalFoundationLoaded) {
 			recipePowderShiverpearl = addCrucibleRecipe(keyElementalPowders, cloneStack(powderBlizz, 3), itemPodShiverpearl, new AspectList().add(COLD, 2).add(WATER, 1));
 			recipePowderStormypearl = addCrucibleRecipe(keyElementalPowders, cloneStack(powderBlitz, 3), itemPodStormypearl, new AspectList().add(WEATHER, 2).add(AIR, 1));
 			recipePowderStonypearl = addCrucibleRecipe(keyElementalPowders, cloneStack(powderBasalz, 3), itemPodStonypearl, new AspectList().add(ENTROPY, 2).add(EARTH, 1));
-		} else {*/
+		} else {
 			recipePowderShiverpearl = addCrucibleRecipe(keyElementalPowders, cloneStack(powderBlizzBackup, 3), itemPodShiverpearl, new AspectList().add(COLD, 2).add(WATER, 1));
 			recipePowderStormypearl = addCrucibleRecipe(keyElementalPowders, cloneStack(powderBlitzBackup, 3), itemPodStormypearl, new AspectList().add(WEATHER, 2).add(AIR, 1));
 			recipePowderStonypearl = addCrucibleRecipe(keyElementalPowders, cloneStack(powderBasalzBackup, 3), itemPodStonypearl, new AspectList().add(ENTROPY, 2).add(EARTH, 1));
-		//}
+		}
 	}
 
 	public static void loadRunicRecipes() {
@@ -2411,8 +2418,8 @@ public class ThaumRevContent {
 			recipeRedstoneReduced = addCrucibleRecipe(keyRedstoneReduced, dustRedstoneReduced, DUST + RS, new AspectList().add(ORDER, 1).add(ENTROPY, 1).add(ENERGY, 1));
 
 			recipeArcaneRedsolder = new ShapelessArcaneRecipe[2];
-			recipeArcaneRedsolder[0] = addShapelessArcaneCraftingRecipe(keyArcaneRedsolder, cloneStack(rawArcaneRedsolder, 6), new AspectList().add(EARTH, 6).add(FIRE, 3), INGOT + DRDS, INGOT + DRDS, INGOT + DRDS, INGOT + DRDS, INGOT + DRDS, INGOT + DRDS, DUST + RSRD, DUST + RSRD, HG_TC);
-			recipeArcaneRedsolder[1] = addShapelessArcaneCraftingRecipe(keyArcaneRedsolder, cloneStack(dustArcaneRedsolder, 6), new AspectList().add(EARTH, 6).add(FIRE, 3), DUST + DRDS, DUST + DRDS, DUST + DRDS, DUST + DRDS, DUST + DRDS, DUST + DRDS, DUST + RSRD, DUST + RSRD, HG_TC);
+			recipeArcaneRedsolder[0] = addShapelessArcaneCraftingRecipe(keyArcaneRedsolder, cloneStack(rawArcaneRedsolder, 6), new AspectList().add(EARTH, 6).add(FIRE, 3), INGOT + RDSR, INGOT + RDSR, INGOT + RDSR, INGOT + RDSR, INGOT + RDSR, INGOT + RDSR, DUST + RSRD, DUST + RSRD, HG_TC);
+			recipeArcaneRedsolder[1] = addShapelessArcaneCraftingRecipe(keyArcaneRedsolder, cloneStack(dustArcaneRedsolder, 6), new AspectList().add(EARTH, 6).add(FIRE, 3), DUST + RDSR, DUST + RDSR, DUST + RDSR, DUST + RDSR, DUST + RDSR, DUST + RDSR, DUST + RSRD, DUST + RSRD, HG_TC);
 
 			recipeCapCoreRedsolder = addArcaneCraftingRecipe(keyCapCoreRedsolder, itemCapacitorCoreArcaneRedsolder, new AspectList().add(WATER, 5).add(FIRE, 5).add(ORDER, 10), "NRN", "NRN", "NGN", 'N', NUGGET + ARDS, 'R', DUST + RSRD, 'G', "paneGlass");
 			recipeRedstoneFabric = addShapelessArcaneCraftingRecipe(keyRedcloth, cloneStack(itemFabricRedstone, 4), ThaumcraftHelper.newPrimalAspectList(1, 2, 3, 5, 10, 1), M0004, M0004, M0004, M0004, DUST + RSRD, DUST + RSRD, HG_TC, DUST + SALIS);
@@ -2989,7 +2996,7 @@ public class ThaumRevContent {
 			researchWardenicObsidian.setPages(new ResearchPage("0"), new ResearchPage(recipeWardenicHardener));
 		}
 
-		researchQuartz.setPages(new ResearchPage("0"), new ResearchPage(recipeWardenicQuartz), new ResearchPage(recipeWardenicQuartzDust), new ResearchPage(recipeWardenicQuartzReconst), new ResearchPage(recipeQuartzBlock), new ResearchPage(recipeWardenicQuartzInf), /*new ResearchPage(recipeQuartzChiseled), new ResearchPage(recipeQuartzPillar), new ResearchPage(recipeQuartzSlab), new ResearchPage(recipeQuartzStair),*/ new ResearchPage(recipeQuartzDeblock)/*, new ResearchPage(recipeQuartzDeslab), new ResearchPage(recipeQuartzDestair), new ResearchPage(recipeQuartzResetChiseled), new ResearchPage(recipeQuartzResetPillar)*/);
+		researchQuartz.setPages(new ResearchPage("0"), new ResearchPage("1"), new ResearchPage(recipeWardenicQuartz), new ResearchPage(recipeWardenicQuartzInf), new ResearchPage(recipeWardenicQuartzDust), new ResearchPage(recipeWardenicQuartzReconst), new ResearchPage(recipeQuartzBlock), /*new ResearchPage(recipeQuartzChiseled), new ResearchPage(recipeQuartzPillar), new ResearchPage(recipeQuartzSlab), new ResearchPage(recipeQuartzStair),*/ new ResearchPage(recipeQuartzDeblock)/*, new ResearchPage(recipeQuartzDeslab), new ResearchPage(recipeQuartzDestair), new ResearchPage(recipeQuartzResetChiseled), new ResearchPage(recipeQuartzResetPillar)*/);
 		researchWardenCrystal.setPages(new ResearchPage("0"), new ResearchPage(recipeWardenicCrystal), new ResearchPage(recipeWardenicCrystalDust), new ResearchPage(recipeWardenicCrystalReconst), new ResearchPage("1"), new ResearchPage(recipeWardenicBinder), new ResearchPage(recipeBinderTiny), new ResearchPage(recipeBinderCombine), new ResearchPage(recipeActivatedWardenicCrystal));
 		researchWardenBronze.setPages(new ResearchPage("0"), new ResearchPage(recipeWardenRBronze));
 		researchWardenComposite.setPages(new ResearchPage("0"), new ResearchPage(recipeWardenMetal), new ResearchPage(recipeWardenicCompositeRaw), new ResearchPage(recipeWardenicCompositeIngot));

@@ -62,10 +62,15 @@ public class ThaumRevLibrary {
 	public static Block blockOre;
 	public static Block blockPoorOre;
 	public static Block blockGravelOre;
+
 	//public static Block blockFakeAir;
 	public static Block blockWoodDecor;
 	public static Block blockStoneDecor;
 	//public static Block blockMetalDecor;
+	//public static Block blockTransparent;
+	//public static Block blockLog1;
+	//public static Block blockSoil;
+
 	public static Block blockStorageOre;
 	public static Block blockStorageAlloy1;
 	//public static Block blockStorageAlloy2;
@@ -73,13 +78,28 @@ public class ThaumRevLibrary {
 	public static Block blockStorageEquipment;
 	public static Block blockStorageGem;
 	public static Block blockStorageMisc;
-	//public static Block blockTransparent;
+
 	//public static Block blockWoodDevice;
 	//public static Block blockStoneDevice;
 	//public static Block blockMetalDevice;
-	//public static Block blockStoneSlab;
-	//public static Block blockStoneSlabDouble;
-	//public static Block blockWardenicQuartzStairs;
+	//public static Block blockGlassDevice;
+
+	//public static Block blockMagicCrop1;
+	//public static Block blockMagicCrop2;
+	//public static Block blockMagicCrop3;
+	//public static Block blockOreberry1;
+	//public static Block blockOreberry2;
+	//public static Block blockOreberry3;
+	//public static Block blockOreberry4;
+	//public static Block blockOreberry5;
+
+	//public static Block blockOreBroken
+	//public static Block blockOreCrushed
+	//public static Block blockOreDust
+
+	//public static Block blockSlab;
+	//public static Block blockSlabDouble;
+	//public static Block blockStairs;
 
 	public static Block blockMundaneCrop;
 
@@ -87,6 +107,7 @@ public class ThaumRevLibrary {
 	public static FluxGearItemInteractive generalItem;
 
 	public static ItemThaumicBauble thaumicBauble;
+	//public static ItemCapacitor itemCapacitor;
 
 	/** ITEMSTACKS **/
 	public static ItemStack potato = new ItemStack(Items.potato); //Used for debugging, placeholding, and such
@@ -101,20 +122,6 @@ public class ThaumRevLibrary {
 	//public static ItemStack blizzreed;
 	//public static ItemStack blitzreed;
 	//public static ItemStack basalzreed;
-
-	public static ItemStack wardenicObsidian;
-	public static ItemStack eldritchStone;
-	public static ItemStack blockWardenicQuartzChiseled;
-	public static ItemStack blockWardenicQuartzPillar;
-	public static ItemStack blockRedquartzChiseled;
-	public static ItemStack blockRedquartzPillar;
-	//public static ItemStack thaumicStone;
-	//public static ItemStack infernalBlastBrick;
-	//public static ItemStack shadowforgeBrick;
-
-	public static ItemStack impregnatedGreatwood;
-	public static ItemStack corruptedGreatwood;
-	public static ItemStack hardenedSilverwood;
 
 	public static ItemStack oreChalcocite;
 	public static ItemStack oreSphalerite;
@@ -131,6 +138,7 @@ public class ThaumRevLibrary {
 	public static ItemStack orePyrope;
 	public static ItemStack oreDioptase;
 	public static ItemStack oreFluonicSapphire;
+	//public static ItemStack oreMjuvil;
 
 	public static ItemStack orePoorChalcocite;
 	public static ItemStack orePoorSphalerite;
@@ -157,6 +165,33 @@ public class ThaumRevLibrary {
 	public static ItemStack oreGravelBismuthinite;
 	public static ItemStack oreGravelTennantite;
 	public static ItemStack oreGravelTetrahedrite;
+
+	public static ItemStack impregnatedGreatwood;
+	public static ItemStack corruptedGreatwood;
+	public static ItemStack hardenedSilverwood;
+
+	public static ItemStack wardenicObsidian;
+	public static ItemStack eldritchStone;
+	public static ItemStack blockWardenicQuartzChiseled;
+	public static ItemStack blockWardenicQuartzPillar;
+	public static ItemStack blockRedquartzChiseled;
+	public static ItemStack blockRedquartzPillar;
+	//public static ItemStack blockInfusedQuartzChiseled;
+	//public static ItemStack blockInfusedQuartzPillar;
+	//public static ItemStack thaumicStone;
+	//public static ItemStack infernalBlastBrick;
+	//public static ItemStack shadowforgeBrick;
+
+	//public static ItemStack blockMagneoturgicMachinery;
+
+	//public static ItemStack blockContainmentGlass;
+	//public static ItemStack blockContainmentGlassLuminous;
+	//public static ItemStack blockContainmentGlassDark;
+
+	//public static ItemStack blockSilverwoodTreated;
+	//public static ItemStack blockSilverwoodDensified;
+
+	//public static ItemStack blockWardenicLoam;
 
 	public static ItemStack blockCopper;
 	public static ItemStack blockZinc;
@@ -237,11 +272,90 @@ public class ThaumRevLibrary {
 
 	public static ItemStack blockVoidmetal;
 
+	//public static ItemStack blockWardedChest;
+	//public static ItemStack blockArcaneLoom;
+	//public static ItemStack blockReadingLectern;
 
+	//public static ItemStack blockThaumicHammermill;
+	//public static ItemStack blockThaumicHammermillBase;
+	//public static ItemStack blockRunicInfuser;
+
+	//public static ItemStack blockDarkRunicInfuser;
+	//public static ItemStack blockAlchemicalInfuser;
+	//public static ItemStack blockDarkAlchemicalInfuser;
+	//public static ItemStack blockShadowCrucible;
+	//public static ItemStack blockMagneoturgesWorkbench;
+	//public static ItemStack blockAlumentumPressurizer;
+	//public static ItemStack blockBrassPipe;
+	//public static ItemStack blockChemicalReactor;
+
+	//public static ItemStack blockChemicalReactorTubing;
+
+	//public static ItemStack oreberrySilver;
+	//public static ItemStack oreberryLead;
+	//public static ItemStack oreberryNickel;
+	//public static ItemStack oreberryPlatinum;
+
+	//public static ItemStack oreberryZinc;
+	//public static ItemStack oreberryBismuth;
+	//public static ItemStack oreberryArsenic;
+	//public static ItemStack oreberryAntimony;
+
+	//public static ItemStack oreberryOsmium;
+	//public static ItemStack oreberryIridium;
+	//public static ItemStack oreberryTungsten;
+	//public static ItemStack oreberryPalladium;
+
+	//public static ItemStack oreberryNeodymium;
+	//public static ItemStack oreberryLutetium;
+	//public static ItemStack oreberryRedstone;
+	//public static ItemStack oreberryQuicksilver;
+
+	//public static ItemStack oreberryUranium;
+	//public static ItemStack oreberry;
+	//public static ItemStack oreberry;
+	//public static ItemStack oreberry;
+
+	//public static ItemStack oreXenotimeBroken;
+	//public static ItemStack oreTungstenBroken;
+	//public static ItemStack oreIridosmiumBroken;
+	//public static ItemStack oreTetrahedriteBroken;
+	//public static ItemStack oreTennantiteBroken;
+	//public static ItemStack oreBismuthBroken;
+	//public static ItemStack oreNeodymiumBroken;
+	//public static ItemStack oreLutetiumBroken;
+	//public static ItemStack oreIridiumBroken;
+	//public static ItemStack oreArsenicBroken;
+	//public static ItemStack oreAntimonyBroken;
+
+	//public static ItemStack oreXenotimeCrushed;
+	//public static ItemStack oreTungstenCrushed;
+	//public static ItemStack oreIridosmiumCrushed;
+	//public static ItemStack oreTetrahedriteCrushed;
+	//public static ItemStack oreTennantiteCrushed;
+	//public static ItemStack oreBismuthCrushed;
+	//public static ItemStack oreNeodymiumCrushed;
+	//public static ItemStack oreLutetiumCrushed;
+	//public static ItemStack oreIridiumCrushed;
+	//public static ItemStack oreArsenicCrushed;
+	//public static ItemStack oreAntimonyCrushed;
+
+	//public static ItemStack oreXenotimePowder;
+	//public static ItemStack oreTungstenPowder;
+	//public static ItemStack oreIridosmiumPowder;
+	//public static ItemStack oreTetrahedritePowder;
+	//public static ItemStack oreTennantitePowder;
+	//public static ItemStack oreBismuthPowder;
+	//public static ItemStack oreNeodymiumPowder;
+	//public static ItemStack oreLutetiumPowder;
+	//public static ItemStack oreIridiumPowder;
+	//public static ItemStack oreArsenicPowder;
+	//public static ItemStack oreAntimonyPowder;
+
+	//SLABS/STAIRS
 	//public static ItemStack slabWardenicObsidian;
 	//public static ItemStack slabEldritch;
 	//public static ItemStack slabWardenicQuartz;
-
 	//public static ItemStack stairsWardenicQuartz;
 
 	//GENERAL ITEM
@@ -284,7 +398,29 @@ public class ThaumRevLibrary {
 
 	//public static ItemStack aluminiumHydroxide;				//00016
 
-	//00990-00999 SEEDS
+	//00850-00849 OREBERRIES
+	//public static ItemStack oreberrySilver;
+	//public static ItemStack oreberryLead;
+	//public static ItemStack oreberryNickel;
+	//public static ItemStack oreberryPlatinum;
+	//public static ItemStack oreberryZinc;
+	//public static ItemStack oreberryBismuth;
+	//public static ItemStack oreberryArsenic;
+	//public static ItemStack oreberryAntimony;
+	//public static ItemStack oreberryOsmium;
+	//public static ItemStack oreberryIridium;
+	//public static ItemStack oreberryTungsten;
+	//public static ItemStack oreberryPalladium;
+	//public static ItemStack oreberryNeodymium;
+	//public static ItemStack oreberryLutetium;
+	//public static ItemStack oreberryRedstone;
+	//public static ItemStack oreberryQuicksilver;
+	//public static ItemStack oreberryUranium;
+	//public static ItemStack oreberry;
+	//public static ItemStack oreberry;
+	//public static ItemStack oreberry;
+
+	//00950-00999 SEEDS
 	public static ItemStack seedExcubitura;						//00950 //v0.0.1
 	public static ItemStack seedCotton;							//00951 //v0.0.1
 	public static ItemStack seedThistle;						//00952 //v0.0.1
@@ -306,7 +442,7 @@ public class ThaumRevLibrary {
 	public static ItemStack chainWardenicBronze;				//01037 //v0.0.1
 	public static ItemStack chainPrimalBronze;					//01038 //v0.0.1
 	public static ItemStack plateWardenicBronzeMirror;			//01039 //v0.0.1
-	//public static ItemStack bindingWardenicBronzeSocketed;		//01040 //v0.0.3
+	//public static ItemStack bindingWardenicBronze;				//01040 //v0.0.3
 
 	public static ItemStack excubituraOilPure;					//01070 //v0.0.1
 	public static ItemStack chainWardenicSteel;					//01071 //v0.0.1
@@ -314,32 +450,30 @@ public class ThaumRevLibrary {
 	public static ItemStack plateWardenicSteelDetailed;			//01073 //v0.0.1
 	public static ItemStack plateWardenicSteelRunic;			//01074 //v0.0.1
 	public static ItemStack plateWardenicSteelConsecrated;		//01075 //v0.0.1
-	//public static ItemStack bindingWardenicSteelDetailed;		//01076 //v0.0.3
-	//public static ItemStack bindingWardenicSteelRunic;			//01077 //v0.0.3
-	//public static ItemStack bindingWardenicSteelConsecrated;	//01078 //v0.0.3
-	//public static ItemStack ingotWardenicSteelSocketed;			//01079 //v0.0.3
+	//public static ItemStack ingotWardenicSteelSocketed;			//01076 //v0.0.3
+	//public static ItemStack bindingWardenicSteelDetailed;		//01077 //v0.0.3
+	//public static ItemStack bindingWardenicSteelRunic;			//01078 //v0.0.3
+	//public static ItemStack bindingWardenicSteelConsecrated;	//01079 //v0.0.3
 
-	public static ItemStack gemWardenicQuartzInfused;			//01105 //v0.0.1
-	public static ItemStack plateWardenicCompositeInfused;		//01106 //v0.0.1
-	public static ItemStack plateWardenicCompositeFitted;		//01107 //v0.0.1
-	public static ItemStack plateWardenicCompositeDetailed;		//01108 //v0.0.1
-	public static ItemStack plateWardenicCompositeRunic;		//01109 //v0.0.1
-	public static ItemStack plateWardenicCompositeConsecrated;	//01110 //v0.0.1
-	public static ItemStack plateWardenicCompositePrimal;		//01111 //v0.0.1
-	//public static ItemStack ingotWardenicCompositeFolded;		//01112 //v0.0.3
-	//public static ItemStack ingotWardenicCompositeSocketed;		//01113 //v0.0.3
-	//public static ItemStack bindingWardenicComposite;			//01114 //v0.0.3
-	//public static ItemStack bindingWardenicCompositeDetailed;	//01115 //v0.0.3
-	//public static ItemStack bindingWardenicCompositeRunic;		//01116 //v0.0.3
-	//public static ItemStack bindingWardenicCompositeConsecrated;//01117 //v0.0.3
-	//public static ItemStack bindingWardenicCompositePrimal;		//01118 //v0.0.3
-	//public static ItemStack shaftSilverwoodWardenclothWrapped;	//01119 //v0.0.3
-	//public static ItemStack itemSilkSilverwood;					//01120 //v0.0.2
-	//public static ItemStack itemSilkSilverwoodConsecrated;		//01121 //v0.0.2
-	//public static ItemStack itemSilvercloth;					//01122 //v0.0.2
-	//public static ItemStack itemSilverclothRunic;				//01123 //v0.0.2
-	//public static ItemStack itemSilverclothConsecrated;			//01124 //v0.0.2
-	//public static ItemStack itemSilverclothPrimal;				//01125 //v0.0.2
+	public static ItemStack plateWardenicCompositeInfused;		//01105 //v0.0.1
+	public static ItemStack plateWardenicCompositeFitted;		//01106 //v0.0.1
+	public static ItemStack plateWardenicCompositeDetailed;		//01107 //v0.0.1
+	public static ItemStack plateWardenicCompositeRunic;		//01108 //v0.0.1
+	public static ItemStack plateWardenicCompositeConsecrated;	//01109 //v0.0.1
+	public static ItemStack plateWardenicCompositePrimal;		//01110 //v0.0.1
+	//public static ItemStack plateWardenicCompositeFolded;		//01111 //v0.0.3
+	//public static ItemStack bindingWardenicComposite;			//01112 //v0.0.3
+	//public static ItemStack bindingWardenicCompositeDetailed;	//01113 //v0.0.3
+	//public static ItemStack bindingWardenicCompositeRunic;		//01114 //v0.0.3
+	//public static ItemStack bindingWardenicCompositeConsecrated;//01115 //v0.0.3
+	//public static ItemStack bindingWardenicCompositePrimal;		//01116 //v0.0.3
+	//public static ItemStack shaftSilverwoodWardenclothWrapped;	//01117 //v0.0.3
+	//public static ItemStack itemSilkSilverwood;					//01118 //v0.0.2
+	//public static ItemStack itemSilkSilverwoodConsecrated;		//01119 //v0.0.2
+	//public static ItemStack itemSilvercloth;					//01120 //v0.0.2
+	//public static ItemStack itemSilverclothRunic;				//01121 //v0.0.2
+	//public static ItemStack itemSilverclothConsecrated;			//01122 //v0.0.2
+	//public static ItemStack itemSilverclothPrimal;				//01123 //v0.0.2
 
 	public static ItemStack itemEssenceOfAwakening;				//01140
 
@@ -349,14 +483,99 @@ public class ThaumRevLibrary {
 	public static ItemStack itemFabricRedstone;					//01200 //v0.0.1
 	public static ItemStack itemRedcloth;						//01201 //v0.0.1
 	public static ItemStack itemRedclothCapacitive;				//01202 //v0.0.1
-	//public static ItemStack bindingArcaneRedsolderSocketed;		//01203 //v0.0.3
+	//public static ItemStack bindingArcaneRedsolder;				//01203 //v0.0.3
 
+	//public static ItemStack itemFabricEnrichedRedstone;			//01235	//v0.0.2
+	//public static ItemStack itemRedclothEnriched;				//01236	//v0.0.2
+	//public static ItemStack itemRedclothPadded;					//01237	//v0.0.2
+	//public static ItemStack itemRedclothRunic;					//01238	//v0.0.2
+	//public static ItemStack itemRedclothPrimal;					//01239	//v0.0.2
+	//public static ItemStack bindingHardenedRedbronze;			//01240	//v0.0.3
+	//public static ItemStack bindingHardenedRedbronzeCapacitive;	//01241	//v0.0.3
+
+	//public static ItemStack itemCapacitorSocket;				//01270	//v0.0.2
+	//public static ItemStack threadRedcotton;				//01271	//v0.0.2
+	//public static ItemStack threadFluxsteel;					//01272	//v0.0.2
+	//public static ItemStack itemReddenim;						//01273	//v0.0.2
+	//public static ItemStack itemReddenimEnchanted;				//01274	//v0.0.2
+	//public static ItemStack itemReddenimDetailed;				//01275	//v0.0.2
+	//public static ItemStack itemReddenimCharged;				//01276	//v0.0.2
+	//public static ItemStack itemReddenimRunic;					//01277	//v0.0.2
+	//public static ItemStack itemReddenimEnergized;				//01278	//v0.0.2
+	//public static ItemStack itemReddenimSocketed;				//01279	//v0.0.2
+	//public static ItemStack shaftGreatwoodHollow;				//01280	//v0.0.3
+	//public static ItemStack shaftGreatwoodWired;				//01281	//v0.0.3
+	//public static ItemStack shaftGreatwoodSocketed;				//01282	//v0.0.3
+	//public static ItemStack bindingFluxsteel;					//01283	//v0.0.3
+	//public static ItemStack bindingFluxsteelReinforced;			//01284	//v0.0.3
+	//public static ItemStack plateFluxsteelFolded;				//01285	//v0.0.3
+
+	//public static ItemStack threadFluxedComposite;				//01305	//v0.0.2
+	//public static ItemStack itemReddenimCompsite;				//01306	//v0.0.2
+	//public static ItemStack itemReddenimEnchantedCompsite;		//01307	//v0.0.2
+	//public static ItemStack itemReddenimDetailedCompsite;		//01308	//v0.0.2
+	//public static ItemStack itemReddenimChargedCompsite;		//01309	//v0.0.2
+	//public static ItemStack itemReddenimRunicCompsite;			//01310	//v0.0.2
+	//public static ItemStack itemReddenimEnergizedCompsite;		//01311	//v0.0.2
+	//public static ItemStack itemReddenimSocketedCompsite;		//01312	//v0.0.2
+	//public static ItemStack itemReddenimPrimalCompsite;			//01313	//v0.0.2
+	//public static ItemStack plateFluxedCompositeInfused;		//01314	//v0.0.3
+	//public static ItemStack plateFluxedCompositeFolded;			//01315	//v0.0.3
+	//public static ItemStack plateFluxedCompositeEnergized;		//01316	//v0.0.3
+	//public static ItemStack bindingFluxedComposite;				//01317	//v0.0.3
+	//public static ItemStack bindingFluxedCompositeDetailed;		//01318	//v0.0.3
+	//public static ItemStack bindingFluxedCompositeRunic;		//01319	//v0.0.3
+	//public static ItemStack bindingFluxedCompositeEnergized;	//01320	//v0.0.3
+	//public static ItemStack bindingFluxedCompositeSocketed;		//01321	//v0.0.3
+	//public static ItemStack itemHardenedFluxedCompositePlates;	//01322	//v0.0.2
+	//public static ItemStack itemRivetsFluxsteel;				//01323	//v0.0.2
+	//public static ItemStack itemReddenimEnchantedRiveted;		//01324	//v0.0.2
+	//public static ItemStack itemReddenimDetailedRiveted;		//01325	//v0.0.2
+	//public static ItemStack itemReddenimChargedRiveted;			//01326	//v0.0.2
+	//public static ItemStack itemReddenimRunicRiveted;			//01327	//v0.0.2
+	//public static ItemStack itemReddenimEnergizedRiveted;		//01328	//v0.0.2
+	//public static ItemStack itemReddenimSocketedRiveted;		//01329	//v0.0.2
+
+	//public static ItemStack itemCapacitorSocketResonant;		//01340	//v0.0.2
+	//public static ItemStack threadResonantFluxedComposite;		//01341	//v0.0.2
+	//public static ItemStack itemResonantFluxedCompositeStuds;	//01342	//v0.0.2
+	//public static ItemStack bindingResonant;					//01343	//v0.0.2
+	//public static ItemStack shaftResonant;						//01344	//v0.0.2
 
 
 	//01400-01599 ELDTRICH
 
 	//01600-01799 MAGNEOTURGY - BASE
-	public static ItemStack itemCapacitorCoreArcaneRedsolder;		//01600 //v0.0.1
+	public static ItemStack itemCapacitorCoreArcaneRedsolder;	//01600 //v0.0.1
+	//public static ItemStack itemCapacitorCoreLayeredRedsolder;	//01601 //v0.0.2
+	//public static ItemStack itemCapacitorCoreElectrumCore;		//01602 //v0.0.2
+	//public static ItemStack itemCapacitorCoreHighResonance;		//01603 //v0.0.2
+	//public static ItemStack itemCapacitorCorePiezomagnetic;		//01604 //v0.0.2
+	//public static ItemStack itemCapacitorCoreMagneoturge;		//01605 //v0.0.2
+	//public static ItemStack itemCapacitorCoreUltraHighResonance;//01606 //v0.0.2
+
+	//public static ItemStack itemCapacitorCatalystAgNd;			//01610 //v0.0.2
+	//public static ItemStack itemCapacitorCatalystAgAuNdPd;		//01611 //v0.0.2
+
+	//public static ItemStack itemCapacitorCasingPbAgAu;			//01615 //v0.0.2
+	//public static ItemStack itemCapacitorCasingOsLuW;			//01616 //v0.0.2
+
+	//public static ItemStack itemRedstoneEssence;				//01620 //v0.0.2
+	//public static ItemStack itemQuartzCircuitPlate;				//01621 //v0.0.2
+	//public static ItemStack itemCognitionCore;					//01622 //v0.0.2
+	//public static ItemStack itemResonanceModulationCoil;		//01623 //v0.0.2
+	//public static ItemStack itemCircuitryHex;					//01624 //v0.0.2
+	//public static ItemStack itemImprintedPyroptaseDataLibrary;	//01625 //v0.0.2
+	//public static ItemStack itemAnalyticCore;					//01626 //v0.0.2
+	//public static ItemStack itemRedstoneElectrolyte;			//01627 //v0.0.2
+
+	//public static ItemStack itemRedstoneEssenceResonant;		//01630 //v0.0.2
+	//public static ItemStack itemBlueFluxstoneEssence;			//01631 //v0.0.2
+	//public static ItemStack itemBlueFluxstoneEssenceResonant;	//01632 //v0.0.2
+	//public static ItemStack itemEnergizedAgCuPaste;				//01633 //v0.0.2
+
+	//public static ItemStack itemEssenceOfResonance;				//01640	//v0.0.2
+
 
 	//01800-01999 THAUMIC ASCENSION
 	//02000-02199 RUNIC MECHANICS
@@ -364,9 +583,36 @@ public class ThaumRevLibrary {
 	//02400-02599 THAUMIC DYNAMICS
 	//02600-02799 CHRONOTURGY
 	//02800-02999 ASTROTURGY/MISC
+
+
 	//03000-03099 WAND CAPS
+	//public static ItemStack wandCapLead;						//03000	//v0.0.2
+	//public static ItemStack wandCapBismuth;						//03001	//v0.0.2
+	//public static ItemStack wandCapBronze;						//03002	//v0.0.2
+	//public static ItemStack wandCapBrass;						//03003	//v0.0.2
+	//public static ItemStack wandCapInvar;						//03004	//v0.0.2
+	//public static ItemStack wandCapElectrumInert;				//03005	//v0.0.2
+	//public static ItemStack wandCapElectrum;					//03006	//v0.0.2
+	//public static ItemStack wandCapPlatinumInert;				//03007	//v0.0.2
+	//public static ItemStack wandCapPlatinum;					//03008	//v0.0.2
+	//public static ItemStack wandCapSignalumInert;				//03009	//v0.0.2
+	//public static ItemStack wandCapSignalum;					//03010	//v0.0.2
+	//public static ItemStack wandCapLumiumInert;					//03011	//v0.0.2
+	//public static ItemStack wandCapLumium;						//03012	//v0.0.2
+	//public static ItemStack wandCapEnderiumInert;				//03013	//v0.0.2
+	//public static ItemStack wandCapEnderium;					//03014	//v0.0.2
+	//public static ItemStack wandCapThaumicElectrumInert;		//03015	//v0.0.2
+	//public static ItemStack wandCapThaumicElectrum;				//03016	//v0.0.2
+
 	//03100-03199 WAND CORES
+	//public static ItemStack wandCoreBloodwood;					//03100	//v0.0.2
+
 	//03200-03299 STAFF CORES
+	//public static ItemStack staffCoreBloodwood;					//03200	//v0.0.2
+
+	//public static ItemStack staffCoreTTKami;						//03290	//v0.0.2
+
+
 	//03300-03499 AUGMENTS
 	//03500-03599 GOLEM STUFF
 
@@ -821,16 +1067,77 @@ public class ThaumRevLibrary {
 	public static ItemStack firedOsLu;							//06521
 
 	//07000-07099 ORE CLUSTERS
+	//public static ItemStack clusterUranium;
 	public static ItemStack clusterZinc;						//07001
 	public static ItemStack clusterAluminium;					//07002
 	public static ItemStack clusterNickel;						//07003
 	public static ItemStack clusterPlatinum;					//07004
+	//public static ItemStack clusterOsmium
 	public static ItemStack clusterXenotime;					//07006
 	public static ItemStack clusterTungsten;					//07007
 	public static ItemStack clusterIridosmium;					//07008
 	public static ItemStack clusterBismuth;						//07009
 	public static ItemStack clusterTennantite;					//07010
 	public static ItemStack clusterTetrahedrite;				//07011
+	//public static ItemStack clusterMagnetite;
+	//public static ItemStack clusterCadmium
+	//public static ItemStack clusterIndium
+	//public static ItemStack clusterPitchblende
+	//public static ItemStack clusterNetherCobalt
+	//public static ItemStack clusterNetherArdite
+	//public static ItemStack clusterChromite
+	//public static ItemStack clusterCobaltite
+	//public static ItemStack clusterMolybdenite
+	//public static ItemStack clusterIlmenite
+	//public static ItemStack clusterBraggite
+	//public static ItemStack clusterSylvanite
+	//public static ItemStack cluster
+	//public static ItemStack cluster
+	//public static ItemStack cluster
+	//public static ItemStack cluster
+	//public static ItemStack cluster
+	//public static ItemStack cluster
+	//public static ItemStack cluster
+	//public static ItemStack cluster
+	//public static ItemStack cluster
+	//public static ItemStack cluster
+	//public static ItemStack cluster
+	//public static ItemStack cluster
+	//public static ItemStack cluster
+	//public static ItemStack cluster
+	//public static ItemStack cluster
+	//public static ItemStack cluster
+	//public static ItemStack cluster
+	//public static ItemStack cluster
+	//public static ItemStack cluster
+	//public static ItemStack cluster
+	//public static ItemStack cluster
+	//public static ItemStack cluster
+	//public static ItemStack cluster
+	//public static ItemStack cluster
+	//public static ItemStack cluster
+	//public static ItemStack cluster
+	//public static ItemStack cluster
+	//public static ItemStack cluster
+	//public static ItemStack cluster
+	//public static ItemStack cluster
+	//public static ItemStack cluster
+	//public static ItemStack cluster
+	//public static ItemStack cluster
+	//public static ItemStack cluster
+	//public static ItemStack cluster
+	//public static ItemStack cluster
+
+
+
+
+
+
+
+
+
+
+
 
 	//071000-07199 SLAGS
 	public static ItemStack carbonSlag;							//07100
@@ -909,20 +1216,26 @@ public class ThaumRevLibrary {
 	public static ItemStack aluDenseTemp;						//30000
 
 
-	public static ItemStack amuletWarden;						//00000
-	public static ItemStack ringLove;							//00001
-	public static ItemStack pendantPrimal;						//00002
-
 	/** ARMORS **/
-	public static ItemArmorInfusable enchCottonGoggles;
-	public static ItemArmorInfusable enchCottonRobe;
-	public static ItemArmorInfusable enchCottonPants;
-	public static ItemArmorInfusable enchCottonBoots;
+	//public static ItemArmorInfusable cottonCap;
+	//public static ItemArmorInfusable cottonTunic;
+	//public static ItemArmorInfusable cottonPants;
+	//public static ItemArmorInfusable cottonBoots;
+
+	//public static ItemArmorInfusable woolCap;
+	//public static ItemArmorInfusable woolTunic;
+	//public static ItemArmorInfusable woolKilt;
+	//public static ItemArmorInfusable woolShoes;
 
 	public static ItemArmorInfusable bronzeChainHelmet;
 	public static ItemArmorInfusable bronzeChainmail;
 	public static ItemArmorInfusable bronzeChainGreaves;
 	public static ItemArmorInfusable bronzeChainBoots;
+
+	public static ItemArmorInfusable enchCottonGoggles;
+	public static ItemArmorInfusable enchCottonRobe;
+	public static ItemArmorInfusable enchCottonPants;
+	public static ItemArmorInfusable enchCottonBoots;
 
 	public static ItemArmorInfusable primalGoggles;
 	public static ItemArmorInfusable primalRobe;
@@ -949,6 +1262,11 @@ public class ThaumRevLibrary {
 	public static ItemArmorInfusable wardenicCompositeGreaves;
 	public static ItemArmorInfusable wardenicCompositeBoots;
 
+	//public static ItemArmorInfusable wardenicSilverclothHood;
+	//public static ItemArmorInfusable wardenicSilverclothRobe;
+	//public static ItemArmorInfusable wardenicSilverclothLeggings;
+	//public static ItemArmorInfusable wardenicSilverclothBoots;
+
 	public static ItemArmorInfusable wardenicAwakenedHelmet;
 	public static ItemArmorInfusable wardenicAwakenedChestplate;
 	public static ItemArmorInfusable wardenicAwakenedGreaves;
@@ -958,10 +1276,318 @@ public class ThaumRevLibrary {
 	public static ItemArmorInfusable fluxRobeVest;
 	public static ItemArmorInfusable fluxRobePants;
 	public static ItemArmorInfusable fluxRobeBoots;
+
+	//public static ItemArmorInfusable arcaneMechanicGoggles;
+	//public static ItemArmorInfusable arcaneMechanicJacket;
+	//public static ItemArmorInfusable arcaneMechanicPants;
+	//public static ItemArmorInfusable arcaneMechanicBoots;
+
+	//public static ItemArmorInfusable thaumicEngineerGoggles;
+	//public static ItemArmorInfusable thaumicEngineerJacket;
+	//public static ItemArmorInfusable thaumicEngineerPants;
+	//public static ItemArmorInfusable thaumicEngineerBoots;
+
+	//public static ItemArmorInfusable magneoturgeGoggles;
+	//public static ItemArmorInfusable magneoturgeWaistcoat;
+	//public static ItemArmorInfusable magneoturgeTrousers;
+	//public static ItemArmorInfusable magneoturgeBoots;
+
+	//public static ItemArmorInfusable artificerBrigandineHood;
+	//public static ItemArmorInfusable artificerBrigandineBattlecoat;
+	//public static ItemArmorInfusable artificerBrigandinePants;
+	//public static ItemArmorInfusable artificerBrigandineBoots;
+
+	//public static ItemArmorInfusable magneoturgeResonantGoggles;
+	//public static ItemArmorInfusable magneoturgeResonantBattlecoat;
+	//public static ItemArmorInfusable magneoturgeResonantPants;
+	//public static ItemArmorInfusable magneoturgeResonantBoots;
+
+	//public static ItemArmorInfusable occultistHood;
+	//public static ItemArmorInfusable occultistRobe;
+	//public static ItemArmorInfusable occultistLeggings;
+	//public static ItemArmorInfusable occultistBoots;
+
+	//public static ItemArmorInfusable occultistGildedHood;
+	//public static ItemArmorInfusable occultistGildedRobe;
+	//public static ItemArmorInfusable occultistGildedLeggings;
+	//public static ItemArmorInfusable occultistGildedBoots;
+
+	//public static ItemArmorInfusable eldritchPlateHelmet;
+	//public static ItemArmorInfusable eldritchPlateChestplate;
+	//public static ItemArmorInfusable eldritchPlateGreaves;
+	//public static ItemArmorInfusable eldritchPlateBoots;
+
+	//public static ItemArmorInfusable occultistInfusedHood;
+	//public static ItemArmorInfusable occultistInfusedRobe;
+	//public static ItemArmorInfusable occultistInfusedLeggings;
+	//public static ItemArmorInfusable occultistInfusedBoots;
+
+	//public static ItemArmorInfusable voidknightHelmet;
+	//public static ItemArmorInfusable voidknightChestplate;
+	//public static ItemArmorInfusable voidknightGreaves;
+	//public static ItemArmorInfusable voidknightBoots;
+
+	//public static ItemArmorInfusable occultistNebulousHood;
+	//public static ItemArmorInfusable occultistNebulousRobe;
+	//public static ItemArmorInfusable occultistNebulousLeggings;
+	//public static ItemArmorInfusable occultistNebulousBoots;
+
+
 	/** TOOLS **/
+	//public static ItemSickleInfusable sickleThaumium;
+	//public static ItemShearsInfusable shearsThaumium;
+	//public static ItemFishingRodInfusable fishingRodThaumium;
+	//public static ItemBowInfusable bowThaumium;
+	//public static ItemHammerInfusable hammerThaumium;
+	//public static ItemCrookInfusable crookThaumium;
+
+	//public static ItemSickleInfusable sickleElemental;
+	//public static ItemShearsInfusable shearsElemental;
+	//public static ItemFishingRodInfusable fishingRodElemental;
+	//public static ItemBowInfusable bowElemental;
+	//public static ItemHammerInfusable hammerElemental;
+	//public static ItemCrookInfusable crookElemental;
+
+	//public static ItemSickleInfusable sickleVoid;
+	//public static ItemShearsInfusable shearsVoid;
+	//public static ItemFishingRodInfusable fishingRodVoid;
+	//public static ItemBowInfusable bowVoid;
+	//public static ItemHammerInfusable hammerVoid;
+	//public static ItemCrookInfusable crookVoid;
+
+	//public static ItemPickaxeInfusable pickaxeThaumicBronze;
+	//public static ItemAxeInfusable axeThaumicBronze;
+	//public static ItemShovelInfusable shovelThaumicBronze;
+	//public static ItemHoeInfusable hoeThaumicBronze;
+	//public static ItemSickleInfusable sickleThaumicBronze;
+	//public static ItemShearsInfusable shearsThaumicBronze;
+	//public static ItemFishingRodInfusable fishingRodThaumicBronze;
+	//public static ItemSwordInfusable swordThaumicBronze;
+	//public static ItemBowInfusable bowThaumicBronze;
+	//public static ItemHammerInfusable hammerThaumicBronze;
+	//public static ItemCrookInfusable crookThaumicBronze;
+
+	//public static ItemPickaxeInfusable pickaxeWardenicGreatwood;
+	//public static ItemAxeInfusable axeWardenicGreatwood;
+	//public static ItemShovelInfusable shovelWardenicGreatwood;
+	//public static ItemHoeInfusable hoeWardenicGreatwood;
+	//public static ItemSickleInfusable sickleWardenicGreatwood;
+	//public static ItemFishingRodInfusable fishingRodWardenicGreatwood;
+	//public static ItemSwordInfusable swordWardenicGreatwood;
+	//public static ItemBowInfusable bowWardenicGreatwood;
+	//public static ItemHammerInfusable hammerWardenicGreatwood;
+	//public static ItemCrookInfusable crookWardenicGreatwood;
+
+	//public static ItemPickaxeInfusable pickaxeWardenicBronze;
+	//public static ItemAxeInfusable axeWardenicBronze;
+	//public static ItemShovelInfusable shovelWardenicBronze;
+	//public static ItemHoeInfusable hoeWardenicBronze;
+	//public static ItemSickleInfusable sickleWardenicBronze;
+	//public static ItemShearsInfusable shearsWardenicBronze;
+	//public static ItemFishingRodInfusable fishingRodWardenicBronze;
+	//public static ItemSwordInfusable swordWardenicBronze;
+	//public static ItemBowInfusable bowWardenicBronze;
+	//public static ItemHammerInfusable hammerWardenicBronze;
+	//public static ItemCrookInfusable crookWardenicBronze;
+
+	//public static ItemPickaxeInfusable pickaxeWardenicSteel;
+	//public static ItemAxeInfusable axeWardenicSteel;
+	//public static ItemShovelInfusable shovelWardenicSteel;
+	//public static ItemHoeInfusable hoeWardenicSteel;
+	//public static ItemSickleInfusable sickleWardenicSteel;
+	//public static ItemShearsInfusable shearsWardenicSteel;
+	//public static ItemFishingRodInfusable fishingRodWardenicSteel;
+	//public static ItemSwordInfusable swordWardenicSteel;
+	//public static ItemBowInfusable bowWardenicSteel;
+	//public static ItemHammerInfusable hammerWardenicSteel;
+	//public static ItemCrookInfusable crookWardenicSteel;
+
+	//public static ItemPickaxeInfusable pickaxeWardenicComposite;
+	//public static ItemAxeInfusable axeWardenicComposite;
+	//public static ItemShovelInfusable shovelWardenicComposite;
+	//public static ItemHoeInfusable hoeWardenicComposite;
+	//public static ItemSickleInfusable sickleWardenicComposite;
+	//public static ItemShearsInfusable shearsWardenicComposite;
+	//public static ItemFishingRodInfusable fishingRodWardenicComposite;
+	//public static ItemSwordInfusable swordWardenicComposite;
+	//public static ItemCrossbowInfusable crossbowWardenicComposite;
+	//public static ItemHammerInfusable hammerWardenicComposite;
+	//public static ItemCrookInfusable crookWardenicComposite;
+
+	//public static ItemPickaxeInfusable pickaxeWardenicAwakened;
+	//public static ItemAxeInfusable axeWardenicAwakened;
+	//public static ItemShovelInfusable shovelWardenicAwakened;
+	//public static ItemHoeInfusable hoeWardenicAwakened;
+	//public static ItemSickleInfusable sickleWardenicAwakened;
+	//public static ItemShearsInfusable shearsWardenicAwakened;
+	//public static ItemFishingRodInfusable fishingRodWardenicAwakened;
+	//public static ItemSwordInfusable swordWardenicAwakened;
+	//public static ItemCrossbowInfusable crossbowWardenicAwakened;
+	//public static ItemHammerInfusable hammerWardenicAwakened;
+	//public static ItemCrookInfusable crookWardenicAwakened;
+
+	//public static ItemPickaxeInfusable pickaxeRedsolder;
+	//public static ItemAxeInfusable axeRedsolder;
+	//public static ItemShovelInfusable shovelRedsolder;
+	//public static ItemHoeInfusable hoeRedsolder;
+	//public static ItemSickleInfusable sickleRedsolder;
+	//public static ItemShearsInfusable shearsRedsolder;
+	//public static ItemFishingRodInfusable fishingRodRedsolder;
+	//public static ItemSwordInfusable swordRedsolder;
+	//public static ItemBowInfusable bowRedsolder;
+	//public static ItemHammerInfusable hammerRedsolder;
+	//public static ItemCrookInfusable crookRedsolder;
+
+	//public static ItemPickaxeInfusable pickaxeRedbronze;
+	//public static ItemAxeInfusable axeRedbronze;
+	//public static ItemShovelInfusable shovelRedbronze;
+	//public static ItemHoeInfusable hoeRedbronze;
+	//public static ItemSickleInfusable sickleRedbronze;
+	//public static ItemShearsInfusable shearsRedbronze;
+	//public static ItemFishingRodInfusable fishingRodRedbronze;
+	//public static ItemSwordInfusable swordRedbronze;
+	//public static ItemBowInfusable bowRedbronze;
+	//public static ItemHammerInfusable hammerRedbronze;
+	//public static ItemCrookInfusable crookRedbronze;
+
+	//public static ItemPickaxeInfusable pickaxeFluxsteel;
+	//public static ItemAxeInfusable axeFluxsteel;
+	//public static ItemShovelInfusable shovelFluxsteel;
+	//public static ItemHoeInfusable hoeFluxsteel;
+	//public static ItemSickleInfusable sickleFluxsteel;
+	//public static ItemShearsInfusable shearsFluxsteel;
+	//public static ItemFishingRodInfusable fishingRodFluxsteel;
+	//public static ItemSwordInfusable swordFluxsteel;
+	//public static ItemCrossbowInfusable crossbowFluxsteel;
+	//public static ItemHammerInfusable hammerFluxsteel;
+	//public static ItemCrookInfusable crookFluxsteel;
+
+	//public static ItemPickaxeInfusable pickaxeFluxedComposite;
+	//public static ItemAxeInfusable axeFluxedComposite;
+	//public static ItemShovelInfusable shovelFluxedComposite;
+	//public static ItemHoeInfusable hoeFluxedComposite;
+	//public static ItemSickleInfusable sickleFluxedComposite;
+	//public static ItemShearsInfusable shearsFluxedComposite;
+	//public static ItemFishingRodInfusable fishingRodFluxedComposite;
+	//public static ItemSwordInfusable swordFluxedComposite;
+	//public static ItemCrossbowInfusable crossbowFluxedComposite;
+	//public static ItemHammerInfusable hammerFluxedComposite;
+	//public static ItemCrookInfusable crookFluxedComposite;
+
+	//public static ItemPickaxeInfusable pickaxeResonantComposite;
+	//public static ItemAxeInfusable axeResonantComposite;
+	//public static ItemShovelInfusable shovelResonantComposite;
+	//public static ItemHoeInfusable hoeResonantComposite;
+	//public static ItemSickleInfusable sickleResonantComposite;
+	//public static ItemShearsInfusable shearsResonantComposite;
+	//public static ItemFishingRodInfusable fishingRodResonantComposite;
+	//public static ItemSwordInfusable swordResonantComposite;
+	//public static ItemCrossbowInfusable crossbowResonantComposite;
+	//public static ItemHammerInfusable hammerResonantComposite;
+	//public static ItemCrookInfusable crookResonantComposite;
+
+	//public static ItemPickaxeInfusable pickaxeCorruptedGreatwood;
+	//public static ItemAxeInfusable axeCorruptedGreatwood;
+	//public static ItemShovelInfusable shovelCorruptedGreatwood;
+	//public static ItemHoeInfusable hoeCorruptedGreatwood;
+	//public static ItemSickleInfusable sickleCorruptedGreatwood;
+	//public static ItemFishingRodInfusable fishingRodCorruptedGreatwood;
+	//public static ItemSwordInfusable swordCorruptedGreatwood;
+	//public static ItemBowInfusable bowCorruptedGreatwood;
+	//public static ItemHammerInfusable hammerCorruptedGreatwood;
+	//public static ItemCrookInfusable crookCorruptedGreatwood;
+
+	//public static ItemPickaxeInfusable pickaxeVoidbrass;
+	//public static ItemAxeInfusable axeVoidbrass;
+	//public static ItemShovelInfusable shovelVoidbrass;
+	//public static ItemHoeInfusable hoeVoidbrass;
+	//public static ItemSickleInfusable sickleVoidbrass;
+	//public static ItemShearsInfusable shearsVoidbrass;
+	//public static ItemFishingRodInfusable fishingRodVoidbrass;
+	//public static ItemSwordInfusable swordVoidbrass;
+	//public static ItemBowInfusable bowVoidbrass;
+	//public static ItemHammerInfusable hammerVoidbrass;
+	//public static ItemCrookInfusable crookVoidbrass;
+
+	//public static ItemPickaxeInfusable pickaxeCrimsonThaumium;
+	//public static ItemAxeInfusable axeCrimsonThaumium;
+	//public static ItemShovelInfusable shovelCrimsonThaumium;
+	//public static ItemHoeInfusable hoeCrimsonThaumium;
+	//public static ItemSickleInfusable sickleCrimsonThaumium;
+	//public static ItemShearsInfusable shearsCrimsonThaumium;
+	//public static ItemFishingRodInfusable fishingRodCrimsonThaumium;
+	//public static ItemSwordInfusable swordCrimsonThaumium;
+	//public static ItemBowInfusable bowCrimsonThaumium;
+	//public static ItemHammerInfusable hammerCrimsonThaumium;
+	//public static ItemCrookInfusable crookCrimsonThaumium;
+
+	//public static ItemPickaxeInfusable pickaxeVoidtungsten;
+	//public static ItemAxeInfusable axeVoidtungsten;
+	//public static ItemShovelInfusable shovelVoidtungsten;
+	//public static ItemHoeInfusable hoeVoidtungsten;
+	//public static ItemSickleInfusable sickleVoidtungsten;
+	//public static ItemShearsInfusable shearsVoidtungsten;
+	//public static ItemFishingRodInfusable fishingRodVoidtungsten;
+	//public static ItemSwordInfusable swordVoidtungsten;
+	//public static ItemBowInfusable bowVoidtungsten;
+	//public static ItemHammerInfusable hammerVoidtungsten;
+	//public static ItemCrookInfusable crookVoidtungsten;
+
+	//public static ItemPickaxeInfusable pickaxeNebulousVoidtungsten;
+	//public static ItemAxeInfusable axeNebulousVoidtungsten;
+	//public static ItemShovelInfusable shovelNebulousVoidtungsten;
+	//public static ItemHoeInfusable hoeNebulousVoidtungsten;
+	//public static ItemSickleInfusable sickleNebulousVoidtungsten;
+	//public static ItemShearsInfusable shearsNebulousVoidtungsten;
+	//public static ItemFishingRodInfusable fishingRodNebulousVoidtungsten;
+	//public static ItemSwordInfusable swordNebulousVoidtungsten;
+	//public static ItemBowInfusable bowNebulousVoidtungsten;
+	//public static ItemHammerInfusable hammerNebulousVoidtungsten;
+	//public static ItemCrookInfusable crookNebulousVoidtungsten;
+
+
+
+	/*
+	public static ItemPickaxeInfusable pickaxe
+	public static ItemAxeInfusable axe
+	public static ItemShovelInfusable shovel
+	public static ItemHoeInfusable hoe
+	public static ItemSickleInfusable sickle
+	public static ItemShearsInfusable shears
+	public static ItemFishingRodInfusable fishingRod
+	public static ItemSwordInfusable sword
+	public static ItemBowInfusable bow
+	public static ItemHammerInfusable hammer
+	public static ItemCrookInfusable crook
+	*/
 
 	/** OTHER EQUIPMENT **/
-	public static ItemFocusBasic itemFocusPurity;
+	public static ItemFocusBasic focusPurity;
+	public static ItemFocusBasic focusIllumination;
+
+	//public static Item itemThreadSpool;
+
+	//public static ItemSocketingHammer socketingHammer;
+	//public static ItemWeslyHammer weslyHammer;
+	//public static ItemFluxWardenKukri kukriFluxWarden;
+
+	//public static ItemThaumicCodex itewThaumicCodex;
+
+	/** OTHER EQUIPMENT STACKS **/
+	public static ItemStack amuletWarden;						//00000
+	public static ItemStack ringLove;							//00001
+	public static ItemStack pendantPrimal;						//00002
+
+	//public static ItemStack capacitorRedsolder;					//00000
+	//public static ItemStack capacitorMultiLayer;				//00001
+	//public static ItemStack capacitorElectrum;					//00002
+	//public static ItemStack capacitorHighResonance;				//00003
+	//public static ItemStack capacitorPiezomagnetic;				//00004
+	//public static ItemStack capacitorMagneoturgic;				//00005
+	//public static ItemStack capacitorUltraHighResonance;		//00006
+
+	//public static ItemStack codexThaumic;						//00000
+	//public static ItemStack codexMagneoturgic;				//00001
 
 	/** RECIPES **/
 	public static ShapelessOreRecipe recipeCuZn;
@@ -1007,10 +1633,10 @@ public class ThaumRevLibrary {
 	public static ShapelessOreRecipe recipeSalisTiny;
 	public static ShapelessOreRecipe recipeSalis;
 
-	public static ShapedOreRecipe recipeWardsidianSlab;
+	/*public static ShapedOreRecipe recipeWardsidianSlab;
 	public static ShapedOreRecipe recipeEldritchSlab;
 	public static ShapelessOreRecipe recipeWardsidianDeslab;
-	public static ShapelessOreRecipe recipeEldritchDeslab;
+	public static ShapelessOreRecipe recipeEldritchDeslab;*/
 
 	public static ShapedOreRecipe recipeQuartzBlock;
 	/*public static ShapedOreRecipe recipeQuartzChiseled;

@@ -4,6 +4,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.registry.GameRegistry;
 
+import mortvana.melteddashboard.util.helpers.LoadedHelper;
+
 public class ThermalLibrary {
 
 	private static boolean loaded = false;
@@ -19,20 +21,25 @@ public class ThermalLibrary {
 	}
 
 	private static void load() {
-		itemMaterialTF = GameRegistry.findItem(TF, "material");
-		itemMaterialTE = GameRegistry.findItem(TE, "material");
+		if (LoadedHelper.isThermalFoundationLoaded) {
+			itemMaterialTF = GameRegistry.findItem(TF, "material");
 
-		itemCinnabar = new ItemStack(itemMaterialTF, 1, 20);
+			itemCinnabar = new ItemStack(itemMaterialTF, 1, 20);
 
-		dustPyrotheum = new ItemStack(itemMaterialTF, 1, 512);
-		dustCryotheum = new ItemStack(itemMaterialTF, 1, 513);
+			dustPyrotheum = new ItemStack(itemMaterialTF, 1, 512);
+			dustCryotheum = new ItemStack(itemMaterialTF, 1, 513);
 
-		powderBlizz = new ItemStack(itemMaterialTF, 1, 1025);
-		powderBlitz = new ItemStack(itemMaterialTF, 1, 1027);
-		powderBasalz = new ItemStack(itemMaterialTF, 1, 1029);
+			powderBlizz = new ItemStack(itemMaterialTF, 1, 1025);
+			powderBlitz = new ItemStack(itemMaterialTF, 1, 1027);
+			powderBasalz = new ItemStack(itemMaterialTF, 1, 1029);
+		}
 
-		itemSlag = new ItemStack(itemMaterialTE, 1, 514);
-		itemSlagRich = new ItemStack(itemMaterialTE, 1, 515);
+		if (LoadedHelper.isThermalExpansionLoaded) {
+			itemMaterialTE = GameRegistry.findItem(TE, "material");
+
+			itemSlag = new ItemStack(itemMaterialTE, 1, 514);
+			itemSlagRich = new ItemStack(itemMaterialTE, 1, 515);
+		}
 	}
 
 	/** BLOCKS **/

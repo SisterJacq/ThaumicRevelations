@@ -1,0 +1,20 @@
+[
+	{
+		"modid": "ThaumicRevelations",
+		"name": "Thaumic Revalations",
+		"description": "",
+		"version": "v0.0.0.1",
+		"mcversion": "1.7.10",
+		"url": "",
+		"updateUrl": "",
+		"authors": "Mortvana",
+		"credits": [
+			"MasterAbdoTGM50 - For Thaumic Warden, which would become Thaumic Revelations",
+			"Azanor - For Thaumcraft itself",
+			"Drullkus- For textures, even though he is too busy to make new ones for me :P"
+		],
+		"logoFile": "",
+		"screenshots": [],
+		"dependencies": ["Thaumcraft"]
+	}
+]

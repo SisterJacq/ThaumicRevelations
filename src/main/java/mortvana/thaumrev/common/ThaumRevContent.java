@@ -89,7 +89,7 @@ public class ThaumRevContent {
 		loadGemRecipes();
 		loadMiscMetalRecipes();
 		loadAlloyingRecipes();
-		//loadMetalIntegrationRecipes();
+		loadMetalIntegrationRecipes();
 		loadDustRecipes();
 		loadThaumicRecipes();
 		loadRunicRecipes();
@@ -320,7 +320,7 @@ public class ThaumRevContent {
 		oreTetrahedrite = new ItemStack(blockOre, 1, 11);
 		orePyrope = new ItemStack(blockOre, 1, 12);
 		oreDioptase = new ItemStack(blockOre, 1, 13);
-		oreFluonicSapphire = new ItemStack(blockOre, 1, 14);
+		oreJethrineSapphire = new ItemStack(blockOre, 1, 14);
 
 		RecipeHelper.registerOreDict(oreChalcocite, ORE + CU, ORE + CUS);
 		RecipeHelper.registerOreDict(oreSphalerite, ORE + ZN, ORE + ZNS);
@@ -336,7 +336,7 @@ public class ThaumRevContent {
 		RecipeHelper.registerOreDict(oreTetrahedrite, ORE + CSB);
 		RecipeHelper.registerOreDict(orePyrope, ORE + PYRP);
 		RecipeHelper.registerOreDict(oreDioptase, ORE + DIOP);
-		RecipeHelper.registerOreDict(oreFluonicSapphire, ORE + FSPH);
+		RecipeHelper.registerOreDict(oreJethrineSapphire, ORE + JSPH);
 
 		orePoorChalcocite = new ItemStack(blockPoorOre, 1, 0);
 		orePoorSphalerite = new ItemStack(blockPoorOre, 1, 1);
@@ -511,8 +511,8 @@ public class ThaumRevContent {
 
 		blockPyrope = new ItemStack(blockStorageGem, 1, 0);
 		blockDioptase = new ItemStack(blockStorageGem, 1, 1);
-		blockFluonicSapphire = new ItemStack(blockStorageGem, 1, 2);
-		blockFluonicPyroptase = new ItemStack(blockStorageGem, 1, 3);
+		blockJethrineSapphire = new ItemStack(blockStorageGem, 1, 2);
+		blockJethrinePyroptase = new ItemStack(blockStorageGem, 1, 3);
 		blockWardenicCrystal = new ItemStack(blockStorageGem, 1, 4);
 		blockActivatedWardenicCrystal = new ItemStack(blockStorageGem, 1, 5);
 		blockAwakenedWardenicCrystal = new ItemStack(blockStorageGem, 1, 6);
@@ -700,8 +700,8 @@ public class ThaumRevContent {
 
 		gemPyrope = generalItem.addOreDictItem(5096, GEM + PYRP, 2);
 		gemDioptase = generalItem.addOreDictItem(5097, GEM + DIOP, 2);
-		gemFluonicSapphire = generalItem.addOreDictItem(5098, GEM + FSPH, 2);
-		gemFluonicPyroptase = generalItem.addOreDictItem(5099, GEM + FPRT, 3);
+		gemJethrineSapphire = generalItem.addOreDictItem(5098, GEM + JSPH, 2);
+		gemJethrinePyroptase = generalItem.addOreDictItem(5099, GEM + JPRT, 3);
 		gemWardenicCrystal = generalItem.addOreDictItem(5100, GEM + WCRS, 2);
 		gemActivatedWardenicCrystal = generalItem.addOreDictItem(5101, GEM + AWCR, 2);
 		gemAwakenedWardenicCrystal = generalItem.addOreDictItem(5102, GEM + WWCR, 3);
@@ -777,8 +777,8 @@ public class ThaumRevContent {
 
 		shardPyrope = generalItem.addOreDictItem(5296, SHARD + PYRP, 2, NUGGET + PYRP);
 		shardDioptase = generalItem.addOreDictItem(5297, SHARD + DIOP, 2, NUGGET + DIOP);
-		shardFluonicSapphire = generalItem.addOreDictItem(5298, SHARD + FSPH, 2, NUGGET + FSPH);
-		shardFluonicPyroptase = generalItem.addOreDictItem(5299, SHARD + FPRT, 3, NUGGET + FPRT);
+		shardJethrineSapphire = generalItem.addOreDictItem(5298, SHARD + JSPH, 2, NUGGET + JSPH);
+		shardJethrinePyroptase = generalItem.addOreDictItem(5299, SHARD + JPRT, 3, NUGGET + JPRT);
 		shardWardenicCrystal = generalItem.addOreDictItem(5300, SHARD + WCRS, 2, NUGGET + WCRS);
 		shardActivatedWardenicCrystal = generalItem.addOreDictItem(5301, SHARD + AWCR, 2, NUGGET + AWCR);
 		shardAwakenedWardenicCrystal = generalItem.addOreDictItem(5302, SHARD + WWCR, 3, NUGGET + WWCR);
@@ -854,8 +854,8 @@ public class ThaumRevContent {
 
 		dustPyrope = generalItem.addOreDictItem(5496, DUST + PYRP, 2);
 		dustDioptase = generalItem.addOreDictItem(5497, DUST + DIOP, 2);
-		dustFluonicSapphire = generalItem.addOreDictItem(5498, DUST + FSPH, 2);
-		dustFluonicPyroptase = generalItem.addOreDictItem(5499, DUST + FPRT, 3);
+		dustJethrineSapphire = generalItem.addOreDictItem(5498, DUST + JSPH, 2);
+		dustJethrinePyroptase = generalItem.addOreDictItem(5499, DUST + JPRT, 3);
 		dustWardenicCrystal = generalItem.addOreDictItem(5500, DUST + WCRS, 2);
 		dustActivatedWardenicCrystal = generalItem.addOreDictItem(5501, DUST + AWCR, 2);
 		dustAwakenedWardenicCrystal = generalItem.addOreDictItem(5502, DUST + WWCR, 3);
@@ -931,8 +931,8 @@ public class ThaumRevContent {
 
 		tinyPyrope = generalItem.addOreDictItem(5696, TINY_DUST + PYRP, 2);
 		tinyDioptase = generalItem.addOreDictItem(5697, TINY_DUST + DIOP, 2);
-		tinyFluonicSapphire = generalItem.addOreDictItem(5698, TINY_DUST + FSPH, 2);
-		tinyFluonicPyroptase = generalItem.addOreDictItem(5699, TINY_DUST + FPRT, 3);
+		tinyJethrineSapphire = generalItem.addOreDictItem(5698, TINY_DUST + JSPH, 2);
+		tinyJethrinePyroptase = generalItem.addOreDictItem(5699, TINY_DUST + JPRT, 3);
 		tinyWardenicCrystal = generalItem.addOreDictItem(5700, TINY_DUST + WCRS, 2);
 		tinyActivatedWardenicCrystal = generalItem.addOreDictItem(5701, TINY_DUST + AWCR, 2);
 		tinyAwakenedWardenicCrystal = generalItem.addOreDictItem(5702, TINY_DUST + WWCR, 3);
@@ -1009,41 +1009,41 @@ public class ThaumRevContent {
 		plateThaumicBronze = generalItem.addColorizedOreDictItemWithEffect(5920, PLATE + TBRZ, PLATE, COLOR_TBRZ);
 		plateOsmiumLutetium = generalItem.addColorizedOreDictItemWithEffect(5921, PLATE + OSLU, PLATE, COLOR_OSLU, 2);
 
-		rawBrass = generalItem.addOreDictItem(6032, INGOT + CUZN + RAW);
-		rawBronze = generalItem.addOreDictItem(6033, INGOT + CUSN + RAW);
-		rawArsenicalBronze = generalItem.addOreDictItem(6034, INGOT + CUAS + RAW);
-		rawAntimonialBronze = generalItem.addOreDictItem(6035, INGOT + CUSB + RAW);
-		rawBismuthBronze = generalItem.addOreDictItem(6036, INGOT + CUBI + RAW);
-		rawMithril = generalItem.addOreDictItem(6037, INGOT + MTHL + RAW, 1, INGOT + MTHR + RAW);
-		rawAluminiumBronze = generalItem.addOreDictItem(6038, INGOT + CUAL + RAW);
-		rawCupronickel = generalItem.addOreDictItem(6039, INGOT + CUNI + RAW);
-		rawRiftishBronze = generalItem.addOreDictItem(6040, INGOT + RBRZ + RAW);
-		rawConstantan = generalItem.addOreDictItem(6041, INGOT + CNST + RAW);
-		rawInvar = generalItem.addOreDictItem(6042, INGOT + FENI + RAW);
-		rawElectrum = generalItem.addOreDictItem(6043, INGOT + AUAG + RAW);
-		rawWardenicMetal = generalItem.addOreDictItem(6044, INGOT + WRDM + RAW);
-		rawDullRedsolder = generalItem.addOreDictItem(6045, INGOT + DRDS + RAW);
-		rawRedsolder = generalItem.addOreDictItem(6046, INGOT + RDSR + RAW);
+		rawBrass = generalItem.addOreDictItem(6032, INGOT + RAW + CUZN);
+		rawBronze = generalItem.addOreDictItem(6033, INGOT + RAW + CUSN);
+		rawArsenicalBronze = generalItem.addOreDictItem(6034, INGOT + RAW + CUAS);
+		rawAntimonialBronze = generalItem.addOreDictItem(6035, INGOT + RAW + CUSB);
+		rawBismuthBronze = generalItem.addOreDictItem(6036, INGOT + RAW + CUBI);
+		rawMithril = generalItem.addOreDictItem(6037, INGOT + RAW + MTHL, 1, INGOT + RAW + MTHR);
+		rawAluminiumBronze = generalItem.addOreDictItem(6038, INGOT + RAW + CUAL);
+		rawCupronickel = generalItem.addOreDictItem(6039, INGOT + RAW + CUNI);
+		rawRiftishBronze = generalItem.addOreDictItem(6040, INGOT + RAW + RBRZ);
+		rawConstantan = generalItem.addOreDictItem(6041, INGOT + RAW + CNST);
+		rawInvar = generalItem.addOreDictItem(6042, INGOT + RAW + FENI);
+		rawElectrum = generalItem.addOreDictItem(6043, INGOT + RAW + AUAG);
+		rawWardenicMetal = generalItem.addOreDictItem(6044, INGOT + RAW + WRDM);
+		rawDullRedsolder = generalItem.addOreDictItem(6045, INGOT + RAW + DRDS);
+		rawRedsolder = generalItem.addOreDictItem(6046, INGOT + RAW + RDSR);
 
-		rawWardenicComposite = generalItem.addOreDictItem(6083, INGOT + WCMP + RAW, 2);
-		rawArcaneRedsolder = generalItem.addOreDictItem(6084, INGOT + ARDS + RAW);
-		rawMagneoturgicComposite = generalItem.addOreDictItem(6089, INGOT + MCMP + RAW, 2);
+		rawWardenicComposite = generalItem.addOreDictItem(6083, INGOT + RAW + WCMP, 2);
+		rawArcaneRedsolder = generalItem.addOreDictItem(6084, INGOT + RAW + ARDS);
+		rawMagneoturgicComposite = generalItem.addOreDictItem(6089, INGOT + RAW + MCMP, 2);
 
-		blendFluonicPyrotase = generalItem.addOreDictItem(6099, BLEND + FPRT, 2, BLEND_ORE + FPRT);
+		blendJethrinePyrotase = generalItem.addOreDictItem(6099, BLEND + JPRT, 2, BLEND_ORE + JPRT);
 
-		rawThaumicBronze = generalItem.addOreDictItem(6120, INGOT + TBRZ + RAW);
-		rawOsLu = generalItem.addOreDictItem(6121, INGOT + OSLU + RAW, 2);
+		rawThaumicBronze = generalItem.addOreDictItem(6120, INGOT + RAW + TBRZ);
+		rawOsLu = generalItem.addOreDictItem(6121, INGOT + RAW + OSLU, 2);
 
-		smeltedWardenicComposite = generalItem.addColorizedOreDictItemWithEffect(6283, INGOT + WCMP + SMELTED, INGOT, COLOR_WCMP, 2);
-		smeltedMagneoturgicComposite = generalItem.addColorizedOreDictItem(6289, INGOT + MCMP + SMELTED, INGOT, COLOR_MCMP, 2);
-		smeltedFluxedComposite = generalItem.addColorizedOreDictItemWithEffect(6290, INGOT + FCMP + SMELTED, INGOT, COLOR_FLUX, 2);
-		smeltedResonantFluxedComposite = generalItem.addColorizedOreDictItemWithEffect(6291, INGOT + RCMP + SMELTED, INGOT, COLOR_RCMP, 2);
+		smeltedWardenicComposite = generalItem.addColorizedOreDictItemWithEffect(6283, INGOT + SMELTED + WCMP, INGOT, COLOR_WCMP, 2);
+		smeltedMagneoturgicComposite = generalItem.addColorizedOreDictItem(6289, INGOT + SMELTED + MCMP, INGOT, COLOR_MCMP, 2);
+		smeltedFluxedComposite = generalItem.addColorizedOreDictItemWithEffect(6290, INGOT + SMELTED + FCMP, INGOT, COLOR_FLUX, 2);
+		smeltedResonantFluxedComposite = generalItem.addColorizedOreDictItemWithEffect(6291, INGOT + SMELTED + RCMP, INGOT, COLOR_RCMP, 2);
 
-		coatedThaumicBronze = generalItem.addOreDictItem(6320, INGOT + TBRZ + COATED);
-		coatedOsLu = generalItem.addOreDictItem(6321, INGOT + OSLU + COATED, 2);
+		coatedThaumicBronze = generalItem.addOreDictItem(6320, INGOT + COATED + TBRZ);
+		coatedOsLu = generalItem.addOreDictItem(6321, INGOT + COATED + OSLU, 2);
 
-		firedThaumicBronze = generalItem.addOreDictItem(6520, INGOT + TBRZ + FIRED);
-		firedOsLu = generalItem.addOreDictItem(6521, INGOT + OSLU + FIRED, 2);
+		firedThaumicBronze = generalItem.addOreDictItem(6520, INGOT + FIRED + TBRZ);
+		firedOsLu = generalItem.addOreDictItem(6521, INGOT + FIRED + OSLU, 2);
 	}
 
 	public static void loadOtherItems() {
@@ -1213,7 +1213,7 @@ public class ThaumRevContent {
 		addSmelting(oreTetrahedrite, ingotAntimonialBronze, 1.35F);
 		addSmelting(orePyrope, gemPyrope, 1.0F);
 		addSmelting(oreDioptase, gemDioptase, 1.0F);
-		addSmelting(oreFluonicSapphire, gemFluonicSapphire, 1.0F);
+		addSmelting(oreJethrineSapphire, gemJethrineSapphire, 1.0F);
 
 		addSmelting(orePoorChalcocite, cloneStack(nuggetCopper, 2), 0.085F);
 		addSmelting(orePoorSphalerite, cloneStack(nuggetZinc, 2), 0.095F);
@@ -1242,22 +1242,75 @@ public class ThaumRevContent {
 		addSmelting(oreGravelTetrahedrite, ingotAntimonialBronze, 1.35F);
 
 		if (LoadedHelper.isThermalExpansionLoaded) {
-			addPulverizerOreRecipe(oreSphalerite, dustZinc, dustLead);
-			addPulverizerOreRecipe(oreXenotime, dustLanthanides, dustArsenic);
-			addPulverizerOreRecipe(oreWolframite, dustTungsten, dustIron);
-			addPulverizerRecipe(4800, oreIridosmium, cloneStack(dustIridosmium, 2), dustIron, 15);
-			addPulverizerOreRecipe(oreBismuthinite, dustBismuth, dustLead);
-			addPulverizerOreRecipe(oreTennantite, dustArsenicalBronze, dustSilver);
-			addPulverizerRecipe(4000, oreTetrahedrite, cloneStack(dustAntimonialBronze, 2), itemQuicksilverDrop);
-			addPulverizerRecipe(4000, oreDioptase, cloneStack(gemDioptase, 2));
-			addPulverizerRecipe(4000, orePyrope, cloneStack(gemPyrope, 2));
-			addPulverizerRecipe(4000, oreFluonicSapphire, cloneStack(gemFluonicSapphire, 2));
+			ThaumicRevelations.logger.info("Loading Thermal Expansion Compatibility Ore Recipes");
 
-			addInductionOreRecipes(ZN, ingotLead);
+			addShapelessRecipe(ingotLanthanides, ORE + YPO, "dustPyrotheum");
+			addShapelessRecipe(ingotArsenicalBronze, ORE + CAS, "dustPyrotheum");
+			addShapelessRecipe(ingotAntimonialBronze, ORE + CSB, "dustPyrotheum");
+
+			addPulverizerOreRecipe(oreSphalerite, dustZinc, dustLeadTF);
+			addPulverizerOreRecipe(oreXenotime, dustLanthanides, dustArsenic);
+			addPulverizerOreRecipe(oreWolframite, dustTungsten, dustIronTF);
+			addPulverizerRecipe(4800, oreIridosmium, cloneStack(dustIridosmium, multPulvDefault), dustIronTF, 15);
+			addPulverizerOreRecipe(oreBismuthinite, dustBismuth, dustLeadTF);
+			addPulverizerOreRecipe(oreTennantite, dustArsenicalBronze, dustSilverTF);
+			addPulverizerRecipe(4000, oreTetrahedrite, cloneStack(dustAntimonialBronze, multPulvDefault), itemQuicksilverDrop);
+			addPulverizerRecipe(4000, oreDioptase, cloneStack(gemDioptase, multPulvDefault));
+			addPulverizerRecipe(4000, orePyrope, cloneStack(gemPyrope, multPulvDefault));
+			addPulverizerRecipe(4000, oreJethrineSapphire, cloneStack(gemJethrineSapphire, multPulvDefault));
+
+			addInductionOreRecipes(ZN, ingotLeadTF);
 			addInductionOreRecipes(YPO, LNTH, dustArsenic);
-			addInductionOreRecipes(BI, ingotLead);
-			addInductionOreRecipes(CAS, CUAS, ingotSilver);
+			addInductionOreRecipes(BI, ingotLeadTF);
+			addInductionOreRecipes(CAS, CUAS, ingotSilverTF);
 			addInductionOreRecipes(CSB, CUSB, quicksilver);
+
+			addInductionSmelterRecipe(12000, oreWolframite, dustPyrotheum, cloneStack(ingotTungsten, multSmeltDefault), itemSlagRich, 20);
+			addInductionSmelterRecipe(16000, oreWolframite, itemCinnabar, cloneStack(ingotTungsten, multSmeltSpecial), new ItemStack(Items.iron_ingot), 125);
+			addInductionSmelterRecipe(12000, oreIridosmium, dustPyrotheum, cloneStack(ingotIridosmium, multSmeltDefault), itemSlagRich, 25);
+			addInductionSmelterRecipe(16000, oreIridosmium, itemCinnabar, cloneStack(ingotIridosmium, multSmeltSpecial), new ItemStack(Items.iron_ingot), 150);
+
+			addShapelessRecipe(cloneStack(nuggetCopper, 3), ORE + POOR + CU, "dustPyrotheum");
+			addShapelessRecipe(cloneStack(nuggetZinc, 3), ORE + POOR + ZN, "dustPyrotheum");
+			addShapelessRecipe(cloneStack(nuggetTin, 3), ORE + POOR + SN, "dustPyrotheum");
+			addShapelessRecipe(cloneStack(nuggetNickel, 3), ORE + POOR + NI, "dustPyrotheum");
+			addShapelessRecipe(cloneStack(nuggetSilver, 3), ORE + POOR + AG, "dustPyrotheum");
+			addShapelessRecipe(cloneStack(nuggetLead, 3), ORE + POOR + PB, "dustPyrotheum");
+			addShapelessRecipe(cloneStack(nuggetLanthanides, 3), ORE + POOR + YPO, "dustPyrotheum");
+			addShapelessRecipe(cloneStack(nuggetTungsten, 3), ORE + POOR + WFE, "dustPyrotheum");
+			addShapelessRecipe(cloneStack(nuggetIridosmium, 3), ORE + POOR + IROS, "dustPyrotheum");
+			addShapelessRecipe(cloneStack(nuggetBismuth, 3), ORE + POOR + BI, "dustPyrotheum");
+			addShapelessRecipe(cloneStack(nuggetArsenicalBronze, 3), ORE + POOR + CAS, "dustPyrotheum");
+			addShapelessRecipe(cloneStack(nuggetAntimonialBronze, 3), ORE + POOR + CSB, "dustPyrotheum");
+
+			addPulverizerPoorOreRecipe(orePoorChalcocite, tinyCopper, tinyGold);
+			addPulverizerPoorOreRecipe(orePoorSphalerite, tinyZinc, tinyLead);
+			addPulverizerPoorOreRecipe(orePoorCassiterite, tinyTin, tinyIron);
+			addPulverizerPoorOreRecipe(orePoorMillerite, tinyNickel, tinyPalladium);
+			addPulverizerPoorOreRecipe(orePoorNativeSilver, tinySilver, tinyLead);
+			addPulverizerPoorOreRecipe(orePoorGalena, tinyLead, tinySilver);
+			addPulverizerPoorOreRecipe(orePoorXenotime, tinyLanthanides, tinyArsenic);
+			addPulverizerPoorOreRecipe(orePoorWolframite, tinyTungsten, tinyIron);
+			addPulverizerRecipe(4000, orePoorIridosmium, cloneStack(tinyIridosmium, multPulvDefault * 3), tinyIron, 20);
+			addPulverizerPoorOreRecipe(orePoorBismuthinite, tinyBismuth, tinyLead);
+			addPulverizerPoorOreRecipe(orePoorTennantite, tinyArsenicalBronze, tinySilver);
+			addPulverizerPoorOreRecipe(orePoorTetrahedrite, cloneStack(tinyAntimonialBronze, multPulvDefault * 3), itemQuicksilverDrop);
+
+			addInductionPoorOreRecipes(CU, new ItemStack(Items.gold_nugget));
+			addInductionPoorOreRecipes(ZN, ingotLead);
+			addInductionPoorOreRecipes(SN, nuggetIronTF);
+			addInductionPoorOreRecipes(NI, nuggetPalladium);
+			addInductionPoorOreRecipes(AG, nuggetLeadTF);
+			addInductionPoorOreRecipes(PB, nuggetSilverTF);
+			addInductionPoorOreRecipes(YPO, LNTH, dustArsenic);
+			addInductionPoorOreRecipes(BI, nuggetLeadTF);
+			addInductionPoorOreRecipes(CAS, CUAS, nuggetSilverTF);
+			addInductionPoorOreRecipes(CSB, CUSB, itemQuicksilverDrop);
+
+			addInductionSmelterRecipe(8000, orePoorWolframite, dustPyrotheum, cloneStack(nuggetTungsten, multSmeltDefault * 3), itemSlagRich, 25);
+			addInductionSmelterRecipe(12000, orePoorWolframite, itemCinnabar, cloneStack(nuggetTungsten, (multSmeltSpecial * 3) + 1), nuggetIronTF, 150);
+			addInductionSmelterRecipe(8000, orePoorIridosmium, dustPyrotheum, cloneStack(nuggetIridosmium, multSmeltDefault * 3), itemSlagRich, 30);
+			addInductionSmelterRecipe(12000, orePoorIridosmium, itemCinnabar, cloneStack(nuggetIridosmium, (multSmeltSpecial * 3) + 1), cloneStack(nuggetIronTF, 2));
 		}
 	}
 
@@ -1915,7 +1968,6 @@ public class ThaumRevContent {
 		addReverseStorageRecipe(shardPyrope, GEM + PYRP);
 		addStorageRecipe(dustPyrope, TINY_DUST + PYRP);
 		addReverseStorageRecipe(tinyPyrope, DUST + PYRP);
-		addSmelting(dustPyrope, gemPyrope);
 		addGrindingRecipes(gemPyrope, dustPyrope, true);
 
 		addStorageRecipe(blockDioptase, GEM + DIOP);
@@ -1924,26 +1976,23 @@ public class ThaumRevContent {
 		addReverseStorageRecipe(shardDioptase, GEM + DIOP);
 		addStorageRecipe(dustDioptase, TINY_DUST + DIOP);
 		addReverseStorageRecipe(tinyDioptase, DUST + DIOP);
-		addSmelting(dustDioptase, gemDioptase);
 		addGrindingRecipes(gemDioptase, dustDioptase, true);
 
-		addStorageRecipe(blockFluonicSapphire, GEM + FSPH);
-		addStorageRecipe(gemFluonicSapphire, NUGGET + FSPH);
-		addReverseStorageRecipe(gemFluonicSapphire, BLOCK + FSPH);
-		addReverseStorageRecipe(shardFluonicSapphire, GEM + FSPH);
-		addStorageRecipe(dustFluonicSapphire, TINY_DUST + FSPH);
-		addReverseStorageRecipe(tinyFluonicSapphire, DUST + FSPH);
-		addSmelting(dustFluonicSapphire, gemFluonicSapphire);
-		addGrindingRecipes(gemFluonicSapphire, dustFluonicSapphire, true);
+		addStorageRecipe(blockJethrineSapphire, GEM + JSPH);
+		addStorageRecipe(gemJethrineSapphire, NUGGET + JSPH);
+		addReverseStorageRecipe(gemJethrineSapphire, BLOCK + JSPH);
+		addReverseStorageRecipe(shardJethrineSapphire, GEM + JSPH);
+		addStorageRecipe(dustJethrineSapphire, TINY_DUST + JSPH);
+		addReverseStorageRecipe(tinyJethrineSapphire, DUST + JSPH);
+		addGrindingRecipes(gemJethrineSapphire, dustJethrineSapphire, true);
 
-		addStorageRecipe(blockFluonicPyroptase, GEM + FPRT);
-		addStorageRecipe(gemFluonicPyroptase, NUGGET + FPRT);
-		addReverseStorageRecipe(gemFluonicPyroptase, BLOCK + FPRT);
-		addReverseStorageRecipe(shardFluonicPyroptase, GEM + FPRT);
-		addStorageRecipe(dustFluonicPyroptase, TINY_DUST + FPRT);
-		addReverseStorageRecipe(tinyFluonicPyroptase, DUST + FPRT);
-		addSmelting(dustFluonicPyroptase, gemFluonicPyroptase);
-		addGrindingRecipes(gemFluonicPyroptase, dustFluonicPyroptase, true, 8);
+		addStorageRecipe(blockJethrinePyroptase, GEM + JPRT);
+		addStorageRecipe(gemJethrinePyroptase, NUGGET + JPRT);
+		addReverseStorageRecipe(gemJethrinePyroptase, BLOCK + JPRT);
+		addReverseStorageRecipe(shardJethrinePyroptase, GEM + JPRT);
+		addStorageRecipe(dustJethrinePyroptase, TINY_DUST + JPRT);
+		addReverseStorageRecipe(tinyJethrinePyroptase, DUST + JPRT);
+		addGrindingRecipes(gemJethrinePyroptase, dustJethrinePyroptase, true, 8);
 
 		addStorageRecipe(blockWardenicCrystal, GEM + WCRS);
 		addStorageRecipe(gemWardenicCrystal, NUGGET + WCRS);
@@ -1951,7 +2000,6 @@ public class ThaumRevContent {
 		addReverseStorageRecipe(shardWardenicCrystal, GEM + WCRS);
 		addStorageRecipe(dustWardenicCrystal, TINY_DUST + WCRS);
 		addReverseStorageRecipe(tinyWardenicCrystal, DUST + WCRS);
-		addSmelting(dustWardenicCrystal, gemWardenicCrystal);
 		addGrindingRecipes(gemWardenicCrystal, dustWardenicCrystal, true, 8);
 
 		addStorageRecipe(blockActivatedWardenicCrystal, GEM + AWCR);
@@ -1960,7 +2008,6 @@ public class ThaumRevContent {
 		addReverseStorageRecipe(shardActivatedWardenicCrystal, GEM + AWCR);
 		addStorageRecipe(dustActivatedWardenicCrystal, TINY_DUST + AWCR);
 		addReverseStorageRecipe(tinyActivatedWardenicCrystal, DUST + AWCR);
-		addSmelting(dustActivatedWardenicCrystal, gemActivatedWardenicCrystal);
 		addGrindingRecipes(gemActivatedWardenicCrystal, dustActivatedWardenicCrystal, true, 8);
 
 		addStorageRecipe(blockAwakenedWardenicCrystal, GEM + WWCR);
@@ -1969,7 +2016,6 @@ public class ThaumRevContent {
 		addReverseStorageRecipe(shardAwakenedWardenicCrystal, GEM + WWCR);
 		addStorageRecipe(dustAwakenedWardenicCrystal, TINY_DUST + WWCR);
 		addReverseStorageRecipe(tinyAwakenedWardenicCrystal, DUST + WWCR);
-		addSmelting(dustAwakenedWardenicCrystal, gemAwakenedWardenicCrystal);
 		addGrindingRecipes(gemAwakenedWardenicCrystal, dustAwakenedWardenicCrystal, true, 10);
 
 		recipeQuartzBlock = addSquareRecipe(blockWardenicQuartz, GEM + WQRZ);
@@ -1978,7 +2024,6 @@ public class ThaumRevContent {
 		addReverseStorageRecipe(shardWardenicQuartz, GEM + WQRZ);
 		addStorageRecipe(dustWardenicQuartz, TINY_DUST + WQRZ);
 		addReverseStorageRecipe(tinyWardenicQuartz, DUST + WQRZ);
-		addSmelting(dustWardenicQuartz, gemWardenicQuartz);
 		addGrindingRecipes(gemWardenicQuartz, dustWardenicQuartz, true, 4);
 
 		addSquareRecipe(blockInfusedQuartz, GEM + IQRZ);
@@ -1987,7 +2032,6 @@ public class ThaumRevContent {
 		addReverseStorageRecipe(shardInfusedQuartz, GEM + IQRZ);
 		addStorageRecipe(dustInfusedQuartz, TINY_DUST + IQRZ);
 		addReverseStorageRecipe(tinyInfusedQuartz, DUST + IQRZ);
-		addSmelting(dustInfusedQuartz, gemInfusedQuartz);
 		addGrindingRecipes(gemInfusedQuartz, dustInfusedQuartz, true, 5);
 
 		addSquareRecipe(blockRedquartz, GEM + RQZT);
@@ -1996,7 +2040,6 @@ public class ThaumRevContent {
 		addReverseStorageRecipe(shardRedquartz, GEM + RQZT);
 		addStorageRecipe(dustRedquartz, TINY_DUST + RQZT);
 		addReverseStorageRecipe(tinyRedquartz, DUST + RQZT);
-		addSmelting(dustRedquartz, gemRedquartz);
 		addGrindingRecipes(gemRedquartz, dustRedquartz, true, 4);
 	}
 
@@ -2164,7 +2207,18 @@ public class ThaumRevContent {
 	}
 
 	public static void loadMetalIntegrationRecipes() {
+		if (LoadedHelper.isThermalExpansionLoaded) {
+			addInductionSmelterRecipe(8000, cloneStack(dustTungsten, 2), dustPyrotheum, cloneStack(ingotTungsten, 2));
+			addInductionSmelterRecipe(8000, cloneStack(dustIridium, 2), dustPyrotheum, cloneStack(ingotIridium, 2));
+			addInductionSmelterRecipe(8000, cloneStack(dustOsmium, 2), dustPyrotheum, cloneStack(ingotOsmium, 2));
+			addInductionSmelterRecipe(8000, cloneStack(dustVoidtungsten, 2), dustPyrotheum, cloneStack(ingotVoidtungsten, 2));
+			addInductionSmelterRecipe(8000, cloneStack(dustFluxedTungsten, 2), dustPyrotheum, cloneStack(ingotFluxedTungsten, 2));
+			addInductionSmelterRecipe(8000, cloneStack(dustOccultVoidtungsten, 2), dustPyrotheum, cloneStack(ingotOccultVoidtungsten, 2));
+			addInductionSmelterRecipe(8000, cloneStack(dustIridosmium, 2), dustPyrotheum, cloneStack(ingotIridosmium, 2));
+			addInductionSmelterRecipe(8000, cloneStack(dustOsmiumLutetium, 2), dustPyrotheum, cloneStack(ingotOsmiumLutetium, 2));
 
+			addInductionSmelterRecipe(800, cloneStack(dustWardenicComposite, 2), new ItemStack(Blocks.sand), cloneStack(smeltedWardenicComposite, 2), itemSlag, 25);
+		}
 	}
 
 	public static void loadDustRecipes() {
@@ -2277,6 +2331,7 @@ public class ThaumRevContent {
 		recipeThaumicBronzeCoated = addShapelessArcaneCraftingRecipe(keyThaumicBronze, coatedThaumicBronze, new AspectList().add(EARTH, 5).add(WATER, 5), "ingotThaumicBronzeRaw", nHg, salisPinch, "itemClay");
 
 		recipeThaumicSteel = addInfusionCraftingRecipe(keyThaumicSteel, ingotThaumicSteel, 1, new AspectList().add(MAGIC, 4), ingotSteel, tinySalisMundus, tinySalisMundus, tinySalisMundus);
+		recipeBlockThaumicSteel = addInfusionCraftingRecipe(keyThaumicSteel, blockThaumicSteel, 2, new AspectList().add(MAGIC, 36), blockSteel, dustSalisMundus, dustSalisMundus, dustSalisMundus);
 		recipeThaumicRBronze = addInfusionCraftingRecipe(keyThaumicRBronze, ingotThaumicRiftishBronze, 1, new AspectList().add(MAGIC, 8), ingotRiftishBronze, tinySalisMundus, tinySalisMundus, tinySalisMundus, itemQuicksilverDrop);
 		recipeThaumicElectrum = addCrucibleRecipe(keyThaumicElectrum, ingotThaumicElectrum, INGOT + AUAG, new AspectList().add(MAGIC, 6).add(ENERGY, 3));
 
@@ -2410,7 +2465,7 @@ public class ThaumRevContent {
 		recipeWardenicCompositeBoots = addArcaneCraftingRecipe(keyArmorWardenComposite, new ItemStack(wardenicCompositeBoots), ThaumcraftHelper.newPrimalAspectList(60), "P P", "C C", 'C', "itemPlateWardenicCompositeConsecrated", 'P', "itemPlateWardenicCompositePrimal");
 
 		recipeWardenicCrystalAwakened = addInfusionCraftingRecipe(keyWardenCrystalAwakened, gemAwakenedWardenicCrystal, 4, ThaumcraftHelper.newPrimalAspectList(16).add(MAGIC, 32).add(aspectExcubitor, 64).add(CRYSTAL, 16).add(ENERGY, 48), gemWardenicCrystal, dustWardenicBinder, dustWardenicBinder, dustWardenicBinder, dustWardenicBinder, excubituraOilPure, excubituraOilPure, dustSalisMundus, new ItemStack(Items.nether_star));
-		recipeWardenicEssenceAwakened = addInfusionCraftingRecipe(keyWardenEssenceAwakened, itemEssenceOfAwakening, 8, ThaumcraftHelper.newPrimalAspectList(16).add(MAGIC, 48).add(aspectExcubitor, 128).add(ENERGY, 48).add(TOOL, 32).add(ARMOR, 32).add(CRAFT, 48), itemStabilizedSingularity, dustAwakenedWardenicCrystal, dustAwakenedWardenicCrystal, dustAwakenedWardenicCrystal, dustAwakenedWardenicCrystal, dustPrimalEssence, dustPrimalEssence, dustPrimalEssence, dustWardenicBinder, dustWardenicBinder, dustSalisMundus, dustSalisMundus, dustFluonicPyroptase, plateWardenicCompositePrimal, plateWardenicCompositePrimal, plateWardenicCompositePrimal, ingotPalladium);
+		recipeWardenicEssenceAwakened = addInfusionCraftingRecipe(keyWardenEssenceAwakened, itemEssenceOfAwakening, 8, ThaumcraftHelper.newPrimalAspectList(16).add(MAGIC, 48).add(aspectExcubitor, 128).add(ENERGY, 48).add(TOOL, 32).add(ARMOR, 32).add(CRAFT, 48), itemStabilizedSingularity, dustAwakenedWardenicCrystal, dustAwakenedWardenicCrystal, dustAwakenedWardenicCrystal, dustAwakenedWardenicCrystal, dustPrimalEssence, dustPrimalEssence, dustPrimalEssence, dustWardenicBinder, dustWardenicBinder, dustSalisMundus, dustSalisMundus, dustJethrinePyroptase, plateWardenicCompositePrimal, plateWardenicCompositePrimal, plateWardenicCompositePrimal, ingotPalladium);
 	}
 
 	public static void loadMagneoturgicRecipes() {
@@ -2421,7 +2476,7 @@ public class ThaumRevContent {
 			recipeArcaneRedsolder[0] = addShapelessArcaneCraftingRecipe(keyArcaneRedsolder, cloneStack(rawArcaneRedsolder, 6), new AspectList().add(EARTH, 6).add(FIRE, 3), INGOT + RDSR, INGOT + RDSR, INGOT + RDSR, INGOT + RDSR, INGOT + RDSR, INGOT + RDSR, DUST + RSRD, DUST + RSRD, HG_TC);
 			recipeArcaneRedsolder[1] = addShapelessArcaneCraftingRecipe(keyArcaneRedsolder, cloneStack(dustArcaneRedsolder, 6), new AspectList().add(EARTH, 6).add(FIRE, 3), DUST + RDSR, DUST + RDSR, DUST + RDSR, DUST + RDSR, DUST + RDSR, DUST + RDSR, DUST + RSRD, DUST + RSRD, HG_TC);
 
-			recipeCapCoreRedsolder = addArcaneCraftingRecipe(keyCapCoreRedsolder, itemCapacitorCoreArcaneRedsolder, new AspectList().add(WATER, 5).add(FIRE, 5).add(ORDER, 10), "NRN", "NRN", "NGN", 'N', NUGGET + ARDS, 'R', DUST + RSRD, 'G', "paneGlass");
+			recipeCapCoreRedsolder = addArcaneCraftingRecipe(keyCapCoreRedsolder, cloneStack(itemCapacitorCoreArcaneRedsolder, 2), new AspectList().add(WATER, 5).add(FIRE, 5).add(ORDER, 10), "RGR", "IRI", "NGN", 'I', INGOT + ARDS, 'N', NUGGET + ARDS, 'R', DUST + RSRD, 'G', "paneGlass");
 			recipeRedstoneFabric = addShapelessArcaneCraftingRecipe(keyRedcloth, cloneStack(itemFabricRedstone, 4), ThaumcraftHelper.newPrimalAspectList(1, 2, 3, 5, 10, 1), M0004, M0004, M0004, M0004, DUST + RSRD, DUST + RSRD, HG_TC, DUST + SALIS);
 			recipeRedcloth = addCrucibleRecipe(keyRedcloth, itemRedcloth, itemFabricRedstone, new AspectList().add(ENERGY, 2).add(CLOTH, 1).add(ARMOR, 1));
 			recipeRedclothCapacitive = addShapelessArcaneCraftingRecipe(keyRedcloth, itemRedclothCapacitive, new AspectList().add(ORDER, 3), itemRedcloth, itemCapacitorCoreArcaneRedsolder, tinyRedstoneReduced, tinySalisMundus);
@@ -2708,7 +2763,7 @@ public class ThaumRevContent {
 		researchBronzeChain.setParents(keyThaumicBronze).setSecondary();
 		researchArmorBronzeChain.setParents(keyBronzeChain).setSecondary();
 		researchThaumicRBronze.setParents(keyThaumicBronze).setParentsHidden(keyInfusion);
-		researchThaumicSteel.setParents(keyAlloys).setParentsHidden(keyInfusion);
+		researchThaumicSteel.setParents(keyAlloys).setParentsHidden(keyInfusion).setItemTriggers(OreDictHelper.getOreArray("ingotSteel"));
 		researchThaumicElectrum.setParents(keyAlloys).setParentsHidden(keyThaumium);
 		researchCotton.setParentsHidden(keyFabric);
 		researchCottonRobes.setParents(keyCotton).setParentsHidden(keyGoggles).setSecondary();
@@ -2954,7 +3009,7 @@ public class ThaumRevContent {
 		researchBronzeChain.setPages(new ResearchPage("0"), new ResearchPage(recipeThaumicBronzeChain));
 		researchArmorBronzeChain.setPages(new ResearchPage("0"), new ResearchPage(recipeBronzeChainHelmet), new ResearchPage(recipeBronzeChainmail), new ResearchPage(recipeBronzeChainGreaves), new ResearchPage(recipeBronzeChainBoots));
 		researchThaumicRBronze.setPages(new ResearchPage("0"), new ResearchPage(recipeThaumicRBronze));
-		researchThaumicSteel.setPages(new ResearchPage("0"), new ResearchPage(recipeThaumicSteel));
+		researchThaumicSteel.setPages(new ResearchPage("0"), new ResearchPage(recipeThaumicSteel), new ResearchPage(recipeBlockThaumicSteel));
 		researchThaumicElectrum.setPages(new ResearchPage("0"), new ResearchPage(recipeThaumicElectrum));
 		researchCotton.setPages(new ResearchPage("0"), new ResearchPage(recipeCottonFiber), new ResearchPage(recipeCottonFabric), new ResearchPage(recipeTreatedCotton), new ResearchPage(recipeEnchantedCotton));
 		researchCottonRobes.setPages(new ResearchPage("0"), new ResearchPage("1"), new ResearchPage(recipeEnchCottonGoggles), new ResearchPage(recipeEnchCottonRobes), new ResearchPage(recipeEnchCottonPants), new ResearchPage(recipeEnchCottonBoots));
@@ -3010,7 +3065,7 @@ public class ThaumRevContent {
 		if (ThaumRevConfig.getFluxed) {
 			researchMagneoturgy.setPages(new ResearchPage("0"));
 			researchRedstoneReduced.setPages(new ResearchPage("0"), new ResearchPage(recipeRedstoneReduced));
-			researchArcaneRedsolder.setPages(new ResearchPage("0"), new ResearchPage(recipeDullRedsolder), new ResearchPage(recipeArcaneRedsolder));
+			researchArcaneRedsolder.setPages(new ResearchPage("0"), new ResearchPage(recipeDullRedsolder), new ResearchPage(recipeArcaneRedsolder), new ResearchPage("1"));
 			researchCapCoreRedsolder.setPages(new ResearchPage("0"), new ResearchPage(recipeCapCoreRedsolder));
 			researchRedcloth.setPages(new ResearchPage("0"), new ResearchPage(recipeRedstoneFabric), new ResearchPage(recipeRedcloth), new ResearchPage(recipeRedclothCapacitive));
 			researchArmorFluxRobes.setPages(new ResearchPage("0"), new ResearchPage(recipeFluxRobesGoggles), new ResearchPage(recipeFluxRobesVest), new ResearchPage(recipeFluxRobesPants), new ResearchPage(recipeFluxRobesShoes));
@@ -3058,9 +3113,9 @@ public class ThaumRevContent {
 		addAspects(excubituraRose, new AspectStack(PLANT, 2), new AspectStack(MAGIC, 2), new AspectStack(aspectExcubitor, 3));
 		addAspects(wildCotton, new AspectStack(PLANT, 3), new AspectStack(CLOTH, 3));
 		addAspects(wildThistle, new AspectStack(PLANT, 3), new AspectStack(WEAPON, 2), new AspectStack(SENSES, 1));
-		addAspects(shiverpearl, new AspectStack(PLANT, 2), new AspectStack(COLD, 2), new AspectStack(MAGIC, 1), new AspectStack(WATER, 1));
-		addAspects(stormypearl, new AspectStack(PLANT, 2), new AspectStack(WEATHER, 2), new AspectStack(MAGIC, 1), new AspectStack(AIR, 1));
-		addAspects(stonypearl, new AspectStack(PLANT, 2), new AspectStack(ENTROPY, 2), new AspectStack(MAGIC, 1), new AspectStack(EARTH, 1));
+		addAspects(shiverpearl, new AspectStack(PLANT, 2), new AspectStack(COLD, 1), new AspectStack(MAGIC, 1), new AspectStack(WATER, 2));
+		addAspects(stormypearl, new AspectStack(PLANT, 2), new AspectStack(WEATHER, 1), new AspectStack(MAGIC, 1), new AspectStack(AIR, 2));
+		addAspects(stonypearl, new AspectStack(PLANT, 2), new AspectStack(ENTROPY, 1), new AspectStack(MAGIC, 1), new AspectStack(EARTH, 2));
 
 		addAspects(itemCotton, new AspectStack(CLOTH, 1), new AspectStack(PLANT, 1));
 		addAspects(itemCottonFiber, new AspectStack(CLOTH, 1));
@@ -3075,11 +3130,22 @@ public class ThaumRevContent {
 		addAspects(itemStabilizedSingularity, new AspectStack(MAGIC, 3), new AspectStack(ENERGY, 5), new AspectStack(ORDER, 5));
 		addAspects(itemAnimatedPiston, new AspectStack(MOTION, 5));
 
+		//Since this part of the API is shit, I've gotta do it in this horribly inelegant way that shows traces of hackiness in game. Would it have killed Az to add an easy way to overwrite aspects!
+		addAspects(plankGreatwoodEnchanted, new AspectStack(TREE, 1), new AspectStack(ORDER, -1), new AspectStack(AIR, -1)); //No, I don't want Aer on the planks, why the hell would I?
+
 		addAspects(itemPodCinderpearl, new AspectStack(PLANT, 2), new AspectStack(FIRE, 2), new AspectStack(MAGIC, 2));
 		addAspects(itemPodShiverpearl, new AspectStack(PLANT, 1), new AspectStack(COLD, 1), new AspectStack(MAGIC, 1), new AspectStack(WATER, 1));
 		addAspects(itemPodStormypearl, new AspectStack(PLANT, 1), new AspectStack(WEATHER, 1), new AspectStack(MAGIC, 1), new AspectStack(AIR, 1));
 		addAspects(itemPodStonypearl, new AspectStack(PLANT, 1), new AspectStack(ENTROPY, 1), new AspectStack(MAGIC, 1), new AspectStack(EARTH, 1));
 
+		addAspects(seedExcubitura, new AspectStack(PLANT, 1), new AspectStack(aspectExcubitor, 1));
+		addAspects(seedCotton, new AspectStack(PLANT, 1));
+		addAspects(seedThistle, new AspectStack(PLANT, 1));
+		addAspects(seedShimmerleaf, new AspectStack(PLANT, 1), new AspectStack(MAGIC, 1));
+		addAspects(seedCinderpearl, new AspectStack(PLANT, 1), new AspectStack(FIRE, 1));
+		addAspects(seedShiverpearl, new AspectStack(PLANT, 1), new AspectStack(WATER, 1));
+		addAspects(seedStormypearl, new AspectStack(PLANT, 1), new AspectStack(AIR, 1));
+		addAspects(seedStonypearl, new AspectStack(PLANT, 1), new AspectStack(EARTH, 1));
 	}
 
 	public static void loadMetalAspects() {

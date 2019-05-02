@@ -37,7 +37,7 @@ tile.fluxgear.ore.oreTennantite.name=Tennantite Ore
 tile.fluxgear.ore.oreTetrahedrite.name=Tetrahedrite Ore
 tile.fluxgear.ore.orePyrope.name=Pyrope Ore
 tile.fluxgear.ore.oreDioptase.name=Dioptase Ore
-tile.fluxgear.ore.oreFluonicSapphire.name=Fluonic Sapphire Ore
+tile.fluxgear.ore.oreJethrineSapphire.name=Jethrine Sapphire Ore
 
 tile.fluxgear.ore.oreGravelChalcocite.name=Chalcocite Gravel Ore
 tile.fluxgear.ore.oreGravelSphalerite.name=Sphalerite Gravel Ore
@@ -137,8 +137,8 @@ tile.fluxgear.storage.blockOccultVoidtungsten.name=Occult Voidtungsten Block
 
 tile.fluxgear.storage.blockPyrope.name=Pyrope Block
 tile.fluxgear.storage.blockDioptase.name=Dioptase Block
-tile.fluxgear.storage.blockFluonicSapphire.name=Fluonic Sapphire Block
-tile.fluxgear.storage.blockFluonicPyroptase.name=Fluonic Pyroptase Block
+tile.fluxgear.storage.blockJethrineSapphire.name=Jethrine Sapphire Block
+tile.fluxgear.storage.blockJethrinePyroptase.name=Jethrine Pyroptase Block
 tile.fluxgear.storage.blockWardenicCrystal.name=Wardenic Crystal Block
 tile.fluxgear.storage.blockActivatedWardenicCrystal.name=Activated Wardenic Crystal Block
 tile.fluxgear.storage.blockAwakenedWardenicCrystal.name=Awakened Wardenic Crystal Block
@@ -318,8 +318,8 @@ item.fluxgear.material.ingotOccultVoidtungsten.name=Occult Voidtungsten Ingot
 
 item.fluxgear.material.gemPyrope.name=Pyrope
 item.fluxgear.material.gemDioptase.name=Dioptase
-item.fluxgear.material.gemFluonicSapphire.name=Fluonic Sapphire
-item.fluxgear.material.gemFluonicPyroptase.name=Fluonic Pyroptase
+item.fluxgear.material.gemJethrineSapphire.name=Jethrine Sapphire
+item.fluxgear.material.gemJethrinePyroptase.name=Jethrine Pyroptase
 item.fluxgear.material.gemWardenicCrystal.name=Wardenic Crystal
 item.fluxgear.material.gemActivatedWardenicCrystal.name=Activated Wardenic Crystal
 item.fluxgear.material.gemAwakenedWardenicCrystal.name=Awakened Wardenic Crystal
@@ -396,8 +396,8 @@ item.fluxgear.material.nuggetOccultVoidtungsten.name=Occult Voidtungsten Nugget
 
 item.fluxgear.material.shardPyrope.name=Pyrope Shard
 item.fluxgear.material.shardDioptase.name=Dioptase Shard
-item.fluxgear.material.shardFluonicSapphire.name=Fluonic Sapphire Shard
-item.fluxgear.material.shardFluonicPyroptase.name=Fluonic Pyroptase Shard
+item.fluxgear.material.shardJethrineSapphire.name=Jethrine Sapphire Shard
+item.fluxgear.material.shardJethrinePyroptase.name=Jethrine Pyroptase Shard
 item.fluxgear.material.shardWardenicCrystal.name=Wardenic Crystal Shard
 item.fluxgear.material.shardActivatedWardenicCrystal.name=Activated Wardenic Crystal Shard
 item.fluxgear.material.shardAwakenedWardenicCrystal.name=Awakened Wardenic Crystal Shard
@@ -474,8 +474,8 @@ item.fluxgear.material.dustOccultVoidtungsten.name=Occult Voidtungsten Dust
 
 item.fluxgear.material.dustPyrope.name=Pyrope Dust
 item.fluxgear.material.dustDioptase.name=Dioptase Dust
-item.fluxgear.material.dustFluonicSapphire.name=Fluonic Sapphire Dust
-item.fluxgear.material.dustFluonicPyroptase.name=Fluonic Pyroptase Dust
+item.fluxgear.material.dustJethrineSapphire.name=Jethrine Sapphire Dust
+item.fluxgear.material.dustJethrinePyroptase.name=Jethrine Pyroptase Dust
 item.fluxgear.material.dustWardenicCrystal.name=Wardenic Crystal Dust
 item.fluxgear.material.dustActivatedWardenicCrystal.name=Activated Wardenic Crystal Dust
 item.fluxgear.material.dustAwakenedWardenicCrystal.name=Awakened Wardenic Crystal Dust
@@ -552,8 +552,8 @@ item.fluxgear.material.dustTinyOccultVoidtungsten.name=Tiny Occult Voidtungsten 
 
 item.fluxgear.material.dustTinyPyrope.name=Tiny Pyrope Dust
 item.fluxgear.material.dustTinyDioptase.name=Tiny Dioptase Dust
-item.fluxgear.material.dustTinyFluonicSapphire.name=Tiny Fluonic Sapphire Dust
-item.fluxgear.material.dustTinyFluonicPyroptase.name=Tiny Fluonic Pyroptase Dust
+item.fluxgear.material.dustTinyJethrineSapphire.name=Tiny Jethrine Sapphire Dust
+item.fluxgear.material.dustTinyJethrinePyroptase.name=Tiny Jethrine Pyroptase Dust
 item.fluxgear.material.dustTinyWardenicCrystal.name=Tiny Wardenic Crystal Dust
 item.fluxgear.material.dustTinyActivatedWardenicCrystal.name=Tiny Activated Wardenic Crystal Dust
 item.fluxgear.material.dustTinyAwakenedWardenicCrystal.name=Tiny Awakened Wardenic Crystal Dust
@@ -632,42 +632,42 @@ item.fluxgear.material.plateThaumicBronze.name=Thaumic Bronze Plate
 item.fluxgear.material.plateOsmiumLutetium.name=Osmium-Lutetium Alloy Plate
 
 #Raw Ingots
-item.fluxgear.material.ingotBrassRaw.name=Raw Brass Ingot
-item.fluxgear.material.ingotBronzeRaw.name=Raw Bronze Ingot
-item.fluxgear.material.ingotArsenicalBronzeRaw.name=Raw Arsenical Bronze Ingot
-item.fluxgear.material.ingotAntimonialBronzeRaw.name=Raw Antimonial Bronze Ingot
-item.fluxgear.material.ingotBismuthBronzeRaw.name=Raw Bismuth Bronze Ingot
-item.fluxgear.material.ingotMithrilRaw.name=Raw Mithril Ingot
-item.fluxgear.material.ingotAluminiumBronzeRaw.name=Raw Aluminium Bronze Ingot
-item.fluxgear.material.ingotCupronickelRaw.name=Raw Cupronickel Ingot
-item.fluxgear.material.ingotRiftishBronzeRaw.name=Raw Riftish Bronze Ingot
-item.fluxgear.material.ingotConstantanRaw.name=Raw Constantan Ingot
-item.fluxgear.material.ingotInvarRaw.name=Raw Invar Ingot
-item.fluxgear.material.ingotElectrumRaw.name=Raw Electrum Ingot
-item.fluxgear.material.ingotWardenicMetalRaw.name=Raw Wardenic Metal Ingot
-item.fluxgear.material.ingotDullRedsolderRaw.name=Raw Dull Redsolder
-item.fluxgear.material.ingotRedsolderRaw.name=Raw Redsolder
+item.fluxgear.material.ingotRawBrass.name=Raw Brass Ingot
+item.fluxgear.material.ingotRawBronze.name=Raw Bronze Ingot
+item.fluxgear.material.ingotRawArsenicalBronze.name=Raw Arsenical Bronze Ingot
+item.fluxgear.material.ingotRawAntimonialBronze.name=Raw Antimonial Bronze Ingot
+item.fluxgear.material.ingotRawBismuthBronze.name=Raw Bismuth Bronze Ingot
+item.fluxgear.material.ingotRawMithril.name=Raw Mithril Ingot
+item.fluxgear.material.ingotRawAluminiumBronze.name=Raw Aluminium Bronze Ingot
+item.fluxgear.material.ingotRawCupronickel.name=Raw Cupronickel Ingot
+item.fluxgear.material.ingotRawRiftishBronze.name=Raw Riftish Bronze Ingot
+item.fluxgear.material.ingotRawConstantan.name=Raw Constantan Ingot
+item.fluxgear.material.ingotRawInvar.name=Raw Invar Ingot
+item.fluxgear.material.ingotRawElectrum.name=Raw Electrum Ingot
+item.fluxgear.material.ingotRawWardenicMetal.name=Raw Wardenic Metal Ingot
+item.fluxgear.material.ingotRawDullRedsolder.name=Raw Dull Redsolder
+item.fluxgear.material.ingotRawRedsolder.name=Raw Redsolder
 
-item.fluxgear.material.ingotWardenicCompositeRaw.name=Raw Wardenic Composite Ingot
-item.fluxgear.material.ingotArcaneRedsolderRaw.name=Raw Arcane Redsolder
+item.fluxgear.material.ingotRawWardenicComposite.name=Raw Wardenic Composite Ingot
+item.fluxgear.material.ingotRawArcaneRedsolder.name=Raw Arcane Redsolder
 
-item.fluxgear.material.ingotMagneoturgicCompositeRaw.name=Raw Magneoturgic Composite Ingot
+item.fluxgear.material.ingotRawMagneoturgicComposite.name=Raw Magneoturgic Composite Ingot
 
-item.fluxgear.material.blendFluonicPyroptase.name=Fluonic Pyroptase Blend
+item.fluxgear.material.blendJethrinePyroptase.name=Jethrine Pyroptase Blend
 
-item.fluxgear.material.ingotThaumicBronzeRaw.name=Raw Thaumic Bronze Ingot
-item.fluxgear.material.ingotOsmiumLutetiumRaw.name=Raw Osmium-Lutetium Alloy Ingot
+item.fluxgear.material.ingotRawThaumicBronze.name=Raw Thaumic Bronze Ingot
+item.fluxgear.material.ingotRawOsmiumLutetium.name=Raw Osmium-Lutetium Alloy Ingot
 
-item.fluxgear.material.ingotWardenicCompositeSmelted.name=Smelted Wardenic Composite Ingot
-item.fluxgear.material.ingotMagneoturgicCompositeSmelted.name=Smelted Magneoturgic Composite Ingot
-item.fluxgear.material.ingotFluxedCompositeSmelted.name=Smelted Fluxed Composite Ingot
-item.fluxgear.material.ingotResonantFluxedCompositeSmelted.name=Smelted Resonant Fluxed Composite Ingot
+item.fluxgear.material.ingotSmeltedWardenicComposite.name=Smelted Wardenic Composite Ingot
+item.fluxgear.material.ingotSmeltedMagneoturgicComposite.name=Smelted Magneoturgic Composite Ingot
+item.fluxgear.material.ingotSmeltedFluxedComposite.name=Smelted Fluxed Composite Ingot
+item.fluxgear.material.ingotSmeltedResonantFluxedComposite.name=Smelted Resonant Fluxed Composite Ingot
 
-item.fluxgear.material.ingotThaumicBronzeCoated.name=Coated Thaumic Bronze Ingot
-item.fluxgear.material.ingotOsmiumLutetiumCoated.name=Coated Osmium-Lutetium Alloy Ingot
+item.fluxgear.material.ingotCoatedThaumicBronze.name=Coated Thaumic Bronze Ingot
+item.fluxgear.material.ingotCoatedOsmiumLutetium.name=Coated Osmium-Lutetium Alloy Ingot
 
-item.fluxgear.material.ingotThaumicBronzeFired.name=Fired Thaumic Bronze Ingot
-item.fluxgear.material.ingotOsmiumLutetiumFired.name=Fired Osmium-Lutetium Alloy Ingot
+item.fluxgear.material.ingotFiredThaumicBronze.name=Fired Thaumic Bronze Ingot
+item.fluxgear.material.ingotFiredOsmiumLutetium.name=Fired Osmium-Lutetium Alloy Ingot
 
 #Clusters
 item.fluxgear.material.clusterZinc.name=Zinc Cluster
@@ -685,7 +685,7 @@ item.fluxgear.material.clusterTetrahedrite.name=Tetrahedrite Cluster
 item.fluxgear.material.itemSlagCarbon.name=Carbon Slag
 item.fluxgear.material.itemSlagCeramic.name=Ceramic Mold Slag
 item.fluxgear.material.itemSlagThaumic.name=Thaumic Mold Slag
-item.fluxgear.material.itemSlagFluonic.name=Fluonic Mold Slag
+item.fluxgear.material.itemSlagJethrine.name=Jethrine Mold Slag
 
 #Other Dusts
 item.fluxgear.material.dustAer.name=Crushed Air Shard
@@ -855,6 +855,8 @@ fluxgear.name.ARMOR_TBRONZE=Thaumic Bronze Chainmail
 fluxgear.name.THAUMIC_TINKERS_BRONZE=Thaumic Tinker's Bronze
 
 fluxgear.name.THAUMIC_STEEL=Thaumic Steel
+fluxgear.text.THAUMIC_STEEL=[TRv] A stronger kind of thaumium
+fluxgear.page.THAUMIC_STEEL.0=Steel is an alloy of iron with small amounts of carbon and other solutes which is much stronger than iron. This begs the question, is it possible to make a stronger kind of thaumium from steel? The answer is yes, although a crucible is not sufficient for the process. An infusion altar however is, although a tiny bit of salis mundus is required, about a third of a shard's worth seems to be the optimal amount for an ingot's worth of metal. Thaumic steel is not only stronger, but just as enchantable, and seems to be potentially useful for future alloying endeavors. You have also noticed around a cubic meter of steel can be infused at once, although it is a slightly less stable process.
 
 fluxgear.name.THAUMIC_ELECTRUM=Thaumic Electrum
 fluxgear.text.THAUMIC_ELECTRUM=[TRv] Magically conductive (and electrically conductive)
@@ -935,7 +937,7 @@ fluxgear.name.WARDENIC_OBSIDIAN=Wardenic Obsidian
 
 fluxgear.name.WARDEN_QUARTZ=Wardenic Quartz
 fluxgear.text.WARDEN_QUARTZ=[TRv] Quartzing destiny! (Whatever that means...)
-fluxgear.page.WARDEN_QUARTZ.0=For a long time now you have been perplexed at your findings, namely how the Thaumic Wardens made their nigh-unbreakable armor. You think you've stumbled across something though. It is said that they used crystals to craft their surprisingly light suits of full plate armor, and you think you have figured out the start of the process by which the crystals are formed, and it was even in front of your face the whole time.<LINE>By simply submerging an impure crystal of silica, specifically milky quartz, such as naturally occurring Nether Quartz, into a crucible with certain aspects, the crystal absorbs
+fluxgear.page.WARDEN_QUARTZ.0=For a long time now you have been perplexed at your findings, namely how the Thaumic Wardens made their nigh-unbreakable armor. You think you've stumbled across something though. It is said that they used crystals somehow in the composite they used to craft their surprisingly light suits of full plate armor, and you think you have figured out the start of the process by which the crystals are formed, and it was even in front of your face the whole time.<LINE>By simply submerging an impure crystal of silica, specifically milky quartz, such as naturally occurring Nether Quartz, into a crucible with certain aspects, the crystal absorbs
 fluxgear.page.WARDEN_QUARTZ.1=the aspects, focusing them into its minute fluid inclusions, which not only changes the color, but makes the crystal far better at holding, receiving, and transferring mystical energies. It has little effect on the hardness of the quartz itself, nor does it imbue it with an other special properties.
 
 fluxgear.name.WARDEN_CRYSTAL=Wardenic Crystal
@@ -954,14 +956,20 @@ fluxgear.name.WARDEN_CRYSTAL_AWAKENED=Awakened Wardenic Crystal
 fluxgear.text.WARDEN_CRYSTAL_AWAKENED=[TRv] Oddly similar to aspect orbs
 
 fluxgear.name.WARDEN_ESSENCE_AWAKENED=Essence of Awakening
-fluxgear.text.WARDEN_ESSENCE_AWAKENED=[TRv] The true power of Excubiturgy
+fluxgear.text.WARDEN_ESSENCE_AWAKENED=[TRv] The true power of excubiturgy
 
 fluxgear.name.MAGNEOTURGY=Magneoturgy
 fluxgear.text.MAGNEOTURGY=[TRv] Get Fluxed!
+fluxgear.page.MAGNEOTURGY.0=Magneoturgy is the branch of thaumaturgy involving the usage of redstone flux, a kind of standing wave of electromagnetic flux, either to augment or slightly alter known thaumic creations, or to create new hybrid creations. Magneoturgy has been viewed with disdain by some, including most branches of the Thaumic Wardens, but is of great use to any open-minded thaumaturge, as it just might be a cornerstone of future thaumic endeavors.<BR>Now, you may not be sure what you'll make, but you're sure you'll need an awful lot of redstone. Maybe ask an apiturge about it, they're BOUND to know a bee that'll help. (Wait, Myst removed the Blood Magic bees.)
 
 fluxgear.name.REDSTONE_REDUCED=Redstone Reduction
+fluxgear.text.REDSTONE_REDUCED=[TRv] First step of magneoturgy
+fluxgear.page.REDSTONE_REDUCED.0=After some experimenting, you've realized redstone as it is directly from the ground (or comb) is not exactly of the quality needed for magneoturgy. Luckily, when trying to figure out some mix of physical and chemical processes to get a purer variety, you realized that you were overthinking it. Just toss some redstone in a crucible with a bit of §7Ordo§0, §8Perditio§0, and Potentia, then stir for a bit before straining. Now, you are unsure what to do with this more mystically receptive dust, but you believe it has something to do with quicksilver. Perhaps some kind of alloy...
 
 fluxgear.name.ARCANE_REDSOLDER=Arcane Redsolder
+fluxgear.text.ARCANE_REDSOLDER=[TRv] A good alloy to start with
+fluxgear.page.ARCANE_REDSOLDER.0=You were on to something when you decided to investigate alloying, but it wasn't as simple as you thought. After spending countless hours trying to figure out alloying with reduced redstone, you thought to investigate existing alloys. This investigation yielded a result in the form of dull redsolder, a mix of 1 part copper, 1 part tin, 1 part silver, 4 parts lead, and 2 parts redstone. After a failed attempt at creating the alloy with reduced redstone, you thought to created some dull redsolder and alloy that with reduced redstone and some quicksilver.
+fluxgear.page.ARCANE_REDSOLDER.1=Once you decided to try channeling a bit of §2Terra§0 and §6Ignis§0 vis, your 6:2:1 recipe worked. You call this new alloy arcane redsolder, and it is both a decent conductor of redstone flux and thaumic energies, although it is unsuitable for creating wand caps due to it having trouble releasing said thaumic energies. It does however handle redstone flux relatively well, so perhaps it may be useful for a capacitor.
 
 fluxgear.name.CAPCORE_REDSOLDER=Arcane Redsolder Capacitor Core
 

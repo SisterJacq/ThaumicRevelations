@@ -58,7 +58,7 @@ public class ThaumRevWorldGenerator implements IWorldGenerator {
 		genTetrahedite = new WorldGenOreVein(blockOre, 11, stone, 0, 6, 4, 30, 75);
 		genPyrope = new WorldGenOreVein(blockOre, 12, netherrack, 0, 4, 4, 5, 40);
 		genDioptase = new WorldGenOreVein(blockOre, 13, stone, 0, 4, 2, 7, 11);
-		genFluonicSapphire = new WorldGenOreVein(blockOre, 14, stone, 0, 4, 2, 7, 11);
+		genJethrineSapphire = new WorldGenOreVein(blockOre, 14, stone, 0, 4, 2, 7, 11);
 
 		List<WeightedRandomBlock> cu = new ArrayList<WeightedRandomBlock>();
 		cu.add(new WeightedRandomBlock(blockOre, 0, 30));
@@ -223,7 +223,7 @@ public class ThaumRevWorldGenerator implements IWorldGenerator {
 			genDioptase.generateOres(world, chunkX, chunkZ, random);
 		}
 		if (generatePyrope) {
-			genFluonicSapphire.generateOres(world, chunkX, chunkZ, random);
+			genJethrineSapphire.generateOres(world, chunkX, chunkZ, random);
 		}
 
 		if (generateCopperMix) {

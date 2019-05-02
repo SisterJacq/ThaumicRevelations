@@ -14,6 +14,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.*;
 
 import thaumcraft.api.ThaumcraftApi;
+import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.crafting.*;
 import thaumcraft.common.lib.utils.Utils;
@@ -22,8 +23,7 @@ import mortvana.melteddashboard.util.IStackProvider;
 import mortvana.melteddashboard.util.helpers.ItemHelper;
 import mortvana.melteddashboard.util.helpers.mod.ThaumcraftHelper;
 import mortvana.melteddashboard.util.helpers.science.MathHelper;
-import mortvana.melteddashboard.util.libraries.StringLibrary;
-import mortvana.melteddashboard.util.libraries.ThaumcraftLibrary;
+import mortvana.melteddashboard.util.libraries.*;
 
 import static mortvana.melteddashboard.util.libraries.ThermalLibrary.*;
 import static mortvana.melteddashboard.util.helpers.ItemHelper.cloneStack;
@@ -234,6 +234,22 @@ public class RecipeHelper {
 		return list;
 	}
 
+	/*public static AspectList overwriteAspects(ItemStack stack,  AspectStack... aspects) {
+		AspectList list = new AspectList(stack);
+		for (AspectStack aspect : aspects) {
+			list.add(aspect.getAspect(), aspect.getSize());
+		}
+		//This may be hacky, but given API limitations, it's the most elegant solution.
+		if (ThaumcraftApi.objectTags.contains(Arrays.asList(stack.getItem(), stack.getItemDamage()))) {
+			//ThaumcraftApi.objectTags.remove(Arrays.asList(stack.getItem(), stack.getItemDamage()));
+			for (Aspect aspect : ThaumcraftApi.objectTags.get(Arrays.asList(stack.getItem(), stack.getItemDamage())).getAspects()) {
+				ThaumcraftApi.objectTags.get(Arrays.asList(stack.getItem(), stack.getItemDamage())).remove(aspect);
+			}
+		}
+		ThaumcraftApi.registerObjectTag(stack, list);
+		return list;
+	}*/
+
 	/** THAUMCRAFT - NATIVE CLUSTERS * */
 	public static void addCluster(String ore, ItemStack cluster) {
 		addCluster(ore, cluster, 1.0F);
@@ -345,7 +361,11 @@ public class RecipeHelper {
 	}
 
 	public static void addPulverizerOreRecipe(ItemStack input, ItemStack primaryOutput, ItemStack secondaryOutput) {
-		addPulverizerRecipe(4000, input, cloneStack(primaryOutput, 2), secondaryOutput, 10);
+		addPulverizerRecipe(4000, input, cloneStack(primaryOutput, ThermalLibrary.multPulvDefault), secondaryOutput, 10);
+	}
+
+	public static void addPulverizerPoorOreRecipe(ItemStack input, ItemStack primaryOutput, ItemStack secondaryOutput) {
+		addPulverizerRecipe(3200, input, cloneStack(primaryOutput, ThermalLibrary.multPulvDefault * 3), secondaryOutput, 25);
 	}
 
 	public static void removePulverizerRecipe(ItemStack input) {
@@ -416,16 +436,30 @@ public class RecipeHelper {
 		ItemStack ore = OreDictionary.getOres("ore" + oreName).get(0);
 		ItemStack ingot  = OreDictionary.getOres("ingot" + ingotName).get(0);
 
-		//TODO: Get quantity from TE Config
-
-		addInductionSmelterRecipe(3200, new ItemStack(Blocks.sand), ore, cloneStack(ingot, 2), itemSlagRich, 5); //Zn,YPO,Bi,Cu2
-		addInductionSmelterRecipe(4000, itemSlagRich, ore, cloneStack(ingot, 3), itemSlag, 75); //YPO,Cu2
-		addInductionSmelterRecipe(4000, dustPyrotheum, ore, cloneStack(ingot, 2), itemSlagRich, 15); //YPO,Cu2
-		addInductionSmelterRecipe(4000, itemCinnabar, ore, cloneStack(ingot, 3), bonusIngot == null ? itemSlagRich : bonusIngot, bonusIngot == null ? 75 : 100); //YPO,Cu2
+		addInductionSmelterRecipe(3200, ore, new ItemStack(Blocks.sand), cloneStack(ingot, ThermalLibrary.multSmeltDefault), itemSlagRich, 5);
+		addInductionSmelterRecipe(4000, ore, itemSlagRich, cloneStack(ingot, ThermalLibrary.multSmeltSpecial), itemSlag, 75);
+		addInductionSmelterRecipe(4000, ore, dustPyrotheum, cloneStack(ingot, ThermalLibrary.multSmeltDefault), itemSlagRich, 15);
+		addInductionSmelterRecipe(4000, ore, itemCinnabar, cloneStack(ingot, ThermalLibrary.multSmeltSpecial), bonusIngot == null ? itemSlagRich : bonusIngot, bonusIngot == null ? 75 : 100);
 	}
 
 	public static void addInductionOreRecipes(String name, ItemStack bonusIngot) {
 		addInductionOreRecipes(name, name, bonusIngot);
+	}
+
+	public static void addInductionPoorOreRecipes(String oreName, String nuggetName, ItemStack bonusNugget) {
+		ItemStack ore = OreDictionary.getOres("orePoor" + oreName).get(0);
+		ItemStack nugget = OreDictionary.getOres("nugget" + nuggetName).get(0);
+
+		addInductionSmelterRecipe(2400, ore, new ItemStack(Blocks.sand), cloneStack(nugget, multSmeltDefault * 3), itemSlagRich, 10);
+		addInductionSmelterRecipe(3200, ore, itemSlagRich, cloneStack(nugget, multSmeltSpecial * 3), itemSlag);
+		addInductionSmelterRecipe(3200, ore, dustPyrotheum, cloneStack(nugget, multSmeltDefault * 3), itemSlagRich, 20);
+		addInductionSmelterRecipe(3200, ore, itemCinnabar, cloneStack(nugget, multSmeltSpecial * 3), bonusNugget == null ? itemSlagRich : bonusNugget, bonusNugget == null ? 85 : 100);
+		//TODO: If it makes 9 nuggets, spit out an ingot
+		//TODO: Always use TF Nuggets?
+	}
+
+	public static void addInductionPoorOreRecipes(String name, ItemStack bonusNugget) {
+		addInductionPoorOreRecipes(name, name, bonusNugget);
 	}
 
 	public static void removeSmelterRecipe(ItemStack primaryInput, ItemStack secondaryInput) {

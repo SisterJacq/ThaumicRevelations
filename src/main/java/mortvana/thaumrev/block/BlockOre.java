@@ -61,7 +61,7 @@ public class BlockOre extends FluxGearBlockBase {
 				list.add(ItemHelper.cloneStack(gemDioptase, getStackSize(fortune)));
 				break;
 			case 14:
-				list.add(ItemHelper.cloneStack(gemFluonicSapphire, getStackSize(fortune)));
+				list.add(ItemHelper.cloneStack(gemJethrineSapphire, getStackSize(fortune)));
 				break;
 			default:
 				list.add(new ItemStack(this, 1, meta));
@@ -98,7 +98,7 @@ public class BlockOre extends FluxGearBlockBase {
 		return RARITY[meta];
 	}
 
-	public static final String[] NAMES = { "oreChalcocite", "oreSphalerite", "oreCassiterite", "oreMillerite", "oreNativeSilver", "oreGalena", "oreXenotime", "oreWolframite", "oreIridosmium", "oreBismuthinite", "oreTennantite", "oreTetrahedrite", "orePyrope", "oreDioptase", "oreFluonicSapphire" };
+	public static final String[] NAMES = { "oreChalcocite", "oreSphalerite", "oreCassiterite", "oreMillerite", "oreNativeSilver", "oreGalena", "oreXenotime", "oreWolframite", "oreIridosmium", "oreBismuthinite", "oreTennantite", "oreTetrahedrite", "orePyrope", "oreDioptase", "oreJethrineSapphire" };
 	public static final int[] HARVEST = {1, 1, 1, 2, 2, 2, 2, 3, 3, 1, 1, 1, 3, 3, 3};
 	public static final int[] RARITY = {0, 0, 0, 0, 0, 0, 1, 1, 2, 0, 0, 0, 2, 2, 2};
 }

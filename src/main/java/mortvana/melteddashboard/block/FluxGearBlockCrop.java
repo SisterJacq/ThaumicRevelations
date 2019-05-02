@@ -76,7 +76,7 @@ public abstract class FluxGearBlockCrop extends FluxGearBlockPlant implements IC
 			item.onCollideWithPlayer(player);
 		}
 		ItemStack seed = getSeed(world, x, y, z, meta, 0);
-		seed = ItemHelper.cloneStack(seed, seed.stackSize - 1);
+		seed = ItemHelper.cloneStack(seed, (seed.stackSize - 1) / 2);
 		if (seed.stackSize > 0) {
 			EntityItem item = new EntityItem(world, player.posX, player.posY - 1.0D, player.posZ, seed);
 			world.spawnEntityInWorld(item);

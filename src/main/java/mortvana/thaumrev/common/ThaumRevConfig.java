@@ -50,7 +50,7 @@ public class ThaumRevConfig extends ConfigBase {
 		enableElectrum = config.get("Resources", "Enable Electrum", true, "Determines whether or not our Electrum is craftable. Disabling without other mods adding Electrum will break stuff.").getBoolean(true);
 		enableOsLu = config.get("Resources", "Enable Osmium-Lutetium Alloy", true, "Determines whether or not our Osmium-Lutetium Alloy is craftable. Disabling without other mods adding the Osmium-Lutetium Alloy will break stuff.").getBoolean(true);
 
-		backwardsAlBronze = config.get("Compatiblity", "Backwards Aluminium Bronze", false, "When enabled, Aluminium Bronze requires 3 Aluminium and 1 Copper, like in TiC, instead of the pseudo-realistic 3 Copper and 1 Aluminium (Typically only has 6-11% Al IRL). Also OreDicts the two as the same").getBoolean(false);
+		//backwardsAlBronze = config.get("Compatiblity", "Backwards Aluminium Bronze", false, "When enabled, Aluminium Bronze requires 3 Aluminium and 1 Copper, like in TiC, instead of the pseudo-realistic 3 Copper and 1 Aluminium (Typically only has 6-11% Al IRL). Also OreDicts the two as the same").getBoolean(false);
 
 		//obviousSmelting = config.get("Clientside", "Obvious Thaumonomicon Smelting", false, "Shows obvious smelting recipes.").getBoolean(false);
 
@@ -96,7 +96,7 @@ public class ThaumRevConfig extends ConfigBase {
 
 	public static boolean enableSteel;
 
-	public static boolean backwardsAlBronze;
+	public static boolean backwardsAlBronze = false;
 
 	//TODO: MDCore-ify These
 	public static boolean debug;

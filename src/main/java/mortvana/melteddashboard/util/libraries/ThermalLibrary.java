@@ -24,7 +24,20 @@ public class ThermalLibrary {
 		if (LoadedHelper.isThermalFoundationLoaded) {
 			itemMaterialTF = GameRegistry.findItem(TF, "material");
 
+			dustIronTF = new ItemStack(itemMaterialTF, 1, 0);
+
+			nuggetIronTF = new ItemStack(itemMaterialTF, 1, 8);
+
 			itemCinnabar = new ItemStack(itemMaterialTF, 1, 20);
+
+			dustSilverTF = new ItemStack(itemMaterialTF, 1, 34);
+			dustLeadTF = new ItemStack(itemMaterialTF, 1, 35);
+
+			ingotSilverTF = new ItemStack(itemMaterialTF, 1, 66);
+			ingotLeadTF = new ItemStack(itemMaterialTF, 1, 67);
+
+			ingotSilverTF = new ItemStack(itemMaterialTF, 1, 98);
+			ingotLeadTF = new ItemStack(itemMaterialTF, 1, 99);
 
 			dustPyrotheum = new ItemStack(itemMaterialTF, 1, 512);
 			dustCryotheum = new ItemStack(itemMaterialTF, 1, 513);
@@ -42,6 +55,12 @@ public class ThermalLibrary {
 		}
 	}
 
+	/** MULTIPLIERS **/
+	//TODO: Get quantities from TE Config
+	public static int multPulvDefault = 2;
+	public static int multSmeltDefault = 2;
+	public static int multSmeltSpecial = 3;
+
 	/** BLOCKS **/
 
 	/** EQUIPMENT **/
@@ -51,7 +70,20 @@ public class ThermalLibrary {
 	public static Item itemMaterialTE;
 
 	/** ITEMSTACKS (TF) **/
+	public static ItemStack dustIronTF;
+
+	public static ItemStack nuggetIronTF;
+
 	public static ItemStack itemCinnabar;
+
+	public static ItemStack dustSilverTF;
+	public static ItemStack dustLeadTF;
+
+	public static ItemStack ingotSilverTF;
+	public static ItemStack ingotLeadTF;
+
+	public static ItemStack nuggetSilverTF;
+	public static ItemStack nuggetLeadTF;
 
 	public static ItemStack dustPyrotheum;
 	public static ItemStack dustCryotheum;

@@ -1,5 +1,7 @@
 package mortvana.melteddashboard.util.helpers;
 
+import java.util.ArrayList;
+
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
@@ -13,6 +15,10 @@ public class OreDictHelper {
 			}
 		}
 		return false;
+	}
+
+	public static ItemStack[] getOreArray(String oredict) {
+		return OreDictionary.getOres(oredict).toArray(new ItemStack[0]);
 	}
 
 }

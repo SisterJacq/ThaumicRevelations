@@ -137,7 +137,7 @@ public class ThaumRevLibrary {
 	public static ItemStack oreTetrahedrite;
 	public static ItemStack orePyrope;
 	public static ItemStack oreDioptase;
-	public static ItemStack oreFluonicSapphire;
+	public static ItemStack oreJethrineSapphire;
 	//public static ItemStack oreMjuvil;
 
 	public static ItemStack orePoorChalcocite;
@@ -253,8 +253,8 @@ public class ThaumRevLibrary {
 
 	public static ItemStack blockPyrope;
 	public static ItemStack blockDioptase;
-	public static ItemStack blockFluonicSapphire;
-	public static ItemStack blockFluonicPyroptase;
+	public static ItemStack blockJethrineSapphire;
+	public static ItemStack blockJethrinePyroptase;
 	public static ItemStack blockWardenicCrystal;
 	public static ItemStack blockActivatedWardenicCrystal;
 	public static ItemStack blockAwakenedWardenicCrystal;
@@ -690,8 +690,8 @@ public class ThaumRevLibrary {
 	//05096-05111 GEMS
 	public static ItemStack gemPyrope;							//05096
 	public static ItemStack gemDioptase;						//05097
-	public static ItemStack gemFluonicSapphire;					//05098
-	public static ItemStack gemFluonicPyroptase;				//05099
+	public static ItemStack gemJethrineSapphire;					//05098
+	public static ItemStack gemJethrinePyroptase;				//05099
 	public static ItemStack gemWardenicCrystal;					//05100
 	public static ItemStack gemActivatedWardenicCrystal;		//05101
 	public static ItemStack gemAwakenedWardenicCrystal;			//05102
@@ -773,8 +773,8 @@ public class ThaumRevLibrary {
 	//05296-05311 GEM SHARDS
 	public static ItemStack shardPyrope;						//05296
 	public static ItemStack shardDioptase;						//05297
-	public static ItemStack shardFluonicSapphire;				//05298
-	public static ItemStack shardFluonicPyroptase;				//05299
+	public static ItemStack shardJethrineSapphire;				//05298
+	public static ItemStack shardJethrinePyroptase;				//05299
 	public static ItemStack shardWardenicCrystal;				//05300
 	public static ItemStack shardActivatedWardenicCrystal;		//05301
 	public static ItemStack shardAwakenedWardenicCrystal;		//05302
@@ -856,8 +856,8 @@ public class ThaumRevLibrary {
 	//05496-05511 GEM DUSTS
 	public static ItemStack dustPyrope;							//05496
 	public static ItemStack dustDioptase;						//05497
-	public static ItemStack dustFluonicSapphire;				//05498
-	public static ItemStack dustFluonicPyroptase;				//05499
+	public static ItemStack dustJethrineSapphire;				//05498
+	public static ItemStack dustJethrinePyroptase;				//05499
 	public static ItemStack dustWardenicCrystal;				//05500
 	public static ItemStack dustActivatedWardenicCrystal;		//05501
 	public static ItemStack dustAwakenedWardenicCrystal;		//05502
@@ -939,8 +939,8 @@ public class ThaumRevLibrary {
 	//05696-05711 GEM TINY DUSTS
 	public static ItemStack tinyPyrope;							//05696
 	public static ItemStack tinyDioptase;						//05697
-	public static ItemStack tinyFluonicSapphire;				//05698
-	public static ItemStack tinyFluonicPyroptase;				//05699
+	public static ItemStack tinyJethrineSapphire;				//05698
+	public static ItemStack tinyJethrinePyroptase;				//05699
 	public static ItemStack tinyWardenicCrystal;				//05700
 	public static ItemStack tinyActivatedWardenicCrystal;		//05701
 	public static ItemStack tinyAwakenedWardenicCrystal;		//05702
@@ -1046,7 +1046,7 @@ public class ThaumRevLibrary {
 	public static ItemStack rawMagneoturgicComposite;			//06089
 
 	//06096-06111 COMPOUND GEM BLENDS
-	public static ItemStack blendFluonicPyrotase;				//06099
+	public static ItemStack blendJethrinePyrotase;				//06099
 
 	//06112-06127 RAW COMPLEX ALLOY INGOTS
 	public static ItemStack rawThaumicBronze;					//06120
@@ -1674,6 +1674,7 @@ public class ThaumRevLibrary {
 	public static ShapelessArcaneRecipe recipeThaumicBronzeCoated;
 
 	public static InfusionRecipe recipeThaumicSteel;
+	public static InfusionRecipe recipeBlockThaumicSteel;
 	public static InfusionRecipe recipeThaumicRBronze;
 	public static CrucibleRecipe recipeThaumicElectrum;
 
@@ -2139,7 +2140,7 @@ public class ThaumRevLibrary {
 	public static WorldGenOreVein genTetrahedite;
 	public static WorldGenOreVein genPyrope;
 	public static WorldGenOreVein genDioptase;
-	public static WorldGenOreVein genFluonicSapphire;
+	public static WorldGenOreVein genJethrineSapphire;
 	public static WorldGenMixedOreVein genCopperMix;
 	public static WorldGenMixedOreVein genAgPb;
 	public static WorldGenMixedOreVein genWSn;
@@ -2247,8 +2248,8 @@ public class ThaumRevLibrary {
 	public static final String[] NAMES_STORAGE_ALLOY_1 = { CUZN, CUSN, CUAS, CUSB, CUBI, "Mithril", CUAL, CUNI, RBRZ, CNST, FENI, AUAG, WRDM, DRDS, RDSR };
 	public static final String[] NAMES_STORAGE_SPECIAL = { TELC, TRBR, STEL, TSTL, VBRS, VSTL, VDWT, VCPN };
 	public static final String[] NAMES_STORAGE_EQUIPMENT = { WBRZ, WDST, WRBR, WCMP, ARDS, RDBR, HRBR, FSTL, FLXW, MCMP, FCMP, RCMP, EVBS, CTHM, OCVW };
-	public static final String[] NAMES_STORAGE_GEM_NAME = { PYRP, DIOP, FSPH, FPRT, WCRS, AWCR, WWCR, WQRZ, IQRZ, RQRZ};
-	public static final String[] NAMES_STORAGE_GEM_ORE = { PYRP, DIOP, FSPH, FPRT, WCRS, AWCR, WWCR, WQRZ, IQRZ, RQZT};
+	public static final String[] NAMES_STORAGE_GEM_NAME = { PYRP, DIOP, JSPH, JPRT, WCRS, AWCR, WWCR, WQRZ, IQRZ, RQRZ};
+	public static final String[] NAMES_STORAGE_GEM_ORE = { PYRP, DIOP, JSPH, JPRT, WCRS, AWCR, WWCR, WQRZ, IQRZ, RQZT};
 	public static final String[] NAMES_STORAGE_MISC_INT = { LNTH, YPOJ, IROS, TBRZ, OSLU, "Void" };
 	public static final String[] NAMES_STORAGE_MISC_LOC = { YPO, "Lanthanides", IROS, TBRZ, OSLU, "Voidmetal" };
 

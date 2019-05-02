@@ -37,7 +37,7 @@ public class ThaumRevConfigWorld extends ConfigBase {
 		generateTetrahedrite = config.get(enblC, getEnable(CSB), true, getEnableText(CSB + " (Copper Antimony Sulfide)", SB)).getBoolean(true);
 		generatePyrope = config.get(enblC, getEnable(PYRP), true, getEnableText(PYRP, "Nether", PYRP)).getBoolean(true);
 		generateDioptase = config.get(enblC, getEnable(DIOP), true, getEnableText(DIOP, DIOP)).getBoolean(true);
-		generateFluonicSapphire = config.get(enblC, getEnable(FSPH), true, getEnableText(FSPH, FSPH)).getBoolean(true);
+		generateFluonicSapphire = config.get(enblC, getEnable(JSPH), true, getEnableText(JSPH, JSPH)).getBoolean(true);
 
 		generateCopperMix = config.get(enblC, "Enable Mixed Copper Veins", true, "Adds mixed veins of " + CUS + ", " + CAS + ", and " + CSB + " to the Overworld. These veins are in addition to non-mixed ones.").getBoolean(true);
 		generateAgPb = config.get(enblC, "Enable Native Silver-Galena Veins", true, "Adds mixed veins of " + NAG + " and " + PBS + " to the Overworld. These veins are in addition to non-mixed ones.").getBoolean(true);

@@ -179,8 +179,8 @@ public class StringLibrary {
 	//GEMS
 	public static final String PYRP = "Pyrope";
 	public static final String DIOP = "Dioptase";
-	public static final String FSPH = "FluonicSapphire";
-	public static final String FPRT = "FluonicPyroptase";
+	public static final String JSPH = "JethrineSapphire";
+	public static final String JPRT = "JethrinePyroptase";
 	public static final String WCRS = "WardenicCrystal";
 	public static final String AWCR = "ActivatedWardenicCrystal";
 	public static final String WWCR = "AwakenedWardenicCrystal";
@@ -223,7 +223,7 @@ public class StringLibrary {
 	//SLAG TYPES
 	public static final String CRMC = "Ceramic";
 	public static final String THMC = "Thaumic";
-	public static final String FLNC = "Fluonic";
+	public static final String FLNC = "Jethrine";
 
 	//ELEMENTAL
 	public static final String BLAZE = "Blaze";

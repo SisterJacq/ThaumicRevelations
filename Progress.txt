@@ -3,228 +3,97 @@ Internal [20] |-> Items/Blocks [02/03/04] |-> Recipes [05/06/07/08] |-> Research
 										  |-> Texture [10/11/12/13]
 										  |-> Item Aspects [14]
 
-0 - 0 - 1/0/62/67 - 0 - 72 > 178/381
-Internal:
-	General:
-	[20-xx]		Fix Colorizer
-	[20-xx]		Fix Texture Loading
-	[20-xx]		Fix Colorized Overlay Rendering
-	[20-xx]		Arrange Research Fields
+0 - 0 - 0/0/62/67 - 0 - 70 > 180/381
+[14]	Aspects:
+[14-xx]		Plants
+[14-xx]		Plant Materials
+[14-xx]		Seeds
 
-	Blocks:
-	[20-xx]		Setup Storage Block Colorizer
-	[20-xx]		Cotton Farming
-	[20-xx]		Thistle Farming
+[10/11/12/13]	Textures:
+[10-xx]		Ores
+[10-xx]		Jethrine Sapphire Ore
+[10-xx]		Eldritch Stone
+[10-xx]		Shiverpearl Texture
+[10-xx]		Stormpearl Texture
+[10-xx]		Stonepearl Texture
+[10-xx]		Impregnated Greatwood
+[10-xx]		Corrupted Greatwood
+[10-xx]		(Activated) Wardenic Crystal Block
+[10-xx]		Awakened Wardenic Crystal Block
+[10-xx]		Jethrine Sapphire Block
+[11-xx]		Grayscale Elemental Rod/Powder
+[11-xx]		Low-Magic Dust
+[11-xx]		Cotton Fiber
+[11-xx]		Makeshift Aspect Orb Receptor
+[11-xx]		Greatwood Shaft
+[11-xx]		Purified Excubitura Oil
+[11-xx]		Arcane Redsolder Capacitor Core
+[11-xx]		Infused Wardenic Quartz
+[11-xx]		Awakened Wardenic Crystal
+[11-xx]		Wardenic Crystal Shard
+[11-xx]		Activated Wardenic Crystal Shard
+[11-xx]		Awakened Wardenic Crystal Shard
+[11-xx]		Wardenic Crystal Dust
+[11-xx]		Activated Wardenic Crystal Dust
+[11-xx]		Awakened Wardenic Crystal Dust
+[11-xx]		Wardenic Crystal Tiny Dust
+[11-xx]		Activated Wardenic Crystal Tiny Dust
+[11-xx]		Awakened Wardenic Crystal Tiny Dust
+[11-xx]		Dioptase Tiny Dust
+[11-xx]		Pyrope Tiny Dust
+[11-xx]		Jethrine Sapphire
+[11-xx]		Jethrine Sapphire Shard
+[11-xx]		Jethrine Sapphire Dust
+[11-xx]		Jethrine Sapphire Tiny Dust
+[11-xx]		Raw Brass Ingot
+[11-xx]		Raw Bronze Ingot
+[11-xx]		Raw Arsenical Bronze Ingot
+[11-xx]		Raw Antimonial Bronze Ingot
+[11-xx]		Raw Bismuth Bronze Ingot
+[11-xx]		Raw Mithril Ingot
+[11-xx]		Raw Aluminium Bronze Ingot
+[11-xx]		Raw Curponickel Ingot
+[11-xx]		Raw Riftish Bronze Ingot
+[11-xx]		Raw Constantan Ingot
+[11-xx]		Raw Invar Ingot
+[11-xx]		Raw Electrum Ingot
+[11-xx]		Magnoturgic Composite Ingot
+[11-xx]		Wardenic Composite Ingot
+[11-xx]		Treated Cotton Fabric
+[11-xx]		Enchanted Cotton Fabric
+[11-xx]		Excubitura Petal Slurry
+[11-xx]		Wardenic Bronze Mirror Plate
+[11-xx]		Resonance Containment Compound Overlay
+[11-xx]		Pinch of Resonance Containment Compound Overlay
+[11-xx]		Redcloth
+[11-xx]		Wardenic Binding Compound
+[11-xx]		Pinch of Wardenic Binding Compound
+[11-xx]		Dense Alumentum
+[11-xx]		Cluster Grayscale
+[12-xx]		Tier 1 Wardenic Armor Textures
+[12-xx]		Tier 2 Wardenic Armor Textures
+[12-xx]		Bronze Chain Armor
+[13-xx]		Tier 1 Wardenic Armor Worn Textures
 
-	Items:
-	[20-xx]		Primal Pendant Mechanics
-	[20-xx]		Primal Robe Mechanics
-	[20-xx]		Setup Most Minerals with Colorizer
-	[20-xx]		Disabled setter in FluxGearItem
-
-	Research:
-	[20-xx]		Research Splitting
-	[20-xx]		Thaumonomicon Smelt Recipe Disabler
-
-	World Gen:
-	[20-xx]		Gravel Ore Generation
-	[20-xx]		Poor Ore Generation
-	[20-xx]		Worldgen of Elemental Pearls
-
-Content:
-	[02]	Blocks:
-	[02-xx]		Ore Metal Storage Block
-	[02-xx]		Alloy Storage Block 1
-	[02-xx]		Special Storage Block
-	[02-xx]		Equipment Storage Block
-	[02-xx]		Misc Storage Block
-	[02-xx]		Wood
-	[02-xx]		Cotton/Thistle Crop
-	[02-xx]		Poor Ores
-	[02-xx]		Gravel Ores
-
-	[03/04]	Items:
-	[03-xx]		All Other General Items
-	[03-xx]		All Wooden General Items
-	[03-xx]		All Slags
-	[03-xx]		All Smelted Composites
-	[03-xx]		All Tier 1 Wardenic Items
-    [03-xx]		All Tier 2 Wardenic Items
-	[03-xx]		All Tier 3 Wardenic Items
-    [03-xx]		All Tier 4 Wardenic Items
-    [03-xx]		All Tier 5 Wardenic Items
-	[03-xx]		All Tier 1 Magneoturgic Items
-	[03-xx]		All Other Mineral Dusts/Tiny Dusts
-	[03-xx]		TF Rod/Powder Backups
-	[04-xx]		Infused Cotton Armor
-	[04-xx]		Flux Robes
-	[04-xx]		Tier 5 Wardenic Armor
-
-	[05/06/07/08]	Crafting:
-	[05-xx]		All Ore Smelting except for Tungsten and Iridosmium
-    [05-xx]		Hardened Silverwood Crafting
-    [05-xx]		Eldritch Stone
-    [06-xx]		Primal Robes Crafting
-	[06-xx]		Dense Alumentum Crafting
-	[06-xx]		Shard Cooking
-	[06-xx]		Mineral Dust <-> Tiny Dust conversion
-	[06-xx]		All v0.0.1 Component Crafting
-	[06-xx]		Primal Essence Crafting
-    [06-xx]		Infused Cotton Armor Crafting
-    [06-xx]		Switch Cinderpearl to give Pod
-	[07-xx]		Tier 1 Wardenic Base Item Crafting
-	[07-xx]		Tier 2 Wardenic Base Item Crafting
-	[07-xx]		Tier 3 Wardenic Base Item Crafting
-	[07-xx]		Tier 4 Wardenic Base Item Crafting
-	[07-xx]		Tier 1 Wardenic Armor Item Crafting
-	[07-xx]		Tier 2 Wardenic Armor Item Crafting
-	[07-xx]		Tier 3 Wardenic Armor Item Crafting
-	[07-xx]		Tier 4 Wardenic Armor Item Crafting
-	[07-xx]		Check/Rebalance Wardenic Steel
-	[08-xx]		Ingot to Nuggets
-	[08-xx]		Nuggets to Ingot
-	[08-xx]		Ingots to Block
-	[08-xx]		Block to Ingots
-	[08-xx]		Dust to Tiny Dusts
-	[08-xx]		Tiny Dusts to Dust
-	[08-xx]		Ingot to Dust
-	[08-xx]		Dust to Ingot
-	[08-xx]		Ingot Alloying
-	[08-xx]		Dust Alloying
-	[08-xx]		Nugget Alloying
-	[08-xx]		Tiny Dust Alloying
-	[08-xx]		All General Raw/Coated Ingot Smelting
-
-	[09]	Research:
-	[09-xx]		Ensure Tier 1 Wardenic Placement/Researches
-	[09-xx]		Ensure Tier 2 Wardenic Placement/Researches
-	[09-xx]		Ensure Tier 3 Wardenic Placement/Researches
-	[09-xx]		Ensure Tier 4 Wardenic Placement/Researches
-	[09-xx]		Tier 5 Wardenic Research
-	[09-xx]		Tier 1 Magneoturgy
-	[09-xx]		Ensure Runic Researches(ASing, AniPiston, EnchSW)
-	[09-xx]		Stabilized Singularity Research
-	[09-xx]		Basic Aspect Orb Receptor Research
-	[09-xx]		Ensure Auto-Unlocked Researches (TRv/Mat./Alloys)
-    [09-xx]		Ensure Alloy Researches(TBrz, TElec, TRBrz, TBrz Chain, TBrz Armor)
-    [09-xx]		Ensure Ench. Cotton and Primal Robes Research
-	[09-xx]		Ensure Native Transmutation Placement/Researches
-	[09-xx]		Ensure Native Purification Placement/Researches
-	[09-xx]		Eldritch Stone
-	[09-xx]		Voidmetal Working Research
-	[09-xx]		Consecrated Silverwood Research
-    [09-xx]		Enchanted Greatwood Research
-    [09-xx]		Cotton Robes Research
-    [09-xx]		Primal Pendant Research
-    [09-xx]		Voidbrass Research
-    [09-xx]		Elemental Pearl to Dust Research
-
-	[14]	Aspects:
-
-	[10/11/12/13]	Textures:
-	[10-xx]		Ores
-	[10-xx]		Fluonic Sapphire Ore
-	[10-xx]		Eldritch Stone
-	[10-xx]		Shiverpearl Texture
-    [10-xx]		Stormpearl Texture
-    [10-xx]		Stonepearl Texture
-    [10-xx]		Impregnated Greatwood
-    [10-xx]		Corrupted Greatwood
-    [10-xx]		(Activated) Wardenic Crystal Block
-    [10-xx]		Awakened Wardenic Crystal Block
-    [10-xx]		Fluonic Sapphire Block
-	[11-xx]		Grayscale Elemental Rod/Powder
-	[11-xx]		Low-Magic Dust
-	[11-xx]		Cotton Fiber
-	[11-xx]		Makeshift Aspect Orb Receptor
-	[11-xx]		Greatwood Shaft
-	[11-xx]		Purified Excubitura Oil
-	[11-xx]		Arcane Redsolder Capacitor Core
-	[11-xx]		Infused Wardenic Quartz
-	[11-xx]		Awakened Wardenic Crystal
-	[11-xx]		Wardenic Crystal Shard
-	[11-xx]		Activated Wardenic Crystal Shard
-	[11-xx]		Awakened Wardenic Crystal Shard
-	[11-xx]		Wardenic Crystal Dust
-	[11-xx]		Activated Wardenic Crystal Dust
-	[11-xx]		Awakened Wardenic Crystal Dust
-    [11-xx]		Wardenic Crystal Tiny Dust
-    [11-xx]		Activated Wardenic Crystal Tiny Dust
-    [11-xx]		Awakened Wardenic Crystal Tiny Dust
-	[11-xx]		Dioptase Tiny Dust
-	[11-xx]		Pyrope Tiny Dust
-	[11-xx]		Fluonic Sapphire
-	[11-xx]		Fluonic Sapphire Shard
-	[11-xx]		Fluonic Sapphire Dust
-	[11-xx]		Fluonic Sapphire Tiny Dust
-	[11-xx]		Raw Brass Ingot
-    [11-xx]		Raw Bronze Ingot
-    [11-xx]		Raw Arsenical Bronze Ingot
-    [11-xx]		Raw Antimonial Bronze Ingot
-	[11-xx]		Raw Bismuth Bronze Ingot
-	[11-xx]		Raw Mithril Ingot
-	[11-xx]		Raw Aluminium Bronze Ingot
-	[11-xx]		Raw Curponickel Ingot
-	[11-xx]		Raw Riftish Bronze Ingot
-    [11-xx]		Raw Constantan Ingot
-    [11-xx]		Raw Invar Ingot
-    [11-xx]		Raw Electrum Ingot
-    [11-xx]		Magnoturgic Composite Ingot
-    [11-xx]		Wardenic Composite Ingot
-    [11-xx]		Treated Cotton Fabric
-    [11-xx]		Enchanted Cotton Fabric
-    [11-xx]		Excubitura Petal Slurry
-    [11-xx]		Wardenic Bronze Mirror Plate
-    [11-xx]		Resonance Containment Compound Overlay
-    [11-xx]		Pinch of Resonance Containment Compound Overlay
-    [11-xx]		Redcloth
-    [11-xx]		Wardenic Binding Compound
-    [11-xx]		Pinch of Wardenic Binding Compound
-    [11-xx]		Dense Alumentum
-    [11-xx]		Cluster Grayscale
-    [12-xx]		Tier 1 Wardenic Armor Textures
-    [12-xx]		Tier 2 Wardenic Armor Textures
-    [12-xx]		Bronze Chain Armor
-    [13-xx]		Tier 1 Wardenic Armor Worn Textures
+[15/16/17/18/19]	Research Text:
+[16-xx]		Primal Robes
+[16-xx]		Thaumic Steel
+[17-xx]		Excubiturgy
+[17-xx]		Excubitura Paste
+[18-xx]		Magneoturgy
+[18-xx]		Redstone Reduction
 
 
-	[01]	Localizations:
-	[01-xx]		All Storage Block Names
-	[01-xx]		Poor Ore Names
-    [01-xx]		Gravel Ore Names
-	[01-xx]		All Ingot Names
-	[01-xx]		All Nugget Names
-	[01-xx]		All Dust Names
-	[01-xx]		All Tiny Dust Names
-	[01-xx]		All Plate Names
-	[01-xx]		All General Item Names
-    [01-xx]		All Wardenic Item Names
-    [01-xx]		All Other Block Names
-    [01-xx]		All Other Mineral Names
-    [01-xx]		All Equipment Names
-
-	[15/16/17/18/19]	Research Text:
-	[16-xx]		Primal Robes
-	[17-xx]		Excubiturgy
-	[17-xx]		Excubitura Paste
-
-	[xx]	Other:
-	[xx-xx]		All Fired Ingot Cracking
-	[xx-xx]		All TRv+Pt Transmutations
-	[xx-xx]		Thaumic Bronze Chain Armor Crafting
+[xx]	Other:
+[xx-xx]		All Fired Ingot Cracking
+[xx-xx]		All TRv+Pt Transmutations
+[xx-xx]		Thaumic Bronze Chain Armor Crafting
 
 
 
 Done:
-
-[05]	Recipes (Block):
-[06]	Recipes (Other Items):
-[05-01]		All TE4 Ore Processing with respect for type <2[R/G]<5[YPO,WFE,IROS,CUAS,CUSB]<4[IS]>+3[YPO,CUAS,CUSB]<1[HP]>+2[ZN,BI]<2[SND,HG]>>+12[PO]<1[HP]+1[PLV]+4[IS]>> (126)
-//Make Tenantite try TF Silver, Bismuthinite & Spalerite TF Lead, Wolframite & Iridosmium TF Iron
-//Fix Induction smelting to UNSMELTED Composites
-
 [10]	Textures (Block):
-[10-01]		Fluonic Pyroptase Block <blocks/storage/blockFluonicPyroptase.png>
+[10-01]		Jethrine Pyroptase Block <blocks/storage/blockJethrinePyroptase.png>
 [10-02]		Hardened Silverwood <blocks/wood/silverwoodHardened.png>
 [10-03]		Wardenic Obsidian <blocks/stone/obsidianWardenic.png>
 
@@ -252,19 +121,19 @@ Done:
 [11-2-10]	Redstone-Infused Cloth <items/material/itemRedstoneFabric.png>
 [11-2-11]	Socketed Redcloth <items/material/itemRedclothSocketed.png>
 
-[11-3-01]	Slag Grayscale [<items/material/itemSlagCarbon.png>,<items/material/itemSlagCeramic.png>,<items/material/itemSlagThaumic.png>,<items/material/itemSlagFluonic.png>]
-[11-3-02]	Fluonic Pyroptase <items/material/gemFluonicPyroptase.png>
+[11-3-01]	Slag Grayscale [<items/material/itemSlagCarbon.png>,<items/material/itemSlagCeramic.png>,<items/material/itemSlagThaumic.png>,<items/material/itemSlagJethrine.png>]
+[11-3-02]	Jethrine Pyroptase <items/material/gemJethrinePyroptase.png>
 [11-3-03]	Dioptase Shard <items/material/shardDioptase.png>
 [11-3-04]	Pyrope Shard <items/material/shardPyrope.png>
-[11-3-05]	Fluonic Pyroptase Shard <items/material/shardFluonicPyroptase.png>
-[11-3-06]	Fluonic Pyroptase Dust <items/material/dustFluonicPyroptase.png>
+[11-3-05]	Jethrine Pyroptase Shard <items/material/shardJethrinePyroptase.png>
+[11-3-06]	Jethrine Pyroptase Dust <items/material/dustJethrinePyroptase.png>
 
-[11-3-09]	Fluonic Pyroptase Tiny Dust <items/material/dustTinyFluonicPyroptase.png>
+[11-3-09]	Jethrine Pyroptase Tiny Dust <items/material/dustTinyJethrinePyroptase.png>
 [11-3-10]	Raw Wardenic Metal Ingot <items/material/ingotWardenicMetalRaw.png>
 [11-3-11]	Raw Redsolder Ingot <items/material/ingotDullRedsolderRaw.png>
 [11-3-12]	Raw Wardenic Composite Ingot <items/material/ingotWardenicCompositeRaw.png>
 [11-4-01]	Raw Magneoturgic Composite Ingot <items/material/ingotMagneoturgicCompositeRaw.png>
-[11-4-02]	Fluonic Pyroptase Blend <items/material/blendFluonicPyroptase.png>
+[11-4-02]	Jethrine Pyroptase Blend <items/material/blendJethrinePyroptase.png>
 [11-4-03]	Raw Thaumic Bronze Ingot <items/materials/ingotThaumicBronzeRaw.png>
 [11-4-04]	Raw Osmium-Lutetium Alloy Ingot <items/material/ingotOsmiumLutetiumRaw.png>
 [11-4-05]	(Smelted) Fluxed Composite Ingot <items/materials/ingotFluxedComposite.png>
@@ -339,11 +208,10 @@ Done:
 [14-4-05]	Crushed Shards and Integration Tiny Dusts <15>
 [14-4-06]	Equipment Dusts <10>
 [14-4-07]	Equipment Tiny Dusts <10>
-[14-4-08]	Plants <6+2>
-[14-4-09]	Plant Materials <11>
+
 [14-4-10]	Manufactured Materials <10+6+7>
 [14-4-11]	Wood Components <9>
-[14-4-12]	Seeds <8>
+
 [14-5-01]	T1 Wardenic Items <4>
 [14-5-02]	T2 Wardenic Items <5>
 [14-5-03]	T3 Wardenic Items <6>
@@ -363,6 +231,7 @@ Done:
 [14-6-05]	Slag <4>
 [14-6-06]	Clusters <10>
 [14-6-07]	Other Blocks <9>
+<>
 
 [15]	Research Text (General/Runic):
 [15-xx]		Thaumic Revelations
@@ -389,7 +258,7 @@ Done:
 [16-09]		Aspect Orb Receptor
 [16-10]		Voidmetal Working
 
-[17]	Research Text (Wardenic T1/T2/T3/T5 & Magneoturgic T0):
+[17]	Research Text (Wardenic T1/T2/T3/T5):
 [17-01]		Wardencloth
 [17-02]		Wardencloth Armor
 [17-03]		Excubitura Oil
@@ -404,20 +273,18 @@ Done:
 [17-12]		Essence of Awakening
 [17-??]		Awakened Wardenic Composite Plate Armor //Do not Implement
 
-[18]	Research Text (Wardenic T4 & Magneoturgic T1):
-[18-01]		Magneoturgy
-[18-02]		Wardenic Quartz
-[18-03]		Wardenic Crystal
-[18-04]		Wardenic Riftish Bronze
-[18-05]		Wardenic Composite
-[18-06]		Wardenic Composite Plate
-[18-07]		Wardenic Composite Plate Fitting
-[18-08]		Composite Wardenic Knight Armor
-[18-09]		Redstone Alteration
-[18-10]		Arcane Redsolder
-[18-11]		Arcane Redsolder Capacitor
-[18-12]		Redcloth
-[18-??]		Flux Robes
+[18]	Research Text (Wardenic T4 & Magneoturgic T0/T1):
+[18-01]		Wardenic Quartz
+[18-02]		Wardenic Crystal
+[18-03]		Wardenic Riftish Bronze
+[18-04]		Wardenic Composite
+[18-05]		Wardenic Composite Plate
+[18-06]		Wardenic Composite Plate Fitting
+[18-07]		Composite Wardenic Knight Armor
+[18-xx]		Arcane Redsolder
+[18-09]		Arcane Redsolder Capacitor
+[18-10]		Redcloth
+[18-11]		Flux Robes
 
 [19]	Research Text (Purification/Transmutation):
 [19-01]		Uranium Purification

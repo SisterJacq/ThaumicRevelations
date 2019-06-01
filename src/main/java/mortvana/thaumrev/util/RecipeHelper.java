@@ -224,15 +224,18 @@ public class RecipeHelper {
 		return ThaumcraftApi.addCrucibleRecipe(key, result, catalyst, tags);
 	}
 
-	/** THAUMCRAFT - ASPECTS * */
-	public static AspectList addAspects(ItemStack stack, AspectStack... aspects) {
-		AspectList list = new AspectList(stack);
-		for (AspectStack aspect : aspects) {
-			list.add(aspect.getAspect(), aspect.getSize());
-		}
+	/** THAUMCRAFT - ASPECTS **/
+	public static AspectList addAspects(ItemStack stack, AspectList list) {
 		ThaumcraftApi.registerObjectTag(stack, list);
 		return list;
 	}
+	/*public static AspectList addNewAspects(ItemStack stack, AspectList list) {
+		ThaumcraftApi.
+
+
+		ThaumcraftApi.registerObjectTag(stack, list);
+		return list;
+	}*/
 
 	/*public static AspectList overwriteAspects(ItemStack stack,  AspectStack... aspects) {
 		AspectList list = new AspectList(stack);

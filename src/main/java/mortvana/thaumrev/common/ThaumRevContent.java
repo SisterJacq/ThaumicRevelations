@@ -44,6 +44,7 @@ import mortvana.thaumrev.util.*;
 import mortvana.thaumrev.item.ItemArmorInfusable;
 import mortvana.thaumrev.world.ThaumRevWorldGenerator;
 
+import static mortvana.thaumrev.library.ThaumRevLibrary.oreGravelSphalerite;
 import static thaumcraft.api.aspects.Aspect.*;
 import static mortvana.melteddashboard.util.helpers.ItemHelper.cloneStack;
 import static mortvana.melteddashboard.util.libraries.ColorLibrary.*;
@@ -103,12 +104,13 @@ public class ThaumRevContent {
 	}
 
 	public static void postInit() {
-		ResearchCategories.registerCategory(RESEARCH_KEY_MAIN, new ResourceLocation(RESOURCE_PREFIX, "textures/items/baubles/amuletWarden.png"), new ResourceLocation("fluxgear", "textures/gui/gui_researchbackthaumrev.png"));
-		ResearchCategories.registerCategory(RESEARCH_KEY_METAL, new ResourceLocation(RESOURCE_PREFIX, "textures/items/material/ingotThaumicBronze.png"), new ResourceLocation("fluxgear", "textures/gui/gui_researchbackthaumrev.png"));
+		ResearchCategories.registerCategory(RESEARCH_KEY_MAIN, new ResourceLocation(RESOURCE_PREFIX, "textures/items/baubles/amuletWarden.png"), new ResourceLocation(RESOURCE_PREFIX, "textures/gui/gui_researchbackthaumrev.png"));
+		ResearchCategories.registerCategory(RESEARCH_KEY_METAL, new ResourceLocation(RESOURCE_PREFIX, "textures/items/research/clusterIcon.png"), new ResourceLocation(RESOURCE_PREFIX, "textures/gui/gui_researchbackthaumrev.png"));
 		postInitRecipes();
 
 		setResearchLevel();
 		//determineTempus();
+		//forbiddenAspects();
 
 		loadResearch();
 		initResearch();
@@ -2493,8 +2495,8 @@ public class ThaumRevContent {
 		recipeTransAluminium = addCrucibleRecipe(keyTransmutationAl, ItemHelper.cloneStack(nuggetAluminium, 3), NUGGET + AL, new AspectList().add(METAL, 2).add(ORDER, 1));
 		recipeTransNeodymium = addCrucibleRecipe(keyTransmutationNd, ItemHelper.cloneStack(nuggetNeodymium, 3), NUGGET + ND, new AspectList().add(METAL, 2).add(ENERGY, 1));
 		recipeTransZinc = addCrucibleRecipe(keyTransmutationZn, ItemHelper.cloneStack(nuggetZinc, 3), NUGGET + ZN, new AspectList().add(METAL, 2).add(CRYSTAL, 1));
-		recipeTransArsenic = addCrucibleRecipe(keyTransmutationAs, ItemHelper.cloneStack(tinyArsenic, 3), NUGGET + AS, new AspectList().add(METAL, 2).add(POISON, 1));
-		recipeTransAntimony = addCrucibleRecipe(keyTransmutationSb, ItemHelper.cloneStack(tinyAntimony, 3), NUGGET + SB, new AspectList().add(METAL, 2).add(POISON, 1));
+		recipeTransArsenic = addCrucibleRecipe(keyTransmutationAs, ItemHelper.cloneStack(nuggetArsenic, 3), NUGGET + AS, new AspectList().add(METAL, 2).add(POISON, 1));
+		recipeTransAntimony = addCrucibleRecipe(keyTransmutationSb, ItemHelper.cloneStack(nuggetAntimony, 3), NUGGET + SB, new AspectList().add(METAL, 2).add(POISON, 1));
 		recipeTransBismuth = addCrucibleRecipe(keyTransmutationBi, ItemHelper.cloneStack(nuggetBismuth, 3), NUGGET + BI, new AspectList().add(METAL, 2).add(ORDER, 1));
 		recipeTransTungsten = addCrucibleRecipe(keyTransmutationW, ItemHelper.cloneStack(nuggetTungsten, 3), NUGGET + W, new AspectList().add(METAL, 2).add(MECHANISM, 1).add(ARMOR, 1));
 		recipeTransLutetium = addCrucibleRecipe(keyTransmutationLu, ItemHelper.cloneStack(nuggetLutetium, 3), NUGGET + LU, new AspectList().add(METAL, 2).add(EARTH, 1));
@@ -2636,6 +2638,14 @@ public class ThaumRevContent {
 		}
 		timeyWimey();
 	}*/
+
+	//public static void forbiddenAspect() {
+	//	if (LoadedHelper.isForbiddenMagicLoaded) {
+	//		try {
+	//			fox.spiteful.forbidden.DarkAspects.NETHER
+	//		}
+	//	}
+	//}
 
 	public static void loadResearch() {
 		String key = RESEARCH_KEY_MAIN;
@@ -3105,47 +3115,77 @@ public class ThaumRevContent {
 
 	public static void timeyWimey() {
 		//FRESH COPY-PASTA FROM MAGIC BEES FOR THOSE CRAZY PEOPLE WHO DON'T USE MAGIC BEES!!!!
-		addAspects(new ItemStack(Items.clock), new AspectStack(tempus, 4));
-		addAspects(new ItemStack(Items.repeater), new AspectStack(tempus, 2));
+		addAspects(new ItemStack(Items.clock), new AspectList().add(tempus, 4));
+		addAspects(new ItemStack(Items.repeater), new AspectList().add(tempus, 2));
 	}
 
 	public static void loadGeneralAspects() {
-		addAspects(excubituraRose, new AspectStack(PLANT, 2), new AspectStack(MAGIC, 2), new AspectStack(aspectExcubitor, 3));
-		addAspects(wildCotton, new AspectStack(PLANT, 3), new AspectStack(CLOTH, 3));
-		addAspects(wildThistle, new AspectStack(PLANT, 3), new AspectStack(WEAPON, 2), new AspectStack(SENSES, 1));
-		addAspects(shiverpearl, new AspectStack(PLANT, 2), new AspectStack(COLD, 1), new AspectStack(MAGIC, 1), new AspectStack(WATER, 2));
-		addAspects(stormypearl, new AspectStack(PLANT, 2), new AspectStack(WEATHER, 1), new AspectStack(MAGIC, 1), new AspectStack(AIR, 2));
-		addAspects(stonypearl, new AspectStack(PLANT, 2), new AspectStack(ENTROPY, 1), new AspectStack(MAGIC, 1), new AspectStack(EARTH, 2));
+		addAspects(excubituraRose, new AspectList().add(PLANT, 2).add(MAGIC, 2).add(aspectExcubitor, 3));
+		addAspects(wildCotton, new AspectList().add(PLANT, 3).add(CLOTH, 3));
+		addAspects(wildThistle, new AspectList().add(PLANT, 3).add(WEAPON, 2).add(SENSES, 1));
+		addAspects(shiverpearl, new AspectList().add(PLANT, 2).add(COLD, 1).add(MAGIC, 1).add(WATER, 2));
+		addAspects(stormypearl, new AspectList().add(PLANT, 2).add(WEATHER, 1).add(MAGIC, 1).add(AIR, 2));
+		addAspects(stonypearl, new AspectList().add(PLANT, 2).add(ENTROPY, 1).add(MAGIC, 1).add(EARTH, 2));
 
-		addAspects(itemCotton, new AspectStack(CLOTH, 1), new AspectStack(PLANT, 1));
-		addAspects(itemCottonFiber, new AspectStack(CLOTH, 1));
-		addAspects(itemCottonFabric, new AspectStack(CLOTH, 2), new AspectStack(PLANT, 1));
-		addAspects(itemCottonTreated, new AspectStack(CLOTH, 1), new AspectStack(PLANT, 1), new AspectStack(MAGIC, 2));
-		addAspects(itemCottonEnchanted, new AspectStack(ARMOR, 1));
+		addAspects(oreChalcocite, new AspectList().add(METAL, 3).add(EARTH, 1).add(EXCHANGE, 1)); //It's only 2 Metallum?
+		addAspects(oreSphalerite, new AspectList().add(METAL, 3).add(EARTH, 1).add(CRYSTAL, 1));
+		//Cassiterite (oreTin)
+		addAspects(oreMillerite, new AspectList().add(METAL, 3).add(EARTH, 1).add(VOID, 1));
+		//Native Silver (oreSilver)
+		//Galena (oreLead)
+		addAspects(oreXenotime, new AspectList().add(METAL, 3).add(EARTH, 1).add(ENERGY, 1));
+		addAspects(oreWolframite, new AspectList().add(METAL, 3).add(EARTH, 1).add(ARMOR, 1).add(MECHANISM, 1));
+		addAspects(oreIridosmium, new AspectList().add(METAL, 3).add(ORDER, 1).add(ENTROPY, 1).add(ARMOR, 2).add(LIGHT, 1).add(ENERGY, 1));
+		addAspects(oreBismuthinite, new AspectList().add(METAL, 3).add(ORDER, 1).add(ENTROPY, 1));
+		addAspects(oreTennantite, new AspectList().add(METAL, 3).add(EXCHANGE, 1).add(POISON, 1));
+		addAspects(oreTetrahedrite, new AspectList().add(METAL, 3).add(EXCHANGE, 1).add(POISON, 1));
+		addAspects(orePyrope, new AspectList().add(CRYSTAL, 3).add(EARTH, 1).add(FIRE, 3).add(ENERGY, 1)); //TODO: 2 IGNIS, 1 INFERNUS IF FM IS LOADED
+		addAspects(oreDioptase, new AspectList().add(CRYSTAL, 3).add(EARTH, 1).add(ORDER, 2).add(EXCHANGE, 1).add(ENERGY, 1));
+		addAspects(oreJethrineSapphire, new AspectList().add(CRYSTAL, 3).add(EARTH, 1).add(ENERGY, 4));
 
-		addAspects(itemThistleLeaf, new AspectStack(PLANT, 2), new AspectStack(WEAPON, 1));
-		addAspects(itemThistleFlower, new AspectStack(PLANT, 2), new AspectStack(WEAPON, 1), new AspectStack(SENSES, 1));
+		addAspects(oreGravelChalcocite, new AspectList().add(METAL, 3).add(EARTH, 1).add(EXCHANGE, 1)); //It's only 2 Metallum?
+		addAspects(oreGravelSphalerite, new AspectList().add(METAL, 3).add(EARTH, 1).add(CRYSTAL, 1));
+		//Cassiterite (oreTin)
+		addAspects(oreGravelMillerite, new AspectList().add(METAL, 3).add(EARTH, 1).add(VOID, 1));
+		//Native Silver (oreSilver)
+		//Galena (oreLead)
+		addAspects(oreGravelXenotime, new AspectList().add(METAL, 3).add(EARTH, 1).add(ENERGY, 1));
+		addAspects(oreGravelWolframite, new AspectList().add(METAL, 3).add(EARTH, 1).add(ARMOR, 1).add(MECHANISM, 1));
+		addAspects(oreGravelIridosmium, new AspectList().add(METAL, 3).add(ORDER, 1).add(ENTROPY, 1).add(ARMOR, 2).add(LIGHT, 1).add(ENERGY, 1));
+		addAspects(oreGravelBismuthinite, new AspectList().add(METAL, 3).add(ORDER, 1).add(ENTROPY, 1));
+		addAspects(oreGravelTennantite, new AspectList().add(METAL, 3).add(EXCHANGE, 1).add(POISON, 1));
+		addAspects(oreGravelTetrahedrite, new AspectList().add(METAL, 3).add(EXCHANGE, 1).add(POISON, 1));
 
-		addAspects(itemArcaneSingularity, new AspectStack(MAGIC, 4), new AspectStack(ENERGY, 5), new AspectStack(AIR, 1));
-		addAspects(itemStabilizedSingularity, new AspectStack(MAGIC, 3), new AspectStack(ENERGY, 5), new AspectStack(ORDER, 5));
-		addAspects(itemAnimatedPiston, new AspectStack(MOTION, 5));
+		addAspects(itemCotton, new AspectList().add(CLOTH, 1).add(PLANT, 1));
+		addAspects(itemCottonFiber, new AspectList().add(CLOTH, 1));
+		addAspects(itemCottonFabric, new AspectList().add(CLOTH, 8).add(PLANT, 1));
+		addAspects(itemCottonTreated, new AspectList().add(CLOTH, 9).add(PLANT, 1).add(MAGIC, 2).add(ORDER, 1));
+		addAspects(itemCottonEnchanted, new AspectList().add(CLOTH, 9).add(PLANT, 1).add(MAGIC, 3).add(ORDER, 1).add(ARMOR, 1));
 
-		//Since this part of the API is shit, I've gotta do it in this horribly inelegant way that shows traces of hackiness in game. Would it have killed Az to add an easy way to overwrite aspects!
-		addAspects(plankGreatwoodEnchanted, new AspectStack(TREE, 1), new AspectStack(ORDER, -1), new AspectStack(AIR, -1)); //No, I don't want Aer on the planks, why the hell would I?
+		addAspects(itemThistleLeaf, new AspectList().add(PLANT, 2).add(WEAPON, 1));
+		addAspects(itemThistleFlower, new AspectList().add(PLANT, 2).add(WEAPON, 1).add(SENSES, 1));
 
-		addAspects(itemPodCinderpearl, new AspectStack(PLANT, 2), new AspectStack(FIRE, 2), new AspectStack(MAGIC, 2));
-		addAspects(itemPodShiverpearl, new AspectStack(PLANT, 1), new AspectStack(COLD, 1), new AspectStack(MAGIC, 1), new AspectStack(WATER, 1));
-		addAspects(itemPodStormypearl, new AspectStack(PLANT, 1), new AspectStack(WEATHER, 1), new AspectStack(MAGIC, 1), new AspectStack(AIR, 1));
-		addAspects(itemPodStonypearl, new AspectStack(PLANT, 1), new AspectStack(ENTROPY, 1), new AspectStack(MAGIC, 1), new AspectStack(EARTH, 1));
+		addAspects(itemArcaneSingularity, new AspectList().add(ENERGY, 8).add(FIRE, 6).add(MAGIC, 4).add(ENTROPY, 2).add(ORDER, 4).add(LIGHT, 2));
+		addAspects(itemStabilizedSingularity, new AspectList().add(ENERGY, 12).add(FIRE, 8).add(ORDER, 12).add(MAGIC, 8).add(ENTROPY, 2).add(LIGHT, 2));
+		addAspects(itemAnimatedPiston, new AspectList().add(METAL, 3).add(AIR, 3).add(ENERGY, 1).add(MOTION, 5));
 
-		addAspects(seedExcubitura, new AspectStack(PLANT, 1), new AspectStack(aspectExcubitor, 1));
-		addAspects(seedCotton, new AspectStack(PLANT, 1));
-		addAspects(seedThistle, new AspectStack(PLANT, 1));
-		addAspects(seedShimmerleaf, new AspectStack(PLANT, 1), new AspectStack(MAGIC, 1));
-		addAspects(seedCinderpearl, new AspectStack(PLANT, 1), new AspectStack(FIRE, 1));
-		addAspects(seedShiverpearl, new AspectStack(PLANT, 1), new AspectStack(WATER, 1));
-		addAspects(seedStormypearl, new AspectStack(PLANT, 1), new AspectStack(AIR, 1));
-		addAspects(seedStonypearl, new AspectStack(PLANT, 1), new AspectStack(EARTH, 1));
+		addAspects(plankGreatwoodEnchanted, new AspectList().add(TREE, 1).add(MAGIC, 2).add(ORDER, 1));
+
+		addAspects(itemPodCinderpearl, new AspectList().add(PLANT, 2).add(FIRE, 2).add(MAGIC, 2));
+		addAspects(itemPodShiverpearl, new AspectList().add(PLANT, 2).add(COLD, 1).add(MAGIC, 1).add(WATER, 2));
+		addAspects(itemPodStormypearl, new AspectList().add(PLANT, 2).add(WEATHER, 1).add(MAGIC, 1).add(AIR, 2));
+		addAspects(itemPodStonypearl, new AspectList().add(PLANT, 2).add(ENTROPY, 1).add(MAGIC, 1).add(EARTH, 2));
+
+		addAspects(seedExcubitura, new AspectList().add(PLANT, 1).add(aspectExcubitor, 1));
+		addAspects(seedCotton, new AspectList().add(PLANT, 1));
+		addAspects(seedThistle, new AspectList().add(PLANT, 1));
+		addAspects(seedShimmerleaf, new AspectList().add(PLANT, 1).add(MAGIC, 1));
+		addAspects(seedCinderpearl, new AspectList().add(PLANT, 1).add(FIRE, 1));
+		addAspects(seedShiverpearl, new AspectList().add(PLANT, 1).add(WATER, 1));
+		addAspects(seedStormypearl, new AspectList().add(PLANT, 1).add(AIR, 1));
+		addAspects(seedStonypearl, new AspectList().add(PLANT, 1).add(EARTH, 1));
+
+
 	}
 
 	public static void loadMetalAspects() {

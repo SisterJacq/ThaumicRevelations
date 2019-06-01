@@ -6,6 +6,8 @@ Internal [20] |-> Items/Blocks [02/03/04] |-> Recipes [05/06/07/08] |-> Research
 0 - 0 - 0/0/62/67 - 0 - 70 > 180/381
 [14]	Aspects:
 [14-xx]		Plants
+[14-xx]		Ores
+[14-xx]		Gravel Ores
 [14-xx]		Plant Materials
 [14-xx]		Seeds
 
@@ -76,13 +78,15 @@ Internal [20] |-> Items/Blocks [02/03/04] |-> Recipes [05/06/07/08] |-> Research
 [13-xx]		Tier 1 Wardenic Armor Worn Textures
 
 [15/16/17/18/19]	Research Text:
+[15-xx]		Thaumic Revelations
 [16-xx]		Primal Robes
 [16-xx]		Thaumic Steel
 [17-xx]		Excubiturgy
 [17-xx]		Excubitura Paste
 [18-xx]		Magneoturgy
 [18-xx]		Redstone Reduction
-
+[19-xx]		xxx Transmutation
+[19-xx]		xxx Purification
 
 [xx]	Other:
 [xx-xx]		All Fired Ingot Cracking
@@ -201,16 +205,14 @@ Done:
 [14-3-10]	Equipment Alloy Plates <15>
 [14-3-11]	Raw/Coated/Fired/Smelted Ingots <29>
 [14-3-12]	Misc Metal Plates <2>
-[14-4-01]	Ores <15>
-[14-4-02]	Poor Ores <12>
-[14-4-03]	Gravel Ores <12>
-[14-4-04]	Crushed Shards and Integration Dusts <13>
-[14-4-05]	Crushed Shards and Integration Tiny Dusts <15>
-[14-4-06]	Equipment Dusts <10>
-[14-4-07]	Equipment Tiny Dusts <10>
 
-[14-4-10]	Manufactured Materials <10+6+7>
-[14-4-11]	Wood Components <9>
+[14-4-01]	Poor Ores <12>
+[14-4-02]	Crushed Shards and Integration Dusts <13>
+[14-4-03]	Crushed Shards and Integration Tiny Dusts <15>
+[14-4-04]	Equipment Dusts <10>
+[14-4-05]	Equipment Tiny Dusts <10>
+[14-4-06]	Manufactured Materials <10+6+7>
+[14-4-07]	Wood Components <9>
 
 [14-5-01]	T1 Wardenic Items <4>
 [14-5-02]	T2 Wardenic Items <5>
@@ -231,20 +233,18 @@ Done:
 [14-6-05]	Slag <4>
 [14-6-06]	Clusters <10>
 [14-6-07]	Other Blocks <9>
-<>
 
 [15]	Research Text (General/Runic):
-[15-xx]		Thaumic Revelations
-[15-02]		Materials
-[15-03]		Alloys
-[15-04]		Eldritch Stone
-[15-05]		Runic Infuser
-[15-06]		Stabilized Singularity
-[15-07]		Animated Piston
-[15-08]		Enchanted Greatwood Planks
-[15-09]		Enchanted Silverwood Planks
-[15-10]		Consecrated Silverwood Planks
-[15-11]		Voidbrass
+[15-01]		Materials
+[15-02]		Alloys
+[15-03]		Eldritch Stone
+[15-04]		Runic Infuser
+[15-05]		Stabilized Singularity
+[15-06]		Animated Piston
+[15-07]		Enchanted Greatwood Planks
+[15-08]		Enchanted Silverwood Planks
+[15-09]		Consecrated Silverwood Planks
+[15-10]		Voidbrass
 
 [16]	Research Text (Other):
 [16-01]		Thaumic Electrum
@@ -259,7 +259,7 @@ Done:
 [16-10]		Voidmetal Working
 
 [17]	Research Text (Wardenic T1/T2/T3/T5):
-[17-01]		Wardencloth
+[17-xx]		Wardencloth
 [17-02]		Wardencloth Armor
 [17-03]		Excubitura Oil
 [17-04]		Wardenic Bronze Chain
@@ -285,33 +285,6 @@ Done:
 [18-09]		Arcane Redsolder Capacitor
 [18-10]		Redcloth
 [18-11]		Flux Robes
-
-[19]	Research Text (Purification/Transmutation):
-[19-01]		Uranium Purification
-[19-02]		Zinc Purification
-[19-03]		Aluminium Purification
-[19-04]		Nickel Purification
-[19-05]		Platinum Purification
-[19-06]		Magnetite Purification
-[19-07]		Xenotime Purification
-[19-08]		Tungsten Purification
-[19-09]		Iridosmium Purification
-[19-10]		Bismuth Purification
-[19-11]		Tennantite Purification
-[19-12]		Tetrahedrite Purification
-[19-??]		Zinc Transmutation
-[19-??]		Nickel Transmutation
-[19-??]		Bismuth Transmutation
-[19-??]		Arsenic Transmutation
-[19-??]		Antimony Transmutation
-[19-??]		Aluminium Transmutation
-[19-??]		Neodymium Transmutation
-[19-??]		Lutetium Transmutation
-[19-??]		Palladium Transmutation
-[19-??]		Tungsten Transmutation
-[19-??]		Osmium Transmutation
-[19-??]		Iridium Transmutation
-[19-??]		Platinum Transmutation
 
 
 [201]	Names:
@@ -352,6 +325,11 @@ Done:
 
 [210]	Textures (Block):
 [210-xx]		Elemental Reed Textures [<blocks/plant/blazereed.png>,<blocks/plant/blizzreed.png>,<blocks/plant/blitzreed.png>,<blocks/plant/basalzreed.png>]
+
+[219]	Research Text (Purification/Transmutation):
+[219-01]	Uranium Purification
+[219-02]	Magnetite Purification
+
 
 [220]	Internal:
 [220-01]	CoFH-Style Particles

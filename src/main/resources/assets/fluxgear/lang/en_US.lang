@@ -6,6 +6,10 @@ tc.aspect.excubitor=Warden, Vigilance, Victory, Sacrifice
 tc.aspect.magnes=Magnet, Magnetism
 tc.aspect.fluxus=Electromagnetic Flux, Redstone Flux, Energy
 tc.aspect.patefactio=Revelations, Uncovering, Epiphany
+tc.aspect.help.excubitor=the thaumic wardens
+tc.aspect.help.magnes=magnetism
+tc.aspect.help.fluxus=redstone flux
+tc.aspect.help.patefactio=revelations
 
 #Research
 tc.research_category.TRvMAIN=Thaumic Revelations
@@ -876,7 +880,7 @@ fluxgear.name.PENDANT_PRIMAL=Primal Pendant
 fluxgear.text.PENDANT_PRIMAL=[TRv] Ultimate vis storage
 
 fluxgear.name.ASPECT_ORB_BASIC=Basic Aspect Orbs
-fluxgear.text.ASPECT_ORB_BASIC=[TRv] Socketing for philistines
+#fluxgear.text.ASPECT_ORB_BASIC=[TRv]
 
 fluxgear.name.RUNIC_INFUSER=Runic Infuser
 
@@ -912,7 +916,7 @@ fluxgear.text.EXCUBITURA_PASTE=[TRv] The start of great things
 fluxgear.page.EXCUBITURA_PASTE.0=After finding what you now know to be an Excubitura Rose, you started searching for any mention on how the Thaumic Wardens created their armor of exquisite quality. References were lacking, so it took time to figure out, but in the few texts you could find, they all agreed on one thing, the first step in processing the Excubitura's petals. By simply grinding the petals, then adding a Pinch of Salis Mundus, a paste is created, which is said to have been used to treat the armor. However, a few of your sources mention the paste only affecting cloth, so you'll have to figure out how to get around that for anything metallic.
 
 fluxgear.name.WARDENCLOTH=Wardencloth
-fluxgear.text.WARDENCLOTH=[TRv] Excubiturgic fabric
+fluxgear.text.WARDENCLOTH=[TRv] Wardenic fabric
 fluxgear.page.WARDENCLOTH.0=You think you are on to something, by smearing Excubitura Paste all over some Enchanted Cotton Fabric, as one of the texts mentions the difficulty in using wool or silk for the process, you end up with a fabric that is a lot more durable. However, the paste washes off of the fabric easily, meaning it would be unsuitable for use as armor, but perhaps there is a way around that.
 fluxgear.page.WARDENCLOTH.1=On further examination it seem, somewhat counter-intuitively at first, but after thinking about it making perfect sense, that by boiling the cloth in water with essentia of certain aspects, the cloth not only tightens up slightly, as it is cotton, making it more negligibly more protective, but it also solves the issue with water washing off the paste, as the paste binds with the fabric itself.
 
@@ -977,113 +981,105 @@ fluxgear.name.REDCLOTH=Redcloth
 
 fluxgear.name.ARMOR_FLUXROBES=Flux Robes
 
-fluxgear.name.TRv_TRANSMUTATION_FE=Iron Transmutation
-fluxgear.text.TRv_TRANSMUTATION_FE=Transformation of metals into iron
-
-##fluxgear.name.TRv_TRANSMUTATION_CU=Copper Transmutation
-##fluxgear.text.TRv_TRANSMUTATION_CU=Transformation of metals into copper
-
-fluxgear.name.TRv_TRANSMUTATION_SN=Tin Transmutation
-fluxgear.text.TRv_TRANSMUTATION_SN=Transformation of metals into tin
-
-fluxgear.name.TRv_TRANSMUTATION_AG=Silver Transmutation
-fluxgear.text.TRv_TRANSMUTATION_AG=Transformation of metals into silver
-
-fluxgear.name.TRv_TRANSMUTATION_PB=Lead Transmutation
-fluxgear.text.TRv_TRANSMUTATION_PB=Transformation of metals into lead
-
-fluxgear.name.TRv_TRANSMUTATION_AU=Gold Transmutation
-fluxgear.text.TRv_TRANSMUTATION_AU=Transformation of metals into gold
-
 fluxgear.name.TRv_TRANSMUTATION_NI=Nickel Transmutation
-fluxgear.text.TRv_TRANSMUTATION_NI=Transformation of metals into nickel
+fluxgear.text.TRv_TRANSMUTATION_NI=[TRv] Transformation of metals into nickel
+fluxgear.page.TRv_TRANSMUTATION_NI.0=You have discovered a way to multiply nickel by steeping nickel nuggets in §5metallum§0 harvested from other metals.
 
 fluxgear.name.TRv_TRANSMUTATION_AL=Aluminium Transmutation
-fluxgear.text.TRv_TRANSMUTATION_AL=Transformation of metals into aluminium
+fluxgear.text.TRv_TRANSMUTATION_AL=[TRv] Transformation of metals into aluminium
+fluxgear.page.TRv_TRANSMUTATION_AL.0=You have discovered a way to multiply aluminium by steeping aluminium nuggets in §5metallum§0 harvested from other metals.
 
 fluxgear.name.TRv_TRANSMUTATION_ND=Neodymium Transmutation
-fluxgear.text.TRv_TRANSMUTATION_ND=Transformation of metals into neodymium
+fluxgear.text.TRv_TRANSMUTATION_ND=[TRv] Transformation of metals into neodymium
+fluxgear.page.TRv_TRANSMUTATION_ND.0=You have discovered a way to multiply neodymium by steeping neodymium nuggets in §5metallum§0 harvested from other metals.
 
 fluxgear.name.TRv_TRANSMUTATION_ZN=Zinc Transmutation
-fluxgear.text.TRv_TRANSMUTATION_ZN=Transformation of metals into zinc
+fluxgear.text.TRv_TRANSMUTATION_ZN=[TRv] Transformation of metals into zinc
+fluxgear.page.TRv_TRANSMUTATION_ZN.0=You have discovered a way to multiply zinc by steeping zinc nuggets in §5metallum§0 harvested from other metals.
 
 fluxgear.name.TRv_TRANSMUTATION_AS=Arsenic Transmutation
-fluxgear.text.TRv_TRANSMUTATION_AS=Transformation of metals into arsenic
+fluxgear.text.TRv_TRANSMUTATION_AS=[TRv] Transformation of metals into arsenic
+fluxgear.page.TRv_TRANSMUTATION_AS.0=You have discovered a way to multiply arsenic by steeping arsenic nuggets in §5metallum§0 harvested from other metals.
 
 fluxgear.name.TRv_TRANSMUTATION_SB=Antimony Transmutation
-fluxgear.text.TRv_TRANSMUTATION_SB=Transformation of metals into antimony
+fluxgear.text.TRv_TRANSMUTATION_SB=[TRv] Transformation of metals into antimony
+fluxgear.page.TRv_TRANSMUTATION_SB.0=You have discovered a way to multiply antimony by steeping antimony nuggets in §5metallum§0 harvested from other metals.
 
 fluxgear.name.TRv_TRANSMUTATION_BI=Bismuth Transmutation
-fluxgear.text.TRv_TRANSMUTATION_BI=Transformation of metals into bismuth
+fluxgear.text.TRv_TRANSMUTATION_BI=[TRv] Transformation of metals into bismuth
+fluxgear.page.TRv_TRANSMUTATION_BI.0=You have discovered a way to multiply bismuth by steeping bismuth nuggets in §5metallum§0 harvested from other metals.
 
 fluxgear.name.TRv_TRANSMUTATION_W=Tungsten Transmutation
-fluxgear.text.TRv_TRANSMUTATION_W=Transformation of metals into tungsten
+fluxgear.text.TRv_TRANSMUTATION_W=[TRv] Transformation of metals into tungsten
+fluxgear.page.TRv_TRANSMUTATION_W.0=You have discovered a way to multiply tungsten by steeping tungsten nuggets in §5metallum§0 harvested from other metals.
 
 fluxgear.name.TRv_TRANSMUTATION_LU=Lutetium Transmutation
-fluxgear.text.TRv_TRANSMUTATION_LU=Transformation of metals into lutetium
+fluxgear.text.TRv_TRANSMUTATION_LU=[TRv] Transformation of metals into lutetium
+fluxgear.page.TRv_TRANSMUTATION_LU.0=You have discovered a way to multiply lutetium by steeping lutetium nuggets in §5metallum§0 harvested from other metals.
 
 fluxgear.name.TRv_TRANSMUTATION_PD=Palladium Transmutation
-fluxgear.text.TRv_TRANSMUTATION_PD=Transformation of metals into palladium
+fluxgear.text.TRv_TRANSMUTATION_PD=[TRv] Transformation of metals into palladium
+fluxgear.page.TRv_TRANSMUTATION_PD.0=You have discovered a way to multiply palladium by steeping palladium nuggets in §5metallum§0 harvested from other metals.
 
 fluxgear.name.TRv_TRANSMUTATION_PT=Platinum Transmutation
-fluxgear.text.TRv_TRANSMUTATION_PT=Transformation of metals into platinum
+fluxgear.text.TRv_TRANSMUTATION_PT=[TRv] Transformation of metals into platinum
+fluxgear.page.TRv_TRANSMUTATION_PT.0=You have discovered a way to multiply platinum by steeping platinum nuggets in §5metallum§0 harvested from other metals.
 
 fluxgear.name.TRv_TRANSMUTATION_OS=Osmium Transmutation
-fluxgear.text.TRv_TRANSMUTATION_OS=Transformation of metals into osmium
+fluxgear.text.TRv_TRANSMUTATION_OS=[TRv] Transformation of metals into osmium
+fluxgear.page.TRv_TRANSMUTATION_OS.0=You have discovered a way to multiply osmium by steeping osmium nuggets in §5metallum§0 harvested from other metals.
 
 fluxgear.name.TRv_TRANSMUTATION_IR=Iridium Transmutation
-fluxgear.text.TRv_TRANSMUTATION_IR=Transformation of metals into iridium
+fluxgear.text.TRv_TRANSMUTATION_IR=[TRv] Transformation of metals into iridium
+fluxgear.page.TRv_TRANSMUTATION_IR.0=You have discovered a way to multiply iridium by steeping iridium nuggets in §5metallum§0 harvested from other metals.
 
 ####fluxgear.name.TRv_TRANSMUTATION_= Transmutation
 ####fluxgear.text.TRv_TRANSMUTATION_=Transformation of metals into
-
-fluxgear.name.TRv_CLUSTER_FE=Iron Purification
-fluxgear.text.TRv_CLUSTER_FE=Purification of iron into native clusters
-
-fluxgear.name.TRv_CLUSTER_CU=Copper Purification
-fluxgear.text.TRv_CLUSTER_CU=Purification of copper into native clusters
-
-fluxgear.name.TRv_CLUSTER_SN=Tin Purification
-fluxgear.text.TRv_CLUSTER_SN=Purification of tin into native clusters
-
-fluxgear.name.TRv_CLUSTER_PB=Lead Purification
-fluxgear.text.TRv_CLUSTER_PB=Purification of lead into native clusters
-
-fluxgear.name.TRv_CLUSTER_AU=Gold Purification
-fluxgear.text.TRv_CLUSTER_AU=Purification of gold into native clusters
+####fluxgear.page.TRv_TRANSMUTATION_.0=
 
 fluxgear.name.TRv_CLUSTER_NI=Nickel Purification
-fluxgear.text.TRv_CLUSTER_NI=Purification of nickel into native clusters
+fluxgear.text.TRv_CLUSTER_NI=[TRv] Purification of nickel into native clusters
+fluxgear.page.TRv_CLUSTER_NI.0=Native clusters are rare concentrations of metals in its purest form. You have discovered a way to purify and concentrate normal nickel ore into a native nickel cluster.<BR>When smelted these clusters produces twice the normal amount of nickel ingots. You have a sneaking suspicion some other metal may be lingering in these clusters, perhaps with the right furnace you could separate this metal...
 
 fluxgear.name.TRv_CLUSTER_AL=Aluminium Purification
-fluxgear.text.TRv_CLUSTER_AL=Purification of aluminium into native clusters
+fluxgear.text.TRv_CLUSTER_AL=[TRv] Purification of aluminium into native clusters
+fluxgear.page.TRv_CLUSTER_AL.0=Native clusters are rare concentrations of metals in its purest form. You have discovered a way to purify and concentrate normal aluminium ore into a native aluminium cluster.<BR>When smelted these clusters produces twice the normal amount of aluminium ingots.
 
 fluxgear.name.TRv_CLUSTER_YPO=Xenotime Purification
-fluxgear.text.TRv_CLUSTER_YPO=Purification of xenotime into native clusters
+fluxgear.text.TRv_CLUSTER_YPO=[TRv] Purification of xenotime into native clusters
+fluxgear.page.TRv_CLUSTER_YPO.0=Native clusters are rare concentrations of metals in its purest form, but xenotime is composed of several similar but different metal phosphates. None the less, you have discovered a way to purify and concentrate normal xenotime ore into a native xenotime cluster, which still has to be separated somehow.<BR>When smelted these clusters produces twice the normal amount of xenotime mischmetal ingots.
 
 fluxgear.name.TRv_CLUSTER_ZN=Zinc Purification
-fluxgear.text.TRv_CLUSTER_ZN=Purification of zinc into native clusters
+fluxgear.text.TRv_CLUSTER_ZN=[TRv] Purification of zinc into native clusters
+fluxgear.page.TRv_CLUSTER_ZN.0=Native clusters are rare concentrations of metals in its purest form. You have discovered a way to purify and concentrate normal zinc ore into a native zinc cluster.<BR>When smelted these clusters produces twice the normal amount of zinc ingots.
 
 fluxgear.name.TRv_CLUSTER_BI=Bismuth Purification
-fluxgear.text.TRv_CLUSTER_BI=Purification of bismuth into native clusters
+fluxgear.text.TRv_CLUSTER_BI=[TRv] Purification of bismuth into native clusters
+fluxgear.page.TRv_CLUSTER_BI.0=Native clusters are rare concentrations of metals in its purest form. You have discovered a way to purify and concentrate normal bismuth ore into a native bismuth cluster.<BR>When smelted these clusters produces twice the normal amount of bismuth ingots.
 
 fluxgear.name.TRv_CLUSTER_CUAS=Tennantite Purification
-fluxgear.text.TRv_CLUSTER_CUAS=Purification of tennantite into native clusters
+fluxgear.text.TRv_CLUSTER_CUAS=[TRv] Purification of tennantite into native clusters
+fluxgear.page.TRv_CLUSTER_CUAS.0=Native clusters are rare concentrations of metals in its purest form, but the impurities of tennantite form a natural alloy when smelted. You have discovered a way to partially purify and concentrate normal tennantite ore into a native tennantite cluster.<BR>When smelted these clusters produces twice the normal amount of arsenical bronze ingots.
 
 fluxgear.name.TRv_CLUSTER_CUSB=Tetrahedrite Purification
-fluxgear.text.TRv_CLUSTER_CUSB=Purification of tetrahedrite into native clusters
+fluxgear.text.TRv_CLUSTER_CUSB=[TRv] Purification of tetrahedrite into native clusters
+fluxgear.page.TRv_CLUSTER_CUSB.0=Native clusters are rare concentrations of metals in its purest form, but the impurities of tetrahedrite form a natural alloy when smelted. You have discovered a way to partially purify and concentrate normal tetrahedrite ore into a native tetrahedrite cluster.<BR>When smelted these clusters produces twice the normal amount of antimonial ingots.
 
 fluxgear.name.TRv_CLUSTER_PT=Platinum Purification
-fluxgear.text.TRv_CLUSTER_PT=Purification of platinum into native clusters
+fluxgear.text.TRv_CLUSTER_PT=[TRv] Purification of platinum into native clusters
+fluxgear.page.TRv_CLUSTER_PT.0=Native clusters are rare concentrations of metals in its purest form. You have discovered a way to purify and concentrate normal platinum ore into a native platinum cluster.<BR>When smelted these clusters produces twice the normal amount of platinum ingots.
 
 fluxgear.name.TRv_CLUSTER_W=Tungsten Purification
-fluxgear.text.TRv_CLUSTER_W=Purification of tungsten into native clusters
+fluxgear.text.TRv_CLUSTER_W=[TRv] Purification of tungsten into native clusters
+fluxgear.page.TRv_CLUSTER_W.0=Native clusters are rare concentrations of metals in its purest form. You have discovered a way to purify and concentrate normal tungsten ore into a native tungsten cluster.<BR>When smelted these clusters produces twice the normal amount of tungsten ingots, however a normal furnace is still inadequate to melt tungsten.
 
 fluxgear.name.TRv_CLUSTER_IROS=Iridosmium Purification
-fluxgear.text.TRv_CLUSTER_IROS=Purification of iridosmium into native clusters
+fluxgear.text.TRv_CLUSTER_IROS=[TRv] Purification of iridosmium into native clusters
+fluxgear.page.TRv_CLUSTER_IROS.0=Native clusters are rare concentrations of metals in its purest form, but iridosmium is two similar metals as a natural alloy. You have discovered a way to mostly purify and concentrate normal iridosmium ore into a native iridosmium cluster.<BR>When smelted these clusters produces twice the normal amount of iridosmium ingots, however a normal furnace is still inadequate to melt iridium or osmium, and even if it could, would not separate the two metals.
 
 ####fluxgear.name.TRv_CLUSTER_= Purification
 ####fluxgear.text.TRv_CLUSTER_=Purification of  into native clusters
+####fluxgear.page.TRv_CLUSTER_.0=Native clusters are rare concentrations of metals in its purest form. You have discovered a way to purify and concentrate normal $metal ore into a native $metal cluster.<BR>When smelted these clusters produces twice the normal amount of $metal ingots.
 
 
 

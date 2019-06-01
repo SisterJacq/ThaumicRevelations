@@ -18,7 +18,7 @@ public class OreDictHelper {
 	}
 
 	public static ItemStack[] getOreArray(String oredict) {
-		return OreDictionary.getOres(oredict).toArray(new ItemStack[0]);
+		return OreDictionary.getOres(oredict).toArray(new ItemStack[OreDictionary.getOres(oredict).size()]);
 	}
 
 }

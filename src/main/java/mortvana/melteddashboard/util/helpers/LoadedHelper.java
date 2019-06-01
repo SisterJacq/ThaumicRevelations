@@ -40,6 +40,7 @@ public class LoadedHelper {
 	public static boolean isLaserCraftLoaded = Loader.isModLoaded("LaserCraft");
 	public static boolean isRailcraftLoaded = Loader.isModLoaded("Railcraft");
 	public static boolean isWitchingGadgetsLoaded = Loader.isModLoaded("WitchingGadgets");
+	public static boolean isForbiddenMagicLoaded = Loader.isModLoaded("ForbiddenMagic");
 
 	//Planned Stuff
 	public static boolean isDragonAPILoaded = Loader.isModLoaded("DragonAPI");

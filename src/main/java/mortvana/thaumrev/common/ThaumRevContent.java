@@ -648,7 +648,7 @@ public class ThaumRevContent {
 		ingotNickel = generalItem.addColorizedOreDictItem(5003, INGOT + NI, INGOT, COLOR_NI);
 		ingotSilver = generalItem.addColorizedOreDictItem(5004, INGOT + AG, INGOT, COLOR_AG);
 		ingotLead = generalItem.addColorizedOreDictItem(5005, INGOT + PB, INGOT, COLOR_PB);
-		ingotLutetium = generalItem.addColorizedOreDictItem(5006, INGOT + LU, INGOT, COLOR_LU, 2);
+		ingotLutetium = generalItem.addColorizedOreDictItem(5006, INGOT + LU, INGOT, COLOR_LU, 1);
 		ingotTungsten = generalItem.addColorizedOreDictItem(5007, INGOT + W, INGOT, COLOR_W, 1);
 		ingotIridium = generalItem.addColorizedOreDictItem(5008, INGOT + IR, INGOT, COLOR_IR, 2);
 		ingotBismuth = generalItem.addColorizedOreDictItem(5009, INGOT + BI, INGOT, COLOR_BI);
@@ -725,7 +725,7 @@ public class ThaumRevContent {
 		nuggetNickel = generalItem.addColorizedOreDictItem(5203, NUGGET + NI, NUGGET, COLOR_NI);
 		nuggetSilver = generalItem.addColorizedOreDictItem(5204, NUGGET + AG, NUGGET, COLOR_AG);
 		nuggetLead = generalItem.addColorizedOreDictItem(5205, NUGGET + PB, NUGGET, COLOR_PB);
-		nuggetLutetium = generalItem.addColorizedOreDictItem(5206, NUGGET + LU, NUGGET, COLOR_LU, 2);
+		nuggetLutetium = generalItem.addColorizedOreDictItem(5206, NUGGET + LU, NUGGET, COLOR_LU, 1);
 		nuggetTungsten = generalItem.addColorizedOreDictItem(5207, NUGGET + W, NUGGET, COLOR_W, 1);
 		nuggetIridium = generalItem.addColorizedOreDictItem(5208, NUGGET + IR, NUGGET, COLOR_IR, 2);
 		nuggetBismuth = generalItem.addColorizedOreDictItem(5209, NUGGET + BI, NUGGET, COLOR_BI);
@@ -802,7 +802,7 @@ public class ThaumRevContent {
 		dustNickel = generalItem.addColorizedOreDictItem(5403, DUST + NI, DUST, COLOR_NI);
 		dustSilver = generalItem.addColorizedOreDictItem(5404, DUST + AG, DUST, COLOR_AG);
 		dustLead = generalItem.addColorizedOreDictItem(5405, DUST + PB, DUST, COLOR_PB);
-		dustLutetium = generalItem.addColorizedOreDictItem(5406, DUST + LU, DUST, COLOR_LU, 2);
+		dustLutetium = generalItem.addColorizedOreDictItem(5406, DUST + LU, DUST, COLOR_LU, 1);
 		dustTungsten = generalItem.addColorizedOreDictItem(5407, DUST + W, DUST, COLOR_W, 1);
 		dustIridium = generalItem.addColorizedOreDictItem(5408, DUST + IR, DUST, COLOR_IR, 2);
 		dustBismuth = generalItem.addColorizedOreDictItem(5409, DUST + BI, DUST, COLOR_BI);
@@ -879,7 +879,7 @@ public class ThaumRevContent {
 		tinyNickel = generalItem.addColorizedOreDictItem(5603, TINY_DUST + NI, TINY_DUST, COLOR_NI);
 		tinySilver = generalItem.addColorizedOreDictItem(5604, TINY_DUST + AG, TINY_DUST, COLOR_AG);
 		tinyLead = generalItem.addColorizedOreDictItem(5605, TINY_DUST + PB, TINY_DUST, COLOR_PB);
-		tinyLutetium = generalItem.addColorizedOreDictItem(5606, TINY_DUST + LU, TINY_DUST, COLOR_LU, 2);
+		tinyLutetium = generalItem.addColorizedOreDictItem(5606, TINY_DUST + LU, TINY_DUST, COLOR_LU, 1);
 		tinyTungsten = generalItem.addColorizedOreDictItem(5607, TINY_DUST + W, TINY_DUST, COLOR_W, 1);
 		tinyIridium = generalItem.addColorizedOreDictItem(5608, TINY_DUST + IR, TINY_DUST, COLOR_IR, 2);
 		tinyBismuth = generalItem.addColorizedOreDictItem(5609, TINY_DUST + BI, TINY_DUST, COLOR_BI);
@@ -956,7 +956,7 @@ public class ThaumRevContent {
 		plateNickel = generalItem.addColorizedOreDictItem(5803, PLATE + NI, PLATE, COLOR_NI);
 		plateSilver = generalItem.addColorizedOreDictItem(5804, PLATE + AG, PLATE, COLOR_AG);
 		plateLead = generalItem.addColorizedOreDictItem(5805, PLATE + PB, PLATE, COLOR_PB);
-		plateLutetium = generalItem.addColorizedOreDictItem(5806, PLATE + LU, PLATE, COLOR_LU, 2);
+		plateLutetium = generalItem.addColorizedOreDictItem(5806, PLATE + LU, PLATE, COLOR_LU, 1);
 		plateTungsten = generalItem.addColorizedOreDictItem(5807, PLATE + W, PLATE, COLOR_W, 1);
 		plateIridium = generalItem.addColorizedOreDictItem(5808, PLATE + IR, PLATE, COLOR_IR, 2);
 		plateBismuth = generalItem.addColorizedOreDictItem(5809, PLATE + BI, PLATE, COLOR_BI);
@@ -2493,20 +2493,20 @@ public class ThaumRevContent {
 	public static void loadTransmuationRecipes() {
 		recipeTransNickel = addCrucibleRecipe(keyTransmutationNi, ItemHelper.cloneStack(nuggetNickel, 3), NUGGET + NI, new AspectList().add(METAL, 2).add(VOID, 1));
 		recipeTransAluminium = addCrucibleRecipe(keyTransmutationAl, ItemHelper.cloneStack(nuggetAluminium, 3), NUGGET + AL, new AspectList().add(METAL, 2).add(ORDER, 1));
-		recipeTransNeodymium = addCrucibleRecipe(keyTransmutationNd, ItemHelper.cloneStack(nuggetNeodymium, 3), NUGGET + ND, new AspectList().add(METAL, 2).add(ENERGY, 1));
+		recipeTransNeodymium = addCrucibleRecipe(keyTransmutationNd, ItemHelper.cloneStack(nuggetNeodymium, 3), NUGGET + ND, new AspectList().add(METAL, 2).add(EARTH, 1).add(ENERGY, 1));
 		recipeTransZinc = addCrucibleRecipe(keyTransmutationZn, ItemHelper.cloneStack(nuggetZinc, 3), NUGGET + ZN, new AspectList().add(METAL, 2).add(CRYSTAL, 1));
 		recipeTransArsenic = addCrucibleRecipe(keyTransmutationAs, ItemHelper.cloneStack(nuggetArsenic, 3), NUGGET + AS, new AspectList().add(METAL, 2).add(POISON, 1));
 		recipeTransAntimony = addCrucibleRecipe(keyTransmutationSb, ItemHelper.cloneStack(nuggetAntimony, 3), NUGGET + SB, new AspectList().add(METAL, 2).add(POISON, 1));
 		recipeTransBismuth = addCrucibleRecipe(keyTransmutationBi, ItemHelper.cloneStack(nuggetBismuth, 3), NUGGET + BI, new AspectList().add(METAL, 2).add(ORDER, 1));
 		recipeTransTungsten = addCrucibleRecipe(keyTransmutationW, ItemHelper.cloneStack(nuggetTungsten, 3), NUGGET + W, new AspectList().add(METAL, 2).add(MECHANISM, 1).add(ARMOR, 1));
-		recipeTransLutetium = addCrucibleRecipe(keyTransmutationLu, ItemHelper.cloneStack(nuggetLutetium, 3), NUGGET + LU, new AspectList().add(METAL, 2).add(EARTH, 1));
-		recipeTransPalladium = addCrucibleRecipe(keyTransmutationPd, ItemHelper.cloneStack(nuggetPalladium, 3), NUGGET + PD, new AspectList().add(METAL, 2).add(EXCHANGE, 1));
+		recipeTransLutetium = addCrucibleRecipe(keyTransmutationLu, ItemHelper.cloneStack(nuggetLutetium, 3), NUGGET + LU, new AspectList().add(METAL, 2).add(EARTH, 1).add(VOID, 1));
+		recipeTransPalladium = addCrucibleRecipe(keyTransmutationPd, ItemHelper.cloneStack(nuggetPalladium, 3), NUGGET + PD, new AspectList().add(METAL, 2).add(GREED, 1).add(EXCHANGE, 1));
 		if (OreDictionary.doesOreNameExist(NUGGET + PT)) {
 			ItemStack nPt = OreDictionary.getOres(NUGGET + PT).get(0);
 			recipeTransPlatinum = addCrucibleRecipe(keyTransmutationPt, ItemHelper.cloneStack(nPt, 3), NUGGET + PT, new AspectList().add(METAL, 2).add(GREED, 1).add(EXCHANGE, 1));
 		}
 		recipeTransOsmium = addCrucibleRecipe(keyTransmutationOs, ItemHelper.cloneStack(nuggetOsmium, 3), NUGGET + OS, new AspectList().add(METAL, 2).add(ARMOR, 1).add(ORDER, 1));
-		recipeTransIridium = addCrucibleRecipe(keyTransmutationIr, ItemHelper.cloneStack(nuggetIridium, 3), NUGGET + IR, new AspectList().add(METAL, 2).add(ARMOR, 1).add(ORDER, 1).add(LIGHT, 1).add(ENERGY, 1));
+		recipeTransIridium = addCrucibleRecipe(keyTransmutationIr, ItemHelper.cloneStack(nuggetIridium, 3), NUGGET + IR, new AspectList().add(METAL, 2).add(ARMOR, 1).add(ORDER, 1).add(MECHANISM, 1).add(ENERGY, 1));
 
 	}
 
@@ -2524,7 +2524,7 @@ public class ThaumRevContent {
 		if (OreDictionary.doesOreNameExist(ORE + PT)) {
 			recipeClusterPlatinum = addCrucibleRecipe(keyClusterPt, clusterPlatinum, ORE + PT, new AspectList().add(METAL, 1).add(ORDER, 1));
 		}
-		recipeClusterIridosmium = addCrucibleRecipe(keyClusterIrOs, clusterIridosmium, ORE + IROS, new AspectList().add(METAL, 1).add(ORDER, 1));
+		recipeClusterIridosmium = addCrucibleRecipe(keyClusterIrOs, clusterIridosmium, ORE + IROS, new AspectList().add(METAL, 1).add(ORDER, 2));
 
 		addSmelting(clusterNickel, cloneStack(ingotNickel, 2), 1.8F);
 		addSmelting(clusterAluminium, cloneStack(ingotAluminium, 2), 1.5F);
@@ -2737,8 +2737,8 @@ public class ThaumRevContent {
 		if (OreDictionary.doesOreNameExist(NUGGET + PT)) {
 			researchTransmutationPt = new FluxGearResearchItem(keyTransmutationPt, key, new AspectList().add(METAL, 3).add(EXCHANGE, 3).add(GREED, 1), -31, -21, 1, OreDictionary.getOres(NUGGET + PT).get(0));
 		}
-		researchTransmutationOs = new FluxGearResearchItem(keyTransmutationOs, key, new AspectList().add(METAL, 3).add(EXCHANGE, 2).add(ARMOR, 1).add(ORDER, 1), -31, -23, 1, nuggetPalladium);
-		researchTransmutationIr = new FluxGearResearchItem(keyTransmutationIr, key, new AspectList().add(METAL, 3).add(EXCHANGE, 2).add(ARMOR, 1).add(ORDER, 1).add(LIGHT, 1).add(ENERGY, 1), -29, -24, 1, nuggetPalladium);
+		researchTransmutationOs = new FluxGearResearchItem(keyTransmutationOs, key, new AspectList().add(METAL, 3).add(EXCHANGE, 2).add(ARMOR, 1).add(ORDER, 1), -31, -23, 1, nuggetOsmium);
+		researchTransmutationIr = new FluxGearResearchItem(keyTransmutationIr, key, new AspectList().add(METAL, 3).add(EXCHANGE, 2).add(ARMOR, 1).add(ORDER, 1).add(MECHANISM, 1).add(ENERGY, 1), -29, -24, 1, nuggetIridium);
 
 		researchClusterFe = new DummyResearchItem(keyClusterFe, key, pureFe, catAlch, 8, -12, clusterIron).registerResearchItem();
 		researchClusterCu = new DummyResearchItem(keyClusterCu, key, pureCu, catAlch, 12, -17, clusterCopper).setParents(keyClusterFe).registerResearchItem();
@@ -2759,7 +2759,7 @@ public class ThaumRevContent {
 		if (OreDictionary.doesOreNameExist(ORE + PT)) {
 			researchClusterPt = new FluxGearResearchItem(keyClusterPt, key, new AspectList().add(Aspect.METAL, 3).add(Aspect.ORDER, 2).add(EXCHANGE, 1).add(GREED, 1), 6, -20, 1, clusterPlatinum);
 		}
-		researchClusterIrOs = new FluxGearResearchItem(keyClusterIrOs, key, new AspectList().add(Aspect.METAL, 3).add(Aspect.ORDER, 4).add(ARMOR, 2).add(LIGHT, 1).add(ENERGY, 1), 7, -24, 1, clusterIridosmium);
+		researchClusterIrOs = new FluxGearResearchItem(keyClusterIrOs, key, new AspectList().add(Aspect.METAL, 3).add(Aspect.ORDER, 4).add(ARMOR, 2).add(MECHANISM, 1).add(ENERGY, 1), 7, -24, 1, clusterIridosmium);
 
 	}
 
@@ -3127,13 +3127,13 @@ public class ThaumRevContent {
 		addAspects(stormypearl, new AspectList().add(PLANT, 2).add(WEATHER, 1).add(MAGIC, 1).add(AIR, 2));
 		addAspects(stonypearl, new AspectList().add(PLANT, 2).add(ENTROPY, 1).add(MAGIC, 1).add(EARTH, 2));
 
-		addAspects(oreChalcocite, new AspectList().add(METAL, 3).add(EARTH, 1).add(EXCHANGE, 1)); //It's only 2 Metallum?
+		addAspects(oreChalcocite, new AspectList().add(METAL, 3).add(EARTH, 1).add(EXCHANGE, 1));
 		addAspects(oreSphalerite, new AspectList().add(METAL, 3).add(EARTH, 1).add(CRYSTAL, 1));
-		//Cassiterite (oreTin)
+		addAspects(oreCassiterite, new AspectList().add(METAL, 3).add(ENTROPY, 1).add(CRYSTAL, 1));
 		addAspects(oreMillerite, new AspectList().add(METAL, 3).add(EARTH, 1).add(VOID, 1));
-		//Native Silver (oreSilver)
-		//Galena (oreLead)
-		addAspects(oreXenotime, new AspectList().add(METAL, 3).add(EARTH, 1).add(ENERGY, 1));
+		addAspects(oreNativeSilver, new AspectList().add(METAL, 3).add(ENTROPY, 1).add(GREED, 1));
+		addAspects(oreGalena, new AspectList().add(METAL, 3).add(ENTROPY, 1).add(ORDER, 1));
+		addAspects(oreXenotime, new AspectList().add(METAL, 3).add(EARTH, 2).add(ENERGY, 1));
 		addAspects(oreWolframite, new AspectList().add(METAL, 3).add(EARTH, 1).add(ARMOR, 1).add(MECHANISM, 1));
 		addAspects(oreIridosmium, new AspectList().add(METAL, 3).add(ORDER, 1).add(ENTROPY, 1).add(ARMOR, 2).add(LIGHT, 1).add(ENERGY, 1));
 		addAspects(oreBismuthinite, new AspectList().add(METAL, 3).add(ORDER, 1).add(ENTROPY, 1));
@@ -3143,13 +3143,13 @@ public class ThaumRevContent {
 		addAspects(oreDioptase, new AspectList().add(CRYSTAL, 3).add(EARTH, 1).add(ORDER, 2).add(EXCHANGE, 1).add(ENERGY, 1));
 		addAspects(oreJethrineSapphire, new AspectList().add(CRYSTAL, 3).add(EARTH, 1).add(ENERGY, 4));
 
-		addAspects(oreGravelChalcocite, new AspectList().add(METAL, 3).add(EARTH, 1).add(EXCHANGE, 1)); //It's only 2 Metallum?
+		addAspects(oreGravelChalcocite, new AspectList().add(METAL, 3).add(EARTH, 1).add(EXCHANGE, 1));
 		addAspects(oreGravelSphalerite, new AspectList().add(METAL, 3).add(EARTH, 1).add(CRYSTAL, 1));
-		//Cassiterite (oreTin)
+		addAspects(oreGravelCassiterite, new AspectList().add(METAL, 3).add(ENTROPY, 1).add(CRYSTAL, 1));
 		addAspects(oreGravelMillerite, new AspectList().add(METAL, 3).add(EARTH, 1).add(VOID, 1));
-		//Native Silver (oreSilver)
-		//Galena (oreLead)
-		addAspects(oreGravelXenotime, new AspectList().add(METAL, 3).add(EARTH, 1).add(ENERGY, 1));
+		addAspects(oreGravelNativeSilver, new AspectList().add(METAL, 3).add(ENTROPY, 1).add(GREED, 1));
+		addAspects(oreGravelGalena, new AspectList().add(METAL, 3).add(ENTROPY, 1).add(ORDER, 1));
+		addAspects(oreGravelXenotime, new AspectList().add(METAL, 3).add(EARTH, 2).add(ENERGY, 1));
 		addAspects(oreGravelWolframite, new AspectList().add(METAL, 3).add(EARTH, 1).add(ARMOR, 1).add(MECHANISM, 1));
 		addAspects(oreGravelIridosmium, new AspectList().add(METAL, 3).add(ORDER, 1).add(ENTROPY, 1).add(ARMOR, 2).add(LIGHT, 1).add(ENERGY, 1));
 		addAspects(oreGravelBismuthinite, new AspectList().add(METAL, 3).add(ORDER, 1).add(ENTROPY, 1));
@@ -3185,11 +3185,284 @@ public class ThaumRevContent {
 		addAspects(seedStormypearl, new AspectList().add(PLANT, 1).add(AIR, 1));
 		addAspects(seedStonypearl, new AspectList().add(PLANT, 1).add(EARTH, 1));
 
+		addAspects(itemExcubituraPetal, new AspectList().add(PLANT, 2).add(MAGIC, 2).add(aspectExcubitor, 2));
+		addAspects(itemExcubituraPaste, new AspectList().add(PLANT, 3).add(MAGIC, 4).add(aspectExcubitor, 4));
+		addAspects(itemFabricExcubitura, new AspectList().add(CLOTH, 9).add(MAGIC, 2).add(aspectExcubitor, 1));
+		addAspects(itemFabricExcubitura, new AspectList().add(CLOTH, 10).add(MAGIC, 2).add(aspectExcubitor, 2).add(ARMOR, 1));
+
+		addAspects(excubituraOilRaw, new AspectList().add(aspectExcubitor, 16).add(MAGIC, 12).add(PLANT, 4).add(ORDER, 1));
+		addAspects(excubituraOil, new AspectList().add(aspectExcubitor, 16).add(MAGIC, 12).add(PLANT, 4).add(ORDER, 6).add(ENERGY, 2));
 
 	}
 
 	public static void loadMetalAspects() {
+		addAspects(blockCopper, new AspectList().add(METAL, 20).add(EXCHANGE, 6));
+		addAspects(blockZinc, new AspectList().add(METAL, 20).add(CRYSTAL, 6));
+		addAspects(blockTin, new AspectList().add(METAL, 20).add(CRYSTAL, 6));
+		addAspects(blockNickel, new AspectList().add(METAL, 20).add(VOID, 6));
+		addAspects(blockSilver, new AspectList().add(METAL, 20).add(GREED, 6));
+		addAspects(blockLead, new AspectList().add(METAL, 20).add(ORDER, 6));
+		addAspects(blockLutetium, new AspectList().add(METAL, 20).add(EARTH, 6).add(VOID, 6));
+		addAspects(blockTungsten, new AspectList().add(METAL, 20).add(MECHANISM, 6).add(ARMOR, 6));
+		addAspects(blockIridium, new AspectList().add(METAL, 20).add(ARMOR, 6).add(ORDER, 6).add(MECHANISM, 6).add(ENERGY, 6));
+		addAspects(blockBismuth, new AspectList().add(METAL, 20).add(ORDER, 6));
+		addAspects(blockArsenic, new AspectList().add(METAL, 20).add(POISON, 6));
+		addAspects(blockAntimony, new AspectList().add(METAL, 20).add(POISON, 6));
+		addAspects(blockNeodymium, new AspectList().add(METAL, 20).add(EARTH, 6).add(ENERGY, 6));
+		addAspects(blockOsmium, new AspectList().add(METAL, 20).add(ARMOR, 6).add(ORDER, 6));
+		addAspects(blockPalladium, new AspectList().add(METAL, 20).add(GREED, 6).add(EXCHANGE, 6));
+		addAspects(blockAluminium, new AspectList().add(METAL, 20).add(ORDER, 6));
 
+		addAspects(blockBrass, new AspectList().add(METAL, 20).add(MECHANISM, 6));
+		addAspects(blockBronze, new AspectList().add(METAL, 20).add(TOOL, 6));
+		addAspects(blockArsenicalBronze, new AspectList().add(METAL, 20).add(TOOL, 6));
+		addAspects(blockAntimonialBronze, new AspectList().add(METAL, 20).add(ARMOR, 6));
+		addAspects(blockBismuthBronze, new AspectList().add(METAL, 20).add(TOOL, 6));
+		addAspects(blockMithril, new AspectList().add(METAL, 20).add(TOOL, 6).add(ARMOR,6));
+		addAspects(blockAlumiuiumBronze, new AspectList().add(METAL, 20).add(CRAFT, 6));
+		addAspects(blockCupronickel, new AspectList().add(METAL, 20).add(MECHANISM, 6));
+		addAspects(blockRiftishBronze, new AspectList().add(METAL, 20).add(CRAFT, 6).add(TOOL, 6));
+		addAspects(blockConstantan, new AspectList().add(METAL, 20).add(MECHANISM, 6));
+		addAspects(blockInvar, new AspectList().add(METAL, 20).add(ARMOR, 6));
+		addAspects(blockElectrum, new AspectList().add(METAL, 20).add(GREED, 6));
+		addAspects(blockWardenicMetal, new AspectList().add(METAL, 20).add(aspectExcubitor, 6));
+		addAspects(blockDullRedsolder, new AspectList().add(METAL, 20).add(ENERGY, 6));
+		addAspects(blockRedsolder, new AspectList().add(METAL, 20).add(aspectFluxus, 6));
+
+		addAspects(blockThaumicElectrum, new AspectList().add(METAL, 20).add(GREED, 6).add(ENERGY, 6).add(MAGIC, 13));
+		addAspects(blockThaumicRiftishBronze, new AspectList().add(METAL, 20).add(CRAFT, 6).add(TOOL, 6).add(MAGIC, 13));
+		addAspects(blockSteel, new AspectList().add(METAL, 27).add(ORDER, 6));
+		addAspects(blockThaumicSteel, new AspectList().add(METAL, 27).add(ORDER, 6).add(MAGIC, 13));
+		addAspects(blockVoidbrass, new AspectList().add(METAL, 13).add(VOID, 13).add(DARKNESS, 6).add(TOOL, 6).add(ELDRITCH, 6));
+		addAspects(blockVoidsteel, new AspectList().add(METAL, 20).add(VOID, 13).add(DARKNESS, 6).add(ORDER, 6).add(ELDRITCH, 6));
+		addAspects(blockVoidtungsten, new AspectList().add(METAL, 20).add(VOID, 20).add(DARKNESS, 13).add(ELDRITCH, 13).add(MECHANISM, 6).add(ARMOR, 6));
+		addAspects(blockVoidcupronickel, new AspectList().add(METAL, 20).add(VOID, 13).add(DARKNESS, 6).add(MECHANISM, 6).add(ELDRITCH, 6));
+
+
+		addAspects(ingotCopper, new AspectList().add(METAL, 3).add(EXCHANGE, 1));
+		addAspects(ingotZinc, new AspectList().add(METAL, 3).add(CRYSTAL, 1));
+		addAspects(ingotTin, new AspectList().add(METAL, 3).add(CRYSTAL, 1));
+		addAspects(ingotNickel, new AspectList().add(METAL, 3).add(VOID, 1));
+		addAspects(ingotSilver, new AspectList().add(METAL, 3).add(GREED, 1));
+		addAspects(ingotLead, new AspectList().add(METAL, 3).add(ORDER, 1));
+		addAspects(ingotLutetium, new AspectList().add(METAL, 3).add(EARTH, 1).add(VOID, 1));
+		addAspects(ingotTungsten, new AspectList().add(METAL, 3).add(MECHANISM, 1).add(ARMOR, 1));
+		addAspects(ingotIridium, new AspectList().add(METAL, 3).add(ARMOR, 1).add(ORDER, 1).add(MECHANISM, 1).add(ENERGY, 1));
+		addAspects(ingotBismuth, new AspectList().add(METAL, 3).add(ORDER, 1));
+		addAspects(ingotArsenic, new AspectList().add(METAL, 3).add(POISON, 1));
+		addAspects(ingotAntimony, new AspectList().add(METAL, 3).add(POISON, 1));
+		addAspects(ingotNeodymium, new AspectList().add(METAL, 3).add(EARTH, 1).add(ENERGY, 1));
+		addAspects(ingotOsmium, new AspectList().add(METAL, 3).add(ARMOR, 1).add(ORDER, 1));
+		addAspects(ingotPalladium, new AspectList().add(METAL, 3).add(GREED, 1).add(EXCHANGE, 1));
+		addAspects(ingotAluminium, new AspectList().add(METAL, 3).add(ORDER, 1));
+
+		addAspects(ingotBrass, new AspectList().add(METAL, 3).add(MECHANISM, 1));
+		addAspects(ingotBronze, new AspectList().add(METAL, 3).add(TOOL, 1));
+		addAspects(ingotArsenicalBronze, new AspectList().add(METAL, 3).add(TOOL, 1));
+		addAspects(ingotAntimonialBronze, new AspectList().add(METAL, 3).add(ARMOR, 1));
+		addAspects(ingotBismuthBronze, new AspectList().add(METAL, 3).add(TOOL, 1));
+		addAspects(ingotMithril, new AspectList().add(METAL, 3).add(TOOL, 1).add(ARMOR, 1));
+		addAspects(ingotAluminiumBronze, new AspectList().add(METAL, 3).add(CRAFT, 1));
+		addAspects(ingotCupronickel, new AspectList().add(METAL, 3).add(MECHANISM, 1));
+		addAspects(ingotRiftishBronze, new AspectList().add(METAL, 3).add(CRAFT, 1).add(TOOL, 1));
+		addAspects(ingotConstantan, new AspectList().add(METAL, 3).add(MECHANISM, 1));
+		addAspects(ingotInvar, new AspectList().add(METAL, 3).add(ARMOR, 1));
+		addAspects(ingotElectrum, new AspectList().add(METAL, 3).add(GREED, 1));
+		addAspects(ingotWardenicMetal, new AspectList().add(METAL, 3).add(aspectExcubitor, 1));
+		addAspects(ingotDullRedsolder, new AspectList().add(METAL, 3).add(ENERGY, 1));
+		addAspects(ingotRedsolder, new AspectList().add(METAL, 3).add(aspectFluxus, 1));
+
+		addAspects(ingotThaumicElectrum, new AspectList().add(METAL, 3).add(GREED, 1).add(ENERGY, 1).add(MAGIC, 2));
+		addAspects(ingotThaumicRiftishBronze, new AspectList().add(METAL, 3).add(CRAFT, 1).add(TOOL, 1).add(MAGIC, 2));
+		addAspects(ingotSteel, new AspectList().add(METAL, 4).add(ORDER, 1));
+		addAspects(ingotThaumicSteel, new AspectList().add(METAL, 4).add(ORDER, 1).add(MAGIC, 2));
+		addAspects(ingotVoidbrass, new AspectList().add(METAL, 2).add(VOID, 2).add(DARKNESS, 1).add(TOOL, 1).add(ELDRITCH, 1));
+		addAspects(ingotVoidsteel, new AspectList().add(METAL, 3).add(VOID, 2).add(DARKNESS, 1).add(ORDER, 1).add(ELDRITCH, 1));
+		addAspects(ingotVoidtungsten, new AspectList().add(METAL, 3).add(VOID, 3).add(DARKNESS, 2).add(ELDRITCH, 2).add(MECHANISM, 1).add(ARMOR, 1));
+		addAspects(ingotVoidcupronickel, new AspectList().add(METAL, 3).add(VOID, 2).add(DARKNESS, 1).add(MECHANISM, 1).add(ELDRITCH, 1));
+
+
+
+
+		addAspects(gemPyrope, new AspectList().add(CRYSTAL, 4).add(FIRE, 3).add(ENERGY, 1)); //TODO: 2 IGNIS, 1 INFERNUS IF FM IS LOADED
+		addAspects(gemDioptase, new AspectList().add(CRYSTAL, 4).add(ORDER, 2).add(EXCHANGE, 1).add(ENERGY, 1));
+		addAspects(gemJethrineSapphire, new AspectList().add(CRYSTAL, 4).add(ENERGY, 4));
+		addAspects(gemJethrinePyroptase, new AspectList().add(CRYSTAL, 4).add(FIRE, 3).add(ORDER, 2).add(EXCHANGE, 1).add(ENERGY, 5)); //TODO: 2 IGNIS, 1 INFERNUS IF FM IS LOADED
+
+
+
+		addAspects(nuggetCopper, new AspectList().add(METAL, 1));
+		addAspects(nuggetZinc, new AspectList().add(METAL, 1));
+		addAspects(nuggetTin, new AspectList().add(METAL, 1));
+		addAspects(nuggetNickel, new AspectList().add(METAL, 1));
+		addAspects(nuggetSilver, new AspectList().add(METAL, 1));
+		addAspects(nuggetLead, new AspectList().add(METAL, 1));
+		addAspects(nuggetLutetium, new AspectList().add(METAL, 1));
+		addAspects(nuggetTungsten, new AspectList().add(METAL, 1));
+		addAspects(nuggetIridium, new AspectList().add(METAL, 1).add(ORDER, 1));
+		addAspects(nuggetBismuth, new AspectList().add(METAL, 1));
+		addAspects(nuggetArsenic, new AspectList().add(METAL, 1));
+		addAspects(nuggetAntimony, new AspectList().add(METAL, 1));
+		addAspects(nuggetNeodymium, new AspectList().add(METAL, 1));
+		addAspects(nuggetOsmium, new AspectList().add(METAL, 1));
+		addAspects(nuggetPalladium, new AspectList().add(METAL, 1));
+		addAspects(nuggetAluminium, new AspectList().add(METAL, 1));
+
+		addAspects(nuggetBrass, new AspectList().add(METAL, 1));
+		addAspects(nuggetBronze, new AspectList().add(METAL, 1));
+		addAspects(nuggetArsenicalBronze, new AspectList().add(METAL, 1));
+		addAspects(nuggetAntimonialBronze, new AspectList().add(METAL, 1));
+		addAspects(nuggetBismuthBronze, new AspectList().add(METAL, 1));
+		addAspects(nuggetMithril, new AspectList().add(METAL, 1));
+		addAspects(nuggetAluminiumBronze, new AspectList().add(METAL, 1));
+		addAspects(nuggetCupronickel, new AspectList().add(METAL, 1));
+		addAspects(nuggetRiftishBronze, new AspectList().add(METAL, 1).add(ORDER, 1));
+		addAspects(nuggetConstantan, new AspectList().add(METAL, 1));
+		addAspects(nuggetInvar, new AspectList().add(METAL, 1));
+		addAspects(nuggetElectrum, new AspectList().add(METAL, 1));
+		addAspects(nuggetWardenicMetal, new AspectList().add(METAL, 1));
+		addAspects(nuggetDullRedsolder, new AspectList().add(METAL, 1));
+		addAspects(nuggetRedsolder, new AspectList().add(METAL, 1));
+
+		addAspects(nuggetThaumicElectrum, new AspectList().add(METAL, 1));
+		addAspects(nuggetThaumicRiftishBronze, new AspectList().add(METAL, 1));
+		addAspects(nuggetSteel, new AspectList().add(METAL, 1));
+		addAspects(nuggetThaumicSteel, new AspectList().add(METAL, 1));
+		addAspects(nuggetVoidbrass, new AspectList().add(METAL, 1));
+		addAspects(nuggetVoidsteel, new AspectList().add(METAL, 1));
+		addAspects(nuggetVoidtungsten, new AspectList().add(METAL, 1).add(VOID, 1));
+		addAspects(nuggetVoidcupronickel, new AspectList().add(METAL, 1));
+
+
+
+
+		addAspects(dustCopper, new AspectList().add(METAL, 2).add(ENTROPY, 1).add(EXCHANGE, 1));
+		addAspects(dustZinc, new AspectList().add(METAL, 2).add(ENTROPY, 1).add(CRYSTAL, 1));
+		addAspects(dustTin, new AspectList().add(METAL, 2).add(ENTROPY, 1).add(CRYSTAL, 1));
+		addAspects(dustNickel, new AspectList().add(METAL, 2).add(ENTROPY, 1).add(VOID, 1));
+		addAspects(dustSilver, new AspectList().add(METAL, 2).add(ENTROPY, 1).add(GREED, 1));
+		addAspects(dustLead, new AspectList().add(METAL, 2).add(ENTROPY, 1).add(ORDER, 1));
+		addAspects(dustLutetium, new AspectList().add(METAL, 2).add(ENTROPY, 1).add(EARTH, 1).add(VOID, 1));
+		addAspects(dustTungsten, new AspectList().add(METAL, 2).add(ENTROPY, 1).add(MECHANISM, 1).add(ARMOR, 1));
+		addAspects(dustIridium, new AspectList().add(METAL, 2).add(ENTROPY, 1).add(ARMOR, 1).add(ORDER, 1).add(MECHANISM, 1).add(ENERGY, 1));
+		addAspects(dustBismuth, new AspectList().add(METAL, 2).add(ENTROPY, 1).add(ORDER, 1));
+		addAspects(dustArsenic, new AspectList().add(METAL, 2).add(ENTROPY, 1).add(POISON, 1));
+		addAspects(dustAntimony, new AspectList().add(METAL, 2).add(ENTROPY, 1).add(POISON, 1));
+		addAspects(dustNeodymium, new AspectList().add(METAL, 2).add(ENTROPY, 1).add(EARTH, 1).add(ENERGY, 1));
+		addAspects(dustOsmium, new AspectList().add(METAL, 2).add(ENTROPY, 1).add(ARMOR, 1).add(ORDER, 1));
+		addAspects(dustPalladium, new AspectList().add(METAL, 2).add(ENTROPY, 1).add(GREED, 1).add(EXCHANGE, 1));
+		addAspects(dustAluminium, new AspectList().add(METAL, 2).add(ENTROPY, 1).add(ORDER, 1));
+
+		addAspects(dustBrass, new AspectList().add(METAL, 2).add(ENTROPY, 1).add(MECHANISM, 1));
+		addAspects(dustBronze, new AspectList().add(METAL, 2).add(ENTROPY, 1).add(TOOL, 1));
+		addAspects(dustArsenicalBronze, new AspectList().add(METAL, 2).add(ENTROPY, 1).add(TOOL, 1));
+		addAspects(dustAntimonialBronze, new AspectList().add(METAL, 2).add(ENTROPY, 1).add(ARMOR, 1));
+		addAspects(dustBismuthBronze, new AspectList().add(METAL, 2).add(ENTROPY, 1).add(TOOL, 1));
+		addAspects(dustMithril, new AspectList().add(METAL, 2).add(ENTROPY, 1).add(TOOL, 1).add(ARMOR, 1));
+		addAspects(dustAluminiumBronze, new AspectList().add(METAL, 2).add(ENTROPY, 1).add(CRAFT, 1));
+		addAspects(dustCupronickel, new AspectList().add(METAL, 2).add(ENTROPY, 1).add(MECHANISM, 1));
+		addAspects(dustRiftishBronze, new AspectList().add(METAL, 2).add(ENTROPY, 1).add(CRAFT, 1).add(TOOL, 1));
+		addAspects(dustConstantan, new AspectList().add(METAL, 2).add(ENTROPY, 1).add(MECHANISM, 1));
+		addAspects(dustInvar, new AspectList().add(METAL, 2).add(ENTROPY, 1).add(ARMOR, 1));
+		addAspects(dustElectrum, new AspectList().add(METAL, 2).add(ENTROPY, 1).add(GREED, 1));
+		addAspects(dustWardenicMetal, new AspectList().add(METAL, 2).add(ENTROPY, 1).add(aspectExcubitor, 1));
+		addAspects(dustDullRedsolder, new AspectList().add(METAL, 2).add(ENTROPY, 1).add(ENERGY, 1));
+		addAspects(dustRedsolder, new AspectList().add(METAL, 2).add(ENTROPY, 1).add(aspectFluxus, 1));
+
+		addAspects(dustThaumicElectrum, new AspectList().add(METAL, 2).add(ENTROPY, 1).add(GREED, 1).add(ENERGY, 1).add(MAGIC, 2));
+		addAspects(dustThaumicRiftishBronze, new AspectList().add(METAL, 2).add(ENTROPY, 1).add(CRAFT, 1).add(TOOL, 1).add(MAGIC, 2));
+		addAspects(dustSteel, new AspectList().add(METAL, 3).add(ENTROPY, 1).add(ORDER, 1));
+		addAspects(dustThaumicSteel, new AspectList().add(METAL, 3).add(ENTROPY, 1).add(ORDER, 1).add(MAGIC, 2));
+		addAspects(dustVoidbrass, new AspectList().add(METAL, 2).add(ENTROPY, 1).add(VOID, 1).add(DARKNESS, 1).add(TOOL, 1).add(ELDRITCH, 1));
+		addAspects(dustVoidsteel, new AspectList().add(METAL, 2).add(ENTROPY, 1).add(VOID, 2).add(DARKNESS, 1).add(ORDER, 1).add(ELDRITCH, 1));
+		addAspects(dustVoidtungsten, new AspectList().add(METAL, 3).add(VOID, 3).add(DARKNESS, 2).add(ELDRITCH, 2).add(MECHANISM, 1).add(ARMOR, 1));
+		addAspects(dustVoidcupronickel, new AspectList().add(METAL, 2).add(ENTROPY, 1).add(VOID, 2).add(DARKNESS, 1).add(MECHANISM, 1).add(ELDRITCH, 1));
+
+
+		addAspects(tinyCopper, new AspectList().add(METAL, 1));
+		addAspects(tinyZinc, new AspectList().add(METAL, 1));
+		addAspects(tinyTin, new AspectList().add(METAL, 1));
+		addAspects(tinyNickel, new AspectList().add(METAL, 1));
+		addAspects(tinySilver, new AspectList().add(METAL, 1));
+		addAspects(tinyLead, new AspectList().add(METAL, 1));
+		addAspects(tinyLutetium, new AspectList().add(METAL, 1));
+		addAspects(tinyTungsten, new AspectList().add(METAL, 1));
+		addAspects(tinyIridium, new AspectList().add(METAL, 1).add(ORDER, 1));
+		addAspects(tinyBismuth, new AspectList().add(METAL, 1));
+		addAspects(tinyArsenic, new AspectList().add(METAL, 1));
+		addAspects(tinyAntimony, new AspectList().add(METAL, 1));
+		addAspects(tinyNeodymium, new AspectList().add(METAL, 1));
+		addAspects(tinyOsmium, new AspectList().add(METAL, 1));
+		addAspects(tinyPalladium, new AspectList().add(METAL, 1));
+		addAspects(tinyAluminium, new AspectList().add(METAL, 1));
+
+		addAspects(tinyBrass, new AspectList().add(METAL, 1));
+		addAspects(tinyBronze, new AspectList().add(METAL, 1));
+		addAspects(tinyArsenicalBronze, new AspectList().add(METAL, 1));
+		addAspects(tinyAntimonialBronze, new AspectList().add(METAL, 1));
+		addAspects(tinyBismuthBronze, new AspectList().add(METAL, 1));
+		addAspects(tinyMithril, new AspectList().add(METAL, 1));
+		addAspects(tinyAluminiumBronze, new AspectList().add(METAL, 1));
+		addAspects(tinyCupronickel, new AspectList().add(METAL, 1));
+		addAspects(tinyRiftishBronze, new AspectList().add(METAL, 1).add(ENTROPY, 1));
+		addAspects(tinyConstantan, new AspectList().add(METAL, 1));
+		addAspects(tinyInvar, new AspectList().add(METAL, 1));
+		addAspects(tinyElectrum, new AspectList().add(METAL, 1));
+		addAspects(tinyWardenicMetal, new AspectList().add(METAL, 1));
+		addAspects(tinyDullRedsolder, new AspectList().add(METAL, 1));
+		addAspects(tinyRedsolder, new AspectList().add(METAL, 1));
+
+		addAspects(tinyThaumicElectrum, new AspectList().add(METAL, 1));
+		addAspects(tinyThaumicRiftishBronze, new AspectList().add(METAL, 1));
+		addAspects(tinySteel, new AspectList().add(METAL, 1));
+		addAspects(tinyThaumicSteel, new AspectList().add(METAL, 1));
+		addAspects(tinyVoidbrass, new AspectList().add(METAL, 1));
+		addAspects(tinyVoidsteel, new AspectList().add(METAL, 1));
+		addAspects(tinyVoidtungsten, new AspectList().add(METAL, 1).add(VOID, 1));
+		addAspects(tinyVoidcupronickel, new AspectList().add(METAL, 1));
+
+
+		addAspects(plateCopper, new AspectList().add(METAL, 2).add(ARMOR, 1).add(EXCHANGE, 1));
+		addAspects(plateZinc, new AspectList().add(METAL, 2).add(ARMOR, 1).add(CRYSTAL, 1));
+		addAspects(plateTin, new AspectList().add(METAL, 2).add(ARMOR, 1).add(CRYSTAL, 1));
+		addAspects(plateNickel, new AspectList().add(METAL, 2).add(ARMOR, 1).add(VOID, 1));
+		addAspects(plateSilver, new AspectList().add(METAL, 2).add(ARMOR, 1).add(GREED, 1));
+		addAspects(plateLead, new AspectList().add(METAL, 2).add(ARMOR, 1).add(ORDER, 1));
+		addAspects(plateLutetium, new AspectList().add(METAL, 2).add(ARMOR, 1).add(EARTH, 1).add(VOID, 1));
+		addAspects(plateTungsten, new AspectList().add(METAL, 2).add(ARMOR, 1).add(MECHANISM, 1).add(ARMOR, 1));
+		addAspects(plateIridium, new AspectList().add(METAL, 2).add(ARMOR, 2).add(ORDER, 1).add(MECHANISM, 1).add(ENERGY, 1));
+		addAspects(plateBismuth, new AspectList().add(METAL, 2).add(ARMOR, 1).add(ORDER, 1));
+		addAspects(plateArsenic, new AspectList().add(METAL, 2).add(ARMOR, 1).add(POISON, 1));
+		addAspects(plateAntimony, new AspectList().add(METAL, 2).add(ARMOR, 1).add(POISON, 1));
+		addAspects(plateNeodymium, new AspectList().add(METAL, 2).add(ARMOR, 1).add(EARTH, 1).add(ENERGY, 1));
+		addAspects(plateOsmium, new AspectList().add(METAL, 2).add(ARMOR, 2).add(ORDER, 1));
+		addAspects(platePalladium, new AspectList().add(METAL, 2).add(ARMOR, 1).add(GREED, 1).add(EXCHANGE, 1));
+		addAspects(plateAluminium, new AspectList().add(METAL, 2).add(ARMOR, 1).add(ORDER, 1));
+
+		addAspects(plateBrass, new AspectList().add(METAL, 2).add(ARMOR, 1).add(MECHANISM, 1));
+		addAspects(plateBronze, new AspectList().add(METAL, 2).add(ARMOR, 1).add(TOOL, 1));
+		addAspects(plateArsenicalBronze, new AspectList().add(METAL, 2).add(ARMOR, 1).add(TOOL, 1));
+		addAspects(plateAntimonialBronze, new AspectList().add(METAL, 2).add(ARMOR, 2));
+		addAspects(plateBismuthBronze, new AspectList().add(METAL, 2).add(ARMOR, 1).add(TOOL, 1));
+		addAspects(plateMithril, new AspectList().add(METAL, 2).add(ARMOR, 2).add(TOOL, 1));
+		addAspects(plateAluminiumBronze, new AspectList().add(METAL, 2).add(ARMOR, 1).add(CRAFT, 1));
+		addAspects(plateCupronickel, new AspectList().add(METAL, 2).add(ARMOR, 1).add(MECHANISM, 1));
+		addAspects(plateRiftishBronze, new AspectList().add(METAL, 2).add(ARMOR, 1).add(CRAFT, 1).add(TOOL, 1));
+		addAspects(plateConstantan, new AspectList().add(METAL, 2).add(ARMOR, 1).add(MECHANISM, 1));
+		addAspects(plateInvar, new AspectList().add(METAL, 2).add(ARMOR, 2));
+		addAspects(plateElectrum, new AspectList().add(METAL, 2).add(ARMOR, 1).add(GREED, 1));
+		addAspects(plateWardenicMetal, new AspectList().add(METAL, 2).add(ARMOR, 1).add(aspectExcubitor, 1));
+		addAspects(plateDullRedsolder, new AspectList().add(METAL, 2).add(ARMOR, 1).add(ENERGY, 1));
+		addAspects(plateRedsolder, new AspectList().add(METAL, 2).add(ARMOR, 1).add(aspectFluxus, 1));
+
+		addAspects(plateThaumicElectrum, new AspectList().add(METAL, 2).add(ARMOR, 1).add(GREED, 1).add(ENERGY, 1).add(MAGIC, 2));
+		addAspects(plateThaumicRiftishBronze, new AspectList().add(METAL, 2).add(ARMOR, 1).add(CRAFT, 1).add(TOOL, 1).add(MAGIC, 2));
+		addAspects(plateSteel, new AspectList().add(METAL, 3).add(ARMOR, 1).add(ORDER, 1));
+		addAspects(plateThaumicSteel, new AspectList().add(METAL, 3).add(ARMOR, 1).add(ORDER, 1).add(MAGIC, 2));
+		addAspects(plateVoidbrass, new AspectList().add(METAL, 2).add(ARMOR, 1).add(VOID, 1).add(DARKNESS, 1).add(TOOL, 1).add(ELDRITCH, 1));
+		addAspects(plateVoidsteel, new AspectList().add(METAL, 2).add(ARMOR, 1).add(VOID, 2).add(DARKNESS, 1).add(ORDER, 1).add(ELDRITCH, 1));
+		addAspects(plateVoidtungsten, new AspectList().add(METAL, 3).add(VOID, 2).add(DARKNESS, 2).add(ELDRITCH, 2).add(MECHANISM, 1).add(ARMOR, 2));
+		addAspects(plateVoidcupronickel, new AspectList().add(METAL, 2).add(ARMOR, 1).add(VOID, 2).add(DARKNESS, 1).add(MECHANISM, 1).add(ELDRITCH, 1));
 	}
 
 	public static void loadEquipmentAspects() {

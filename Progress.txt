@@ -10,6 +10,13 @@ Internal [20] |-> Items/Blocks [02/03/04] |-> Recipes [05/06/07/08] |-> Research
 [14-xx]		Gravel Ores
 [14-xx]		Plant Materials
 [14-xx]		Seeds
+[14-xx]		T1 Wardenic Items
+
+
+[14-xx]		Elemental Metal []
+[14-xx]		Simple Alloy []
+[14-xx]		Special Alloy []
+
 
 [10/11/12/13]	Textures:
 [10-xx]		Ores
@@ -95,7 +102,7 @@ Internal [20] |-> Items/Blocks [02/03/04] |-> Recipes [05/06/07/08] |-> Research
 
 
 
-Done:
+TODO:
 [10]	Textures (Block):
 [10-01]		Jethrine Pyroptase Block <blocks/storage/blockJethrinePyroptase.png>
 [10-02]		Hardened Silverwood <blocks/wood/silverwoodHardened.png>
@@ -169,70 +176,49 @@ Done:
 [13-08]		Bronze Chain Armor Worn Textures []
 
 [14]	Aspects:
-[14-1-01]	Elemental Metal Blocks <16>
-[14-1-02]	Simple Alloy Blocks <15>
-[14-1-03]	Special Alloy Blocks <8>
-[14-1-04]	Equipment Alloy Blocks <15>
-[14-1-05]	Gem Blocks <10>
-[14-1-06]	Misc Metal Blocks <6>
-[14-1-07]	Elemental Metal Ingots <16>
-[14-1-08]	Simple Alloy Ingots <15>
-[14-1-09]	Special Alloy Ingots <8>
-[14-1-10]	Equipment Alloy Ingots <15>
-[14-1-11]	Gem Items <10>
-[14-1-12]	Misc Metal Ingots <5>
-[14-2-01]	Elemental Metal Nuggets <16>
-[14-2-02]	Simple Alloy Nuggets <15>
-[14-2-03]	Special Alloy Nuggets <8>
-[14-2-04]	Equipment Alloy Nuggets <15>
-[14-2-05]	Gem Shards <10>
-[14-2-06]	Misc Metal Nuggets <5>
-[14-2-07]	Elemental Metal Dusts <16>
-[14-2-08]	Simple Alloy Dusts <15>
-[14-2-09]	Special Alloy Dusts <8>
-[14-2-10]	Equipment Alloy Dusts <15>
-[14-2-11]	Gem Dusts <10>
-[14-2-12]	Misc Metal Dusts <5>
-[14-3-01]	Elemental Metal Tiny Dusts <16>
-[14-3-02]	Simple Alloy Tiny Dusts <15>
-[14-3-03]	Special Alloy Tiny Dusts <8>
-[14-3-04]	Equipment Alloy Tiny Dusts <15>
-[14-3-05]	Gem Tiny Dusts <10>
-[14-3-06]	Misc Metal Tiny Dusts <5>
-[14-3-07]	Elemental Metal Plates <16>
-[14-3-08]	Simple Alloy Plates <15>
-[14-3-09]	Special Alloy Plates <8>
-[14-3-10]	Equipment Alloy Plates <15>
-[14-3-11]	Raw/Coated/Fired/Smelted Ingots <29>
-[14-3-12]	Misc Metal Plates <2>
-
-[14-4-01]	Poor Ores <12>
-[14-4-02]	Crushed Shards and Integration Dusts <13>
-[14-4-03]	Crushed Shards and Integration Tiny Dusts <15>
-[14-4-04]	Equipment Dusts <10>
-[14-4-05]	Equipment Tiny Dusts <10>
-[14-4-06]	Manufactured Materials <10+6+7>
-[14-4-07]	Wood Components <9>
-
-[14-5-01]	T1 Wardenic Items <4>
-[14-5-02]	T2 Wardenic Items <5>
-[14-5-03]	T3 Wardenic Items <6>
-[14-5-04]	T4 Wardenic Items <6>
-[14-5-05]	T5 Wardenic Items <1>
-[14-5-06]	T1 Magneoturgic Items <4>
-[14-5-07]	T1 Wardenic Armor <4>
-[14-5-08]	T2 Wardenic Armor <4>
-[14-5-09]	T3 Wardenic Armor <4>
-[14-5-10]	T4 Wardenic Armor <4>
-[14-5-11]	T5 Wardenic Armor <4>
-[14-5-12]	T1 Magneoturgic Armor <4>
-[14-6-01]	Baubles <3>
-[14-6-02]	Cotton Robes <4>
-[14-6-03]	Primal Robes <4>
-[14-6-04]	Bronze Chain Armor <4>
-[14-6-05]	Slag <4>
-[14-6-06]	Clusters <10>
-[14-6-07]	Other Blocks <9>
+[14-1-01]	Equipment Alloy Blocks <15>
+[14-1-02]	Gem Blocks <10>
+[14-1-03]	Misc Metal Blocks <6>
+[14-1-04]	Equipment Alloy Ingots <15>
+[14-1-05]	Gem Items <10>
+[14-1-06]	Misc Metal Ingots <5>
+[14-1-07]	Equipment Alloy Nuggets <15>
+[14-1-08]	Gem Shards <10>
+[14-1-09]	Misc Metal Nuggets <5>
+[14-1-10]	Equipment Alloy Dusts <15>
+[14-1-11]	Gem Dusts <10>
+[14-1-12]	Misc Metal Dusts <5>
+[14-2-01]	Equipment Alloy Tiny Dusts <15>
+[14-2-02]	Gem Tiny Dusts <10>
+[14-2-03]	Misc Metal Tiny Dusts <5>
+[14-2-04]	Equipment Alloy Plates <15>
+[14-2-05]	Raw/Coated/Fired/Smelted Ingots <29>
+[14-2-06]	Misc Metal Plates <2>
+[14-2-07]	Crushed Shards and Integration Dusts <13>
+[14-2-08]	Crushed Shards and Integration Tiny Dusts <15>
+[14-2-09]	Equipment Dusts <10>
+[14-2-10]	Equipment Tiny Dusts <10>
+[14-2-11]	Manufactured Materials <10+6+7>
+[14-2-12]	Wood Components <9>
+[14-3-01]	T1 Wardenic Armor <4>
+[14-3-02]	T2 Wardenic Armor <4>
+[14-3-03]	T3 Wardenic Armor <4>
+[14-3-04]	T4 Wardenic Armor <4>
+[14-3-05]	T5 Wardenic Armor <4>
+[14-3-06]	T1 Magneoturgic Armor <4>
+[14-3-07]	Cotton Robes <4>
+[14-3-08]	Primal Robes <4>
+[14-3-09]	Bronze Chain Armor <4>
+[14-3-10]	Baubles <3>
+[14-3-11]	Poor Ores <12>
+[14-3-12]	Other Blocks <9>
+[14-4-01]	T2 Wardenic Items <2/5>
+[14-4-02]	T3 Wardenic Items <6>
+[14-4-03]	T4 Wardenic Items <6>
+[14-4-04]	T5 Wardenic Items <1>
+[14-4-05]	T1 Magneoturgic Items <4>
+[14-4-06]	Slag <4>
+[14-4-07]	Clusters <10>
 
 [15]	Research Text (General/Runic):
 [15-01]		Materials

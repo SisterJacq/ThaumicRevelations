@@ -106,7 +106,7 @@ minecraft {
     //if (project.hasProperty("Mod_signature")) { replace "@FINGERPRINT@", project.Mod_signature }
 }
 
-sourceSets {
+/*sourceSets {WTF Gradle, why aren't you working?
     main {
         java {
             srcDirs += "src/api/main"
@@ -114,12 +114,11 @@ sourceSets {
         }
 
         resources {
-            srcDir "src/main/resources",
-            "mcmod.info"
-            /*"pack.mcmeta"*/
+            srcDir "src/main/resources", "mcmod.info"
+            //"pack.mcmeta"
         }
     }
-}
+}*/
 
 processResources {
     // this will ensure that this task is redone when the versions change.

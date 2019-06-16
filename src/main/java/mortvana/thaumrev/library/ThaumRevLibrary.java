@@ -2288,7 +2288,7 @@ public class ThaumRevLibrary {
 	public static final int[] LIGHT_STORAGE_GEM = { 4, 4, 8, 15, 4, 8, 12, 0, 2, 0 };
 	public static final int[] LIGHT_STORAGE_MISC = { 0, 0, 1, 0, 1, 0 };
 
-	public static final int[] RARITY_STORAGE_ORE = 	{ 0, 0, 0, 0, 0, 0, 2, 1, 2, 0, 0, 0, 1, 1,	1, 0 };
+	public static final int[] RARITY_STORAGE_ORE = 	{ 0, 0, 0, 0, 0, 0, 1, 1, 2, 0, 0, 0, 1, 1,	1, 0 };
 	public static final int[] RARITY_STORAGE_ALLOY_1 = { 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0 };
 	public static final int[] RARITY_STORAGE_SPECIAL = { 1, 1, 1, 1, 1, 1, 2, 1 };
 	public static final int[] RARITY_STORAGE_EQUIPMENT = { 0, 1, 1, 2, 0, 0, 1, 1, 2, 2, 2, 3, 1, 1, 2};
